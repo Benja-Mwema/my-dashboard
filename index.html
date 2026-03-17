@@ -303,13 +303,13 @@
           <button class="ghost-btn" onclick="window.__terminalAuth.logout()">Logout</button>
         </div>
         <div class="status-strip">
-          <div class="status-box"><div class="label">Local Time</div><div class="value">17 Mar 2026 17:22</div></div>
+          <div class="status-box"><div class="label">Local Time</div><div class="value">17 Mar 2026 17:42</div></div>
           <div class="status-box"><div class="label">Session</div><div class="value blue">London-New York Overlap</div><div class="tiny">Next: New York in 1h</div></div>
           <div class="status-box"><div class="label">Global Regime</div><div class="value green">USD Supportive / Tight</div><div class="tiny">Composite: 72</div></div>
         </div>
       </div>
 
-      <div class="ticker"><strong>Terminal Ticker:</strong> EURUSD ■ Neutral 52 • GBPJPY ▲ Bullish 47 • CADJPY ■ Neutral 40 • AUDJPY ▼ Bearish 40 • SP500 ■ Neutral 38 • Silver ■ Neutral 28 • Gold ■ Neutral 26</div>
+      <div class="ticker"><strong>Terminal Ticker:</strong> EURUSD ▲ Bullish 49 • GBPJPY ▲ Bullish 47 • CADJPY ▼ Bearish 40 • SP500 ■ Neutral 38 • AUDJPY ▼ Bearish 37 • Silver ■ Neutral 28 • Gold ■ Neutral 26</div>
       <div class="alert-banner">USD dominant, execution compressed, no trade ready.</div>
 
       <section class="flow-strip" style="margin-bottom:14px;">
@@ -373,7 +373,7 @@
         
       <div class="card kpi-card">
         <div class="kpi-label">DXY Structural Score</div>
-        <div class="kpi-value amber">40.1</div>
+        <div class="kpi-value amber">39.6</div>
         <div class="kpi-sub">Compression / wait</div>
       </div>
     
@@ -395,12 +395,12 @@
           <tr>
             <td>1</td>
             <td>EURUSD</td>
-            <td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td>
-            <td>52</td>
+            <td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td>
+            <td>49</td>
             <td><span class="pill pill-blue">NO TRADE</span></td>
             <td>Off Timing</td>
             <td>Balanced</td>
-            <td>Neutral</td>
+            <td>Bullish</td>
           </tr>
         
           <tr>
@@ -417,27 +417,16 @@
           <tr>
             <td>3</td>
             <td>CADJPY</td>
-            <td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td>
-            <td>40</td>
-            <td><span class="pill pill-blue">NO TRADE</span></td>
-            <td>Off Timing</td>
-            <td>Balanced</td>
-            <td>Bullish</td>
-          </tr>
-        
-          <tr>
-            <td>4</td>
-            <td>AUDJPY</td>
             <td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td>
             <td>40</td>
             <td><span class="pill pill-blue">NO TRADE</span></td>
             <td>Off Timing</td>
-            <td>Crowded Long</td>
+            <td>Balanced</td>
             <td>Bearish</td>
           </tr>
         
           <tr>
-            <td>5</td>
+            <td>4</td>
             <td>SP500</td>
             <td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td>
             <td>38</td>
@@ -446,6 +435,17 @@
             <td>Balanced</td>
             <td>Bullish</td>
           </tr>
+        
+          <tr>
+            <td>5</td>
+            <td>AUDJPY</td>
+            <td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td>
+            <td>37</td>
+            <td><span class="pill pill-blue">NO TRADE</span></td>
+            <td>Off Timing</td>
+            <td>Crowded Long</td>
+            <td>Bearish</td>
+          </tr>
         </tbody>
           </table>
         </div>
@@ -453,9 +453,9 @@
         <div class="decision">
           <h3>Top Watchlist Setup</h3>
           <div class="decision-market">EURUSD — Watchlist</div>
-          <div class="decision-direction"><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> • Action: NO TRADE</div>
+          <div class="decision-direction"><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> • Action: NO TRADE</div>
           <div class="tiny" style="margin-bottom:12px;">Directional edge exists, but DXY and liquidity timing remain compressed.</div>
-          <ul class="reason-list"><li>EURUSD direction is Neutral.</li><li>H1 bias is &#39;Neutral&#39;.</li><li>M15 setup is &#39;No clear setup&#39;.</li><li>Macro component is 88.</li><li>DXY component is 60.</li><li>COT component is 37.</li><li>Liquidity component is 28.</li><li>Timing state is &#39;Off Timing&#39;.</li><li>DXY market state is &#39;Compression / wait&#39;.</li><li>USD regime is &#39;Strong USD Supportive&#39;.</li></ul>
+          <ul class="reason-list"><li>EURUSD direction is Bullish.</li><li>H1 bias is &#39;Bullish&#39;.</li><li>M15 setup is &#39;No clear setup&#39;.</li><li>Macro component is 88.</li><li>DXY component is 60.</li><li>COT component is 37.</li><li>Liquidity component is 20.</li><li>Timing state is &#39;Off Timing&#39;.</li><li>DXY market state is &#39;Compression / wait&#39;.</li><li>USD regime is &#39;Strong USD Supportive&#39;.</li></ul>
         </div>
       </section>
 
@@ -464,18 +464,18 @@
           <h2>Regime Heat Matrix</h2>
           <table class="mini-table">
             <thead><tr><th>Market</th><th>Dir</th><th>Macro</th><th>DXY</th><th>COT</th><th>Liq</th><th>Timing</th><th>Final</th><th>State</th></tr></thead>
-            <tbody><tr><td>EURUSD</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat green">88</span></td><td><span class="heat amber">60</span></td><td><span class="heat amber">37</span></td><td><span class="heat red">28</span></td><td><span class="heat red">15</span></td><td><span class="heat amber">52</span></td><td><span class='pill pill-blue'>NO TRADE</span></td></tr><tr><td>GBPJPY</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat amber">61</span></td><td><span class="heat amber">57</span></td><td><span class="heat green">80</span></td><td><span class="heat red">20</span></td><td><span class="heat red">15</span></td><td><span class="heat amber">47</span></td><td><span class='pill pill-blue'>NO TRADE</span></td></tr><tr><td>CADJPY</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat amber">39</span></td><td><span class="heat amber">57</span></td><td><span class="heat amber">60</span></td><td><span class="heat red">28</span></td><td><span class="heat red">15</span></td><td><span class="heat amber">40</span></td><td><span class='pill pill-blue'>NO TRADE</span></td></tr><tr><td>AUDJPY</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat amber">38</span></td><td><span class="heat amber">57</span></td><td><span class="heat green">69</span></td><td><span class="heat red">23</span></td><td><span class="heat red">5</span></td><td><span class="heat amber">40</span></td><td><span class='pill pill-blue'>NO TRADE</span></td></tr><tr><td>Gold</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat red">19</span></td><td><span class="heat amber">57</span></td><td><span class="heat red">24</span></td><td><span class="heat red">20</span></td><td><span class="heat red">15</span></td><td><span class="heat red">26</span></td><td><span class='pill pill-blue'>NO TRADE</span></td></tr><tr><td>Silver</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat amber">34</span></td><td><span class="heat amber">57</span></td><td><span class="heat red">9</span></td><td><span class="heat red">20</span></td><td><span class="heat red">15</span></td><td><span class="heat red">28</span></td><td><span class='pill pill-blue'>NO TRADE</span></td></tr><tr><td>SP500</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat amber">44</span></td><td><span class="heat amber">57</span></td><td><span class="heat red">5</span></td><td><span class="heat amber">39</span></td><td><span class="heat amber">35</span></td><td><span class="heat amber">38</span></td><td><span class='pill pill-blue'>NO TRADE</span></td></tr></tbody>
+            <tbody><tr><td>EURUSD</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat green">88</span></td><td><span class="heat amber">60</span></td><td><span class="heat amber">37</span></td><td><span class="heat red">20</span></td><td><span class="heat red">15</span></td><td><span class="heat amber">49</span></td><td><span class='pill pill-blue'>NO TRADE</span></td></tr><tr><td>GBPJPY</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat amber">61</span></td><td><span class="heat amber">58</span></td><td><span class="heat green">80</span></td><td><span class="heat red">20</span></td><td><span class="heat red">15</span></td><td><span class="heat amber">47</span></td><td><span class='pill pill-blue'>NO TRADE</span></td></tr><tr><td>CADJPY</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat amber">39</span></td><td><span class="heat amber">58</span></td><td><span class="heat amber">60</span></td><td><span class="heat red">28</span></td><td><span class="heat red">15</span></td><td><span class="heat amber">40</span></td><td><span class='pill pill-blue'>NO TRADE</span></td></tr><tr><td>AUDJPY</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat amber">38</span></td><td><span class="heat amber">58</span></td><td><span class="heat green">69</span></td><td><span class="heat red">15</span></td><td><span class="heat red">5</span></td><td><span class="heat amber">37</span></td><td><span class='pill pill-blue'>NO TRADE</span></td></tr><tr><td>Gold</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat red">19</span></td><td><span class="heat amber">57</span></td><td><span class="heat red">24</span></td><td><span class="heat red">20</span></td><td><span class="heat red">15</span></td><td><span class="heat red">26</span></td><td><span class='pill pill-blue'>NO TRADE</span></td></tr><tr><td>Silver</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat amber">34</span></td><td><span class="heat amber">57</span></td><td><span class="heat red">9</span></td><td><span class="heat red">20</span></td><td><span class="heat red">15</span></td><td><span class="heat red">28</span></td><td><span class='pill pill-blue'>NO TRADE</span></td></tr><tr><td>SP500</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat amber">44</span></td><td><span class="heat amber">57</span></td><td><span class="heat red">5</span></td><td><span class="heat amber">39</span></td><td><span class="heat amber">35</span></td><td><span class="heat amber">38</span></td><td><span class='pill pill-blue'>NO TRADE</span></td></tr></tbody>
           </table>
         </div>
 
         <div class="card">
           <h2>Strongest Markets</h2>
-          <ul class="compact"><li>EURUSD <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class='tiny'>52</span></li><li>GBPJPY <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class='tiny'>47</span></li><li>CADJPY <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class='tiny'>40</span></li></ul>
+          <ul class="compact"><li>EURUSD <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class='tiny'>49</span></li><li>GBPJPY <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class='tiny'>47</span></li><li>CADJPY <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class='tiny'>40</span></li></ul>
         </div>
 
         <div class="card">
           <h2>Weakest Markets</h2>
-          <ul class="compact"><li>Gold <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class='tiny'>26</span></li><li>Silver <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class='tiny'>28</span></li><li>SP500 <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class='tiny'>38</span></li></ul>
+          <ul class="compact"><li>Gold <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class='tiny'>26</span></li><li>Silver <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class='tiny'>28</span></li><li>AUDJPY <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class='tiny'>37</span></li></ul>
         </div>
       </section>
 
@@ -492,13 +492,13 @@
             <div class="ranking-left">
               <div class="rank">1</div>
               <div>
-                <div><strong>EURUSD</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></div>
-                <div class="bar-wrap"><div class="bar" style="width:51.91%"></div></div>
-                <div class="tiny">Macro 88 • DXY 60 • COT 37 • Liq 28</div>
+                <div><strong>EURUSD</strong> <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></div>
+                <div class="bar-wrap"><div class="bar" style="width:49.03%"></div></div>
+                <div class="tiny">Macro 88 • DXY 60 • COT 37 • Liq 20</div>
               </div>
             </div>
             <div style="text-align:right;">
-              <div><strong>52%</strong></div>
+              <div><strong>49%</strong></div>
               <div><span class="pill pill-blue">NO TRADE</span></div>
             </div>
           </div>
@@ -508,8 +508,8 @@
               <div class="rank">2</div>
               <div>
                 <div><strong>GBPJPY</strong> <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></div>
-                <div class="bar-wrap"><div class="bar" style="width:46.85%"></div></div>
-                <div class="tiny">Macro 61 • DXY 57 • COT 80 • Liq 20</div>
+                <div class="bar-wrap"><div class="bar" style="width:46.88%"></div></div>
+                <div class="tiny">Macro 61 • DXY 58 • COT 80 • Liq 20</div>
               </div>
             </div>
             <div style="text-align:right;">
@@ -522,9 +522,9 @@
             <div class="ranking-left">
               <div class="rank">3</div>
               <div>
-                <div><strong>CADJPY</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></div>
-                <div class="bar-wrap"><div class="bar" style="width:40.41%"></div></div>
-                <div class="tiny">Macro 39 • DXY 57 • COT 60 • Liq 28</div>
+                <div><strong>CADJPY</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></div>
+                <div class="bar-wrap"><div class="bar" style="width:40.44%"></div></div>
+                <div class="tiny">Macro 39 • DXY 58 • COT 60 • Liq 28</div>
               </div>
             </div>
             <div style="text-align:right;">
@@ -537,23 +537,8 @@
             <div class="ranking-left">
               <div class="rank">4</div>
               <div>
-                <div><strong>AUDJPY</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></div>
-                <div class="bar-wrap"><div class="bar" style="width:39.61%"></div></div>
-                <div class="tiny">Macro 38 • DXY 57 • COT 69 • Liq 23</div>
-              </div>
-            </div>
-            <div style="text-align:right;">
-              <div><strong>40%</strong></div>
-              <div><span class="pill pill-blue">NO TRADE</span></div>
-            </div>
-          </div>
-        
-          <div class="ranking-item">
-            <div class="ranking-left">
-              <div class="rank">5</div>
-              <div>
                 <div><strong>SP500</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></div>
-                <div class="bar-wrap"><div class="bar" style="width:38.11%"></div></div>
+                <div class="bar-wrap"><div class="bar" style="width:38.17%"></div></div>
                 <div class="tiny">Macro 44 • DXY 57 • COT 5 • Liq 39</div>
               </div>
             </div>
@@ -565,10 +550,25 @@
         
           <div class="ranking-item">
             <div class="ranking-left">
+              <div class="rank">5</div>
+              <div>
+                <div><strong>AUDJPY</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></div>
+                <div class="bar-wrap"><div class="bar" style="width:36.66%"></div></div>
+                <div class="tiny">Macro 38 • DXY 58 • COT 69 • Liq 15</div>
+              </div>
+            </div>
+            <div style="text-align:right;">
+              <div><strong>37%</strong></div>
+              <div><span class="pill pill-blue">NO TRADE</span></div>
+            </div>
+          </div>
+        
+          <div class="ranking-item">
+            <div class="ranking-left">
               <div class="rank">6</div>
               <div>
                 <div><strong>Silver</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></div>
-                <div class="bar-wrap"><div class="bar" style="width:28.15%"></div></div>
+                <div class="bar-wrap"><div class="bar" style="width:28.21%"></div></div>
                 <div class="tiny">Macro 34 • DXY 57 • COT 9 • Liq 20</div>
               </div>
             </div>
@@ -583,7 +583,7 @@
               <div class="rank">7</div>
               <div>
                 <div><strong>Gold</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></div>
-                <div class="bar-wrap"><div class="bar" style="width:25.73%"></div></div>
+                <div class="bar-wrap"><div class="bar" style="width:25.79%"></div></div>
                 <div class="tiny">Macro 19 • DXY 57 • COT 24 • Liq 20</div>
               </div>
             </div>
