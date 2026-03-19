@@ -49,6 +49,8 @@
     .bar-wrap { width:220px; height:12px; border-radius:999px; overflow:hidden; background:rgba(125,148,189,0.15); margin-top:6px; }
     .bar { height:100%; border-radius:999px; background:linear-gradient(90deg,#1d4ed8,#39d6ff); }
     .decision { background:linear-gradient(135deg, rgba(8,30,22,0.55), rgba(7,18,40,0.85)); border:1px solid rgba(57,214,255,0.18); border-radius:16px; padding:18px; }
+    .compact-insight { display:flex; flex-wrap:wrap; gap:8px; margin:12px 0 10px; }
+    .compact-insight .mini-tag { display:inline-flex; align-items:center; gap:6px; padding:6px 10px; border-radius:999px; border:1px solid rgba(125,148,189,0.18); background:rgba(125,148,189,0.08); font-size:12px; color:#dbe7ff; }
     .decision-market { font-size:34px; font-weight:900; margin-bottom:6px; }
     .decision-direction { font-size:15px; font-weight:700; margin-bottom:10px; color:#d8ebff; }
     .reason-list { margin:0; padding-left:18px; line-height:1.6; color:#dbe7ff; font-size:14px; }
@@ -76,7 +78,7 @@
           <p>Governed terminal • Trade Board, Regime Heat Matrix, Top Watchlist Setup • Auto-refresh every 60s</p>
         </div>
         <div class="status-strip">
-          <div class="status-box"><div class="label">Local Time</div><div class="value">19 Mar 2026 23:02</div></div>
+          <div class="status-box"><div class="label">Local Time</div><div class="value">19 Mar 2026 23:07</div></div>
           <div class="status-box"><div class="label">Session</div><div class="value blue">New York</div><div class="tiny">Next: Asia in 3h</div></div>
           <div class="status-box"><div class="label">Global Regime</div><div class="value green">USD Dominant / Defensive</div><div class="tiny">Composite: 64</div></div>
         </div>
@@ -178,7 +180,14 @@
           <h3>Top Watchlist Setup</h3>
           <div class="decision-market">CADJPY — Bullish Weakening</div>
           <div class="decision-direction"><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> • Exec: <span class="pill pill-amber">Trigger Forming</span></div>
-          <div class="tiny" style="margin-bottom:12px;">Governance-approved publication only. Dashboard does not calculate signal logic.</div>
+          <div class="tiny" style="margin-bottom:8px;">Governance-approved publication only. Dashboard does not calculate signal logic.</div>
+          <div class="compact-insight">
+            <span class="mini-tag">Tactical <strong>No Continuation</strong></span>
+            <span class="mini-tag">Bias <strong>Bearish</strong></span>
+            <span class="mini-tag">Conviction <strong>Developing</strong></span>
+            <span class="mini-tag">Status <strong>WAIT - HTF/LTF CONFLICT</strong></span>
+            <span class="mini-tag">Board <strong>None</strong></span>
+          </div>
           <ul class="reason-list"><li>Display regime is &#39;Bullish Weakening&#39;.</li><li>Execution state is &#39;Trigger Forming&#39;.</li><li>Signal alignment is &#39;Mixed&#39;.</li><li>Conflict is &#39;High&#39;.</li><li>Stability is &#39;Unstable&#39;.</li><li>Governed score is 58.</li><li>Gov 58 • Rank 58 • Exec WAIT - HTF/LTF CONFLICT • Tactical No Continuation • Bias Bearish • Conviction Developing</li><li>Trade Board promotion is governance-controlled, not dashboard-calculated.</li></ul>
         </div>
       </section>
@@ -209,44 +218,9 @@
       </section>
 
 
-      <section class="grid-reasoning">
-        <div class="card">
-          <h2>Reasoning Engine</h2>
-          <div class="tiny" style="margin-bottom:10px;">Gov 58 • Rank 58 • Exec WAIT - HTF/LTF CONFLICT • Tactical No Continuation • Bias Bearish • Conviction Developing</div>
-          <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px;">
-            <div>
-              <div class="label" style="margin-bottom:8px;">Positives</div>
-              <ul class="compact"><li>Governed score is constructive but not dominant.</li><li>Intraday bias is bearish.</li></ul>
-            </div>
-            <div>
-              <div class="label" style="margin-bottom:8px;">Blockers</div>
-              <ul class="compact"><li>Governance has not promoted this setup to the Trade Board.</li><li>Signal alignment is Mixed.</li><li>Conflict is high and blocks clean execution.</li><li>Regime is unstable.</li><li>Tactical engine does not yet see continuation.</li></ul>
-            </div>
-            <div>
-              <div class="label" style="margin-bottom:8px;">What To Wait For</div>
-              <ul class="compact"><li>Wait for H1 continuation to appear.</li><li>Wait for conviction to strengthen.</li><li>Wait for execution state to upgrade from WAIT to building or ready.</li></ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <h2>Governance Path</h2>
-          <table class="mini-table">
-            <tbody>
-              <tr><td>Tactical State</td><td><span class="pill pill-blue">No Continuation</span></td></tr>
-              <tr><td>Intraday Bias</td><td><span class="pill pill-red">Bearish</span></td></tr>
-              <tr><td>Conviction</td><td><span class="pill pill-blue">Developing</span></td></tr>
-              <tr><td>Display Status</td><td><span class="pill pill-red">WAIT - HTF/LTF CONFLICT</span></td></tr>
-              <tr><td>Board Flag</td><td><span class="pill pill-amber">None</span></td></tr>
-              <tr><td>Board Reason</td><td>High conflict</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-
       <section class="grid-bottom">
         <div class="card">
-          <h2>Top Watchlist Setup</h2>
+          <h2>Watchlist</h2>
           
           <div class="ranking-item">
             <div class="ranking-left">
