@@ -28,7 +28,8 @@
     .grid-main { display:grid; grid-template-columns:1.2fr 1fr; gap:14px; margin-bottom:14px; }
     .grid-triple { display:grid; grid-template-columns:1.3fr 0.8fr 0.9fr; gap:14px; margin-bottom:14px; }
     .grid-charts { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin-bottom:14px; }
-    .grid-bottom { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:14px; }
+    .grid-bottom { display:grid; grid-template-columns:1.1fr 0.9fr; gap:14px; margin-bottom:14px; }
+    .grid-tactical { display:grid; grid-template-columns:0.95fr 1.05fr; gap:14px; margin-bottom:14px; }
     .kpi-card { min-height:118px; }
     .kpi-label { color:var(--muted); font-size:11px; letter-spacing:0.8px; text-transform:uppercase; margin-bottom:10px; }
     .kpi-value { font-size:28px; font-weight:900; line-height:1.1; margin-bottom:8px; }
@@ -51,6 +52,9 @@
     .decision-market { font-size:34px; font-weight:900; margin-bottom:6px; }
     .decision-direction { font-size:15px; font-weight:700; margin-bottom:10px; color:#d8ebff; }
     .reason-list { margin:0; padding-left:18px; line-height:1.6; color:#dbe7ff; font-size:14px; }
+    .insight-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin:12px 0 14px; }
+    .insight-card { background:rgba(8,17,32,0.72); border:1px solid rgba(125,148,189,0.14); border-radius:12px; padding:12px; }
+    .insight-card .tiny { display:block; margin-top:6px; }
     .dir-chip { display:inline-flex; align-items:center; gap:6px; }
     .dir-arrow { font-weight:900; font-size:14px; }
     .tiny { font-size:12px; color:var(--muted); }
@@ -75,14 +79,14 @@
           <p>Governed terminal • Trade Board, Regime Heat Matrix, Top Watchlist Setup • Auto-refresh every 60s</p>
         </div>
         <div class="status-strip">
-          <div class="status-box"><div class="label">Local Time</div><div class="value">19 Mar 2026 22:33</div></div>
+          <div class="status-box"><div class="label">Local Time</div><div class="value">19 Mar 2026 22:41</div></div>
           <div class="status-box"><div class="label">Session</div><div class="value blue">New York</div><div class="tiny">Next: Asia in 4h</div></div>
           <div class="status-box"><div class="label">Global Regime</div><div class="value green">Directional / Bullish Bias</div><div class="tiny">Composite: 65</div></div>
         </div>
       </div>
 
       <div class="ticker"><strong>Terminal Ticker:</strong> CADJPY ▲ Strong Bullish 75 • WS30 ▲ Bullish 60 • GBPJPY ▲ Bullish Weakening 57 • USDJPY ▲ Bullish Weakening 57 • AUDUSD ▲ Bullish Weakening 55 • Silver ▲ Bullish Weakening 54 • GBPUSD ▲ Bullish Weakening 54</div>
-      <div class="alert-banner">Governance active — no fully approved trade yet, maintain selective risk.</div>
+      <div class="alert-banner">CADJPY ▲ Bullish is trending — No Continuation, bias Bearish, waiting for final execution timing.</div>
 
       <section class="flow-strip" style="margin-bottom:14px;">
         
@@ -162,10 +166,10 @@
         <div class="card">
           <h2>Trade Board</h2>
           <table class="mini-table">
-            <thead><tr><th>Rank</th><th>Market</th><th>Direction</th><th>Score</th><th>Regime</th><th>Execution</th><th>Board Flag</th><th>Alignment</th><th>Conflict</th></tr></thead>
+            <thead><tr><th>Rank</th><th>Market</th><th>Direction</th><th>Score</th><th>Regime</th><th>Tactical</th><th>Execution</th><th>Board Flag</th><th>Alignment</th><th>Conflict</th></tr></thead>
             <tbody>
           <tr>
-            <td colspan="9" style="text-align:center; color:#8da0c6; padding:18px;">
+            <td colspan="10" style="text-align:center; color:#8da0c6; padding:18px;">
               No confirmed board setups. Current leaders remain on watchlist pending conflict resolution and timing confirmation.
             </td>
           </tr>
@@ -175,10 +179,52 @@
 
         <div class="decision">
           <h3>Top Watchlist Setup</h3>
-          <div class="decision-market">CADJPY — Strong Bullish</div>
+          <div class="decision-market">CADJPY — WAIT - HTF/LTF CONFLICT</div>
           <div class="decision-direction"><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> • Exec: <span class="pill pill-green">Ready</span></div>
           <div class="tiny" style="margin-bottom:12px;">Governance-approved publication only. Dashboard does not calculate signal logic.</div>
-          <ul class="reason-list"><li>Display regime is &#39;Strong Bullish&#39;.</li><li>Execution state is &#39;Ready&#39;.</li><li>Signal alignment is &#39;Bearish Alignment&#39;.</li><li>Conflict is &#39;Low&#39;.</li><li>Stability is &#39;Stable&#39;.</li><li>Governed score is 75.</li><li>Trade Board promotion is governance-controlled, not dashboard-calculated.</li></ul>
+          <ul class="reason-list"><li>Display regime is &#39;Strong Bullish&#39;.</li><li>Execution state is &#39;Ready&#39;.</li><li>Tactical state is &#39;No Continuation&#39;.</li><li>Intraday bias is &#39;Bearish&#39; with &#39;Developing&#39; conviction.</li><li>Signal alignment is &#39;Bearish Alignment&#39;.</li><li>Conflict is &#39;Low&#39; and stability is &#39;Stable&#39;.</li><li>Resolution path is &#39;Unresolved&#39;.</li><li>Governed score is 75.</li><li>Trade Board promotion is governance-controlled, not dashboard-calculated.</li></ul>
+        </div>
+      </section>
+
+      <section class="grid-tactical">
+        <div class="card">
+          <h2>Tactical Engine Insight</h2>
+          <div class="insight-grid">
+            <div class="insight-card">
+              <div class="label">Continuation State</div>
+              <div class="value blue">No Continuation</div>
+              <span class="tiny">Profile: FX Session</span>
+            </div>
+            <div class="insight-card">
+              <div class="label">Intraday Bias</div>
+              <div class="value red">Bearish</div>
+              <span class="tiny">Conviction: Developing</span>
+            </div>
+            <div class="insight-card">
+              <div class="label">Execution State</div>
+              <div class="value red">WAIT - HTF/LTF CONFLICT</div>
+              <span class="tiny">Board: None</span>
+            </div>
+            <div class="insight-card">
+              <div class="label">Tactical Note</div>
+              <div class="tiny"></div>
+              <span class="tiny">Reasoning comes from governed terminal outputs.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>Governance Path</h2>
+          <table class="mini-table">
+            <tbody>
+              <tr><td>Display Status</td><td><span class="pill pill-red">WAIT - HTF/LTF CONFLICT</span></td></tr>
+              <tr><td>Execution State</td><td><span class="pill pill-green">Ready</span></td></tr>
+              <tr><td>Board Flag</td><td><span class="pill pill-amber">None</span></td></tr>
+              <tr><td>Direction / Regime</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class="pill pill-green">Strong Bullish</span></td></tr>
+              <tr><td>Headline State</td><td>WAIT - HTF/LTF CONFLICT</td></tr>
+              <tr><td>Reasoning Model</td><td>Tactical progression + governed confirmation</td></tr>
+            </tbody>
+          </table>
         </div>
       </section>
 
@@ -186,8 +232,8 @@
         <div class="card">
           <h2>Regime Heat Matrix</h2>
           <table class="mini-table">
-            <thead><tr><th>Market</th><th>Dir</th><th>Structural</th><th>Tactical</th><th>Execution</th><th>Final</th><th>Stability</th><th>Conflict</th><th>State</th></tr></thead>
-            <tbody><tr><td>CADJPY</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat green">88</span></td><td><span class="heat amber">60</span></td><td><span class="heat green">82</span></td><td><span class="heat green">75</span></td><td><span class='pill pill-green'>Stable</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-red'>WAIT - HTF/LTF CONFLICT</span></td></tr><tr><td>GBPJPY</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat green">70</span></td><td><span class="heat amber">42</span></td><td><span class="heat green">82</span></td><td><span class="heat amber">57</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-amber'>Medium</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>WS30</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat green">95</span></td><td><span class="heat amber">42</span></td><td><span class="heat amber">60</span></td><td><span class="heat amber">60</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-amber'>Medium</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>GBPUSD</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">42</span></td><td><span class="heat green">90</span></td><td><span class="heat amber">54</span></td><td><span class='pill pill-green'>Stable</span></td><td><span class='pill pill-amber'>Medium</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>AUDJPY</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">51</span></td><td><span class="heat amber">60</span></td><td><span class="heat amber">51</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>AUDUSD</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat green">80</span></td><td><span class="heat amber">42</span></td><td><span class="heat amber">60</span></td><td><span class="heat amber">55</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-amber'>Medium</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>EURUSD</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">42</span></td><td><span class="heat amber">60</span></td><td><span class="heat amber">48</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>Silver</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat green">90</span></td><td><span class="heat amber">51</span></td><td><span class="heat red">30</span></td><td><span class="heat amber">54</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-amber'>Medium</span></td><td><span class='pill pill-red'>WAIT - HTF/LTF CONFLICT</span></td></tr><tr><td>USDJPY</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat green">88</span></td><td><span class="heat amber">60</span></td><td><span class="heat amber">45</span></td><td><span class="heat amber">57</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-red'>High</span></td><td><span class='pill pill-red'>WAIT - HTF/LTF CONFLICT</span></td></tr><tr><td>Gold</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat green">90</span></td><td><span class="heat amber">51</span></td><td><span class="heat red">15</span></td><td><span class="heat amber">51</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-amber'>Medium</span></td><td><span class='pill pill-red'>WAIT - HTF/LTF CONFLICT</span></td></tr><tr><td>USDCAD</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">42</span></td><td><span class="heat amber">45</span></td><td><span class="heat amber">41</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-amber'>Medium</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>SP500</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat red">25</span></td><td><span class="heat amber">42</span></td><td><span class="heat amber">60</span></td><td><span class="heat amber">36</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-amber'>Medium</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>NAS100</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat red">20</span></td><td><span class="heat amber">65</span></td><td><span class="heat amber">60</span></td><td><span class="heat amber">39</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-red'>High</span></td><td><span class='pill pill-red'>WAIT - HTF/LTF CONFLICT</span></td></tr></tbody>
+            <thead><tr><th>Market</th><th>Dir</th><th>Structural</th><th>Tactical</th><th>Execution</th><th>Final</th><th>Tactical State</th><th>Bias</th><th>Conviction</th><th>Stability</th><th>Conflict</th><th>State</th></tr></thead>
+            <tbody><tr><td>CADJPY</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat green">88</span></td><td><span class="heat amber">60</span></td><td><span class="heat green">82</span></td><td><span class="heat green">75</span></td><td><span class='pill pill-blue'>None</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-green'>Stable</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-red'>WAIT - HTF/LTF CONFLICT</span></td></tr><tr><td>GBPJPY</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat green">70</span></td><td><span class="heat amber">42</span></td><td><span class="heat green">82</span></td><td><span class="heat amber">57</span></td><td><span class='pill pill-blue'>None</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-amber'>Medium</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>WS30</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat green">95</span></td><td><span class="heat amber">42</span></td><td><span class="heat amber">60</span></td><td><span class="heat amber">60</span></td><td><span class='pill pill-blue'>None</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-amber'>Medium</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>GBPUSD</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">42</span></td><td><span class="heat green">90</span></td><td><span class="heat amber">54</span></td><td><span class='pill pill-blue'>None</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-green'>Stable</span></td><td><span class='pill pill-amber'>Medium</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>AUDJPY</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">51</span></td><td><span class="heat amber">60</span></td><td><span class="heat amber">51</span></td><td><span class='pill pill-blue'>None</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>AUDUSD</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat green">80</span></td><td><span class="heat amber">42</span></td><td><span class="heat amber">60</span></td><td><span class="heat amber">55</span></td><td><span class='pill pill-blue'>None</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-amber'>Medium</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>EURUSD</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">42</span></td><td><span class="heat amber">60</span></td><td><span class="heat amber">48</span></td><td><span class='pill pill-blue'>None</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>Silver</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat green">90</span></td><td><span class="heat amber">51</span></td><td><span class="heat red">30</span></td><td><span class="heat amber">54</span></td><td><span class='pill pill-blue'>None</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-amber'>Medium</span></td><td><span class='pill pill-red'>WAIT - HTF/LTF CONFLICT</span></td></tr><tr><td>USDJPY</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat green">88</span></td><td><span class="heat amber">60</span></td><td><span class="heat amber">45</span></td><td><span class="heat amber">57</span></td><td><span class='pill pill-blue'>None</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-red'>High</span></td><td><span class='pill pill-red'>WAIT - HTF/LTF CONFLICT</span></td></tr><tr><td>Gold</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat green">90</span></td><td><span class="heat amber">51</span></td><td><span class="heat red">15</span></td><td><span class="heat amber">51</span></td><td><span class='pill pill-blue'>None</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-amber'>Medium</span></td><td><span class='pill pill-red'>WAIT - HTF/LTF CONFLICT</span></td></tr><tr><td>USDCAD</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">42</span></td><td><span class="heat amber">45</span></td><td><span class="heat amber">41</span></td><td><span class='pill pill-blue'>None</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-amber'>Medium</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>SP500</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat red">25</span></td><td><span class="heat amber">42</span></td><td><span class="heat amber">60</span></td><td><span class="heat amber">36</span></td><td><span class='pill pill-blue'>None</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-amber'>Medium</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>NAS100</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat red">20</span></td><td><span class="heat amber">65</span></td><td><span class="heat amber">60</span></td><td><span class="heat amber">39</span></td><td><span class='pill pill-blue'>None</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-red'>High</span></td><td><span class='pill pill-red'>WAIT - HTF/LTF CONFLICT</span></td></tr></tbody>
           </table>
         </div>
 
@@ -217,7 +263,7 @@
               <div>
                 <div><strong>CADJPY</strong> <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class="pill pill-green">Strong Bullish</span></div>
                 <div class="bar-wrap"><div class="bar" style="width:75.12%"></div></div>
-                <div class="tiny">Gov 75 • Rank 100 • Exec Ready • Align Bearish Alignment • Conflict Low • Stability Stable</div>
+                <div class="tiny">Gov 75 • Rank 100 • Exec WAIT - HTF/LTF CONFLICT • Tactical No Continuation • Bias Bearish • Conviction Developing</div>
               </div>
             </div>
             <div style="text-align:right;">
@@ -232,7 +278,7 @@
               <div>
                 <div><strong>WS30</strong> <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class="pill pill-green">Bullish</span></div>
                 <div class="bar-wrap"><div class="bar" style="width:60.25%"></div></div>
-                <div class="tiny">Gov 60 • Rank 83 • Exec Near Trigger • Align Mixed • Conflict Medium • Stability Moderating</div>
+                <div class="tiny">Gov 60 • Rank 83 • Exec WAIT • Tactical No Continuation • Bias Neutral • Conviction Low</div>
               </div>
             </div>
             <div style="text-align:right;">
@@ -247,7 +293,7 @@
               <div>
                 <div><strong>GBPJPY</strong> <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class="pill pill-green">Bullish Weakening</span></div>
                 <div class="bar-wrap"><div class="bar" style="width:57.0%"></div></div>
-                <div class="tiny">Gov 57 • Rank 84 • Exec Ready • Align Mixed • Conflict Medium • Stability Moderating</div>
+                <div class="tiny">Gov 57 • Rank 84 • Exec WAIT • Tactical No Continuation • Bias Neutral • Conviction Low</div>
               </div>
             </div>
             <div style="text-align:right;">
@@ -262,7 +308,7 @@
               <div>
                 <div><strong>USDJPY</strong> <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class="pill pill-green">Bullish Weakening</span></div>
                 <div class="bar-wrap"><div class="bar" style="width:56.88%"></div></div>
-                <div class="tiny">Gov 57 • Rank 68 • Exec Trigger Forming • Align Mixed • Conflict High • Stability Moderating</div>
+                <div class="tiny">Gov 57 • Rank 68 • Exec WAIT - HTF/LTF CONFLICT • Tactical No Continuation • Bias Bearish • Conviction Developing</div>
               </div>
             </div>
             <div style="text-align:right;">
@@ -277,7 +323,7 @@
               <div>
                 <div><strong>AUDUSD</strong> <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class="pill pill-green">Bullish Weakening</span></div>
                 <div class="bar-wrap"><div class="bar" style="width:55.0%"></div></div>
-                <div class="tiny">Gov 55 • Rank 78 • Exec Near Trigger • Align Mixed • Conflict Medium • Stability Moderating</div>
+                <div class="tiny">Gov 55 • Rank 78 • Exec WAIT • Tactical No Continuation • Bias Neutral • Conviction Low</div>
               </div>
             </div>
             <div style="text-align:right;">
@@ -292,7 +338,7 @@
               <div>
                 <div><strong>Silver</strong> <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class="pill pill-green">Bullish Weakening</span></div>
                 <div class="bar-wrap"><div class="bar" style="width:54.4%"></div></div>
-                <div class="tiny">Gov 54 • Rank 69 • Exec Monitoring • Align Mixed • Conflict Medium • Stability Moderating</div>
+                <div class="tiny">Gov 54 • Rank 69 • Exec WAIT - HTF/LTF CONFLICT • Tactical No Continuation • Bias Bearish • Conviction Low</div>
               </div>
             </div>
             <div style="text-align:right;">
@@ -307,7 +353,7 @@
               <div>
                 <div><strong>GBPUSD</strong> <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class="pill pill-green">Bullish Weakening</span></div>
                 <div class="bar-wrap"><div class="bar" style="width:54.0%"></div></div>
-                <div class="tiny">Gov 54 • Rank 82 • Exec Near Trigger • Align Mixed • Conflict Medium • Stability Stable</div>
+                <div class="tiny">Gov 54 • Rank 82 • Exec WAIT • Tactical No Continuation • Bias Neutral • Conviction Low</div>
               </div>
             </div>
             <div style="text-align:right;">
@@ -322,7 +368,7 @@
               <div>
                 <div><strong>AUDJPY</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class="pill pill-amber">Neutral</span></div>
                 <div class="bar-wrap"><div class="bar" style="width:50.9%"></div></div>
-                <div class="tiny">Gov 51 • Rank 80 • Exec Near Trigger • Align Neutral • Conflict Low • Stability Moderating</div>
+                <div class="tiny">Gov 51 • Rank 80 • Exec WAIT • Tactical No Continuation • Bias Bearish • Conviction Low</div>
               </div>
             </div>
             <div style="text-align:right;">
@@ -337,7 +383,7 @@
               <div>
                 <div><strong>Gold</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class="pill pill-amber">Neutral</span></div>
                 <div class="bar-wrap"><div class="bar" style="width:50.65%"></div></div>
-                <div class="tiny">Gov 51 • Rank 62 • Exec Stand Aside • Align Mixed • Conflict Medium • Stability Moderating</div>
+                <div class="tiny">Gov 51 • Rank 62 • Exec WAIT - HTF/LTF CONFLICT • Tactical No Continuation • Bias Bearish • Conviction Low</div>
               </div>
             </div>
             <div style="text-align:right;">
@@ -352,7 +398,7 @@
               <div>
                 <div><strong>EURUSD</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class="pill pill-amber">Neutral</span></div>
                 <div class="bar-wrap"><div class="bar" style="width:47.5%"></div></div>
-                <div class="tiny">Gov 48 • Rank 76 • Exec Near Trigger • Align Neutral • Conflict Low • Stability Moderating</div>
+                <div class="tiny">Gov 48 • Rank 76 • Exec WAIT • Tactical No Continuation • Bias Neutral • Conviction Low</div>
               </div>
             </div>
             <div style="text-align:right;">
@@ -367,7 +413,7 @@
               <div>
                 <div><strong>USDCAD</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish Building</span></div>
                 <div class="bar-wrap"><div class="bar" style="width:40.75%"></div></div>
-                <div class="tiny">Gov 41 • Rank 60 • Exec Trigger Forming • Align Mixed • Conflict Medium • Stability Moderating</div>
+                <div class="tiny">Gov 41 • Rank 60 • Exec WAIT • Tactical No Continuation • Bias Neutral • Conviction Low</div>
               </div>
             </div>
             <div style="text-align:right;">
@@ -382,7 +428,7 @@
               <div>
                 <div><strong>NAS100</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish</span></div>
                 <div class="bar-wrap"><div class="bar" style="width:39.0%"></div></div>
-                <div class="tiny">Gov 39 • Rank 50 • Exec Trigger Forming • Align Mixed • Conflict High • Stability Moderating</div>
+                <div class="tiny">Gov 39 • Rank 50 • Exec WAIT - HTF/LTF CONFLICT • Tactical Bullish Continuation • Bias Neutral • Conviction Developing</div>
               </div>
             </div>
             <div style="text-align:right;">
@@ -397,7 +443,7 @@
               <div>
                 <div><strong>SP500</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish</span></div>
                 <div class="bar-wrap"><div class="bar" style="width:35.75%"></div></div>
-                <div class="tiny">Gov 36 • Rank 55 • Exec Trigger Forming • Align Mixed • Conflict Medium • Stability Moderating</div>
+                <div class="tiny">Gov 36 • Rank 55 • Exec WAIT • Tactical No Continuation • Bias Neutral • Conviction Low</div>
               </div>
             </div>
             <div style="text-align:right;">
