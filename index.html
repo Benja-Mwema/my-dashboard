@@ -82,14 +82,14 @@
           <p>Governed terminal • Global header, DXY anchor, grouped asset-class tabs • Auto-refresh every 60s</p>
         </div>
         <div class="status-strip">
-          <div class="status-box"><div class="label">Local Time</div><div class="value">20 Mar 2026 13:11</div></div>
+          <div class="status-box"><div class="label">Local Time</div><div class="value">20 Mar 2026 13:36</div></div>
           <div class="status-box"><div class="label">Session</div><div class="value blue">London</div><div class="tiny">Next: London-New York Overlap in 2h</div></div>
           <div class="status-box"><div class="label">Global Regime</div><div class="value green">USD Dominant / Defensive</div><div class="tiny">Composite: 64</div></div>
         </div>
       </div>
 
-      <div class="ticker"><strong>Terminal Ticker:</strong> AUDJPY ■ Neutral 51 • CADJPY ■ Neutral 51 • GOLD ▲ Bullish Weakening 51 • SILVER ▲ Bullish Weakening 51 • GBPJPY ■ Neutral 49 • DAX40 ■ Neutral 48 • WS30 ■ Neutral 48</div>
-      <div class="alert-banner">Governance active — no fully approved trade yet, maintain selective risk.</div>
+      <div class="ticker"><strong>Terminal Ticker:</strong> CADJPY ■ Neutral 51 • GOLD ■ Neutral 49 • SILVER ■ Neutral 49 • GBPJPY ■ Neutral 49 • GBPUSD ▼ Bearish Building 48 • USDCAD ■ Neutral 48 • SP500 ▼ Bearish Building 48</div>
+      <div class="alert-banner">CADJPY ■ Neutral is at TRIGGER stage — waiting for final approval/timing.</div>
 
       <section class="flow-strip" style="margin-bottom:14px;">
         <div class="flow-box">
@@ -129,7 +129,7 @@
         
       <div class="card kpi-card">
         <div class="kpi-label">DXY Composite</div>
-        <div class="kpi-value amber">39.2</div>
+        <div class="kpi-value amber">39.6</div>
         <div class="kpi-sub">Bias present, execution forming</div>
       </div>
     
@@ -143,7 +143,7 @@
         
       <div class="card kpi-card">
         <div class="kpi-label">Execution Ready / Developing</div>
-        <div class="kpi-value green">0 Ready • 0 Developing</div>
+        <div class="kpi-value green">0 Ready • 11 Developing</div>
         <div class="kpi-sub">0 governance-approved</div>
       </div>
     
@@ -193,9 +193,69 @@
                 <thead><tr><th>Rank</th><th>Market</th><th>Direction</th><th>Score</th><th>Regime</th><th>Stage</th><th>Board Flag</th><th>Alignment</th><th>Conflict</th></tr></thead>
                 <tbody>
               <tr>
-                <td colspan="9" style="text-align:center; color:#8da0c6; padding:18px;">
-                  No confirmed board setups in this asset group. Current leaders remain on watchlist pending conflict resolution and timing confirmation.
+                <td colspan="9" style="text-align:center; color:#8da0c6; padding:14px; background:rgba(89,195,255,0.05);">
+                  No board-approved setups yet. Showing highest pre-board candidates.
                 </td>
+              </tr>
+            
+              <tr>
+                <td>1</td>
+                <td>CADJPY</td>
+                <td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td>
+                <td>51</td>
+                <td><span class="pill pill-amber">Neutral</span></td>
+                <td><span class="pill pill-blue">TRIGGER</span></td>
+                <td><span class="pill pill-amber">Pre-Board</span></td>
+                <td>Neutral</td>
+                <td>Low</td>
+              </tr>
+            
+              <tr>
+                <td>2</td>
+                <td>GOLD</td>
+                <td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td>
+                <td>49</td>
+                <td><span class="pill pill-amber">Neutral</span></td>
+                <td><span class="pill pill-blue">TRIGGER</span></td>
+                <td><span class="pill pill-amber">Pre-Board</span></td>
+                <td>Neutral</td>
+                <td>Low</td>
+              </tr>
+            
+              <tr>
+                <td>3</td>
+                <td>SILVER</td>
+                <td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td>
+                <td>49</td>
+                <td><span class="pill pill-amber">Neutral</span></td>
+                <td><span class="pill pill-blue">TRIGGER</span></td>
+                <td><span class="pill pill-amber">Pre-Board</span></td>
+                <td>Neutral</td>
+                <td>Low</td>
+              </tr>
+            
+              <tr>
+                <td>4</td>
+                <td>GBPJPY</td>
+                <td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td>
+                <td>49</td>
+                <td><span class="pill pill-amber">Neutral</span></td>
+                <td><span class="pill pill-blue">TRIGGER</span></td>
+                <td><span class="pill pill-amber">Pre-Board</span></td>
+                <td>Bullish Alignment</td>
+                <td>Low</td>
+              </tr>
+            
+              <tr>
+                <td>5</td>
+                <td>GBPUSD</td>
+                <td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td>
+                <td>48</td>
+                <td><span class="pill pill-red">Bearish Building</span></td>
+                <td><span class="pill pill-blue">TRIGGER</span></td>
+                <td><span class="pill pill-amber">Pre-Board</span></td>
+                <td>Mixed</td>
+                <td>Medium</td>
               </tr>
             </tbody>
               </table>
@@ -203,8 +263,8 @@
 
             <div class="decision">
               <h3>All Top Watchlist Setup</h3>
-              <div class="decision-market">AUDJPY — Neutral</div>
-              <div class="decision-direction"><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> • Stage: <span class="pill pill-green">NEAR TRIGGER</span></div>
+              <div class="decision-market">CADJPY — Neutral</div>
+              <div class="decision-direction"><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> • Stage: <span class="pill pill-blue">TRIGGER</span></div>
               <div class="insight-strip">
                 <span class="insight-item"><strong>Tactical</strong> N/A</span>
                 <span class="insight-item"><strong>Bias</strong> Neutral</span>
@@ -212,7 +272,7 @@
                 <span class="insight-item"><strong>Status</strong> WAIT</span>
                 <span class="insight-item"><strong>Board</strong> None</span>
               </div>
-              <ul class="reason-list"><li>Display regime is &#39;Neutral&#39;.</li><li>Execution state is &#39;Near Trigger&#39;.</li><li>Signal alignment is &#39;Bearish Alignment&#39;.</li><li>Conflict is &#39;Low&#39;.</li><li>Stability is &#39;Moderating&#39;.</li><li>Governed score is 51.</li><li>Gov 51 • Rank 76 • Exec WAIT • Tactical N/A • Bias Neutral • Conviction Developing</li><li>Trade Board promotion is governance-controlled, not dashboard-calculated.</li></ul>
+              <ul class="reason-list"><li>Display regime is &#39;Neutral&#39;.</li><li>Execution state is &#39;Near Trigger&#39;.</li><li>Signal alignment is &#39;Neutral&#39;.</li><li>Conflict is &#39;Low&#39;.</li><li>Stability is &#39;Unstable&#39;.</li><li>Governed score is 51.</li><li>Gov 51 • Rank 70 • Exec WAIT • Tactical N/A • Bias Neutral • Conviction Developing</li><li>Trade Board promotion is governance-controlled, not dashboard-calculated.</li></ul>
             </div>
           </section>
 
@@ -221,18 +281,18 @@
               <h2>All Regime Heat Matrix</h2>
               <table class="mini-table">
                 <thead><tr><th>Market</th><th>Dir</th><th>Structural</th><th>Tactical</th><th>Execution</th><th>Final</th><th>Tactical State</th><th>Bias</th><th>Conviction</th><th>Stability</th><th>Conflict</th><th>State</th></tr></thead>
-                <tbody><tr><td>AUDJPY</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">50</span></td><td><span class="heat green">90</span></td><td><span class="heat amber">51</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>GOLD</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">50</span></td><td><span class="heat green">82</span></td><td><span class="heat amber">51</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>DAX40</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">50</span></td><td><span class="heat green">82</span></td><td><span class="heat amber">48</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>SILVER</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">45</span></td><td><span class="heat amber">51</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>CADJPY</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">50</span></td><td><span class="heat green">72</span></td><td><span class="heat amber">51</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-red'>Unstable</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>GBPJPY</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat green">70</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">60</span></td><td><span class="heat amber">49</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-red'>Unstable</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>GBPUSD</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">50</span></td><td><span class="heat green">82</span></td><td><span class="heat amber">43</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-red'>Unstable</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>WS30</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat green">90</span></td><td><span class="heat amber">50</span></td><td><span class="heat green">82</span></td><td><span class="heat amber">48</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-red'>Unstable</span></td><td><span class='pill pill-amber'>Medium</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>USDCAD</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat green">75</span></td><td><span class="heat amber">50</span></td><td><span class="heat green">72</span></td><td><span class="heat amber">48</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-red'>Unstable</span></td><td><span class='pill pill-amber'>Medium</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>AUDUSD</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat red">25</span></td><td><span class="heat amber">50</span></td><td><span class="heat green">82</span></td><td><span class="heat amber">45</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-red'>Unstable</span></td><td><span class='pill pill-amber'>Medium</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>USDJPY</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat red">18</span></td><td><span class="heat amber">50</span></td><td><span class="heat green">82</span></td><td><span class="heat red">29</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-amber'>Medium</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>NAS100</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat red">25</span></td><td><span class="heat amber">50</span></td><td><span class="heat green">82</span></td><td><span class="heat red">10</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-red'>Unstable</span></td><td><span class='pill pill-amber'>Medium</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>SP500</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">50</span></td><td><span class="heat green">82</span></td><td><span class="heat red">3</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-red'>Unstable</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>EURUSD</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">60</span></td><td><span class="heat red">0</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-red'>Unstable</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-red'>WAIT</span></td></tr></tbody>
+                <tbody><tr><td>GOLD</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">50</span></td><td><span class="heat green">82</span></td><td><span class="heat amber">49</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-blue'>TRIGGER</span></td></tr><tr><td>SILVER</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">50</span></td><td><span class="heat green">72</span></td><td><span class="heat amber">49</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-blue'>TRIGGER</span></td></tr><tr><td>CADJPY</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">50</span></td><td><span class="heat green">72</span></td><td><span class="heat amber">51</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-red'>Unstable</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-blue'>TRIGGER</span></td></tr><tr><td>GBPJPY</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat green">70</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">60</span></td><td><span class="heat amber">49</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-red'>Unstable</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-blue'>TRIGGER</span></td></tr><tr><td>GBPUSD</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat green">75</span></td><td><span class="heat amber">50</span></td><td><span class="heat green">82</span></td><td><span class="heat amber">48</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-red'>Unstable</span></td><td><span class='pill pill-amber'>Medium</span></td><td><span class='pill pill-blue'>TRIGGER</span></td></tr><tr><td>USDCAD</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat green">75</span></td><td><span class="heat amber">50</span></td><td><span class="heat green">72</span></td><td><span class="heat amber">48</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-red'>Unstable</span></td><td><span class='pill pill-amber'>Medium</span></td><td><span class='pill pill-blue'>TRIGGER</span></td></tr><tr><td>AUDJPY</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">50</span></td><td><span class="heat green">90</span></td><td><span class="heat amber">43</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-red'>High</span></td><td><span class='pill pill-blue'>TRIGGER</span></td></tr><tr><td>DAX40</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">50</span></td><td><span class="heat green">82</span></td><td><span class="heat amber">42</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-red'>Unstable</span></td><td><span class='pill pill-amber'>Medium</span></td><td><span class='pill pill-blue'>TRIGGER</span></td></tr><tr><td>SP500</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat green">90</span></td><td><span class="heat amber">50</span></td><td><span class="heat green">82</span></td><td><span class="heat amber">48</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-red'>Unstable</span></td><td><span class='pill pill-red'>High</span></td><td><span class='pill pill-blue'>TRIGGER</span></td></tr><tr><td>WS30</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat green">90</span></td><td><span class="heat amber">50</span></td><td><span class="heat green">82</span></td><td><span class="heat amber">48</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-red'>Unstable</span></td><td><span class='pill pill-red'>High</span></td><td><span class='pill pill-blue'>TRIGGER</span></td></tr><tr><td>AUDUSD</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat red">25</span></td><td><span class="heat amber">50</span></td><td><span class="heat green">82</span></td><td><span class="heat amber">39</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-red'>Unstable</span></td><td><span class='pill pill-amber'>Medium</span></td><td><span class='pill pill-blue'>TRIGGER</span></td></tr><tr><td>USDJPY</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat red">18</span></td><td><span class="heat amber">50</span></td><td><span class="heat green">82</span></td><td><span class="heat red">24</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-red'>Unstable</span></td><td><span class='pill pill-amber'>Medium</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>NAS100</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">50</span></td><td><span class="heat green">82</span></td><td><span class="heat red">4</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-red'>Unstable</span></td><td><span class='pill pill-amber'>Medium</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>EURUSD</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">60</span></td><td><span class="heat red">0</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-red'>Unstable</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-red'>WAIT</span></td></tr></tbody>
               </table>
             </div>
 
             <div class="card">
               <h2>All Strongest</h2>
-              <ul class="compact"><li>AUDJPY <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class='tiny'>Neutral • 51</span></li><li>CADJPY <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class='tiny'>Neutral • 51</span></li><li>GOLD <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class='tiny'>Bullish Weakening • 51</span></li></ul>
+              <ul class="compact"><li>CADJPY <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class='tiny'>Neutral • 51</span></li><li>GOLD <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class='tiny'>Neutral • 49</span></li><li>SILVER <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class='tiny'>Neutral • 49</span></li></ul>
             </div>
 
             <div class="card">
               <h2>All Weakest</h2>
-              <ul class="compact"><li>EURUSD <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class='tiny'>Bearish • 0</span></li><li>SP500 <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class='tiny'>Bearish • 3</span></li><li>NAS100 <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class='tiny'>Bearish • 10</span></li></ul>
+              <ul class="compact"><li>EURUSD <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class='tiny'>Bearish • 0</span></li><li>NAS100 <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class='tiny'>Bearish • 4</span></li><li>USDJPY <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class='tiny'>Bearish • 24</span></li></ul>
             </div>
           </section>
 
@@ -244,9 +304,9 @@
                 <div class="ranking-left">
                   <div class="rank">1</div>
                   <div>
-                    <div><strong>AUDJPY</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class="pill pill-amber">Neutral</span></div>
+                    <div><strong>CADJPY</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class="pill pill-amber">Neutral</span></div>
                     <div class="bar-wrap"><div class="bar" style="width:51.0%"></div></div>
-                    <div class="tiny">Gov 51 • Rank 76 • Stage NEAR TRIGGER • Tactical N/A • Bias Neutral • Conviction Developing</div>
+                    <div class="tiny">Gov 51 • Rank 70 • Stage TRIGGER • Tactical N/A • Bias Neutral • Conviction Developing</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
@@ -259,54 +319,9 @@
                 <div class="ranking-left">
                   <div class="rank">2</div>
                   <div>
-                    <div><strong>CADJPY</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class="pill pill-amber">Neutral</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:51.0%"></div></div>
-                    <div class="tiny">Gov 51 • Rank 65 • Stage NEAR TRIGGER • Tactical N/A • Bias Neutral • Conviction Developing</div>
-                  </div>
-                </div>
-                <div style="text-align:right;">
-                  <div><strong>51%</strong></div>
-                  <div><span class="pill pill-green">Near Trigger</span></div>
-                </div>
-              </div>
-            
-              <div class="ranking-item">
-                <div class="ranking-left">
-                  <div class="rank">3</div>
-                  <div>
-                    <div><strong>GOLD</strong> <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class="pill pill-green">Bullish Weakening</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:50.6%"></div></div>
-                    <div class="tiny">Gov 51 • Rank 76 • Stage NEAR TRIGGER • Tactical N/A • Bias Neutral • Conviction Developing</div>
-                  </div>
-                </div>
-                <div style="text-align:right;">
-                  <div><strong>51%</strong></div>
-                  <div><span class="pill pill-green">Near Trigger</span></div>
-                </div>
-              </div>
-            
-              <div class="ranking-item">
-                <div class="ranking-left">
-                  <div class="rank">4</div>
-                  <div>
-                    <div><strong>SILVER</strong> <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class="pill pill-green">Bullish Weakening</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:50.6%"></div></div>
-                    <div class="tiny">Gov 51 • Rank 72 • Stage TRIGGER FORMING • Tactical N/A • Bias Neutral • Conviction Developing</div>
-                  </div>
-                </div>
-                <div style="text-align:right;">
-                  <div><strong>51%</strong></div>
-                  <div><span class="pill pill-amber">Trigger Forming</span></div>
-                </div>
-              </div>
-            
-              <div class="ranking-item">
-                <div class="ranking-left">
-                  <div class="rank">5</div>
-                  <div>
-                    <div><strong>GBPJPY</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class="pill pill-amber">Neutral</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:49.0%"></div></div>
-                    <div class="tiny">Gov 49 • Rank 63 • Stage NEAR TRIGGER • Tactical N/A • Bias Neutral • Conviction Developing</div>
+                    <div><strong>GOLD</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class="pill pill-amber">Neutral</span></div>
+                    <div class="bar-wrap"><div class="bar" style="width:49.46%"></div></div>
+                    <div class="tiny">Gov 49 • Rank 79 • Stage TRIGGER • Tactical N/A • Bias Neutral • Conviction Developing</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
@@ -317,11 +332,56 @@
             
               <div class="ranking-item">
                 <div class="ranking-left">
+                  <div class="rank">3</div>
+                  <div>
+                    <div><strong>SILVER</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class="pill pill-amber">Neutral</span></div>
+                    <div class="bar-wrap"><div class="bar" style="width:49.46%"></div></div>
+                    <div class="tiny">Gov 49 • Rank 79 • Stage TRIGGER • Tactical N/A • Bias Neutral • Conviction Developing</div>
+                  </div>
+                </div>
+                <div style="text-align:right;">
+                  <div><strong>49%</strong></div>
+                  <div><span class="pill pill-green">Near Trigger</span></div>
+                </div>
+              </div>
+            
+              <div class="ranking-item">
+                <div class="ranking-left">
+                  <div class="rank">4</div>
+                  <div>
+                    <div><strong>GBPJPY</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class="pill pill-amber">Neutral</span></div>
+                    <div class="bar-wrap"><div class="bar" style="width:49.0%"></div></div>
+                    <div class="tiny">Gov 49 • Rank 68 • Stage TRIGGER • Tactical N/A • Bias Neutral • Conviction Developing</div>
+                  </div>
+                </div>
+                <div style="text-align:right;">
+                  <div><strong>49%</strong></div>
+                  <div><span class="pill pill-green">Near Trigger</span></div>
+                </div>
+              </div>
+            
+              <div class="ranking-item">
+                <div class="ranking-left">
+                  <div class="rank">5</div>
+                  <div>
+                    <div><strong>GBPUSD</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish Building</span></div>
+                    <div class="bar-wrap"><div class="bar" style="width:48.0%"></div></div>
+                    <div class="tiny">Gov 48 • Rank 61 • Stage TRIGGER • Tactical N/A • Bias Neutral • Conviction Developing</div>
+                  </div>
+                </div>
+                <div style="text-align:right;">
+                  <div><strong>48%</strong></div>
+                  <div><span class="pill pill-green">Near Trigger</span></div>
+                </div>
+              </div>
+            
+              <div class="ranking-item">
+                <div class="ranking-left">
                   <div class="rank">6</div>
                   <div>
-                    <div><strong>DAX40</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class="pill pill-amber">Neutral</span></div>
+                    <div><strong>USDCAD</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class="pill pill-amber">Neutral</span></div>
                     <div class="bar-wrap"><div class="bar" style="width:48.0%"></div></div>
-                    <div class="tiny">Gov 48 • Rank 73 • Stage NEAR TRIGGER • Tactical N/A • Bias Neutral • Conviction Developing</div>
+                    <div class="tiny">Gov 48 • Rank 61 • Stage TRIGGER • Tactical N/A • Bias Neutral • Conviction Developing</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
@@ -334,9 +394,9 @@
                 <div class="ranking-left">
                   <div class="rank">7</div>
                   <div>
-                    <div><strong>WS30</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class="pill pill-amber">Neutral</span></div>
+                    <div><strong>SP500</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish Building</span></div>
                     <div class="bar-wrap"><div class="bar" style="width:48.0%"></div></div>
-                    <div class="tiny">Gov 48 • Rank 56 • Stage NEAR TRIGGER • Tactical N/A • Bias Neutral • Conviction Developing</div>
+                    <div class="tiny">Gov 48 • Rank 51 • Stage TRIGGER • Tactical N/A • Bias Neutral • Conviction Developing</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
@@ -349,9 +409,9 @@
                 <div class="ranking-left">
                   <div class="rank">8</div>
                   <div>
-                    <div><strong>USDCAD</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class="pill pill-amber">Neutral</span></div>
+                    <div><strong>WS30</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class="pill pill-amber">Neutral</span></div>
                     <div class="bar-wrap"><div class="bar" style="width:48.0%"></div></div>
-                    <div class="tiny">Gov 48 • Rank 56 • Stage NEAR TRIGGER • Tactical N/A • Bias Neutral • Conviction Developing</div>
+                    <div class="tiny">Gov 48 • Rank 51 • Stage TRIGGER • Tactical N/A • Bias Neutral • Conviction Developing</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
@@ -364,24 +424,9 @@
                 <div class="ranking-left">
                   <div class="rank">9</div>
                   <div>
-                    <div><strong>AUDUSD</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class="pill pill-amber">Neutral</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:45.0%"></div></div>
-                    <div class="tiny">Gov 45 • Rank 53 • Stage NEAR TRIGGER • Tactical N/A • Bias Neutral • Conviction Developing</div>
-                  </div>
-                </div>
-                <div style="text-align:right;">
-                  <div><strong>45%</strong></div>
-                  <div><span class="pill pill-green">Near Trigger</span></div>
-                </div>
-              </div>
-            
-              <div class="ranking-item">
-                <div class="ranking-left">
-                  <div class="rank">10</div>
-                  <div>
-                    <div><strong>GBPUSD</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish Building</span></div>
+                    <div><strong>AUDJPY</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish Building</span></div>
                     <div class="bar-wrap"><div class="bar" style="width:43.0%"></div></div>
-                    <div class="tiny">Gov 43 • Rank 57 • Stage NEAR TRIGGER • Tactical N/A • Bias Neutral • Conviction Developing</div>
+                    <div class="tiny">Gov 43 • Rank 57 • Stage TRIGGER • Tactical N/A • Bias Neutral • Conviction Developing</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
@@ -392,15 +437,30 @@
             
               <div class="ranking-item">
                 <div class="ranking-left">
-                  <div class="rank">11</div>
+                  <div class="rank">10</div>
                   <div>
-                    <div><strong>USDJPY</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:28.89%"></div></div>
-                    <div class="tiny">Gov 29 • Rank 44 • Stage TRIGGER FORMING • Tactical N/A • Bias Neutral • Conviction Developing</div>
+                    <div><strong>DAX40</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish Building</span></div>
+                    <div class="bar-wrap"><div class="bar" style="width:42.0%"></div></div>
+                    <div class="tiny">Gov 42 • Rank 55 • Stage TRIGGER • Tactical N/A • Bias Neutral • Conviction Developing</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
-                  <div><strong>29%</strong></div>
+                  <div><strong>42%</strong></div>
+                  <div><span class="pill pill-green">Near Trigger</span></div>
+                </div>
+              </div>
+            
+              <div class="ranking-item">
+                <div class="ranking-left">
+                  <div class="rank">11</div>
+                  <div>
+                    <div><strong>AUDUSD</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish</span></div>
+                    <div class="bar-wrap"><div class="bar" style="width:39.0%"></div></div>
+                    <div class="tiny">Gov 39 • Rank 48 • Stage TRIGGER • Tactical N/A • Bias Neutral • Conviction Developing</div>
+                  </div>
+                </div>
+                <div style="text-align:right;">
+                  <div><strong>39%</strong></div>
                   <div><span class="pill pill-amber">Trigger Forming</span></div>
                 </div>
               </div>
@@ -409,13 +469,13 @@
                 <div class="ranking-left">
                   <div class="rank">12</div>
                   <div>
-                    <div><strong>NAS100</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:9.75%"></div></div>
-                    <div class="tiny">Gov 10 • Rank 6 • Stage STAND ASIDE • Tactical N/A • Bias Neutral • Conviction Developing</div>
+                    <div><strong>USDJPY</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish</span></div>
+                    <div class="bar-wrap"><div class="bar" style="width:23.7%"></div></div>
+                    <div class="tiny">Gov 24 • Rank 10 • Stage WAIT • Tactical N/A • Bias Neutral • Conviction Developing</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
-                  <div><strong>10%</strong></div>
+                  <div><strong>24%</strong></div>
                   <div><span class="pill pill-red">Stand Aside</span></div>
                 </div>
               </div>
@@ -424,13 +484,13 @@
                 <div class="ranking-left">
                   <div class="rank">13</div>
                   <div>
-                    <div><strong>SP500</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:3.0%"></div></div>
-                    <div class="tiny">Gov 3 • Rank 5 • Stage STAND ASIDE • Tactical N/A • Bias Neutral • Conviction Developing</div>
+                    <div><strong>NAS100</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish</span></div>
+                    <div class="bar-wrap"><div class="bar" style="width:3.75%"></div></div>
+                    <div class="tiny">Gov 4 • Rank 0 • Stage WAIT • Tactical N/A • Bias Neutral • Conviction Developing</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
-                  <div><strong>3%</strong></div>
+                  <div><strong>4%</strong></div>
                   <div><span class="pill pill-red">Stand Aside</span></div>
                 </div>
               </div>
@@ -441,7 +501,7 @@
                   <div>
                     <div><strong>EURUSD</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish</span></div>
                     <div class="bar-wrap"><div class="bar" style="width:0%"></div></div>
-                    <div class="tiny">Gov 0 • Rank 2 • Stage STAND ASIDE • Tactical N/A • Bias Neutral • Conviction Developing</div>
+                    <div class="tiny">Gov 0 • Rank 0 • Stage WAIT • Tactical N/A • Bias Neutral • Conviction Developing</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
@@ -462,9 +522,69 @@
                 <thead><tr><th>Rank</th><th>Market</th><th>Direction</th><th>Score</th><th>Regime</th><th>Stage</th><th>Board Flag</th><th>Alignment</th><th>Conflict</th></tr></thead>
                 <tbody>
               <tr>
-                <td colspan="9" style="text-align:center; color:#8da0c6; padding:18px;">
-                  No confirmed board setups in this asset group. Current leaders remain on watchlist pending conflict resolution and timing confirmation.
+                <td colspan="9" style="text-align:center; color:#8da0c6; padding:14px; background:rgba(89,195,255,0.05);">
+                  No board-approved setups yet. Showing highest pre-board candidates.
                 </td>
+              </tr>
+            
+              <tr>
+                <td>1</td>
+                <td>CADJPY</td>
+                <td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td>
+                <td>51</td>
+                <td><span class="pill pill-amber">Neutral</span></td>
+                <td><span class="pill pill-blue">TRIGGER</span></td>
+                <td><span class="pill pill-amber">Pre-Board</span></td>
+                <td>Neutral</td>
+                <td>Low</td>
+              </tr>
+            
+              <tr>
+                <td>2</td>
+                <td>GBPJPY</td>
+                <td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td>
+                <td>49</td>
+                <td><span class="pill pill-amber">Neutral</span></td>
+                <td><span class="pill pill-blue">TRIGGER</span></td>
+                <td><span class="pill pill-amber">Pre-Board</span></td>
+                <td>Bullish Alignment</td>
+                <td>Low</td>
+              </tr>
+            
+              <tr>
+                <td>3</td>
+                <td>GBPUSD</td>
+                <td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td>
+                <td>48</td>
+                <td><span class="pill pill-red">Bearish Building</span></td>
+                <td><span class="pill pill-blue">TRIGGER</span></td>
+                <td><span class="pill pill-amber">Pre-Board</span></td>
+                <td>Mixed</td>
+                <td>Medium</td>
+              </tr>
+            
+              <tr>
+                <td>4</td>
+                <td>USDCAD</td>
+                <td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td>
+                <td>48</td>
+                <td><span class="pill pill-amber">Neutral</span></td>
+                <td><span class="pill pill-blue">TRIGGER</span></td>
+                <td><span class="pill pill-amber">Pre-Board</span></td>
+                <td>Mixed</td>
+                <td>Medium</td>
+              </tr>
+            
+              <tr>
+                <td>5</td>
+                <td>AUDJPY</td>
+                <td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td>
+                <td>43</td>
+                <td><span class="pill pill-red">Bearish Building</span></td>
+                <td><span class="pill pill-blue">TRIGGER</span></td>
+                <td><span class="pill pill-amber">Pre-Board</span></td>
+                <td>Mixed</td>
+                <td>High</td>
               </tr>
             </tbody>
               </table>
@@ -472,8 +592,8 @@
 
             <div class="decision">
               <h3>Currencies Top Watchlist Setup</h3>
-              <div class="decision-market">AUDJPY — Neutral</div>
-              <div class="decision-direction"><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> • Stage: <span class="pill pill-green">NEAR TRIGGER</span></div>
+              <div class="decision-market">CADJPY — Neutral</div>
+              <div class="decision-direction"><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> • Stage: <span class="pill pill-blue">TRIGGER</span></div>
               <div class="insight-strip">
                 <span class="insight-item"><strong>Tactical</strong> N/A</span>
                 <span class="insight-item"><strong>Bias</strong> Neutral</span>
@@ -481,7 +601,7 @@
                 <span class="insight-item"><strong>Status</strong> WAIT</span>
                 <span class="insight-item"><strong>Board</strong> None</span>
               </div>
-              <ul class="reason-list"><li>Display regime is &#39;Neutral&#39;.</li><li>Execution state is &#39;Near Trigger&#39;.</li><li>Signal alignment is &#39;Bearish Alignment&#39;.</li><li>Conflict is &#39;Low&#39;.</li><li>Stability is &#39;Moderating&#39;.</li><li>Governed score is 51.</li><li>Gov 51 • Rank 76 • Exec WAIT • Tactical N/A • Bias Neutral • Conviction Developing</li><li>Trade Board promotion is governance-controlled, not dashboard-calculated.</li></ul>
+              <ul class="reason-list"><li>Display regime is &#39;Neutral&#39;.</li><li>Execution state is &#39;Near Trigger&#39;.</li><li>Signal alignment is &#39;Neutral&#39;.</li><li>Conflict is &#39;Low&#39;.</li><li>Stability is &#39;Unstable&#39;.</li><li>Governed score is 51.</li><li>Gov 51 • Rank 70 • Exec WAIT • Tactical N/A • Bias Neutral • Conviction Developing</li><li>Trade Board promotion is governance-controlled, not dashboard-calculated.</li></ul>
             </div>
           </section>
 
@@ -490,18 +610,18 @@
               <h2>Currencies Regime Heat Matrix</h2>
               <table class="mini-table">
                 <thead><tr><th>Market</th><th>Dir</th><th>Structural</th><th>Tactical</th><th>Execution</th><th>Final</th><th>Tactical State</th><th>Bias</th><th>Conviction</th><th>Stability</th><th>Conflict</th><th>State</th></tr></thead>
-                <tbody><tr><td>AUDJPY</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">50</span></td><td><span class="heat green">90</span></td><td><span class="heat amber">51</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>CADJPY</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">50</span></td><td><span class="heat green">72</span></td><td><span class="heat amber">51</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-red'>Unstable</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>GBPJPY</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat green">70</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">60</span></td><td><span class="heat amber">49</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-red'>Unstable</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>GBPUSD</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">50</span></td><td><span class="heat green">82</span></td><td><span class="heat amber">43</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-red'>Unstable</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>USDCAD</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat green">75</span></td><td><span class="heat amber">50</span></td><td><span class="heat green">72</span></td><td><span class="heat amber">48</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-red'>Unstable</span></td><td><span class='pill pill-amber'>Medium</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>AUDUSD</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat red">25</span></td><td><span class="heat amber">50</span></td><td><span class="heat green">82</span></td><td><span class="heat amber">45</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-red'>Unstable</span></td><td><span class='pill pill-amber'>Medium</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>USDJPY</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat red">18</span></td><td><span class="heat amber">50</span></td><td><span class="heat green">82</span></td><td><span class="heat red">29</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-amber'>Medium</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>EURUSD</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">60</span></td><td><span class="heat red">0</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-red'>Unstable</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-red'>WAIT</span></td></tr></tbody>
+                <tbody><tr><td>CADJPY</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">50</span></td><td><span class="heat green">72</span></td><td><span class="heat amber">51</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-red'>Unstable</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-blue'>TRIGGER</span></td></tr><tr><td>GBPJPY</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat green">70</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">60</span></td><td><span class="heat amber">49</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-red'>Unstable</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-blue'>TRIGGER</span></td></tr><tr><td>GBPUSD</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat green">75</span></td><td><span class="heat amber">50</span></td><td><span class="heat green">82</span></td><td><span class="heat amber">48</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-red'>Unstable</span></td><td><span class='pill pill-amber'>Medium</span></td><td><span class='pill pill-blue'>TRIGGER</span></td></tr><tr><td>USDCAD</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat green">75</span></td><td><span class="heat amber">50</span></td><td><span class="heat green">72</span></td><td><span class="heat amber">48</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-red'>Unstable</span></td><td><span class='pill pill-amber'>Medium</span></td><td><span class='pill pill-blue'>TRIGGER</span></td></tr><tr><td>AUDJPY</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">50</span></td><td><span class="heat green">90</span></td><td><span class="heat amber">43</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-red'>High</span></td><td><span class='pill pill-blue'>TRIGGER</span></td></tr><tr><td>AUDUSD</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat red">25</span></td><td><span class="heat amber">50</span></td><td><span class="heat green">82</span></td><td><span class="heat amber">39</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-red'>Unstable</span></td><td><span class='pill pill-amber'>Medium</span></td><td><span class='pill pill-blue'>TRIGGER</span></td></tr><tr><td>USDJPY</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat red">18</span></td><td><span class="heat amber">50</span></td><td><span class="heat green">82</span></td><td><span class="heat red">24</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-red'>Unstable</span></td><td><span class='pill pill-amber'>Medium</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>EURUSD</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">60</span></td><td><span class="heat red">0</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-red'>Unstable</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-red'>WAIT</span></td></tr></tbody>
               </table>
             </div>
 
             <div class="card">
               <h2>Currencies Strongest</h2>
-              <ul class="compact"><li>AUDJPY <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class='tiny'>Neutral • 51</span></li><li>CADJPY <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class='tiny'>Neutral • 51</span></li><li>GBPJPY <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class='tiny'>Neutral • 49</span></li></ul>
+              <ul class="compact"><li>CADJPY <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class='tiny'>Neutral • 51</span></li><li>GBPJPY <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class='tiny'>Neutral • 49</span></li><li>GBPUSD <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class='tiny'>Bearish Building • 48</span></li></ul>
             </div>
 
             <div class="card">
               <h2>Currencies Weakest</h2>
-              <ul class="compact"><li>EURUSD <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class='tiny'>Bearish • 0</span></li><li>USDJPY <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class='tiny'>Bearish • 29</span></li><li>GBPUSD <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class='tiny'>Bearish Building • 43</span></li></ul>
+              <ul class="compact"><li>EURUSD <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class='tiny'>Bearish • 0</span></li><li>USDJPY <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class='tiny'>Bearish • 24</span></li><li>AUDUSD <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class='tiny'>Bearish • 39</span></li></ul>
             </div>
           </section>
 
@@ -513,9 +633,9 @@
                 <div class="ranking-left">
                   <div class="rank">1</div>
                   <div>
-                    <div><strong>AUDJPY</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class="pill pill-amber">Neutral</span></div>
+                    <div><strong>CADJPY</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class="pill pill-amber">Neutral</span></div>
                     <div class="bar-wrap"><div class="bar" style="width:51.0%"></div></div>
-                    <div class="tiny">Gov 51 • Rank 76 • Stage NEAR TRIGGER • Tactical N/A • Bias Neutral • Conviction Developing</div>
+                    <div class="tiny">Gov 51 • Rank 70 • Stage TRIGGER • Tactical N/A • Bias Neutral • Conviction Developing</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
@@ -528,24 +648,9 @@
                 <div class="ranking-left">
                   <div class="rank">2</div>
                   <div>
-                    <div><strong>CADJPY</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class="pill pill-amber">Neutral</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:51.0%"></div></div>
-                    <div class="tiny">Gov 51 • Rank 65 • Stage NEAR TRIGGER • Tactical N/A • Bias Neutral • Conviction Developing</div>
-                  </div>
-                </div>
-                <div style="text-align:right;">
-                  <div><strong>51%</strong></div>
-                  <div><span class="pill pill-green">Near Trigger</span></div>
-                </div>
-              </div>
-            
-              <div class="ranking-item">
-                <div class="ranking-left">
-                  <div class="rank">3</div>
-                  <div>
                     <div><strong>GBPJPY</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class="pill pill-amber">Neutral</span></div>
                     <div class="bar-wrap"><div class="bar" style="width:49.0%"></div></div>
-                    <div class="tiny">Gov 49 • Rank 63 • Stage NEAR TRIGGER • Tactical N/A • Bias Neutral • Conviction Developing</div>
+                    <div class="tiny">Gov 49 • Rank 68 • Stage TRIGGER • Tactical N/A • Bias Neutral • Conviction Developing</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
@@ -556,11 +661,26 @@
             
               <div class="ranking-item">
                 <div class="ranking-left">
+                  <div class="rank">3</div>
+                  <div>
+                    <div><strong>GBPUSD</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish Building</span></div>
+                    <div class="bar-wrap"><div class="bar" style="width:48.0%"></div></div>
+                    <div class="tiny">Gov 48 • Rank 61 • Stage TRIGGER • Tactical N/A • Bias Neutral • Conviction Developing</div>
+                  </div>
+                </div>
+                <div style="text-align:right;">
+                  <div><strong>48%</strong></div>
+                  <div><span class="pill pill-green">Near Trigger</span></div>
+                </div>
+              </div>
+            
+              <div class="ranking-item">
+                <div class="ranking-left">
                   <div class="rank">4</div>
                   <div>
                     <div><strong>USDCAD</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class="pill pill-amber">Neutral</span></div>
                     <div class="bar-wrap"><div class="bar" style="width:48.0%"></div></div>
-                    <div class="tiny">Gov 48 • Rank 56 • Stage NEAR TRIGGER • Tactical N/A • Bias Neutral • Conviction Developing</div>
+                    <div class="tiny">Gov 48 • Rank 61 • Stage TRIGGER • Tactical N/A • Bias Neutral • Conviction Developing</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
@@ -573,24 +693,9 @@
                 <div class="ranking-left">
                   <div class="rank">5</div>
                   <div>
-                    <div><strong>AUDUSD</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class="pill pill-amber">Neutral</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:45.0%"></div></div>
-                    <div class="tiny">Gov 45 • Rank 53 • Stage NEAR TRIGGER • Tactical N/A • Bias Neutral • Conviction Developing</div>
-                  </div>
-                </div>
-                <div style="text-align:right;">
-                  <div><strong>45%</strong></div>
-                  <div><span class="pill pill-green">Near Trigger</span></div>
-                </div>
-              </div>
-            
-              <div class="ranking-item">
-                <div class="ranking-left">
-                  <div class="rank">6</div>
-                  <div>
-                    <div><strong>GBPUSD</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish Building</span></div>
+                    <div><strong>AUDJPY</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish Building</span></div>
                     <div class="bar-wrap"><div class="bar" style="width:43.0%"></div></div>
-                    <div class="tiny">Gov 43 • Rank 57 • Stage NEAR TRIGGER • Tactical N/A • Bias Neutral • Conviction Developing</div>
+                    <div class="tiny">Gov 43 • Rank 57 • Stage TRIGGER • Tactical N/A • Bias Neutral • Conviction Developing</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
@@ -601,16 +706,31 @@
             
               <div class="ranking-item">
                 <div class="ranking-left">
-                  <div class="rank">7</div>
+                  <div class="rank">6</div>
                   <div>
-                    <div><strong>USDJPY</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:28.89%"></div></div>
-                    <div class="tiny">Gov 29 • Rank 44 • Stage TRIGGER FORMING • Tactical N/A • Bias Neutral • Conviction Developing</div>
+                    <div><strong>AUDUSD</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish</span></div>
+                    <div class="bar-wrap"><div class="bar" style="width:39.0%"></div></div>
+                    <div class="tiny">Gov 39 • Rank 48 • Stage TRIGGER • Tactical N/A • Bias Neutral • Conviction Developing</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
-                  <div><strong>29%</strong></div>
+                  <div><strong>39%</strong></div>
                   <div><span class="pill pill-amber">Trigger Forming</span></div>
+                </div>
+              </div>
+            
+              <div class="ranking-item">
+                <div class="ranking-left">
+                  <div class="rank">7</div>
+                  <div>
+                    <div><strong>USDJPY</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish</span></div>
+                    <div class="bar-wrap"><div class="bar" style="width:23.7%"></div></div>
+                    <div class="tiny">Gov 24 • Rank 10 • Stage WAIT • Tactical N/A • Bias Neutral • Conviction Developing</div>
+                  </div>
+                </div>
+                <div style="text-align:right;">
+                  <div><strong>24%</strong></div>
+                  <div><span class="pill pill-red">Stand Aside</span></div>
                 </div>
               </div>
             
@@ -620,7 +740,7 @@
                   <div>
                     <div><strong>EURUSD</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish</span></div>
                     <div class="bar-wrap"><div class="bar" style="width:0%"></div></div>
-                    <div class="tiny">Gov 0 • Rank 2 • Stage STAND ASIDE • Tactical N/A • Bias Neutral • Conviction Developing</div>
+                    <div class="tiny">Gov 0 • Rank 0 • Stage WAIT • Tactical N/A • Bias Neutral • Conviction Developing</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
@@ -641,9 +761,33 @@
                 <thead><tr><th>Rank</th><th>Market</th><th>Direction</th><th>Score</th><th>Regime</th><th>Stage</th><th>Board Flag</th><th>Alignment</th><th>Conflict</th></tr></thead>
                 <tbody>
               <tr>
-                <td colspan="9" style="text-align:center; color:#8da0c6; padding:18px;">
-                  No confirmed board setups in this asset group. Current leaders remain on watchlist pending conflict resolution and timing confirmation.
+                <td colspan="9" style="text-align:center; color:#8da0c6; padding:14px; background:rgba(89,195,255,0.05);">
+                  No board-approved setups yet. Showing highest pre-board candidates.
                 </td>
+              </tr>
+            
+              <tr>
+                <td>1</td>
+                <td>GOLD</td>
+                <td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td>
+                <td>49</td>
+                <td><span class="pill pill-amber">Neutral</span></td>
+                <td><span class="pill pill-blue">TRIGGER</span></td>
+                <td><span class="pill pill-amber">Pre-Board</span></td>
+                <td>Neutral</td>
+                <td>Low</td>
+              </tr>
+            
+              <tr>
+                <td>2</td>
+                <td>SILVER</td>
+                <td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td>
+                <td>49</td>
+                <td><span class="pill pill-amber">Neutral</span></td>
+                <td><span class="pill pill-blue">TRIGGER</span></td>
+                <td><span class="pill pill-amber">Pre-Board</span></td>
+                <td>Neutral</td>
+                <td>Low</td>
               </tr>
             </tbody>
               </table>
@@ -651,8 +795,8 @@
 
             <div class="decision">
               <h3>Metals Top Watchlist Setup</h3>
-              <div class="decision-market">GOLD — Bullish Weakening</div>
-              <div class="decision-direction"><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> • Stage: <span class="pill pill-green">NEAR TRIGGER</span></div>
+              <div class="decision-market">GOLD — Neutral</div>
+              <div class="decision-direction"><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> • Stage: <span class="pill pill-blue">TRIGGER</span></div>
               <div class="insight-strip">
                 <span class="insight-item"><strong>Tactical</strong> N/A</span>
                 <span class="insight-item"><strong>Bias</strong> Neutral</span>
@@ -660,7 +804,7 @@
                 <span class="insight-item"><strong>Status</strong> WAIT</span>
                 <span class="insight-item"><strong>Board</strong> None</span>
               </div>
-              <ul class="reason-list"><li>Display regime is &#39;Bullish Weakening&#39;.</li><li>Execution state is &#39;Near Trigger&#39;.</li><li>Signal alignment is &#39;Neutral&#39;.</li><li>Conflict is &#39;Low&#39;.</li><li>Stability is &#39;Moderating&#39;.</li><li>Governed score is 51.</li><li>Gov 51 • Rank 76 • Exec WAIT • Tactical N/A • Bias Neutral • Conviction Developing</li><li>Trade Board promotion is governance-controlled, not dashboard-calculated.</li></ul>
+              <ul class="reason-list"><li>Display regime is &#39;Neutral&#39;.</li><li>Execution state is &#39;Near Trigger&#39;.</li><li>Signal alignment is &#39;Neutral&#39;.</li><li>Conflict is &#39;Low&#39;.</li><li>Stability is &#39;Moderating&#39;.</li><li>Governed score is 49.</li><li>Gov 49 • Rank 79 • Exec WAIT • Tactical N/A • Bias Neutral • Conviction Developing</li><li>Trade Board promotion is governance-controlled, not dashboard-calculated.</li></ul>
             </div>
           </section>
 
@@ -669,18 +813,18 @@
               <h2>Metals Regime Heat Matrix</h2>
               <table class="mini-table">
                 <thead><tr><th>Market</th><th>Dir</th><th>Structural</th><th>Tactical</th><th>Execution</th><th>Final</th><th>Tactical State</th><th>Bias</th><th>Conviction</th><th>Stability</th><th>Conflict</th><th>State</th></tr></thead>
-                <tbody><tr><td>GOLD</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">50</span></td><td><span class="heat green">82</span></td><td><span class="heat amber">51</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>SILVER</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">45</span></td><td><span class="heat amber">51</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-red'>WAIT</span></td></tr></tbody>
+                <tbody><tr><td>GOLD</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">50</span></td><td><span class="heat green">82</span></td><td><span class="heat amber">49</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-blue'>TRIGGER</span></td></tr><tr><td>SILVER</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">50</span></td><td><span class="heat green">72</span></td><td><span class="heat amber">49</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-blue'>TRIGGER</span></td></tr></tbody>
               </table>
             </div>
 
             <div class="card">
               <h2>Metals Strongest</h2>
-              <ul class="compact"><li>GOLD <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class='tiny'>Bullish Weakening • 51</span></li><li>SILVER <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class='tiny'>Bullish Weakening • 51</span></li></ul>
+              <ul class="compact"><li>GOLD <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class='tiny'>Neutral • 49</span></li><li>SILVER <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class='tiny'>Neutral • 49</span></li></ul>
             </div>
 
             <div class="card">
               <h2>Metals Weakest</h2>
-              <ul class="compact"><li>GOLD <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class='tiny'>Bullish Weakening • 51</span></li><li>SILVER <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class='tiny'>Bullish Weakening • 51</span></li></ul>
+              <ul class="compact"><li>GOLD <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class='tiny'>Neutral • 49</span></li><li>SILVER <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class='tiny'>Neutral • 49</span></li></ul>
             </div>
           </section>
 
@@ -692,13 +836,13 @@
                 <div class="ranking-left">
                   <div class="rank">1</div>
                   <div>
-                    <div><strong>GOLD</strong> <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class="pill pill-green">Bullish Weakening</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:50.6%"></div></div>
-                    <div class="tiny">Gov 51 • Rank 76 • Stage NEAR TRIGGER • Tactical N/A • Bias Neutral • Conviction Developing</div>
+                    <div><strong>GOLD</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class="pill pill-amber">Neutral</span></div>
+                    <div class="bar-wrap"><div class="bar" style="width:49.46%"></div></div>
+                    <div class="tiny">Gov 49 • Rank 79 • Stage TRIGGER • Tactical N/A • Bias Neutral • Conviction Developing</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
-                  <div><strong>51%</strong></div>
+                  <div><strong>49%</strong></div>
                   <div><span class="pill pill-green">Near Trigger</span></div>
                 </div>
               </div>
@@ -707,14 +851,14 @@
                 <div class="ranking-left">
                   <div class="rank">2</div>
                   <div>
-                    <div><strong>SILVER</strong> <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class="pill pill-green">Bullish Weakening</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:50.6%"></div></div>
-                    <div class="tiny">Gov 51 • Rank 72 • Stage TRIGGER FORMING • Tactical N/A • Bias Neutral • Conviction Developing</div>
+                    <div><strong>SILVER</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class="pill pill-amber">Neutral</span></div>
+                    <div class="bar-wrap"><div class="bar" style="width:49.46%"></div></div>
+                    <div class="tiny">Gov 49 • Rank 79 • Stage TRIGGER • Tactical N/A • Bias Neutral • Conviction Developing</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
-                  <div><strong>51%</strong></div>
-                  <div><span class="pill pill-amber">Trigger Forming</span></div>
+                  <div><strong>49%</strong></div>
+                  <div><span class="pill pill-green">Near Trigger</span></div>
                 </div>
               </div>
             
@@ -730,9 +874,45 @@
                 <thead><tr><th>Rank</th><th>Market</th><th>Direction</th><th>Score</th><th>Regime</th><th>Stage</th><th>Board Flag</th><th>Alignment</th><th>Conflict</th></tr></thead>
                 <tbody>
               <tr>
-                <td colspan="9" style="text-align:center; color:#8da0c6; padding:18px;">
-                  No confirmed board setups in this asset group. Current leaders remain on watchlist pending conflict resolution and timing confirmation.
+                <td colspan="9" style="text-align:center; color:#8da0c6; padding:14px; background:rgba(89,195,255,0.05);">
+                  No board-approved setups yet. Showing highest pre-board candidates.
                 </td>
+              </tr>
+            
+              <tr>
+                <td>1</td>
+                <td>SP500</td>
+                <td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td>
+                <td>48</td>
+                <td><span class="pill pill-red">Bearish Building</span></td>
+                <td><span class="pill pill-blue">TRIGGER</span></td>
+                <td><span class="pill pill-amber">Pre-Board</span></td>
+                <td>Mixed</td>
+                <td>High</td>
+              </tr>
+            
+              <tr>
+                <td>2</td>
+                <td>WS30</td>
+                <td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td>
+                <td>48</td>
+                <td><span class="pill pill-amber">Neutral</span></td>
+                <td><span class="pill pill-blue">TRIGGER</span></td>
+                <td><span class="pill pill-amber">Pre-Board</span></td>
+                <td>Mixed</td>
+                <td>High</td>
+              </tr>
+            
+              <tr>
+                <td>3</td>
+                <td>DAX40</td>
+                <td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td>
+                <td>42</td>
+                <td><span class="pill pill-red">Bearish Building</span></td>
+                <td><span class="pill pill-blue">TRIGGER</span></td>
+                <td><span class="pill pill-amber">Pre-Board</span></td>
+                <td>Mixed</td>
+                <td>Medium</td>
               </tr>
             </tbody>
               </table>
@@ -740,16 +920,16 @@
 
             <div class="decision">
               <h3>Indices Top Watchlist Setup</h3>
-              <div class="decision-market">DAX40 — Neutral</div>
-              <div class="decision-direction"><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> • Stage: <span class="pill pill-green">NEAR TRIGGER</span></div>
+              <div class="decision-market">SP500 — Bearish Building</div>
+              <div class="decision-direction"><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> • Stage: <span class="pill pill-blue">TRIGGER</span></div>
               <div class="insight-strip">
                 <span class="insight-item"><strong>Tactical</strong> N/A</span>
                 <span class="insight-item"><strong>Bias</strong> Neutral</span>
                 <span class="insight-item"><strong>Conviction</strong> Developing</span>
-                <span class="insight-item"><strong>Status</strong> WAIT</span>
+                <span class="insight-item"><strong>Status</strong> WAIT - HTF/LTF CONFLICT</span>
                 <span class="insight-item"><strong>Board</strong> None</span>
               </div>
-              <ul class="reason-list"><li>Display regime is &#39;Neutral&#39;.</li><li>Execution state is &#39;Near Trigger&#39;.</li><li>Signal alignment is &#39;Neutral&#39;.</li><li>Conflict is &#39;Low&#39;.</li><li>Stability is &#39;Moderating&#39;.</li><li>Governed score is 48.</li><li>Gov 48 • Rank 73 • Exec WAIT • Tactical N/A • Bias Neutral • Conviction Developing</li><li>Trade Board promotion is governance-controlled, not dashboard-calculated.</li></ul>
+              <ul class="reason-list"><li>Display regime is &#39;Bearish Building&#39;.</li><li>Execution state is &#39;Near Trigger&#39;.</li><li>Signal alignment is &#39;Mixed&#39;.</li><li>Conflict is &#39;High&#39;.</li><li>Stability is &#39;Unstable&#39;.</li><li>Governed score is 48.</li><li>Gov 48 • Rank 51 • Exec WAIT - HTF/LTF CONFLICT • Tactical N/A • Bias Neutral • Conviction Developing</li><li>Trade Board promotion is governance-controlled, not dashboard-calculated.</li></ul>
             </div>
           </section>
 
@@ -758,18 +938,18 @@
               <h2>Indices Regime Heat Matrix</h2>
               <table class="mini-table">
                 <thead><tr><th>Market</th><th>Dir</th><th>Structural</th><th>Tactical</th><th>Execution</th><th>Final</th><th>Tactical State</th><th>Bias</th><th>Conviction</th><th>Stability</th><th>Conflict</th><th>State</th></tr></thead>
-                <tbody><tr><td>DAX40</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">50</span></td><td><span class="heat green">82</span></td><td><span class="heat amber">48</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>WS30</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat green">90</span></td><td><span class="heat amber">50</span></td><td><span class="heat green">82</span></td><td><span class="heat amber">48</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-red'>Unstable</span></td><td><span class='pill pill-amber'>Medium</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>NAS100</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat red">25</span></td><td><span class="heat amber">50</span></td><td><span class="heat green">82</span></td><td><span class="heat red">10</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-red'>Unstable</span></td><td><span class='pill pill-amber'>Medium</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>SP500</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">50</span></td><td><span class="heat green">82</span></td><td><span class="heat red">3</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-red'>Unstable</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-red'>WAIT</span></td></tr></tbody>
+                <tbody><tr><td>DAX40</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">50</span></td><td><span class="heat green">82</span></td><td><span class="heat amber">42</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-red'>Unstable</span></td><td><span class='pill pill-amber'>Medium</span></td><td><span class='pill pill-blue'>TRIGGER</span></td></tr><tr><td>SP500</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat green">90</span></td><td><span class="heat amber">50</span></td><td><span class="heat green">82</span></td><td><span class="heat amber">48</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-red'>Unstable</span></td><td><span class='pill pill-red'>High</span></td><td><span class='pill pill-blue'>TRIGGER</span></td></tr><tr><td>WS30</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat green">90</span></td><td><span class="heat amber">50</span></td><td><span class="heat green">82</span></td><td><span class="heat amber">48</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-red'>Unstable</span></td><td><span class='pill pill-red'>High</span></td><td><span class='pill pill-blue'>TRIGGER</span></td></tr><tr><td>NAS100</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">50</span></td><td><span class="heat green">82</span></td><td><span class="heat red">4</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-red'>Unstable</span></td><td><span class='pill pill-amber'>Medium</span></td><td><span class='pill pill-red'>WAIT</span></td></tr></tbody>
               </table>
             </div>
 
             <div class="card">
               <h2>Indices Strongest</h2>
-              <ul class="compact"><li>DAX40 <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class='tiny'>Neutral • 48</span></li><li>WS30 <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class='tiny'>Neutral • 48</span></li><li>NAS100 <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class='tiny'>Bearish • 10</span></li></ul>
+              <ul class="compact"><li>SP500 <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class='tiny'>Bearish Building • 48</span></li><li>WS30 <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class='tiny'>Neutral • 48</span></li><li>DAX40 <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class='tiny'>Bearish Building • 42</span></li></ul>
             </div>
 
             <div class="card">
               <h2>Indices Weakest</h2>
-              <ul class="compact"><li>SP500 <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class='tiny'>Bearish • 3</span></li><li>NAS100 <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class='tiny'>Bearish • 10</span></li><li>DAX40 <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class='tiny'>Neutral • 48</span></li></ul>
+              <ul class="compact"><li>NAS100 <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class='tiny'>Bearish • 4</span></li><li>DAX40 <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class='tiny'>Bearish Building • 42</span></li><li>SP500 <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class='tiny'>Bearish Building • 48</span></li></ul>
             </div>
           </section>
 
@@ -781,9 +961,9 @@
                 <div class="ranking-left">
                   <div class="rank">1</div>
                   <div>
-                    <div><strong>DAX40</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class="pill pill-amber">Neutral</span></div>
+                    <div><strong>SP500</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish Building</span></div>
                     <div class="bar-wrap"><div class="bar" style="width:48.0%"></div></div>
-                    <div class="tiny">Gov 48 • Rank 73 • Stage NEAR TRIGGER • Tactical N/A • Bias Neutral • Conviction Developing</div>
+                    <div class="tiny">Gov 48 • Rank 51 • Stage TRIGGER • Tactical N/A • Bias Neutral • Conviction Developing</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
@@ -798,7 +978,7 @@
                   <div>
                     <div><strong>WS30</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class="pill pill-amber">Neutral</span></div>
                     <div class="bar-wrap"><div class="bar" style="width:48.0%"></div></div>
-                    <div class="tiny">Gov 48 • Rank 56 • Stage NEAR TRIGGER • Tactical N/A • Bias Neutral • Conviction Developing</div>
+                    <div class="tiny">Gov 48 • Rank 51 • Stage TRIGGER • Tactical N/A • Bias Neutral • Conviction Developing</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
@@ -811,14 +991,14 @@
                 <div class="ranking-left">
                   <div class="rank">3</div>
                   <div>
-                    <div><strong>NAS100</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:9.75%"></div></div>
-                    <div class="tiny">Gov 10 • Rank 6 • Stage STAND ASIDE • Tactical N/A • Bias Neutral • Conviction Developing</div>
+                    <div><strong>DAX40</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish Building</span></div>
+                    <div class="bar-wrap"><div class="bar" style="width:42.0%"></div></div>
+                    <div class="tiny">Gov 42 • Rank 55 • Stage TRIGGER • Tactical N/A • Bias Neutral • Conviction Developing</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
-                  <div><strong>10%</strong></div>
-                  <div><span class="pill pill-red">Stand Aside</span></div>
+                  <div><strong>42%</strong></div>
+                  <div><span class="pill pill-green">Near Trigger</span></div>
                 </div>
               </div>
             
@@ -826,13 +1006,13 @@
                 <div class="ranking-left">
                   <div class="rank">4</div>
                   <div>
-                    <div><strong>SP500</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:3.0%"></div></div>
-                    <div class="tiny">Gov 3 • Rank 5 • Stage STAND ASIDE • Tactical N/A • Bias Neutral • Conviction Developing</div>
+                    <div><strong>NAS100</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish</span></div>
+                    <div class="bar-wrap"><div class="bar" style="width:3.75%"></div></div>
+                    <div class="tiny">Gov 4 • Rank 0 • Stage WAIT • Tactical N/A • Bias Neutral • Conviction Developing</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
-                  <div><strong>3%</strong></div>
+                  <div><strong>4%</strong></div>
                   <div><span class="pill pill-red">Stand Aside</span></div>
                 </div>
               </div>
