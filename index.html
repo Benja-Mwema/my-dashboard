@@ -82,7 +82,7 @@
           <p>Governed terminal • Global header, DXY anchor, grouped asset-class tabs • Auto-refresh every 60s</p>
         </div>
         <div class="status-strip">
-          <div class="status-box"><div class="label">Local Time</div><div class="value">20 Mar 2026 11:51</div></div>
+          <div class="status-box"><div class="label">Local Time</div><div class="value">20 Mar 2026 11:54</div></div>
           <div class="status-box"><div class="label">Session</div><div class="value blue">London</div><div class="tiny">Next: London-New York Overlap in 4h</div></div>
           <div class="status-box"><div class="label">Global Regime</div><div class="value green">USD Dominant / Defensive</div><div class="tiny">Composite: 68</div></div>
         </div>
@@ -647,16 +647,16 @@
 
             <div class="decision">
               <h3>Metals Top Watchlist Setup</h3>
-              <div class="decision-market">No setup — Neutral</div>
-              <div class="decision-direction"><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> • Exec: <span class="pill pill-red">Stand Aside</span></div>
+              <div class="decision-market">Gold — Bullish</div>
+              <div class="decision-direction"><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> • Exec: <span class="pill pill-amber">Trigger Forming</span></div>
               <div class="insight-strip">
-                <span class="insight-item"><strong>Tactical</strong> No Continuation</span>
+                <span class="insight-item"><strong>Tactical</strong> N/A</span>
                 <span class="insight-item"><strong>Bias</strong> Neutral</span>
                 <span class="insight-item"><strong>Conviction</strong> Developing</span>
-                <span class="insight-item"><strong>Status</strong> Stand Aside</span>
+                <span class="insight-item"><strong>Status</strong> WAIT</span>
                 <span class="insight-item"><strong>Board</strong> None</span>
               </div>
-              <ul class="reason-list"><li>No governed opportunities available.</li></ul>
+              <ul class="reason-list"><li>Display regime is &#39;Bullish&#39;.</li><li>Execution state is &#39;Trigger Forming&#39;.</li><li>Signal alignment is &#39;Mixed&#39;.</li><li>Conflict is &#39;Medium&#39;.</li><li>Stability is &#39;Unstable&#39;.</li><li>Governed score is 68.</li><li>Gov 68 • Rank 72 • Exec WAIT • Tactical N/A • Bias Neutral • Conviction Developing</li><li>Trade Board promotion is governance-controlled, not dashboard-calculated.</li></ul>
             </div>
           </section>
 
@@ -665,23 +665,53 @@
               <h2>Metals Regime Heat Matrix</h2>
               <table class="mini-table">
                 <thead><tr><th>Market</th><th>Dir</th><th>Structural</th><th>Tactical</th><th>Execution</th><th>Final</th><th>Stability</th><th>Conflict</th><th>State</th></tr></thead>
-                <tbody><tr><td colspan='10' style='text-align:center; color:#8da0c6; padding:18px;'>No regime rows available for this asset group.</td></tr></tbody>
+                <tbody><tr><td>Gold</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat green">90</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">45</span></td><td><span class="heat green">68</span></td><td><span class='pill pill-red'>Unstable</span></td><td><span class='pill pill-amber'>Medium</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>Silver</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat green">90</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">45</span></td><td><span class="heat amber">62</span></td><td><span class='pill pill-red'>Unstable</span></td><td><span class='pill pill-amber'>Medium</span></td><td><span class='pill pill-red'>WAIT</span></td></tr></tbody>
               </table>
             </div>
             <div class="card">
               <h2>Metals Strongest</h2>
-              <ul class="compact"><li>No markets in this group yet.</li></ul>
+              <ul class="compact"><li>Gold <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class='tiny'>Bullish • 68</span></li><li>Silver <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class='tiny'>Bullish • 62</span></li></ul>
             </div>
             <div class="card">
               <h2>Metals Weakest</h2>
-              <ul class="compact"><li>No markets in this group yet.</li></ul>
+              <ul class="compact"><li>Silver <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class='tiny'>Bullish • 62</span></li><li>Gold <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class='tiny'>Bullish • 68</span></li></ul>
             </div>
           </section>
 
           <section class="grid-bottom one-right-wide">
             <div class="card">
               <h2>Metals Watchlist</h2>
-              <div class="empty-state">No governed setups in this asset group yet.</div>
+              
+              <div class="ranking-item">
+                <div class="ranking-left">
+                  <div class="rank">1</div>
+                  <div>
+                    <div><strong>Gold</strong> <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class="pill pill-green">Bullish</span></div>
+                    <div class="bar-wrap"><div class="bar" style="width:68.0%"></div></div>
+                    <div class="tiny">Gov 68 • Rank 72 • Exec WAIT • Tactical N/A • Bias Neutral • Conviction Developing</div>
+                  </div>
+                </div>
+                <div style="text-align:right;">
+                  <div><strong>68%</strong></div>
+                  <div><span class="pill pill-amber">Trigger Forming</span></div>
+                </div>
+              </div>
+            
+              <div class="ranking-item">
+                <div class="ranking-left">
+                  <div class="rank">2</div>
+                  <div>
+                    <div><strong>Silver</strong> <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class="pill pill-green">Bullish</span></div>
+                    <div class="bar-wrap"><div class="bar" style="width:62.0%"></div></div>
+                    <div class="tiny">Gov 62 • Rank 66 • Exec WAIT • Tactical N/A • Bias Neutral • Conviction Developing</div>
+                  </div>
+                </div>
+                <div style="text-align:right;">
+                  <div><strong>62%</strong></div>
+                  <div><span class="pill pill-amber">Trigger Forming</span></div>
+                </div>
+              </div>
+            
             </div>
           </section>
         </section>
