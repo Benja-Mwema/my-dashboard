@@ -82,14 +82,14 @@
           <p>Governed terminal • Global header, DXY anchor, grouped asset-class tabs • Auto-refresh every 60s</p>
         </div>
         <div class="status-strip">
-          <div class="status-box"><div class="label">Local Time</div><div class="value">22 Mar 2026 12:49</div></div>
+          <div class="status-box"><div class="label">Local Time</div><div class="value">22 Mar 2026 12:58</div></div>
           <div class="status-box"><div class="label">Session</div><div class="value blue">London</div><div class="tiny">Next: London-New York Overlap in 3h</div></div>
           <div class="status-box"><div class="label">Global Regime</div><div class="value green">USD Dominant / Defensive</div><div class="tiny">Composite: 71</div></div>
         </div>
       </div>
 
       <div class="ticker"><strong>Terminal Ticker:</strong> HSBC ▲ Th 66 Strong • Ti 64 Trigger • Bd Pre-Board • SP500 ▲ Th 64 Strong • Ti 56 Trigger • Bd Pre-Board • WS30 ▲ Th 64 Strong • Ti 55 Trigger • Bd Pre-Board • AUDUSD ▲ Th 58 Valid • Ti 56 Trigger • Bd Pre-Board • RIO ▲ Th 59 Valid • Ti 58 Early • Bd None • AZN ▲ Th 59 Valid • Ti 46 Early • Bd None • AUDJPY ▲ Th 59 Valid • Ti 45 Building • Bd Pre-Board</div>
-      <div class="alert-banner">HSBC ▲ Bullish is at TRIGGER stage — waiting for final approval/timing.</div>
+      <div class="alert-banner">Governance active — no fully approved trade yet, maintain selective risk.</div>
 
       <section class="flow-strip" style="margin-bottom:14px;">
         <div class="flow-box">
@@ -191,7 +191,7 @@
             <div class="card">
               <h2>All Trade Board</h2>
               <table class="mini-table">
-                <thead><tr><th>Rank</th><th>Market</th><th>Direction</th><th>Score</th><th>Liquidity</th><th>SMC</th><th>Execution</th><th>Board</th><th>Type</th><th>Conflict</th></tr></thead>
+                <thead><tr><th>Rank</th><th>Market</th><th>Direction</th><th>Score</th><th>Regime</th><th>Stage</th><th>Board Flag</th><th>Alignment</th><th>Conflict</th></tr></thead>
                 <tbody>
               <tr>
                 <td colspan="9" style="text-align:center; color:#8da0c6; padding:14px; background:rgba(89,195,255,0.05);">
@@ -203,65 +203,60 @@
                 <td>1</td>
                 <td>HSBC</td>
                 <td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td>
-                <td>66<div class="tiny">Struct Bullish</div></td>
-                <td><span class="pill pill-amber">Balanced</span></td>
+                <td>66<div class="tiny">Th 66 • Ti 64</div></td>
+                <td><span class="pill pill-green">Upside Objective</span></td>
                 <td><span class="pill pill-amber">Neutral</span></td>
                 <td><span class="pill pill-red">WAIT</span></td>
-                <td><span class="pill pill-amber">Pre-Board</span></td>
                 <td>None</td>
-                <td>Low</td>
+                <td><span class="pill pill-amber">Pre-Board</span></td>
               </tr>
             
               <tr>
                 <td>2</td>
                 <td>SP500</td>
                 <td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td>
-                <td>64<div class="tiny">Struct Bullish</div></td>
-                <td><span class="pill pill-amber">Balanced</span></td>
-                <td><span class="pill pill-amber">Neutral</span></td>
+                <td>64<div class="tiny">Th 64 • Ti 56</div></td>
+                <td><span class="pill pill-green">Upside Objective</span></td>
+                <td><span class="pill pill-blue">Bearish Location Only</span></td>
                 <td><span class="pill pill-red">WAIT</span></td>
+                <td>Watchlist</td>
                 <td><span class="pill pill-amber">Pre-Board</span></td>
-                <td>None</td>
-                <td>Low</td>
               </tr>
             
               <tr>
                 <td>3</td>
                 <td>WS30</td>
                 <td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td>
-                <td>64<div class="tiny">Struct Bullish</div></td>
-                <td><span class="pill pill-amber">Balanced</span></td>
+                <td>64<div class="tiny">Th 64 • Ti 55</div></td>
+                <td><span class="pill pill-green">Upside Objective</span></td>
                 <td><span class="pill pill-amber">Neutral</span></td>
                 <td><span class="pill pill-red">WAIT</span></td>
-                <td><span class="pill pill-amber">Pre-Board</span></td>
                 <td>None</td>
-                <td>Low</td>
+                <td><span class="pill pill-amber">Pre-Board</span></td>
               </tr>
             
               <tr>
                 <td>4</td>
                 <td>AUDUSD</td>
                 <td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td>
-                <td>60<div class="tiny">Struct Bullish</div></td>
-                <td><span class="pill pill-amber">Balanced</span></td>
+                <td>60<div class="tiny">Th 58 • Ti 56</div></td>
+                <td><span class="pill pill-green">Upside Objective</span></td>
                 <td><span class="pill pill-amber">Neutral</span></td>
                 <td><span class="pill pill-red">WAIT</span></td>
-                <td><span class="pill pill-amber">Pre-Board</span></td>
                 <td>None</td>
-                <td>Low</td>
+                <td><span class="pill pill-amber">Pre-Board</span></td>
               </tr>
             
               <tr>
                 <td>5</td>
                 <td>AUDJPY</td>
                 <td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td>
-                <td>59<div class="tiny">Struct Bullish</div></td>
-                <td><span class="pill pill-amber">Balanced</span></td>
+                <td>59<div class="tiny">Th 59 • Ti 45</div></td>
+                <td><span class="pill pill-green">Upside Objective</span></td>
                 <td><span class="pill pill-amber">Neutral</span></td>
                 <td><span class="pill pill-red">WAIT</span></td>
-                <td><span class="pill pill-amber">Pre-Board</span></td>
                 <td>None</td>
-                <td>Low</td>
+                <td><span class="pill pill-amber">Pre-Board</span></td>
               </tr>
             </tbody>
               </table>
@@ -270,8 +265,8 @@
             <div class="decision">
               <h3>All Top Watchlist Setup</h3>
               <div class="decision-market">HSBC — Bullish / Strong</div>
-              <div class="decision-direction"><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> • Permission: <span class="pill pill-green">Allowed</span> • Structure: <span class="pill pill-green">Bullish</span> • Liquidity: <span class="pill pill-amber">Balanced</span></div>
-              <div class="tiny" style="margin-bottom:10px;">SMC <span class="pill pill-amber">Neutral</span> • Execution <span class="pill pill-red">WAIT</span> • Type None • Gov 66</div>
+              <div class="decision-direction"><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> • Theme: <span class="pill pill-green">Strong</span> • Timing: <span class="pill pill-blue">Trigger</span> • Board: <span class="pill pill-amber">Pre-Board</span></div>
+              <div class="tiny" style="margin-bottom:10px;">Gov 66 • Theme 66 • Timing 64 • Exec 63</div>
               <div class="insight-strip">
                 <span class="insight-item"><strong>Theme Str</strong> Strong</span>
                 <span class="insight-item"><strong>Timing Q</strong> Good</span>
@@ -295,7 +290,7 @@
                 <div class="tiny">Targets: Nearest H1 liquidity / Nearest H4 liquidity</div>
                 <div class="tiny">Note: Setup forming but not yet executable</div>
               </div>
-              <ul class="reason-list"><li>Display regime is &#39;Bullish / Strong&#39;.</li><li>Theme engine: Strong / Strong at 66.</li><li>Timing engine: Trigger / Good at 64.</li><li>Board engine: Pre-Board.</li><li>Signal alignment is &#39;Neutral&#39;.</li><li>Conflict is &#39;Low&#39;.</li><li>Stability is &#39;Moderating&#39;.</li><li>Gov 66 • Struct Bullish • Liquidity Balanced • SMC Neutral • Exec WAIT • Rank 92</li><li>Trade Board promotion is governance-controlled, not dashboard-calculated.</li></ul>
+              <ul class="reason-list"><li>Display regime is &#39;Bullish / Strong&#39;.</li><li>Governance permission: Wait Timing window closed</li><li>Structural context: Bullish.</li><li>Liquidity objective: Upside Objective.</li><li>SMC state: Neutral.</li><li>Execution action: WAIT.</li><li>Trade type: None.</li><li>Conflict is &#39;Low&#39;.</li><li>Stability is &#39;Moderating&#39;.</li><li>Gov 66 • Permission Wait • Structure Bullish • Liquidity Upside Objective • SMC Neutral • Exec WAIT • Rank 92</li><li>Trade Board promotion is governance-controlled, not dashboard-calculated.</li></ul>
             </div>
           </section>
 
@@ -303,8 +298,8 @@
             <div class="card">
               <h2>All Regime Heat Matrix</h2>
               <table class="mini-table">
-                <thead><tr><th>Market</th><th>Dir</th><th>Structural</th><th>Tactical</th><th>Execution</th><th>Final</th><th>Theme</th><th>Timing</th><th>Theme State</th><th>Timing State</th><th>Board</th><th>Liquidity</th><th>SMC</th><th>Exec Action</th><th>Permission</th><th>Stability</th><th>Conflict</th><th>State</th></tr></thead>
-                <tbody><tr><td>HSBC</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat green">76</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">62</span></td><td><span class="heat amber">66</span></td><td><span class="heat amber">66</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-blue'>Unknown</span></td><td><span class='pill pill-blue'>TRIGGER</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-amber'>Wait</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-blue'>TRIGGER</span></td></tr><tr><td>SP500</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat green">73</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">46</span></td><td><span class="heat amber">64</span></td><td><span class="heat amber">64</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-blue'>Unknown</span></td><td><span class='pill pill-blue'>TRIGGER</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-blue'>Bearish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-amber'>Wait</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-blue'>TRIGGER</span></td></tr><tr><td>WS30</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat green">73</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">40</span></td><td><span class="heat amber">64</span></td><td><span class="heat amber">64</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-blue'>Unknown</span></td><td><span class='pill pill-blue'>TRIGGER</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-amber'>Wait</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-blue'>TRIGGER</span></td></tr><tr><td>AUDUSD</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat amber">65</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">40</span></td><td><span class="heat amber">60</span></td><td><span class="heat amber">60</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-blue'>Unknown</span></td><td><span class='pill pill-blue'>TRIGGER</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-amber'>Wait</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-blue'>TRIGGER</span></td></tr><tr><td>CADJPY</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">36</span></td><td><span class="heat amber">48</span></td><td><span class="heat amber">48</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-blue'>Unknown</span></td><td><span class='pill pill-blue'>TRIGGER</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-amber'>Wait</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-blue'>TRIGGER</span></td></tr><tr><td>EURUSD</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">40</span></td><td><span class="heat amber">47</span></td><td><span class="heat amber">47</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-blue'>Unknown</span></td><td><span class='pill pill-blue'>TRIGGER</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-amber'>Wait</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-amber'>Medium</span></td><td><span class='pill pill-blue'>TRIGGER</span></td></tr><tr><td>AUDJPY</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat amber">65</span></td><td><span class="heat amber">50</span></td><td><span class="heat red">24</span></td><td><span class="heat amber">59</span></td><td><span class="heat amber">59</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-blue'>Unknown</span></td><td><span class='pill pill-amber'>BUILDING</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-amber'>Wait</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-amber'>BUILDING</span></td></tr><tr><td>GBPUSD</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat amber">65</span></td><td><span class="heat amber">50</span></td><td><span class="heat red">21</span></td><td><span class="heat amber">57</span></td><td><span class="heat amber">57</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-blue'>Unknown</span></td><td><span class='pill pill-amber'>BUILDING</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-amber'>Wait</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-amber'>Medium</span></td><td><span class='pill pill-amber'>BUILDING</span></td></tr><tr><td>GBPJPY</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat amber">37</span></td><td><span class="heat amber">50</span></td><td><span class="heat green">90</span></td><td><span class="heat amber">38</span></td><td><span class="heat amber">38</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-blue'>Unknown</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-amber'>Wait</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-amber'>Medium</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>RIO</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat green">74</span></td><td><span class="heat amber">50</span></td><td><span class="heat green">72</span></td><td><span class="heat amber">59</span></td><td><span class="heat amber">59</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-blue'>Unknown</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-blue'>Reversal Build Bearish</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Blocked</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-red'>High</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>NAS100</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat red">31</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">40</span></td><td><span class="heat amber">38</span></td><td><span class="heat amber">38</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-blue'>Unknown</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-amber'>Wait</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>SHELL</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat green">70</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">49</span></td><td><span class="heat amber">56</span></td><td><span class="heat amber">56</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-blue'>Unknown</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-blue'>Bullish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Blocked</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-red'>High</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>RELX</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat red">33</span></td><td><span class="heat amber">50</span></td><td><span class="heat red">24</span></td><td><span class="heat amber">39</span></td><td><span class="heat amber">39</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-blue'>Unknown</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-blue'>Bullish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-amber'>Wait</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>AZN</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat green">74</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">33</span></td><td><span class="heat amber">59</span></td><td><span class="heat amber">59</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-blue'>Unknown</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Blocked</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-red'>High</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>SILVER</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat red">31</span></td><td><span class="heat amber">50</span></td><td><span class="heat green">90</span></td><td><span class="heat red">31</span></td><td><span class="heat red">31</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-blue'>Unknown</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Blocked</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-red'>High</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>DAX40</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat red">25</span></td><td><span class="heat amber">50</span></td><td><span class="heat green">82</span></td><td><span class="heat red">28</span></td><td><span class="heat red">28</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-blue'>Unknown</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Blocked</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-red'>High</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>USDJPY</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat red">27</span></td><td><span class="heat amber">50</span></td><td><span class="heat red">20</span></td><td><span class="heat red">31</span></td><td><span class="heat red">31</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-blue'>Unknown</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-blue'>Bullish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-amber'>Wait</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-amber'>Medium</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>USDCAD</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat amber">35</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">46</span></td><td><span class="heat amber">33</span></td><td><span class="heat amber">33</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-blue'>Unknown</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-blue'>Bullish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Blocked</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-red'>High</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>GOLD</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat red">24</span></td><td><span class="heat amber">50</span></td><td><span class="heat red">16</span></td><td><span class="heat red">27</span></td><td><span class="heat red">27</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-blue'>Unknown</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Blocked</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-red'>High</span></td><td><span class='pill pill-red'>WAIT</span></td></tr></tbody>
+                <thead><tr><th>Market</th><th>Dir</th><th>Structural</th><th>Tactical</th><th>Execution</th><th>Final</th><th>Theme</th><th>Timing</th><th>Liquidity</th><th>SMC</th><th>Exec Action</th><th>Permission</th><th>Board</th><th>Tactical State</th><th>Bias</th><th>Conviction</th><th>Stability</th><th>Conflict</th><th>State</th></tr></thead>
+                <tbody><tr><td>HSBC</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat green">76</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">62</span></td><td><span class="heat amber">66</span></td><td><span class="heat amber">66</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-green'>Upside Objective</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-amber'>Wait</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>SP500</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat green">73</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">46</span></td><td><span class="heat amber">64</span></td><td><span class="heat amber">64</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-green'>Upside Objective</span></td><td><span class='pill pill-blue'>Bearish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-amber'>Wait</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>WS30</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat green">73</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">40</span></td><td><span class="heat amber">64</span></td><td><span class="heat amber">64</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-green'>Upside Objective</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-amber'>Wait</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>AUDUSD</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat amber">65</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">40</span></td><td><span class="heat amber">60</span></td><td><span class="heat amber">60</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-green'>Upside Objective</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-amber'>Wait</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>CADJPY</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">36</span></td><td><span class="heat amber">48</span></td><td><span class="heat amber">48</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-green'>Upside Objective</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-amber'>Wait</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>EURUSD</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">40</span></td><td><span class="heat amber">47</span></td><td><span class="heat amber">47</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-red'>Downside Objective</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-amber'>Wait</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-amber'>Medium</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>AUDJPY</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat amber">65</span></td><td><span class="heat amber">50</span></td><td><span class="heat red">24</span></td><td><span class="heat amber">59</span></td><td><span class="heat amber">59</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-green'>Upside Objective</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-amber'>Wait</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>GBPUSD</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat amber">65</span></td><td><span class="heat amber">50</span></td><td><span class="heat red">21</span></td><td><span class="heat amber">57</span></td><td><span class="heat amber">57</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-green'>Upside Objective</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-amber'>Wait</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-amber'>Medium</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>GBPJPY</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat amber">37</span></td><td><span class="heat amber">50</span></td><td><span class="heat green">90</span></td><td><span class="heat amber">38</span></td><td><span class="heat amber">38</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-red'>Downside Objective</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-amber'>Wait</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-amber'>Medium</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>RIO</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat green">74</span></td><td><span class="heat amber">50</span></td><td><span class="heat green">72</span></td><td><span class="heat amber">59</span></td><td><span class="heat amber">59</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-green'>Upside Objective</span></td><td><span class='pill pill-blue'>Reversal Build Bearish</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Blocked</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-red'>High</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>NAS100</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat red">31</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">40</span></td><td><span class="heat amber">38</span></td><td><span class="heat amber">38</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-green'>Upside Objective</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-amber'>Wait</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>SHELL</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat green">70</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">49</span></td><td><span class="heat amber">56</span></td><td><span class="heat amber">56</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-red'>Downside Objective</span></td><td><span class='pill pill-blue'>Bullish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Blocked</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-red'>High</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>RELX</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat red">33</span></td><td><span class="heat amber">50</span></td><td><span class="heat red">24</span></td><td><span class="heat amber">39</span></td><td><span class="heat amber">39</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-green'>Upside Objective</span></td><td><span class='pill pill-blue'>Bullish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-amber'>Wait</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>AZN</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat green">74</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">33</span></td><td><span class="heat amber">59</span></td><td><span class="heat amber">59</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-green'>Upside Objective</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Blocked</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-red'>High</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>SILVER</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat red">31</span></td><td><span class="heat amber">50</span></td><td><span class="heat green">90</span></td><td><span class="heat red">31</span></td><td><span class="heat red">31</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-green'>Upside Objective</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Blocked</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-red'>High</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>DAX40</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat red">25</span></td><td><span class="heat amber">50</span></td><td><span class="heat green">82</span></td><td><span class="heat red">28</span></td><td><span class="heat red">28</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-green'>Upside Objective</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Blocked</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-red'>High</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>USDJPY</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat red">27</span></td><td><span class="heat amber">50</span></td><td><span class="heat red">20</span></td><td><span class="heat red">31</span></td><td><span class="heat red">31</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-red'>Downside Objective</span></td><td><span class='pill pill-blue'>Bullish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-amber'>Wait</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-amber'>Medium</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>USDCAD</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat amber">35</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">46</span></td><td><span class="heat amber">33</span></td><td><span class="heat amber">33</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-red'>Downside Objective</span></td><td><span class='pill pill-blue'>Bullish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Blocked</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-red'>High</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>GOLD</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat red">24</span></td><td><span class="heat amber">50</span></td><td><span class="heat red">16</span></td><td><span class="heat red">27</span></td><td><span class="heat red">27</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-green'>Upside Objective</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Blocked</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-red'>High</span></td><td><span class='pill pill-red'>WAIT</span></td></tr></tbody>
               </table>
             </div>
 
@@ -329,8 +324,8 @@
                   <div>
                     <div><strong>HSBC</strong> <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class="pill pill-green">Bullish / Strong</span></div>
                     <div class="bar-wrap"><div class="bar" style="width:65.74%"></div></div>
-                    <div class="tiny">Gov 66 • Struct <span class="pill pill-green">Bullish</span> • Liquidity <span class="pill pill-amber">Balanced</span> • SMC <span class="pill pill-amber">Neutral</span> • Exec <span class="pill pill-red">WAIT</span> • Rank 92</div>
-                    <div class="tiny">Permission <span class="pill pill-green">Allowed</span> • Type None • Reason Timing window closed • Plan Breakout Continuation • Risk C</div>
+                    <div class="tiny">Gov 66 • Theme 66 Strong • Timing 64 Trigger • Board Pre-Board • Rank 92</div>
+                    <div class="tiny">Stage TRIGGER • Timing Blocker Timing window closed • Plan Breakout Continuation • Risk C • Tactical N/A • Bias Neutral • Conviction Developing</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
@@ -345,8 +340,8 @@
                   <div>
                     <div><strong>SP500</strong> <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class="pill pill-green">Bullish / Strong</span></div>
                     <div class="bar-wrap"><div class="bar" style="width:63.65%"></div></div>
-                    <div class="tiny">Gov 64 • Struct <span class="pill pill-green">Bullish</span> • Liquidity <span class="pill pill-amber">Balanced</span> • SMC <span class="pill pill-amber">Neutral</span> • Exec <span class="pill pill-red">WAIT</span> • Rank 85</div>
-                    <div class="tiny">Permission <span class="pill pill-green">Allowed</span> • Type None • Reason Timing window closed • Plan Breakout Continuation • Risk C</div>
+                    <div class="tiny">Gov 64 • Theme 64 Strong • Timing 56 Trigger • Board Pre-Board • Rank 85</div>
+                    <div class="tiny">Stage TRIGGER • Timing Blocker Timing window closed • Plan Breakout Continuation • Risk C • Tactical N/A • Bias Neutral • Conviction Developing</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
@@ -361,8 +356,8 @@
                   <div>
                     <div><strong>WS30</strong> <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class="pill pill-green">Bullish / Strong</span></div>
                     <div class="bar-wrap"><div class="bar" style="width:63.65%"></div></div>
-                    <div class="tiny">Gov 64 • Struct <span class="pill pill-green">Bullish</span> • Liquidity <span class="pill pill-amber">Balanced</span> • SMC <span class="pill pill-amber">Neutral</span> • Exec <span class="pill pill-red">WAIT</span> • Rank 83</div>
-                    <div class="tiny">Permission <span class="pill pill-green">Allowed</span> • Type None • Reason Timing window closed • Plan Breakout Continuation • Risk C</div>
+                    <div class="tiny">Gov 64 • Theme 64 Strong • Timing 55 Trigger • Board Pre-Board • Rank 83</div>
+                    <div class="tiny">Stage TRIGGER • Timing Blocker Timing window closed • Plan Breakout Continuation • Risk C • Tactical N/A • Bias Neutral • Conviction Developing</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
@@ -377,8 +372,8 @@
                   <div>
                     <div><strong>AUDUSD</strong> <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class="pill pill-green">Bullish / Valid</span></div>
                     <div class="bar-wrap"><div class="bar" style="width:60.11%"></div></div>
-                    <div class="tiny">Gov 60 • Struct <span class="pill pill-green">Bullish</span> • Liquidity <span class="pill pill-amber">Balanced</span> • SMC <span class="pill pill-amber">Neutral</span> • Exec <span class="pill pill-red">WAIT</span> • Rank 80</div>
-                    <div class="tiny">Permission <span class="pill pill-green">Allowed</span> • Type None • Reason Timing window closed • Plan Breakout Continuation • Risk C</div>
+                    <div class="tiny">Gov 60 • Theme 58 Valid • Timing 56 Trigger • Board Pre-Board • Rank 80</div>
+                    <div class="tiny">Stage TRIGGER • Timing Blocker Timing window closed • Plan Breakout Continuation • Risk C • Tactical N/A • Bias Neutral • Conviction Developing</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
@@ -393,8 +388,8 @@
                   <div>
                     <div><strong>RIO</strong> <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class="pill pill-green">Bullish / Valid</span></div>
                     <div class="bar-wrap"><div class="bar" style="width:59.28%"></div></div>
-                    <div class="tiny">Gov 59 • Struct <span class="pill pill-green">Bullish</span> • Liquidity <span class="pill pill-amber">Balanced</span> • SMC <span class="pill pill-amber">Neutral</span> • Exec <span class="pill pill-red">WAIT</span> • Rank 46</div>
-                    <div class="tiny">Permission <span class="pill pill-green">Allowed</span> • Type None • Reason High conflict • Plan None • Risk D</div>
+                    <div class="tiny">Gov 59 • Theme 59 Valid • Timing 58 Early • Board None • Rank 46</div>
+                    <div class="tiny">Stage WAIT • Timing Blocker High conflict • Plan None • Risk D • Tactical N/A • Bias Neutral • Conviction Developing</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
@@ -409,8 +404,8 @@
                   <div>
                     <div><strong>AZN</strong> <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class="pill pill-green">Bullish / Valid</span></div>
                     <div class="bar-wrap"><div class="bar" style="width:59.28%"></div></div>
-                    <div class="tiny">Gov 59 • Struct <span class="pill pill-green">Bullish</span> • Liquidity <span class="pill pill-amber">Balanced</span> • SMC <span class="pill pill-amber">Neutral</span> • Exec <span class="pill pill-red">WAIT</span> • Rank 35</div>
-                    <div class="tiny">Permission <span class="pill pill-green">Allowed</span> • Type None • Reason High conflict • Plan None • Risk D</div>
+                    <div class="tiny">Gov 59 • Theme 59 Valid • Timing 46 Early • Board None • Rank 35</div>
+                    <div class="tiny">Stage WAIT • Timing Blocker High conflict • Plan None • Risk D • Tactical N/A • Bias Neutral • Conviction Developing</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
@@ -425,8 +420,8 @@
                   <div>
                     <div><strong>AUDJPY</strong> <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class="pill pill-green">Bullish / Valid</span></div>
                     <div class="bar-wrap"><div class="bar" style="width:58.63%"></div></div>
-                    <div class="tiny">Gov 59 • Struct <span class="pill pill-green">Bullish</span> • Liquidity <span class="pill pill-amber">Balanced</span> • SMC <span class="pill pill-amber">Neutral</span> • Exec <span class="pill pill-red">WAIT</span> • Rank 66</div>
-                    <div class="tiny">Permission <span class="pill pill-green">Allowed</span> • Type None • Reason Timing window closed • Plan None • Risk D</div>
+                    <div class="tiny">Gov 59 • Theme 59 Valid • Timing 45 Building • Board Pre-Board • Rank 66</div>
+                    <div class="tiny">Stage BUILDING • Timing Blocker Timing window closed • Plan None • Risk D • Tactical N/A • Bias Neutral • Conviction Developing</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
@@ -441,8 +436,8 @@
                   <div>
                     <div><strong>GBPUSD</strong> <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class="pill pill-green">Bullish / Valid</span></div>
                     <div class="bar-wrap"><div class="bar" style="width:56.95%"></div></div>
-                    <div class="tiny">Gov 57 • Struct <span class="pill pill-green">Bullish</span> • Liquidity <span class="pill pill-amber">Balanced</span> • SMC <span class="pill pill-amber">Neutral</span> • Exec <span class="pill pill-red">WAIT</span> • Rank 59</div>
-                    <div class="tiny">Permission <span class="pill pill-green">Allowed</span> • Type None • Reason Timing window closed • Plan None • Risk D</div>
+                    <div class="tiny">Gov 57 • Theme 57 Valid • Timing 43 Building • Board Pre-Board • Rank 59</div>
+                    <div class="tiny">Stage BUILDING • Timing Blocker Timing window closed • Plan None • Risk D • Tactical N/A • Bias Neutral • Conviction Developing</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
@@ -457,8 +452,8 @@
                   <div>
                     <div><strong>SHELL</strong> <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class="pill pill-green">Bullish / Valid</span></div>
                     <div class="bar-wrap"><div class="bar" style="width:55.61%"></div></div>
-                    <div class="tiny">Gov 56 • Struct <span class="pill pill-green">Bullish</span> • Liquidity <span class="pill pill-amber">Balanced</span> • SMC <span class="pill pill-amber">Neutral</span> • Exec <span class="pill pill-red">WAIT</span> • Rank 40</div>
-                    <div class="tiny">Permission <span class="pill pill-green">Allowed</span> • Type None • Reason High conflict • Plan None • Risk D</div>
+                    <div class="tiny">Gov 56 • Theme 58 Valid • Timing 55 Early • Board None • Rank 40</div>
+                    <div class="tiny">Stage WAIT • Timing Blocker High conflict • Plan None • Risk D • Tactical N/A • Bias Neutral • Conviction Developing</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
@@ -473,8 +468,8 @@
                   <div>
                     <div><strong>CADJPY</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class="pill pill-amber">Neutral / Valid</span></div>
                     <div class="bar-wrap"><div class="bar" style="width:47.84%"></div></div>
-                    <div class="tiny">Gov 48 • Struct <span class="pill pill-amber">Neutral</span> • Liquidity <span class="pill pill-amber">Balanced</span> • SMC <span class="pill pill-amber">Neutral</span> • Exec <span class="pill pill-red">WAIT</span> • Rank 75</div>
-                    <div class="tiny">Permission <span class="pill pill-green">Allowed</span> • Type None • Reason Timing window closed • Plan None • Risk D</div>
+                    <div class="tiny">Gov 48 • Theme 50 Valid • Timing 54 Trigger • Board None • Rank 75</div>
+                    <div class="tiny">Stage TRIGGER • Timing Blocker Timing window closed • Plan None • Risk D • Tactical N/A • Bias Neutral • Conviction Developing</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
@@ -489,8 +484,8 @@
                   <div>
                     <div><strong>EURUSD</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class="pill pill-amber">Neutral / Valid</span></div>
                     <div class="bar-wrap"><div class="bar" style="width:47.0%"></div></div>
-                    <div class="tiny">Gov 47 • Struct <span class="pill pill-amber">Neutral</span> • Liquidity <span class="pill pill-amber">Balanced</span> • SMC <span class="pill pill-amber">Neutral</span> • Exec <span class="pill pill-red">WAIT</span> • Rank 70</div>
-                    <div class="tiny">Permission <span class="pill pill-green">Allowed</span> • Type None • Reason Timing window closed • Plan None • Risk D</div>
+                    <div class="tiny">Gov 47 • Theme 47 Valid • Timing 54 Trigger • Board None • Rank 70</div>
+                    <div class="tiny">Stage TRIGGER • Timing Blocker Timing window closed • Plan None • Risk D • Tactical N/A • Bias Neutral • Conviction Developing</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
@@ -505,8 +500,8 @@
                   <div>
                     <div><strong>RELX</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish / Valid</span></div>
                     <div class="bar-wrap"><div class="bar" style="width:38.73%"></div></div>
-                    <div class="tiny">Gov 39 • Struct <span class="pill pill-red">Bearish</span> • Liquidity <span class="pill pill-amber">Balanced</span> • SMC <span class="pill pill-amber">Neutral</span> • Exec <span class="pill pill-red">WAIT</span> • Rank 39</div>
-                    <div class="tiny">Permission <span class="pill pill-green">Allowed</span> • Type None • Reason Timing window closed • Plan None • Risk D</div>
+                    <div class="tiny">Gov 39 • Theme 38 Valid • Timing 51 Early • Board Pre-Board • Rank 39</div>
+                    <div class="tiny">Stage WAIT • Timing Blocker Timing window closed • Plan None • Risk D • Tactical N/A • Bias Neutral • Conviction Developing</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
@@ -521,8 +516,8 @@
                   <div>
                     <div><strong>NAS100</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish / Invalid</span></div>
                     <div class="bar-wrap"><div class="bar" style="width:38.02%"></div></div>
-                    <div class="tiny">Gov 38 • Struct <span class="pill pill-red">Bearish</span> • Liquidity <span class="pill pill-amber">Balanced</span> • SMC <span class="pill pill-amber">Neutral</span> • Exec <span class="pill pill-red">WAIT</span> • Rank 40</div>
-                    <div class="tiny">Permission <span class="pill pill-green">Allowed</span> • Type None • Reason Timing window closed • Plan None • Risk D</div>
+                    <div class="tiny">Gov 38 • Theme 36 Invalid • Timing 56 Early • Board None • Rank 40</div>
+                    <div class="tiny">Stage WAIT • Timing Blocker Timing window closed • Plan None • Risk D • Tactical N/A • Bias Neutral • Conviction Developing</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
@@ -537,8 +532,8 @@
                   <div>
                     <div><strong>GBPJPY</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish / Valid</span></div>
                     <div class="bar-wrap"><div class="bar" style="width:37.67%"></div></div>
-                    <div class="tiny">Gov 38 • Struct <span class="pill pill-red">Bearish</span> • Liquidity <span class="pill pill-amber">Balanced</span> • SMC <span class="pill pill-amber">Neutral</span> • Exec <span class="pill pill-red">WAIT</span> • Rank 51</div>
-                    <div class="tiny">Permission <span class="pill pill-green">Allowed</span> • Type None • Reason Timing window closed • Plan None • Risk D</div>
+                    <div class="tiny">Gov 38 • Theme 40 Valid • Timing 53 Early • Board Pre-Board • Rank 51</div>
+                    <div class="tiny">Stage WAIT • Timing Blocker Timing window closed • Plan None • Risk D • Tactical N/A • Bias Neutral • Conviction Developing</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
@@ -553,8 +548,8 @@
                   <div>
                     <div><strong>USDCAD</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish / Invalid</span></div>
                     <div class="bar-wrap"><div class="bar" style="width:33.21%"></div></div>
-                    <div class="tiny">Gov 33 • Struct <span class="pill pill-red">Bearish</span> • Liquidity <span class="pill pill-amber">Balanced</span> • SMC <span class="pill pill-amber">Neutral</span> • Exec <span class="pill pill-red">WAIT</span> • Rank 24</div>
-                    <div class="tiny">Permission <span class="pill pill-green">Allowed</span> • Type None • Reason High conflict • Plan None • Risk D</div>
+                    <div class="tiny">Gov 33 • Theme 35 Invalid • Timing 51 Early • Board None • Rank 24</div>
+                    <div class="tiny">Stage WAIT • Timing Blocker High conflict • Plan None • Risk D • Tactical N/A • Bias Neutral • Conviction Developing</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
@@ -569,8 +564,8 @@
                   <div>
                     <div><strong>USDJPY</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish / Valid</span></div>
                     <div class="bar-wrap"><div class="bar" style="width:31.29%"></div></div>
-                    <div class="tiny">Gov 31 • Struct <span class="pill pill-red">Bearish</span> • Liquidity <span class="pill pill-amber">Balanced</span> • SMC <span class="pill pill-amber">Neutral</span> • Exec <span class="pill pill-red">WAIT</span> • Rank 28</div>
-                    <div class="tiny">Permission <span class="pill pill-green">Allowed</span> • Type None • Reason Timing window closed • Plan None • Risk D</div>
+                    <div class="tiny">Gov 31 • Theme 33 Valid • Timing 43 Early • Board Pre-Board • Rank 28</div>
+                    <div class="tiny">Stage WAIT • Timing Blocker Timing window closed • Plan None • Risk D • Tactical N/A • Bias Neutral • Conviction Developing</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
@@ -585,8 +580,8 @@
                   <div>
                     <div><strong>SILVER</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish / Invalid</span></div>
                     <div class="bar-wrap"><div class="bar" style="width:31.14%"></div></div>
-                    <div class="tiny">Gov 31 • Struct <span class="pill pill-red">Bearish</span> • Liquidity <span class="pill pill-amber">Balanced</span> • SMC <span class="pill pill-amber">Neutral</span> • Exec <span class="pill pill-red">WAIT</span> • Rank 33</div>
-                    <div class="tiny">Permission <span class="pill pill-green">Allowed</span> • Type None • Reason High conflict • Plan None • Risk D</div>
+                    <div class="tiny">Gov 31 • Theme 32 Invalid • Timing 50 Early • Board None • Rank 33</div>
+                    <div class="tiny">Stage WAIT • Timing Blocker High conflict • Plan None • Risk D • Tactical N/A • Bias Neutral • Conviction Developing</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
@@ -601,8 +596,8 @@
                   <div>
                     <div><strong>DAX40</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish / Invalid</span></div>
                     <div class="bar-wrap"><div class="bar" style="width:28.2%"></div></div>
-                    <div class="tiny">Gov 28 • Struct <span class="pill pill-red">Bearish</span> • Liquidity <span class="pill pill-amber">Balanced</span> • SMC <span class="pill pill-amber">Neutral</span> • Exec <span class="pill pill-red">WAIT</span> • Rank 28</div>
-                    <div class="tiny">Permission <span class="pill pill-green">Allowed</span> • Type None • Reason High conflict • Plan None • Risk D</div>
+                    <div class="tiny">Gov 28 • Theme 28 Invalid • Timing 46 Early • Board None • Rank 28</div>
+                    <div class="tiny">Stage WAIT • Timing Blocker High conflict • Plan None • Risk D • Tactical N/A • Bias Neutral • Conviction Developing</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
@@ -617,8 +612,8 @@
                   <div>
                     <div><strong>GOLD</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish / Invalid</span></div>
                     <div class="bar-wrap"><div class="bar" style="width:27.26%"></div></div>
-                    <div class="tiny">Gov 27 • Struct <span class="pill pill-red">Bearish</span> • Liquidity <span class="pill pill-amber">Balanced</span> • SMC <span class="pill pill-amber">Neutral</span> • Exec <span class="pill pill-red">WAIT</span> • Rank 10</div>
-                    <div class="tiny">Permission <span class="pill pill-green">Allowed</span> • Type None • Reason High conflict • Plan None • Risk D</div>
+                    <div class="tiny">Gov 27 • Theme 27 Invalid • Timing 39 Early • Board None • Rank 10</div>
+                    <div class="tiny">Stage WAIT • Timing Blocker High conflict • Plan None • Risk D • Tactical N/A • Bias Neutral • Conviction Developing</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
@@ -636,7 +631,7 @@
             <div class="card">
               <h2>Currencies Trade Board</h2>
               <table class="mini-table">
-                <thead><tr><th>Rank</th><th>Market</th><th>Direction</th><th>Score</th><th>Liquidity</th><th>SMC</th><th>Execution</th><th>Board</th><th>Type</th><th>Conflict</th></tr></thead>
+                <thead><tr><th>Rank</th><th>Market</th><th>Direction</th><th>Score</th><th>Regime</th><th>Stage</th><th>Board Flag</th><th>Alignment</th><th>Conflict</th></tr></thead>
                 <tbody>
               <tr>
                 <td colspan="9" style="text-align:center; color:#8da0c6; padding:14px; background:rgba(89,195,255,0.05);">
@@ -648,26 +643,24 @@
                 <td>1</td>
                 <td>AUDUSD</td>
                 <td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td>
-                <td>60<div class="tiny">Struct Bullish</div></td>
-                <td><span class="pill pill-amber">Balanced</span></td>
+                <td>60<div class="tiny">Th 58 • Ti 56</div></td>
+                <td><span class="pill pill-green">Upside Objective</span></td>
                 <td><span class="pill pill-amber">Neutral</span></td>
                 <td><span class="pill pill-red">WAIT</span></td>
-                <td><span class="pill pill-amber">Pre-Board</span></td>
                 <td>None</td>
-                <td>Low</td>
+                <td><span class="pill pill-amber">Pre-Board</span></td>
               </tr>
             
               <tr>
                 <td>2</td>
                 <td>AUDJPY</td>
                 <td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td>
-                <td>59<div class="tiny">Struct Bullish</div></td>
-                <td><span class="pill pill-amber">Balanced</span></td>
+                <td>59<div class="tiny">Th 59 • Ti 45</div></td>
+                <td><span class="pill pill-green">Upside Objective</span></td>
                 <td><span class="pill pill-amber">Neutral</span></td>
                 <td><span class="pill pill-red">WAIT</span></td>
-                <td><span class="pill pill-amber">Pre-Board</span></td>
                 <td>None</td>
-                <td>Low</td>
+                <td><span class="pill pill-amber">Pre-Board</span></td>
               </tr>
             </tbody>
               </table>
@@ -676,8 +669,8 @@
             <div class="decision">
               <h3>Currencies Top Watchlist Setup</h3>
               <div class="decision-market">AUDUSD — Bullish / Valid</div>
-              <div class="decision-direction"><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> • Permission: <span class="pill pill-green">Allowed</span> • Structure: <span class="pill pill-green">Bullish</span> • Liquidity: <span class="pill pill-amber">Balanced</span></div>
-              <div class="tiny" style="margin-bottom:10px;">SMC <span class="pill pill-amber">Neutral</span> • Execution <span class="pill pill-red">WAIT</span> • Type None • Gov 60</div>
+              <div class="decision-direction"><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> • Theme: <span class="pill pill-blue">Valid</span> • Timing: <span class="pill pill-blue">Trigger</span> • Board: <span class="pill pill-amber">Pre-Board</span></div>
+              <div class="tiny" style="margin-bottom:10px;">Gov 60 • Theme 58 • Timing 56 • Exec 47</div>
               <div class="insight-strip">
                 <span class="insight-item"><strong>Theme Str</strong> Constructive</span>
                 <span class="insight-item"><strong>Timing Q</strong> Good</span>
@@ -701,7 +694,7 @@
                 <div class="tiny">Targets: Nearest H1 liquidity / Nearest H4 liquidity</div>
                 <div class="tiny">Note: Setup forming but not yet executable</div>
               </div>
-              <ul class="reason-list"><li>Display regime is &#39;Bullish / Valid&#39;.</li><li>Theme engine: Valid / Constructive at 58.</li><li>Timing engine: Trigger / Good at 56.</li><li>Board engine: Pre-Board.</li><li>Signal alignment is &#39;Neutral&#39;.</li><li>Conflict is &#39;Low&#39;.</li><li>Stability is &#39;Moderating&#39;.</li><li>Gov 60 • Struct Bullish • Liquidity Balanced • SMC Neutral • Exec WAIT • Rank 80</li><li>Trade Board promotion is governance-controlled, not dashboard-calculated.</li></ul>
+              <ul class="reason-list"><li>Display regime is &#39;Bullish / Valid&#39;.</li><li>Governance permission: Wait Timing window closed</li><li>Structural context: Bullish.</li><li>Liquidity objective: Upside Objective.</li><li>SMC state: Neutral.</li><li>Execution action: WAIT.</li><li>Trade type: None.</li><li>Conflict is &#39;Low&#39;.</li><li>Stability is &#39;Moderating&#39;.</li><li>Gov 60 • Permission Wait • Structure Bullish • Liquidity Upside Objective • SMC Neutral • Exec WAIT • Rank 80</li><li>Trade Board promotion is governance-controlled, not dashboard-calculated.</li></ul>
             </div>
           </section>
 
@@ -709,8 +702,8 @@
             <div class="card">
               <h2>Currencies Regime Heat Matrix</h2>
               <table class="mini-table">
-                <thead><tr><th>Market</th><th>Dir</th><th>Structural</th><th>Tactical</th><th>Execution</th><th>Final</th><th>Theme</th><th>Timing</th><th>Theme State</th><th>Timing State</th><th>Board</th><th>Liquidity</th><th>SMC</th><th>Exec Action</th><th>Permission</th><th>Stability</th><th>Conflict</th><th>State</th></tr></thead>
-                <tbody><tr><td>AUDUSD</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat amber">65</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">40</span></td><td><span class="heat amber">60</span></td><td><span class="heat amber">60</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-blue'>Unknown</span></td><td><span class='pill pill-blue'>TRIGGER</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-amber'>Wait</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-blue'>TRIGGER</span></td></tr><tr><td>CADJPY</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">36</span></td><td><span class="heat amber">48</span></td><td><span class="heat amber">48</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-blue'>Unknown</span></td><td><span class='pill pill-blue'>TRIGGER</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-amber'>Wait</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-blue'>TRIGGER</span></td></tr><tr><td>EURUSD</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">40</span></td><td><span class="heat amber">47</span></td><td><span class="heat amber">47</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-blue'>Unknown</span></td><td><span class='pill pill-blue'>TRIGGER</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-amber'>Wait</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-amber'>Medium</span></td><td><span class='pill pill-blue'>TRIGGER</span></td></tr><tr><td>AUDJPY</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat amber">65</span></td><td><span class="heat amber">50</span></td><td><span class="heat red">24</span></td><td><span class="heat amber">59</span></td><td><span class="heat amber">59</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-blue'>Unknown</span></td><td><span class='pill pill-amber'>BUILDING</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-amber'>Wait</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-amber'>BUILDING</span></td></tr><tr><td>GBPUSD</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat amber">65</span></td><td><span class="heat amber">50</span></td><td><span class="heat red">21</span></td><td><span class="heat amber">57</span></td><td><span class="heat amber">57</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-blue'>Unknown</span></td><td><span class='pill pill-amber'>BUILDING</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-amber'>Wait</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-amber'>Medium</span></td><td><span class='pill pill-amber'>BUILDING</span></td></tr><tr><td>GBPJPY</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat amber">37</span></td><td><span class="heat amber">50</span></td><td><span class="heat green">90</span></td><td><span class="heat amber">38</span></td><td><span class="heat amber">38</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-blue'>Unknown</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-amber'>Wait</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-amber'>Medium</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>USDJPY</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat red">27</span></td><td><span class="heat amber">50</span></td><td><span class="heat red">20</span></td><td><span class="heat red">31</span></td><td><span class="heat red">31</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-blue'>Unknown</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-blue'>Bullish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-amber'>Wait</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-amber'>Medium</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>USDCAD</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat amber">35</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">46</span></td><td><span class="heat amber">33</span></td><td><span class="heat amber">33</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-blue'>Unknown</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-blue'>Bullish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Blocked</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-red'>High</span></td><td><span class='pill pill-red'>WAIT</span></td></tr></tbody>
+                <thead><tr><th>Market</th><th>Dir</th><th>Structural</th><th>Tactical</th><th>Execution</th><th>Final</th><th>Theme</th><th>Timing</th><th>Liquidity</th><th>SMC</th><th>Exec Action</th><th>Permission</th><th>Board</th><th>Tactical State</th><th>Bias</th><th>Conviction</th><th>Stability</th><th>Conflict</th><th>State</th></tr></thead>
+                <tbody><tr><td>AUDUSD</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat amber">65</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">40</span></td><td><span class="heat amber">60</span></td><td><span class="heat amber">60</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-green'>Upside Objective</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-amber'>Wait</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>CADJPY</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">36</span></td><td><span class="heat amber">48</span></td><td><span class="heat amber">48</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-green'>Upside Objective</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-amber'>Wait</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>EURUSD</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">40</span></td><td><span class="heat amber">47</span></td><td><span class="heat amber">47</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-red'>Downside Objective</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-amber'>Wait</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-amber'>Medium</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>AUDJPY</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat amber">65</span></td><td><span class="heat amber">50</span></td><td><span class="heat red">24</span></td><td><span class="heat amber">59</span></td><td><span class="heat amber">59</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-green'>Upside Objective</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-amber'>Wait</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>GBPUSD</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat amber">65</span></td><td><span class="heat amber">50</span></td><td><span class="heat red">21</span></td><td><span class="heat amber">57</span></td><td><span class="heat amber">57</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-green'>Upside Objective</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-amber'>Wait</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-amber'>Medium</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>GBPJPY</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat amber">37</span></td><td><span class="heat amber">50</span></td><td><span class="heat green">90</span></td><td><span class="heat amber">38</span></td><td><span class="heat amber">38</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-red'>Downside Objective</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-amber'>Wait</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-amber'>Medium</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>USDJPY</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat red">27</span></td><td><span class="heat amber">50</span></td><td><span class="heat red">20</span></td><td><span class="heat red">31</span></td><td><span class="heat red">31</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-red'>Downside Objective</span></td><td><span class='pill pill-blue'>Bullish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-amber'>Wait</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-amber'>Medium</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>USDCAD</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat amber">35</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">46</span></td><td><span class="heat amber">33</span></td><td><span class="heat amber">33</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-red'>Downside Objective</span></td><td><span class='pill pill-blue'>Bullish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Blocked</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-red'>High</span></td><td><span class='pill pill-red'>WAIT</span></td></tr></tbody>
               </table>
             </div>
 
@@ -735,8 +728,8 @@
                   <div>
                     <div><strong>AUDUSD</strong> <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class="pill pill-green">Bullish / Valid</span></div>
                     <div class="bar-wrap"><div class="bar" style="width:60.11%"></div></div>
-                    <div class="tiny">Gov 60 • Struct <span class="pill pill-green">Bullish</span> • Liquidity <span class="pill pill-amber">Balanced</span> • SMC <span class="pill pill-amber">Neutral</span> • Exec <span class="pill pill-red">WAIT</span> • Rank 80</div>
-                    <div class="tiny">Permission <span class="pill pill-green">Allowed</span> • Type None • Reason Timing window closed • Plan Breakout Continuation • Risk C</div>
+                    <div class="tiny">Gov 60 • Theme 58 Valid • Timing 56 Trigger • Board Pre-Board • Rank 80</div>
+                    <div class="tiny">Stage TRIGGER • Timing Blocker Timing window closed • Plan Breakout Continuation • Risk C • Tactical N/A • Bias Neutral • Conviction Developing</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
@@ -751,8 +744,8 @@
                   <div>
                     <div><strong>AUDJPY</strong> <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class="pill pill-green">Bullish / Valid</span></div>
                     <div class="bar-wrap"><div class="bar" style="width:58.63%"></div></div>
-                    <div class="tiny">Gov 59 • Struct <span class="pill pill-green">Bullish</span> • Liquidity <span class="pill pill-amber">Balanced</span> • SMC <span class="pill pill-amber">Neutral</span> • Exec <span class="pill pill-red">WAIT</span> • Rank 66</div>
-                    <div class="tiny">Permission <span class="pill pill-green">Allowed</span> • Type None • Reason Timing window closed • Plan None • Risk D</div>
+                    <div class="tiny">Gov 59 • Theme 59 Valid • Timing 45 Building • Board Pre-Board • Rank 66</div>
+                    <div class="tiny">Stage BUILDING • Timing Blocker Timing window closed • Plan None • Risk D • Tactical N/A • Bias Neutral • Conviction Developing</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
@@ -767,8 +760,8 @@
                   <div>
                     <div><strong>GBPUSD</strong> <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class="pill pill-green">Bullish / Valid</span></div>
                     <div class="bar-wrap"><div class="bar" style="width:56.95%"></div></div>
-                    <div class="tiny">Gov 57 • Struct <span class="pill pill-green">Bullish</span> • Liquidity <span class="pill pill-amber">Balanced</span> • SMC <span class="pill pill-amber">Neutral</span> • Exec <span class="pill pill-red">WAIT</span> • Rank 59</div>
-                    <div class="tiny">Permission <span class="pill pill-green">Allowed</span> • Type None • Reason Timing window closed • Plan None • Risk D</div>
+                    <div class="tiny">Gov 57 • Theme 57 Valid • Timing 43 Building • Board Pre-Board • Rank 59</div>
+                    <div class="tiny">Stage BUILDING • Timing Blocker Timing window closed • Plan None • Risk D • Tactical N/A • Bias Neutral • Conviction Developing</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
@@ -783,8 +776,8 @@
                   <div>
                     <div><strong>CADJPY</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class="pill pill-amber">Neutral / Valid</span></div>
                     <div class="bar-wrap"><div class="bar" style="width:47.84%"></div></div>
-                    <div class="tiny">Gov 48 • Struct <span class="pill pill-amber">Neutral</span> • Liquidity <span class="pill pill-amber">Balanced</span> • SMC <span class="pill pill-amber">Neutral</span> • Exec <span class="pill pill-red">WAIT</span> • Rank 75</div>
-                    <div class="tiny">Permission <span class="pill pill-green">Allowed</span> • Type None • Reason Timing window closed • Plan None • Risk D</div>
+                    <div class="tiny">Gov 48 • Theme 50 Valid • Timing 54 Trigger • Board None • Rank 75</div>
+                    <div class="tiny">Stage TRIGGER • Timing Blocker Timing window closed • Plan None • Risk D • Tactical N/A • Bias Neutral • Conviction Developing</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
@@ -799,8 +792,8 @@
                   <div>
                     <div><strong>EURUSD</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class="pill pill-amber">Neutral / Valid</span></div>
                     <div class="bar-wrap"><div class="bar" style="width:47.0%"></div></div>
-                    <div class="tiny">Gov 47 • Struct <span class="pill pill-amber">Neutral</span> • Liquidity <span class="pill pill-amber">Balanced</span> • SMC <span class="pill pill-amber">Neutral</span> • Exec <span class="pill pill-red">WAIT</span> • Rank 70</div>
-                    <div class="tiny">Permission <span class="pill pill-green">Allowed</span> • Type None • Reason Timing window closed • Plan None • Risk D</div>
+                    <div class="tiny">Gov 47 • Theme 47 Valid • Timing 54 Trigger • Board None • Rank 70</div>
+                    <div class="tiny">Stage TRIGGER • Timing Blocker Timing window closed • Plan None • Risk D • Tactical N/A • Bias Neutral • Conviction Developing</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
@@ -815,8 +808,8 @@
                   <div>
                     <div><strong>GBPJPY</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish / Valid</span></div>
                     <div class="bar-wrap"><div class="bar" style="width:37.67%"></div></div>
-                    <div class="tiny">Gov 38 • Struct <span class="pill pill-red">Bearish</span> • Liquidity <span class="pill pill-amber">Balanced</span> • SMC <span class="pill pill-amber">Neutral</span> • Exec <span class="pill pill-red">WAIT</span> • Rank 51</div>
-                    <div class="tiny">Permission <span class="pill pill-green">Allowed</span> • Type None • Reason Timing window closed • Plan None • Risk D</div>
+                    <div class="tiny">Gov 38 • Theme 40 Valid • Timing 53 Early • Board Pre-Board • Rank 51</div>
+                    <div class="tiny">Stage WAIT • Timing Blocker Timing window closed • Plan None • Risk D • Tactical N/A • Bias Neutral • Conviction Developing</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
@@ -831,8 +824,8 @@
                   <div>
                     <div><strong>USDCAD</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish / Invalid</span></div>
                     <div class="bar-wrap"><div class="bar" style="width:33.21%"></div></div>
-                    <div class="tiny">Gov 33 • Struct <span class="pill pill-red">Bearish</span> • Liquidity <span class="pill pill-amber">Balanced</span> • SMC <span class="pill pill-amber">Neutral</span> • Exec <span class="pill pill-red">WAIT</span> • Rank 24</div>
-                    <div class="tiny">Permission <span class="pill pill-green">Allowed</span> • Type None • Reason High conflict • Plan None • Risk D</div>
+                    <div class="tiny">Gov 33 • Theme 35 Invalid • Timing 51 Early • Board None • Rank 24</div>
+                    <div class="tiny">Stage WAIT • Timing Blocker High conflict • Plan None • Risk D • Tactical N/A • Bias Neutral • Conviction Developing</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
@@ -847,8 +840,8 @@
                   <div>
                     <div><strong>USDJPY</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish / Valid</span></div>
                     <div class="bar-wrap"><div class="bar" style="width:31.29%"></div></div>
-                    <div class="tiny">Gov 31 • Struct <span class="pill pill-red">Bearish</span> • Liquidity <span class="pill pill-amber">Balanced</span> • SMC <span class="pill pill-amber">Neutral</span> • Exec <span class="pill pill-red">WAIT</span> • Rank 28</div>
-                    <div class="tiny">Permission <span class="pill pill-green">Allowed</span> • Type None • Reason Timing window closed • Plan None • Risk D</div>
+                    <div class="tiny">Gov 31 • Theme 33 Valid • Timing 43 Early • Board Pre-Board • Rank 28</div>
+                    <div class="tiny">Stage WAIT • Timing Blocker Timing window closed • Plan None • Risk D • Tactical N/A • Bias Neutral • Conviction Developing</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
@@ -866,7 +859,7 @@
             <div class="card">
               <h2>Metals Trade Board</h2>
               <table class="mini-table">
-                <thead><tr><th>Rank</th><th>Market</th><th>Direction</th><th>Score</th><th>Liquidity</th><th>SMC</th><th>Execution</th><th>Board</th><th>Type</th><th>Conflict</th></tr></thead>
+                <thead><tr><th>Rank</th><th>Market</th><th>Direction</th><th>Score</th><th>Regime</th><th>Stage</th><th>Board Flag</th><th>Alignment</th><th>Conflict</th></tr></thead>
                 <tbody>
               <tr>
                 <td colspan="9" style="text-align:center; color:#8da0c6; padding:18px;">
@@ -880,8 +873,8 @@
             <div class="decision">
               <h3>Metals Top Watchlist Setup</h3>
               <div class="decision-market">SILVER — Bearish / Invalid</div>
-              <div class="decision-direction"><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> • Permission: <span class="pill pill-green">Allowed</span> • Structure: <span class="pill pill-red">Bearish</span> • Liquidity: <span class="pill pill-amber">Balanced</span></div>
-              <div class="tiny" style="margin-bottom:10px;">SMC <span class="pill pill-amber">Neutral</span> • Execution <span class="pill pill-red">WAIT</span> • Type None • Gov 31</div>
+              <div class="decision-direction"><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> • Theme: <span class="pill pill-red">Invalid</span> • Timing: <span class="pill pill-red">Early</span> • Board: <span class="pill pill-red">None</span></div>
+              <div class="tiny" style="margin-bottom:10px;">Gov 31 • Theme 32 • Timing 50 • Exec 72</div>
               <div class="insight-strip">
                 <span class="insight-item"><strong>Theme Str</strong> Weak</span>
                 <span class="insight-item"><strong>Timing Q</strong> Low</span>
@@ -905,7 +898,7 @@
                 <div class="tiny">Targets: N/A / N/A</div>
                 <div class="tiny">Note: No executable setup yet</div>
               </div>
-              <ul class="reason-list"><li>Display regime is &#39;Bearish / Invalid&#39;.</li><li>Theme engine: Invalid / Weak at 32.</li><li>Timing engine: Early / Low at 50.</li><li>Board engine: None.</li><li>Signal alignment is &#39;Aligned&#39;.</li><li>Conflict is &#39;High&#39;.</li><li>Stability is &#39;Moderating&#39;.</li><li>Gov 31 • Struct Bearish • Liquidity Balanced • SMC Neutral • Exec WAIT • Rank 33</li><li>Trade Board promotion is governance-controlled, not dashboard-calculated.</li></ul>
+              <ul class="reason-list"><li>Display regime is &#39;Bearish / Invalid&#39;.</li><li>Governance permission: Blocked High conflict</li><li>Structural context: Bearish.</li><li>Liquidity objective: Upside Objective.</li><li>SMC state: Neutral.</li><li>Execution action: WAIT.</li><li>Trade type: Blocked.</li><li>Conflict is &#39;High&#39;.</li><li>Stability is &#39;Moderating&#39;.</li><li>Gov 31 • Permission Blocked • Structure Bearish • Liquidity Upside Objective • SMC Neutral • Exec WAIT • Rank 33</li><li>Trade Board promotion is governance-controlled, not dashboard-calculated.</li></ul>
             </div>
           </section>
 
@@ -913,8 +906,8 @@
             <div class="card">
               <h2>Metals Regime Heat Matrix</h2>
               <table class="mini-table">
-                <thead><tr><th>Market</th><th>Dir</th><th>Structural</th><th>Tactical</th><th>Execution</th><th>Final</th><th>Theme</th><th>Timing</th><th>Theme State</th><th>Timing State</th><th>Board</th><th>Liquidity</th><th>SMC</th><th>Exec Action</th><th>Permission</th><th>Stability</th><th>Conflict</th><th>State</th></tr></thead>
-                <tbody><tr><td>SILVER</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat red">31</span></td><td><span class="heat amber">50</span></td><td><span class="heat green">90</span></td><td><span class="heat red">31</span></td><td><span class="heat red">31</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-blue'>Unknown</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Blocked</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-red'>High</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>GOLD</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat red">24</span></td><td><span class="heat amber">50</span></td><td><span class="heat red">16</span></td><td><span class="heat red">27</span></td><td><span class="heat red">27</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-blue'>Unknown</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Blocked</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-red'>High</span></td><td><span class='pill pill-red'>WAIT</span></td></tr></tbody>
+                <thead><tr><th>Market</th><th>Dir</th><th>Structural</th><th>Tactical</th><th>Execution</th><th>Final</th><th>Theme</th><th>Timing</th><th>Liquidity</th><th>SMC</th><th>Exec Action</th><th>Permission</th><th>Board</th><th>Tactical State</th><th>Bias</th><th>Conviction</th><th>Stability</th><th>Conflict</th><th>State</th></tr></thead>
+                <tbody><tr><td>SILVER</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat red">31</span></td><td><span class="heat amber">50</span></td><td><span class="heat green">90</span></td><td><span class="heat red">31</span></td><td><span class="heat red">31</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-green'>Upside Objective</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Blocked</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-red'>High</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>GOLD</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat red">24</span></td><td><span class="heat amber">50</span></td><td><span class="heat red">16</span></td><td><span class="heat red">27</span></td><td><span class="heat red">27</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-green'>Upside Objective</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Blocked</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-red'>High</span></td><td><span class='pill pill-red'>WAIT</span></td></tr></tbody>
               </table>
             </div>
 
@@ -939,8 +932,8 @@
                   <div>
                     <div><strong>SILVER</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish / Invalid</span></div>
                     <div class="bar-wrap"><div class="bar" style="width:31.14%"></div></div>
-                    <div class="tiny">Gov 31 • Struct <span class="pill pill-red">Bearish</span> • Liquidity <span class="pill pill-amber">Balanced</span> • SMC <span class="pill pill-amber">Neutral</span> • Exec <span class="pill pill-red">WAIT</span> • Rank 33</div>
-                    <div class="tiny">Permission <span class="pill pill-green">Allowed</span> • Type None • Reason High conflict • Plan None • Risk D</div>
+                    <div class="tiny">Gov 31 • Theme 32 Invalid • Timing 50 Early • Board None • Rank 33</div>
+                    <div class="tiny">Stage WAIT • Timing Blocker High conflict • Plan None • Risk D • Tactical N/A • Bias Neutral • Conviction Developing</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
@@ -955,8 +948,8 @@
                   <div>
                     <div><strong>GOLD</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish / Invalid</span></div>
                     <div class="bar-wrap"><div class="bar" style="width:27.26%"></div></div>
-                    <div class="tiny">Gov 27 • Struct <span class="pill pill-red">Bearish</span> • Liquidity <span class="pill pill-amber">Balanced</span> • SMC <span class="pill pill-amber">Neutral</span> • Exec <span class="pill pill-red">WAIT</span> • Rank 10</div>
-                    <div class="tiny">Permission <span class="pill pill-green">Allowed</span> • Type None • Reason High conflict • Plan None • Risk D</div>
+                    <div class="tiny">Gov 27 • Theme 27 Invalid • Timing 39 Early • Board None • Rank 10</div>
+                    <div class="tiny">Stage WAIT • Timing Blocker High conflict • Plan None • Risk D • Tactical N/A • Bias Neutral • Conviction Developing</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
@@ -974,7 +967,7 @@
             <div class="card">
               <h2>Indices Trade Board</h2>
               <table class="mini-table">
-                <thead><tr><th>Rank</th><th>Market</th><th>Direction</th><th>Score</th><th>Liquidity</th><th>SMC</th><th>Execution</th><th>Board</th><th>Type</th><th>Conflict</th></tr></thead>
+                <thead><tr><th>Rank</th><th>Market</th><th>Direction</th><th>Score</th><th>Regime</th><th>Stage</th><th>Board Flag</th><th>Alignment</th><th>Conflict</th></tr></thead>
                 <tbody>
               <tr>
                 <td colspan="9" style="text-align:center; color:#8da0c6; padding:14px; background:rgba(89,195,255,0.05);">
@@ -986,26 +979,24 @@
                 <td>1</td>
                 <td>SP500</td>
                 <td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td>
-                <td>64<div class="tiny">Struct Bullish</div></td>
-                <td><span class="pill pill-amber">Balanced</span></td>
-                <td><span class="pill pill-amber">Neutral</span></td>
+                <td>64<div class="tiny">Th 64 • Ti 56</div></td>
+                <td><span class="pill pill-green">Upside Objective</span></td>
+                <td><span class="pill pill-blue">Bearish Location Only</span></td>
                 <td><span class="pill pill-red">WAIT</span></td>
+                <td>Watchlist</td>
                 <td><span class="pill pill-amber">Pre-Board</span></td>
-                <td>None</td>
-                <td>Low</td>
               </tr>
             
               <tr>
                 <td>2</td>
                 <td>WS30</td>
                 <td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td>
-                <td>64<div class="tiny">Struct Bullish</div></td>
-                <td><span class="pill pill-amber">Balanced</span></td>
+                <td>64<div class="tiny">Th 64 • Ti 55</div></td>
+                <td><span class="pill pill-green">Upside Objective</span></td>
                 <td><span class="pill pill-amber">Neutral</span></td>
                 <td><span class="pill pill-red">WAIT</span></td>
-                <td><span class="pill pill-amber">Pre-Board</span></td>
                 <td>None</td>
-                <td>Low</td>
+                <td><span class="pill pill-amber">Pre-Board</span></td>
               </tr>
             </tbody>
               </table>
@@ -1014,8 +1005,8 @@
             <div class="decision">
               <h3>Indices Top Watchlist Setup</h3>
               <div class="decision-market">SP500 — Bullish / Strong</div>
-              <div class="decision-direction"><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> • Permission: <span class="pill pill-green">Allowed</span> • Structure: <span class="pill pill-green">Bullish</span> • Liquidity: <span class="pill pill-amber">Balanced</span></div>
-              <div class="tiny" style="margin-bottom:10px;">SMC <span class="pill pill-amber">Neutral</span> • Execution <span class="pill pill-red">WAIT</span> • Type None • Gov 64</div>
+              <div class="decision-direction"><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> • Theme: <span class="pill pill-green">Strong</span> • Timing: <span class="pill pill-blue">Trigger</span> • Board: <span class="pill pill-amber">Pre-Board</span></div>
+              <div class="tiny" style="margin-bottom:10px;">Gov 64 • Theme 64 • Timing 56 • Exec 50</div>
               <div class="insight-strip">
                 <span class="insight-item"><strong>Theme Str</strong> Strong</span>
                 <span class="insight-item"><strong>Timing Q</strong> Good</span>
@@ -1039,7 +1030,7 @@
                 <div class="tiny">Targets: Nearest H1 liquidity / Nearest H4 liquidity</div>
                 <div class="tiny">Note: Setup forming but not yet executable</div>
               </div>
-              <ul class="reason-list"><li>Display regime is &#39;Bullish / Strong&#39;.</li><li>Theme engine: Strong / Strong at 64.</li><li>Timing engine: Trigger / Good at 56.</li><li>Board engine: Pre-Board.</li><li>Signal alignment is &#39;Neutral&#39;.</li><li>Conflict is &#39;Low&#39;.</li><li>Stability is &#39;Moderating&#39;.</li><li>Gov 64 • Struct Bullish • Liquidity Balanced • SMC Neutral • Exec WAIT • Rank 85</li><li>Trade Board promotion is governance-controlled, not dashboard-calculated.</li></ul>
+              <ul class="reason-list"><li>Display regime is &#39;Bullish / Strong&#39;.</li><li>Governance permission: Wait Timing window closed</li><li>Structural context: Bullish.</li><li>Liquidity objective: Upside Objective.</li><li>SMC state: Bearish Location Only.</li><li>Execution action: WAIT.</li><li>Trade type: Watchlist.</li><li>Conflict is &#39;Low&#39;.</li><li>Stability is &#39;Moderating&#39;.</li><li>Gov 64 • Permission Wait • Structure Bullish • Liquidity Upside Objective • SMC Bearish Location Only • Exec WAIT • Rank 85</li><li>Trade Board promotion is governance-controlled, not dashboard-calculated.</li></ul>
             </div>
           </section>
 
@@ -1047,8 +1038,8 @@
             <div class="card">
               <h2>Indices Regime Heat Matrix</h2>
               <table class="mini-table">
-                <thead><tr><th>Market</th><th>Dir</th><th>Structural</th><th>Tactical</th><th>Execution</th><th>Final</th><th>Theme</th><th>Timing</th><th>Theme State</th><th>Timing State</th><th>Board</th><th>Liquidity</th><th>SMC</th><th>Exec Action</th><th>Permission</th><th>Stability</th><th>Conflict</th><th>State</th></tr></thead>
-                <tbody><tr><td>SP500</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat green">73</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">46</span></td><td><span class="heat amber">64</span></td><td><span class="heat amber">64</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-blue'>Unknown</span></td><td><span class='pill pill-blue'>TRIGGER</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-blue'>Bearish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-amber'>Wait</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-blue'>TRIGGER</span></td></tr><tr><td>WS30</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat green">73</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">40</span></td><td><span class="heat amber">64</span></td><td><span class="heat amber">64</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-blue'>Unknown</span></td><td><span class='pill pill-blue'>TRIGGER</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-amber'>Wait</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-blue'>TRIGGER</span></td></tr><tr><td>NAS100</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat red">31</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">40</span></td><td><span class="heat amber">38</span></td><td><span class="heat amber">38</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-blue'>Unknown</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-amber'>Wait</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>DAX40</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat red">25</span></td><td><span class="heat amber">50</span></td><td><span class="heat green">82</span></td><td><span class="heat red">28</span></td><td><span class="heat red">28</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-blue'>Unknown</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Blocked</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-red'>High</span></td><td><span class='pill pill-red'>WAIT</span></td></tr></tbody>
+                <thead><tr><th>Market</th><th>Dir</th><th>Structural</th><th>Tactical</th><th>Execution</th><th>Final</th><th>Theme</th><th>Timing</th><th>Liquidity</th><th>SMC</th><th>Exec Action</th><th>Permission</th><th>Board</th><th>Tactical State</th><th>Bias</th><th>Conviction</th><th>Stability</th><th>Conflict</th><th>State</th></tr></thead>
+                <tbody><tr><td>SP500</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat green">73</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">46</span></td><td><span class="heat amber">64</span></td><td><span class="heat amber">64</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-green'>Upside Objective</span></td><td><span class='pill pill-blue'>Bearish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-amber'>Wait</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>WS30</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat green">73</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">40</span></td><td><span class="heat amber">64</span></td><td><span class="heat amber">64</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-green'>Upside Objective</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-amber'>Wait</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>NAS100</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat red">31</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">40</span></td><td><span class="heat amber">38</span></td><td><span class="heat amber">38</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-green'>Upside Objective</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-amber'>Wait</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>DAX40</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat red">25</span></td><td><span class="heat amber">50</span></td><td><span class="heat green">82</span></td><td><span class="heat red">28</span></td><td><span class="heat red">28</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-green'>Upside Objective</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Blocked</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-red'>High</span></td><td><span class='pill pill-red'>WAIT</span></td></tr></tbody>
               </table>
             </div>
 
@@ -1073,8 +1064,8 @@
                   <div>
                     <div><strong>SP500</strong> <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class="pill pill-green">Bullish / Strong</span></div>
                     <div class="bar-wrap"><div class="bar" style="width:63.65%"></div></div>
-                    <div class="tiny">Gov 64 • Struct <span class="pill pill-green">Bullish</span> • Liquidity <span class="pill pill-amber">Balanced</span> • SMC <span class="pill pill-amber">Neutral</span> • Exec <span class="pill pill-red">WAIT</span> • Rank 85</div>
-                    <div class="tiny">Permission <span class="pill pill-green">Allowed</span> • Type None • Reason Timing window closed • Plan Breakout Continuation • Risk C</div>
+                    <div class="tiny">Gov 64 • Theme 64 Strong • Timing 56 Trigger • Board Pre-Board • Rank 85</div>
+                    <div class="tiny">Stage TRIGGER • Timing Blocker Timing window closed • Plan Breakout Continuation • Risk C • Tactical N/A • Bias Neutral • Conviction Developing</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
@@ -1089,8 +1080,8 @@
                   <div>
                     <div><strong>WS30</strong> <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class="pill pill-green">Bullish / Strong</span></div>
                     <div class="bar-wrap"><div class="bar" style="width:63.65%"></div></div>
-                    <div class="tiny">Gov 64 • Struct <span class="pill pill-green">Bullish</span> • Liquidity <span class="pill pill-amber">Balanced</span> • SMC <span class="pill pill-amber">Neutral</span> • Exec <span class="pill pill-red">WAIT</span> • Rank 83</div>
-                    <div class="tiny">Permission <span class="pill pill-green">Allowed</span> • Type None • Reason Timing window closed • Plan Breakout Continuation • Risk C</div>
+                    <div class="tiny">Gov 64 • Theme 64 Strong • Timing 55 Trigger • Board Pre-Board • Rank 83</div>
+                    <div class="tiny">Stage TRIGGER • Timing Blocker Timing window closed • Plan Breakout Continuation • Risk C • Tactical N/A • Bias Neutral • Conviction Developing</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
@@ -1105,8 +1096,8 @@
                   <div>
                     <div><strong>NAS100</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish / Invalid</span></div>
                     <div class="bar-wrap"><div class="bar" style="width:38.02%"></div></div>
-                    <div class="tiny">Gov 38 • Struct <span class="pill pill-red">Bearish</span> • Liquidity <span class="pill pill-amber">Balanced</span> • SMC <span class="pill pill-amber">Neutral</span> • Exec <span class="pill pill-red">WAIT</span> • Rank 40</div>
-                    <div class="tiny">Permission <span class="pill pill-green">Allowed</span> • Type None • Reason Timing window closed • Plan None • Risk D</div>
+                    <div class="tiny">Gov 38 • Theme 36 Invalid • Timing 56 Early • Board None • Rank 40</div>
+                    <div class="tiny">Stage WAIT • Timing Blocker Timing window closed • Plan None • Risk D • Tactical N/A • Bias Neutral • Conviction Developing</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
@@ -1121,8 +1112,8 @@
                   <div>
                     <div><strong>DAX40</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish / Invalid</span></div>
                     <div class="bar-wrap"><div class="bar" style="width:28.2%"></div></div>
-                    <div class="tiny">Gov 28 • Struct <span class="pill pill-red">Bearish</span> • Liquidity <span class="pill pill-amber">Balanced</span> • SMC <span class="pill pill-amber">Neutral</span> • Exec <span class="pill pill-red">WAIT</span> • Rank 28</div>
-                    <div class="tiny">Permission <span class="pill pill-green">Allowed</span> • Type None • Reason High conflict • Plan None • Risk D</div>
+                    <div class="tiny">Gov 28 • Theme 28 Invalid • Timing 46 Early • Board None • Rank 28</div>
+                    <div class="tiny">Stage WAIT • Timing Blocker High conflict • Plan None • Risk D • Tactical N/A • Bias Neutral • Conviction Developing</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
@@ -1140,7 +1131,7 @@
             <div class="card">
               <h2>Stocks Trade Board</h2>
               <table class="mini-table">
-                <thead><tr><th>Rank</th><th>Market</th><th>Direction</th><th>Score</th><th>Liquidity</th><th>SMC</th><th>Execution</th><th>Board</th><th>Type</th><th>Conflict</th></tr></thead>
+                <thead><tr><th>Rank</th><th>Market</th><th>Direction</th><th>Score</th><th>Regime</th><th>Stage</th><th>Board Flag</th><th>Alignment</th><th>Conflict</th></tr></thead>
                 <tbody>
               <tr>
                 <td colspan="9" style="text-align:center; color:#8da0c6; padding:14px; background:rgba(89,195,255,0.05);">
@@ -1152,13 +1143,12 @@
                 <td>1</td>
                 <td>HSBC</td>
                 <td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td>
-                <td>66<div class="tiny">Struct Bullish</div></td>
-                <td><span class="pill pill-amber">Balanced</span></td>
+                <td>66<div class="tiny">Th 66 • Ti 64</div></td>
+                <td><span class="pill pill-green">Upside Objective</span></td>
                 <td><span class="pill pill-amber">Neutral</span></td>
                 <td><span class="pill pill-red">WAIT</span></td>
-                <td><span class="pill pill-amber">Pre-Board</span></td>
                 <td>None</td>
-                <td>Low</td>
+                <td><span class="pill pill-amber">Pre-Board</span></td>
               </tr>
             </tbody>
               </table>
@@ -1167,8 +1157,8 @@
             <div class="decision">
               <h3>Stocks Top Watchlist Setup</h3>
               <div class="decision-market">HSBC — Bullish / Strong</div>
-              <div class="decision-direction"><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> • Permission: <span class="pill pill-green">Allowed</span> • Structure: <span class="pill pill-green">Bullish</span> • Liquidity: <span class="pill pill-amber">Balanced</span></div>
-              <div class="tiny" style="margin-bottom:10px;">SMC <span class="pill pill-amber">Neutral</span> • Execution <span class="pill pill-red">WAIT</span> • Type None • Gov 66</div>
+              <div class="decision-direction"><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> • Theme: <span class="pill pill-green">Strong</span> • Timing: <span class="pill pill-blue">Trigger</span> • Board: <span class="pill pill-amber">Pre-Board</span></div>
+              <div class="tiny" style="margin-bottom:10px;">Gov 66 • Theme 66 • Timing 64 • Exec 63</div>
               <div class="insight-strip">
                 <span class="insight-item"><strong>Theme Str</strong> Strong</span>
                 <span class="insight-item"><strong>Timing Q</strong> Good</span>
@@ -1192,7 +1182,7 @@
                 <div class="tiny">Targets: Nearest H1 liquidity / Nearest H4 liquidity</div>
                 <div class="tiny">Note: Setup forming but not yet executable</div>
               </div>
-              <ul class="reason-list"><li>Display regime is &#39;Bullish / Strong&#39;.</li><li>Theme engine: Strong / Strong at 66.</li><li>Timing engine: Trigger / Good at 64.</li><li>Board engine: Pre-Board.</li><li>Signal alignment is &#39;Neutral&#39;.</li><li>Conflict is &#39;Low&#39;.</li><li>Stability is &#39;Moderating&#39;.</li><li>Gov 66 • Struct Bullish • Liquidity Balanced • SMC Neutral • Exec WAIT • Rank 92</li><li>Trade Board promotion is governance-controlled, not dashboard-calculated.</li></ul>
+              <ul class="reason-list"><li>Display regime is &#39;Bullish / Strong&#39;.</li><li>Governance permission: Wait Timing window closed</li><li>Structural context: Bullish.</li><li>Liquidity objective: Upside Objective.</li><li>SMC state: Neutral.</li><li>Execution action: WAIT.</li><li>Trade type: None.</li><li>Conflict is &#39;Low&#39;.</li><li>Stability is &#39;Moderating&#39;.</li><li>Gov 66 • Permission Wait • Structure Bullish • Liquidity Upside Objective • SMC Neutral • Exec WAIT • Rank 92</li><li>Trade Board promotion is governance-controlled, not dashboard-calculated.</li></ul>
             </div>
           </section>
 
@@ -1200,8 +1190,8 @@
             <div class="card">
               <h2>Stocks Regime Heat Matrix</h2>
               <table class="mini-table">
-                <thead><tr><th>Market</th><th>Dir</th><th>Structural</th><th>Tactical</th><th>Execution</th><th>Final</th><th>Theme</th><th>Timing</th><th>Theme State</th><th>Timing State</th><th>Board</th><th>Liquidity</th><th>SMC</th><th>Exec Action</th><th>Permission</th><th>Stability</th><th>Conflict</th><th>State</th></tr></thead>
-                <tbody><tr><td>HSBC</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat green">76</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">62</span></td><td><span class="heat amber">66</span></td><td><span class="heat amber">66</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-blue'>Unknown</span></td><td><span class='pill pill-blue'>TRIGGER</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-amber'>Wait</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-blue'>TRIGGER</span></td></tr><tr><td>RIO</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat green">74</span></td><td><span class="heat amber">50</span></td><td><span class="heat green">72</span></td><td><span class="heat amber">59</span></td><td><span class="heat amber">59</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-blue'>Unknown</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-blue'>Reversal Build Bearish</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Blocked</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-red'>High</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>SHELL</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat green">70</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">49</span></td><td><span class="heat amber">56</span></td><td><span class="heat amber">56</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-blue'>Unknown</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-blue'>Bullish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Blocked</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-red'>High</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>RELX</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat red">33</span></td><td><span class="heat amber">50</span></td><td><span class="heat red">24</span></td><td><span class="heat amber">39</span></td><td><span class="heat amber">39</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-blue'>Unknown</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-blue'>Bullish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-amber'>Wait</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>AZN</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat green">74</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">33</span></td><td><span class="heat amber">59</span></td><td><span class="heat amber">59</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-blue'>Unknown</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Blocked</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-red'>High</span></td><td><span class='pill pill-red'>WAIT</span></td></tr></tbody>
+                <thead><tr><th>Market</th><th>Dir</th><th>Structural</th><th>Tactical</th><th>Execution</th><th>Final</th><th>Theme</th><th>Timing</th><th>Liquidity</th><th>SMC</th><th>Exec Action</th><th>Permission</th><th>Board</th><th>Tactical State</th><th>Bias</th><th>Conviction</th><th>Stability</th><th>Conflict</th><th>State</th></tr></thead>
+                <tbody><tr><td>HSBC</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat green">76</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">62</span></td><td><span class="heat amber">66</span></td><td><span class="heat amber">66</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-green'>Upside Objective</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-amber'>Wait</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>RIO</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat green">74</span></td><td><span class="heat amber">50</span></td><td><span class="heat green">72</span></td><td><span class="heat amber">59</span></td><td><span class="heat amber">59</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-green'>Upside Objective</span></td><td><span class='pill pill-blue'>Reversal Build Bearish</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Blocked</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-red'>High</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>SHELL</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat green">70</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">49</span></td><td><span class="heat amber">56</span></td><td><span class="heat amber">56</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-red'>Downside Objective</span></td><td><span class='pill pill-blue'>Bullish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Blocked</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-red'>High</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>RELX</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat red">33</span></td><td><span class="heat amber">50</span></td><td><span class="heat red">24</span></td><td><span class="heat amber">39</span></td><td><span class="heat amber">39</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-green'>Upside Objective</span></td><td><span class='pill pill-blue'>Bullish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-amber'>Wait</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-green'>Low</span></td><td><span class='pill pill-red'>WAIT</span></td></tr><tr><td>AZN</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat green">74</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">33</span></td><td><span class="heat amber">59</span></td><td><span class="heat amber">59</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-green'>Upside Objective</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Blocked</span></td><td><span class='pill pill-red'>None</span></td><td><span class='pill pill-blue'>No Continuation</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-blue'>Developing</span></td><td><span class='pill pill-amber'>Moderating</span></td><td><span class='pill pill-red'>High</span></td><td><span class='pill pill-red'>WAIT</span></td></tr></tbody>
               </table>
             </div>
 
@@ -1226,8 +1216,8 @@
                   <div>
                     <div><strong>HSBC</strong> <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class="pill pill-green">Bullish / Strong</span></div>
                     <div class="bar-wrap"><div class="bar" style="width:65.74%"></div></div>
-                    <div class="tiny">Gov 66 • Struct <span class="pill pill-green">Bullish</span> • Liquidity <span class="pill pill-amber">Balanced</span> • SMC <span class="pill pill-amber">Neutral</span> • Exec <span class="pill pill-red">WAIT</span> • Rank 92</div>
-                    <div class="tiny">Permission <span class="pill pill-green">Allowed</span> • Type None • Reason Timing window closed • Plan Breakout Continuation • Risk C</div>
+                    <div class="tiny">Gov 66 • Theme 66 Strong • Timing 64 Trigger • Board Pre-Board • Rank 92</div>
+                    <div class="tiny">Stage TRIGGER • Timing Blocker Timing window closed • Plan Breakout Continuation • Risk C • Tactical N/A • Bias Neutral • Conviction Developing</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
@@ -1242,8 +1232,8 @@
                   <div>
                     <div><strong>RIO</strong> <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class="pill pill-green">Bullish / Valid</span></div>
                     <div class="bar-wrap"><div class="bar" style="width:59.28%"></div></div>
-                    <div class="tiny">Gov 59 • Struct <span class="pill pill-green">Bullish</span> • Liquidity <span class="pill pill-amber">Balanced</span> • SMC <span class="pill pill-amber">Neutral</span> • Exec <span class="pill pill-red">WAIT</span> • Rank 46</div>
-                    <div class="tiny">Permission <span class="pill pill-green">Allowed</span> • Type None • Reason High conflict • Plan None • Risk D</div>
+                    <div class="tiny">Gov 59 • Theme 59 Valid • Timing 58 Early • Board None • Rank 46</div>
+                    <div class="tiny">Stage WAIT • Timing Blocker High conflict • Plan None • Risk D • Tactical N/A • Bias Neutral • Conviction Developing</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
@@ -1258,8 +1248,8 @@
                   <div>
                     <div><strong>AZN</strong> <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class="pill pill-green">Bullish / Valid</span></div>
                     <div class="bar-wrap"><div class="bar" style="width:59.28%"></div></div>
-                    <div class="tiny">Gov 59 • Struct <span class="pill pill-green">Bullish</span> • Liquidity <span class="pill pill-amber">Balanced</span> • SMC <span class="pill pill-amber">Neutral</span> • Exec <span class="pill pill-red">WAIT</span> • Rank 35</div>
-                    <div class="tiny">Permission <span class="pill pill-green">Allowed</span> • Type None • Reason High conflict • Plan None • Risk D</div>
+                    <div class="tiny">Gov 59 • Theme 59 Valid • Timing 46 Early • Board None • Rank 35</div>
+                    <div class="tiny">Stage WAIT • Timing Blocker High conflict • Plan None • Risk D • Tactical N/A • Bias Neutral • Conviction Developing</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
@@ -1274,8 +1264,8 @@
                   <div>
                     <div><strong>SHELL</strong> <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class="pill pill-green">Bullish / Valid</span></div>
                     <div class="bar-wrap"><div class="bar" style="width:55.61%"></div></div>
-                    <div class="tiny">Gov 56 • Struct <span class="pill pill-green">Bullish</span> • Liquidity <span class="pill pill-amber">Balanced</span> • SMC <span class="pill pill-amber">Neutral</span> • Exec <span class="pill pill-red">WAIT</span> • Rank 40</div>
-                    <div class="tiny">Permission <span class="pill pill-green">Allowed</span> • Type None • Reason High conflict • Plan None • Risk D</div>
+                    <div class="tiny">Gov 56 • Theme 58 Valid • Timing 55 Early • Board None • Rank 40</div>
+                    <div class="tiny">Stage WAIT • Timing Blocker High conflict • Plan None • Risk D • Tactical N/A • Bias Neutral • Conviction Developing</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
@@ -1290,8 +1280,8 @@
                   <div>
                     <div><strong>RELX</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish / Valid</span></div>
                     <div class="bar-wrap"><div class="bar" style="width:38.73%"></div></div>
-                    <div class="tiny">Gov 39 • Struct <span class="pill pill-red">Bearish</span> • Liquidity <span class="pill pill-amber">Balanced</span> • SMC <span class="pill pill-amber">Neutral</span> • Exec <span class="pill pill-red">WAIT</span> • Rank 39</div>
-                    <div class="tiny">Permission <span class="pill pill-green">Allowed</span> • Type None • Reason Timing window closed • Plan None • Risk D</div>
+                    <div class="tiny">Gov 39 • Theme 38 Valid • Timing 51 Early • Board Pre-Board • Rank 39</div>
+                    <div class="tiny">Stage WAIT • Timing Blocker Timing window closed • Plan None • Risk D • Tactical N/A • Bias Neutral • Conviction Developing</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
