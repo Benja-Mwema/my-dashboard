@@ -82,14 +82,14 @@
           <p>Governed terminal • Global header, DXY anchor, grouped asset-class tabs • Auto-refresh every 60s</p>
         </div>
         <div class="status-strip">
-          <div class="status-box"><div class="label">Local Time</div><div class="value">26 Mar 2026 10:38</div></div>
+          <div class="status-box"><div class="label">Local Time</div><div class="value">26 Mar 2026 10:58</div></div>
           <div class="status-box"><div class="label">Session</div><div class="value blue">London</div><div class="tiny">Next: London-New York Overlap in 5h</div></div>
           <div class="status-box"><div class="label">Global Regime</div><div class="value green">USD Dominant / Defensive</div><div class="tiny">Composite: 70</div></div>
         </div>
       </div>
 
-      <div class="ticker"><strong>Terminal Ticker:</strong> AUDUSD ▲ Th 61 Valid • Ti 63 Trigger • Bd Pre-Board • SHELL ▲ Th 61 Valid • Ti 64 Trigger • Bd Pre-Board • GBPUSD ▲ Th 58 Valid • Ti 59 Trigger • Bd Pre-Board • USDCAD ▲ Th 58 Valid • Ti 52 Early • Bd None • EURUSD ▲ Th 56 Valid • Ti 64 Ready • Bd Pre-Board • AZN ■ Th 55 Valid • Ti 52 Trigger • Bd None • SP500 ■ Th 47 Valid • Ti 59 Trigger • Bd None</div>
-      <div class="alert-banner">AUDUSD ▲ Bullish is at TRIGGER stage — waiting for final approval/timing.</div>
+      <div class="ticker"><strong>Terminal Ticker:</strong> SHELL ▲ Th 61 Valid • Ti 64 Trigger • Bd Pre-Board • AUDUSD ▲ Th 61 Valid • Ti 62 Trigger • Bd Pre-Board • USDCAD ▲ Th 65 Valid • Ti 59 Trigger • Bd Pre-Board • GBPUSD ▲ Th 58 Valid • Ti 59 Trigger • Bd Pre-Board • AUDJPY ▲ Th 55 Valid • Ti 63 Trigger • Bd Pre-Board • EURUSD ▲ Th 57 Valid • Ti 63 Trigger • Bd Pre-Board • AZN ■ Th 55 Valid • Ti 52 Trigger • Bd None</div>
+      <div class="alert-banner">SHELL ▲ Bullish is at TRIGGER stage — waiting for final approval/timing.</div>
 
       <section class="flow-strip" style="margin-bottom:14px;">
         <div class="flow-box">
@@ -104,7 +104,7 @@
         
         <div class="flow-box">
           <div class="label">Carry Flow</div>
-          <div class="value amber">Mixed</div>
+          <div class="value green">Favored</div>
         </div>
         
         <div class="flow-box">
@@ -129,7 +129,7 @@
         
       <div class="card kpi-card">
         <div class="kpi-label">DXY Composite</div>
-        <div class="kpi-value amber">62.2</div>
+        <div class="kpi-value amber">63.0</div>
         <div class="kpi-sub">Balanced</div>
       </div>
     
@@ -143,7 +143,7 @@
         
       <div class="card kpi-card">
         <div class="kpi-label">Execution Ready / Developing</div>
-        <div class="kpi-value green">1 Ready • 10 Developing</div>
+        <div class="kpi-value green">0 Ready • 12 Developing</div>
         <div class="kpi-sub">0 governance-approved</div>
       </div>
     
@@ -201,18 +201,6 @@
             
               <tr>
                 <td>1</td>
-                <td>AUDUSD</td>
-                <td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td>
-                <td>62<div class="tiny">Th 61 • Ti 63</div></td>
-                <td><span class="pill pill-blue">Upside Objective</span></td>
-                <td><span class="pill pill-amber">Neutral</span></td>
-                <td><span class="pill pill-red">WAIT</span></td>
-                <td>None</td>
-                <td><span class="pill pill-amber">Pre-Board</span></td>
-              </tr>
-            
-              <tr>
-                <td>2</td>
                 <td>SHELL</td>
                 <td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td>
                 <td>61<div class="tiny">Th 61 • Ti 64</div></td>
@@ -224,7 +212,31 @@
               </tr>
             
               <tr>
+                <td>2</td>
+                <td>AUDUSD</td>
+                <td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td>
+                <td>61<div class="tiny">Th 61 • Ti 62</div></td>
+                <td><span class="pill pill-blue">Upside Objective</span></td>
+                <td><span class="pill pill-amber">Neutral</span></td>
+                <td><span class="pill pill-red">WAIT</span></td>
+                <td>None</td>
+                <td><span class="pill pill-amber">Pre-Board</span></td>
+              </tr>
+            
+              <tr>
                 <td>3</td>
+                <td>USDCAD</td>
+                <td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td>
+                <td>60<div class="tiny">Th 65 • Ti 59</div></td>
+                <td><span class="pill pill-blue">Upside Objective</span></td>
+                <td><span class="pill pill-amber">Neutral</span></td>
+                <td><span class="pill pill-red">WAIT</span></td>
+                <td>None</td>
+                <td><span class="pill pill-amber">Pre-Board</span></td>
+              </tr>
+            
+              <tr>
+                <td>4</td>
                 <td>GBPUSD</td>
                 <td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td>
                 <td>58<div class="tiny">Th 58 • Ti 59</div></td>
@@ -236,23 +248,11 @@
               </tr>
             
               <tr>
-                <td>4</td>
-                <td>EURUSD</td>
-                <td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td>
-                <td>58<div class="tiny">Th 56 • Ti 64</div></td>
-                <td><span class="pill pill-blue">Upside Objective</span></td>
-                <td><span class="pill pill-amber">Neutral</span></td>
-                <td><span class="pill pill-red">WAIT</span></td>
-                <td>None</td>
-                <td><span class="pill pill-amber">Pre-Board</span></td>
-              </tr>
-            
-              <tr>
                 <td>5</td>
-                <td>AZN</td>
-                <td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td>
-                <td>55<div class="tiny">Th 55 • Ti 52</div></td>
-                <td><span class="pill pill-amber">Balanced</span></td>
+                <td>AUDJPY</td>
+                <td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td>
+                <td>57<div class="tiny">Th 55 • Ti 63</div></td>
+                <td><span class="pill pill-blue">Upside Objective</span></td>
                 <td><span class="pill pill-amber">Neutral</span></td>
                 <td><span class="pill pill-red">WAIT</span></td>
                 <td>None</td>
@@ -264,9 +264,9 @@
 
             <div class="decision">
               <h3>All Top Watchlist Setup</h3>
-              <div class="decision-market">AUDUSD — Bullish / Valid</div>
+              <div class="decision-market">SHELL — Bullish / Valid</div>
               <div class="decision-direction"><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> • Theme: <span class="pill pill-blue">Valid</span> • Timing: <span class="pill pill-blue">Trigger</span> • Board: <span class="pill pill-amber">Pre-Board</span></div>
-              <div class="tiny" style="margin-bottom:10px;">Gov 62 • Theme 61 • Timing 63 • Exec 54</div>
+              <div class="tiny" style="margin-bottom:10px;">Gov 61 • Theme 61 • Timing 64 • Exec 55</div>
               <div class="insight-strip">
                 <span class="insight-item"><strong>Theme Str</strong> Constructive</span>
                 <span class="insight-item"><strong>Timing Q</strong> Good</span>
@@ -295,7 +295,7 @@
                 <div class="tiny">Time-to-trigger: Next session (~8.0h)</div>
                 <div class="tiny">Note: Setup forming but not yet executable</div>
               </div>
-              <ul class="reason-list"><li>Display regime is &#39;Bullish / Valid&#39;.</li><li>Theme engine: Valid / Constructive at 61.</li><li>Timing engine: Trigger / Good at 63.</li><li>Board engine: Pre-Board.</li><li>Signal alignment is &#39;Neutral&#39;.</li><li>Conflict is &#39;Low&#39;.</li><li>Stability is &#39;Moderating&#39;.</li><li>Gov 62 • Theme 61 Valid/Constructive • Timing 63 Trigger/Good • Board Pre-Board • Rank 85</li><li>Trade Board promotion is governance-controlled, not dashboard-calculated.</li></ul>
+              <ul class="reason-list"><li>Display regime is &#39;Bullish / Valid&#39;.</li><li>Theme engine: Valid / Constructive at 61.</li><li>Timing engine: Trigger / Good at 64.</li><li>Board engine: Pre-Board.</li><li>Signal alignment is &#39;Partial&#39;.</li><li>Conflict is &#39;Low&#39;.</li><li>Stability is &#39;Moderating&#39;.</li><li>Gov 61 • Theme 61 Valid/Constructive • Timing 64 Trigger/Good • Board Pre-Board • Rank 86</li><li>Trade Board promotion is governance-controlled, not dashboard-calculated.</li></ul>
             </div>
           </section>
 
@@ -304,18 +304,18 @@
               <h2>All Regime Heat Matrix</h2>
               <table class="mini-table">
                 <thead><tr><th>Market</th><th>Dir</th><th>Structural</th><th>Final</th><th>Liquidity</th><th>SMC</th><th>Exec</th><th>Permission</th><th>Conflict</th></tr></thead>
-                <tbody><tr><td>EURUSD</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat amber">62</span></td><td><span class="heat amber">58</span></td><td><span class='pill pill-blue'>Upside Objective</span></td><td><span class='pill pill-green'>Bullish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-green'>Low</span></td></tr><tr><td>HSBC</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">49</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-red'>Bearish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-green'>Low</span></td></tr><tr><td>SHELL</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat green">69</span></td><td><span class="heat amber">61</span></td><td><span class='pill pill-blue'>Upside Objective</span></td><td><span class='pill pill-red'>Bearish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-green'>Low</span></td></tr><tr><td>AUDUSD</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat green">69</span></td><td><span class="heat amber">62</span></td><td><span class='pill pill-blue'>Upside Objective</span></td><td><span class='pill pill-red'>Bearish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-green'>Low</span></td></tr><tr><td>AUDJPY</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat amber">61</span></td><td><span class="heat amber">51</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-red'>Bearish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-green'>Low</span></td></tr><tr><td>GBPUSD</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat amber">64</span></td><td><span class="heat amber">58</span></td><td><span class='pill pill-blue'>Upside Objective</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-green'>Low</span></td></tr><tr><td>WS30</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">48</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-green'>Low</span></td></tr><tr><td>SP500</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">55</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-green'>Low</span></td></tr><tr><td>AZN</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat amber">62</span></td><td><span class="heat amber">55</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-green'>Bullish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-amber'>Medium</span></td></tr><tr><td>RIO</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">47</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-amber'>Medium</span></td></tr><tr><td>GBPJPY</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat amber">40</span></td><td><span class="heat amber">38</span></td><td><span class='pill pill-blue'>Downside Objective</span></td><td><span class='pill pill-red'>Reversal Build Bearish</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-green'>Low</span></td></tr><tr><td>DAX40</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat amber">35</span></td><td><span class="heat amber">38</span></td><td><span class='pill pill-blue'>Downside Objective</span></td><td><span class='pill pill-green'>Bullish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-green'>Low</span></td></tr><tr><td>NAS100</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat amber">35</span></td><td><span class="heat amber">35</span></td><td><span class='pill pill-blue'>Downside Objective</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-green'>Low</span></td></tr><tr><td>RELX</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat red">31</span></td><td><span class="heat amber">37</span></td><td><span class='pill pill-blue'>Downside Objective</span></td><td><span class='pill pill-green'>Bullish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-green'>Low</span></td></tr><tr><td>USDJPY</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat amber">38</span></td><td><span class="heat amber">41</span></td><td><span class='pill pill-blue'>Downside Objective</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-green'>Low</span></td></tr><tr><td>SILVER</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat red">31</span></td><td><span class="heat amber">36</span></td><td><span class='pill pill-blue'>Downside Objective</span></td><td><span class='pill pill-green'>Bullish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-amber'>Medium</span></td></tr><tr><td>GOLD</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat red">31</span></td><td><span class="heat amber">35</span></td><td><span class='pill pill-blue'>Downside Objective</span></td><td><span class='pill pill-red'>Bearish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-amber'>Medium</span></td></tr><tr><td>USDCAD</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat green">72</span></td><td><span class="heat amber">58</span></td><td><span class='pill pill-blue'>Upside Objective</span></td><td><span class='pill pill-green'>Bullish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-blue'>Blocked</span></td><td><span class='pill pill-red'>High</span></td></tr><tr><td>CADJPY</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat amber">61</span></td><td><span class="heat amber">53</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-red'>Bearish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-blue'>Blocked</span></td><td><span class='pill pill-red'>High</span></td></tr></tbody>
+                <tbody><tr><td>USDCAD</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat green">72</span></td><td><span class="heat amber">60</span></td><td><span class='pill pill-blue'>Upside Objective</span></td><td><span class='pill pill-green'>Bullish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-green'>Low</span></td></tr><tr><td>HSBC</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">49</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-red'>Bearish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-green'>Low</span></td></tr><tr><td>SHELL</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat green">69</span></td><td><span class="heat amber">61</span></td><td><span class='pill pill-blue'>Upside Objective</span></td><td><span class='pill pill-red'>Bearish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-green'>Low</span></td></tr><tr><td>AUDUSD</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat green">69</span></td><td><span class="heat amber">61</span></td><td><span class='pill pill-blue'>Upside Objective</span></td><td><span class='pill pill-red'>Bearish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-green'>Low</span></td></tr><tr><td>AUDJPY</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat amber">61</span></td><td><span class="heat amber">57</span></td><td><span class='pill pill-blue'>Upside Objective</span></td><td><span class='pill pill-red'>Bearish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-green'>Low</span></td></tr><tr><td>CADJPY</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat amber">61</span></td><td><span class="heat amber">52</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-red'>Bearish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-green'>Low</span></td></tr><tr><td>EURUSD</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat amber">62</span></td><td><span class="heat amber">56</span></td><td><span class='pill pill-blue'>Upside Objective</span></td><td><span class='pill pill-green'>Bullish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-green'>Low</span></td></tr><tr><td>WS30</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-red'>Bearish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-green'>Low</span></td></tr><tr><td>GBPUSD</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat amber">64</span></td><td><span class="heat amber">58</span></td><td><span class='pill pill-blue'>Upside Objective</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-green'>Low</span></td></tr><tr><td>AZN</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat amber">62</span></td><td><span class="heat amber">55</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-green'>Bullish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-amber'>Medium</span></td></tr><tr><td>SP500</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">47</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-amber'>Medium</span></td></tr><tr><td>RIO</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">47</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-amber'>Medium</span></td></tr><tr><td>USDJPY</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat amber">38</span></td><td><span class="heat amber">41</span></td><td><span class='pill pill-blue'>Downside Objective</span></td><td><span class='pill pill-red'>Bearish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-green'>Low</span></td></tr><tr><td>RELX</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat red">31</span></td><td><span class="heat amber">37</span></td><td><span class='pill pill-blue'>Downside Objective</span></td><td><span class='pill pill-green'>Bullish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-green'>Low</span></td></tr><tr><td>GBPJPY</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat amber">40</span></td><td><span class="heat amber">44</span></td><td><span class='pill pill-blue'>Downside Objective</span></td><td><span class='pill pill-green'>Bullish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-green'>Low</span></td></tr><tr><td>NAS100</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat amber">35</span></td><td><span class="heat amber">40</span></td><td><span class='pill pill-blue'>Downside Objective</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-green'>Low</span></td></tr><tr><td>SILVER</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat red">31</span></td><td><span class="heat amber">35</span></td><td><span class='pill pill-blue'>Downside Objective</span></td><td><span class='pill pill-green'>Bullish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-amber'>Medium</span></td></tr><tr><td>GOLD</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat red">31</span></td><td><span class="heat amber">35</span></td><td><span class='pill pill-blue'>Downside Objective</span></td><td><span class='pill pill-red'>Bearish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-amber'>Medium</span></td></tr><tr><td>DAX40</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat amber">35</span></td><td><span class="heat amber">38</span></td><td><span class='pill pill-blue'>Downside Objective</span></td><td><span class='pill pill-green'>Bullish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-blue'>Blocked</span></td><td><span class='pill pill-red'>High</span></td></tr></tbody>
               </table>
             </div>
 
             <div class="card">
               <h2>All Trigger Watch</h2>
-              <ul class="compact"><li>SHELL <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class='tiny'>Dist 5 • TtT Next session • Prob 51% • Wait for active timing window / session expansion</span></li><li>AUDUSD <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class='tiny'>Dist 5 • TtT Next session • Prob 51% • Wait for active timing window / session expansion</span></li><li>AUDJPY <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class='tiny'>Dist 5 • TtT Next session • Prob 49% • Wait for active timing window / session expansion</span></li><li>GBPUSD <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class='tiny'>Dist 6 • TtT Next session • Prob 47% • Wait for active timing window / session expansion</span></li><li>AZN <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class='tiny'>Dist 8 • TtT Next session • Prob 20% • Wait for active timing window / session expansion</span></li></ul>
+              <ul class="compact"><li>SHELL <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class='tiny'>Dist 5 • TtT Next session • Prob 51% • Wait for active timing window / session expansion</span></li><li>AUDUSD <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class='tiny'>Dist 5 • TtT Next session • Prob 50% • Wait for active timing window / session expansion</span></li><li>EURUSD <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class='tiny'>Dist 6 • TtT Next session • Prob 49% • Wait for active timing window / session expansion</span></li><li>USDCAD <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class='tiny'>Dist 6 • TtT Next session • Prob 65% • Wait for active timing window / session expansion</span></li><li>AUDJPY <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class='tiny'>Dist 6 • TtT Next session • Prob 52% • Wait for active timing window / session expansion</span></li></ul>
             </div>
 
             <div class="card">
               <h2>All Almost Ready</h2>
-              <ul class="compact"><li>EURUSD <span class='tiny'>Dist 0 • TtT Next session • Prob 67% • Wait for active timing window / session expansion</span></li><li>SHELL <span class='tiny'>Dist 5 • TtT Next session • Prob 51% • Wait for active timing window / session expansion</span></li><li>AUDUSD <span class='tiny'>Dist 5 • TtT Next session • Prob 51% • Wait for active timing window / session expansion</span></li><li>AUDJPY <span class='tiny'>Dist 5 • TtT Next session • Prob 49% • Wait for active timing window / session expansion</span></li><li>GBPUSD <span class='tiny'>Dist 6 • TtT Next session • Prob 47% • Wait for active timing window / session expansion</span></li></ul>
+              <ul class="compact"><li>SHELL <span class='tiny'>Dist 5 • TtT Next session • Prob 51% • Wait for active timing window / session expansion</span></li><li>AUDUSD <span class='tiny'>Dist 5 • TtT Next session • Prob 50% • Wait for active timing window / session expansion</span></li><li>EURUSD <span class='tiny'>Dist 6 • TtT Next session • Prob 49% • Wait for active timing window / session expansion</span></li><li>USDCAD <span class='tiny'>Dist 6 • TtT Next session • Prob 65% • Wait for active timing window / session expansion</span></li><li>AUDJPY <span class='tiny'>Dist 6 • TtT Next session • Prob 52% • Wait for active timing window / session expansion</span></li></ul>
             </div>
           </section>
 
@@ -326,23 +326,6 @@
               <div class="ranking-item">
                 <div class="ranking-left">
                   <div class="rank">1</div>
-                  <div>
-                    <div><strong>AUDUSD</strong> <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class="pill pill-green">Bullish / Valid</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:61.81%"></div></div>
-                    <div class="tiny">Permission Wait • Structure Bullish • Liquidity Upside Objective • SMC Neutral</div>
-                    <div class="tiny">Execution WAIT • Type None • Reason Timing window closed</div>
-                    <div class="tiny"><strong>Next Condition</strong> Wait for active timing window / session expansion</div>
-                  </div>
-                </div>
-                <div style="text-align:right;">
-                  <div><strong>62%</strong></div>
-                  <div><span class="pill pill-green">Near Trigger</span></div>
-                </div>
-              </div>
-            
-              <div class="ranking-item">
-                <div class="ranking-left">
-                  <div class="rank">2</div>
                   <div>
                     <div><strong>SHELL</strong> <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class="pill pill-green">Bullish / Valid</span></div>
                     <div class="bar-wrap"><div class="bar" style="width:61.24%"></div></div>
@@ -359,17 +342,34 @@
             
               <div class="ranking-item">
                 <div class="ranking-left">
-                  <div class="rank">3</div>
+                  <div class="rank">2</div>
                   <div>
-                    <div><strong>GBPUSD</strong> <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class="pill pill-green">Bullish / Valid</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:58.27%"></div></div>
+                    <div><strong>AUDUSD</strong> <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class="pill pill-green">Bullish / Valid</span></div>
+                    <div class="bar-wrap"><div class="bar" style="width:61.1%"></div></div>
                     <div class="tiny">Permission Wait • Structure Bullish • Liquidity Upside Objective • SMC Neutral</div>
                     <div class="tiny">Execution WAIT • Type None • Reason Timing window closed</div>
                     <div class="tiny"><strong>Next Condition</strong> Wait for active timing window / session expansion</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
-                  <div><strong>58%</strong></div>
+                  <div><strong>61%</strong></div>
+                  <div><span class="pill pill-green">Near Trigger</span></div>
+                </div>
+              </div>
+            
+              <div class="ranking-item">
+                <div class="ranking-left">
+                  <div class="rank">3</div>
+                  <div>
+                    <div><strong>USDCAD</strong> <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class="pill pill-green">Bullish / Valid</span></div>
+                    <div class="bar-wrap"><div class="bar" style="width:60.13%"></div></div>
+                    <div class="tiny">Permission Wait • Structure Bullish • Liquidity Upside Objective • SMC Neutral</div>
+                    <div class="tiny">Execution WAIT • Type None • Reason Timing window closed</div>
+                    <div class="tiny"><strong>Next Condition</strong> Wait for active timing window / session expansion</div>
+                  </div>
+                </div>
+                <div style="text-align:right;">
+                  <div><strong>60%</strong></div>
                   <div><span class="pill pill-green">Near Trigger</span></div>
                 </div>
               </div>
@@ -378,16 +378,16 @@
                 <div class="ranking-left">
                   <div class="rank">4</div>
                   <div>
-                    <div><strong>USDCAD</strong> <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class="pill pill-green">Bullish / Valid</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:58.18%"></div></div>
+                    <div><strong>GBPUSD</strong> <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class="pill pill-green">Bullish / Valid</span></div>
+                    <div class="bar-wrap"><div class="bar" style="width:58.28%"></div></div>
                     <div class="tiny">Permission Wait • Structure Bullish • Liquidity Upside Objective • SMC Neutral</div>
-                    <div class="tiny">Execution WAIT • Type None • Reason High conflict</div>
-                    <div class="tiny"><strong>Next Condition</strong> Wait for bullish structure alignment (BOS/CHoCH)</div>
+                    <div class="tiny">Execution WAIT • Type None • Reason Timing window closed</div>
+                    <div class="tiny"><strong>Next Condition</strong> Wait for active timing window / session expansion</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
                   <div><strong>58%</strong></div>
-                  <div><span class="pill pill-red">Stand Aside</span></div>
+                  <div><span class="pill pill-green">Near Trigger</span></div>
                 </div>
               </div>
             
@@ -395,16 +395,16 @@
                 <div class="ranking-left">
                   <div class="rank">5</div>
                   <div>
-                    <div><strong>EURUSD</strong> <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class="pill pill-green">Bullish / Valid</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:57.97%"></div></div>
+                    <div><strong>AUDJPY</strong> <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class="pill pill-green">Bullish / Valid</span></div>
+                    <div class="bar-wrap"><div class="bar" style="width:56.97%"></div></div>
                     <div class="tiny">Permission Wait • Structure Bullish • Liquidity Upside Objective • SMC Neutral</div>
                     <div class="tiny">Execution WAIT • Type None • Reason Timing window closed</div>
                     <div class="tiny"><strong>Next Condition</strong> Wait for active timing window / session expansion</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
-                  <div><strong>58%</strong></div>
-                  <div><span class="pill pill-green">Ready</span></div>
+                  <div><strong>57%</strong></div>
+                  <div><span class="pill pill-green">Near Trigger</span></div>
                 </div>
               </div>
             
@@ -412,15 +412,15 @@
                 <div class="ranking-left">
                   <div class="rank">6</div>
                   <div>
-                    <div><strong>AZN</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class="pill pill-amber">Neutral / Valid</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:54.95%"></div></div>
-                    <div class="tiny">Permission Wait • Structure Neutral • Liquidity Balanced • SMC Neutral</div>
+                    <div><strong>EURUSD</strong> <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class="pill pill-green">Bullish / Valid</span></div>
+                    <div class="bar-wrap"><div class="bar" style="width:56.09%"></div></div>
+                    <div class="tiny">Permission Wait • Structure Bullish • Liquidity Upside Objective • SMC Neutral</div>
                     <div class="tiny">Execution WAIT • Type None • Reason Timing window closed</div>
                     <div class="tiny"><strong>Next Condition</strong> Wait for active timing window / session expansion</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
-                  <div><strong>55%</strong></div>
+                  <div><strong>56%</strong></div>
                   <div><span class="pill pill-green">Near Trigger</span></div>
                 </div>
               </div>
@@ -429,8 +429,8 @@
                 <div class="ranking-left">
                   <div class="rank">7</div>
                   <div>
-                    <div><strong>SP500</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class="pill pill-amber">Neutral / Valid</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:54.58%"></div></div>
+                    <div><strong>AZN</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class="pill pill-amber">Neutral / Valid</span></div>
+                    <div class="bar-wrap"><div class="bar" style="width:54.96%"></div></div>
                     <div class="tiny">Permission Wait • Structure Neutral • Liquidity Balanced • SMC Neutral</div>
                     <div class="tiny">Execution WAIT • Type None • Reason Timing window closed</div>
                     <div class="tiny"><strong>Next Condition</strong> Wait for active timing window / session expansion</div>
@@ -447,15 +447,15 @@
                   <div class="rank">8</div>
                   <div>
                     <div><strong>CADJPY</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class="pill pill-amber">Neutral / Valid</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:52.69%"></div></div>
+                    <div class="bar-wrap"><div class="bar" style="width:52.05%"></div></div>
                     <div class="tiny">Permission Wait • Structure Neutral • Liquidity Balanced • SMC Neutral</div>
-                    <div class="tiny">Execution WAIT • Type None • Reason High conflict</div>
-                    <div class="tiny"><strong>Next Condition</strong> Wait for directional structure alignment (BOS/CHoCH)</div>
+                    <div class="tiny">Execution WAIT • Type None • Reason Timing window closed</div>
+                    <div class="tiny"><strong>Next Condition</strong> Wait for active timing window / session expansion</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
-                  <div><strong>53%</strong></div>
-                  <div><span class="pill pill-red">Stand Aside</span></div>
+                  <div><strong>52%</strong></div>
+                  <div><span class="pill pill-green">Near Trigger</span></div>
                 </div>
               </div>
             
@@ -463,15 +463,15 @@
                 <div class="ranking-left">
                   <div class="rank">9</div>
                   <div>
-                    <div><strong>AUDJPY</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class="pill pill-amber">Neutral / Valid</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:51.33%"></div></div>
+                    <div><strong>WS30</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class="pill pill-amber">Neutral / Valid</span></div>
+                    <div class="bar-wrap"><div class="bar" style="width:49.51%"></div></div>
                     <div class="tiny">Permission Wait • Structure Neutral • Liquidity Balanced • SMC Neutral</div>
                     <div class="tiny">Execution WAIT • Type None • Reason Timing window closed</div>
                     <div class="tiny"><strong>Next Condition</strong> Wait for active timing window / session expansion</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
-                  <div><strong>51%</strong></div>
+                  <div><strong>50%</strong></div>
                   <div><span class="pill pill-green">Near Trigger</span></div>
                 </div>
               </div>
@@ -481,7 +481,7 @@
                   <div class="rank">10</div>
                   <div>
                     <div><strong>HSBC</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class="pill pill-amber">Neutral / Valid</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:48.78%"></div></div>
+                    <div class="bar-wrap"><div class="bar" style="width:48.79%"></div></div>
                     <div class="tiny">Permission Wait • Structure Neutral • Liquidity Balanced • SMC Neutral</div>
                     <div class="tiny">Execution WAIT • Type None • Reason Timing window closed</div>
                     <div class="tiny"><strong>Next Condition</strong> Wait for active timing window / session expansion</div>
@@ -497,15 +497,15 @@
                 <div class="ranking-left">
                   <div class="rank">11</div>
                   <div>
-                    <div><strong>WS30</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class="pill pill-amber">Neutral / Valid</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:47.62%"></div></div>
+                    <div><strong>SP500</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class="pill pill-amber">Neutral / Valid</span></div>
+                    <div class="bar-wrap"><div class="bar" style="width:46.79%"></div></div>
                     <div class="tiny">Permission Wait • Structure Neutral • Liquidity Balanced • SMC Neutral</div>
                     <div class="tiny">Execution WAIT • Type None • Reason Timing window closed</div>
                     <div class="tiny"><strong>Next Condition</strong> Wait for active timing window / session expansion</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
-                  <div><strong>48%</strong></div>
+                  <div><strong>47%</strong></div>
                   <div><span class="pill pill-green">Near Trigger</span></div>
                 </div>
               </div>
@@ -515,7 +515,7 @@
                   <div class="rank">12</div>
                   <div>
                     <div><strong>RIO</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class="pill pill-amber">Neutral / Valid</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:46.78%"></div></div>
+                    <div class="bar-wrap"><div class="bar" style="width:46.79%"></div></div>
                     <div class="tiny">Permission Wait • Structure Neutral • Liquidity Balanced • SMC Neutral</div>
                     <div class="tiny">Execution WAIT • Type None • Reason Timing window closed</div>
                     <div class="tiny"><strong>Next Condition</strong> Wait for active timing window / session expansion</div>
@@ -530,6 +530,23 @@
               <div class="ranking-item">
                 <div class="ranking-left">
                   <div class="rank">13</div>
+                  <div>
+                    <div><strong>GBPJPY</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish / Invalid</span></div>
+                    <div class="bar-wrap"><div class="bar" style="width:43.56%"></div></div>
+                    <div class="tiny">Permission Wait • Structure Bearish • Liquidity Downside Objective • SMC Neutral</div>
+                    <div class="tiny">Execution WAIT • Type None • Reason Timing window closed</div>
+                    <div class="tiny"><strong>Next Condition</strong> Wait for active timing window / session expansion</div>
+                  </div>
+                </div>
+                <div style="text-align:right;">
+                  <div><strong>44%</strong></div>
+                  <div><span class="pill pill-red">Stand Aside</span></div>
+                </div>
+              </div>
+            
+              <div class="ranking-item">
+                <div class="ranking-left">
+                  <div class="rank">14</div>
                   <div>
                     <div><strong>USDJPY</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish / Invalid</span></div>
                     <div class="bar-wrap"><div class="bar" style="width:41.19%"></div></div>
@@ -546,30 +563,30 @@
             
               <div class="ranking-item">
                 <div class="ranking-left">
-                  <div class="rank">14</div>
+                  <div class="rank">15</div>
                   <div>
-                    <div><strong>GBPJPY</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish / Invalid</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:37.92%"></div></div>
+                    <div><strong>NAS100</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish / Invalid</span></div>
+                    <div class="bar-wrap"><div class="bar" style="width:40.32%"></div></div>
                     <div class="tiny">Permission Wait • Structure Bearish • Liquidity Downside Objective • SMC Neutral</div>
                     <div class="tiny">Execution WAIT • Type None • Reason Timing window closed</div>
                     <div class="tiny"><strong>Next Condition</strong> Wait for active timing window / session expansion</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
-                  <div><strong>38%</strong></div>
-                  <div><span class="pill pill-amber">Monitoring</span></div>
+                  <div><strong>40%</strong></div>
+                  <div><span class="pill pill-red">Stand Aside</span></div>
                 </div>
               </div>
             
               <div class="ranking-item">
                 <div class="ranking-left">
-                  <div class="rank">15</div>
+                  <div class="rank">16</div>
                   <div>
                     <div><strong>DAX40</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish / Invalid</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:37.6%"></div></div>
+                    <div class="bar-wrap"><div class="bar" style="width:38.24%"></div></div>
                     <div class="tiny">Permission Wait • Structure Bearish • Liquidity Downside Objective • SMC Neutral</div>
-                    <div class="tiny">Execution WAIT • Type None • Reason Timing window closed</div>
-                    <div class="tiny"><strong>Next Condition</strong> Wait for active timing window / session expansion</div>
+                    <div class="tiny">Execution WAIT • Type None • Reason High conflict</div>
+                    <div class="tiny"><strong>Next Condition</strong> Wait for bearish structure alignment (BOS/CHoCH)</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
@@ -580,10 +597,10 @@
             
               <div class="ranking-item">
                 <div class="ranking-left">
-                  <div class="rank">16</div>
+                  <div class="rank">17</div>
                   <div>
                     <div><strong>RELX</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish / Invalid</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:36.64%"></div></div>
+                    <div class="bar-wrap"><div class="bar" style="width:36.65%"></div></div>
                     <div class="tiny">Permission Wait • Structure Bearish • Liquidity Downside Objective • SMC Neutral</div>
                     <div class="tiny">Execution WAIT • Type None • Reason Timing window closed</div>
                     <div class="tiny"><strong>Next Condition</strong> Wait for active timing window / session expansion</div>
@@ -597,27 +614,10 @@
             
               <div class="ranking-item">
                 <div class="ranking-left">
-                  <div class="rank">17</div>
-                  <div>
-                    <div><strong>SILVER</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish / Invalid</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:35.53%"></div></div>
-                    <div class="tiny">Permission Wait • Structure Bearish • Liquidity Downside Objective • SMC Neutral</div>
-                    <div class="tiny">Execution WAIT • Type None • Reason Timing window closed</div>
-                    <div class="tiny"><strong>Next Condition</strong> Wait for active timing window / session expansion</div>
-                  </div>
-                </div>
-                <div style="text-align:right;">
-                  <div><strong>36%</strong></div>
-                  <div><span class="pill pill-red">Stand Aside</span></div>
-                </div>
-              </div>
-            
-              <div class="ranking-item">
-                <div class="ranking-left">
                   <div class="rank">18</div>
                   <div>
-                    <div><strong>GOLD</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish / Invalid</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:35.22%"></div></div>
+                    <div><strong>SILVER</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish / Invalid</span></div>
+                    <div class="bar-wrap"><div class="bar" style="width:34.82%"></div></div>
                     <div class="tiny">Permission Wait • Structure Bearish • Liquidity Downside Objective • SMC Neutral</div>
                     <div class="tiny">Execution WAIT • Type None • Reason Timing window closed</div>
                     <div class="tiny"><strong>Next Condition</strong> Wait for active timing window / session expansion</div>
@@ -633,8 +633,8 @@
                 <div class="ranking-left">
                   <div class="rank">19</div>
                   <div>
-                    <div><strong>NAS100</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish / Invalid</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:34.67%"></div></div>
+                    <div><strong>GOLD</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish / Invalid</span></div>
+                    <div class="bar-wrap"><div class="bar" style="width:34.51%"></div></div>
                     <div class="tiny">Permission Wait • Structure Bearish • Liquidity Downside Objective • SMC Neutral</div>
                     <div class="tiny">Execution WAIT • Type None • Reason Timing window closed</div>
                     <div class="tiny"><strong>Next Condition</strong> Wait for active timing window / session expansion</div>
@@ -667,7 +667,7 @@
                 <td>1</td>
                 <td>AUDUSD</td>
                 <td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td>
-                <td>62<div class="tiny">Th 61 • Ti 63</div></td>
+                <td>61<div class="tiny">Th 61 • Ti 62</div></td>
                 <td><span class="pill pill-blue">Upside Objective</span></td>
                 <td><span class="pill pill-amber">Neutral</span></td>
                 <td><span class="pill pill-red">WAIT</span></td>
@@ -677,6 +677,18 @@
             
               <tr>
                 <td>2</td>
+                <td>USDCAD</td>
+                <td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td>
+                <td>60<div class="tiny">Th 65 • Ti 59</div></td>
+                <td><span class="pill pill-blue">Upside Objective</span></td>
+                <td><span class="pill pill-amber">Neutral</span></td>
+                <td><span class="pill pill-red">WAIT</span></td>
+                <td>None</td>
+                <td><span class="pill pill-amber">Pre-Board</span></td>
+              </tr>
+            
+              <tr>
+                <td>3</td>
                 <td>GBPUSD</td>
                 <td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td>
                 <td>58<div class="tiny">Th 58 • Ti 59</div></td>
@@ -688,10 +700,10 @@
               </tr>
             
               <tr>
-                <td>3</td>
-                <td>EURUSD</td>
+                <td>4</td>
+                <td>AUDJPY</td>
                 <td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td>
-                <td>58<div class="tiny">Th 56 • Ti 64</div></td>
+                <td>57<div class="tiny">Th 55 • Ti 63</div></td>
                 <td><span class="pill pill-blue">Upside Objective</span></td>
                 <td><span class="pill pill-amber">Neutral</span></td>
                 <td><span class="pill pill-red">WAIT</span></td>
@@ -706,7 +718,7 @@
               <h3>Currencies Top Watchlist Setup</h3>
               <div class="decision-market">AUDUSD — Bullish / Valid</div>
               <div class="decision-direction"><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> • Theme: <span class="pill pill-blue">Valid</span> • Timing: <span class="pill pill-blue">Trigger</span> • Board: <span class="pill pill-amber">Pre-Board</span></div>
-              <div class="tiny" style="margin-bottom:10px;">Gov 62 • Theme 61 • Timing 63 • Exec 54</div>
+              <div class="tiny" style="margin-bottom:10px;">Gov 61 • Theme 61 • Timing 62 • Exec 54</div>
               <div class="insight-strip">
                 <span class="insight-item"><strong>Theme Str</strong> Constructive</span>
                 <span class="insight-item"><strong>Timing Q</strong> Good</span>
@@ -726,7 +738,7 @@
                   <div><span class="tiny">Entry</span><br><strong>Wait for trigger confirmation</strong></div>
                   <div><span class="tiny">Risk</span><br><strong>C</strong></div>
                   <div><span class="tiny">Next Condition</span><br><strong>Wait for active timing window / session expansion</strong></div>
-                  <div><span class="tiny">Execution Prob</span><br><strong>51% Moderate</strong></div>
+                  <div><span class="tiny">Execution Prob</span><br><strong>50% Moderate</strong></div>
                   <div><span class="tiny">Time-to-Trigger</span><br><strong>Next session</strong></div>
                 </div>
                 <div class="tiny" style="margin-top:8px;">Invalidation: Structure invalidation level • Stop: Structure stop</div>
@@ -735,7 +747,7 @@
                 <div class="tiny">Time-to-trigger: Next session (~8.0h)</div>
                 <div class="tiny">Note: Setup forming but not yet executable</div>
               </div>
-              <ul class="reason-list"><li>Display regime is &#39;Bullish / Valid&#39;.</li><li>Theme engine: Valid / Constructive at 61.</li><li>Timing engine: Trigger / Good at 63.</li><li>Board engine: Pre-Board.</li><li>Signal alignment is &#39;Neutral&#39;.</li><li>Conflict is &#39;Low&#39;.</li><li>Stability is &#39;Moderating&#39;.</li><li>Gov 62 • Theme 61 Valid/Constructive • Timing 63 Trigger/Good • Board Pre-Board • Rank 85</li><li>Trade Board promotion is governance-controlled, not dashboard-calculated.</li></ul>
+              <ul class="reason-list"><li>Display regime is &#39;Bullish / Valid&#39;.</li><li>Theme engine: Valid / Constructive at 61.</li><li>Timing engine: Trigger / Good at 62.</li><li>Board engine: Pre-Board.</li><li>Signal alignment is &#39;Neutral&#39;.</li><li>Conflict is &#39;Low&#39;.</li><li>Stability is &#39;Moderating&#39;.</li><li>Gov 61 • Theme 61 Valid/Constructive • Timing 62 Trigger/Good • Board Pre-Board • Rank 85</li><li>Trade Board promotion is governance-controlled, not dashboard-calculated.</li></ul>
             </div>
           </section>
 
@@ -744,18 +756,18 @@
               <h2>Currencies Regime Heat Matrix</h2>
               <table class="mini-table">
                 <thead><tr><th>Market</th><th>Dir</th><th>Structural</th><th>Final</th><th>Liquidity</th><th>SMC</th><th>Exec</th><th>Permission</th><th>Conflict</th></tr></thead>
-                <tbody><tr><td>EURUSD</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat amber">62</span></td><td><span class="heat amber">58</span></td><td><span class='pill pill-blue'>Upside Objective</span></td><td><span class='pill pill-green'>Bullish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-green'>Low</span></td></tr><tr><td>AUDUSD</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat green">69</span></td><td><span class="heat amber">62</span></td><td><span class='pill pill-blue'>Upside Objective</span></td><td><span class='pill pill-red'>Bearish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-green'>Low</span></td></tr><tr><td>AUDJPY</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat amber">61</span></td><td><span class="heat amber">51</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-red'>Bearish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-green'>Low</span></td></tr><tr><td>GBPUSD</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat amber">64</span></td><td><span class="heat amber">58</span></td><td><span class='pill pill-blue'>Upside Objective</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-green'>Low</span></td></tr><tr><td>GBPJPY</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat amber">40</span></td><td><span class="heat amber">38</span></td><td><span class='pill pill-blue'>Downside Objective</span></td><td><span class='pill pill-red'>Reversal Build Bearish</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-green'>Low</span></td></tr><tr><td>USDJPY</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat amber">38</span></td><td><span class="heat amber">41</span></td><td><span class='pill pill-blue'>Downside Objective</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-green'>Low</span></td></tr><tr><td>USDCAD</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat green">72</span></td><td><span class="heat amber">58</span></td><td><span class='pill pill-blue'>Upside Objective</span></td><td><span class='pill pill-green'>Bullish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-blue'>Blocked</span></td><td><span class='pill pill-red'>High</span></td></tr><tr><td>CADJPY</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat amber">61</span></td><td><span class="heat amber">53</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-red'>Bearish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-blue'>Blocked</span></td><td><span class='pill pill-red'>High</span></td></tr></tbody>
+                <tbody><tr><td>USDCAD</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat green">72</span></td><td><span class="heat amber">60</span></td><td><span class='pill pill-blue'>Upside Objective</span></td><td><span class='pill pill-green'>Bullish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-green'>Low</span></td></tr><tr><td>AUDUSD</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat green">69</span></td><td><span class="heat amber">61</span></td><td><span class='pill pill-blue'>Upside Objective</span></td><td><span class='pill pill-red'>Bearish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-green'>Low</span></td></tr><tr><td>AUDJPY</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat amber">61</span></td><td><span class="heat amber">57</span></td><td><span class='pill pill-blue'>Upside Objective</span></td><td><span class='pill pill-red'>Bearish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-green'>Low</span></td></tr><tr><td>CADJPY</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat amber">61</span></td><td><span class="heat amber">52</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-red'>Bearish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-green'>Low</span></td></tr><tr><td>EURUSD</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat amber">62</span></td><td><span class="heat amber">56</span></td><td><span class='pill pill-blue'>Upside Objective</span></td><td><span class='pill pill-green'>Bullish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-green'>Low</span></td></tr><tr><td>GBPUSD</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat amber">64</span></td><td><span class="heat amber">58</span></td><td><span class='pill pill-blue'>Upside Objective</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-green'>Low</span></td></tr><tr><td>USDJPY</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat amber">38</span></td><td><span class="heat amber">41</span></td><td><span class='pill pill-blue'>Downside Objective</span></td><td><span class='pill pill-red'>Bearish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-green'>Low</span></td></tr><tr><td>GBPJPY</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat amber">40</span></td><td><span class="heat amber">44</span></td><td><span class='pill pill-blue'>Downside Objective</span></td><td><span class='pill pill-green'>Bullish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-green'>Low</span></td></tr></tbody>
               </table>
             </div>
 
             <div class="card">
               <h2>Currencies Trigger Watch</h2>
-              <ul class="compact"><li>AUDUSD <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class='tiny'>Dist 5 • TtT Next session • Prob 51% • Wait for active timing window / session expansion</span></li><li>AUDJPY <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class='tiny'>Dist 5 • TtT Next session • Prob 49% • Wait for active timing window / session expansion</span></li><li>GBPUSD <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class='tiny'>Dist 6 • TtT Next session • Prob 47% • Wait for active timing window / session expansion</span></li></ul>
+              <ul class="compact"><li>AUDUSD <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class='tiny'>Dist 5 • TtT Next session • Prob 50% • Wait for active timing window / session expansion</span></li><li>EURUSD <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class='tiny'>Dist 6 • TtT Next session • Prob 49% • Wait for active timing window / session expansion</span></li><li>USDCAD <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class='tiny'>Dist 6 • TtT Next session • Prob 65% • Wait for active timing window / session expansion</span></li><li>AUDJPY <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class='tiny'>Dist 6 • TtT Next session • Prob 52% • Wait for active timing window / session expansion</span></li><li>GBPUSD <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class='tiny'>Dist 6 • TtT Next session • Prob 47% • Wait for active timing window / session expansion</span></li></ul>
             </div>
 
             <div class="card">
               <h2>Currencies Almost Ready</h2>
-              <ul class="compact"><li>EURUSD <span class='tiny'>Dist 0 • TtT Next session • Prob 67% • Wait for active timing window / session expansion</span></li><li>AUDUSD <span class='tiny'>Dist 5 • TtT Next session • Prob 51% • Wait for active timing window / session expansion</span></li><li>AUDJPY <span class='tiny'>Dist 5 • TtT Next session • Prob 49% • Wait for active timing window / session expansion</span></li><li>GBPUSD <span class='tiny'>Dist 6 • TtT Next session • Prob 47% • Wait for active timing window / session expansion</span></li><li>GBPJPY <span class='tiny'>Dist 20 • TtT 1-3 days • Prob 48% • Wait for active timing window / session expansion</span></li></ul>
+              <ul class="compact"><li>AUDUSD <span class='tiny'>Dist 5 • TtT Next session • Prob 50% • Wait for active timing window / session expansion</span></li><li>EURUSD <span class='tiny'>Dist 6 • TtT Next session • Prob 49% • Wait for active timing window / session expansion</span></li><li>USDCAD <span class='tiny'>Dist 6 • TtT Next session • Prob 65% • Wait for active timing window / session expansion</span></li><li>AUDJPY <span class='tiny'>Dist 6 • TtT Next session • Prob 52% • Wait for active timing window / session expansion</span></li><li>GBPUSD <span class='tiny'>Dist 6 • TtT Next session • Prob 47% • Wait for active timing window / session expansion</span></li></ul>
             </div>
           </section>
 
@@ -768,14 +780,14 @@
                   <div class="rank">1</div>
                   <div>
                     <div><strong>AUDUSD</strong> <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class="pill pill-green">Bullish / Valid</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:61.81%"></div></div>
+                    <div class="bar-wrap"><div class="bar" style="width:61.1%"></div></div>
                     <div class="tiny">Permission Wait • Structure Bullish • Liquidity Upside Objective • SMC Neutral</div>
                     <div class="tiny">Execution WAIT • Type None • Reason Timing window closed</div>
                     <div class="tiny"><strong>Next Condition</strong> Wait for active timing window / session expansion</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
-                  <div><strong>62%</strong></div>
+                  <div><strong>61%</strong></div>
                   <div><span class="pill pill-green">Near Trigger</span></div>
                 </div>
               </div>
@@ -784,15 +796,15 @@
                 <div class="ranking-left">
                   <div class="rank">2</div>
                   <div>
-                    <div><strong>GBPUSD</strong> <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class="pill pill-green">Bullish / Valid</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:58.27%"></div></div>
+                    <div><strong>USDCAD</strong> <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class="pill pill-green">Bullish / Valid</span></div>
+                    <div class="bar-wrap"><div class="bar" style="width:60.13%"></div></div>
                     <div class="tiny">Permission Wait • Structure Bullish • Liquidity Upside Objective • SMC Neutral</div>
                     <div class="tiny">Execution WAIT • Type None • Reason Timing window closed</div>
                     <div class="tiny"><strong>Next Condition</strong> Wait for active timing window / session expansion</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
-                  <div><strong>58%</strong></div>
+                  <div><strong>60%</strong></div>
                   <div><span class="pill pill-green">Near Trigger</span></div>
                 </div>
               </div>
@@ -801,16 +813,16 @@
                 <div class="ranking-left">
                   <div class="rank">3</div>
                   <div>
-                    <div><strong>USDCAD</strong> <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class="pill pill-green">Bullish / Valid</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:58.18%"></div></div>
+                    <div><strong>GBPUSD</strong> <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class="pill pill-green">Bullish / Valid</span></div>
+                    <div class="bar-wrap"><div class="bar" style="width:58.28%"></div></div>
                     <div class="tiny">Permission Wait • Structure Bullish • Liquidity Upside Objective • SMC Neutral</div>
-                    <div class="tiny">Execution WAIT • Type None • Reason High conflict</div>
-                    <div class="tiny"><strong>Next Condition</strong> Wait for bullish structure alignment (BOS/CHoCH)</div>
+                    <div class="tiny">Execution WAIT • Type None • Reason Timing window closed</div>
+                    <div class="tiny"><strong>Next Condition</strong> Wait for active timing window / session expansion</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
                   <div><strong>58%</strong></div>
-                  <div><span class="pill pill-red">Stand Aside</span></div>
+                  <div><span class="pill pill-green">Near Trigger</span></div>
                 </div>
               </div>
             
@@ -818,16 +830,16 @@
                 <div class="ranking-left">
                   <div class="rank">4</div>
                   <div>
-                    <div><strong>EURUSD</strong> <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class="pill pill-green">Bullish / Valid</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:57.97%"></div></div>
+                    <div><strong>AUDJPY</strong> <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class="pill pill-green">Bullish / Valid</span></div>
+                    <div class="bar-wrap"><div class="bar" style="width:56.97%"></div></div>
                     <div class="tiny">Permission Wait • Structure Bullish • Liquidity Upside Objective • SMC Neutral</div>
                     <div class="tiny">Execution WAIT • Type None • Reason Timing window closed</div>
                     <div class="tiny"><strong>Next Condition</strong> Wait for active timing window / session expansion</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
-                  <div><strong>58%</strong></div>
-                  <div><span class="pill pill-green">Ready</span></div>
+                  <div><strong>57%</strong></div>
+                  <div><span class="pill pill-green">Near Trigger</span></div>
                 </div>
               </div>
             
@@ -835,16 +847,16 @@
                 <div class="ranking-left">
                   <div class="rank">5</div>
                   <div>
-                    <div><strong>CADJPY</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class="pill pill-amber">Neutral / Valid</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:52.69%"></div></div>
-                    <div class="tiny">Permission Wait • Structure Neutral • Liquidity Balanced • SMC Neutral</div>
-                    <div class="tiny">Execution WAIT • Type None • Reason High conflict</div>
-                    <div class="tiny"><strong>Next Condition</strong> Wait for directional structure alignment (BOS/CHoCH)</div>
+                    <div><strong>EURUSD</strong> <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class="pill pill-green">Bullish / Valid</span></div>
+                    <div class="bar-wrap"><div class="bar" style="width:56.09%"></div></div>
+                    <div class="tiny">Permission Wait • Structure Bullish • Liquidity Upside Objective • SMC Neutral</div>
+                    <div class="tiny">Execution WAIT • Type None • Reason Timing window closed</div>
+                    <div class="tiny"><strong>Next Condition</strong> Wait for active timing window / session expansion</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
-                  <div><strong>53%</strong></div>
-                  <div><span class="pill pill-red">Stand Aside</span></div>
+                  <div><strong>56%</strong></div>
+                  <div><span class="pill pill-green">Near Trigger</span></div>
                 </div>
               </div>
             
@@ -852,15 +864,15 @@
                 <div class="ranking-left">
                   <div class="rank">6</div>
                   <div>
-                    <div><strong>AUDJPY</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class="pill pill-amber">Neutral / Valid</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:51.33%"></div></div>
+                    <div><strong>CADJPY</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class="pill pill-amber">Neutral / Valid</span></div>
+                    <div class="bar-wrap"><div class="bar" style="width:52.05%"></div></div>
                     <div class="tiny">Permission Wait • Structure Neutral • Liquidity Balanced • SMC Neutral</div>
                     <div class="tiny">Execution WAIT • Type None • Reason Timing window closed</div>
                     <div class="tiny"><strong>Next Condition</strong> Wait for active timing window / session expansion</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
-                  <div><strong>51%</strong></div>
+                  <div><strong>52%</strong></div>
                   <div><span class="pill pill-green">Near Trigger</span></div>
                 </div>
               </div>
@@ -868,6 +880,23 @@
               <div class="ranking-item">
                 <div class="ranking-left">
                   <div class="rank">7</div>
+                  <div>
+                    <div><strong>GBPJPY</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish / Invalid</span></div>
+                    <div class="bar-wrap"><div class="bar" style="width:43.56%"></div></div>
+                    <div class="tiny">Permission Wait • Structure Bearish • Liquidity Downside Objective • SMC Neutral</div>
+                    <div class="tiny">Execution WAIT • Type None • Reason Timing window closed</div>
+                    <div class="tiny"><strong>Next Condition</strong> Wait for active timing window / session expansion</div>
+                  </div>
+                </div>
+                <div style="text-align:right;">
+                  <div><strong>44%</strong></div>
+                  <div><span class="pill pill-red">Stand Aside</span></div>
+                </div>
+              </div>
+            
+              <div class="ranking-item">
+                <div class="ranking-left">
+                  <div class="rank">8</div>
                   <div>
                     <div><strong>USDJPY</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish / Invalid</span></div>
                     <div class="bar-wrap"><div class="bar" style="width:41.19%"></div></div>
@@ -879,23 +908,6 @@
                 <div style="text-align:right;">
                   <div><strong>41%</strong></div>
                   <div><span class="pill pill-red">Stand Aside</span></div>
-                </div>
-              </div>
-            
-              <div class="ranking-item">
-                <div class="ranking-left">
-                  <div class="rank">8</div>
-                  <div>
-                    <div><strong>GBPJPY</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish / Invalid</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:37.92%"></div></div>
-                    <div class="tiny">Permission Wait • Structure Bearish • Liquidity Downside Objective • SMC Neutral</div>
-                    <div class="tiny">Execution WAIT • Type None • Reason Timing window closed</div>
-                    <div class="tiny"><strong>Next Condition</strong> Wait for active timing window / session expansion</div>
-                  </div>
-                </div>
-                <div style="text-align:right;">
-                  <div><strong>38%</strong></div>
-                  <div><span class="pill pill-amber">Monitoring</span></div>
                 </div>
               </div>
             
@@ -923,7 +935,7 @@
               <h3>Metals Top Watchlist Setup</h3>
               <div class="decision-market">SILVER — Bearish / Invalid</div>
               <div class="decision-direction"><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> • Theme: <span class="pill pill-red">Invalid</span> • Timing: <span class="pill pill-red">Early</span> • Board: <span class="pill pill-red">None</span></div>
-              <div class="tiny" style="margin-bottom:10px;">Gov 36 • Theme 35 • Timing 61 • Exec 54</div>
+              <div class="tiny" style="margin-bottom:10px;">Gov 35 • Theme 35 • Timing 60 • Exec 54</div>
               <div class="insight-strip">
                 <span class="insight-item"><strong>Theme Str</strong> Weak</span>
                 <span class="insight-item"><strong>Timing Q</strong> Low</span>
@@ -952,7 +964,7 @@
                 <div class="tiny">Time-to-trigger: 1-3 days (~48.0h)</div>
                 <div class="tiny">Note: No executable setup yet</div>
               </div>
-              <ul class="reason-list"><li>Display regime is &#39;Bearish / Invalid&#39;.</li><li>Theme engine: Invalid / Weak at 35.</li><li>Timing engine: Early / Low at 61.</li><li>Board engine: None.</li><li>Signal alignment is &#39;Partial&#39;.</li><li>Conflict is &#39;Medium&#39;.</li><li>Stability is &#39;Moderating&#39;.</li><li>Gov 36 • Theme 35 Invalid/Weak • Timing 61 Early/Low • Board None • Rank 39</li><li>Trade Board promotion is governance-controlled, not dashboard-calculated.</li></ul>
+              <ul class="reason-list"><li>Display regime is &#39;Bearish / Invalid&#39;.</li><li>Theme engine: Invalid / Weak at 35.</li><li>Timing engine: Early / Low at 60.</li><li>Board engine: None.</li><li>Signal alignment is &#39;Partial&#39;.</li><li>Conflict is &#39;Medium&#39;.</li><li>Stability is &#39;Moderating&#39;.</li><li>Gov 35 • Theme 35 Invalid/Weak • Timing 60 Early/Low • Board None • Rank 38</li><li>Trade Board promotion is governance-controlled, not dashboard-calculated.</li></ul>
             </div>
           </section>
 
@@ -961,7 +973,7 @@
               <h2>Metals Regime Heat Matrix</h2>
               <table class="mini-table">
                 <thead><tr><th>Market</th><th>Dir</th><th>Structural</th><th>Final</th><th>Liquidity</th><th>SMC</th><th>Exec</th><th>Permission</th><th>Conflict</th></tr></thead>
-                <tbody><tr><td>SILVER</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat red">31</span></td><td><span class="heat amber">36</span></td><td><span class='pill pill-blue'>Downside Objective</span></td><td><span class='pill pill-green'>Bullish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-amber'>Medium</span></td></tr><tr><td>GOLD</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat red">31</span></td><td><span class="heat amber">35</span></td><td><span class='pill pill-blue'>Downside Objective</span></td><td><span class='pill pill-red'>Bearish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-amber'>Medium</span></td></tr></tbody>
+                <tbody><tr><td>SILVER</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat red">31</span></td><td><span class="heat amber">35</span></td><td><span class='pill pill-blue'>Downside Objective</span></td><td><span class='pill pill-green'>Bullish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-amber'>Medium</span></td></tr><tr><td>GOLD</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat red">31</span></td><td><span class="heat amber">35</span></td><td><span class='pill pill-blue'>Downside Objective</span></td><td><span class='pill pill-red'>Bearish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-amber'>Medium</span></td></tr></tbody>
               </table>
             </div>
 
@@ -972,7 +984,7 @@
 
             <div class="card">
               <h2>Metals Almost Ready</h2>
-              <ul class="compact"><li>SILVER <span class='tiny'>Dist 26 • TtT 1-3 days • Prob 24% • Wait for active timing window / session expansion</span></li><li>GOLD <span class='tiny'>Dist 26 • TtT 1-3 days • Prob 23% • Wait for active timing window / session expansion</span></li></ul>
+              <ul class="compact"><li>SILVER <span class='tiny'>Dist 27 • TtT 1-3 days • Prob 24% • Wait for active timing window / session expansion</span></li><li>GOLD <span class='tiny'>Dist 27 • TtT 1-3 days • Prob 23% • Wait for active timing window / session expansion</span></li></ul>
             </div>
           </section>
 
@@ -985,14 +997,14 @@
                   <div class="rank">1</div>
                   <div>
                     <div><strong>SILVER</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish / Invalid</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:35.53%"></div></div>
+                    <div class="bar-wrap"><div class="bar" style="width:34.82%"></div></div>
                     <div class="tiny">Permission Wait • Structure Bearish • Liquidity Downside Objective • SMC Neutral</div>
                     <div class="tiny">Execution WAIT • Type None • Reason Timing window closed</div>
                     <div class="tiny"><strong>Next Condition</strong> Wait for active timing window / session expansion</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
-                  <div><strong>36%</strong></div>
+                  <div><strong>35%</strong></div>
                   <div><span class="pill pill-red">Stand Aside</span></div>
                 </div>
               </div>
@@ -1002,7 +1014,7 @@
                   <div class="rank">2</div>
                   <div>
                     <div><strong>GOLD</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish / Invalid</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:35.22%"></div></div>
+                    <div class="bar-wrap"><div class="bar" style="width:34.51%"></div></div>
                     <div class="tiny">Permission Wait • Structure Bearish • Liquidity Downside Objective • SMC Neutral</div>
                     <div class="tiny">Execution WAIT • Type None • Reason Timing window closed</div>
                     <div class="tiny"><strong>Next Condition</strong> Wait for active timing window / session expansion</div>
@@ -1036,11 +1048,11 @@
 
             <div class="decision">
               <h3>Indices Top Watchlist Setup</h3>
-              <div class="decision-market">SP500 — Neutral / Valid</div>
+              <div class="decision-market">WS30 — Neutral / Valid</div>
               <div class="decision-direction"><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> • Theme: <span class="pill pill-blue">Valid</span> • Timing: <span class="pill pill-blue">Trigger</span> • Board: <span class="pill pill-red">None</span></div>
-              <div class="tiny" style="margin-bottom:10px;">Gov 55 • Theme 47 • Timing 59 • Exec 55</div>
+              <div class="tiny" style="margin-bottom:10px;">Gov 50 • Theme 49 • Timing 60 • Exec 59</div>
               <div class="insight-strip">
-                <span class="insight-item"><strong>Theme Str</strong> Constructive</span>
+                <span class="insight-item"><strong>Theme Str</strong> Fragile</span>
                 <span class="insight-item"><strong>Timing Q</strong> Good</span>
                 <span class="insight-item"><strong>Why Not Ready</strong> Timing window closed</span>
                 <span class="insight-item"><strong>Tactical</strong> N/A</span>
@@ -1058,7 +1070,7 @@
                   <div><span class="tiny">Entry</span><br><strong>None</strong></div>
                   <div><span class="tiny">Risk</span><br><strong>D</strong></div>
                   <div><span class="tiny">Next Condition</span><br><strong>Wait for active timing window / session expansion</strong></div>
-                  <div><span class="tiny">Execution Prob</span><br><strong>46% Low</strong></div>
+                  <div><span class="tiny">Execution Prob</span><br><strong>51% Moderate</strong></div>
                   <div><span class="tiny">Time-to-Trigger</span><br><strong>Next session</strong></div>
                 </div>
                 <div class="tiny" style="margin-top:8px;">Invalidation: N/A • Stop: N/A</div>
@@ -1067,7 +1079,7 @@
                 <div class="tiny">Time-to-trigger: Next session (~8.0h)</div>
                 <div class="tiny">Note: No executable setup yet</div>
               </div>
-              <ul class="reason-list"><li>Display regime is &#39;Neutral / Valid&#39;.</li><li>Theme engine: Valid / Constructive at 47.</li><li>Timing engine: Trigger / Good at 59.</li><li>Board engine: None.</li><li>Signal alignment is &#39;Neutral&#39;.</li><li>Conflict is &#39;Low&#39;.</li><li>Stability is &#39;Moderating&#39;.</li><li>Gov 55 • Theme 47 Valid/Constructive • Timing 59 Trigger/Good • Board None • Rank 76</li><li>Trade Board promotion is governance-controlled, not dashboard-calculated.</li></ul>
+              <ul class="reason-list"><li>Display regime is &#39;Neutral / Valid&#39;.</li><li>Theme engine: Valid / Fragile at 49.</li><li>Timing engine: Trigger / Good at 60.</li><li>Board engine: None.</li><li>Signal alignment is &#39;Neutral&#39;.</li><li>Conflict is &#39;Low&#39;.</li><li>Stability is &#39;Moderating&#39;.</li><li>Gov 50 • Theme 49 Valid/Fragile • Timing 60 Trigger/Good • Board None • Rank 81</li><li>Trade Board promotion is governance-controlled, not dashboard-calculated.</li></ul>
             </div>
           </section>
 
@@ -1076,7 +1088,7 @@
               <h2>Indices Regime Heat Matrix</h2>
               <table class="mini-table">
                 <thead><tr><th>Market</th><th>Dir</th><th>Structural</th><th>Final</th><th>Liquidity</th><th>SMC</th><th>Exec</th><th>Permission</th><th>Conflict</th></tr></thead>
-                <tbody><tr><td>WS30</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">48</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-green'>Low</span></td></tr><tr><td>SP500</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">55</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-green'>Low</span></td></tr><tr><td>DAX40</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat amber">35</span></td><td><span class="heat amber">38</span></td><td><span class='pill pill-blue'>Downside Objective</span></td><td><span class='pill pill-green'>Bullish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-green'>Low</span></td></tr><tr><td>NAS100</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat amber">35</span></td><td><span class="heat amber">35</span></td><td><span class='pill pill-blue'>Downside Objective</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-green'>Low</span></td></tr></tbody>
+                <tbody><tr><td>WS30</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-red'>Bearish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-green'>Low</span></td></tr><tr><td>SP500</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat amber">50</span></td><td><span class="heat amber">47</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-amber'>Medium</span></td></tr><tr><td>NAS100</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat amber">35</span></td><td><span class="heat amber">40</span></td><td><span class='pill pill-blue'>Downside Objective</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-green'>Low</span></td></tr><tr><td>DAX40</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat amber">35</span></td><td><span class="heat amber">38</span></td><td><span class='pill pill-blue'>Downside Objective</span></td><td><span class='pill pill-green'>Bullish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-blue'>Blocked</span></td><td><span class='pill pill-red'>High</span></td></tr></tbody>
               </table>
             </div>
 
@@ -1087,7 +1099,7 @@
 
             <div class="card">
               <h2>Indices Almost Ready</h2>
-              <ul class="compact"><li>WS30 <span class='tiny'>Dist 7 • TtT Next session • Prob 47% • Wait for active timing window / session expansion</span></li><li>SP500 <span class='tiny'>Dist 8 • TtT Next session • Prob 46% • Wait for active timing window / session expansion</span></li><li>DAX40 <span class='tiny'>Dist 25 • TtT 1-3 days • Prob 36% • Wait for active timing window / session expansion</span></li><li>NAS100 <span class='tiny'>Dist 26 • TtT 1-3 days • Prob 36% • Wait for active timing window / session expansion</span></li></ul>
+              <ul class="compact"><li>WS30 <span class='tiny'>Dist 7 • TtT Next session • Prob 51% • Wait for active timing window / session expansion</span></li><li>SP500 <span class='tiny'>Dist 9 • TtT Next session • Prob 15% • Wait for active timing window / session expansion</span></li><li>NAS100 <span class='tiny'>Dist 26 • TtT 1-3 days • Prob 30% • Wait for active timing window / session expansion</span></li><li>DAX40 <span class='tiny'>Dist 75 • TtT Needs reset • Prob 0% • Wait for bearish structure alignment (BOS/CHoCH)</span></li></ul>
             </div>
           </section>
 
@@ -1099,15 +1111,15 @@
                 <div class="ranking-left">
                   <div class="rank">1</div>
                   <div>
-                    <div><strong>SP500</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class="pill pill-amber">Neutral / Valid</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:54.58%"></div></div>
+                    <div><strong>WS30</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class="pill pill-amber">Neutral / Valid</span></div>
+                    <div class="bar-wrap"><div class="bar" style="width:49.51%"></div></div>
                     <div class="tiny">Permission Wait • Structure Neutral • Liquidity Balanced • SMC Neutral</div>
                     <div class="tiny">Execution WAIT • Type None • Reason Timing window closed</div>
                     <div class="tiny"><strong>Next Condition</strong> Wait for active timing window / session expansion</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
-                  <div><strong>55%</strong></div>
+                  <div><strong>50%</strong></div>
                   <div><span class="pill pill-green">Near Trigger</span></div>
                 </div>
               </div>
@@ -1116,15 +1128,15 @@
                 <div class="ranking-left">
                   <div class="rank">2</div>
                   <div>
-                    <div><strong>WS30</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class="pill pill-amber">Neutral / Valid</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:47.62%"></div></div>
+                    <div><strong>SP500</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class="pill pill-amber">Neutral / Valid</span></div>
+                    <div class="bar-wrap"><div class="bar" style="width:46.79%"></div></div>
                     <div class="tiny">Permission Wait • Structure Neutral • Liquidity Balanced • SMC Neutral</div>
                     <div class="tiny">Execution WAIT • Type None • Reason Timing window closed</div>
                     <div class="tiny"><strong>Next Condition</strong> Wait for active timing window / session expansion</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
-                  <div><strong>48%</strong></div>
+                  <div><strong>47%</strong></div>
                   <div><span class="pill pill-green">Near Trigger</span></div>
                 </div>
               </div>
@@ -1133,15 +1145,15 @@
                 <div class="ranking-left">
                   <div class="rank">3</div>
                   <div>
-                    <div><strong>DAX40</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish / Invalid</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:37.6%"></div></div>
+                    <div><strong>NAS100</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish / Invalid</span></div>
+                    <div class="bar-wrap"><div class="bar" style="width:40.32%"></div></div>
                     <div class="tiny">Permission Wait • Structure Bearish • Liquidity Downside Objective • SMC Neutral</div>
                     <div class="tiny">Execution WAIT • Type None • Reason Timing window closed</div>
                     <div class="tiny"><strong>Next Condition</strong> Wait for active timing window / session expansion</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
-                  <div><strong>38%</strong></div>
+                  <div><strong>40%</strong></div>
                   <div><span class="pill pill-red">Stand Aside</span></div>
                 </div>
               </div>
@@ -1150,15 +1162,15 @@
                 <div class="ranking-left">
                   <div class="rank">4</div>
                   <div>
-                    <div><strong>NAS100</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish / Invalid</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:34.67%"></div></div>
+                    <div><strong>DAX40</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish / Invalid</span></div>
+                    <div class="bar-wrap"><div class="bar" style="width:38.24%"></div></div>
                     <div class="tiny">Permission Wait • Structure Bearish • Liquidity Downside Objective • SMC Neutral</div>
-                    <div class="tiny">Execution WAIT • Type None • Reason Timing window closed</div>
-                    <div class="tiny"><strong>Next Condition</strong> Wait for active timing window / session expansion</div>
+                    <div class="tiny">Execution WAIT • Type None • Reason High conflict</div>
+                    <div class="tiny"><strong>Next Condition</strong> Wait for bearish structure alignment (BOS/CHoCH)</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
-                  <div><strong>35%</strong></div>
+                  <div><strong>38%</strong></div>
                   <div><span class="pill pill-red">Stand Aside</span></div>
                 </div>
               </div>
@@ -1186,18 +1198,6 @@
                 <td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td>
                 <td>61<div class="tiny">Th 61 • Ti 64</div></td>
                 <td><span class="pill pill-blue">Upside Objective</span></td>
-                <td><span class="pill pill-amber">Neutral</span></td>
-                <td><span class="pill pill-red">WAIT</span></td>
-                <td>None</td>
-                <td><span class="pill pill-amber">Pre-Board</span></td>
-              </tr>
-            
-              <tr>
-                <td>2</td>
-                <td>AZN</td>
-                <td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td>
-                <td>55<div class="tiny">Th 55 • Ti 52</div></td>
-                <td><span class="pill pill-amber">Balanced</span></td>
                 <td><span class="pill pill-amber">Neutral</span></td>
                 <td><span class="pill pill-red">WAIT</span></td>
                 <td>None</td>
@@ -1290,7 +1290,7 @@
                   <div class="rank">2</div>
                   <div>
                     <div><strong>AZN</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class="pill pill-amber">Neutral / Valid</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:54.95%"></div></div>
+                    <div class="bar-wrap"><div class="bar" style="width:54.96%"></div></div>
                     <div class="tiny">Permission Wait • Structure Neutral • Liquidity Balanced • SMC Neutral</div>
                     <div class="tiny">Execution WAIT • Type None • Reason Timing window closed</div>
                     <div class="tiny"><strong>Next Condition</strong> Wait for active timing window / session expansion</div>
@@ -1307,7 +1307,7 @@
                   <div class="rank">3</div>
                   <div>
                     <div><strong>HSBC</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class="pill pill-amber">Neutral / Valid</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:48.78%"></div></div>
+                    <div class="bar-wrap"><div class="bar" style="width:48.79%"></div></div>
                     <div class="tiny">Permission Wait • Structure Neutral • Liquidity Balanced • SMC Neutral</div>
                     <div class="tiny">Execution WAIT • Type None • Reason Timing window closed</div>
                     <div class="tiny"><strong>Next Condition</strong> Wait for active timing window / session expansion</div>
@@ -1324,7 +1324,7 @@
                   <div class="rank">4</div>
                   <div>
                     <div><strong>RIO</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class="pill pill-amber">Neutral / Valid</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:46.78%"></div></div>
+                    <div class="bar-wrap"><div class="bar" style="width:46.79%"></div></div>
                     <div class="tiny">Permission Wait • Structure Neutral • Liquidity Balanced • SMC Neutral</div>
                     <div class="tiny">Execution WAIT • Type None • Reason Timing window closed</div>
                     <div class="tiny"><strong>Next Condition</strong> Wait for active timing window / session expansion</div>
@@ -1341,7 +1341,7 @@
                   <div class="rank">5</div>
                   <div>
                     <div><strong>RELX</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish / Invalid</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:36.64%"></div></div>
+                    <div class="bar-wrap"><div class="bar" style="width:36.65%"></div></div>
                     <div class="tiny">Permission Wait • Structure Bearish • Liquidity Downside Objective • SMC Neutral</div>
                     <div class="tiny">Execution WAIT • Type None • Reason Timing window closed</div>
                     <div class="tiny"><strong>Next Condition</strong> Wait for active timing window / session expansion</div>
