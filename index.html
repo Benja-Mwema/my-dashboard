@@ -1,351 +1,124 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Institutional Trading Dashboard</title>
-  <meta http-equiv="refresh" content="3600" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <meta http-equiv="refresh" content="3600">
   <style>
     :root {
-      --bg:#0b1220; --panel:#121a2b; --panel2:#172238; --border:#24324d; --text:#e6edf7; --muted:#96a3b8;
-      --green:#21c77a; --red:#ef5350; --amber:#f5b942; --purple:#8b7cf6; --slate:#7a879d; --blue:#4da3ff;
+      --bg: #081326;
+      --panel: #0e1b34;
+      --panel2: #142342;
+      --border: #213a68;
+      --text: #edf3ff;
+      --muted: #9eb3d3;
+      --green: #26d07c;
+      --red: #ff5f5f;
+      --amber: #ffc857;
+      --blue: #4da3ff;
+      --purple: #a16eff;
+      --slate: #7d8faa;
     }
-    * { box-sizing:border-box; }
-    body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(--text); }
-    .header { padding:14px 18px; border-bottom:1px solid var(--border); background:#0f1728; display:flex; justify-content:space-between; align-items:center; }
-    .header h1 { margin:0; font-size:18px; }
-    .header .stamp { color:var(--muted); font-size:12px; }
-    .tabs { display:flex; gap:8px; padding:12px 18px; border-bottom:1px solid var(--border); background:#0d1526; flex-wrap:wrap; }
-    .tab { padding:8px 14px; border:1px solid var(--border); border-radius:8px; background:var(--panel); color:var(--muted); cursor:pointer; font-size:13px; }
-    .tab.active { color:var(--text); border-color:var(--blue); background:#14203a; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Arial, sans-serif; background: var(--bg); color: var(--text); }
+    .topbar { display:flex; justify-content:space-between; align-items:center; padding:14px 18px; border-bottom:1px solid var(--border); background:#081831; }
+    .title { font-size:18px; font-weight:700; }
+    .subtle { color: var(--muted); font-size:12px; }
+    .tabs { display:flex; gap:10px; padding:12px 18px; border-bottom:1px solid var(--border); flex-wrap:wrap; }
+    .tab { padding:8px 16px; border:1px solid var(--border); border-radius:10px; background:var(--panel); color:var(--muted); cursor:pointer; }
+    .tab.active { color:var(--text); border-color:#3e8fff; background:#13284d; }
     .page { padding:18px; }
-    .grid { display:grid; grid-template-columns:420px 1fr; gap:18px; }
-    .card { background:var(--panel); border:1px solid var(--border); border-radius:14px; padding:16px; }
-    .card-title { font-size:15px; font-weight:700; margin-bottom:14px; }
-    .symbol-head { display:flex; justify-content:space-between; align-items:start; margin-bottom:14px; }
-    .symbol-head h2 { margin:0; font-size:20px; }
-    .sub { color:var(--muted); font-size:12px; margin-top:4px; }
-    .price-box { text-align:right; }
-    .price { font-size:24px; font-weight:700; }
-    .headline-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin-bottom:16px; }
-    .mini-box { background:var(--panel2); border:1px solid var(--border); border-radius:10px; padding:10px 12px; }
-    .mini-box .label { font-size:11px; color:var(--muted); margin-bottom:6px; text-transform:uppercase; }
-    .mini-box .value { font-size:15px; font-weight:700; }
-    .badge { display:inline-block; padding:4px 10px; border-radius:999px; font-size:12px; font-weight:700; }
-    .green { background:rgba(33,199,122,0.14); color:var(--green); }
-    .red { background:rgba(239,83,80,0.14); color:var(--red); }
-    .amber { background:rgba(245,185,66,0.14); color:var(--amber); }
-    .purple { background:rgba(139,124,246,0.14); color:var(--purple); }
-    .slate { background:rgba(122,135,157,0.14); color:var(--slate); }
-    .blue { background:rgba(77,163,255,0.14); color:var(--blue); }
-    .section-title { margin:16px 0 10px; font-size:13px; font-weight:700; color:var(--muted); text-transform:uppercase; }
+    .grid { display:grid; grid-template-columns: 430px 1fr; gap:18px; }
+    .card { background:var(--panel); border:1px solid var(--border); border-radius:16px; padding:16px; }
+    .card-title { font-size:14px; font-weight:700; margin-bottom:14px; }
+    .symbol-head { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:14px; }
+    .symbol-head h2 { margin:0; font-size:24px; }
+    .price { font-size:28px; font-weight:700; text-align:right; }
+    .headline-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:16px; }
+    .mini-box { background:var(--panel2); border:1px solid var(--border); border-radius:12px; padding:10px 12px; }
+    .label { font-size:11px; color:var(--muted); text-transform:uppercase; margin-bottom:6px; }
+    .value { font-size:15px; font-weight:700; }
+    .badge { display:inline-block; padding:5px 10px; border-radius:999px; font-size:12px; font-weight:700; }
+    .green { background:rgba(38,208,124,0.12); color:var(--green); }
+    .red { background:rgba(255,95,95,0.12); color:var(--red); }
+    .amber { background:rgba(255,200,87,0.12); color:var(--amber); }
+    .blue { background:rgba(77,163,255,0.12); color:var(--blue); }
+    .purple { background:rgba(161,110,255,0.12); color:var(--purple); }
+    .slate { background:rgba(125,143,170,0.12); color:var(--slate); }
+    .section-title { margin:18px 0 10px; color:var(--muted); font-size:12px; text-transform:uppercase; font-weight:700; letter-spacing:0.6px; }
     .condition-list { display:flex; flex-direction:column; gap:8px; }
-    .condition-row { display:flex; justify-content:space-between; align-items:center; background:var(--panel2); border:1px solid var(--border); border-radius:10px; padding:10px 12px; font-size:13px; }
-    .condition-state { font-weight:700; font-size:12px; }
-    .state-yes { color:var(--green); } .state-no { color:var(--red); } .state-wait { color:var(--amber); } .state-missing { color:var(--slate); }
-    .blocker { margin-top:14px; padding:12px; border-radius:10px; background:rgba(245,185,66,0.08); border:1px solid rgba(245,185,66,0.25); }
-    .blocker strong { display:block; margin-bottom:6px; color:var(--amber); font-size:13px; }
-    .graph-head { display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; }
+    .condition-row { display:flex; justify-content:space-between; align-items:center; border:1px solid var(--border); background:var(--panel2); border-radius:12px; padding:10px 12px; }
+    .condition-name { font-size:13px; }
+    .condition-state { font-size:12px; font-weight:700; }
+    .state-yes { color:var(--green); }
+    .state-no { color:var(--red); }
+    .state-wait { color:var(--amber); }
+    .blocker { margin-top:14px; padding:12px; border-radius:12px; background:rgba(255,200,87,0.08); border:1px solid rgba(255,200,87,0.22); }
+    .blocker strong { display:block; margin-bottom:6px; color:var(--amber); }
+    .graph-head { display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; }
     .graph-strip { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:12px; }
-    .metric-pill { border:1px solid var(--border); background:var(--panel2); padding:8px 10px; border-radius:10px; font-size:12px; color:var(--muted); }
+    .metric-pill { background:var(--panel2); border:1px solid var(--border); padding:8px 10px; border-radius:10px; font-size:12px; color:var(--muted); }
     .metric-pill strong { color:var(--text); }
-    .chart-wrap { height:380px; background:#0e1627; border:1px solid var(--border); border-radius:12px; padding:12px; }
-    .empty { padding:40px; color:var(--muted); text-align:center; }
-    @media (max-width:1050px) { .grid { grid-template-columns:1fr; } }
+    .chart-wrap { height: 520px; background:#07142b; border:1px solid var(--border); border-radius:14px; padding:10px; }
+    .empty { padding:40px; color:var(--muted); }
+    @media (max-width: 1050px) { .grid { grid-template-columns: 1fr; } .chart-wrap { height:360px; } }
   </style>
 </head>
 <body>
-  <div class="header"><h1>Institutional Trading Dashboard</h1><div class="stamp">Auto refresh: 3600s</div></div>
-  <div class="tabs"><div class="tab active" data-tab="tab-GBPJPY">GBPJPY</div><div class="tab " data-tab="tab-USDJPY">USDJPY</div><div class="tab " data-tab="tab-XAUEUR">XAUEUR</div><div class="tab " data-tab="tab-XAUUSD">XAUUSD</div></div>
-  <div class="page">
-    <section id="tab-GBPJPY" class="tab-panel active" style="display:block;">
-      <div class="grid">
-        <div class="card">
-          <div class="card-title">Currency Decision Card</div>
-          <div class="symbol-head">
-            <div>
-              <h2>GBPJPY</h2>
-              <div class="sub">H1</div>
-            </div>
-            <div class="price-box">
-              <div class="price">212.59000</div>
-              <div class="sub">Updated 2026-03-27 23:00:00</div>
-            </div>
-          </div>
-
-          <div class="headline-grid">
-            <div class="mini-box"><div class="label">Signal</div><div class="value"><span class="badge red">SELL</span></div></div>
-            <div class="mini-box"><div class="label">Strength</div><div class="value"><span class="badge amber">WEAK</span></div></div>
-            <div class="mini-box"><div class="label">Confirmation</div><div class="value"><span class="badge amber">WAIT</span></div></div>
-            <div class="mini-box"><div class="label">Journey</div><div class="value"><span class="badge blue">ACTIVE</span></div></div>
-          </div>
-
-          <div class="section-title">Conditions</div>
-          <div class="condition-list"><div class="condition-row"><div class="condition-name">Close below pivot</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">EMA10 below pivot</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">MACD below zero</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">MACD below signal</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">Close below EMA20</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">EMA10 &lt; EMA20 &lt; EMA50</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">JRSX direction DOWN</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">JRSX zone valid</div><div class="condition-state state-yes">YES</div></div></div>
-
-          <div class="section-title">MTF Snapshot</div>
-          <div class="condition-list">
-            <div class="condition-row"><div class="condition-name">M30</div><div class="condition-state state-wait">DOWN · 48.59</div></div>
-            <div class="condition-row"><div class="condition-name">H1</div><div class="condition-state state-wait">DOWN · 45.03</div></div>
-            <div class="condition-row"><div class="condition-name">H4</div><div class="condition-state state-wait">DOWN · 39.03</div></div>
-          </div>
-
-          <div class="blocker">
-            <strong>Why Not Ready</strong>
-            MACD bearish crossover not fully aligned yet
-            <div class="sub" style="margin-top:8px;">MACD bearish crossover not fully aligned yet</div>
-            <div class="sub" style="margin-top:8px;">Confirmation: N/A @ N/A</div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="graph-head">
-            <div class="card-title" style="margin:0;">Hourly Updating Graph</div>
-            <div class="sub">Refresh cadence: 1 hour</div>
-          </div>
-
-          <div class="graph-strip">
-            <div class="metric-pill">Pivot: <strong>212.99000</strong></div>
-            <div class="metric-pill">EMA10: <strong>212.65931</strong></div>
-            <div class="metric-pill">EMA20: <strong>212.71976</strong></div>
-            <div class="metric-pill">EMA50: <strong>212.79608</strong></div>
-            <div class="metric-pill">MACD: <strong>-0.07531</strong></div>
-            <div class="metric-pill">JRSX: <strong>45.03</strong></div>
-          </div>
-
-          <div class="chart-wrap"><canvas id="chart-GBPJPY"></canvas></div>
-          <script type="application/json" id="data-GBPJPY">{&quot;labels&quot;: [&quot;03-25 00:00&quot;, &quot;03-25 01:00&quot;, &quot;03-25 02:00&quot;, &quot;03-25 03:00&quot;, &quot;03-25 04:00&quot;, &quot;03-25 05:00&quot;, &quot;03-25 06:00&quot;, &quot;03-25 07:00&quot;, &quot;03-25 08:00&quot;, &quot;03-25 09:00&quot;, &quot;03-25 10:00&quot;, &quot;03-25 11:00&quot;, &quot;03-25 12:00&quot;, &quot;03-25 13:00&quot;, &quot;03-25 14:00&quot;, &quot;03-25 15:00&quot;, &quot;03-25 16:00&quot;, &quot;03-25 17:00&quot;, &quot;03-25 18:00&quot;, &quot;03-25 19:00&quot;, &quot;03-25 20:00&quot;, &quot;03-25 21:00&quot;, &quot;03-25 22:00&quot;, &quot;03-25 23:00&quot;, &quot;03-26 00:00&quot;, &quot;03-26 01:00&quot;, &quot;03-26 02:00&quot;, &quot;03-26 03:00&quot;, &quot;03-26 04:00&quot;, &quot;03-26 05:00&quot;, &quot;03-26 06:00&quot;, &quot;03-26 07:00&quot;, &quot;03-26 08:00&quot;, &quot;03-26 09:00&quot;, &quot;03-26 10:00&quot;, &quot;03-26 11:00&quot;, &quot;03-26 12:00&quot;, &quot;03-26 13:00&quot;, &quot;03-26 14:00&quot;, &quot;03-26 15:00&quot;, &quot;03-26 16:00&quot;, &quot;03-26 17:00&quot;, &quot;03-26 18:00&quot;, &quot;03-26 19:00&quot;, &quot;03-26 20:00&quot;, &quot;03-26 21:00&quot;, &quot;03-26 22:00&quot;, &quot;03-26 23:00&quot;, &quot;03-27 00:00&quot;, &quot;03-27 01:00&quot;, &quot;03-27 02:00&quot;, &quot;03-27 03:00&quot;, &quot;03-27 04:00&quot;, &quot;03-27 05:00&quot;, &quot;03-27 06:00&quot;, &quot;03-27 07:00&quot;, &quot;03-27 08:00&quot;, &quot;03-27 09:00&quot;, &quot;03-27 10:00&quot;, &quot;03-27 11:00&quot;, &quot;03-27 12:00&quot;, &quot;03-27 13:00&quot;, &quot;03-27 14:00&quot;, &quot;03-27 15:00&quot;, &quot;03-27 16:00&quot;, &quot;03-27 17:00&quot;, &quot;03-27 18:00&quot;, &quot;03-27 19:00&quot;, &quot;03-27 20:00&quot;, &quot;03-27 21:00&quot;, &quot;03-27 22:00&quot;, &quot;03-27 23:00&quot;], &quot;price&quot;: [212.67, 212.91, 212.91, 213.04, 212.91, 212.84, 212.78, 212.77, 212.66, 212.78, 213.08, 212.88, 212.85, 213.06, 213.09, 213.0, 212.81, 212.88, 212.88, 213.05, 213.14, 213.07, 213.14, 213.11, 212.9, 212.98, 213.0, 213.03, 213.09, 212.99, 213.11, 213.1, 213.0, 212.91, 212.92, 212.93, 212.98, 212.97, 212.76, 212.8, 213.06, 213.19, 213.15, 212.94, 212.78, 212.91, 212.78, 212.95, 212.82, 212.93, 212.98, 212.75, 212.79, 212.84, 212.93, 212.98, 212.94, 213.03, 212.94, 212.8, 212.73, 212.71, 212.34, 212.34, 212.6, 212.85, 212.88, 212.62, 212.72, 212.65, 212.55, 212.59], &quot;pivot&quot;: [212.71, 212.71, 212.71, 212.71, 212.71, 212.71, 212.71, 212.71, 212.71, 212.71, 212.71, 212.71, 212.71, 212.71, 212.71, 212.71, 212.71, 212.71, 212.71, 212.71, 212.71, 212.71, 212.71, 212.71, 212.92, 212.92, 212.92, 212.92, 212.92, 212.92, 212.92, 212.92, 212.92, 212.92, 212.92, 212.92, 212.92, 212.92, 212.92, 212.92, 212.92, 212.92, 212.92, 212.92, 212.92, 212.92, 212.92, 212.92, 212.99, 212.99, 212.99, 212.99, 212.99, 212.99, 212.99, 212.99, 212.99, 212.99, 212.99, 212.99, 212.99, 212.99, 212.99, 212.99, 212.99, 212.99, 212.99, 212.99, 212.99, 212.99, 212.99, 212.99], &quot;ema10&quot;: [212.71868, 212.75383, 212.78149, 212.8294, 212.84388, 212.84353, 212.83126, 212.81957, 212.79001, 212.78747, 212.84138, 212.84822, 212.84818, 212.8876, 212.92513, 212.93783, 212.91459, 212.90921, 212.90335, 212.92965, 212.96863, 212.98724, 213.01556, 213.03309, 213.00962, 213.00496, 213.00388, 213.00936, 213.02438, 213.0174, 213.03442, 213.0458, 213.03711, 213.01454, 212.99808, 212.98643, 212.98581, 212.98275, 212.94207, 212.91624, 212.94165, 212.98589, 213.01482, 213.00086, 212.95997, 212.95107, 212.92051, 212.92587, 212.90735, 212.9111, 212.92399, 212.89272, 212.87441, 212.86761, 212.87932, 212.89799, 212.90472, 212.92713, 212.92911, 212.90618, 212.87378, 212.84473, 212.75296, 212.67861, 212.6645, 212.69768, 212.73119, 212.71079, 212.71338, 212.70203, 212.67494, 212.65931], &quot;ema20&quot;: [212.67557, 212.69808, 212.71788, 212.74904, 212.76427, 212.77168, 212.77209, 212.7716, 212.76069, 212.76215, 212.7928, 212.80101, 212.80548, 212.8302, 212.85532, 212.86863, 212.86304, 212.86513, 212.86626, 212.88357, 212.90837, 212.92386, 212.94473, 212.96066, 212.95527, 212.958, 212.96191, 212.96877, 212.98051, 212.98103, 212.99341, 213.00328, 213.00277, 212.99422, 212.98754, 212.98244, 212.98249, 212.98121, 212.96004, 212.9448, 212.95539, 212.97726, 212.99323, 212.98797, 212.96779, 212.96238, 212.94529, 212.94574, 212.93415, 212.93356, 212.93818, 212.92044, 212.90821, 212.90143, 212.90434, 212.91174, 212.91395, 212.92481, 212.92607, 212.91435, 212.8966, 212.87921, 212.82786, 212.78178, 212.76456, 212.77241, 212.78285, 212.76724, 212.76322, 212.75253, 212.73353, 212.71976], &quot;ema50&quot;: [212.53635, 212.55108, 212.565, 212.58382, 212.59657, 212.6062, 212.61286, 212.6189, 212.6204, 212.6265, 212.64444, 212.65364, 212.66126, 212.67709, 212.69344, 212.70527, 212.70937, 212.71626, 212.72257, 212.73533, 212.75135, 212.76389, 212.77876, 212.79182, 212.79622, 212.80359, 212.81125, 212.81999, 212.83065, 212.83675, 212.8475, 212.85728, 212.8628, 212.86477, 212.86709, 212.86972, 212.87416, 212.87788, 212.87322, 212.87035, 212.87763, 212.88968, 212.89969, 212.9012, 212.89629, 212.89686, 212.8924, 212.89466, 212.89189, 212.8933, 212.89678, 212.8911, 212.88722, 212.88525, 212.88708, 212.8908, 212.89254, 212.89785, 212.89942, 212.89564, 212.88907, 212.8822, 212.86094, 212.84067, 212.83127, 212.83189, 212.83385, 212.82543, 212.82149, 212.8148, 212.80453, 212.79608]}</script>
-        </div>
-      </div>
-    </section>
-    
-    <section id="tab-USDJPY" class="tab-panel" style="display:none;">
-      <div class="grid">
-        <div class="card">
-          <div class="card-title">Currency Decision Card</div>
-          <div class="symbol-head">
-            <div>
-              <h2>USDJPY</h2>
-              <div class="sub">H1</div>
-            </div>
-            <div class="price-box">
-              <div class="price">160.26000</div>
-              <div class="sub">Updated 2026-03-27 23:00:00</div>
-            </div>
-          </div>
-
-          <div class="headline-grid">
-            <div class="mini-box"><div class="label">Signal</div><div class="value"><span class="badge red">SELL</span></div></div>
-            <div class="mini-box"><div class="label">Strength</div><div class="value"><span class="badge red">TRAP</span></div></div>
-            <div class="mini-box"><div class="label">Confirmation</div><div class="value"><span class="badge amber">WAIT</span></div></div>
-            <div class="mini-box"><div class="label">Journey</div><div class="value"><span class="badge blue">ACTIVE</span></div></div>
-          </div>
-
-          <div class="section-title">Conditions</div>
-          <div class="condition-list"><div class="condition-row"><div class="condition-name">Close below pivot</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">EMA10 below pivot</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">MACD below zero</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">MACD below signal</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">Close below EMA20</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">EMA10 &lt; EMA20 &lt; EMA50</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">JRSX direction DOWN</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">JRSX zone valid</div><div class="condition-state state-no">NO</div></div></div>
-
-          <div class="section-title">MTF Snapshot</div>
-          <div class="condition-list">
-            <div class="condition-row"><div class="condition-name">M30</div><div class="condition-state state-wait">DOWN · 72.63</div></div>
-            <div class="condition-row"><div class="condition-name">H1</div><div class="condition-state state-wait">DOWN · 85.08</div></div>
-            <div class="condition-row"><div class="condition-name">H4</div><div class="condition-state state-wait">UP · 95.29</div></div>
-          </div>
-
-          <div class="blocker">
-            <strong>Why Not Ready</strong>
-            JRSX is in strong bullish zone for a sell
-            <div class="sub" style="margin-top:8px;">JRSX is in strong bullish zone for a sell</div>
-            <div class="sub" style="margin-top:8px;">Confirmation: N/A @ N/A</div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="graph-head">
-            <div class="card-title" style="margin:0;">Hourly Updating Graph</div>
-            <div class="sub">Refresh cadence: 1 hour</div>
-          </div>
-
-          <div class="graph-strip">
-            <div class="metric-pill">Pivot: <strong>159.62000</strong></div>
-            <div class="metric-pill">EMA10: <strong>160.10493</strong></div>
-            <div class="metric-pill">EMA20: <strong>159.96596</strong></div>
-            <div class="metric-pill">EMA50: <strong>159.69543</strong></div>
-            <div class="metric-pill">MACD: <strong>0.17111</strong></div>
-            <div class="metric-pill">JRSX: <strong>85.08</strong></div>
-          </div>
-
-          <div class="chart-wrap"><canvas id="chart-USDJPY"></canvas></div>
-          <script type="application/json" id="data-USDJPY">{&quot;labels&quot;: [&quot;03-25 00:00&quot;, &quot;03-25 01:00&quot;, &quot;03-25 02:00&quot;, &quot;03-25 03:00&quot;, &quot;03-25 04:00&quot;, &quot;03-25 05:00&quot;, &quot;03-25 06:00&quot;, &quot;03-25 07:00&quot;, &quot;03-25 08:00&quot;, &quot;03-25 09:00&quot;, &quot;03-25 10:00&quot;, &quot;03-25 11:00&quot;, &quot;03-25 12:00&quot;, &quot;03-25 13:00&quot;, &quot;03-25 14:00&quot;, &quot;03-25 15:00&quot;, &quot;03-25 16:00&quot;, &quot;03-25 17:00&quot;, &quot;03-25 18:00&quot;, &quot;03-25 19:00&quot;, &quot;03-25 20:00&quot;, &quot;03-25 21:00&quot;, &quot;03-25 22:00&quot;, &quot;03-25 23:00&quot;, &quot;03-26 00:00&quot;, &quot;03-26 01:00&quot;, &quot;03-26 02:00&quot;, &quot;03-26 03:00&quot;, &quot;03-26 04:00&quot;, &quot;03-26 05:00&quot;, &quot;03-26 06:00&quot;, &quot;03-26 07:00&quot;, &quot;03-26 08:00&quot;, &quot;03-26 09:00&quot;, &quot;03-26 10:00&quot;, &quot;03-26 11:00&quot;, &quot;03-26 12:00&quot;, &quot;03-26 13:00&quot;, &quot;03-26 14:00&quot;, &quot;03-26 15:00&quot;, &quot;03-26 16:00&quot;, &quot;03-26 17:00&quot;, &quot;03-26 18:00&quot;, &quot;03-26 19:00&quot;, &quot;03-26 20:00&quot;, &quot;03-26 21:00&quot;, &quot;03-26 22:00&quot;, &quot;03-26 23:00&quot;, &quot;03-27 00:00&quot;, &quot;03-27 01:00&quot;, &quot;03-27 02:00&quot;, &quot;03-27 03:00&quot;, &quot;03-27 04:00&quot;, &quot;03-27 05:00&quot;, &quot;03-27 06:00&quot;, &quot;03-27 07:00&quot;, &quot;03-27 08:00&quot;, &quot;03-27 09:00&quot;, &quot;03-27 10:00&quot;, &quot;03-27 11:00&quot;, &quot;03-27 12:00&quot;, &quot;03-27 13:00&quot;, &quot;03-27 14:00&quot;, &quot;03-27 15:00&quot;, &quot;03-27 16:00&quot;, &quot;03-27 17:00&quot;, &quot;03-27 18:00&quot;, &quot;03-27 19:00&quot;, &quot;03-27 20:00&quot;, &quot;03-27 21:00&quot;, &quot;03-27 22:00&quot;, &quot;03-27 23:00&quot;], &quot;price&quot;: [158.64, 158.68, 158.7, 158.65, 158.71, 158.8, 158.8, 158.88, 158.99, 159.0, 159.13, 158.77, 158.88, 158.89, 158.85, 159.02, 159.15, 159.05, 159.2, 159.24, 159.25, 159.41, 159.46, 159.47, 159.38, 159.4, 159.39, 159.47, 159.47, 159.52, 159.45, 159.43, 159.49, 159.31, 159.5, 159.47, 159.49, 159.49, 159.65, 159.63, 159.52, 159.55, 159.65, 159.66, 159.76, 159.74, 159.82, 159.73, 159.69, 159.65, 159.72, 159.56, 159.48, 159.53, 159.61, 159.62, 159.62, 159.75, 159.95, 159.84, 159.86, 159.91, 159.85, 159.87, 159.88, 159.9, 160.16, 160.14, 160.34, 160.24, 160.15, 160.26], &quot;pivot&quot;: [158.73, 158.73, 158.73, 158.73, 158.73, 158.73, 158.73, 158.73, 158.73, 158.73, 158.73, 158.73, 158.73, 158.73, 158.73, 158.73, 158.73, 158.73, 158.73, 158.73, 158.73, 158.73, 158.73, 158.73, 159.18, 159.18, 159.18, 159.18, 159.18, 159.18, 159.18, 159.18, 159.18, 159.18, 159.18, 159.18, 159.18, 159.18, 159.18, 159.18, 159.18, 159.18, 159.18, 159.18, 159.18, 159.18, 159.18, 159.18, 159.62, 159.62, 159.62, 159.62, 159.62, 159.62, 159.62, 159.62, 159.62, 159.62, 159.62, 159.62, 159.62, 159.62, 159.62, 159.62, 159.62, 159.62, 159.62, 159.62, 159.62, 159.62, 159.62, 159.62], &quot;ema10&quot;: [158.81165, 158.7879, 158.77246, 158.74929, 158.74251, 158.75314, 158.76166, 158.78263, 158.81997, 158.85343, 158.9039, 158.87974, 158.88051, 158.88224, 158.87583, 158.90259, 158.94666, 158.96509, 159.00834, 159.05101, 159.08683, 159.1454, 159.20242, 159.25053, 159.27352, 159.29652, 159.31333, 159.34091, 159.36474, 159.39297, 159.4037, 159.40921, 159.42354, 159.40217, 159.41941, 159.42788, 159.43899, 159.44772, 159.48504, 159.51176, 159.51344, 159.52027, 159.5444, 159.56488, 159.60017, 159.62559, 159.6613, 159.67361, 159.67568, 159.67065, 159.67944, 159.657, 159.62427, 159.60622, 159.60745, 159.60955, 159.612, 159.63654, 159.69281, 159.71884, 159.74524, 159.7761, 159.79045, 159.80527, 159.81941, 159.83315, 159.89349, 159.93813, 160.01047, 160.05293, 160.07003, 160.10493], &quot;ema20&quot;: [158.78135, 158.77179, 158.76524, 158.75379, 158.74981, 158.75468, 158.759, 158.77024, 158.79098, 158.81126, 158.84172, 158.83498, 158.83965, 158.84444, 158.84469, 158.86167, 158.88865, 158.90383, 158.93232, 158.96191, 158.98916, 159.02914, 159.07008, 159.10788, 159.13351, 159.15889, 159.18081, 159.20787, 159.23303, 159.26036, 159.27861, 159.29341, 159.31194, 159.31138, 159.32905, 159.3421, 159.35609, 159.36856, 159.39565, 159.41816, 159.42795, 159.43967, 159.45999, 159.47875, 159.50544, 159.52778, 159.5558, 159.5723, 159.58303, 159.58922, 159.60158, 159.59724, 159.58579, 159.58, 159.58314, 159.58655, 159.59003, 159.60498, 159.63745, 159.65636, 159.67614, 159.69889, 159.71375, 159.72883, 159.74351, 159.75794, 159.7967, 159.8293, 159.87756, 159.91246, 159.9348, 159.96596], &quot;ema50&quot;: [158.79619, 158.79167, 158.78819, 158.78258, 158.77981, 158.78064, 158.7814, 158.78515, 158.7931, 158.80137, 158.8143, 158.8126, 158.8154, 158.81833, 158.81945, 158.82744, 158.83989, 158.84805, 158.86197, 158.87691, 158.89146, 158.91176, 158.93322, 158.95415, 158.97074, 158.98757, 159.00331, 159.02142, 159.03909, 159.05795, 159.0734, 159.08754, 159.10324, 159.1112, 159.12633, 159.13965, 159.15335, 159.16643, 159.18551, 159.20302, 159.21549, 159.22865, 159.24529, 159.26143, 159.28095, 159.29895, 159.31946, 159.33552, 159.34923, 159.36094, 159.37498, 159.38208, 159.38581, 159.39126, 159.39996, 159.40855, 159.41696, 159.4299, 159.45014, 159.46527, 159.48091, 159.49793, 159.51194, 159.52606, 159.54005, 159.55397, 159.57793, 159.59994, 159.6288, 159.65293, 159.6723, 159.69543]}</script>
-        </div>
-      </div>
-    </section>
-    
-    <section id="tab-XAUEUR" class="tab-panel" style="display:none;">
-      <div class="grid">
-        <div class="card">
-          <div class="card-title">Currency Decision Card</div>
-          <div class="symbol-head">
-            <div>
-              <h2>XAUEUR</h2>
-              <div class="sub">H1</div>
-            </div>
-            <div class="price-box">
-              <div class="price">3902.89000</div>
-              <div class="sub">Updated 2026-03-27 23:00:00</div>
-            </div>
-          </div>
-
-          <div class="headline-grid">
-            <div class="mini-box"><div class="label">Signal</div><div class="value"><span class="badge red">SELL</span></div></div>
-            <div class="mini-box"><div class="label">Strength</div><div class="value"><span class="badge red">TRAP</span></div></div>
-            <div class="mini-box"><div class="label">Confirmation</div><div class="value"><span class="badge amber">WAIT</span></div></div>
-            <div class="mini-box"><div class="label">Journey</div><div class="value"><span class="badge blue">ACTIVE</span></div></div>
-          </div>
-
-          <div class="section-title">Conditions</div>
-          <div class="condition-list"><div class="condition-row"><div class="condition-name">Close below pivot</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">EMA10 below pivot</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">MACD below zero</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">MACD below signal</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">Close below EMA20</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">EMA10 &lt; EMA20 &lt; EMA50</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">JRSX direction DOWN</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">JRSX zone valid</div><div class="condition-state state-no">NO</div></div></div>
-
-          <div class="section-title">MTF Snapshot</div>
-          <div class="condition-list">
-            <div class="condition-row"><div class="condition-name">M30</div><div class="condition-state state-wait">DOWN · 68.37</div></div>
-            <div class="condition-row"><div class="condition-name">H1</div><div class="condition-state state-wait">DOWN · 74.60</div></div>
-            <div class="condition-row"><div class="condition-name">H4</div><div class="condition-state state-wait">UP · 48.76</div></div>
-          </div>
-
-          <div class="blocker">
-            <strong>Why Not Ready</strong>
-            JRSX is in strong bullish zone for a sell
-            <div class="sub" style="margin-top:8px;">JRSX is in strong bullish zone for a sell</div>
-            <div class="sub" style="margin-top:8px;">Confirmation: N/A @ N/A</div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="graph-head">
-            <div class="card-title" style="margin:0;">Hourly Updating Graph</div>
-            <div class="sub">Refresh cadence: 1 hour</div>
-          </div>
-
-          <div class="graph-strip">
-            <div class="metric-pill">Pivot: <strong>3834.48000</strong></div>
-            <div class="metric-pill">EMA10: <strong>3896.12843</strong></div>
-            <div class="metric-pill">EMA20: <strong>3878.62035</strong></div>
-            <div class="metric-pill">EMA50: <strong>3867.88524</strong></div>
-            <div class="metric-pill">MACD: <strong>18.08431</strong></div>
-            <div class="metric-pill">JRSX: <strong>74.60</strong></div>
-          </div>
-
-          <div class="chart-wrap"><canvas id="chart-XAUEUR"></canvas></div>
-          <script type="application/json" id="data-XAUEUR">{&quot;labels&quot;: [&quot;03-24 21:00&quot;, &quot;03-24 22:00&quot;, &quot;03-24 23:00&quot;, &quot;03-25 01:00&quot;, &quot;03-25 02:00&quot;, &quot;03-25 03:00&quot;, &quot;03-25 04:00&quot;, &quot;03-25 05:00&quot;, &quot;03-25 06:00&quot;, &quot;03-25 07:00&quot;, &quot;03-25 08:00&quot;, &quot;03-25 09:00&quot;, &quot;03-25 10:00&quot;, &quot;03-25 11:00&quot;, &quot;03-25 12:00&quot;, &quot;03-25 13:00&quot;, &quot;03-25 14:00&quot;, &quot;03-25 15:00&quot;, &quot;03-25 16:00&quot;, &quot;03-25 17:00&quot;, &quot;03-25 18:00&quot;, &quot;03-25 19:00&quot;, &quot;03-25 20:00&quot;, &quot;03-25 21:00&quot;, &quot;03-25 22:00&quot;, &quot;03-25 23:00&quot;, &quot;03-26 01:00&quot;, &quot;03-26 02:00&quot;, &quot;03-26 03:00&quot;, &quot;03-26 04:00&quot;, &quot;03-26 05:00&quot;, &quot;03-26 06:00&quot;, &quot;03-26 07:00&quot;, &quot;03-26 08:00&quot;, &quot;03-26 09:00&quot;, &quot;03-26 10:00&quot;, &quot;03-26 11:00&quot;, &quot;03-26 12:00&quot;, &quot;03-26 13:00&quot;, &quot;03-26 14:00&quot;, &quot;03-26 15:00&quot;, &quot;03-26 16:00&quot;, &quot;03-26 17:00&quot;, &quot;03-26 18:00&quot;, &quot;03-26 19:00&quot;, &quot;03-26 20:00&quot;, &quot;03-26 21:00&quot;, &quot;03-26 22:00&quot;, &quot;03-26 23:00&quot;, &quot;03-27 01:00&quot;, &quot;03-27 02:00&quot;, &quot;03-27 03:00&quot;, &quot;03-27 04:00&quot;, &quot;03-27 05:00&quot;, &quot;03-27 06:00&quot;, &quot;03-27 07:00&quot;, &quot;03-27 08:00&quot;, &quot;03-27 09:00&quot;, &quot;03-27 10:00&quot;, &quot;03-27 11:00&quot;, &quot;03-27 12:00&quot;, &quot;03-27 13:00&quot;, &quot;03-27 14:00&quot;, &quot;03-27 15:00&quot;, &quot;03-27 16:00&quot;, &quot;03-27 17:00&quot;, &quot;03-27 18:00&quot;, &quot;03-27 19:00&quot;, &quot;03-27 20:00&quot;, &quot;03-27 21:00&quot;, &quot;03-27 22:00&quot;, &quot;03-27 23:00&quot;], &quot;price&quot;: [3789.35, 3797.73, 3856.23, 3860.67, 3914.43, 3925.47, 3956.31, 3949.62, 3938.16, 3942.5, 3929.55, 3919.23, 3913.65, 3926.29, 3923.95, 3928.1, 3945.1, 3919.81, 3926.57, 3941.57, 3940.0, 3937.59, 3929.93, 3923.13, 3917.87, 3897.41, 3907.49, 3890.33, 3923.73, 3921.59, 3900.41, 3903.84, 3906.8, 3840.39, 3852.39, 3853.45, 3829.91, 3826.43, 3843.8, 3837.76, 3840.23, 3857.21, 3866.15, 3845.05, 3804.58, 3801.0, 3809.67, 3787.06, 3798.63, 3822.61, 3818.38, 3796.79, 3827.62, 3840.69, 3845.21, 3851.35, 3859.27, 3865.69, 3860.79, 3839.71, 3844.2, 3834.97, 3840.49, 3853.65, 3843.66, 3911.31, 3926.81, 3920.1, 3896.85, 3922.6, 3919.22, 3902.89], &quot;pivot&quot;: [3757.12, 3757.12, 3757.12, 3811.46, 3811.46, 3811.46, 3811.46, 3811.46, 3811.46, 3811.46, 3811.46, 3811.46, 3811.46, 3811.46, 3811.46, 3811.46, 3811.46, 3811.46, 3811.46, 3811.46, 3811.46, 3811.46, 3811.46, 3811.46, 3811.46, 3811.46, 3899.48, 3899.48, 3899.48, 3899.48, 3899.48, 3899.48, 3899.48, 3899.48, 3899.48, 3899.48, 3899.48, 3899.48, 3899.48, 3899.48, 3899.48, 3899.48, 3899.48, 3899.48, 3899.48, 3899.48, 3899.48, 3899.48, 3899.48, 3834.48, 3834.48, 3834.48, 3834.48, 3834.48, 3834.48, 3834.48, 3834.48, 3834.48, 3834.48, 3834.48, 3834.48, 3834.48, 3834.48, 3834.48, 3834.48, 3834.48, 3834.48, 3834.48, 3834.48, 3834.48, 3834.48, 3834.48], &quot;ema10&quot;: [3797.71057, 3797.7141, 3808.35336, 3817.86547, 3835.42266, 3851.7949, 3870.79765, 3885.12899, 3894.77099, 3903.44899, 3908.19463, 3910.20106, 3910.82814, 3913.63939, 3915.51404, 3917.8024, 3922.7656, 3922.22822, 3923.01763, 3926.39079, 3928.86519, 3930.45152, 3930.3567, 3929.04275, 3927.01134, 3921.62928, 3919.0585, 3913.83514, 3915.6342, 3916.71708, 3913.75215, 3911.94994, 3911.01359, 3898.17294, 3889.84877, 3883.23081, 3873.53612, 3864.97137, 3861.12203, 3856.87439, 3853.84813, 3854.45938, 3856.58495, 3854.48769, 3845.41356, 3837.33837, 3832.30776, 3824.08089, 3819.45346, 3820.02737, 3819.72785, 3815.55733, 3817.75054, 3821.92135, 3826.15565, 3830.73644, 3835.92436, 3841.3363, 3844.87333, 3843.93455, 3843.98281, 3842.34412, 3842.00701, 3844.12391, 3844.03957, 3856.27055, 3869.09591, 3878.36938, 3881.72949, 3889.16049, 3894.62586, 3896.12843], &quot;ema20&quot;: [3796.15491, 3796.30492, 3802.01207, 3807.59854, 3817.77297, 3828.02983, 3840.24699, 3850.66346, 3858.99647, 3866.94918, 3872.91117, 3877.32248, 3880.78225, 3885.11632, 3888.81476, 3892.55622, 3897.56039, 3899.6794, 3902.24041, 3905.98608, 3909.2255, 3911.92688, 3913.64147, 3914.54514, 3914.86179, 3913.19971, 3912.65593, 3910.52965, 3911.78683, 3912.72046, 3911.54804, 3910.81394, 3910.43166, 3903.76103, 3898.86855, 3894.54297, 3888.38745, 3882.48674, 3878.80229, 3874.8935, 3871.59221, 3870.22248, 3869.83462, 3867.47418, 3861.48426, 3855.72386, 3851.33777, 3845.21608, 3840.77931, 3839.0489, 3837.08043, 3833.24325, 3832.7077, 3833.46792, 3834.58621, 3836.18277, 3838.38155, 3840.98235, 3842.8688, 3842.56796, 3842.72339, 3841.98497, 3841.84259, 3842.96711, 3843.0331, 3849.53566, 3856.89512, 3862.91463, 3866.14657, 3871.52309, 3876.06565, 3878.62035], &quot;ema50&quot;: [3835.64885, 3834.16183, 3835.02725, 3836.03285, 3839.10725, 3842.49402, 3846.95739, 3850.98338, 3854.40207, 3857.85689, 3860.66839, 3862.96492, 3864.95257, 3867.35796, 3869.57725, 3871.87226, 3874.74394, 3876.51124, 3878.47433, 3880.94867, 3883.2644, 3885.39482, 3887.1413, 3888.55262, 3889.70232, 3890.00458, 3890.69028, 3890.67616, 3891.97239, 3893.13386, 3893.4192, 3893.82786, 3894.33657, 3892.22102, 3890.65902, 3889.19984, 3886.87475, 3884.50437, 3882.90812, 3881.1376, 3879.53338, 3878.65796, 3878.16745, 3876.86872, 3874.03387, 3871.1698, 3868.75804, 3865.5542, 3862.92972, 3861.34855, 3859.66351, 3857.19788, 3856.03797, 3855.43609, 3855.03506, 3854.89055, 3855.06229, 3855.47907, 3855.68734, 3855.06078, 3854.63486, 3853.86369, 3853.33923, 3853.35142, 3852.97136, 3855.25915, 3858.06507, 3860.49781, 3861.92339, 3864.30286, 3866.45648, 3867.88524]}</script>
-        </div>
-      </div>
-    </section>
-    
-    <section id="tab-XAUUSD" class="tab-panel" style="display:none;">
-      <div class="grid">
-        <div class="card">
-          <div class="card-title">Currency Decision Card</div>
-          <div class="symbol-head">
-            <div>
-              <h2>XAUUSD</h2>
-              <div class="sub">H1</div>
-            </div>
-            <div class="price-box">
-              <div class="price">4495.01000</div>
-              <div class="sub">Updated 2026-03-27 23:00:00</div>
-            </div>
-          </div>
-
-          <div class="headline-grid">
-            <div class="mini-box"><div class="label">Signal</div><div class="value"><span class="badge red">SELL</span></div></div>
-            <div class="mini-box"><div class="label">Strength</div><div class="value"><span class="badge red">TRAP</span></div></div>
-            <div class="mini-box"><div class="label">Confirmation</div><div class="value"><span class="badge amber">WAIT</span></div></div>
-            <div class="mini-box"><div class="label">Journey</div><div class="value"><span class="badge blue">ACTIVE</span></div></div>
-          </div>
-
-          <div class="section-title">Conditions</div>
-          <div class="condition-list"><div class="condition-row"><div class="condition-name">Close below pivot</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">EMA10 below pivot</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">MACD below zero</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">MACD below signal</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">Close below EMA20</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">EMA10 &lt; EMA20 &lt; EMA50</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">JRSX direction DOWN</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">JRSX zone valid</div><div class="condition-state state-no">NO</div></div></div>
-
-          <div class="section-title">MTF Snapshot</div>
-          <div class="condition-list">
-            <div class="condition-row"><div class="condition-name">M30</div><div class="condition-state state-wait">DOWN · 66.41</div></div>
-            <div class="condition-row"><div class="condition-name">H1</div><div class="condition-state state-wait">DOWN · 72.13</div></div>
-            <div class="condition-row"><div class="condition-name">H4</div><div class="condition-state state-wait">UP · 44.25</div></div>
-          </div>
-
-          <div class="blocker">
-            <strong>Why Not Ready</strong>
-            JRSX is in strong bullish zone for a sell
-            <div class="sub" style="margin-top:8px;">JRSX is in strong bullish zone for a sell</div>
-            <div class="sub" style="margin-top:8px;">Confirmation: N/A @ N/A</div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="graph-head">
-            <div class="card-title" style="margin:0;">Hourly Updating Graph</div>
-            <div class="sub">Refresh cadence: 1 hour</div>
-          </div>
-
-          <div class="graph-strip">
-            <div class="metric-pill">Pivot: <strong>4425.34000</strong></div>
-            <div class="metric-pill">EMA10: <strong>4488.20758</strong></div>
-            <div class="metric-pill">EMA20: <strong>4469.93053</strong></div>
-            <div class="metric-pill">EMA50: <strong>4463.42793</strong></div>
-            <div class="metric-pill">MACD: <strong>18.00977</strong></div>
-            <div class="metric-pill">JRSX: <strong>72.13</strong></div>
-          </div>
-
-          <div class="chart-wrap"><canvas id="chart-XAUUSD"></canvas></div>
-          <script type="application/json" id="data-XAUUSD">{&quot;labels&quot;: [&quot;03-24 21:00&quot;, &quot;03-24 22:00&quot;, &quot;03-24 23:00&quot;, &quot;03-25 01:00&quot;, &quot;03-25 02:00&quot;, &quot;03-25 03:00&quot;, &quot;03-25 04:00&quot;, &quot;03-25 05:00&quot;, &quot;03-25 06:00&quot;, &quot;03-25 07:00&quot;, &quot;03-25 08:00&quot;, &quot;03-25 09:00&quot;, &quot;03-25 10:00&quot;, &quot;03-25 11:00&quot;, &quot;03-25 12:00&quot;, &quot;03-25 13:00&quot;, &quot;03-25 14:00&quot;, &quot;03-25 15:00&quot;, &quot;03-25 16:00&quot;, &quot;03-25 17:00&quot;, &quot;03-25 18:00&quot;, &quot;03-25 19:00&quot;, &quot;03-25 20:00&quot;, &quot;03-25 21:00&quot;, &quot;03-25 22:00&quot;, &quot;03-25 23:00&quot;, &quot;03-26 01:00&quot;, &quot;03-26 02:00&quot;, &quot;03-26 03:00&quot;, &quot;03-26 04:00&quot;, &quot;03-26 05:00&quot;, &quot;03-26 06:00&quot;, &quot;03-26 07:00&quot;, &quot;03-26 08:00&quot;, &quot;03-26 09:00&quot;, &quot;03-26 10:00&quot;, &quot;03-26 11:00&quot;, &quot;03-26 12:00&quot;, &quot;03-26 13:00&quot;, &quot;03-26 14:00&quot;, &quot;03-26 15:00&quot;, &quot;03-26 16:00&quot;, &quot;03-26 17:00&quot;, &quot;03-26 18:00&quot;, &quot;03-26 19:00&quot;, &quot;03-26 20:00&quot;, &quot;03-26 21:00&quot;, &quot;03-26 22:00&quot;, &quot;03-26 23:00&quot;, &quot;03-27 01:00&quot;, &quot;03-27 02:00&quot;, &quot;03-27 03:00&quot;, &quot;03-27 04:00&quot;, &quot;03-27 05:00&quot;, &quot;03-27 06:00&quot;, &quot;03-27 07:00&quot;, &quot;03-27 08:00&quot;, &quot;03-27 09:00&quot;, &quot;03-27 10:00&quot;, &quot;03-27 11:00&quot;, &quot;03-27 12:00&quot;, &quot;03-27 13:00&quot;, &quot;03-27 14:00&quot;, &quot;03-27 15:00&quot;, &quot;03-27 16:00&quot;, &quot;03-27 17:00&quot;, &quot;03-27 18:00&quot;, &quot;03-27 19:00&quot;, &quot;03-27 20:00&quot;, &quot;03-27 21:00&quot;, &quot;03-27 22:00&quot;, &quot;03-27 23:00&quot;], &quot;price&quot;: [4389.48, 4400.29, 4476.49, 4484.5, 4546.79, 4563.26, 4595.07, 4583.86, 4570.3, 4572.9, 4555.61, 4545.5, 4539.48, 4556.03, 4551.92, 4558.7, 4578.88, 4543.99, 4544.7, 4567.16, 4558.95, 4555.3, 4550.87, 4538.3, 4530.94, 4505.83, 4517.6, 4498.25, 4535.71, 4535.64, 4508.95, 4516.77, 4520.45, 4439.13, 4456.45, 4452.62, 4427.92, 4423.54, 4442.87, 4423.11, 4429.67, 4452.77, 4464.97, 4438.34, 4389.3, 4381.69, 4394.58, 4364.04, 4380.86, 4411.34, 4405.11, 4378.52, 4417.39, 4431.91, 4437.55, 4445.97, 4454.52, 4459.48, 4447.63, 4424.28, 4428.85, 4414.94, 4420.01, 4437.98, 4431.31, 4509.72, 4524.07, 4516.05, 4486.84, 4516.9, 4514.44, 4495.01], &quot;pivot&quot;: [4347.28, 4347.28, 4347.28, 4422.23, 4422.23, 4422.23, 4422.23, 4422.23, 4422.23, 4422.23, 4422.23, 4422.23, 4422.23, 4422.23, 4422.23, 4422.23, 4422.23, 4422.23, 4422.23, 4422.23, 4422.23, 4422.23, 4422.23, 4422.23, 4422.23, 4422.23, 4521.38, 4521.38, 4521.38, 4521.38, 4521.38, 4521.38, 4521.38, 4521.38, 4521.38, 4521.38, 4521.38, 4521.38, 4521.38, 4521.38, 4521.38, 4521.38, 4521.38, 4521.38, 4521.38, 4521.38, 4521.38, 4521.38, 4521.38, 4425.34, 4425.34, 4425.34, 4425.34, 4425.34, 4425.34, 4425.34, 4425.34, 4425.34, 4425.34, 4425.34, 4425.34, 4425.34, 4425.34, 4425.34, 4425.34, 4425.34, 4425.34, 4425.34, 4425.34, 4425.34, 4425.34, 4425.34], &quot;ema10&quot;: [4399.74647, 4399.8453, 4413.7807, 4426.63875, 4448.48443, 4469.35272, 4492.21041, 4508.87397, 4520.04234, 4529.65282, 4534.37231, 4536.39553, 4536.95634, 4540.42428, 4542.51441, 4545.45724, 4551.53411, 4550.16245, 4549.16928, 4552.44032, 4553.6239, 4553.92864, 4553.37253, 4550.63207, 4547.05169, 4539.55684, 4535.56469, 4528.7802, 4530.04016, 4531.05831, 4527.03862, 4525.1716, 4524.31313, 4508.82529, 4499.30251, 4490.81478, 4479.37936, 4469.22675, 4464.43462, 4456.92105, 4451.96631, 4452.11244, 4454.45018, 4451.52105, 4440.20813, 4429.56847, 4423.20693, 4412.44931, 4406.7058, 4407.54838, 4407.10504, 4401.90776, 4404.72271, 4409.66586, 4414.7357, 4420.41466, 4426.61563, 4432.59097, 4435.32534, 4433.3171, 4432.5049, 4429.31128, 4427.62014, 4429.50375, 4429.83216, 4444.35722, 4458.85045, 4469.25037, 4472.44849, 4480.53058, 4486.69593, 4488.20758], &quot;ema20&quot;: [4398.41377, 4398.59246, 4406.01128, 4413.48639, 4426.18197, 4439.23702, 4454.07826, 4466.43843, 4476.33, 4485.52715, 4492.2017, 4497.27773, 4501.297, 4506.50966, 4510.83446, 4515.39308, 4521.43945, 4523.58712, 4525.59787, 4529.55617, 4532.35558, 4534.54077, 4536.09593, 4536.30584, 4535.79481, 4532.94102, 4531.47997, 4528.31521, 4529.01948, 4529.65, 4527.67857, 4526.63966, 4526.05017, 4517.77206, 4511.93186, 4506.28311, 4498.81996, 4491.65044, 4487.00468, 4480.91948, 4476.03857, 4473.82252, 4472.97942, 4469.68043, 4462.02515, 4454.37418, 4448.6795, 4440.61859, 4434.9273, 4432.68089, 4430.05509, 4425.14699, 4424.40823, 4425.12268, 4426.30624, 4428.17897, 4430.68764, 4433.42977, 4434.78218, 4433.78197, 4433.31226, 4431.56252, 4430.46228, 4431.17825, 4431.1908, 4438.66977, 4446.80313, 4453.39807, 4456.58301, 4462.32749, 4467.29058, 4469.93053], &quot;ema50&quot;: [4440.16618, 4438.6024, 4440.08819, 4441.82983, 4445.94592, 4450.54647, 4456.21406, 4461.21978, 4465.49744, 4469.7093, 4473.07796, 4475.91804, 4478.41066, 4481.45456, 4484.21791, 4487.13878, 4490.73647, 4492.82484, 4494.85916, 4497.69449, 4500.09667, 4502.2615, 4504.16772, 4505.50624, 4506.50364, 4506.47723, 4506.91341, 4506.57367, 4507.71627, 4508.81132, 4508.81676, 4509.12865, 4509.57263, 4506.81017, 4504.83526, 4502.7876, 4499.85162, 4496.85901, 4494.74179, 4491.9327, 4489.49103, 4488.05099, 4487.14585, 4485.23189, 4481.46986, 4477.55692, 4474.30293, 4469.97889, 4466.48403, 4464.32152, 4461.9995, 4458.72579, 4457.10478, 4456.11675, 4455.38864, 4455.01929, 4454.99971, 4455.1754, 4454.87951, 4453.67952, 4452.70582, 4451.22481, 4450.0007, 4449.5293, 4448.81481, 4451.20325, 4454.06077, 4456.49172, 4457.68185, 4460.00413, 4462.13887, 4463.42793]}</script>
-        </div>
-      </div>
-    </section>
-    </div>
+  <div class="topbar">
+    <div class="title">Institutional Trading Dashboard</div>
+    <div class="subtle">Auto refresh: 3600s</div>
+  </div>
+  <div class="tabs"></div>
+  <div class="page"><div class='empty'>No processed symbol files found.</div></div>
   <script>
+    document.querySelectorAll('.tab').forEach(function(tab) {
+      tab.addEventListener('click', function() {
+        document.querySelectorAll('.tab').forEach(x => x.classList.remove('active'));
+        document.querySelectorAll('.tab-panel').forEach(x => { x.classList.remove('active'); x.style.display='none'; });
+        tab.classList.add('active');
+        const id = tab.getAttribute('data-tab');
+        const panel = document.getElementById(id);
+        if (panel) { panel.classList.add('active'); panel.style.display='block'; }
+      });
+    });
+
     function renderChart(symbol) {
-      const node = document.getElementById(`data-${symbol}`);
-      const canvas = document.getElementById(`chart-${symbol}`);
-      if (!node || !canvas) return;
-      const d = JSON.parse(node.textContent);
-      new Chart(canvas, {
-        type:'line',
-        data:{
-          labels:d.labels,
-          datasets:[
-            {label:'Price', data:d.price, borderColor:'#e6edf7', borderWidth:2, pointRadius:0, tension:0.2},
-            {label:'Pivot', data:d.pivot, borderColor:'#f5b942', borderDash:[6,4], borderWidth:1.5, pointRadius:0, tension:0},
-            {label:'EMA10', data:d.ema10, borderColor:'#21c77a', borderWidth:1.5, pointRadius:0, tension:0.2},
-            {label:'EMA20', data:d.ema20, borderColor:'#4da3ff', borderWidth:1.5, pointRadius:0, tension:0.2},
-            {label:'EMA50', data:d.ema50, borderColor:'#8b7cf6', borderWidth:1.5, pointRadius:0, tension:0.2}
+      const canvas = document.getElementById('chart-' + symbol);
+      const dataNode = document.getElementById('data-' + symbol);
+      if (!canvas || !dataNode) return;
+      const payload = JSON.parse(dataNode.textContent);
+      const ctx = canvas.getContext('2d');
+      new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: payload.labels || [],
+          datasets: [
+            { label: 'Price', data: payload.price || [], borderColor: '#eaf2ff', backgroundColor: 'transparent', borderWidth: 2, pointRadius: 0, tension: 0.2 },
+            { label: 'Pivot', data: payload.pivot || [], borderColor: '#ffc857', backgroundColor: 'transparent', borderWidth: 1.5, borderDash: [6,4], pointRadius: 0, tension: 0 },
+            { label: 'EMA10', data: payload.ema10 || [], borderColor: '#26d07c', backgroundColor: 'transparent', borderWidth: 1.5, pointRadius: 0, tension: 0.2 },
+            { label: 'EMA20', data: payload.ema20 || [], borderColor: '#4da3ff', backgroundColor: 'transparent', borderWidth: 1.5, pointRadius: 0, tension: 0.2 },
+            { label: 'EMA50', data: payload.ema50 || [], borderColor: '#a16eff', backgroundColor: 'transparent', borderWidth: 1.5, pointRadius: 0, tension: 0.2 }
           ]
         },
-        options:{
-          responsive:true,
-          maintainAspectRatio:false,
-          plugins:{ legend:{ labels:{ color:'#c9d4e5' } } },
-          scales:{
-            x:{ ticks:{ color:'#96a3b8' }, grid:{ color:'rgba(150,163,184,0.08)' } },
-            y:{ ticks:{ color:'#96a3b8' }, grid:{ color:'rgba(150,163,184,0.08)' } }
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          interaction: { mode: 'index', intersect: false },
+          plugins: { legend: { labels: { color: '#d7e5ff' } } },
+          scales: {
+            x: { ticks: { color: '#9eb3d3', maxTicksLimit: 10 }, grid: { color: 'rgba(158,179,211,0.08)' } },
+            y: { ticks: { color: '#9eb3d3' }, grid: { color: 'rgba(158,179,211,0.08)' } }
           }
         }
       });
     }
-    document.querySelectorAll('.tab').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const id = btn.getAttribute('data-tab');
-        document.querySelectorAll('.tab').forEach(x => x.classList.remove('active'));
-        document.querySelectorAll('.tab-panel').forEach(x => { x.style.display='none'; x.classList.remove('active'); });
-        btn.classList.add('active');
-        const panel = document.getElementById(id);
-        if (panel) { panel.style.display='block'; panel.classList.add('active'); }
-      });
-    });
-    renderChart('GBPJPY');
-renderChart('USDJPY');
-renderChart('XAUEUR');
-renderChart('XAUUSD');
+
+    
   </script>
 </body>
 </html>
+    
