@@ -1,1413 +1,351 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-  <title>Institutional Trading Terminal — Governed Terminal</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta http-equiv="refresh" content="60"> 
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Institutional Trading Dashboard</title>
+  <meta http-equiv="refresh" content="3600" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     :root {
-      --bg:#05080f; --panel:#0b1020; --panel-2:#0e162c; --line:rgba(125,148,189,0.18);
-      --text:#eef4ff; --muted:#8da0c6; --green:#2bd67b; --red:#ff5d5d; --amber:#ffb648; --blue:#59c3ff;
+      --bg:#0b1220; --panel:#121a2b; --panel2:#172238; --border:#24324d; --text:#e6edf7; --muted:#96a3b8;
+      --green:#21c77a; --red:#ef5350; --amber:#f5b942; --purple:#8b7cf6; --slate:#7a879d; --blue:#4da3ff;
     }
     * { box-sizing:border-box; }
-    body { margin:0; font-family:Inter, Segoe UI, Arial, sans-serif; background:linear-gradient(180deg,#04070d 0%,#07101b 50%,#04070d 100%); color:var(--text); }
-    .wrap { max-width:1750px; margin:0 auto; padding:18px; }
-    .top { display:flex; justify-content:space-between; align-items:flex-end; gap:18px; margin-bottom:14px; flex-wrap:wrap; }
-    .title h1 { margin:0; font-size:30px; } .title p { margin:5px 0 0; color:var(--muted); font-size:13px; }
-    .status-strip,.flow-strip { display:flex; gap:12px; flex-wrap:wrap; }
-    .status-box,.flow-box { background:#0a1224; border:1px solid var(--line); border-radius:12px; padding:10px 14px; min-width:180px; }
-    .label { color:var(--muted); text-transform:uppercase; font-size:11px; letter-spacing:0.8px; }
-    .value { margin-top:6px; font-size:20px; font-weight:800; }
-    .green { color:var(--green); } .red { color:var(--red); } .amber { color:var(--amber); } .blue { color:var(--blue); }
-    .card { background:linear-gradient(180deg, rgba(11,16,32,0.98), rgba(14,22,44,0.98)); border:1px solid var(--line); border-radius:16px; padding:16px; box-shadow:0 12px 26px rgba(0,0,0,0.2); }
-    .ticker, .alert-banner { background:#081120; border:1px solid rgba(57,214,255,0.18); border-radius:12px; padding:10px 14px; margin-bottom:14px; }
-    .alert-banner { font-size:15px; font-weight:700; }
-    .grid-kpi { display:grid; grid-template-columns:repeat(6,1fr); gap:14px; margin-bottom:14px; }
-    .grid-main { display:grid; grid-template-columns:1.2fr 1fr; gap:14px; margin-bottom:14px; }
-    .grid-triple { display:grid; grid-template-columns:1.3fr 0.8fr 0.9fr; gap:14px; margin-bottom:14px; }
-    .grid-charts { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin-bottom:14px; }
-    .grid-bottom { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:14px; }
-    .one-right-wide { grid-template-columns:1fr; }
-    .kpi-card { min-height:118px; }
-    .kpi-label { color:var(--muted); font-size:11px; letter-spacing:0.8px; text-transform:uppercase; margin-bottom:10px; }
-    .kpi-value { font-size:28px; font-weight:900; line-height:1.1; margin-bottom:8px; }
-    .kpi-sub { color:var(--muted); font-size:13px; line-height:1.45; }
-    h2,h3 { margin:0 0 12px; }
-    .mini-table { width:100%; border-collapse:collapse; font-size:14px; }
-    .mini-table th,.mini-table td { padding:10px 8px; border-bottom:1px solid rgba(125,148,189,0.14); text-align:left; vertical-align:top; }
-    .mini-table th { color:var(--muted); text-transform:uppercase; font-size:11px; letter-spacing:0.8px; }
-    .pill { display:inline-block; padding:6px 10px; border-radius:999px; border:1px solid transparent; font-size:12px; font-weight:700; }
-    .pill-green { background:rgba(43,214,123,0.12); color:var(--green); border-color:rgba(43,214,123,0.22); }
-    .pill-red { background:rgba(255,93,93,0.12); color:var(--red); border-color:rgba(255,93,93,0.22); }
-    .pill-amber { background:rgba(255,182,72,0.12); color:var(--amber); border-color:rgba(255,182,72,0.22); }
-    .pill-blue { background:rgba(89,195,255,0.12); color:var(--blue); border-color:rgba(89,195,255,0.22); }
-    .ranking-item { display:flex; justify-content:space-between; align-items:center; gap:10px; padding:12px 0; border-bottom:1px solid rgba(125,148,189,0.14); }
-    .ranking-left { display:flex; align-items:center; gap:12px; }
-    .rank { width:30px; height:30px; border-radius:50%; display:grid; place-items:center; background:rgba(57,214,255,0.08); border:1px solid rgba(57,214,255,0.18); font-size:12px; font-weight:800; }
-    .bar-wrap { width:220px; height:12px; border-radius:999px; overflow:hidden; background:rgba(125,148,189,0.15); margin-top:6px; }
-    .bar { height:100%; border-radius:999px; background:linear-gradient(90deg,#1d4ed8,#39d6ff); }
-    .decision { background:linear-gradient(135deg, rgba(8,30,22,0.55), rgba(7,18,40,0.85)); border:1px solid rgba(57,214,255,0.18); border-radius:16px; padding:18px; }
-    .decision-market { font-size:34px; font-weight:900; margin-bottom:6px; }
-    .decision-direction { font-size:15px; font-weight:700; margin-bottom:10px; color:#d8ebff; }
-    .reason-list { margin:0; padding-left:18px; line-height:1.6; color:#dbe7ff; font-size:14px; }
-    .dir-chip { display:inline-flex; align-items:center; gap:6px; }
-    .dir-arrow { font-weight:900; font-size:14px; }
-    .tiny { font-size:12px; color:var(--muted); }
-    .heat { display:inline-block; min-width:44px; text-align:center; padding:4px 8px; border-radius:8px; font-weight:800; }
-    .heat.green { background:rgba(43,214,123,0.12); border:1px solid rgba(43,214,123,0.22); }
-    .heat.red { background:rgba(255,93,93,0.12); border:1px solid rgba(255,93,93,0.22); }
-    .heat.amber { background:rgba(255,182,72,0.12); border:1px solid rgba(255,182,72,0.22); }
-    ul.compact { margin:0; padding-left:18px; line-height:1.8; }
-    canvas { width:100% !important; height:250px !important; }
-    .empty-state { color:var(--muted); padding:12px 0; }
-    .dxy-panel { margin-bottom:14px; }
-    .tabs { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:14px; }
-    .tab-btn { background:#0a1224; border:1px solid var(--line); color:var(--text); border-radius:12px; padding:10px 14px; cursor:pointer; font-weight:700; }
-    .tab-btn.active { background:rgba(57,214,255,0.10); border-color:rgba(57,214,255,0.35); color:#dff5ff; }
-    .tab-panel { margin-bottom:14px; }
-    .insight-strip { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
-    .insight-item { font-size:12px; color:#dbe7ff; padding:6px 10px; border-radius:999px; background:rgba(255,255,255,0.04); border:1px solid rgba(125,148,189,0.18); }
-    @media (max-width:1450px) { .grid-kpi { grid-template-columns:repeat(3,1fr); } .grid-main,.grid-triple,.grid-charts,.grid-bottom { grid-template-columns:1fr; } }
-    @media (max-width:760px) { .grid-kpi { grid-template-columns:1fr; } .decision-market { font-size:26px; } .bar-wrap { width:150px; } }
+    body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(--text); }
+    .header { padding:14px 18px; border-bottom:1px solid var(--border); background:#0f1728; display:flex; justify-content:space-between; align-items:center; }
+    .header h1 { margin:0; font-size:18px; }
+    .header .stamp { color:var(--muted); font-size:12px; }
+    .tabs { display:flex; gap:8px; padding:12px 18px; border-bottom:1px solid var(--border); background:#0d1526; flex-wrap:wrap; }
+    .tab { padding:8px 14px; border:1px solid var(--border); border-radius:8px; background:var(--panel); color:var(--muted); cursor:pointer; font-size:13px; }
+    .tab.active { color:var(--text); border-color:var(--blue); background:#14203a; }
+    .page { padding:18px; }
+    .grid { display:grid; grid-template-columns:420px 1fr; gap:18px; }
+    .card { background:var(--panel); border:1px solid var(--border); border-radius:14px; padding:16px; }
+    .card-title { font-size:15px; font-weight:700; margin-bottom:14px; }
+    .symbol-head { display:flex; justify-content:space-between; align-items:start; margin-bottom:14px; }
+    .symbol-head h2 { margin:0; font-size:20px; }
+    .sub { color:var(--muted); font-size:12px; margin-top:4px; }
+    .price-box { text-align:right; }
+    .price { font-size:24px; font-weight:700; }
+    .headline-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin-bottom:16px; }
+    .mini-box { background:var(--panel2); border:1px solid var(--border); border-radius:10px; padding:10px 12px; }
+    .mini-box .label { font-size:11px; color:var(--muted); margin-bottom:6px; text-transform:uppercase; }
+    .mini-box .value { font-size:15px; font-weight:700; }
+    .badge { display:inline-block; padding:4px 10px; border-radius:999px; font-size:12px; font-weight:700; }
+    .green { background:rgba(33,199,122,0.14); color:var(--green); }
+    .red { background:rgba(239,83,80,0.14); color:var(--red); }
+    .amber { background:rgba(245,185,66,0.14); color:var(--amber); }
+    .purple { background:rgba(139,124,246,0.14); color:var(--purple); }
+    .slate { background:rgba(122,135,157,0.14); color:var(--slate); }
+    .blue { background:rgba(77,163,255,0.14); color:var(--blue); }
+    .section-title { margin:16px 0 10px; font-size:13px; font-weight:700; color:var(--muted); text-transform:uppercase; }
+    .condition-list { display:flex; flex-direction:column; gap:8px; }
+    .condition-row { display:flex; justify-content:space-between; align-items:center; background:var(--panel2); border:1px solid var(--border); border-radius:10px; padding:10px 12px; font-size:13px; }
+    .condition-state { font-weight:700; font-size:12px; }
+    .state-yes { color:var(--green); } .state-no { color:var(--red); } .state-wait { color:var(--amber); } .state-missing { color:var(--slate); }
+    .blocker { margin-top:14px; padding:12px; border-radius:10px; background:rgba(245,185,66,0.08); border:1px solid rgba(245,185,66,0.25); }
+    .blocker strong { display:block; margin-bottom:6px; color:var(--amber); font-size:13px; }
+    .graph-head { display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; }
+    .graph-strip { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:12px; }
+    .metric-pill { border:1px solid var(--border); background:var(--panel2); padding:8px 10px; border-radius:10px; font-size:12px; color:var(--muted); }
+    .metric-pill strong { color:var(--text); }
+    .chart-wrap { height:380px; background:#0e1627; border:1px solid var(--border); border-radius:12px; padding:12px; }
+    .empty { padding:40px; color:var(--muted); text-align:center; }
+    @media (max-width:1050px) { .grid { grid-template-columns:1fr; } }
   </style>
 </head>
 <body>
-  <div id="appRoot">
-    <div class="wrap">
-      <div class="top">
-        <div class="title">
-          <h1>Institutional Trading Terminal</h1>
-          <p>Governed terminal • Global header, DXY anchor, grouped asset-class tabs • Auto-refresh every 60s</p>
+  <div class="header"><h1>Institutional Trading Dashboard</h1><div class="stamp">Auto refresh: 3600s</div></div>
+  <div class="tabs"><div class="tab active" data-tab="tab-GBPJPY">GBPJPY</div><div class="tab " data-tab="tab-USDJPY">USDJPY</div><div class="tab " data-tab="tab-XAUEUR">XAUEUR</div><div class="tab " data-tab="tab-XAUUSD">XAUUSD</div></div>
+  <div class="page">
+    <section id="tab-GBPJPY" class="tab-panel active" style="display:block;">
+      <div class="grid">
+        <div class="card">
+          <div class="card-title">Currency Decision Card</div>
+          <div class="symbol-head">
+            <div>
+              <h2>GBPJPY</h2>
+              <div class="sub">H1</div>
+            </div>
+            <div class="price-box">
+              <div class="price">212.59000</div>
+              <div class="sub">Updated 2026-03-27 23:00:00</div>
+            </div>
+          </div>
+
+          <div class="headline-grid">
+            <div class="mini-box"><div class="label">Signal</div><div class="value"><span class="badge red">SELL</span></div></div>
+            <div class="mini-box"><div class="label">Strength</div><div class="value"><span class="badge amber">WEAK</span></div></div>
+            <div class="mini-box"><div class="label">Confirmation</div><div class="value"><span class="badge amber">WAIT</span></div></div>
+            <div class="mini-box"><div class="label">Journey</div><div class="value"><span class="badge blue">ACTIVE</span></div></div>
+          </div>
+
+          <div class="section-title">Conditions</div>
+          <div class="condition-list"><div class="condition-row"><div class="condition-name">Close below pivot</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">EMA10 below pivot</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">MACD below zero</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">MACD below signal</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">Close below EMA20</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">EMA10 &lt; EMA20 &lt; EMA50</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">JRSX direction DOWN</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">JRSX zone valid</div><div class="condition-state state-yes">YES</div></div></div>
+
+          <div class="section-title">MTF Snapshot</div>
+          <div class="condition-list">
+            <div class="condition-row"><div class="condition-name">M30</div><div class="condition-state state-wait">DOWN · 48.59</div></div>
+            <div class="condition-row"><div class="condition-name">H1</div><div class="condition-state state-wait">DOWN · 45.03</div></div>
+            <div class="condition-row"><div class="condition-name">H4</div><div class="condition-state state-wait">DOWN · 39.03</div></div>
+          </div>
+
+          <div class="blocker">
+            <strong>Why Not Ready</strong>
+            MACD bearish crossover not fully aligned yet
+            <div class="sub" style="margin-top:8px;">MACD bearish crossover not fully aligned yet</div>
+            <div class="sub" style="margin-top:8px;">Confirmation: N/A @ N/A</div>
+          </div>
         </div>
-        <div class="status-strip">
-          <div class="status-box"><div class="label">Local Time</div><div class="value">27 Mar 2026 23:59</div></div>
-          <div class="status-box"><div class="label">Session</div><div class="value blue">New York</div><div class="tiny">Next: Asia in 3h</div></div>
-          <div class="status-box"><div class="label">Global Regime</div><div class="value green">USD Dominant / Defensive</div><div class="tiny">Composite: 74</div></div>
+
+        <div class="card">
+          <div class="graph-head">
+            <div class="card-title" style="margin:0;">Hourly Updating Graph</div>
+            <div class="sub">Refresh cadence: 1 hour</div>
+          </div>
+
+          <div class="graph-strip">
+            <div class="metric-pill">Pivot: <strong>212.99000</strong></div>
+            <div class="metric-pill">EMA10: <strong>212.65931</strong></div>
+            <div class="metric-pill">EMA20: <strong>212.71976</strong></div>
+            <div class="metric-pill">EMA50: <strong>212.79608</strong></div>
+            <div class="metric-pill">MACD: <strong>-0.07531</strong></div>
+            <div class="metric-pill">JRSX: <strong>45.03</strong></div>
+          </div>
+
+          <div class="chart-wrap"><canvas id="chart-GBPJPY"></canvas></div>
+          <script type="application/json" id="data-GBPJPY">{&quot;labels&quot;: [&quot;03-25 00:00&quot;, &quot;03-25 01:00&quot;, &quot;03-25 02:00&quot;, &quot;03-25 03:00&quot;, &quot;03-25 04:00&quot;, &quot;03-25 05:00&quot;, &quot;03-25 06:00&quot;, &quot;03-25 07:00&quot;, &quot;03-25 08:00&quot;, &quot;03-25 09:00&quot;, &quot;03-25 10:00&quot;, &quot;03-25 11:00&quot;, &quot;03-25 12:00&quot;, &quot;03-25 13:00&quot;, &quot;03-25 14:00&quot;, &quot;03-25 15:00&quot;, &quot;03-25 16:00&quot;, &quot;03-25 17:00&quot;, &quot;03-25 18:00&quot;, &quot;03-25 19:00&quot;, &quot;03-25 20:00&quot;, &quot;03-25 21:00&quot;, &quot;03-25 22:00&quot;, &quot;03-25 23:00&quot;, &quot;03-26 00:00&quot;, &quot;03-26 01:00&quot;, &quot;03-26 02:00&quot;, &quot;03-26 03:00&quot;, &quot;03-26 04:00&quot;, &quot;03-26 05:00&quot;, &quot;03-26 06:00&quot;, &quot;03-26 07:00&quot;, &quot;03-26 08:00&quot;, &quot;03-26 09:00&quot;, &quot;03-26 10:00&quot;, &quot;03-26 11:00&quot;, &quot;03-26 12:00&quot;, &quot;03-26 13:00&quot;, &quot;03-26 14:00&quot;, &quot;03-26 15:00&quot;, &quot;03-26 16:00&quot;, &quot;03-26 17:00&quot;, &quot;03-26 18:00&quot;, &quot;03-26 19:00&quot;, &quot;03-26 20:00&quot;, &quot;03-26 21:00&quot;, &quot;03-26 22:00&quot;, &quot;03-26 23:00&quot;, &quot;03-27 00:00&quot;, &quot;03-27 01:00&quot;, &quot;03-27 02:00&quot;, &quot;03-27 03:00&quot;, &quot;03-27 04:00&quot;, &quot;03-27 05:00&quot;, &quot;03-27 06:00&quot;, &quot;03-27 07:00&quot;, &quot;03-27 08:00&quot;, &quot;03-27 09:00&quot;, &quot;03-27 10:00&quot;, &quot;03-27 11:00&quot;, &quot;03-27 12:00&quot;, &quot;03-27 13:00&quot;, &quot;03-27 14:00&quot;, &quot;03-27 15:00&quot;, &quot;03-27 16:00&quot;, &quot;03-27 17:00&quot;, &quot;03-27 18:00&quot;, &quot;03-27 19:00&quot;, &quot;03-27 20:00&quot;, &quot;03-27 21:00&quot;, &quot;03-27 22:00&quot;, &quot;03-27 23:00&quot;], &quot;price&quot;: [212.67, 212.91, 212.91, 213.04, 212.91, 212.84, 212.78, 212.77, 212.66, 212.78, 213.08, 212.88, 212.85, 213.06, 213.09, 213.0, 212.81, 212.88, 212.88, 213.05, 213.14, 213.07, 213.14, 213.11, 212.9, 212.98, 213.0, 213.03, 213.09, 212.99, 213.11, 213.1, 213.0, 212.91, 212.92, 212.93, 212.98, 212.97, 212.76, 212.8, 213.06, 213.19, 213.15, 212.94, 212.78, 212.91, 212.78, 212.95, 212.82, 212.93, 212.98, 212.75, 212.79, 212.84, 212.93, 212.98, 212.94, 213.03, 212.94, 212.8, 212.73, 212.71, 212.34, 212.34, 212.6, 212.85, 212.88, 212.62, 212.72, 212.65, 212.55, 212.59], &quot;pivot&quot;: [212.71, 212.71, 212.71, 212.71, 212.71, 212.71, 212.71, 212.71, 212.71, 212.71, 212.71, 212.71, 212.71, 212.71, 212.71, 212.71, 212.71, 212.71, 212.71, 212.71, 212.71, 212.71, 212.71, 212.71, 212.92, 212.92, 212.92, 212.92, 212.92, 212.92, 212.92, 212.92, 212.92, 212.92, 212.92, 212.92, 212.92, 212.92, 212.92, 212.92, 212.92, 212.92, 212.92, 212.92, 212.92, 212.92, 212.92, 212.92, 212.99, 212.99, 212.99, 212.99, 212.99, 212.99, 212.99, 212.99, 212.99, 212.99, 212.99, 212.99, 212.99, 212.99, 212.99, 212.99, 212.99, 212.99, 212.99, 212.99, 212.99, 212.99, 212.99, 212.99], &quot;ema10&quot;: [212.71868, 212.75383, 212.78149, 212.8294, 212.84388, 212.84353, 212.83126, 212.81957, 212.79001, 212.78747, 212.84138, 212.84822, 212.84818, 212.8876, 212.92513, 212.93783, 212.91459, 212.90921, 212.90335, 212.92965, 212.96863, 212.98724, 213.01556, 213.03309, 213.00962, 213.00496, 213.00388, 213.00936, 213.02438, 213.0174, 213.03442, 213.0458, 213.03711, 213.01454, 212.99808, 212.98643, 212.98581, 212.98275, 212.94207, 212.91624, 212.94165, 212.98589, 213.01482, 213.00086, 212.95997, 212.95107, 212.92051, 212.92587, 212.90735, 212.9111, 212.92399, 212.89272, 212.87441, 212.86761, 212.87932, 212.89799, 212.90472, 212.92713, 212.92911, 212.90618, 212.87378, 212.84473, 212.75296, 212.67861, 212.6645, 212.69768, 212.73119, 212.71079, 212.71338, 212.70203, 212.67494, 212.65931], &quot;ema20&quot;: [212.67557, 212.69808, 212.71788, 212.74904, 212.76427, 212.77168, 212.77209, 212.7716, 212.76069, 212.76215, 212.7928, 212.80101, 212.80548, 212.8302, 212.85532, 212.86863, 212.86304, 212.86513, 212.86626, 212.88357, 212.90837, 212.92386, 212.94473, 212.96066, 212.95527, 212.958, 212.96191, 212.96877, 212.98051, 212.98103, 212.99341, 213.00328, 213.00277, 212.99422, 212.98754, 212.98244, 212.98249, 212.98121, 212.96004, 212.9448, 212.95539, 212.97726, 212.99323, 212.98797, 212.96779, 212.96238, 212.94529, 212.94574, 212.93415, 212.93356, 212.93818, 212.92044, 212.90821, 212.90143, 212.90434, 212.91174, 212.91395, 212.92481, 212.92607, 212.91435, 212.8966, 212.87921, 212.82786, 212.78178, 212.76456, 212.77241, 212.78285, 212.76724, 212.76322, 212.75253, 212.73353, 212.71976], &quot;ema50&quot;: [212.53635, 212.55108, 212.565, 212.58382, 212.59657, 212.6062, 212.61286, 212.6189, 212.6204, 212.6265, 212.64444, 212.65364, 212.66126, 212.67709, 212.69344, 212.70527, 212.70937, 212.71626, 212.72257, 212.73533, 212.75135, 212.76389, 212.77876, 212.79182, 212.79622, 212.80359, 212.81125, 212.81999, 212.83065, 212.83675, 212.8475, 212.85728, 212.8628, 212.86477, 212.86709, 212.86972, 212.87416, 212.87788, 212.87322, 212.87035, 212.87763, 212.88968, 212.89969, 212.9012, 212.89629, 212.89686, 212.8924, 212.89466, 212.89189, 212.8933, 212.89678, 212.8911, 212.88722, 212.88525, 212.88708, 212.8908, 212.89254, 212.89785, 212.89942, 212.89564, 212.88907, 212.8822, 212.86094, 212.84067, 212.83127, 212.83189, 212.83385, 212.82543, 212.82149, 212.8148, 212.80453, 212.79608]}</script>
         </div>
       </div>
-
-      <div class="ticker"><strong>Terminal Ticker:</strong> USDJPY ▲ Th 64 Strong • Ti 62 Trigger • Bd Pre-Board • USDCAD ▲ Th 60 Strong • Ti 54 Early • Bd None • WS30 ▲ Th 63 Strong • Ti 59 Trigger • Bd Pre-Board • AUDJPY ▲ Th 58 Valid • Ti 50 Trigger • Bd Pre-Board • AZN ■ Th 55 Valid • Ti 63 Trigger • Bd None • AUDUSD ■ Th 58 Valid • Ti 41 Building • Bd None • GBPUSD ■ Th 52 Fragile • Ti 39 Early • Bd None</div>
-      <div class="alert-banner">USDJPY ▲ Bullish is at TRIGGER stage — waiting for final approval/timing.</div>
-
-      <section class="flow-strip" style="margin-bottom:14px;">
-        <div class="flow-box">
-          <div class="label">USD Flow</div>
-          <div class="value green">Strong Inflow</div>
-        </div>
-        
-        <div class="flow-box">
-          <div class="label">Risk Flow</div>
-          <div class="value red">Defensive</div>
-        </div>
-        
-        <div class="flow-box">
-          <div class="label">Carry Flow</div>
-          <div class="value green">Favored</div>
-        </div>
-        
-        <div class="flow-box">
-          <div class="label">Commodity Flow</div>
-          <div class="value red">Weak</div>
-        </div>
-        
-        <div class="flow-box">
-          <div class="label">Yield Flow</div>
-          <div class="value green">USD Supportive</div>
-        </div>
-        </section>
-
-      <section class="grid-kpi">
-        
-      <div class="card kpi-card">
-        <div class="kpi-label">USD Strength</div>
-        <div class="kpi-value green">77.9</div>
-        <div class="kpi-sub">Strong USD Supportive</div>
-      </div>
+    </section>
     
-        
-      <div class="card kpi-card">
-        <div class="kpi-label">DXY Composite</div>
-        <div class="kpi-value amber">89.8</div>
-        <div class="kpi-sub">Balanced</div>
+    <section id="tab-USDJPY" class="tab-panel" style="display:none;">
+      <div class="grid">
+        <div class="card">
+          <div class="card-title">Currency Decision Card</div>
+          <div class="symbol-head">
+            <div>
+              <h2>USDJPY</h2>
+              <div class="sub">H1</div>
+            </div>
+            <div class="price-box">
+              <div class="price">160.26000</div>
+              <div class="sub">Updated 2026-03-27 23:00:00</div>
+            </div>
+          </div>
+
+          <div class="headline-grid">
+            <div class="mini-box"><div class="label">Signal</div><div class="value"><span class="badge red">SELL</span></div></div>
+            <div class="mini-box"><div class="label">Strength</div><div class="value"><span class="badge red">TRAP</span></div></div>
+            <div class="mini-box"><div class="label">Confirmation</div><div class="value"><span class="badge amber">WAIT</span></div></div>
+            <div class="mini-box"><div class="label">Journey</div><div class="value"><span class="badge blue">ACTIVE</span></div></div>
+          </div>
+
+          <div class="section-title">Conditions</div>
+          <div class="condition-list"><div class="condition-row"><div class="condition-name">Close below pivot</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">EMA10 below pivot</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">MACD below zero</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">MACD below signal</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">Close below EMA20</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">EMA10 &lt; EMA20 &lt; EMA50</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">JRSX direction DOWN</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">JRSX zone valid</div><div class="condition-state state-no">NO</div></div></div>
+
+          <div class="section-title">MTF Snapshot</div>
+          <div class="condition-list">
+            <div class="condition-row"><div class="condition-name">M30</div><div class="condition-state state-wait">DOWN · 72.63</div></div>
+            <div class="condition-row"><div class="condition-name">H1</div><div class="condition-state state-wait">DOWN · 85.08</div></div>
+            <div class="condition-row"><div class="condition-name">H4</div><div class="condition-state state-wait">UP · 95.29</div></div>
+          </div>
+
+          <div class="blocker">
+            <strong>Why Not Ready</strong>
+            JRSX is in strong bullish zone for a sell
+            <div class="sub" style="margin-top:8px;">JRSX is in strong bullish zone for a sell</div>
+            <div class="sub" style="margin-top:8px;">Confirmation: N/A @ N/A</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="graph-head">
+            <div class="card-title" style="margin:0;">Hourly Updating Graph</div>
+            <div class="sub">Refresh cadence: 1 hour</div>
+          </div>
+
+          <div class="graph-strip">
+            <div class="metric-pill">Pivot: <strong>159.62000</strong></div>
+            <div class="metric-pill">EMA10: <strong>160.10493</strong></div>
+            <div class="metric-pill">EMA20: <strong>159.96596</strong></div>
+            <div class="metric-pill">EMA50: <strong>159.69543</strong></div>
+            <div class="metric-pill">MACD: <strong>0.17111</strong></div>
+            <div class="metric-pill">JRSX: <strong>85.08</strong></div>
+          </div>
+
+          <div class="chart-wrap"><canvas id="chart-USDJPY"></canvas></div>
+          <script type="application/json" id="data-USDJPY">{&quot;labels&quot;: [&quot;03-25 00:00&quot;, &quot;03-25 01:00&quot;, &quot;03-25 02:00&quot;, &quot;03-25 03:00&quot;, &quot;03-25 04:00&quot;, &quot;03-25 05:00&quot;, &quot;03-25 06:00&quot;, &quot;03-25 07:00&quot;, &quot;03-25 08:00&quot;, &quot;03-25 09:00&quot;, &quot;03-25 10:00&quot;, &quot;03-25 11:00&quot;, &quot;03-25 12:00&quot;, &quot;03-25 13:00&quot;, &quot;03-25 14:00&quot;, &quot;03-25 15:00&quot;, &quot;03-25 16:00&quot;, &quot;03-25 17:00&quot;, &quot;03-25 18:00&quot;, &quot;03-25 19:00&quot;, &quot;03-25 20:00&quot;, &quot;03-25 21:00&quot;, &quot;03-25 22:00&quot;, &quot;03-25 23:00&quot;, &quot;03-26 00:00&quot;, &quot;03-26 01:00&quot;, &quot;03-26 02:00&quot;, &quot;03-26 03:00&quot;, &quot;03-26 04:00&quot;, &quot;03-26 05:00&quot;, &quot;03-26 06:00&quot;, &quot;03-26 07:00&quot;, &quot;03-26 08:00&quot;, &quot;03-26 09:00&quot;, &quot;03-26 10:00&quot;, &quot;03-26 11:00&quot;, &quot;03-26 12:00&quot;, &quot;03-26 13:00&quot;, &quot;03-26 14:00&quot;, &quot;03-26 15:00&quot;, &quot;03-26 16:00&quot;, &quot;03-26 17:00&quot;, &quot;03-26 18:00&quot;, &quot;03-26 19:00&quot;, &quot;03-26 20:00&quot;, &quot;03-26 21:00&quot;, &quot;03-26 22:00&quot;, &quot;03-26 23:00&quot;, &quot;03-27 00:00&quot;, &quot;03-27 01:00&quot;, &quot;03-27 02:00&quot;, &quot;03-27 03:00&quot;, &quot;03-27 04:00&quot;, &quot;03-27 05:00&quot;, &quot;03-27 06:00&quot;, &quot;03-27 07:00&quot;, &quot;03-27 08:00&quot;, &quot;03-27 09:00&quot;, &quot;03-27 10:00&quot;, &quot;03-27 11:00&quot;, &quot;03-27 12:00&quot;, &quot;03-27 13:00&quot;, &quot;03-27 14:00&quot;, &quot;03-27 15:00&quot;, &quot;03-27 16:00&quot;, &quot;03-27 17:00&quot;, &quot;03-27 18:00&quot;, &quot;03-27 19:00&quot;, &quot;03-27 20:00&quot;, &quot;03-27 21:00&quot;, &quot;03-27 22:00&quot;, &quot;03-27 23:00&quot;], &quot;price&quot;: [158.64, 158.68, 158.7, 158.65, 158.71, 158.8, 158.8, 158.88, 158.99, 159.0, 159.13, 158.77, 158.88, 158.89, 158.85, 159.02, 159.15, 159.05, 159.2, 159.24, 159.25, 159.41, 159.46, 159.47, 159.38, 159.4, 159.39, 159.47, 159.47, 159.52, 159.45, 159.43, 159.49, 159.31, 159.5, 159.47, 159.49, 159.49, 159.65, 159.63, 159.52, 159.55, 159.65, 159.66, 159.76, 159.74, 159.82, 159.73, 159.69, 159.65, 159.72, 159.56, 159.48, 159.53, 159.61, 159.62, 159.62, 159.75, 159.95, 159.84, 159.86, 159.91, 159.85, 159.87, 159.88, 159.9, 160.16, 160.14, 160.34, 160.24, 160.15, 160.26], &quot;pivot&quot;: [158.73, 158.73, 158.73, 158.73, 158.73, 158.73, 158.73, 158.73, 158.73, 158.73, 158.73, 158.73, 158.73, 158.73, 158.73, 158.73, 158.73, 158.73, 158.73, 158.73, 158.73, 158.73, 158.73, 158.73, 159.18, 159.18, 159.18, 159.18, 159.18, 159.18, 159.18, 159.18, 159.18, 159.18, 159.18, 159.18, 159.18, 159.18, 159.18, 159.18, 159.18, 159.18, 159.18, 159.18, 159.18, 159.18, 159.18, 159.18, 159.62, 159.62, 159.62, 159.62, 159.62, 159.62, 159.62, 159.62, 159.62, 159.62, 159.62, 159.62, 159.62, 159.62, 159.62, 159.62, 159.62, 159.62, 159.62, 159.62, 159.62, 159.62, 159.62, 159.62], &quot;ema10&quot;: [158.81165, 158.7879, 158.77246, 158.74929, 158.74251, 158.75314, 158.76166, 158.78263, 158.81997, 158.85343, 158.9039, 158.87974, 158.88051, 158.88224, 158.87583, 158.90259, 158.94666, 158.96509, 159.00834, 159.05101, 159.08683, 159.1454, 159.20242, 159.25053, 159.27352, 159.29652, 159.31333, 159.34091, 159.36474, 159.39297, 159.4037, 159.40921, 159.42354, 159.40217, 159.41941, 159.42788, 159.43899, 159.44772, 159.48504, 159.51176, 159.51344, 159.52027, 159.5444, 159.56488, 159.60017, 159.62559, 159.6613, 159.67361, 159.67568, 159.67065, 159.67944, 159.657, 159.62427, 159.60622, 159.60745, 159.60955, 159.612, 159.63654, 159.69281, 159.71884, 159.74524, 159.7761, 159.79045, 159.80527, 159.81941, 159.83315, 159.89349, 159.93813, 160.01047, 160.05293, 160.07003, 160.10493], &quot;ema20&quot;: [158.78135, 158.77179, 158.76524, 158.75379, 158.74981, 158.75468, 158.759, 158.77024, 158.79098, 158.81126, 158.84172, 158.83498, 158.83965, 158.84444, 158.84469, 158.86167, 158.88865, 158.90383, 158.93232, 158.96191, 158.98916, 159.02914, 159.07008, 159.10788, 159.13351, 159.15889, 159.18081, 159.20787, 159.23303, 159.26036, 159.27861, 159.29341, 159.31194, 159.31138, 159.32905, 159.3421, 159.35609, 159.36856, 159.39565, 159.41816, 159.42795, 159.43967, 159.45999, 159.47875, 159.50544, 159.52778, 159.5558, 159.5723, 159.58303, 159.58922, 159.60158, 159.59724, 159.58579, 159.58, 159.58314, 159.58655, 159.59003, 159.60498, 159.63745, 159.65636, 159.67614, 159.69889, 159.71375, 159.72883, 159.74351, 159.75794, 159.7967, 159.8293, 159.87756, 159.91246, 159.9348, 159.96596], &quot;ema50&quot;: [158.79619, 158.79167, 158.78819, 158.78258, 158.77981, 158.78064, 158.7814, 158.78515, 158.7931, 158.80137, 158.8143, 158.8126, 158.8154, 158.81833, 158.81945, 158.82744, 158.83989, 158.84805, 158.86197, 158.87691, 158.89146, 158.91176, 158.93322, 158.95415, 158.97074, 158.98757, 159.00331, 159.02142, 159.03909, 159.05795, 159.0734, 159.08754, 159.10324, 159.1112, 159.12633, 159.13965, 159.15335, 159.16643, 159.18551, 159.20302, 159.21549, 159.22865, 159.24529, 159.26143, 159.28095, 159.29895, 159.31946, 159.33552, 159.34923, 159.36094, 159.37498, 159.38208, 159.38581, 159.39126, 159.39996, 159.40855, 159.41696, 159.4299, 159.45014, 159.46527, 159.48091, 159.49793, 159.51194, 159.52606, 159.54005, 159.55397, 159.57793, 159.59994, 159.6288, 159.65293, 159.6723, 159.69543]}</script>
+        </div>
       </div>
+    </section>
     
-        
-      <div class="card kpi-card">
-        <div class="kpi-label">Terminal State</div>
-        <div class="kpi-value red">Directional / Await Timing</div>
-        <div class="kpi-sub">Macro and governance support direction, but execution is not ready.</div>
+    <section id="tab-XAUEUR" class="tab-panel" style="display:none;">
+      <div class="grid">
+        <div class="card">
+          <div class="card-title">Currency Decision Card</div>
+          <div class="symbol-head">
+            <div>
+              <h2>XAUEUR</h2>
+              <div class="sub">H1</div>
+            </div>
+            <div class="price-box">
+              <div class="price">3902.89000</div>
+              <div class="sub">Updated 2026-03-27 23:00:00</div>
+            </div>
+          </div>
+
+          <div class="headline-grid">
+            <div class="mini-box"><div class="label">Signal</div><div class="value"><span class="badge red">SELL</span></div></div>
+            <div class="mini-box"><div class="label">Strength</div><div class="value"><span class="badge red">TRAP</span></div></div>
+            <div class="mini-box"><div class="label">Confirmation</div><div class="value"><span class="badge amber">WAIT</span></div></div>
+            <div class="mini-box"><div class="label">Journey</div><div class="value"><span class="badge blue">ACTIVE</span></div></div>
+          </div>
+
+          <div class="section-title">Conditions</div>
+          <div class="condition-list"><div class="condition-row"><div class="condition-name">Close below pivot</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">EMA10 below pivot</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">MACD below zero</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">MACD below signal</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">Close below EMA20</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">EMA10 &lt; EMA20 &lt; EMA50</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">JRSX direction DOWN</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">JRSX zone valid</div><div class="condition-state state-no">NO</div></div></div>
+
+          <div class="section-title">MTF Snapshot</div>
+          <div class="condition-list">
+            <div class="condition-row"><div class="condition-name">M30</div><div class="condition-state state-wait">DOWN · 68.37</div></div>
+            <div class="condition-row"><div class="condition-name">H1</div><div class="condition-state state-wait">DOWN · 74.60</div></div>
+            <div class="condition-row"><div class="condition-name">H4</div><div class="condition-state state-wait">UP · 48.76</div></div>
+          </div>
+
+          <div class="blocker">
+            <strong>Why Not Ready</strong>
+            JRSX is in strong bullish zone for a sell
+            <div class="sub" style="margin-top:8px;">JRSX is in strong bullish zone for a sell</div>
+            <div class="sub" style="margin-top:8px;">Confirmation: N/A @ N/A</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="graph-head">
+            <div class="card-title" style="margin:0;">Hourly Updating Graph</div>
+            <div class="sub">Refresh cadence: 1 hour</div>
+          </div>
+
+          <div class="graph-strip">
+            <div class="metric-pill">Pivot: <strong>3834.48000</strong></div>
+            <div class="metric-pill">EMA10: <strong>3896.12843</strong></div>
+            <div class="metric-pill">EMA20: <strong>3878.62035</strong></div>
+            <div class="metric-pill">EMA50: <strong>3867.88524</strong></div>
+            <div class="metric-pill">MACD: <strong>18.08431</strong></div>
+            <div class="metric-pill">JRSX: <strong>74.60</strong></div>
+          </div>
+
+          <div class="chart-wrap"><canvas id="chart-XAUEUR"></canvas></div>
+          <script type="application/json" id="data-XAUEUR">{&quot;labels&quot;: [&quot;03-24 21:00&quot;, &quot;03-24 22:00&quot;, &quot;03-24 23:00&quot;, &quot;03-25 01:00&quot;, &quot;03-25 02:00&quot;, &quot;03-25 03:00&quot;, &quot;03-25 04:00&quot;, &quot;03-25 05:00&quot;, &quot;03-25 06:00&quot;, &quot;03-25 07:00&quot;, &quot;03-25 08:00&quot;, &quot;03-25 09:00&quot;, &quot;03-25 10:00&quot;, &quot;03-25 11:00&quot;, &quot;03-25 12:00&quot;, &quot;03-25 13:00&quot;, &quot;03-25 14:00&quot;, &quot;03-25 15:00&quot;, &quot;03-25 16:00&quot;, &quot;03-25 17:00&quot;, &quot;03-25 18:00&quot;, &quot;03-25 19:00&quot;, &quot;03-25 20:00&quot;, &quot;03-25 21:00&quot;, &quot;03-25 22:00&quot;, &quot;03-25 23:00&quot;, &quot;03-26 01:00&quot;, &quot;03-26 02:00&quot;, &quot;03-26 03:00&quot;, &quot;03-26 04:00&quot;, &quot;03-26 05:00&quot;, &quot;03-26 06:00&quot;, &quot;03-26 07:00&quot;, &quot;03-26 08:00&quot;, &quot;03-26 09:00&quot;, &quot;03-26 10:00&quot;, &quot;03-26 11:00&quot;, &quot;03-26 12:00&quot;, &quot;03-26 13:00&quot;, &quot;03-26 14:00&quot;, &quot;03-26 15:00&quot;, &quot;03-26 16:00&quot;, &quot;03-26 17:00&quot;, &quot;03-26 18:00&quot;, &quot;03-26 19:00&quot;, &quot;03-26 20:00&quot;, &quot;03-26 21:00&quot;, &quot;03-26 22:00&quot;, &quot;03-26 23:00&quot;, &quot;03-27 01:00&quot;, &quot;03-27 02:00&quot;, &quot;03-27 03:00&quot;, &quot;03-27 04:00&quot;, &quot;03-27 05:00&quot;, &quot;03-27 06:00&quot;, &quot;03-27 07:00&quot;, &quot;03-27 08:00&quot;, &quot;03-27 09:00&quot;, &quot;03-27 10:00&quot;, &quot;03-27 11:00&quot;, &quot;03-27 12:00&quot;, &quot;03-27 13:00&quot;, &quot;03-27 14:00&quot;, &quot;03-27 15:00&quot;, &quot;03-27 16:00&quot;, &quot;03-27 17:00&quot;, &quot;03-27 18:00&quot;, &quot;03-27 19:00&quot;, &quot;03-27 20:00&quot;, &quot;03-27 21:00&quot;, &quot;03-27 22:00&quot;, &quot;03-27 23:00&quot;], &quot;price&quot;: [3789.35, 3797.73, 3856.23, 3860.67, 3914.43, 3925.47, 3956.31, 3949.62, 3938.16, 3942.5, 3929.55, 3919.23, 3913.65, 3926.29, 3923.95, 3928.1, 3945.1, 3919.81, 3926.57, 3941.57, 3940.0, 3937.59, 3929.93, 3923.13, 3917.87, 3897.41, 3907.49, 3890.33, 3923.73, 3921.59, 3900.41, 3903.84, 3906.8, 3840.39, 3852.39, 3853.45, 3829.91, 3826.43, 3843.8, 3837.76, 3840.23, 3857.21, 3866.15, 3845.05, 3804.58, 3801.0, 3809.67, 3787.06, 3798.63, 3822.61, 3818.38, 3796.79, 3827.62, 3840.69, 3845.21, 3851.35, 3859.27, 3865.69, 3860.79, 3839.71, 3844.2, 3834.97, 3840.49, 3853.65, 3843.66, 3911.31, 3926.81, 3920.1, 3896.85, 3922.6, 3919.22, 3902.89], &quot;pivot&quot;: [3757.12, 3757.12, 3757.12, 3811.46, 3811.46, 3811.46, 3811.46, 3811.46, 3811.46, 3811.46, 3811.46, 3811.46, 3811.46, 3811.46, 3811.46, 3811.46, 3811.46, 3811.46, 3811.46, 3811.46, 3811.46, 3811.46, 3811.46, 3811.46, 3811.46, 3811.46, 3899.48, 3899.48, 3899.48, 3899.48, 3899.48, 3899.48, 3899.48, 3899.48, 3899.48, 3899.48, 3899.48, 3899.48, 3899.48, 3899.48, 3899.48, 3899.48, 3899.48, 3899.48, 3899.48, 3899.48, 3899.48, 3899.48, 3899.48, 3834.48, 3834.48, 3834.48, 3834.48, 3834.48, 3834.48, 3834.48, 3834.48, 3834.48, 3834.48, 3834.48, 3834.48, 3834.48, 3834.48, 3834.48, 3834.48, 3834.48, 3834.48, 3834.48, 3834.48, 3834.48, 3834.48, 3834.48], &quot;ema10&quot;: [3797.71057, 3797.7141, 3808.35336, 3817.86547, 3835.42266, 3851.7949, 3870.79765, 3885.12899, 3894.77099, 3903.44899, 3908.19463, 3910.20106, 3910.82814, 3913.63939, 3915.51404, 3917.8024, 3922.7656, 3922.22822, 3923.01763, 3926.39079, 3928.86519, 3930.45152, 3930.3567, 3929.04275, 3927.01134, 3921.62928, 3919.0585, 3913.83514, 3915.6342, 3916.71708, 3913.75215, 3911.94994, 3911.01359, 3898.17294, 3889.84877, 3883.23081, 3873.53612, 3864.97137, 3861.12203, 3856.87439, 3853.84813, 3854.45938, 3856.58495, 3854.48769, 3845.41356, 3837.33837, 3832.30776, 3824.08089, 3819.45346, 3820.02737, 3819.72785, 3815.55733, 3817.75054, 3821.92135, 3826.15565, 3830.73644, 3835.92436, 3841.3363, 3844.87333, 3843.93455, 3843.98281, 3842.34412, 3842.00701, 3844.12391, 3844.03957, 3856.27055, 3869.09591, 3878.36938, 3881.72949, 3889.16049, 3894.62586, 3896.12843], &quot;ema20&quot;: [3796.15491, 3796.30492, 3802.01207, 3807.59854, 3817.77297, 3828.02983, 3840.24699, 3850.66346, 3858.99647, 3866.94918, 3872.91117, 3877.32248, 3880.78225, 3885.11632, 3888.81476, 3892.55622, 3897.56039, 3899.6794, 3902.24041, 3905.98608, 3909.2255, 3911.92688, 3913.64147, 3914.54514, 3914.86179, 3913.19971, 3912.65593, 3910.52965, 3911.78683, 3912.72046, 3911.54804, 3910.81394, 3910.43166, 3903.76103, 3898.86855, 3894.54297, 3888.38745, 3882.48674, 3878.80229, 3874.8935, 3871.59221, 3870.22248, 3869.83462, 3867.47418, 3861.48426, 3855.72386, 3851.33777, 3845.21608, 3840.77931, 3839.0489, 3837.08043, 3833.24325, 3832.7077, 3833.46792, 3834.58621, 3836.18277, 3838.38155, 3840.98235, 3842.8688, 3842.56796, 3842.72339, 3841.98497, 3841.84259, 3842.96711, 3843.0331, 3849.53566, 3856.89512, 3862.91463, 3866.14657, 3871.52309, 3876.06565, 3878.62035], &quot;ema50&quot;: [3835.64885, 3834.16183, 3835.02725, 3836.03285, 3839.10725, 3842.49402, 3846.95739, 3850.98338, 3854.40207, 3857.85689, 3860.66839, 3862.96492, 3864.95257, 3867.35796, 3869.57725, 3871.87226, 3874.74394, 3876.51124, 3878.47433, 3880.94867, 3883.2644, 3885.39482, 3887.1413, 3888.55262, 3889.70232, 3890.00458, 3890.69028, 3890.67616, 3891.97239, 3893.13386, 3893.4192, 3893.82786, 3894.33657, 3892.22102, 3890.65902, 3889.19984, 3886.87475, 3884.50437, 3882.90812, 3881.1376, 3879.53338, 3878.65796, 3878.16745, 3876.86872, 3874.03387, 3871.1698, 3868.75804, 3865.5542, 3862.92972, 3861.34855, 3859.66351, 3857.19788, 3856.03797, 3855.43609, 3855.03506, 3854.89055, 3855.06229, 3855.47907, 3855.68734, 3855.06078, 3854.63486, 3853.86369, 3853.33923, 3853.35142, 3852.97136, 3855.25915, 3858.06507, 3860.49781, 3861.92339, 3864.30286, 3866.45648, 3867.88524]}</script>
+        </div>
       </div>
+    </section>
     
-        
-      <div class="card kpi-card">
-        <div class="kpi-label">Execution Ready / Developing</div>
-        <div class="kpi-value green">0 Ready • 10 Developing</div>
-        <div class="kpi-sub">0 governance-approved</div>
+    <section id="tab-XAUUSD" class="tab-panel" style="display:none;">
+      <div class="grid">
+        <div class="card">
+          <div class="card-title">Currency Decision Card</div>
+          <div class="symbol-head">
+            <div>
+              <h2>XAUUSD</h2>
+              <div class="sub">H1</div>
+            </div>
+            <div class="price-box">
+              <div class="price">4495.01000</div>
+              <div class="sub">Updated 2026-03-27 23:00:00</div>
+            </div>
+          </div>
+
+          <div class="headline-grid">
+            <div class="mini-box"><div class="label">Signal</div><div class="value"><span class="badge red">SELL</span></div></div>
+            <div class="mini-box"><div class="label">Strength</div><div class="value"><span class="badge red">TRAP</span></div></div>
+            <div class="mini-box"><div class="label">Confirmation</div><div class="value"><span class="badge amber">WAIT</span></div></div>
+            <div class="mini-box"><div class="label">Journey</div><div class="value"><span class="badge blue">ACTIVE</span></div></div>
+          </div>
+
+          <div class="section-title">Conditions</div>
+          <div class="condition-list"><div class="condition-row"><div class="condition-name">Close below pivot</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">EMA10 below pivot</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">MACD below zero</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">MACD below signal</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">Close below EMA20</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">EMA10 &lt; EMA20 &lt; EMA50</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">JRSX direction DOWN</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">JRSX zone valid</div><div class="condition-state state-no">NO</div></div></div>
+
+          <div class="section-title">MTF Snapshot</div>
+          <div class="condition-list">
+            <div class="condition-row"><div class="condition-name">M30</div><div class="condition-state state-wait">DOWN · 66.41</div></div>
+            <div class="condition-row"><div class="condition-name">H1</div><div class="condition-state state-wait">DOWN · 72.13</div></div>
+            <div class="condition-row"><div class="condition-name">H4</div><div class="condition-state state-wait">UP · 44.25</div></div>
+          </div>
+
+          <div class="blocker">
+            <strong>Why Not Ready</strong>
+            JRSX is in strong bullish zone for a sell
+            <div class="sub" style="margin-top:8px;">JRSX is in strong bullish zone for a sell</div>
+            <div class="sub" style="margin-top:8px;">Confirmation: N/A @ N/A</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="graph-head">
+            <div class="card-title" style="margin:0;">Hourly Updating Graph</div>
+            <div class="sub">Refresh cadence: 1 hour</div>
+          </div>
+
+          <div class="graph-strip">
+            <div class="metric-pill">Pivot: <strong>4425.34000</strong></div>
+            <div class="metric-pill">EMA10: <strong>4488.20758</strong></div>
+            <div class="metric-pill">EMA20: <strong>4469.93053</strong></div>
+            <div class="metric-pill">EMA50: <strong>4463.42793</strong></div>
+            <div class="metric-pill">MACD: <strong>18.00977</strong></div>
+            <div class="metric-pill">JRSX: <strong>72.13</strong></div>
+          </div>
+
+          <div class="chart-wrap"><canvas id="chart-XAUUSD"></canvas></div>
+          <script type="application/json" id="data-XAUUSD">{&quot;labels&quot;: [&quot;03-24 21:00&quot;, &quot;03-24 22:00&quot;, &quot;03-24 23:00&quot;, &quot;03-25 01:00&quot;, &quot;03-25 02:00&quot;, &quot;03-25 03:00&quot;, &quot;03-25 04:00&quot;, &quot;03-25 05:00&quot;, &quot;03-25 06:00&quot;, &quot;03-25 07:00&quot;, &quot;03-25 08:00&quot;, &quot;03-25 09:00&quot;, &quot;03-25 10:00&quot;, &quot;03-25 11:00&quot;, &quot;03-25 12:00&quot;, &quot;03-25 13:00&quot;, &quot;03-25 14:00&quot;, &quot;03-25 15:00&quot;, &quot;03-25 16:00&quot;, &quot;03-25 17:00&quot;, &quot;03-25 18:00&quot;, &quot;03-25 19:00&quot;, &quot;03-25 20:00&quot;, &quot;03-25 21:00&quot;, &quot;03-25 22:00&quot;, &quot;03-25 23:00&quot;, &quot;03-26 01:00&quot;, &quot;03-26 02:00&quot;, &quot;03-26 03:00&quot;, &quot;03-26 04:00&quot;, &quot;03-26 05:00&quot;, &quot;03-26 06:00&quot;, &quot;03-26 07:00&quot;, &quot;03-26 08:00&quot;, &quot;03-26 09:00&quot;, &quot;03-26 10:00&quot;, &quot;03-26 11:00&quot;, &quot;03-26 12:00&quot;, &quot;03-26 13:00&quot;, &quot;03-26 14:00&quot;, &quot;03-26 15:00&quot;, &quot;03-26 16:00&quot;, &quot;03-26 17:00&quot;, &quot;03-26 18:00&quot;, &quot;03-26 19:00&quot;, &quot;03-26 20:00&quot;, &quot;03-26 21:00&quot;, &quot;03-26 22:00&quot;, &quot;03-26 23:00&quot;, &quot;03-27 01:00&quot;, &quot;03-27 02:00&quot;, &quot;03-27 03:00&quot;, &quot;03-27 04:00&quot;, &quot;03-27 05:00&quot;, &quot;03-27 06:00&quot;, &quot;03-27 07:00&quot;, &quot;03-27 08:00&quot;, &quot;03-27 09:00&quot;, &quot;03-27 10:00&quot;, &quot;03-27 11:00&quot;, &quot;03-27 12:00&quot;, &quot;03-27 13:00&quot;, &quot;03-27 14:00&quot;, &quot;03-27 15:00&quot;, &quot;03-27 16:00&quot;, &quot;03-27 17:00&quot;, &quot;03-27 18:00&quot;, &quot;03-27 19:00&quot;, &quot;03-27 20:00&quot;, &quot;03-27 21:00&quot;, &quot;03-27 22:00&quot;, &quot;03-27 23:00&quot;], &quot;price&quot;: [4389.48, 4400.29, 4476.49, 4484.5, 4546.79, 4563.26, 4595.07, 4583.86, 4570.3, 4572.9, 4555.61, 4545.5, 4539.48, 4556.03, 4551.92, 4558.7, 4578.88, 4543.99, 4544.7, 4567.16, 4558.95, 4555.3, 4550.87, 4538.3, 4530.94, 4505.83, 4517.6, 4498.25, 4535.71, 4535.64, 4508.95, 4516.77, 4520.45, 4439.13, 4456.45, 4452.62, 4427.92, 4423.54, 4442.87, 4423.11, 4429.67, 4452.77, 4464.97, 4438.34, 4389.3, 4381.69, 4394.58, 4364.04, 4380.86, 4411.34, 4405.11, 4378.52, 4417.39, 4431.91, 4437.55, 4445.97, 4454.52, 4459.48, 4447.63, 4424.28, 4428.85, 4414.94, 4420.01, 4437.98, 4431.31, 4509.72, 4524.07, 4516.05, 4486.84, 4516.9, 4514.44, 4495.01], &quot;pivot&quot;: [4347.28, 4347.28, 4347.28, 4422.23, 4422.23, 4422.23, 4422.23, 4422.23, 4422.23, 4422.23, 4422.23, 4422.23, 4422.23, 4422.23, 4422.23, 4422.23, 4422.23, 4422.23, 4422.23, 4422.23, 4422.23, 4422.23, 4422.23, 4422.23, 4422.23, 4422.23, 4521.38, 4521.38, 4521.38, 4521.38, 4521.38, 4521.38, 4521.38, 4521.38, 4521.38, 4521.38, 4521.38, 4521.38, 4521.38, 4521.38, 4521.38, 4521.38, 4521.38, 4521.38, 4521.38, 4521.38, 4521.38, 4521.38, 4521.38, 4425.34, 4425.34, 4425.34, 4425.34, 4425.34, 4425.34, 4425.34, 4425.34, 4425.34, 4425.34, 4425.34, 4425.34, 4425.34, 4425.34, 4425.34, 4425.34, 4425.34, 4425.34, 4425.34, 4425.34, 4425.34, 4425.34, 4425.34], &quot;ema10&quot;: [4399.74647, 4399.8453, 4413.7807, 4426.63875, 4448.48443, 4469.35272, 4492.21041, 4508.87397, 4520.04234, 4529.65282, 4534.37231, 4536.39553, 4536.95634, 4540.42428, 4542.51441, 4545.45724, 4551.53411, 4550.16245, 4549.16928, 4552.44032, 4553.6239, 4553.92864, 4553.37253, 4550.63207, 4547.05169, 4539.55684, 4535.56469, 4528.7802, 4530.04016, 4531.05831, 4527.03862, 4525.1716, 4524.31313, 4508.82529, 4499.30251, 4490.81478, 4479.37936, 4469.22675, 4464.43462, 4456.92105, 4451.96631, 4452.11244, 4454.45018, 4451.52105, 4440.20813, 4429.56847, 4423.20693, 4412.44931, 4406.7058, 4407.54838, 4407.10504, 4401.90776, 4404.72271, 4409.66586, 4414.7357, 4420.41466, 4426.61563, 4432.59097, 4435.32534, 4433.3171, 4432.5049, 4429.31128, 4427.62014, 4429.50375, 4429.83216, 4444.35722, 4458.85045, 4469.25037, 4472.44849, 4480.53058, 4486.69593, 4488.20758], &quot;ema20&quot;: [4398.41377, 4398.59246, 4406.01128, 4413.48639, 4426.18197, 4439.23702, 4454.07826, 4466.43843, 4476.33, 4485.52715, 4492.2017, 4497.27773, 4501.297, 4506.50966, 4510.83446, 4515.39308, 4521.43945, 4523.58712, 4525.59787, 4529.55617, 4532.35558, 4534.54077, 4536.09593, 4536.30584, 4535.79481, 4532.94102, 4531.47997, 4528.31521, 4529.01948, 4529.65, 4527.67857, 4526.63966, 4526.05017, 4517.77206, 4511.93186, 4506.28311, 4498.81996, 4491.65044, 4487.00468, 4480.91948, 4476.03857, 4473.82252, 4472.97942, 4469.68043, 4462.02515, 4454.37418, 4448.6795, 4440.61859, 4434.9273, 4432.68089, 4430.05509, 4425.14699, 4424.40823, 4425.12268, 4426.30624, 4428.17897, 4430.68764, 4433.42977, 4434.78218, 4433.78197, 4433.31226, 4431.56252, 4430.46228, 4431.17825, 4431.1908, 4438.66977, 4446.80313, 4453.39807, 4456.58301, 4462.32749, 4467.29058, 4469.93053], &quot;ema50&quot;: [4440.16618, 4438.6024, 4440.08819, 4441.82983, 4445.94592, 4450.54647, 4456.21406, 4461.21978, 4465.49744, 4469.7093, 4473.07796, 4475.91804, 4478.41066, 4481.45456, 4484.21791, 4487.13878, 4490.73647, 4492.82484, 4494.85916, 4497.69449, 4500.09667, 4502.2615, 4504.16772, 4505.50624, 4506.50364, 4506.47723, 4506.91341, 4506.57367, 4507.71627, 4508.81132, 4508.81676, 4509.12865, 4509.57263, 4506.81017, 4504.83526, 4502.7876, 4499.85162, 4496.85901, 4494.74179, 4491.9327, 4489.49103, 4488.05099, 4487.14585, 4485.23189, 4481.46986, 4477.55692, 4474.30293, 4469.97889, 4466.48403, 4464.32152, 4461.9995, 4458.72579, 4457.10478, 4456.11675, 4455.38864, 4455.01929, 4454.99971, 4455.1754, 4454.87951, 4453.67952, 4452.70582, 4451.22481, 4450.0007, 4449.5293, 4448.81481, 4451.20325, 4454.06077, 4456.49172, 4457.68185, 4460.00413, 4462.13887, 4463.42793]}</script>
+        </div>
       </div>
-    
-        
-      <div class="card kpi-card">
-        <div class="kpi-label">Rate Regime</div>
-        <div class="kpi-value green">80.3</div>
-        <div class="kpi-sub">Higher = tighter / USD supportive</div>
-      </div>
-    
-        
-      <div class="card kpi-card">
-        <div class="kpi-label">Risk Regime</div>
-        <div class="kpi-value red">20.7</div>
-        <div class="kpi-sub">Lower = defensive</div>
-      </div>
-    
-      </section>
-
-      <section class="card dxy-panel">
-        <h2>DXY Structural Engine</h2>
-        <table class="mini-table">
-          <tbody>
-            <tr><td>D1 Bias</td><td><span class="pill pill-green">Bullish USD</span></td></tr>
-            <tr><td>D1 Continuation</td><td>No clear continuation</td></tr>
-            <tr><td>H1 Flow</td><td><span class="pill pill-green">Bullish USD</span></td></tr>
-            <tr><td>H1 Continuation</td><td>Bullish continuation</td></tr>
-            <tr><td>M15 Signal</td><td>No clear trigger</td></tr>
-            <tr><td>Trade State</td><td><span class="pill pill-amber">Watch</span></td></tr>
-          </tbody>
-        </table>
-      </section>
-
-      <section class="tabs">
-        <button class="tab-btn active" data-tab="tab-all">All</button>
-        <button class="tab-btn" data-tab="tab-currencies">Currencies</button>
-        <button class="tab-btn" data-tab="tab-metals">Metals</button>
-        <button class="tab-btn" data-tab="tab-indices">Indices</button>
-        <button class="tab-btn" data-tab="tab-stocks">Stocks</button>
-      </section>
-
-      
-        <section class="tab-panel active" id="tab-all" style="display:block;">
-          <section class="grid-main">
-            <div class="card">
-              <h2>All Trade Board</h2>
-              <table class="mini-table">
-                <thead><tr><th>Rank</th><th>Market</th><th>Direction</th><th>Score</th><th>Prob</th><th>Liquidity</th><th>SMC</th><th>Execution</th><th>Type</th><th>Board</th></tr></thead>
-                <tbody>
-              <tr>
-                <td colspan="10" style="text-align:center; color:#8da0c6; padding:14px; background:rgba(89,195,255,0.05);">
-                  No board-approved setups yet. Showing highest pre-board candidates.
-                </td>
-              </tr>
-            
-              <tr>
-                <td>1</td>
-                <td>USDJPY</td>
-                <td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td>
-                <td>67<div class="tiny">Th 64 • Ti 62</div></td>
-                <td><span class="pill pill-blue">Upside Objective</span></td>
-                <td><span class="pill pill-amber">Neutral</span></td>
-                <td><span class="pill pill-red">WAIT</span></td>
-                <td>None</td>
-                <td><span class="pill pill-amber">Pre-Board</span></td>
-              </tr>
-            
-              <tr>
-                <td>2</td>
-                <td>WS30</td>
-                <td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td>
-                <td>63<div class="tiny">Th 63 • Ti 59</div></td>
-                <td><span class="pill pill-blue">Upside Objective</span></td>
-                <td><span class="pill pill-amber">Neutral</span></td>
-                <td><span class="pill pill-red">WAIT</span></td>
-                <td>None</td>
-                <td><span class="pill pill-amber">Pre-Board</span></td>
-              </tr>
-            
-              <tr>
-                <td>3</td>
-                <td>AUDJPY</td>
-                <td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td>
-                <td>58<div class="tiny">Th 58 • Ti 50</div></td>
-                <td><span class="pill pill-blue">Upside Objective</span></td>
-                <td><span class="pill pill-amber">Neutral</span></td>
-                <td><span class="pill pill-red">WAIT</span></td>
-                <td>None</td>
-                <td><span class="pill pill-amber">Pre-Board</span></td>
-              </tr>
-            
-              <tr>
-                <td>4</td>
-                <td>AZN</td>
-                <td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td>
-                <td>55<div class="tiny">Th 55 • Ti 63</div></td>
-                <td><span class="pill pill-amber">Balanced</span></td>
-                <td><span class="pill pill-amber">Neutral</span></td>
-                <td><span class="pill pill-red">WAIT</span></td>
-                <td>None</td>
-                <td><span class="pill pill-amber">Pre-Board</span></td>
-              </tr>
-            
-              <tr>
-                <td>5</td>
-                <td>AUDUSD</td>
-                <td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td>
-                <td>55<div class="tiny">Th 58 • Ti 41</div></td>
-                <td><span class="pill pill-amber">Balanced</span></td>
-                <td><span class="pill pill-amber">Neutral</span></td>
-                <td><span class="pill pill-red">WAIT</span></td>
-                <td>None</td>
-                <td><span class="pill pill-amber">Pre-Board</span></td>
-              </tr>
-            </tbody>
-              </table>
-            </div>
-
-            <div class="decision">
-              <h3>All Top Watchlist Setup</h3>
-              <div class="decision-market">USDJPY — Bullish / Strong</div>
-              <div class="decision-direction"><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> • Theme: <span class="pill pill-green">Strong</span> • Timing: <span class="pill pill-blue">Trigger</span> • Board: <span class="pill pill-amber">Pre-Board</span></div>
-              <div class="tiny" style="margin-bottom:10px;">Gov 67 • Theme 64 • Timing 62 • Exec 50</div>
-              <div class="insight-strip">
-                <span class="insight-item"><strong>Theme Str</strong> Strong</span>
-                <span class="insight-item"><strong>Timing Q</strong> Good</span>
-                <span class="insight-item"><strong>Why Not Ready</strong> Timing window closed</span>
-                <span class="insight-item"><strong>Tactical</strong> N/A</span>
-                <span class="insight-item"><strong>Bias</strong> Neutral</span>
-                <span class="insight-item"><strong>Conviction</strong> Developing</span>
-                <span class="insight-item"><strong>Status</strong> WAIT</span>
-                <span class="insight-item"><strong>TtT</strong> Next session</span>
-              </div>
-              <div class="trade-plan-box">
-                <div class="trade-plan-title">Trade Plan</div>
-                <div class="trade-plan-grid">
-                  <div><span class="tiny">Status</span><br><strong>Pending Confirmation</strong></div>
-                  <div><span class="tiny">Type</span><br><strong>Breakout Continuation</strong></div>
-                  <div><span class="tiny">Bias</span><br><strong>Long</strong></div>
-                  <div><span class="tiny">Entry</span><br><strong>Wait for trigger confirmation</strong></div>
-                  <div><span class="tiny">Risk</span><br><strong>C</strong></div>
-                  <div><span class="tiny">Next Condition</span><br><strong>Wait for active timing window / session expansion</strong></div>
-                  <div><span class="tiny">Execution Prob</span><br><strong>48% Low</strong></div>
-                  <div><span class="tiny">Time-to-Trigger</span><br><strong>Next session</strong></div>
-                </div>
-                <div class="tiny" style="margin-top:8px;">Invalidation: Structure invalidation level • Stop: Structure stop</div>
-                <div class="tiny">Targets: Nearest H1 liquidity / Nearest H4 liquidity</div>
-                <div class="tiny">Execution path: Wait for active timing window / session expansion</div>
-                <div class="tiny">Time-to-trigger: Next session (~8.0h)</div>
-                <div class="tiny">Note: Setup forming but not yet executable</div>
-              </div>
-              <ul class="reason-list"><li>Display regime is &#39;Bullish / Strong&#39;.</li><li>Theme engine: Strong / Strong at 64.</li><li>Timing engine: Trigger / Good at 62.</li><li>Board engine: Pre-Board.</li><li>Signal alignment is &#39;Aligned&#39;.</li><li>Conflict is &#39;Low&#39;.</li><li>Stability is &#39;Moderating&#39;.</li><li>Gov 67 • Theme 64 Strong/Strong • Timing 62 Trigger/Good • Board Pre-Board • Rank 86</li><li>Trade Board promotion is governance-controlled, not dashboard-calculated.</li></ul>
-            </div>
-          </section>
-
-          <section class="grid-triple">
-            <div class="card">
-              <h2>All Regime Heat Matrix</h2>
-              <table class="mini-table">
-                <thead><tr><th>Market</th><th>Dir</th><th>Structural</th><th>Final</th><th>Liquidity</th><th>SMC</th><th>Exec</th><th>Permission</th><th>Conflict</th></tr></thead>
-                <tbody><tr><td>USDJPY</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat green">75</span></td><td><span class="heat amber">67</span></td><td><span class='pill pill-blue'>Upside Objective</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-green'>Low</span></td></tr><tr><td>AUDJPY</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat green">67</span></td><td><span class="heat amber">58</span></td><td><span class='pill pill-blue'>Upside Objective</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-amber'>Medium</span></td></tr><tr><td>GBPJPY</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat amber">52</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-green'>Bullish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-green'>Low</span></td></tr><tr><td>CADJPY</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat amber">62</span></td><td><span class="heat amber">51</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-amber'>Medium</span></td></tr><tr><td>WS30</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat green">72</span></td><td><span class="heat amber">63</span></td><td><span class='pill pill-blue'>Upside Objective</span></td><td><span class='pill pill-red'>Bearish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-green'>Low</span></td></tr><tr><td>HSBC</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat amber">47</span></td><td><span class="heat amber">45</span></td><td><span class='pill pill-blue'>Downside Objective</span></td><td><span class='pill pill-green'>Bullish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-amber'>Medium</span></td></tr><tr><td>AZN</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat amber">59</span></td><td><span class="heat amber">55</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-green'>Bullish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-green'>Low</span></td></tr><tr><td>RIO</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat amber">47</span></td><td><span class="heat amber">47</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-green'>Low</span></td></tr><tr><td>AUDUSD</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat amber">65</span></td><td><span class="heat amber">55</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-red'>Bearish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-amber'>Medium</span></td></tr><tr><td>RELX</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat red">28</span></td><td><span class="heat amber">35</span></td><td><span class='pill pill-blue'>Downside Objective</span></td><td><span class='pill pill-red'>Bearish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-green'>Low</span></td></tr><tr><td>EURUSD</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat amber">57</span></td><td><span class="heat amber">52</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-red'>Bearish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-amber'>Medium</span></td></tr><tr><td>SP500</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat red">21</span></td><td><span class="heat red">28</span></td><td><span class='pill pill-blue'>Downside Objective</span></td><td><span class='pill pill-red'>Bearish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-green'>Low</span></td></tr><tr><td>GOLD</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat red">26</span></td><td><span class="heat red">30</span></td><td><span class='pill pill-blue'>Downside Objective</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-amber'>Medium</span></td></tr><tr><td>SILVER</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat red">26</span></td><td><span class="heat red">32</span></td><td><span class='pill pill-blue'>Downside Objective</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-amber'>Medium</span></td></tr><tr><td>DAX40</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat red">30</span></td><td><span class="heat red">31</span></td><td><span class='pill pill-blue'>Downside Objective</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-blue'>Blocked</span></td><td><span class='pill pill-red'>High</span></td></tr><tr><td>USDCAD</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat green">77</span></td><td><span class="heat amber">65</span></td><td><span class='pill pill-blue'>Upside Objective</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-blue'>Blocked</span></td><td><span class='pill pill-red'>High</span></td></tr><tr><td>GBPUSD</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat amber">61</span></td><td><span class="heat amber">53</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-red'>Bearish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-blue'>Blocked</span></td><td><span class='pill pill-red'>High</span></td></tr><tr><td>NAS100</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat red">22</span></td><td><span class="heat red">30</span></td><td><span class='pill pill-blue'>Downside Objective</span></td><td><span class='pill pill-red'>Bearish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-blue'>Blocked</span></td><td><span class='pill pill-red'>High</span></td></tr><tr><td>SHELL</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat red">32</span></td><td><span class="heat red">32</span></td><td><span class='pill pill-blue'>Downside Objective</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-blue'>Blocked</span></td><td><span class='pill pill-red'>High</span></td></tr></tbody>
-              </table>
-            </div>
-
-            <div class="card">
-              <h2>All Trigger Watch</h2>
-              <ul class="compact"><li>USDJPY <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class='tiny'>Dist 5 • TtT Next session • Prob 48% • Wait for active timing window / session expansion</span></li><li>AZN <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class='tiny'>Dist 6 • TtT Needs reset • Prob 32% • Wait for DXY / macro alignment</span></li><li>WS30 <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class='tiny'>Dist 6 • TtT Needs reset • Prob 43% • Wait for DXY / macro alignment</span></li><li>AUDJPY <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class='tiny'>Dist 8 • TtT Next session • Prob 10% • Wait for active timing window / session expansion</span></li><li>CADJPY <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class='tiny'>Dist 21 • TtT 1-3 days • Prob 0% • Wait for directional trigger confirmation</span></li></ul>
-            </div>
-
-            <div class="card">
-              <h2>All Almost Ready</h2>
-              <ul class="compact"><li>USDJPY <span class='tiny'>Dist 5 • TtT Next session • Prob 48% • Wait for active timing window / session expansion</span></li><li>AZN <span class='tiny'>Dist 6 • TtT Needs reset • Prob 32% • Wait for DXY / macro alignment</span></li><li>WS30 <span class='tiny'>Dist 6 • TtT Needs reset • Prob 43% • Wait for DXY / macro alignment</span></li><li>HSBC <span class='tiny'>Dist 7 • TtT Needs reset • Prob 30% • Wait for DXY / macro alignment</span></li><li>AUDJPY <span class='tiny'>Dist 8 • TtT Next session • Prob 10% • Wait for active timing window / session expansion</span></li></ul>
-            </div>
-          </section>
-
-          <section class="grid-bottom one-right-wide">
-            <div class="card">
-              <h2>All Watchlist</h2>
-              
-              <div class="ranking-item">
-                <div class="ranking-left">
-                  <div class="rank">1</div>
-                  <div>
-                    <div><strong>USDJPY</strong> <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class="pill pill-green">Bullish / Strong</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:66.58%"></div></div>
-                    <div class="tiny">Permission Wait • Structure Bullish • Liquidity Upside Objective • SMC Neutral</div>
-                    <div class="tiny">Execution WAIT • Type None • Reason Timing window closed</div>
-                    <div class="tiny"><strong>Next Condition</strong> Wait for active timing window / session expansion</div>
-                  </div>
-                </div>
-                <div style="text-align:right;">
-                  <div><strong>67%</strong></div>
-                  <div><span class="pill pill-green">Near Trigger</span></div>
-                </div>
-              </div>
-            
-              <div class="ranking-item">
-                <div class="ranking-left">
-                  <div class="rank">2</div>
-                  <div>
-                    <div><strong>USDCAD</strong> <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class="pill pill-green">Bullish / Strong</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:64.61%"></div></div>
-                    <div class="tiny">Permission Wait • Structure Bullish • Liquidity Upside Objective • SMC Neutral</div>
-                    <div class="tiny">Execution WAIT • Type None • Reason High conflict</div>
-                    <div class="tiny"><strong>Next Condition</strong> Wait for bullish structure alignment (BOS/CHoCH)</div>
-                  </div>
-                </div>
-                <div style="text-align:right;">
-                  <div><strong>65%</strong></div>
-                  <div><span class="pill pill-red">Stand Aside</span></div>
-                </div>
-              </div>
-            
-              <div class="ranking-item">
-                <div class="ranking-left">
-                  <div class="rank">3</div>
-                  <div>
-                    <div><strong>WS30</strong> <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class="pill pill-green">Bullish / Strong</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:63.18%"></div></div>
-                    <div class="tiny">Permission Wait • Structure Bullish • Liquidity Upside Objective • SMC Neutral</div>
-                    <div class="tiny">Execution WAIT • Type None • Reason Timing window closed</div>
-                    <div class="tiny"><strong>Next Condition</strong> Wait for DXY / macro alignment</div>
-                  </div>
-                </div>
-                <div style="text-align:right;">
-                  <div><strong>63%</strong></div>
-                  <div><span class="pill pill-green">Near Trigger</span></div>
-                </div>
-              </div>
-            
-              <div class="ranking-item">
-                <div class="ranking-left">
-                  <div class="rank">4</div>
-                  <div>
-                    <div><strong>AUDJPY</strong> <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class="pill pill-green">Bullish / Valid</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:58.28%"></div></div>
-                    <div class="tiny">Permission Wait • Structure Bullish • Liquidity Upside Objective • SMC Neutral</div>
-                    <div class="tiny">Execution WAIT • Type None • Reason Timing window closed</div>
-                    <div class="tiny"><strong>Next Condition</strong> Wait for active timing window / session expansion</div>
-                  </div>
-                </div>
-                <div style="text-align:right;">
-                  <div><strong>58%</strong></div>
-                  <div><span class="pill pill-green">Near Trigger</span></div>
-                </div>
-              </div>
-            
-              <div class="ranking-item">
-                <div class="ranking-left">
-                  <div class="rank">5</div>
-                  <div>
-                    <div><strong>AZN</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class="pill pill-amber">Neutral / Valid</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:54.92%"></div></div>
-                    <div class="tiny">Permission Wait • Structure Neutral • Liquidity Balanced • SMC Neutral</div>
-                    <div class="tiny">Execution WAIT • Type None • Reason Timing window closed</div>
-                    <div class="tiny"><strong>Next Condition</strong> Wait for DXY / macro alignment</div>
-                  </div>
-                </div>
-                <div style="text-align:right;">
-                  <div><strong>55%</strong></div>
-                  <div><span class="pill pill-green">Near Trigger</span></div>
-                </div>
-              </div>
-            
-              <div class="ranking-item">
-                <div class="ranking-left">
-                  <div class="rank">6</div>
-                  <div>
-                    <div><strong>AUDUSD</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class="pill pill-amber">Neutral / Valid</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:54.87%"></div></div>
-                    <div class="tiny">Permission Wait • Structure Neutral • Liquidity Balanced • SMC Neutral</div>
-                    <div class="tiny">Execution WAIT • Type None • Reason Timing window closed</div>
-                    <div class="tiny"><strong>Next Condition</strong> Wait for DXY / macro alignment</div>
-                  </div>
-                </div>
-                <div style="text-align:right;">
-                  <div><strong>55%</strong></div>
-                  <div><span class="pill pill-amber">Trigger Forming</span></div>
-                </div>
-              </div>
-            
-              <div class="ranking-item">
-                <div class="ranking-left">
-                  <div class="rank">7</div>
-                  <div>
-                    <div><strong>GBPUSD</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class="pill pill-amber">Neutral / Fragile</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:52.72%"></div></div>
-                    <div class="tiny">Permission Wait • Structure Neutral • Liquidity Balanced • SMC Neutral</div>
-                    <div class="tiny">Execution WAIT • Type None • Reason High conflict</div>
-                    <div class="tiny"><strong>Next Condition</strong> Wait for directional structure alignment (BOS/CHoCH)</div>
-                  </div>
-                </div>
-                <div style="text-align:right;">
-                  <div><strong>53%</strong></div>
-                  <div><span class="pill pill-red">Stand Aside</span></div>
-                </div>
-              </div>
-            
-              <div class="ranking-item">
-                <div class="ranking-left">
-                  <div class="rank">8</div>
-                  <div>
-                    <div><strong>EURUSD</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class="pill pill-amber">Neutral / Valid</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:52.0%"></div></div>
-                    <div class="tiny">Permission Wait • Structure Neutral • Liquidity Balanced • SMC Neutral</div>
-                    <div class="tiny">Execution WAIT • Type None • Reason Timing window closed</div>
-                    <div class="tiny"><strong>Next Condition</strong> Wait for DXY / macro alignment</div>
-                  </div>
-                </div>
-                <div style="text-align:right;">
-                  <div><strong>52%</strong></div>
-                  <div><span class="pill pill-amber">Trigger Forming</span></div>
-                </div>
-              </div>
-            
-              <div class="ranking-item">
-                <div class="ranking-left">
-                  <div class="rank">9</div>
-                  <div>
-                    <div><strong>CADJPY</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class="pill pill-amber">Neutral / Valid</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:50.57%"></div></div>
-                    <div class="tiny">Permission Wait • Structure Neutral • Liquidity Balanced • SMC Neutral</div>
-                    <div class="tiny">Execution WAIT • Type None • Reason Timing window closed</div>
-                    <div class="tiny"><strong>Next Condition</strong> Wait for directional trigger confirmation</div>
-                  </div>
-                </div>
-                <div style="text-align:right;">
-                  <div><strong>51%</strong></div>
-                  <div><span class="pill pill-amber">Trigger Forming</span></div>
-                </div>
-              </div>
-            
-              <div class="ranking-item">
-                <div class="ranking-left">
-                  <div class="rank">10</div>
-                  <div>
-                    <div><strong>GBPJPY</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class="pill pill-amber">Neutral / Fragile</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:50.13%"></div></div>
-                    <div class="tiny">Permission Wait • Structure Neutral • Liquidity Balanced • SMC Neutral</div>
-                    <div class="tiny">Execution WAIT • Type None • Reason Timing window closed</div>
-                    <div class="tiny"><strong>Next Condition</strong> Wait for directional trigger confirmation</div>
-                  </div>
-                </div>
-                <div style="text-align:right;">
-                  <div><strong>50%</strong></div>
-                  <div><span class="pill pill-amber">Trigger Forming</span></div>
-                </div>
-              </div>
-            
-              <div class="ranking-item">
-                <div class="ranking-left">
-                  <div class="rank">11</div>
-                  <div>
-                    <div><strong>RIO</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class="pill pill-amber">Neutral / Valid</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:46.75%"></div></div>
-                    <div class="tiny">Permission Wait • Structure Neutral • Liquidity Balanced • SMC Neutral</div>
-                    <div class="tiny">Execution WAIT • Type None • Reason Timing window closed</div>
-                    <div class="tiny"><strong>Next Condition</strong> Wait for DXY / macro alignment</div>
-                  </div>
-                </div>
-                <div style="text-align:right;">
-                  <div><strong>47%</strong></div>
-                  <div><span class="pill pill-green">Near Trigger</span></div>
-                </div>
-              </div>
-            
-              <div class="ranking-item">
-                <div class="ranking-left">
-                  <div class="rank">12</div>
-                  <div>
-                    <div><strong>HSBC</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish / Invalid</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:44.75%"></div></div>
-                    <div class="tiny">Permission Wait • Structure Bearish • Liquidity Downside Objective • SMC Neutral</div>
-                    <div class="tiny">Execution WAIT • Type None • Reason Timing window closed</div>
-                    <div class="tiny"><strong>Next Condition</strong> Wait for DXY / macro alignment</div>
-                  </div>
-                </div>
-                <div style="text-align:right;">
-                  <div><strong>45%</strong></div>
-                  <div><span class="pill pill-green">Near Trigger</span></div>
-                </div>
-              </div>
-            
-              <div class="ranking-item">
-                <div class="ranking-left">
-                  <div class="rank">13</div>
-                  <div>
-                    <div><strong>RELX</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish / Invalid</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:34.93%"></div></div>
-                    <div class="tiny">Permission Wait • Structure Bearish • Liquidity Downside Objective • SMC Neutral</div>
-                    <div class="tiny">Execution WAIT • Type None • Reason Timing window closed</div>
-                    <div class="tiny"><strong>Next Condition</strong> Wait for DXY / macro alignment</div>
-                  </div>
-                </div>
-                <div style="text-align:right;">
-                  <div><strong>35%</strong></div>
-                  <div><span class="pill pill-red">Stand Aside</span></div>
-                </div>
-              </div>
-            
-              <div class="ranking-item">
-                <div class="ranking-left">
-                  <div class="rank">14</div>
-                  <div>
-                    <div><strong>SILVER</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish / Invalid</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:32.27%"></div></div>
-                    <div class="tiny">Permission Wait • Structure Bearish • Liquidity Downside Objective • SMC Neutral</div>
-                    <div class="tiny">Execution WAIT • Type None • Reason Timing window closed</div>
-                    <div class="tiny"><strong>Next Condition</strong> Wait for DXY / macro alignment</div>
-                  </div>
-                </div>
-                <div style="text-align:right;">
-                  <div><strong>32%</strong></div>
-                  <div><span class="pill pill-red">Stand Aside</span></div>
-                </div>
-              </div>
-            
-              <div class="ranking-item">
-                <div class="ranking-left">
-                  <div class="rank">15</div>
-                  <div>
-                    <div><strong>SHELL</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish / Invalid</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:32.12%"></div></div>
-                    <div class="tiny">Permission Wait • Structure Bearish • Liquidity Downside Objective • SMC Neutral</div>
-                    <div class="tiny">Execution WAIT • Type None • Reason High conflict</div>
-                    <div class="tiny"><strong>Next Condition</strong> Wait for bearish structure alignment (BOS/CHoCH)</div>
-                  </div>
-                </div>
-                <div style="text-align:right;">
-                  <div><strong>32%</strong></div>
-                  <div><span class="pill pill-red">Stand Aside</span></div>
-                </div>
-              </div>
-            
-              <div class="ranking-item">
-                <div class="ranking-left">
-                  <div class="rank">16</div>
-                  <div>
-                    <div><strong>DAX40</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish / Invalid</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:31.11%"></div></div>
-                    <div class="tiny">Permission Wait • Structure Bearish • Liquidity Downside Objective • SMC Neutral</div>
-                    <div class="tiny">Execution WAIT • Type None • Reason High conflict</div>
-                    <div class="tiny"><strong>Next Condition</strong> Wait for bearish structure alignment (BOS/CHoCH)</div>
-                  </div>
-                </div>
-                <div style="text-align:right;">
-                  <div><strong>31%</strong></div>
-                  <div><span class="pill pill-red">Stand Aside</span></div>
-                </div>
-              </div>
-            
-              <div class="ranking-item">
-                <div class="ranking-left">
-                  <div class="rank">17</div>
-                  <div>
-                    <div><strong>GOLD</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish / Invalid</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:30.39%"></div></div>
-                    <div class="tiny">Permission Wait • Structure Bearish • Liquidity Downside Objective • SMC Neutral</div>
-                    <div class="tiny">Execution WAIT • Type None • Reason Timing window closed</div>
-                    <div class="tiny"><strong>Next Condition</strong> Wait for DXY / macro alignment</div>
-                  </div>
-                </div>
-                <div style="text-align:right;">
-                  <div><strong>30%</strong></div>
-                  <div><span class="pill pill-red">Stand Aside</span></div>
-                </div>
-              </div>
-            
-              <div class="ranking-item">
-                <div class="ranking-left">
-                  <div class="rank">18</div>
-                  <div>
-                    <div><strong>NAS100</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish / Invalid</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:30.12%"></div></div>
-                    <div class="tiny">Permission Wait • Structure Bearish • Liquidity Downside Objective • SMC Neutral</div>
-                    <div class="tiny">Execution WAIT • Type None • Reason High conflict</div>
-                    <div class="tiny"><strong>Next Condition</strong> Wait for bearish structure alignment (BOS/CHoCH)</div>
-                  </div>
-                </div>
-                <div style="text-align:right;">
-                  <div><strong>30%</strong></div>
-                  <div><span class="pill pill-red">Stand Aside</span></div>
-                </div>
-              </div>
-            
-              <div class="ranking-item">
-                <div class="ranking-left">
-                  <div class="rank">19</div>
-                  <div>
-                    <div><strong>SP500</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish / Invalid</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:27.69%"></div></div>
-                    <div class="tiny">Permission Wait • Structure Bearish • Liquidity Downside Objective • SMC Neutral</div>
-                    <div class="tiny">Execution WAIT • Type None • Reason Timing window closed</div>
-                    <div class="tiny"><strong>Next Condition</strong> Wait for DXY / macro alignment</div>
-                  </div>
-                </div>
-                <div style="text-align:right;">
-                  <div><strong>28%</strong></div>
-                  <div><span class="pill pill-red">Stand Aside</span></div>
-                </div>
-              </div>
-            
-            </div>
-          </section>
-        </section>
-        
-        <section class="tab-panel" id="tab-currencies" style="display:none;">
-          <section class="grid-main">
-            <div class="card">
-              <h2>Currencies Trade Board</h2>
-              <table class="mini-table">
-                <thead><tr><th>Rank</th><th>Market</th><th>Direction</th><th>Score</th><th>Prob</th><th>Liquidity</th><th>SMC</th><th>Execution</th><th>Type</th><th>Board</th></tr></thead>
-                <tbody>
-              <tr>
-                <td colspan="10" style="text-align:center; color:#8da0c6; padding:14px; background:rgba(89,195,255,0.05);">
-                  No board-approved setups yet. Showing highest pre-board candidates.
-                </td>
-              </tr>
-            
-              <tr>
-                <td>1</td>
-                <td>USDJPY</td>
-                <td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td>
-                <td>67<div class="tiny">Th 64 • Ti 62</div></td>
-                <td><span class="pill pill-blue">Upside Objective</span></td>
-                <td><span class="pill pill-amber">Neutral</span></td>
-                <td><span class="pill pill-red">WAIT</span></td>
-                <td>None</td>
-                <td><span class="pill pill-amber">Pre-Board</span></td>
-              </tr>
-            
-              <tr>
-                <td>2</td>
-                <td>AUDJPY</td>
-                <td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td>
-                <td>58<div class="tiny">Th 58 • Ti 50</div></td>
-                <td><span class="pill pill-blue">Upside Objective</span></td>
-                <td><span class="pill pill-amber">Neutral</span></td>
-                <td><span class="pill pill-red">WAIT</span></td>
-                <td>None</td>
-                <td><span class="pill pill-amber">Pre-Board</span></td>
-              </tr>
-            
-              <tr>
-                <td>3</td>
-                <td>AUDUSD</td>
-                <td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td>
-                <td>55<div class="tiny">Th 58 • Ti 41</div></td>
-                <td><span class="pill pill-amber">Balanced</span></td>
-                <td><span class="pill pill-amber">Neutral</span></td>
-                <td><span class="pill pill-red">WAIT</span></td>
-                <td>None</td>
-                <td><span class="pill pill-amber">Pre-Board</span></td>
-              </tr>
-            </tbody>
-              </table>
-            </div>
-
-            <div class="decision">
-              <h3>Currencies Top Watchlist Setup</h3>
-              <div class="decision-market">USDJPY — Bullish / Strong</div>
-              <div class="decision-direction"><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> • Theme: <span class="pill pill-green">Strong</span> • Timing: <span class="pill pill-blue">Trigger</span> • Board: <span class="pill pill-amber">Pre-Board</span></div>
-              <div class="tiny" style="margin-bottom:10px;">Gov 67 • Theme 64 • Timing 62 • Exec 50</div>
-              <div class="insight-strip">
-                <span class="insight-item"><strong>Theme Str</strong> Strong</span>
-                <span class="insight-item"><strong>Timing Q</strong> Good</span>
-                <span class="insight-item"><strong>Why Not Ready</strong> Timing window closed</span>
-                <span class="insight-item"><strong>Tactical</strong> N/A</span>
-                <span class="insight-item"><strong>Bias</strong> Neutral</span>
-                <span class="insight-item"><strong>Conviction</strong> Developing</span>
-                <span class="insight-item"><strong>Status</strong> WAIT</span>
-                <span class="insight-item"><strong>TtT</strong> Next session</span>
-              </div>
-              <div class="trade-plan-box">
-                <div class="trade-plan-title">Trade Plan</div>
-                <div class="trade-plan-grid">
-                  <div><span class="tiny">Status</span><br><strong>Pending Confirmation</strong></div>
-                  <div><span class="tiny">Type</span><br><strong>Breakout Continuation</strong></div>
-                  <div><span class="tiny">Bias</span><br><strong>Long</strong></div>
-                  <div><span class="tiny">Entry</span><br><strong>Wait for trigger confirmation</strong></div>
-                  <div><span class="tiny">Risk</span><br><strong>C</strong></div>
-                  <div><span class="tiny">Next Condition</span><br><strong>Wait for active timing window / session expansion</strong></div>
-                  <div><span class="tiny">Execution Prob</span><br><strong>48% Low</strong></div>
-                  <div><span class="tiny">Time-to-Trigger</span><br><strong>Next session</strong></div>
-                </div>
-                <div class="tiny" style="margin-top:8px;">Invalidation: Structure invalidation level • Stop: Structure stop</div>
-                <div class="tiny">Targets: Nearest H1 liquidity / Nearest H4 liquidity</div>
-                <div class="tiny">Execution path: Wait for active timing window / session expansion</div>
-                <div class="tiny">Time-to-trigger: Next session (~8.0h)</div>
-                <div class="tiny">Note: Setup forming but not yet executable</div>
-              </div>
-              <ul class="reason-list"><li>Display regime is &#39;Bullish / Strong&#39;.</li><li>Theme engine: Strong / Strong at 64.</li><li>Timing engine: Trigger / Good at 62.</li><li>Board engine: Pre-Board.</li><li>Signal alignment is &#39;Aligned&#39;.</li><li>Conflict is &#39;Low&#39;.</li><li>Stability is &#39;Moderating&#39;.</li><li>Gov 67 • Theme 64 Strong/Strong • Timing 62 Trigger/Good • Board Pre-Board • Rank 86</li><li>Trade Board promotion is governance-controlled, not dashboard-calculated.</li></ul>
-            </div>
-          </section>
-
-          <section class="grid-triple">
-            <div class="card">
-              <h2>Currencies Regime Heat Matrix</h2>
-              <table class="mini-table">
-                <thead><tr><th>Market</th><th>Dir</th><th>Structural</th><th>Final</th><th>Liquidity</th><th>SMC</th><th>Exec</th><th>Permission</th><th>Conflict</th></tr></thead>
-                <tbody><tr><td>USDJPY</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat green">75</span></td><td><span class="heat amber">67</span></td><td><span class='pill pill-blue'>Upside Objective</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-green'>Low</span></td></tr><tr><td>AUDJPY</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat green">67</span></td><td><span class="heat amber">58</span></td><td><span class='pill pill-blue'>Upside Objective</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-amber'>Medium</span></td></tr><tr><td>GBPJPY</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat amber">52</span></td><td><span class="heat amber">50</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-green'>Bullish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-green'>Low</span></td></tr><tr><td>CADJPY</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat amber">62</span></td><td><span class="heat amber">51</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-amber'>Medium</span></td></tr><tr><td>AUDUSD</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat amber">65</span></td><td><span class="heat amber">55</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-red'>Bearish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-amber'>Medium</span></td></tr><tr><td>EURUSD</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat amber">57</span></td><td><span class="heat amber">52</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-red'>Bearish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-amber'>Medium</span></td></tr><tr><td>USDCAD</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat green">77</span></td><td><span class="heat amber">65</span></td><td><span class='pill pill-blue'>Upside Objective</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-blue'>Blocked</span></td><td><span class='pill pill-red'>High</span></td></tr><tr><td>GBPUSD</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat amber">61</span></td><td><span class="heat amber">53</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-red'>Bearish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-blue'>Blocked</span></td><td><span class='pill pill-red'>High</span></td></tr></tbody>
-              </table>
-            </div>
-
-            <div class="card">
-              <h2>Currencies Trigger Watch</h2>
-              <ul class="compact"><li>USDJPY <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class='tiny'>Dist 5 • TtT Next session • Prob 48% • Wait for active timing window / session expansion</span></li><li>AUDJPY <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class='tiny'>Dist 8 • TtT Next session • Prob 10% • Wait for active timing window / session expansion</span></li><li>CADJPY <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class='tiny'>Dist 21 • TtT 1-3 days • Prob 0% • Wait for directional trigger confirmation</span></li><li>GBPJPY <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class='tiny'>Dist 22 • TtT 1-3 days • Prob 9% • Wait for directional trigger confirmation</span></li><li>AUDUSD <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class='tiny'>Dist 22 • TtT Needs reset • Prob 0% • Wait for DXY / macro alignment</span></li></ul>
-            </div>
-
-            <div class="card">
-              <h2>Currencies Almost Ready</h2>
-              <ul class="compact"><li>USDJPY <span class='tiny'>Dist 5 • TtT Next session • Prob 48% • Wait for active timing window / session expansion</span></li><li>AUDJPY <span class='tiny'>Dist 8 • TtT Next session • Prob 10% • Wait for active timing window / session expansion</span></li><li>CADJPY <span class='tiny'>Dist 21 • TtT 1-3 days • Prob 0% • Wait for directional trigger confirmation</span></li><li>GBPJPY <span class='tiny'>Dist 22 • TtT 1-3 days • Prob 9% • Wait for directional trigger confirmation</span></li><li>AUDUSD <span class='tiny'>Dist 22 • TtT Needs reset • Prob 0% • Wait for DXY / macro alignment</span></li></ul>
-            </div>
-          </section>
-
-          <section class="grid-bottom one-right-wide">
-            <div class="card">
-              <h2>Currencies Watchlist</h2>
-              
-              <div class="ranking-item">
-                <div class="ranking-left">
-                  <div class="rank">1</div>
-                  <div>
-                    <div><strong>USDJPY</strong> <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class="pill pill-green">Bullish / Strong</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:66.58%"></div></div>
-                    <div class="tiny">Permission Wait • Structure Bullish • Liquidity Upside Objective • SMC Neutral</div>
-                    <div class="tiny">Execution WAIT • Type None • Reason Timing window closed</div>
-                    <div class="tiny"><strong>Next Condition</strong> Wait for active timing window / session expansion</div>
-                  </div>
-                </div>
-                <div style="text-align:right;">
-                  <div><strong>67%</strong></div>
-                  <div><span class="pill pill-green">Near Trigger</span></div>
-                </div>
-              </div>
-            
-              <div class="ranking-item">
-                <div class="ranking-left">
-                  <div class="rank">2</div>
-                  <div>
-                    <div><strong>USDCAD</strong> <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class="pill pill-green">Bullish / Strong</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:64.61%"></div></div>
-                    <div class="tiny">Permission Wait • Structure Bullish • Liquidity Upside Objective • SMC Neutral</div>
-                    <div class="tiny">Execution WAIT • Type None • Reason High conflict</div>
-                    <div class="tiny"><strong>Next Condition</strong> Wait for bullish structure alignment (BOS/CHoCH)</div>
-                  </div>
-                </div>
-                <div style="text-align:right;">
-                  <div><strong>65%</strong></div>
-                  <div><span class="pill pill-red">Stand Aside</span></div>
-                </div>
-              </div>
-            
-              <div class="ranking-item">
-                <div class="ranking-left">
-                  <div class="rank">3</div>
-                  <div>
-                    <div><strong>AUDJPY</strong> <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class="pill pill-green">Bullish / Valid</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:58.28%"></div></div>
-                    <div class="tiny">Permission Wait • Structure Bullish • Liquidity Upside Objective • SMC Neutral</div>
-                    <div class="tiny">Execution WAIT • Type None • Reason Timing window closed</div>
-                    <div class="tiny"><strong>Next Condition</strong> Wait for active timing window / session expansion</div>
-                  </div>
-                </div>
-                <div style="text-align:right;">
-                  <div><strong>58%</strong></div>
-                  <div><span class="pill pill-green">Near Trigger</span></div>
-                </div>
-              </div>
-            
-              <div class="ranking-item">
-                <div class="ranking-left">
-                  <div class="rank">4</div>
-                  <div>
-                    <div><strong>AUDUSD</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class="pill pill-amber">Neutral / Valid</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:54.87%"></div></div>
-                    <div class="tiny">Permission Wait • Structure Neutral • Liquidity Balanced • SMC Neutral</div>
-                    <div class="tiny">Execution WAIT • Type None • Reason Timing window closed</div>
-                    <div class="tiny"><strong>Next Condition</strong> Wait for DXY / macro alignment</div>
-                  </div>
-                </div>
-                <div style="text-align:right;">
-                  <div><strong>55%</strong></div>
-                  <div><span class="pill pill-amber">Trigger Forming</span></div>
-                </div>
-              </div>
-            
-              <div class="ranking-item">
-                <div class="ranking-left">
-                  <div class="rank">5</div>
-                  <div>
-                    <div><strong>GBPUSD</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class="pill pill-amber">Neutral / Fragile</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:52.72%"></div></div>
-                    <div class="tiny">Permission Wait • Structure Neutral • Liquidity Balanced • SMC Neutral</div>
-                    <div class="tiny">Execution WAIT • Type None • Reason High conflict</div>
-                    <div class="tiny"><strong>Next Condition</strong> Wait for directional structure alignment (BOS/CHoCH)</div>
-                  </div>
-                </div>
-                <div style="text-align:right;">
-                  <div><strong>53%</strong></div>
-                  <div><span class="pill pill-red">Stand Aside</span></div>
-                </div>
-              </div>
-            
-              <div class="ranking-item">
-                <div class="ranking-left">
-                  <div class="rank">6</div>
-                  <div>
-                    <div><strong>EURUSD</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class="pill pill-amber">Neutral / Valid</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:52.0%"></div></div>
-                    <div class="tiny">Permission Wait • Structure Neutral • Liquidity Balanced • SMC Neutral</div>
-                    <div class="tiny">Execution WAIT • Type None • Reason Timing window closed</div>
-                    <div class="tiny"><strong>Next Condition</strong> Wait for DXY / macro alignment</div>
-                  </div>
-                </div>
-                <div style="text-align:right;">
-                  <div><strong>52%</strong></div>
-                  <div><span class="pill pill-amber">Trigger Forming</span></div>
-                </div>
-              </div>
-            
-              <div class="ranking-item">
-                <div class="ranking-left">
-                  <div class="rank">7</div>
-                  <div>
-                    <div><strong>CADJPY</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class="pill pill-amber">Neutral / Valid</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:50.57%"></div></div>
-                    <div class="tiny">Permission Wait • Structure Neutral • Liquidity Balanced • SMC Neutral</div>
-                    <div class="tiny">Execution WAIT • Type None • Reason Timing window closed</div>
-                    <div class="tiny"><strong>Next Condition</strong> Wait for directional trigger confirmation</div>
-                  </div>
-                </div>
-                <div style="text-align:right;">
-                  <div><strong>51%</strong></div>
-                  <div><span class="pill pill-amber">Trigger Forming</span></div>
-                </div>
-              </div>
-            
-              <div class="ranking-item">
-                <div class="ranking-left">
-                  <div class="rank">8</div>
-                  <div>
-                    <div><strong>GBPJPY</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class="pill pill-amber">Neutral / Fragile</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:50.13%"></div></div>
-                    <div class="tiny">Permission Wait • Structure Neutral • Liquidity Balanced • SMC Neutral</div>
-                    <div class="tiny">Execution WAIT • Type None • Reason Timing window closed</div>
-                    <div class="tiny"><strong>Next Condition</strong> Wait for directional trigger confirmation</div>
-                  </div>
-                </div>
-                <div style="text-align:right;">
-                  <div><strong>50%</strong></div>
-                  <div><span class="pill pill-amber">Trigger Forming</span></div>
-                </div>
-              </div>
-            
-            </div>
-          </section>
-        </section>
-        
-        <section class="tab-panel" id="tab-metals" style="display:none;">
-          <section class="grid-main">
-            <div class="card">
-              <h2>Metals Trade Board</h2>
-              <table class="mini-table">
-                <thead><tr><th>Rank</th><th>Market</th><th>Direction</th><th>Score</th><th>Prob</th><th>Liquidity</th><th>SMC</th><th>Execution</th><th>Type</th><th>Board</th></tr></thead>
-                <tbody>
-              <tr>
-                <td colspan="10" style="text-align:center; color:#8da0c6; padding:18px;">
-                  No confirmed board setups in this asset group. Current leaders remain on watchlist pending conflict resolution and timing confirmation.
-                </td>
-              </tr>
-            </tbody>
-              </table>
-            </div>
-
-            <div class="decision">
-              <h3>Metals Top Watchlist Setup</h3>
-              <div class="decision-market">SILVER — Bearish / Invalid</div>
-              <div class="decision-direction"><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> • Theme: <span class="pill pill-red">Invalid</span> • Timing: <span class="pill pill-red">Early</span> • Board: <span class="pill pill-red">None</span></div>
-              <div class="tiny" style="margin-bottom:10px;">Gov 32 • Theme 30 • Timing 46 • Exec 35</div>
-              <div class="insight-strip">
-                <span class="insight-item"><strong>Theme Str</strong> Weak</span>
-                <span class="insight-item"><strong>Timing Q</strong> Low</span>
-                <span class="insight-item"><strong>Why Not Ready</strong> Timing window closed</span>
-                <span class="insight-item"><strong>Tactical</strong> N/A</span>
-                <span class="insight-item"><strong>Bias</strong> Neutral</span>
-                <span class="insight-item"><strong>Conviction</strong> Developing</span>
-                <span class="insight-item"><strong>Status</strong> WAIT</span>
-                <span class="insight-item"><strong>TtT</strong> Needs reset</span>
-              </div>
-              <div class="trade-plan-box">
-                <div class="trade-plan-title">Trade Plan</div>
-                <div class="trade-plan-grid">
-                  <div><span class="tiny">Status</span><br><strong>No Plan</strong></div>
-                  <div><span class="tiny">Type</span><br><strong>None</strong></div>
-                  <div><span class="tiny">Bias</span><br><strong>None</strong></div>
-                  <div><span class="tiny">Entry</span><br><strong>None</strong></div>
-                  <div><span class="tiny">Risk</span><br><strong>D</strong></div>
-                  <div><span class="tiny">Next Condition</span><br><strong>Wait for DXY / macro alignment</strong></div>
-                  <div><span class="tiny">Execution Prob</span><br><strong>0% Very Low</strong></div>
-                  <div><span class="tiny">Time-to-Trigger</span><br><strong>Needs reset</strong></div>
-                </div>
-                <div class="tiny" style="margin-top:8px;">Invalidation: N/A • Stop: N/A</div>
-                <div class="tiny">Targets: N/A / N/A</div>
-                <div class="tiny">Execution path: Wait for DXY / macro alignment</div>
-                <div class="tiny">Time-to-trigger: Needs reset (~120.0h)</div>
-                <div class="tiny">Note: No executable setup yet</div>
-              </div>
-              <ul class="reason-list"><li>Display regime is &#39;Bearish / Invalid&#39;.</li><li>Theme engine: Invalid / Weak at 30.</li><li>Timing engine: Early / Low at 46.</li><li>Board engine: None.</li><li>Signal alignment is &#39;Partial&#39;.</li><li>Conflict is &#39;Medium&#39;.</li><li>Stability is &#39;Moderating&#39;.</li><li>Gov 32 • Theme 30 Invalid/Weak • Timing 46 Early/Low • Board None • Rank 27</li><li>Trade Board promotion is governance-controlled, not dashboard-calculated.</li></ul>
-            </div>
-          </section>
-
-          <section class="grid-triple">
-            <div class="card">
-              <h2>Metals Regime Heat Matrix</h2>
-              <table class="mini-table">
-                <thead><tr><th>Market</th><th>Dir</th><th>Structural</th><th>Final</th><th>Liquidity</th><th>SMC</th><th>Exec</th><th>Permission</th><th>Conflict</th></tr></thead>
-                <tbody><tr><td>GOLD</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat red">26</span></td><td><span class="heat red">30</span></td><td><span class='pill pill-blue'>Downside Objective</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-amber'>Medium</span></td></tr><tr><td>SILVER</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat red">26</span></td><td><span class="heat red">32</span></td><td><span class='pill pill-blue'>Downside Objective</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-amber'>Medium</span></td></tr></tbody>
-              </table>
-            </div>
-
-            <div class="card">
-              <h2>Metals Trigger Watch</h2>
-              <ul class="compact"><li>No trigger-watch setups in this group yet.</li></ul>
-            </div>
-
-            <div class="card">
-              <h2>Metals Almost Ready</h2>
-              <ul class="compact"><li>GOLD <span class='tiny'>Dist 29 • TtT Needs reset • Prob 0% • Wait for DXY / macro alignment</span></li><li>SILVER <span class='tiny'>Dist 30 • TtT Needs reset • Prob 0% • Wait for DXY / macro alignment</span></li></ul>
-            </div>
-          </section>
-
-          <section class="grid-bottom one-right-wide">
-            <div class="card">
-              <h2>Metals Watchlist</h2>
-              
-              <div class="ranking-item">
-                <div class="ranking-left">
-                  <div class="rank">1</div>
-                  <div>
-                    <div><strong>SILVER</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish / Invalid</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:32.27%"></div></div>
-                    <div class="tiny">Permission Wait • Structure Bearish • Liquidity Downside Objective • SMC Neutral</div>
-                    <div class="tiny">Execution WAIT • Type None • Reason Timing window closed</div>
-                    <div class="tiny"><strong>Next Condition</strong> Wait for DXY / macro alignment</div>
-                  </div>
-                </div>
-                <div style="text-align:right;">
-                  <div><strong>32%</strong></div>
-                  <div><span class="pill pill-red">Stand Aside</span></div>
-                </div>
-              </div>
-            
-              <div class="ranking-item">
-                <div class="ranking-left">
-                  <div class="rank">2</div>
-                  <div>
-                    <div><strong>GOLD</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish / Invalid</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:30.39%"></div></div>
-                    <div class="tiny">Permission Wait • Structure Bearish • Liquidity Downside Objective • SMC Neutral</div>
-                    <div class="tiny">Execution WAIT • Type None • Reason Timing window closed</div>
-                    <div class="tiny"><strong>Next Condition</strong> Wait for DXY / macro alignment</div>
-                  </div>
-                </div>
-                <div style="text-align:right;">
-                  <div><strong>30%</strong></div>
-                  <div><span class="pill pill-red">Stand Aside</span></div>
-                </div>
-              </div>
-            
-            </div>
-          </section>
-        </section>
-        
-        <section class="tab-panel" id="tab-indices" style="display:none;">
-          <section class="grid-main">
-            <div class="card">
-              <h2>Indices Trade Board</h2>
-              <table class="mini-table">
-                <thead><tr><th>Rank</th><th>Market</th><th>Direction</th><th>Score</th><th>Prob</th><th>Liquidity</th><th>SMC</th><th>Execution</th><th>Type</th><th>Board</th></tr></thead>
-                <tbody>
-              <tr>
-                <td colspan="10" style="text-align:center; color:#8da0c6; padding:14px; background:rgba(89,195,255,0.05);">
-                  No board-approved setups yet. Showing highest pre-board candidates.
-                </td>
-              </tr>
-            
-              <tr>
-                <td>1</td>
-                <td>WS30</td>
-                <td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td>
-                <td>63<div class="tiny">Th 63 • Ti 59</div></td>
-                <td><span class="pill pill-blue">Upside Objective</span></td>
-                <td><span class="pill pill-amber">Neutral</span></td>
-                <td><span class="pill pill-red">WAIT</span></td>
-                <td>None</td>
-                <td><span class="pill pill-amber">Pre-Board</span></td>
-              </tr>
-            </tbody>
-              </table>
-            </div>
-
-            <div class="decision">
-              <h3>Indices Top Watchlist Setup</h3>
-              <div class="decision-market">WS30 — Bullish / Strong</div>
-              <div class="decision-direction"><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> • Theme: <span class="pill pill-green">Strong</span> • Timing: <span class="pill pill-blue">Trigger</span> • Board: <span class="pill pill-amber">Pre-Board</span></div>
-              <div class="tiny" style="margin-bottom:10px;">Gov 63 • Theme 63 • Timing 59 • Exec 62</div>
-              <div class="insight-strip">
-                <span class="insight-item"><strong>Theme Str</strong> Strong</span>
-                <span class="insight-item"><strong>Timing Q</strong> Good</span>
-                <span class="insight-item"><strong>Why Not Ready</strong> Timing window closed</span>
-                <span class="insight-item"><strong>Tactical</strong> N/A</span>
-                <span class="insight-item"><strong>Bias</strong> Neutral</span>
-                <span class="insight-item"><strong>Conviction</strong> Developing</span>
-                <span class="insight-item"><strong>Status</strong> WAIT</span>
-                <span class="insight-item"><strong>TtT</strong> Needs reset</span>
-              </div>
-              <div class="trade-plan-box">
-                <div class="trade-plan-title">Trade Plan</div>
-                <div class="trade-plan-grid">
-                  <div><span class="tiny">Status</span><br><strong>Pending Confirmation</strong></div>
-                  <div><span class="tiny">Type</span><br><strong>Breakout Continuation</strong></div>
-                  <div><span class="tiny">Bias</span><br><strong>Long</strong></div>
-                  <div><span class="tiny">Entry</span><br><strong>Wait for trigger confirmation</strong></div>
-                  <div><span class="tiny">Risk</span><br><strong>C</strong></div>
-                  <div><span class="tiny">Next Condition</span><br><strong>Wait for DXY / macro alignment</strong></div>
-                  <div><span class="tiny">Execution Prob</span><br><strong>43% Low</strong></div>
-                  <div><span class="tiny">Time-to-Trigger</span><br><strong>Needs reset</strong></div>
-                </div>
-                <div class="tiny" style="margin-top:8px;">Invalidation: Structure invalidation level • Stop: Structure stop</div>
-                <div class="tiny">Targets: Nearest H1 liquidity / Nearest H4 liquidity</div>
-                <div class="tiny">Execution path: Wait for DXY / macro alignment</div>
-                <div class="tiny">Time-to-trigger: Needs reset (~120.0h)</div>
-                <div class="tiny">Note: Setup forming but not yet executable</div>
-              </div>
-              <ul class="reason-list"><li>Display regime is &#39;Bullish / Strong&#39;.</li><li>Theme engine: Strong / Strong at 63.</li><li>Timing engine: Trigger / Good at 59.</li><li>Board engine: Pre-Board.</li><li>Signal alignment is &#39;Neutral&#39;.</li><li>Conflict is &#39;Low&#39;.</li><li>Stability is &#39;Moderating&#39;.</li><li>Gov 63 • Theme 63 Strong/Strong • Timing 59 Trigger/Good • Board Pre-Board • Rank 89</li><li>Trade Board promotion is governance-controlled, not dashboard-calculated.</li></ul>
-            </div>
-          </section>
-
-          <section class="grid-triple">
-            <div class="card">
-              <h2>Indices Regime Heat Matrix</h2>
-              <table class="mini-table">
-                <thead><tr><th>Market</th><th>Dir</th><th>Structural</th><th>Final</th><th>Liquidity</th><th>SMC</th><th>Exec</th><th>Permission</th><th>Conflict</th></tr></thead>
-                <tbody><tr><td>WS30</td><td><span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span></td><td><span class="heat green">72</span></td><td><span class="heat amber">63</span></td><td><span class='pill pill-blue'>Upside Objective</span></td><td><span class='pill pill-red'>Bearish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-green'>Low</span></td></tr><tr><td>SP500</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat red">21</span></td><td><span class="heat red">28</span></td><td><span class='pill pill-blue'>Downside Objective</span></td><td><span class='pill pill-red'>Bearish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-green'>Low</span></td></tr><tr><td>DAX40</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat red">30</span></td><td><span class="heat red">31</span></td><td><span class='pill pill-blue'>Downside Objective</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-blue'>Blocked</span></td><td><span class='pill pill-red'>High</span></td></tr><tr><td>NAS100</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat red">22</span></td><td><span class="heat red">30</span></td><td><span class='pill pill-blue'>Downside Objective</span></td><td><span class='pill pill-red'>Bearish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-blue'>Blocked</span></td><td><span class='pill pill-red'>High</span></td></tr></tbody>
-              </table>
-            </div>
-
-            <div class="card">
-              <h2>Indices Trigger Watch</h2>
-              <ul class="compact"><li>WS30 <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class='tiny'>Dist 6 • TtT Needs reset • Prob 43% • Wait for DXY / macro alignment</span></li></ul>
-            </div>
-
-            <div class="card">
-              <h2>Indices Almost Ready</h2>
-              <ul class="compact"><li>WS30 <span class='tiny'>Dist 6 • TtT Needs reset • Prob 43% • Wait for DXY / macro alignment</span></li><li>SP500 <span class='tiny'>Dist 29 • TtT Needs reset • Prob 19% • Wait for DXY / macro alignment</span></li><li>DAX40 <span class='tiny'>Dist 78 • TtT Needs reset • Prob 0% • Wait for bearish structure alignment (BOS/CHoCH)</span></li><li>NAS100 <span class='tiny'>Dist 79 • TtT Needs reset • Prob 0% • Wait for bearish structure alignment (BOS/CHoCH)</span></li></ul>
-            </div>
-          </section>
-
-          <section class="grid-bottom one-right-wide">
-            <div class="card">
-              <h2>Indices Watchlist</h2>
-              
-              <div class="ranking-item">
-                <div class="ranking-left">
-                  <div class="rank">1</div>
-                  <div>
-                    <div><strong>WS30</strong> <span class="pill pill-green dir-chip"><span class="green dir-arrow">▲</span> Bullish</span> <span class="pill pill-green">Bullish / Strong</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:63.18%"></div></div>
-                    <div class="tiny">Permission Wait • Structure Bullish • Liquidity Upside Objective • SMC Neutral</div>
-                    <div class="tiny">Execution WAIT • Type None • Reason Timing window closed</div>
-                    <div class="tiny"><strong>Next Condition</strong> Wait for DXY / macro alignment</div>
-                  </div>
-                </div>
-                <div style="text-align:right;">
-                  <div><strong>63%</strong></div>
-                  <div><span class="pill pill-green">Near Trigger</span></div>
-                </div>
-              </div>
-            
-              <div class="ranking-item">
-                <div class="ranking-left">
-                  <div class="rank">2</div>
-                  <div>
-                    <div><strong>DAX40</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish / Invalid</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:31.11%"></div></div>
-                    <div class="tiny">Permission Wait • Structure Bearish • Liquidity Downside Objective • SMC Neutral</div>
-                    <div class="tiny">Execution WAIT • Type None • Reason High conflict</div>
-                    <div class="tiny"><strong>Next Condition</strong> Wait for bearish structure alignment (BOS/CHoCH)</div>
-                  </div>
-                </div>
-                <div style="text-align:right;">
-                  <div><strong>31%</strong></div>
-                  <div><span class="pill pill-red">Stand Aside</span></div>
-                </div>
-              </div>
-            
-              <div class="ranking-item">
-                <div class="ranking-left">
-                  <div class="rank">3</div>
-                  <div>
-                    <div><strong>NAS100</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish / Invalid</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:30.12%"></div></div>
-                    <div class="tiny">Permission Wait • Structure Bearish • Liquidity Downside Objective • SMC Neutral</div>
-                    <div class="tiny">Execution WAIT • Type None • Reason High conflict</div>
-                    <div class="tiny"><strong>Next Condition</strong> Wait for bearish structure alignment (BOS/CHoCH)</div>
-                  </div>
-                </div>
-                <div style="text-align:right;">
-                  <div><strong>30%</strong></div>
-                  <div><span class="pill pill-red">Stand Aside</span></div>
-                </div>
-              </div>
-            
-              <div class="ranking-item">
-                <div class="ranking-left">
-                  <div class="rank">4</div>
-                  <div>
-                    <div><strong>SP500</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish / Invalid</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:27.69%"></div></div>
-                    <div class="tiny">Permission Wait • Structure Bearish • Liquidity Downside Objective • SMC Neutral</div>
-                    <div class="tiny">Execution WAIT • Type None • Reason Timing window closed</div>
-                    <div class="tiny"><strong>Next Condition</strong> Wait for DXY / macro alignment</div>
-                  </div>
-                </div>
-                <div style="text-align:right;">
-                  <div><strong>28%</strong></div>
-                  <div><span class="pill pill-red">Stand Aside</span></div>
-                </div>
-              </div>
-            
-            </div>
-          </section>
-        </section>
-        
-        <section class="tab-panel" id="tab-stocks" style="display:none;">
-          <section class="grid-main">
-            <div class="card">
-              <h2>Stocks Trade Board</h2>
-              <table class="mini-table">
-                <thead><tr><th>Rank</th><th>Market</th><th>Direction</th><th>Score</th><th>Prob</th><th>Liquidity</th><th>SMC</th><th>Execution</th><th>Type</th><th>Board</th></tr></thead>
-                <tbody>
-              <tr>
-                <td colspan="10" style="text-align:center; color:#8da0c6; padding:14px; background:rgba(89,195,255,0.05);">
-                  No board-approved setups yet. Showing highest pre-board candidates.
-                </td>
-              </tr>
-            
-              <tr>
-                <td>1</td>
-                <td>AZN</td>
-                <td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td>
-                <td>55<div class="tiny">Th 55 • Ti 63</div></td>
-                <td><span class="pill pill-amber">Balanced</span></td>
-                <td><span class="pill pill-amber">Neutral</span></td>
-                <td><span class="pill pill-red">WAIT</span></td>
-                <td>None</td>
-                <td><span class="pill pill-amber">Pre-Board</span></td>
-              </tr>
-            </tbody>
-              </table>
-            </div>
-
-            <div class="decision">
-              <h3>Stocks Top Watchlist Setup</h3>
-              <div class="decision-market">AZN — Neutral / Valid</div>
-              <div class="decision-direction"><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> • Theme: <span class="pill pill-blue">Valid</span> • Timing: <span class="pill pill-blue">Trigger</span> • Board: <span class="pill pill-red">None</span></div>
-              <div class="tiny" style="margin-bottom:10px;">Gov 55 • Theme 55 • Timing 63 • Exec 55</div>
-              <div class="insight-strip">
-                <span class="insight-item"><strong>Theme Str</strong> Constructive</span>
-                <span class="insight-item"><strong>Timing Q</strong> Good</span>
-                <span class="insight-item"><strong>Why Not Ready</strong> Timing window closed</span>
-                <span class="insight-item"><strong>Tactical</strong> N/A</span>
-                <span class="insight-item"><strong>Bias</strong> Neutral</span>
-                <span class="insight-item"><strong>Conviction</strong> Developing</span>
-                <span class="insight-item"><strong>Status</strong> WAIT</span>
-                <span class="insight-item"><strong>TtT</strong> Needs reset</span>
-              </div>
-              <div class="trade-plan-box">
-                <div class="trade-plan-title">Trade Plan</div>
-                <div class="trade-plan-grid">
-                  <div><span class="tiny">Status</span><br><strong>No Plan</strong></div>
-                  <div><span class="tiny">Type</span><br><strong>None</strong></div>
-                  <div><span class="tiny">Bias</span><br><strong>None</strong></div>
-                  <div><span class="tiny">Entry</span><br><strong>None</strong></div>
-                  <div><span class="tiny">Risk</span><br><strong>D</strong></div>
-                  <div><span class="tiny">Next Condition</span><br><strong>Wait for DXY / macro alignment</strong></div>
-                  <div><span class="tiny">Execution Prob</span><br><strong>32% Low</strong></div>
-                  <div><span class="tiny">Time-to-Trigger</span><br><strong>Needs reset</strong></div>
-                </div>
-                <div class="tiny" style="margin-top:8px;">Invalidation: N/A • Stop: N/A</div>
-                <div class="tiny">Targets: N/A / N/A</div>
-                <div class="tiny">Execution path: Wait for DXY / macro alignment</div>
-                <div class="tiny">Time-to-trigger: Needs reset (~120.0h)</div>
-                <div class="tiny">Note: No executable setup yet</div>
-              </div>
-              <ul class="reason-list"><li>Display regime is &#39;Neutral / Valid&#39;.</li><li>Theme engine: Valid / Constructive at 55.</li><li>Timing engine: Trigger / Good at 63.</li><li>Board engine: None.</li><li>Signal alignment is &#39;Aligned&#39;.</li><li>Conflict is &#39;Low&#39;.</li><li>Stability is &#39;Moderating&#39;.</li><li>Gov 55 • Theme 55 Valid/Constructive • Timing 63 Trigger/Good • Board None • Rank 82</li><li>Trade Board promotion is governance-controlled, not dashboard-calculated.</li></ul>
-            </div>
-          </section>
-
-          <section class="grid-triple">
-            <div class="card">
-              <h2>Stocks Regime Heat Matrix</h2>
-              <table class="mini-table">
-                <thead><tr><th>Market</th><th>Dir</th><th>Structural</th><th>Final</th><th>Liquidity</th><th>SMC</th><th>Exec</th><th>Permission</th><th>Conflict</th></tr></thead>
-                <tbody><tr><td>HSBC</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat amber">47</span></td><td><span class="heat amber">45</span></td><td><span class='pill pill-blue'>Downside Objective</span></td><td><span class='pill pill-green'>Bullish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-amber'>Medium</span></td></tr><tr><td>AZN</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat amber">59</span></td><td><span class="heat amber">55</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-green'>Bullish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-green'>Low</span></td></tr><tr><td>RIO</td><td><span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span></td><td><span class="heat amber">47</span></td><td><span class="heat amber">47</span></td><td><span class='pill pill-amber'>Balanced</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-green'>Low</span></td></tr><tr><td>RELX</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat red">28</span></td><td><span class="heat amber">35</span></td><td><span class='pill pill-blue'>Downside Objective</span></td><td><span class='pill pill-red'>Bearish Location Only</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-red'>Wait</span></td><td><span class='pill pill-green'>Low</span></td></tr><tr><td>SHELL</td><td><span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span></td><td><span class="heat red">32</span></td><td><span class="heat red">32</span></td><td><span class='pill pill-blue'>Downside Objective</span></td><td><span class='pill pill-amber'>Neutral</span></td><td><span class='pill pill-red'>WAIT</span></td><td><span class='pill pill-blue'>Blocked</span></td><td><span class='pill pill-red'>High</span></td></tr></tbody>
-              </table>
-            </div>
-
-            <div class="card">
-              <h2>Stocks Trigger Watch</h2>
-              <ul class="compact"><li>AZN <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class='tiny'>Dist 6 • TtT Needs reset • Prob 32% • Wait for DXY / macro alignment</span></li></ul>
-            </div>
-
-            <div class="card">
-              <h2>Stocks Almost Ready</h2>
-              <ul class="compact"><li>AZN <span class='tiny'>Dist 6 • TtT Needs reset • Prob 32% • Wait for DXY / macro alignment</span></li><li>HSBC <span class='tiny'>Dist 7 • TtT Needs reset • Prob 30% • Wait for DXY / macro alignment</span></li><li>RIO <span class='tiny'>Dist 9 • TtT Needs reset • Prob 3% • Wait for DXY / macro alignment</span></li><li>RELX <span class='tiny'>Dist 27 • TtT Needs reset • Prob 15% • Wait for DXY / macro alignment</span></li><li>SHELL <span class='tiny'>Dist 80 • TtT Needs reset • Prob 0% • Wait for bearish structure alignment (BOS/CHoCH)</span></li></ul>
-            </div>
-          </section>
-
-          <section class="grid-bottom one-right-wide">
-            <div class="card">
-              <h2>Stocks Watchlist</h2>
-              
-              <div class="ranking-item">
-                <div class="ranking-left">
-                  <div class="rank">1</div>
-                  <div>
-                    <div><strong>AZN</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class="pill pill-amber">Neutral / Valid</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:54.92%"></div></div>
-                    <div class="tiny">Permission Wait • Structure Neutral • Liquidity Balanced • SMC Neutral</div>
-                    <div class="tiny">Execution WAIT • Type None • Reason Timing window closed</div>
-                    <div class="tiny"><strong>Next Condition</strong> Wait for DXY / macro alignment</div>
-                  </div>
-                </div>
-                <div style="text-align:right;">
-                  <div><strong>55%</strong></div>
-                  <div><span class="pill pill-green">Near Trigger</span></div>
-                </div>
-              </div>
-            
-              <div class="ranking-item">
-                <div class="ranking-left">
-                  <div class="rank">2</div>
-                  <div>
-                    <div><strong>RIO</strong> <span class="pill pill-amber dir-chip"><span class="amber dir-arrow">■</span> Neutral</span> <span class="pill pill-amber">Neutral / Valid</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:46.75%"></div></div>
-                    <div class="tiny">Permission Wait • Structure Neutral • Liquidity Balanced • SMC Neutral</div>
-                    <div class="tiny">Execution WAIT • Type None • Reason Timing window closed</div>
-                    <div class="tiny"><strong>Next Condition</strong> Wait for DXY / macro alignment</div>
-                  </div>
-                </div>
-                <div style="text-align:right;">
-                  <div><strong>47%</strong></div>
-                  <div><span class="pill pill-green">Near Trigger</span></div>
-                </div>
-              </div>
-            
-              <div class="ranking-item">
-                <div class="ranking-left">
-                  <div class="rank">3</div>
-                  <div>
-                    <div><strong>HSBC</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish / Invalid</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:44.75%"></div></div>
-                    <div class="tiny">Permission Wait • Structure Bearish • Liquidity Downside Objective • SMC Neutral</div>
-                    <div class="tiny">Execution WAIT • Type None • Reason Timing window closed</div>
-                    <div class="tiny"><strong>Next Condition</strong> Wait for DXY / macro alignment</div>
-                  </div>
-                </div>
-                <div style="text-align:right;">
-                  <div><strong>45%</strong></div>
-                  <div><span class="pill pill-green">Near Trigger</span></div>
-                </div>
-              </div>
-            
-              <div class="ranking-item">
-                <div class="ranking-left">
-                  <div class="rank">4</div>
-                  <div>
-                    <div><strong>RELX</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish / Invalid</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:34.93%"></div></div>
-                    <div class="tiny">Permission Wait • Structure Bearish • Liquidity Downside Objective • SMC Neutral</div>
-                    <div class="tiny">Execution WAIT • Type None • Reason Timing window closed</div>
-                    <div class="tiny"><strong>Next Condition</strong> Wait for DXY / macro alignment</div>
-                  </div>
-                </div>
-                <div style="text-align:right;">
-                  <div><strong>35%</strong></div>
-                  <div><span class="pill pill-red">Stand Aside</span></div>
-                </div>
-              </div>
-            
-              <div class="ranking-item">
-                <div class="ranking-left">
-                  <div class="rank">5</div>
-                  <div>
-                    <div><strong>SHELL</strong> <span class="pill pill-red dir-chip"><span class="red dir-arrow">▼</span> Bearish</span> <span class="pill pill-red">Bearish / Invalid</span></div>
-                    <div class="bar-wrap"><div class="bar" style="width:32.12%"></div></div>
-                    <div class="tiny">Permission Wait • Structure Bearish • Liquidity Downside Objective • SMC Neutral</div>
-                    <div class="tiny">Execution WAIT • Type None • Reason High conflict</div>
-                    <div class="tiny"><strong>Next Condition</strong> Wait for bearish structure alignment (BOS/CHoCH)</div>
-                  </div>
-                </div>
-                <div style="text-align:right;">
-                  <div><strong>32%</strong></div>
-                  <div><span class="pill pill-red">Stand Aside</span></div>
-                </div>
-              </div>
-            
-            </div>
-          </section>
-        </section>
-        
-
-      <section class="grid-charts">
-        <div class="card"><h2>USD Strength vs EURUSD Factor</h2><canvas id="chartUsdEur"></canvas></div>
-        <div class="card"><h2>Gold vs Equity Macro Factors</h2><canvas id="chartGoldSpx"></canvas></div>
-      </section>
-
-      <div class="tiny" style="text-align:right; margin-top:8px;">Built from governed terminal outputs: final_terminal_state.csv, trade_board.csv, institutional_trade_ranking.csv, regime_heat_matrix.csv</div>
+    </section>
     </div>
-  </div>
-
   <script>
-    const chartData = {"usdStrength": {"labels": ["2026-02-06", "2026-02-07", "2026-02-08", "2026-02-09", "2026-02-10", "2026-02-11", "2026-02-12", "2026-02-13", "2026-02-14", "2026-02-15", "2026-02-16", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-21", "2026-02-22", "2026-02-23", "2026-02-24", "2026-02-25", "2026-02-26", "2026-02-27", "2026-02-28", "2026-03-01", "2026-03-02", "2026-03-03", "2026-03-04", "2026-03-05", "2026-03-06", "2026-03-07", "2026-03-08", "2026-03-09", "2026-03-10", "2026-03-11", "2026-03-12", "2026-03-13", "2026-03-14", "2026-03-15", "2026-03-16", "2026-03-17", "2026-03-18", "2026-03-19", "2026-03-20", "2026-03-21", "2026-03-22", "2026-03-23", "2026-03-24", "2026-03-25", "2026-03-26", "2026-03-27"], "values": [65.61, 65.61, 65.61, 65.61, 63.75, 63.75, 62.37, 62.37, 62.37, 62.37, 65.78, 72.59, 74.63, 74.63, 74.63, 74.63, 74.63, 74.63, 74.63, 74.63, 74.63, 65.78, 61.73, 61.73, 61.73, 61.73, 61.73, 61.73, 61.73, 60.35, 60.35, 60.35, 60.35, 63.59, 63.59, 63.59, 63.59, 63.59, 63.59, 60.35, 73.81, 75.85, 77.87, 77.87, 77.87, 77.87, 77.87, 77.87, 77.87, 77.87]}, "eurusdFactor": {"labels": ["2026-02-06", "2026-02-07", "2026-02-08", "2026-02-09", "2026-02-10", "2026-02-11", "2026-02-12", "2026-02-13", "2026-02-14", "2026-02-15", "2026-02-16", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-21", "2026-02-22", "2026-02-23", "2026-02-24", "2026-02-25", "2026-02-26", "2026-02-27", "2026-02-28", "2026-03-01", "2026-03-02", "2026-03-03", "2026-03-04", "2026-03-05", "2026-03-06", "2026-03-07", "2026-03-08", "2026-03-09", "2026-03-10", "2026-03-11", "2026-03-12", "2026-03-13", "2026-03-14", "2026-03-15", "2026-03-16", "2026-03-17", "2026-03-18", "2026-03-19", "2026-03-20", "2026-03-21", "2026-03-22", "2026-03-23", "2026-03-24", "2026-03-25", "2026-03-26", "2026-03-27"], "values": [85.62, 85.62, 85.62, 85.48, 83.89, 84.34, 83.66, 83.12, 83.12, 83.12, 83.12, 83.36, 83.66, 83.59, 83.69, 83.69, 83.69, 83.23, 83.29, 83.35, 83.02, 82.66, 81.13, 81.13, 81.86, 82.1, 82.44, 82.74, 82.63, 80.73, 80.73, 80.58, 80.87, 83.79, 84.62, 84.66, 84.66, 84.66, 84.1, 81.49, 86.73, 86.94, 88.23, 88.23, 88.23, 87.92, 88.57, 88.0, 88.0, 88.0]}, "goldFactor": {"labels": ["2026-02-06", "2026-02-07", "2026-02-08", "2026-02-09", "2026-02-10", "2026-02-11", "2026-02-12", "2026-02-13", "2026-02-14", "2026-02-15", "2026-02-16", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-21", "2026-02-22", "2026-02-23", "2026-02-24", "2026-02-25", "2026-02-26", "2026-02-27", "2026-02-28", "2026-03-01", "2026-03-02", "2026-03-03", "2026-03-04", "2026-03-05", "2026-03-06", "2026-03-07", "2026-03-08", "2026-03-09", "2026-03-10", "2026-03-11", "2026-03-12", "2026-03-13", "2026-03-14", "2026-03-15", "2026-03-16", "2026-03-17", "2026-03-18", "2026-03-19", "2026-03-20", "2026-03-21", "2026-03-22", "2026-03-23", "2026-03-24", "2026-03-25", "2026-03-26", "2026-03-27"], "values": [37.33, 37.33, 37.33, 31.03, 16.77, 16.05, 38.65, 19.06, 19.06, 19.06, 17.57, 15.43, 22.64, 14.82, 14.77, 14.77, 14.77, 14.91, 17.43, 16.78, 35.31, 38.07, 40.6, 40.6, 22.02, 29.08, 28.91, 31.75, 40.2, 42.96, 42.96, 32.65, 27.39, 26.1, 20.89, 30.13, 30.13, 30.13, 26.38, 32.12, 21.38, 16.48, 15.23, 15.23, 15.23, 34.9, 25.88, 25.21, 15.18, 20.55]}, "sp500Factor": {"labels": ["2026-02-06", "2026-02-07", "2026-02-08", "2026-02-09", "2026-02-10", "2026-02-11", "2026-02-12", "2026-02-13", "2026-02-14", "2026-02-15", "2026-02-16", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-21", "2026-02-22", "2026-02-23", "2026-02-24", "2026-02-25", "2026-02-26", "2026-02-27", "2026-02-28", "2026-03-01", "2026-03-02", "2026-03-03", "2026-03-04", "2026-03-05", "2026-03-06", "2026-03-07", "2026-03-08", "2026-03-09", "2026-03-10", "2026-03-11", "2026-03-12", "2026-03-13", "2026-03-14", "2026-03-15", "2026-03-16", "2026-03-17", "2026-03-18", "2026-03-19", "2026-03-20", "2026-03-21", "2026-03-22", "2026-03-23", "2026-03-24", "2026-03-25", "2026-03-26", "2026-03-27"], "values": [29.66, 29.66, 29.66, 29.71, 25.36, 25.26, 27.92, 28.07, 28.07, 28.07, 29.68, 37.08, 39.28, 39.33, 39.28, 39.28, 39.28, 39.43, 39.38, 39.43, 39.58, 29.93, 30.16, 30.16, 29.96, 29.91, 29.76, 29.66, 29.76, 33.04, 33.04, 33.14, 32.94, 34.38, 34.18, 34.03, 34.03, 34.03, 34.28, 32.89, 42.34, 44.49, 43.84, 43.84, 43.84, 43.84, 43.59, 43.79, 43.79, 43.79]}, "nas100Factor": {"labels": ["2026-02-06", "2026-02-07", "2026-02-08", "2026-02-09", "2026-02-10", "2026-02-11", "2026-02-12", "2026-02-13", "2026-02-14", "2026-02-15", "2026-02-16", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-21", "2026-02-22", "2026-02-23", "2026-02-24", "2026-02-25", "2026-02-26", "2026-02-27", "2026-02-28", "2026-03-01", "2026-03-02", "2026-03-03", "2026-03-04", "2026-03-05", "2026-03-06", "2026-03-07", "2026-03-08", "2026-03-09", "2026-03-10", "2026-03-11", "2026-03-12", "2026-03-13", "2026-03-14", "2026-03-15", "2026-03-16", "2026-03-17", "2026-03-18", "2026-03-19", "2026-03-20", "2026-03-21", "2026-03-22", "2026-03-23", "2026-03-24", "2026-03-25", "2026-03-26", "2026-03-27"], "values": [17.74, 17.74, 17.74, 19.1, 22.18, 18.8, 15.2, 15.4, 15.4, 15.4, 16.17, 25.23, 29.73, 29.36, 32.41, 32.41, 32.41, 28.2, 32.58, 36.32, 38.43, 18.85, 18.28, 18.28, 16.9, 15.15, 17.14, 19.85, 16.11, 18.92, 18.92, 21.3, 20.23, 17.83, 14.22, 11.05, 11.05, 11.05, 16.37, 15.65, 22.55, 25.45, 24.8, 24.8, 24.8, 24.8, 24.61, 24.75, 24.75, 24.75]}, "ws30Factor": {"labels": ["2026-02-06", "2026-02-07", "2026-02-08", "2026-02-09", "2026-02-10", "2026-02-11", "2026-02-12", "2026-02-13", "2026-02-14", "2026-02-15", "2026-02-16", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-21", "2026-02-22", "2026-02-23", "2026-02-24", "2026-02-25", "2026-02-26", "2026-02-27", "2026-02-28", "2026-03-01", "2026-03-02", "2026-03-03", "2026-03-04", "2026-03-05", "2026-03-06", "2026-03-07", "2026-03-08", "2026-03-09", "2026-03-10", "2026-03-11", "2026-03-12", "2026-03-13", "2026-03-14", "2026-03-15", "2026-03-16", "2026-03-17", "2026-03-18", "2026-03-19", "2026-03-20", "2026-03-21", "2026-03-22", "2026-03-23", "2026-03-24", "2026-03-25", "2026-03-26", "2026-03-27"], "values": [33.43, 33.43, 33.43, 34.18, 32.58, 30.72, 30.44, 30.58, 30.58, 30.58, 29.83, 29.3, 30.1, 29.91, 31.56, 31.56, 31.56, 29.31, 31.68, 33.72, 34.91, 31.36, 33.46, 33.46, 32.66, 31.69, 32.74, 34.18, 32.18, 35.92, 35.92, 37.25, 36.61, 36.6, 34.59, 32.56, 32.56, 32.56, 35.78, 34.11, 30.62, 30.92, 28.82, 28.82, 28.82, 30.41, 31.05, 30.87, 29.14, 31.08]}};
-    function makeLineChart(id, labels, datasets) {
-      const ctx = document.getElementById(id);
-      if (!ctx) return;
-      new Chart(ctx, {
-        type: 'line',
-        data: { labels: labels, datasets: datasets },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          interaction: { mode: 'index', intersect: false },
-          plugins: { legend: { labels: { color: '#cfe2ff' } } },
-          scales: {
-            x: { ticks: { color: '#8da0c6', maxTicksLimit: 8 }, grid: { color: 'rgba(125,148,189,0.08)' } },
-            y: { min: 0, max: 100, ticks: { color: '#8da0c6' }, grid: { color: 'rgba(125,148,189,0.08)' } }
+    function renderChart(symbol) {
+      const node = document.getElementById(`data-${symbol}`);
+      const canvas = document.getElementById(`chart-${symbol}`);
+      if (!node || !canvas) return;
+      const d = JSON.parse(node.textContent);
+      new Chart(canvas, {
+        type:'line',
+        data:{
+          labels:d.labels,
+          datasets:[
+            {label:'Price', data:d.price, borderColor:'#e6edf7', borderWidth:2, pointRadius:0, tension:0.2},
+            {label:'Pivot', data:d.pivot, borderColor:'#f5b942', borderDash:[6,4], borderWidth:1.5, pointRadius:0, tension:0},
+            {label:'EMA10', data:d.ema10, borderColor:'#21c77a', borderWidth:1.5, pointRadius:0, tension:0.2},
+            {label:'EMA20', data:d.ema20, borderColor:'#4da3ff', borderWidth:1.5, pointRadius:0, tension:0.2},
+            {label:'EMA50', data:d.ema50, borderColor:'#8b7cf6', borderWidth:1.5, pointRadius:0, tension:0.2}
+          ]
+        },
+        options:{
+          responsive:true,
+          maintainAspectRatio:false,
+          plugins:{ legend:{ labels:{ color:'#c9d4e5' } } },
+          scales:{
+            x:{ ticks:{ color:'#96a3b8' }, grid:{ color:'rgba(150,163,184,0.08)' } },
+            y:{ ticks:{ color:'#96a3b8' }, grid:{ color:'rgba(150,163,184,0.08)' } }
           }
         }
       });
     }
-    makeLineChart('chartUsdEur', chartData.usdStrength.labels, [
-      { label:'USD Strength', data:chartData.usdStrength.values, borderColor:'#39d6ff', backgroundColor:'rgba(57,214,255,0.08)', borderWidth:2, pointRadius:0, tension:0.25 },
-      { label:'EURUSD Factor', data:chartData.eurusdFactor.values, borderColor:'#ff5d5d', backgroundColor:'rgba(255,93,93,0.08)', borderWidth:2, pointRadius:0, tension:0.25 }
-    ]);
-    makeLineChart('chartGoldSpx', chartData.goldFactor.labels, [
-      { label:'Gold Factor', data:chartData.goldFactor.values, borderColor:'#ffb648', backgroundColor:'rgba(255,182,72,0.08)', borderWidth:2, pointRadius:0, tension:0.25 },
-      { label:'SP500 Factor', data:chartData.sp500Factor.values, borderColor:'#2bd67b', backgroundColor:'rgba(43,214,123,0.08)', borderWidth:2, pointRadius:0, tension:0.25 },
-      { label:'NAS100 Factor', data:chartData.nas100Factor.values, borderColor:'#59c3ff', backgroundColor:'rgba(89,195,255,0.08)', borderWidth:2, pointRadius:0, tension:0.25 },
-      { label:'WS30 Factor', data:chartData.ws30Factor.values, borderColor:'#ff5d5d', backgroundColor:'rgba(255,93,93,0.08)', borderWidth:2, pointRadius:0, tension:0.25 }
-    ]);
-    document.querySelectorAll('.tab-btn').forEach(btn => {
+    document.querySelectorAll('.tab').forEach(btn => {
       btn.addEventListener('click', () => {
-        const target = btn.getAttribute('data-tab');
-        document.querySelectorAll('.tab-btn').forEach(x => x.classList.remove('active'));
-        document.querySelectorAll('.tab-panel').forEach(x => { x.style.display = 'none'; x.classList.remove('active'); });
+        const id = btn.getAttribute('data-tab');
+        document.querySelectorAll('.tab').forEach(x => x.classList.remove('active'));
+        document.querySelectorAll('.tab-panel').forEach(x => { x.style.display='none'; x.classList.remove('active'); });
         btn.classList.add('active');
-        const panel = document.getElementById(target);
-        if (panel) { panel.style.display = 'block'; panel.classList.add('active'); }
+        const panel = document.getElementById(id);
+        if (panel) { panel.style.display='block'; panel.classList.add('active'); }
       });
     });
-    setTimeout(() => window.location.reload(), 60 * 1000);
+    renderChart('GBPJPY');
+renderChart('USDJPY');
+renderChart('XAUEUR');
+renderChart('XAUUSD');
   </script>
 </body>
 </html>
