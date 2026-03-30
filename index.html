@@ -86,8 +86,8 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
               <div class="sub">H1</div>
             </div>
             <div class="price-box">
-              <div class="price">109.37000</div>
-              <div class="sub">Updated 2026-03-30 23:00:00</div>
+              <div class="price">109.36000</div>
+              <div class="sub">Updated 2026-03-30 23:00</div>
             </div>
           </div>
 
@@ -99,7 +99,7 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
           </div>
 
           <div class="section-title">Conditions</div>
-          <div class="condition-list"><div class="condition-row"><div class="condition-name">Context</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">MACD below signal</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">MACD below zero</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">Price below EMA10</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">EMA10 below pivot</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">JRSX direction</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">Trigger</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">Execution</div><div class="condition-state state-wait">WAIT</div></div></div>
+          <div class="condition-list"><div class="condition-row"><div class="condition-name">Close below pivot</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">MACD below zero</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">MACD below signal</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">Close below EMA20</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">EMA10 &lt; EMA20 &lt; EMA50</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">EMA50 &lt; EMA200</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">JRSX direction DOWN</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">JRSX zone valid</div><div class="condition-state state-yes">YES</div></div></div>
 
           <div class="section-title">MTF Snapshot</div>
           <div class="condition-list">
@@ -110,7 +110,7 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
 
           <div class="blocker">
             <strong>Why Ready</strong>
-            SELL_SIGNAL_FROM_6_CONDITION_MODEL
+            BUY=2/6 | SELL=4/6 | SELL
             <div class="sub" style="margin-top:8px;">Confirmation: Confirmed</div>
           </div>
         </div>
@@ -121,22 +121,22 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
       <div class="journey-grid">
         <div class="journey-section">
           <div class="journey-section-title">JRSX Structure</div>
-          <div class="journey-row"><div><div class="journey-label">H4</div><div class="journey-sub">Authority</div></div><div><span class="badge red">DOWN (23.33)</span></div></div>
-          <div class="journey-row"><div><div class="journey-label">H1</div><div class="journey-sub">Primary</div></div><div><span class="badge green">UP (33.31)</span></div></div>
-          <div class="journey-row"><div><div class="journey-label">M30</div><div class="journey-sub">Entry</div></div><div><span class="badge green">UP (53.65)</span></div></div>
+          <div class="journey-row"><div><div class="journey-label">H4</div></div><div><span class="badge amber">NA</span></div></div>
+          <div class="journey-row"><div><div class="journey-label">H1</div></div><div><span class="badge amber">NA</span></div></div>
+          <div class="journey-row"><div><div class="journey-label">M30</div></div><div><span class="badge amber">NA</span></div></div>
           <div class="journey-summary-grid">
-            <div class="mini-box"><div class="label">State</div><div class="value"><span class="badge slate">ENTRY ALIGNED UP</span></div></div>
-            <div class="mini-box"><div class="label">Bias</div><div class="value"><span class="badge green">+1</span></div></div>
+            <div class="mini-box"><div class="label">State</div><div class="value"><span class="badge purple">CONFLICT</span></div></div>
+            <div class="mini-box"><div class="label">Bias</div><div class="value"><span class="badge amber">+0</span></div></div>
           </div>
         </div>
         <div class="journey-section">
           <div class="journey-section-title">Execution State</div>
           <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge green">READY</span></div></div>
-          <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">Manage active trade</div></div>
+          <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">Wait for confirmation</div></div>
           <div class="journey-row"><div class="journey-label">Risk</div><div><span class="badge green">LOW</span></div></div>
           <div class="journey-note">
             <div class="journey-label">Note</div>
-            <div class="journey-value">SELL_SIGNAL_FROM_6_CONDITION_MODEL</div>
+            <div class="journey-value">BUY=2/6 | SELL=4/6 | SELL</div>
           </div>
         </div>
       </div>
@@ -144,11 +144,11 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
         <div class="journey-section-title">Current Trade</div>
         <div class="current-trade-grid">
           <div class="mini-box"><div class="label">Direction</div><div class="value"><span class="badge slate">BEAR</span></div></div>
-          <div class="mini-box"><div class="label">Status</div><div class="value"><span class="badge green">ACTIVE</span></div></div>
-          <div class="mini-box"><div class="label">Context Time</div><div class="value value-small">2026-03-27 20:00</div></div>
-          <div class="mini-box"><div class="label">Confirmation Time</div><div class="value value-small">2026-03-30 16:00</div></div>
-          <div class="mini-box"><div class="label">Current Price</div><div class="value">109.37000</div></div>
-          <div class="mini-box"><div class="label">Move</div><div class="value">+0.76</div></div>
+          <div class="mini-box"><div class="label">Status</div><div class="value"><span class="badge green">CONFIRMED</span></div></div>
+          <div class="mini-box"><div class="label">Context Time</div><div class="value value-small">NA</div></div>
+          <div class="mini-box"><div class="label">Confirmation Time</div><div class="value value-small">NA</div></div>
+          <div class="mini-box"><div class="label">Current Price</div><div class="value">NA</div></div>
+          <div class="mini-box"><div class="label">Move</div><div class="value">NA</div></div>
         </div>
       </div>
     </div>
@@ -167,7 +167,7 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
             </div>
             <div class="price-box">
               <div class="price">0.68000</div>
-              <div class="sub">Updated 2026-03-30 23:00:00</div>
+              <div class="sub">Updated 2026-03-30 23:00</div>
             </div>
           </div>
 
@@ -179,7 +179,7 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
           </div>
 
           <div class="section-title">Conditions</div>
-          <div class="condition-list"><div class="condition-row"><div class="condition-name">Context</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">MACD below signal</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">MACD below zero</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">Price below EMA10</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">EMA10 below pivot</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">JRSX direction</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">Trigger</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">Execution</div><div class="condition-state state-wait">WAIT</div></div></div>
+          <div class="condition-list"><div class="condition-row"><div class="condition-name">Close below pivot</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">MACD below zero</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">MACD below signal</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">Close below EMA20</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">EMA10 &lt; EMA20 &lt; EMA50</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">EMA50 &lt; EMA200</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">JRSX direction DOWN</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">JRSX zone valid</div><div class="condition-state state-yes">YES</div></div></div>
 
           <div class="section-title">MTF Snapshot</div>
           <div class="condition-list">
@@ -190,7 +190,7 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
 
           <div class="blocker">
             <strong>Why Ready</strong>
-            Conflict ratio is high. Wait for cleaner follow-through.
+            BUY=2/6 | SELL=5/6 | SELL
             <div class="sub" style="margin-top:8px;">Confirmation: Pending</div>
           </div>
         </div>
@@ -201,22 +201,22 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
       <div class="journey-grid">
         <div class="journey-section">
           <div class="journey-section-title">JRSX Structure</div>
-          <div class="journey-row"><div><div class="journey-label">H4</div><div class="journey-sub">Authority</div></div><div><span class="badge green">UP (19.87)</span></div></div>
-          <div class="journey-row"><div><div class="journey-label">H1</div><div class="journey-sub">Primary</div></div><div><span class="badge red">DOWN (41.21)</span></div></div>
-          <div class="journey-row"><div><div class="journey-label">M30</div><div class="journey-sub">Entry</div></div><div><span class="badge red">DOWN (44.70)</span></div></div>
+          <div class="journey-row"><div><div class="journey-label">H4</div></div><div><span class="badge amber">NA</span></div></div>
+          <div class="journey-row"><div><div class="journey-label">H1</div></div><div><span class="badge amber">NA</span></div></div>
+          <div class="journey-row"><div><div class="journey-label">M30</div></div><div><span class="badge amber">NA</span></div></div>
           <div class="journey-summary-grid">
-            <div class="mini-box"><div class="label">State</div><div class="value"><span class="badge slate">ENTRY ALIGNED DOWN</span></div></div>
-            <div class="mini-box"><div class="label">Bias</div><div class="value"><span class="badge red">-1</span></div></div>
+            <div class="mini-box"><div class="label">State</div><div class="value"><span class="badge purple">CONFLICT</span></div></div>
+            <div class="mini-box"><div class="label">Bias</div><div class="value"><span class="badge amber">+0</span></div></div>
           </div>
         </div>
         <div class="journey-section">
           <div class="journey-section-title">Execution State</div>
           <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge amber">WAIT</span></div></div>
-          <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">Entry timeframe aligned</div></div>
+          <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">Wait for confirmation</div></div>
           <div class="journey-row"><div class="journey-label">Risk</div><div><span class="badge green">LOW</span></div></div>
           <div class="journey-note">
             <div class="journey-label">Note</div>
-            <div class="journey-value">Conflict ratio is high. Wait for cleaner follow-through.</div>
+            <div class="journey-value">BUY=2/6 | SELL=5/6 | SELL</div>
           </div>
         </div>
       </div>
@@ -224,11 +224,11 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
         <div class="journey-section-title">Current Trade</div>
         <div class="current-trade-grid">
           <div class="mini-box"><div class="label">Direction</div><div class="value"><span class="badge slate">BEAR</span></div></div>
-          <div class="mini-box"><div class="label">Status</div><div class="value"><span class="badge green">ACTIVE</span></div></div>
-          <div class="mini-box"><div class="label">Context Time</div><div class="value value-small">2026-03-30 10:00</div></div>
+          <div class="mini-box"><div class="label">Status</div><div class="value"><span class="badge amber">PENDING</span></div></div>
+          <div class="mini-box"><div class="label">Context Time</div><div class="value value-small">NA</div></div>
           <div class="mini-box"><div class="label">Confirmation Time</div><div class="value value-small">NA</div></div>
-          <div class="mini-box"><div class="label">Current Price</div><div class="value">0.68000</div></div>
-          <div class="mini-box"><div class="label">Move</div><div class="value">+0.01</div></div>
+          <div class="mini-box"><div class="label">Current Price</div><div class="value">NA</div></div>
+          <div class="mini-box"><div class="label">Move</div><div class="value">NA</div></div>
         </div>
       </div>
     </div>
@@ -246,20 +246,20 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
               <div class="sub">H1</div>
             </div>
             <div class="price-box">
-              <div class="price">114.65000</div>
-              <div class="sub">Updated 2026-03-30 23:00:00</div>
+              <div class="price">114.67000</div>
+              <div class="sub">Updated 2026-03-30 23:00</div>
             </div>
           </div>
 
           <div class="headline-grid">
-            <div class="mini-box"><div class="label">Signal</div><div class="value"><span class="badge slate">NONE</span></div></div>
-            <div class="mini-box"><div class="label">Strength</div><div class="value"><span class="badge amber">WAIT</span></div></div>
+            <div class="mini-box"><div class="label">Signal</div><div class="value"><span class="badge green">BUY</span></div></div>
+            <div class="mini-box"><div class="label">Strength</div><div class="value"><span class="badge blue">GOOD</span></div></div>
             <div class="mini-box"><div class="label">Confirmation</div><div class="value"><span class="badge amber">PENDING</span></div></div>
             <div class="mini-box"><div class="label">Journey</div><div class="value"><span class="badge green">ACTIVE</span></div></div>
           </div>
 
           <div class="section-title">Conditions</div>
-          <div class="condition-list"><div class="condition-row"><div class="condition-name">Context</div><div class="condition-state state-wait">NEUTRAL</div></div><div class="condition-row"><div class="condition-name">Setup</div><div class="condition-state state-wait">NO_SETUP</div></div><div class="condition-row"><div class="condition-name">Trigger</div><div class="condition-state state-wait">NO_TRIGGER</div></div><div class="condition-row"><div class="condition-name">Execution</div><div class="condition-state state-wait">WAIT</div></div><div class="condition-row"><div class="condition-name">JRSX</div><div class="condition-state state-wait">UP</div></div><div class="condition-row"><div class="condition-name">JRSX value</div><div class="condition-state state-wait">26.42</div></div></div>
+          <div class="condition-list"><div class="condition-row"><div class="condition-name">Close above pivot</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">MACD above zero</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">MACD above signal</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">Close above EMA20</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">EMA10 &gt; EMA20 &gt; EMA50</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">EMA50 &gt; EMA200</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">JRSX direction UP</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">JRSX zone valid</div><div class="condition-state state-no">NO</div></div></div>
 
           <div class="section-title">MTF Snapshot</div>
           <div class="condition-list">
@@ -269,8 +269,8 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
           </div>
 
           <div class="blocker">
-            <strong>Why Not Ready</strong>
-            NEUTRAL: BUY=3 AND SELL=3
+            <strong>Why Ready</strong>
+            BUY=3/6 | SELL=3/6 | NEUTRAL
             <div class="sub" style="margin-top:8px;">Confirmation: Pending</div>
           </div>
         </div>
@@ -281,22 +281,22 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
       <div class="journey-grid">
         <div class="journey-section">
           <div class="journey-section-title">JRSX Structure</div>
-          <div class="journey-row"><div><div class="journey-label">H4</div><div class="journey-sub">Authority</div></div><div><span class="badge red">DOWN (21.81)</span></div></div>
-          <div class="journey-row"><div><div class="journey-label">H1</div><div class="journey-sub">Primary</div></div><div><span class="badge green">UP (26.44)</span></div></div>
-          <div class="journey-row"><div><div class="journey-label">M30</div><div class="journey-sub">Entry</div></div><div><span class="badge green">UP (61.46)</span></div></div>
+          <div class="journey-row"><div><div class="journey-label">H4</div></div><div><span class="badge amber">NA</span></div></div>
+          <div class="journey-row"><div><div class="journey-label">H1</div></div><div><span class="badge amber">NA</span></div></div>
+          <div class="journey-row"><div><div class="journey-label">M30</div></div><div><span class="badge amber">NA</span></div></div>
           <div class="journey-summary-grid">
-            <div class="mini-box"><div class="label">State</div><div class="value"><span class="badge slate">ENTRY ALIGNED UP</span></div></div>
-            <div class="mini-box"><div class="label">Bias</div><div class="value"><span class="badge green">+1</span></div></div>
+            <div class="mini-box"><div class="label">State</div><div class="value"><span class="badge purple">CONFLICT</span></div></div>
+            <div class="mini-box"><div class="label">Bias</div><div class="value"><span class="badge amber">+0</span></div></div>
           </div>
         </div>
         <div class="journey-section">
           <div class="journey-section-title">Execution State</div>
-          <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge red">BLOCKED</span></div></div>
-          <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">Wait for valid signal</div></div>
+          <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge amber">WAIT</span></div></div>
+          <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">Wait for confirmation</div></div>
           <div class="journey-row"><div class="journey-label">Risk</div><div><span class="badge green">LOW</span></div></div>
           <div class="journey-note">
             <div class="journey-label">Note</div>
-            <div class="journey-value">NEUTRAL: BUY=3 AND SELL=3</div>
+            <div class="journey-value">BUY=3/6 | SELL=3/6 | NEUTRAL</div>
           </div>
         </div>
       </div>
@@ -304,11 +304,11 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
         <div class="journey-section-title">Current Trade</div>
         <div class="current-trade-grid">
           <div class="mini-box"><div class="label">Direction</div><div class="value"><span class="badge slate">BEAR</span></div></div>
-          <div class="mini-box"><div class="label">Status</div><div class="value"><span class="badge green">ACTIVE</span></div></div>
-          <div class="mini-box"><div class="label">Context Time</div><div class="value value-small">2026-03-30 03:00</div></div>
+          <div class="mini-box"><div class="label">Status</div><div class="value"><span class="badge amber">PENDING</span></div></div>
+          <div class="mini-box"><div class="label">Context Time</div><div class="value value-small">NA</div></div>
           <div class="mini-box"><div class="label">Confirmation Time</div><div class="value value-small">NA</div></div>
-          <div class="mini-box"><div class="label">Current Price</div><div class="value">114.65000</div></div>
-          <div class="mini-box"><div class="label">Move</div><div class="value">+0.48</div></div>
+          <div class="mini-box"><div class="label">Current Price</div><div class="value">NA</div></div>
+          <div class="mini-box"><div class="label">Move</div><div class="value">NA</div></div>
         </div>
       </div>
     </div>
@@ -326,20 +326,20 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
               <div class="sub">H1</div>
             </div>
             <div class="price-box">
-              <div class="price">199.66000</div>
-              <div class="sub">Updated 2026-03-30 23:00:00</div>
+              <div class="price">199.68000</div>
+              <div class="sub">Updated 2026-03-30 23:00</div>
             </div>
           </div>
 
           <div class="headline-grid">
-            <div class="mini-box"><div class="label">Signal</div><div class="value"><span class="badge slate">NONE</span></div></div>
-            <div class="mini-box"><div class="label">Strength</div><div class="value"><span class="badge amber">WAIT</span></div></div>
+            <div class="mini-box"><div class="label">Signal</div><div class="value"><span class="badge green">BUY</span></div></div>
+            <div class="mini-box"><div class="label">Strength</div><div class="value"><span class="badge blue">GOOD</span></div></div>
             <div class="mini-box"><div class="label">Confirmation</div><div class="value"><span class="badge green">CONFIRMED</span></div></div>
             <div class="mini-box"><div class="label">Journey</div><div class="value"><span class="badge green">ACTIVE</span></div></div>
           </div>
 
           <div class="section-title">Conditions</div>
-          <div class="condition-list"><div class="condition-row"><div class="condition-name">Context</div><div class="condition-state state-wait">NEUTRAL</div></div><div class="condition-row"><div class="condition-name">Setup</div><div class="condition-state state-wait">NO_SETUP</div></div><div class="condition-row"><div class="condition-name">Trigger</div><div class="condition-state state-wait">NO_TRIGGER</div></div><div class="condition-row"><div class="condition-name">Execution</div><div class="condition-state state-wait">WAIT</div></div><div class="condition-row"><div class="condition-name">JRSX</div><div class="condition-state state-wait">UP</div></div><div class="condition-row"><div class="condition-name">JRSX value</div><div class="condition-state state-wait">34.90</div></div></div>
+          <div class="condition-list"><div class="condition-row"><div class="condition-name">Close above pivot</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">MACD above zero</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">MACD above signal</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">Close above EMA20</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">EMA10 &gt; EMA20 &gt; EMA50</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">EMA50 &gt; EMA200</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">JRSX direction UP</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">JRSX zone valid</div><div class="condition-state state-no">NO</div></div></div>
 
           <div class="section-title">MTF Snapshot</div>
           <div class="condition-list">
@@ -349,8 +349,8 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
           </div>
 
           <div class="blocker">
-            <strong>Why Not Ready</strong>
-            NEUTRAL: BUY=3 AND SELL=3
+            <strong>Why Ready</strong>
+            BUY=3/6 | SELL=3/6 | NEUTRAL
             <div class="sub" style="margin-top:8px;">Confirmation: Confirmed</div>
           </div>
         </div>
@@ -361,22 +361,22 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
       <div class="journey-grid">
         <div class="journey-section">
           <div class="journey-section-title">JRSX Structure</div>
-          <div class="journey-row"><div><div class="journey-label">H4</div><div class="journey-sub">Authority</div></div><div><span class="badge red">DOWN (15.84)</span></div></div>
-          <div class="journey-row"><div><div class="journey-label">H1</div><div class="journey-sub">Primary</div></div><div><span class="badge green">UP (34.92)</span></div></div>
-          <div class="journey-row"><div><div class="journey-label">M30</div><div class="journey-sub">Entry</div></div><div><span class="badge green">UP (68.29)</span></div></div>
+          <div class="journey-row"><div><div class="journey-label">H4</div></div><div><span class="badge amber">NA</span></div></div>
+          <div class="journey-row"><div><div class="journey-label">H1</div></div><div><span class="badge amber">NA</span></div></div>
+          <div class="journey-row"><div><div class="journey-label">M30</div></div><div><span class="badge amber">NA</span></div></div>
           <div class="journey-summary-grid">
-            <div class="mini-box"><div class="label">State</div><div class="value"><span class="badge slate">ENTRY ALIGNED UP</span></div></div>
-            <div class="mini-box"><div class="label">Bias</div><div class="value"><span class="badge green">+1</span></div></div>
+            <div class="mini-box"><div class="label">State</div><div class="value"><span class="badge purple">CONFLICT</span></div></div>
+            <div class="mini-box"><div class="label">Bias</div><div class="value"><span class="badge amber">+0</span></div></div>
           </div>
         </div>
         <div class="journey-section">
           <div class="journey-section-title">Execution State</div>
-          <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge red">BLOCKED</span></div></div>
-          <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">Wait for valid signal</div></div>
+          <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge green">READY</span></div></div>
+          <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">Wait for confirmation</div></div>
           <div class="journey-row"><div class="journey-label">Risk</div><div><span class="badge green">LOW</span></div></div>
           <div class="journey-note">
             <div class="journey-label">Note</div>
-            <div class="journey-value">NEUTRAL: BUY=3 AND SELL=3</div>
+            <div class="journey-value">BUY=3/6 | SELL=3/6 | NEUTRAL</div>
           </div>
         </div>
       </div>
@@ -384,11 +384,11 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
         <div class="journey-section-title">Current Trade</div>
         <div class="current-trade-grid">
           <div class="mini-box"><div class="label">Direction</div><div class="value"><span class="badge slate">BEAR</span></div></div>
-          <div class="mini-box"><div class="label">Status</div><div class="value"><span class="badge green">ACTIVE</span></div></div>
-          <div class="mini-box"><div class="label">Context Time</div><div class="value value-small">2026-03-27 21:00</div></div>
-          <div class="mini-box"><div class="label">Confirmation Time</div><div class="value value-small">2026-03-30 10:00</div></div>
-          <div class="mini-box"><div class="label">Current Price</div><div class="value">199.66000</div></div>
-          <div class="mini-box"><div class="label">Move</div><div class="value">+1.00</div></div>
+          <div class="mini-box"><div class="label">Status</div><div class="value"><span class="badge green">CONFIRMED</span></div></div>
+          <div class="mini-box"><div class="label">Context Time</div><div class="value value-small">NA</div></div>
+          <div class="mini-box"><div class="label">Confirmation Time</div><div class="value value-small">NA</div></div>
+          <div class="mini-box"><div class="label">Current Price</div><div class="value">NA</div></div>
+          <div class="mini-box"><div class="label">Move</div><div class="value">NA</div></div>
         </div>
       </div>
     </div>
@@ -406,8 +406,8 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
               <div class="sub">H1</div>
             </div>
             <div class="price-box">
-              <div class="price">22408.20000</div>
-              <div class="sub">Updated 2026-03-30 23:00:00</div>
+              <div class="price">22415.50000</div>
+              <div class="sub">Updated 2026-03-30 23:00</div>
             </div>
           </div>
 
@@ -419,7 +419,7 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
           </div>
 
           <div class="section-title">Conditions</div>
-          <div class="condition-list"><div class="condition-row"><div class="condition-name">Context</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">MACD above signal</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">MACD above zero</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">Price above EMA10</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">EMA10 above pivot</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">JRSX direction</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">Trigger</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">Execution</div><div class="condition-state state-wait">WAIT</div></div></div>
+          <div class="condition-list"><div class="condition-row"><div class="condition-name">Close above pivot</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">MACD above zero</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">MACD above signal</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">Close above EMA20</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">EMA10 &gt; EMA20 &gt; EMA50</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">EMA50 &gt; EMA200</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">JRSX direction UP</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">JRSX zone valid</div><div class="condition-state state-yes">YES</div></div></div>
 
           <div class="section-title">MTF Snapshot</div>
           <div class="condition-list">
@@ -430,7 +430,7 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
 
           <div class="blocker">
             <strong>Why Ready</strong>
-            BUY_SIGNAL_FROM_6_CONDITION_MODEL
+            BUY=4/6 | SELL=2/6 | BUY
             <div class="sub" style="margin-top:8px;">Confirmation: Confirmed</div>
           </div>
         </div>
@@ -441,22 +441,22 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
       <div class="journey-grid">
         <div class="journey-section">
           <div class="journey-section-title">JRSX Structure</div>
-          <div class="journey-row"><div><div class="journey-label">H4</div><div class="journey-sub">Authority</div></div><div><span class="badge green">UP (36.15)</span></div></div>
-          <div class="journey-row"><div><div class="journey-label">H1</div><div class="journey-sub">Primary</div></div><div><span class="badge red">DOWN (73.90)</span></div></div>
-          <div class="journey-row"><div><div class="journey-label">M30</div><div class="journey-sub">Entry</div></div><div><span class="badge red">DOWN (47.41)</span></div></div>
+          <div class="journey-row"><div><div class="journey-label">H4</div></div><div><span class="badge amber">NA</span></div></div>
+          <div class="journey-row"><div><div class="journey-label">H1</div></div><div><span class="badge amber">NA</span></div></div>
+          <div class="journey-row"><div><div class="journey-label">M30</div></div><div><span class="badge amber">NA</span></div></div>
           <div class="journey-summary-grid">
-            <div class="mini-box"><div class="label">State</div><div class="value"><span class="badge slate">ENTRY ALIGNED DOWN</span></div></div>
-            <div class="mini-box"><div class="label">Bias</div><div class="value"><span class="badge red">-1</span></div></div>
+            <div class="mini-box"><div class="label">State</div><div class="value"><span class="badge purple">CONFLICT</span></div></div>
+            <div class="mini-box"><div class="label">Bias</div><div class="value"><span class="badge amber">+0</span></div></div>
           </div>
         </div>
         <div class="journey-section">
           <div class="journey-section-title">Execution State</div>
           <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge green">READY</span></div></div>
-          <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">Manage active trade</div></div>
+          <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">Wait for confirmation</div></div>
           <div class="journey-row"><div class="journey-label">Risk</div><div><span class="badge green">LOW</span></div></div>
           <div class="journey-note">
             <div class="journey-label">Note</div>
-            <div class="journey-value">BUY_SIGNAL_FROM_6_CONDITION_MODEL</div>
+            <div class="journey-value">BUY=4/6 | SELL=2/6 | BUY</div>
           </div>
         </div>
       </div>
@@ -464,11 +464,11 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
         <div class="journey-section-title">Current Trade</div>
         <div class="current-trade-grid">
           <div class="mini-box"><div class="label">Direction</div><div class="value"><span class="badge slate">BULL</span></div></div>
-          <div class="mini-box"><div class="label">Status</div><div class="value"><span class="badge green">ACTIVE</span></div></div>
-          <div class="mini-box"><div class="label">Context Time</div><div class="value value-small">2026-03-30 14:00</div></div>
-          <div class="mini-box"><div class="label">Confirmation Time</div><div class="value value-small">2026-03-30 17:00</div></div>
-          <div class="mini-box"><div class="label">Current Price</div><div class="value">22408.20000</div></div>
-          <div class="mini-box"><div class="label">Move</div><div class="value">+50.20</div></div>
+          <div class="mini-box"><div class="label">Status</div><div class="value"><span class="badge green">CONFIRMED</span></div></div>
+          <div class="mini-box"><div class="label">Context Time</div><div class="value value-small">NA</div></div>
+          <div class="mini-box"><div class="label">Confirmation Time</div><div class="value value-small">NA</div></div>
+          <div class="mini-box"><div class="label">Current Price</div><div class="value">NA</div></div>
+          <div class="mini-box"><div class="label">Move</div><div class="value">NA</div></div>
         </div>
       </div>
     </div>
@@ -487,7 +487,7 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
             </div>
             <div class="price-box">
               <div class="price">1.67000</div>
-              <div class="sub">Updated 2026-03-30 23:00:00</div>
+              <div class="sub">Updated 2026-03-30 23:00</div>
             </div>
           </div>
 
@@ -499,7 +499,7 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
           </div>
 
           <div class="section-title">Conditions</div>
-          <div class="condition-list"><div class="condition-row"><div class="condition-name">Context</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">MACD below signal</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">MACD below zero</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">Price below EMA10</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">EMA10 below pivot</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">JRSX direction</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">Trigger</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">Execution</div><div class="condition-state state-wait">WAIT</div></div></div>
+          <div class="condition-list"><div class="condition-row"><div class="condition-name">Close below pivot</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">MACD below zero</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">MACD below signal</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">Close below EMA20</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">EMA10 &lt; EMA20 &lt; EMA50</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">EMA50 &lt; EMA200</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">JRSX direction DOWN</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">JRSX zone valid</div><div class="condition-state state-yes">YES</div></div></div>
 
           <div class="section-title">MTF Snapshot</div>
           <div class="condition-list">
@@ -510,7 +510,7 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
 
           <div class="blocker">
             <strong>Why Ready</strong>
-            SELL_SIGNAL_FROM_6_CONDITION_MODEL
+            BUY=2/6 | SELL=4/6 | SELL
             <div class="sub" style="margin-top:8px;">Confirmation: Pending</div>
           </div>
         </div>
@@ -521,22 +521,22 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
       <div class="journey-grid">
         <div class="journey-section">
           <div class="journey-section-title">JRSX Structure</div>
-          <div class="journey-row"><div><div class="journey-label">H4</div><div class="journey-sub">Authority</div></div><div><span class="badge red">DOWN (64.34)</span></div></div>
-          <div class="journey-row"><div><div class="journey-label">H1</div><div class="journey-sub">Primary</div></div><div><span class="badge green">UP (29.48)</span></div></div>
-          <div class="journey-row"><div><div class="journey-label">M30</div><div class="journey-sub">Entry</div></div><div><span class="badge green">UP (46.94)</span></div></div>
+          <div class="journey-row"><div><div class="journey-label">H4</div></div><div><span class="badge amber">NA</span></div></div>
+          <div class="journey-row"><div><div class="journey-label">H1</div></div><div><span class="badge amber">NA</span></div></div>
+          <div class="journey-row"><div><div class="journey-label">M30</div></div><div><span class="badge amber">NA</span></div></div>
           <div class="journey-summary-grid">
-            <div class="mini-box"><div class="label">State</div><div class="value"><span class="badge slate">ENTRY ALIGNED UP</span></div></div>
-            <div class="mini-box"><div class="label">Bias</div><div class="value"><span class="badge green">+1</span></div></div>
+            <div class="mini-box"><div class="label">State</div><div class="value"><span class="badge purple">CONFLICT</span></div></div>
+            <div class="mini-box"><div class="label">Bias</div><div class="value"><span class="badge amber">+0</span></div></div>
           </div>
         </div>
         <div class="journey-section">
           <div class="journey-section-title">Execution State</div>
           <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge amber">WAIT</span></div></div>
-          <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">Entry timeframe aligned</div></div>
+          <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">Wait for confirmation</div></div>
           <div class="journey-row"><div class="journey-label">Risk</div><div><span class="badge green">LOW</span></div></div>
           <div class="journey-note">
             <div class="journey-label">Note</div>
-            <div class="journey-value">SELL_SIGNAL_FROM_6_CONDITION_MODEL</div>
+            <div class="journey-value">BUY=2/6 | SELL=4/6 | SELL</div>
           </div>
         </div>
       </div>
@@ -544,11 +544,11 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
         <div class="journey-section-title">Current Trade</div>
         <div class="current-trade-grid">
           <div class="mini-box"><div class="label">Direction</div><div class="value"><span class="badge slate">BEAR</span></div></div>
-          <div class="mini-box"><div class="label">Status</div><div class="value"><span class="badge green">ACTIVE</span></div></div>
-          <div class="mini-box"><div class="label">Context Time</div><div class="value value-small">2026-03-30 17:00</div></div>
+          <div class="mini-box"><div class="label">Status</div><div class="value"><span class="badge amber">PENDING</span></div></div>
+          <div class="mini-box"><div class="label">Context Time</div><div class="value value-small">NA</div></div>
           <div class="mini-box"><div class="label">Confirmation Time</div><div class="value value-small">NA</div></div>
-          <div class="mini-box"><div class="label">Current Price</div><div class="value">1.67000</div></div>
-          <div class="mini-box"><div class="label">Move</div><div class="value">0.00</div></div>
+          <div class="mini-box"><div class="label">Current Price</div><div class="value">NA</div></div>
+          <div class="mini-box"><div class="label">Move</div><div class="value">NA</div></div>
         </div>
       </div>
     </div>
@@ -566,20 +566,20 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
               <div class="sub">H1</div>
             </div>
             <div class="price-box">
-              <div class="price">183.00000</div>
-              <div class="sub">Updated 2026-03-30 23:00:00</div>
+              <div class="price">182.98000</div>
+              <div class="sub">Updated 2026-03-30 23:00</div>
             </div>
           </div>
 
           <div class="headline-grid">
-            <div class="mini-box"><div class="label">Signal</div><div class="value"><span class="badge slate">NONE</span></div></div>
-            <div class="mini-box"><div class="label">Strength</div><div class="value"><span class="badge amber">WAIT</span></div></div>
+            <div class="mini-box"><div class="label">Signal</div><div class="value"><span class="badge green">BUY</span></div></div>
+            <div class="mini-box"><div class="label">Strength</div><div class="value"><span class="badge blue">GOOD</span></div></div>
             <div class="mini-box"><div class="label">Confirmation</div><div class="value"><span class="badge green">CONFIRMED</span></div></div>
             <div class="mini-box"><div class="label">Journey</div><div class="value"><span class="badge green">ACTIVE</span></div></div>
           </div>
 
           <div class="section-title">Conditions</div>
-          <div class="condition-list"><div class="condition-row"><div class="condition-name">Context</div><div class="condition-state state-wait">NEUTRAL</div></div><div class="condition-row"><div class="condition-name">Setup</div><div class="condition-state state-wait">NO_SETUP</div></div><div class="condition-row"><div class="condition-name">Trigger</div><div class="condition-state state-wait">NO_TRIGGER</div></div><div class="condition-row"><div class="condition-name">Execution</div><div class="condition-state state-wait">WAIT</div></div><div class="condition-row"><div class="condition-name">JRSX</div><div class="condition-state state-wait">UP</div></div><div class="condition-row"><div class="condition-name">JRSX value</div><div class="condition-state state-wait">16.83</div></div></div>
+          <div class="condition-list"><div class="condition-row"><div class="condition-name">Close above pivot</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">MACD above zero</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">MACD above signal</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">Close above EMA20</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">EMA10 &gt; EMA20 &gt; EMA50</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">EMA50 &gt; EMA200</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">JRSX direction UP</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">JRSX zone valid</div><div class="condition-state state-no">NO</div></div></div>
 
           <div class="section-title">MTF Snapshot</div>
           <div class="condition-list">
@@ -589,8 +589,8 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
           </div>
 
           <div class="blocker">
-            <strong>Why Not Ready</strong>
-            NO_SIGNAL: SELL=3 BUT DIRECTIONAL THRESHOLD IS 4
+            <strong>Why Ready</strong>
+            BUY=1/6 | SELL=3/6 | NO_SIGNAL
             <div class="sub" style="margin-top:8px;">Confirmation: Confirmed</div>
           </div>
         </div>
@@ -601,22 +601,22 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
       <div class="journey-grid">
         <div class="journey-section">
           <div class="journey-section-title">JRSX Structure</div>
-          <div class="journey-row"><div><div class="journey-label">H4</div><div class="journey-sub">Authority</div></div><div><span class="badge red">DOWN (27.12)</span></div></div>
-          <div class="journey-row"><div><div class="journey-label">H1</div><div class="journey-sub">Primary</div></div><div><span class="badge green">UP (16.84)</span></div></div>
-          <div class="journey-row"><div><div class="journey-label">M30</div><div class="journey-sub">Entry</div></div><div><span class="badge green">UP (50.61)</span></div></div>
+          <div class="journey-row"><div><div class="journey-label">H4</div></div><div><span class="badge amber">NA</span></div></div>
+          <div class="journey-row"><div><div class="journey-label">H1</div></div><div><span class="badge amber">NA</span></div></div>
+          <div class="journey-row"><div><div class="journey-label">M30</div></div><div><span class="badge amber">NA</span></div></div>
           <div class="journey-summary-grid">
-            <div class="mini-box"><div class="label">State</div><div class="value"><span class="badge slate">ENTRY ALIGNED UP</span></div></div>
-            <div class="mini-box"><div class="label">Bias</div><div class="value"><span class="badge green">+1</span></div></div>
+            <div class="mini-box"><div class="label">State</div><div class="value"><span class="badge purple">CONFLICT</span></div></div>
+            <div class="mini-box"><div class="label">Bias</div><div class="value"><span class="badge amber">+0</span></div></div>
           </div>
         </div>
         <div class="journey-section">
           <div class="journey-section-title">Execution State</div>
-          <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge red">BLOCKED</span></div></div>
-          <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">Wait for valid signal</div></div>
+          <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge green">READY</span></div></div>
+          <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">Wait for confirmation</div></div>
           <div class="journey-row"><div class="journey-label">Risk</div><div><span class="badge green">LOW</span></div></div>
           <div class="journey-note">
             <div class="journey-label">Note</div>
-            <div class="journey-value">NO_SIGNAL: SELL=3 BUT DIRECTIONAL THRESHOLD IS 4</div>
+            <div class="journey-value">BUY=1/6 | SELL=3/6 | NO_SIGNAL</div>
           </div>
         </div>
       </div>
@@ -624,11 +624,11 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
         <div class="journey-section-title">Current Trade</div>
         <div class="current-trade-grid">
           <div class="mini-box"><div class="label">Direction</div><div class="value"><span class="badge slate">BEAR</span></div></div>
-          <div class="mini-box"><div class="label">Status</div><div class="value"><span class="badge green">ACTIVE</span></div></div>
-          <div class="mini-box"><div class="label">Context Time</div><div class="value value-small">2026-03-30 02:00</div></div>
-          <div class="mini-box"><div class="label">Confirmation Time</div><div class="value value-small">2026-03-30 14:00</div></div>
-          <div class="mini-box"><div class="label">Current Price</div><div class="value">183.00000</div></div>
-          <div class="mini-box"><div class="label">Move</div><div class="value">+1.14</div></div>
+          <div class="mini-box"><div class="label">Status</div><div class="value"><span class="badge green">CONFIRMED</span></div></div>
+          <div class="mini-box"><div class="label">Context Time</div><div class="value value-small">NA</div></div>
+          <div class="mini-box"><div class="label">Confirmation Time</div><div class="value value-small">NA</div></div>
+          <div class="mini-box"><div class="label">Current Price</div><div class="value">NA</div></div>
+          <div class="mini-box"><div class="label">Move</div><div class="value">NA</div></div>
         </div>
       </div>
     </div>
@@ -647,19 +647,19 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
             </div>
             <div class="price-box">
               <div class="price">1.15000</div>
-              <div class="sub">Updated 2026-03-30 23:00:00</div>
+              <div class="sub">Updated 2026-03-30 23:00</div>
             </div>
           </div>
 
           <div class="headline-grid">
-            <div class="mini-box"><div class="label">Signal</div><div class="value"><span class="badge slate">NONE</span></div></div>
-            <div class="mini-box"><div class="label">Strength</div><div class="value"><span class="badge amber">WAIT</span></div></div>
+            <div class="mini-box"><div class="label">Signal</div><div class="value"><span class="badge green">BUY</span></div></div>
+            <div class="mini-box"><div class="label">Strength</div><div class="value"><span class="badge blue">GOOD</span></div></div>
             <div class="mini-box"><div class="label">Confirmation</div><div class="value"><span class="badge amber">PENDING</span></div></div>
             <div class="mini-box"><div class="label">Journey</div><div class="value"><span class="badge green">ACTIVE</span></div></div>
           </div>
 
           <div class="section-title">Conditions</div>
-          <div class="condition-list"><div class="condition-row"><div class="condition-name">Context</div><div class="condition-state state-wait">NEUTRAL</div></div><div class="condition-row"><div class="condition-name">Setup</div><div class="condition-state state-wait">NO_SETUP</div></div><div class="condition-row"><div class="condition-name">Trigger</div><div class="condition-state state-wait">NO_TRIGGER</div></div><div class="condition-row"><div class="condition-name">Execution</div><div class="condition-state state-wait">WAIT</div></div><div class="condition-row"><div class="condition-name">JRSX</div><div class="condition-state state-wait">UP</div></div><div class="condition-row"><div class="condition-name">JRSX value</div><div class="condition-state state-wait">14.26</div></div></div>
+          <div class="condition-list"><div class="condition-row"><div class="condition-name">Close above pivot</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">MACD above zero</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">MACD above signal</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">Close above EMA20</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">EMA10 &gt; EMA20 &gt; EMA50</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">EMA50 &gt; EMA200</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">JRSX direction UP</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">JRSX zone valid</div><div class="condition-state state-no">NO</div></div></div>
 
           <div class="section-title">MTF Snapshot</div>
           <div class="condition-list">
@@ -669,8 +669,8 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
           </div>
 
           <div class="blocker">
-            <strong>Why Not Ready</strong>
-            NO_SIGNAL: SELL=3 BUT DIRECTIONAL THRESHOLD IS 4
+            <strong>Why Ready</strong>
+            BUY=1/6 | SELL=3/6 | NO_SIGNAL
             <div class="sub" style="margin-top:8px;">Confirmation: Pending</div>
           </div>
         </div>
@@ -681,22 +681,22 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
       <div class="journey-grid">
         <div class="journey-section">
           <div class="journey-section-title">JRSX Structure</div>
-          <div class="journey-row"><div><div class="journey-label">H4</div><div class="journey-sub">Authority</div></div><div><span class="badge red">DOWN (20.85)</span></div></div>
-          <div class="journey-row"><div><div class="journey-label">H1</div><div class="journey-sub">Primary</div></div><div><span class="badge green">UP (14.26)</span></div></div>
-          <div class="journey-row"><div><div class="journey-label">M30</div><div class="journey-sub">Entry</div></div><div><span class="badge green">UP (37.93)</span></div></div>
+          <div class="journey-row"><div><div class="journey-label">H4</div></div><div><span class="badge amber">NA</span></div></div>
+          <div class="journey-row"><div><div class="journey-label">H1</div></div><div><span class="badge amber">NA</span></div></div>
+          <div class="journey-row"><div><div class="journey-label">M30</div></div><div><span class="badge amber">NA</span></div></div>
           <div class="journey-summary-grid">
-            <div class="mini-box"><div class="label">State</div><div class="value"><span class="badge slate">ENTRY ALIGNED UP</span></div></div>
-            <div class="mini-box"><div class="label">Bias</div><div class="value"><span class="badge green">+1</span></div></div>
+            <div class="mini-box"><div class="label">State</div><div class="value"><span class="badge purple">CONFLICT</span></div></div>
+            <div class="mini-box"><div class="label">Bias</div><div class="value"><span class="badge amber">+0</span></div></div>
           </div>
         </div>
         <div class="journey-section">
           <div class="journey-section-title">Execution State</div>
-          <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge red">BLOCKED</span></div></div>
-          <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">Wait for valid signal</div></div>
+          <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge amber">WAIT</span></div></div>
+          <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">Wait for confirmation</div></div>
           <div class="journey-row"><div class="journey-label">Risk</div><div><span class="badge green">LOW</span></div></div>
           <div class="journey-note">
             <div class="journey-label">Note</div>
-            <div class="journey-value">NO_SIGNAL: SELL=3 BUT DIRECTIONAL THRESHOLD IS 4</div>
+            <div class="journey-value">BUY=1/6 | SELL=3/6 | NO_SIGNAL</div>
           </div>
         </div>
       </div>
@@ -704,11 +704,11 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
         <div class="journey-section-title">Current Trade</div>
         <div class="current-trade-grid">
           <div class="mini-box"><div class="label">Direction</div><div class="value"><span class="badge slate">BULL</span></div></div>
-          <div class="mini-box"><div class="label">Status</div><div class="value"><span class="badge green">ACTIVE</span></div></div>
-          <div class="mini-box"><div class="label">Context Time</div><div class="value value-small">2026-03-30 21:00</div></div>
+          <div class="mini-box"><div class="label">Status</div><div class="value"><span class="badge amber">PENDING</span></div></div>
+          <div class="mini-box"><div class="label">Context Time</div><div class="value value-small">NA</div></div>
           <div class="mini-box"><div class="label">Confirmation Time</div><div class="value value-small">NA</div></div>
-          <div class="mini-box"><div class="label">Current Price</div><div class="value">1.15000</div></div>
-          <div class="mini-box"><div class="label">Move</div><div class="value">0.00</div></div>
+          <div class="mini-box"><div class="label">Current Price</div><div class="value">NA</div></div>
+          <div class="mini-box"><div class="label">Move</div><div class="value">NA</div></div>
         </div>
       </div>
     </div>
@@ -726,20 +726,20 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
               <div class="sub">H1</div>
             </div>
             <div class="price-box">
-              <div class="price">210.50000</div>
-              <div class="sub">Updated 2026-03-30 23:00:00</div>
+              <div class="price">210.49000</div>
+              <div class="sub">Updated 2026-03-30 23:00</div>
             </div>
           </div>
 
           <div class="headline-grid">
-            <div class="mini-box"><div class="label">Signal</div><div class="value"><span class="badge slate">NONE</span></div></div>
-            <div class="mini-box"><div class="label">Strength</div><div class="value"><span class="badge amber">WAIT</span></div></div>
+            <div class="mini-box"><div class="label">Signal</div><div class="value"><span class="badge green">BUY</span></div></div>
+            <div class="mini-box"><div class="label">Strength</div><div class="value"><span class="badge blue">GOOD</span></div></div>
             <div class="mini-box"><div class="label">Confirmation</div><div class="value"><span class="badge green">CONFIRMED</span></div></div>
             <div class="mini-box"><div class="label">Journey</div><div class="value"><span class="badge green">ACTIVE</span></div></div>
           </div>
 
           <div class="section-title">Conditions</div>
-          <div class="condition-list"><div class="condition-row"><div class="condition-name">Context</div><div class="condition-state state-wait">NEUTRAL</div></div><div class="condition-row"><div class="condition-name">Setup</div><div class="condition-state state-wait">NO_SETUP</div></div><div class="condition-row"><div class="condition-name">Trigger</div><div class="condition-state state-wait">NO_TRIGGER</div></div><div class="condition-row"><div class="condition-name">Execution</div><div class="condition-state state-wait">WAIT</div></div><div class="condition-row"><div class="condition-name">JRSX</div><div class="condition-state state-wait">UP</div></div><div class="condition-row"><div class="condition-name">JRSX value</div><div class="condition-state state-wait">10.71</div></div></div>
+          <div class="condition-list"><div class="condition-row"><div class="condition-name">Close above pivot</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">MACD above zero</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">MACD above signal</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">Close above EMA20</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">EMA10 &gt; EMA20 &gt; EMA50</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">EMA50 &gt; EMA200</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">JRSX direction UP</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">JRSX zone valid</div><div class="condition-state state-no">NO</div></div></div>
 
           <div class="section-title">MTF Snapshot</div>
           <div class="condition-list">
@@ -749,8 +749,8 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
           </div>
 
           <div class="blocker">
-            <strong>Why Not Ready</strong>
-            NO_SIGNAL: SELL=3 BUT DIRECTIONAL THRESHOLD IS 4
+            <strong>Why Ready</strong>
+            BUY=1/6 | SELL=3/6 | NO_SIGNAL
             <div class="sub" style="margin-top:8px;">Confirmation: Confirmed</div>
           </div>
         </div>
@@ -761,22 +761,22 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
       <div class="journey-grid">
         <div class="journey-section">
           <div class="journey-section-title">JRSX Structure</div>
-          <div class="journey-row"><div><div class="journey-label">H4</div><div class="journey-sub">Authority</div></div><div><span class="badge red">DOWN (11.44)</span></div></div>
-          <div class="journey-row"><div><div class="journey-label">H1</div><div class="journey-sub">Primary</div></div><div><span class="badge green">UP (10.72)</span></div></div>
-          <div class="journey-row"><div><div class="journey-label">M30</div><div class="journey-sub">Entry</div></div><div><span class="badge green">UP (40.06)</span></div></div>
+          <div class="journey-row"><div><div class="journey-label">H4</div></div><div><span class="badge amber">NA</span></div></div>
+          <div class="journey-row"><div><div class="journey-label">H1</div></div><div><span class="badge amber">NA</span></div></div>
+          <div class="journey-row"><div><div class="journey-label">M30</div></div><div><span class="badge amber">NA</span></div></div>
           <div class="journey-summary-grid">
-            <div class="mini-box"><div class="label">State</div><div class="value"><span class="badge slate">ENTRY ALIGNED UP</span></div></div>
-            <div class="mini-box"><div class="label">Bias</div><div class="value"><span class="badge green">+1</span></div></div>
+            <div class="mini-box"><div class="label">State</div><div class="value"><span class="badge purple">CONFLICT</span></div></div>
+            <div class="mini-box"><div class="label">Bias</div><div class="value"><span class="badge amber">+0</span></div></div>
           </div>
         </div>
         <div class="journey-section">
           <div class="journey-section-title">Execution State</div>
-          <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge red">BLOCKED</span></div></div>
-          <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">Wait for valid signal</div></div>
+          <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge green">READY</span></div></div>
+          <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">Wait for confirmation</div></div>
           <div class="journey-row"><div class="journey-label">Risk</div><div><span class="badge green">LOW</span></div></div>
           <div class="journey-note">
             <div class="journey-label">Note</div>
-            <div class="journey-value">NO_SIGNAL: SELL=3 BUT DIRECTIONAL THRESHOLD IS 4</div>
+            <div class="journey-value">BUY=1/6 | SELL=3/6 | NO_SIGNAL</div>
           </div>
         </div>
       </div>
@@ -784,11 +784,11 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
         <div class="journey-section-title">Current Trade</div>
         <div class="current-trade-grid">
           <div class="mini-box"><div class="label">Direction</div><div class="value"><span class="badge slate">BEAR</span></div></div>
-          <div class="mini-box"><div class="label">Status</div><div class="value"><span class="badge green">ACTIVE</span></div></div>
-          <div class="mini-box"><div class="label">Context Time</div><div class="value value-small">2026-03-27 11:00</div></div>
-          <div class="mini-box"><div class="label">Confirmation Time</div><div class="value value-small">2026-03-30 10:00</div></div>
-          <div class="mini-box"><div class="label">Current Price</div><div class="value">210.50000</div></div>
-          <div class="mini-box"><div class="label">Move</div><div class="value">+2.30</div></div>
+          <div class="mini-box"><div class="label">Status</div><div class="value"><span class="badge green">CONFIRMED</span></div></div>
+          <div class="mini-box"><div class="label">Context Time</div><div class="value value-small">NA</div></div>
+          <div class="mini-box"><div class="label">Confirmation Time</div><div class="value value-small">NA</div></div>
+          <div class="mini-box"><div class="label">Current Price</div><div class="value">NA</div></div>
+          <div class="mini-box"><div class="label">Move</div><div class="value">NA</div></div>
         </div>
       </div>
     </div>
@@ -807,19 +807,19 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
             </div>
             <div class="price-box">
               <div class="price">1.32000</div>
-              <div class="sub">Updated 2026-03-30 23:00:00</div>
+              <div class="sub">Updated 2026-03-30 23:00</div>
             </div>
           </div>
 
           <div class="headline-grid">
-            <div class="mini-box"><div class="label">Signal</div><div class="value"><span class="badge slate">NONE</span></div></div>
-            <div class="mini-box"><div class="label">Strength</div><div class="value"><span class="badge amber">WAIT</span></div></div>
+            <div class="mini-box"><div class="label">Signal</div><div class="value"><span class="badge red">SELL</span></div></div>
+            <div class="mini-box"><div class="label">Strength</div><div class="value"><span class="badge blue">GOOD</span></div></div>
             <div class="mini-box"><div class="label">Confirmation</div><div class="value"><span class="badge amber">PENDING</span></div></div>
             <div class="mini-box"><div class="label">Journey</div><div class="value"><span class="badge green">ACTIVE</span></div></div>
           </div>
 
           <div class="section-title">Conditions</div>
-          <div class="condition-list"><div class="condition-row"><div class="condition-name">Context</div><div class="condition-state state-wait">NEUTRAL</div></div><div class="condition-row"><div class="condition-name">Setup</div><div class="condition-state state-wait">NO_SETUP</div></div><div class="condition-row"><div class="condition-name">Trigger</div><div class="condition-state state-wait">NO_TRIGGER</div></div><div class="condition-row"><div class="condition-name">Execution</div><div class="condition-state state-wait">WAIT</div></div><div class="condition-row"><div class="condition-name">JRSX</div><div class="condition-state state-wait">DOWN</div></div><div class="condition-row"><div class="condition-name">JRSX value</div><div class="condition-state state-wait">9.16</div></div></div>
+          <div class="condition-list"><div class="condition-row"><div class="condition-name">Close below pivot</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">MACD below zero</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">MACD below signal</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">Close below EMA20</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">EMA10 &lt; EMA20 &lt; EMA50</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">EMA50 &lt; EMA200</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">JRSX direction DOWN</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">JRSX zone valid</div><div class="condition-state state-no">NO</div></div></div>
 
           <div class="section-title">MTF Snapshot</div>
           <div class="condition-list">
@@ -829,8 +829,8 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
           </div>
 
           <div class="blocker">
-            <strong>Why Not Ready</strong>
-            NO_SIGNAL: SELL=3 BUT DIRECTIONAL THRESHOLD IS 4
+            <strong>Why Ready</strong>
+            BUY=1/6 | SELL=3/6 | NO_SIGNAL
             <div class="sub" style="margin-top:8px;">Confirmation: Pending</div>
           </div>
         </div>
@@ -841,22 +841,22 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
       <div class="journey-grid">
         <div class="journey-section">
           <div class="journey-section-title">JRSX Structure</div>
-          <div class="journey-row"><div><div class="journey-label">H4</div><div class="journey-sub">Authority</div></div><div><span class="badge red">DOWN (13.37)</span></div></div>
-          <div class="journey-row"><div><div class="journey-label">H1</div><div class="journey-sub">Primary</div></div><div><span class="badge red">DOWN (9.15)</span></div></div>
-          <div class="journey-row"><div><div class="journey-label">M30</div><div class="journey-sub">Entry</div></div><div><span class="badge green">UP (29.50)</span></div></div>
+          <div class="journey-row"><div><div class="journey-label">H4</div></div><div><span class="badge amber">NA</span></div></div>
+          <div class="journey-row"><div><div class="journey-label">H1</div></div><div><span class="badge amber">NA</span></div></div>
+          <div class="journey-row"><div><div class="journey-label">M30</div></div><div><span class="badge amber">NA</span></div></div>
           <div class="journey-summary-grid">
-            <div class="mini-box"><div class="label">State</div><div class="value"><span class="badge slate">DOWN TREND + PULLBACK</span></div></div>
-            <div class="mini-box"><div class="label">Bias</div><div class="value"><span class="badge red">-1</span></div></div>
+            <div class="mini-box"><div class="label">State</div><div class="value"><span class="badge purple">CONFLICT</span></div></div>
+            <div class="mini-box"><div class="label">Bias</div><div class="value"><span class="badge amber">+0</span></div></div>
           </div>
         </div>
         <div class="journey-section">
           <div class="journey-section-title">Execution State</div>
-          <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge red">BLOCKED</span></div></div>
-          <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">Wait for valid signal</div></div>
+          <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge amber">WAIT</span></div></div>
+          <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">Wait for confirmation</div></div>
           <div class="journey-row"><div class="journey-label">Risk</div><div><span class="badge blue">MEDIUM</span></div></div>
           <div class="journey-note">
             <div class="journey-label">Note</div>
-            <div class="journey-value">NO_SIGNAL: SELL=3 BUT DIRECTIONAL THRESHOLD IS 4</div>
+            <div class="journey-value">BUY=1/6 | SELL=3/6 | NO_SIGNAL</div>
           </div>
         </div>
       </div>
@@ -864,11 +864,11 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
         <div class="journey-section-title">Current Trade</div>
         <div class="current-trade-grid">
           <div class="mini-box"><div class="label">Direction</div><div class="value"><span class="badge slate">BEAR</span></div></div>
-          <div class="mini-box"><div class="label">Status</div><div class="value"><span class="badge green">ACTIVE</span></div></div>
-          <div class="mini-box"><div class="label">Context Time</div><div class="value value-small">2026-03-25 16:00</div></div>
+          <div class="mini-box"><div class="label">Status</div><div class="value"><span class="badge amber">PENDING</span></div></div>
+          <div class="mini-box"><div class="label">Context Time</div><div class="value value-small">NA</div></div>
           <div class="mini-box"><div class="label">Confirmation Time</div><div class="value value-small">NA</div></div>
-          <div class="mini-box"><div class="label">Current Price</div><div class="value">1.32000</div></div>
-          <div class="mini-box"><div class="label">Move</div><div class="value">+0.02</div></div>
+          <div class="mini-box"><div class="label">Current Price</div><div class="value">NA</div></div>
+          <div class="mini-box"><div class="label">Move</div><div class="value">NA</div></div>
         </div>
       </div>
     </div>
@@ -887,7 +887,7 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
             </div>
             <div class="price-box">
               <div class="price">0.57000</div>
-              <div class="sub">Updated 2026-03-30 23:00:00</div>
+              <div class="sub">Updated 2026-03-30 23:00</div>
             </div>
           </div>
 
@@ -899,7 +899,7 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
           </div>
 
           <div class="section-title">Conditions</div>
-          <div class="condition-list"><div class="condition-row"><div class="condition-name">Context</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">MACD below signal</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">MACD below zero</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">Price below EMA10</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">EMA10 below pivot</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">JRSX direction</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">Trigger</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">Execution</div><div class="condition-state state-wait">WAIT</div></div></div>
+          <div class="condition-list"><div class="condition-row"><div class="condition-name">Close below pivot</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">MACD below zero</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">MACD below signal</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">Close below EMA20</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">EMA10 &lt; EMA20 &lt; EMA50</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">EMA50 &lt; EMA200</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">JRSX direction DOWN</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">JRSX zone valid</div><div class="condition-state state-yes">YES</div></div></div>
 
           <div class="section-title">MTF Snapshot</div>
           <div class="condition-list">
@@ -910,7 +910,7 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
 
           <div class="blocker">
             <strong>Why Ready</strong>
-            Conflict ratio is high. Wait for cleaner follow-through.
+            BUY=2/6 | SELL=4/6 | SELL
             <div class="sub" style="margin-top:8px;">Confirmation: Pending</div>
           </div>
         </div>
@@ -921,22 +921,22 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
       <div class="journey-grid">
         <div class="journey-section">
           <div class="journey-section-title">JRSX Structure</div>
-          <div class="journey-row"><div><div class="journey-label">H4</div><div class="journey-sub">Authority</div></div><div><span class="badge red">DOWN (10.29)</span></div></div>
-          <div class="journey-row"><div><div class="journey-label">H1</div><div class="journey-sub">Primary</div></div><div><span class="badge green">UP (33.30)</span></div></div>
-          <div class="journey-row"><div><div class="journey-label">M30</div><div class="journey-sub">Entry</div></div><div><span class="badge green">UP (50.43)</span></div></div>
+          <div class="journey-row"><div><div class="journey-label">H4</div></div><div><span class="badge amber">NA</span></div></div>
+          <div class="journey-row"><div><div class="journey-label">H1</div></div><div><span class="badge amber">NA</span></div></div>
+          <div class="journey-row"><div><div class="journey-label">M30</div></div><div><span class="badge amber">NA</span></div></div>
           <div class="journey-summary-grid">
-            <div class="mini-box"><div class="label">State</div><div class="value"><span class="badge slate">ENTRY ALIGNED UP</span></div></div>
-            <div class="mini-box"><div class="label">Bias</div><div class="value"><span class="badge green">+1</span></div></div>
+            <div class="mini-box"><div class="label">State</div><div class="value"><span class="badge purple">CONFLICT</span></div></div>
+            <div class="mini-box"><div class="label">Bias</div><div class="value"><span class="badge amber">+0</span></div></div>
           </div>
         </div>
         <div class="journey-section">
           <div class="journey-section-title">Execution State</div>
           <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge amber">WAIT</span></div></div>
-          <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">Entry timeframe aligned</div></div>
+          <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">Wait for confirmation</div></div>
           <div class="journey-row"><div class="journey-label">Risk</div><div><span class="badge green">LOW</span></div></div>
           <div class="journey-note">
             <div class="journey-label">Note</div>
-            <div class="journey-value">Conflict ratio is high. Wait for cleaner follow-through.</div>
+            <div class="journey-value">BUY=2/6 | SELL=4/6 | SELL</div>
           </div>
         </div>
       </div>
@@ -944,11 +944,11 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
         <div class="journey-section-title">Current Trade</div>
         <div class="current-trade-grid">
           <div class="mini-box"><div class="label">Direction</div><div class="value"><span class="badge slate">BEAR</span></div></div>
-          <div class="mini-box"><div class="label">Status</div><div class="value"><span class="badge green">ACTIVE</span></div></div>
-          <div class="mini-box"><div class="label">Context Time</div><div class="value value-small">2026-03-25 05:00</div></div>
+          <div class="mini-box"><div class="label">Status</div><div class="value"><span class="badge amber">PENDING</span></div></div>
+          <div class="mini-box"><div class="label">Context Time</div><div class="value value-small">NA</div></div>
           <div class="mini-box"><div class="label">Confirmation Time</div><div class="value value-small">NA</div></div>
-          <div class="mini-box"><div class="label">Current Price</div><div class="value">0.57000</div></div>
-          <div class="mini-box"><div class="label">Move</div><div class="value">+0.01</div></div>
+          <div class="mini-box"><div class="label">Current Price</div><div class="value">NA</div></div>
+          <div class="mini-box"><div class="label">Move</div><div class="value">NA</div></div>
         </div>
       </div>
     </div>
@@ -967,7 +967,7 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
             </div>
             <div class="price-box">
               <div class="price">3550.35000</div>
-              <div class="sub">Updated 2026-03-30 18:00:00</div>
+              <div class="sub">Updated 2026-03-30 18:00</div>
             </div>
           </div>
 
@@ -979,7 +979,7 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
           </div>
 
           <div class="section-title">Conditions</div>
-          <div class="condition-list"><div class="condition-row"><div class="condition-name">Context</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">MACD above signal</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">MACD above zero</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">Price above EMA10</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">EMA10 above pivot</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">JRSX direction</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">Trigger</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">Execution</div><div class="condition-state state-wait">WAIT</div></div></div>
+          <div class="condition-list"><div class="condition-row"><div class="condition-name">Close above pivot</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">MACD above zero</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">MACD above signal</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">Close above EMA20</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">EMA10 &gt; EMA20 &gt; EMA50</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">EMA50 &gt; EMA200</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">JRSX direction UP</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">JRSX zone valid</div><div class="condition-state state-no">NO</div></div></div>
 
           <div class="section-title">MTF Snapshot</div>
           <div class="condition-list">
@@ -990,7 +990,7 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
 
           <div class="blocker">
             <strong>Why Ready</strong>
-            BUY_SIGNAL_FROM_6_CONDITION_MODEL
+            BUY=4/6 | SELL=0/6 | BUY
             <div class="sub" style="margin-top:8px;">Confirmation: Confirmed</div>
           </div>
         </div>
@@ -1001,22 +1001,22 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
       <div class="journey-grid">
         <div class="journey-section">
           <div class="journey-section-title">JRSX Structure</div>
-          <div class="journey-row"><div><div class="journey-label">H4</div><div class="journey-sub">Authority</div></div><div><span class="badge amber">NA</span></div></div>
-          <div class="journey-row"><div><div class="journey-label">H1</div><div class="journey-sub">Primary</div></div><div><span class="badge amber">NA</span></div></div>
-          <div class="journey-row"><div><div class="journey-label">M30</div><div class="journey-sub">Entry</div></div><div><span class="badge amber">NA</span></div></div>
+          <div class="journey-row"><div><div class="journey-label">H4</div></div><div><span class="badge amber">NA</span></div></div>
+          <div class="journey-row"><div><div class="journey-label">H1</div></div><div><span class="badge amber">NA</span></div></div>
+          <div class="journey-row"><div><div class="journey-label">M30</div></div><div><span class="badge amber">NA</span></div></div>
           <div class="journey-summary-grid">
-            <div class="mini-box"><div class="label">State</div><div class="value"><span class="badge slate">MIXED</span></div></div>
+            <div class="mini-box"><div class="label">State</div><div class="value"><span class="badge purple">CONFLICT</span></div></div>
             <div class="mini-box"><div class="label">Bias</div><div class="value"><span class="badge amber">+0</span></div></div>
           </div>
         </div>
         <div class="journey-section">
           <div class="journey-section-title">Execution State</div>
           <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge green">READY</span></div></div>
-          <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">Manage active trade</div></div>
+          <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">Wait for confirmation</div></div>
           <div class="journey-row"><div class="journey-label">Risk</div><div><span class="badge green">LOW</span></div></div>
           <div class="journey-note">
             <div class="journey-label">Note</div>
-            <div class="journey-value">BUY_SIGNAL_FROM_6_CONDITION_MODEL</div>
+            <div class="journey-value">BUY=4/6 | SELL=0/6 | BUY</div>
           </div>
         </div>
       </div>
@@ -1024,11 +1024,11 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
         <div class="journey-section-title">Current Trade</div>
         <div class="current-trade-grid">
           <div class="mini-box"><div class="label">Direction</div><div class="value"><span class="badge slate">BULL</span></div></div>
-          <div class="mini-box"><div class="label">Status</div><div class="value"><span class="badge green">ACTIVE</span></div></div>
-          <div class="mini-box"><div class="label">Context Time</div><div class="value value-small">2026-03-27 16:00</div></div>
-          <div class="mini-box"><div class="label">Confirmation Time</div><div class="value value-small">2026-03-27 19:00</div></div>
-          <div class="mini-box"><div class="label">Current Price</div><div class="value">3550.35000</div></div>
-          <div class="mini-box"><div class="label">Move</div><div class="value">+93.00</div></div>
+          <div class="mini-box"><div class="label">Status</div><div class="value"><span class="badge green">CONFIRMED</span></div></div>
+          <div class="mini-box"><div class="label">Context Time</div><div class="value value-small">NA</div></div>
+          <div class="mini-box"><div class="label">Confirmation Time</div><div class="value value-small">NA</div></div>
+          <div class="mini-box"><div class="label">Current Price</div><div class="value">NA</div></div>
+          <div class="mini-box"><div class="label">Move</div><div class="value">NA</div></div>
         </div>
       </div>
     </div>
@@ -1047,7 +1047,7 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
             </div>
             <div class="price-box">
               <div class="price">6337.20000</div>
-              <div class="sub">Updated 2026-03-30 23:00:00</div>
+              <div class="sub">Updated 2026-03-30 23:00</div>
             </div>
           </div>
 
@@ -1059,7 +1059,7 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
           </div>
 
           <div class="section-title">Conditions</div>
-          <div class="condition-list"><div class="condition-row"><div class="condition-name">Context</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">MACD below signal</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">MACD below zero</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">Price below EMA10</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">EMA10 below pivot</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">JRSX direction</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">Trigger</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">Execution</div><div class="condition-state state-wait">WAIT</div></div></div>
+          <div class="condition-list"><div class="condition-row"><div class="condition-name">Close below pivot</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">MACD below zero</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">MACD below signal</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">Close below EMA20</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">EMA10 &lt; EMA20 &lt; EMA50</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">EMA50 &lt; EMA200</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">JRSX direction DOWN</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">JRSX zone valid</div><div class="condition-state state-yes">YES</div></div></div>
 
           <div class="section-title">MTF Snapshot</div>
           <div class="condition-list">
@@ -1070,7 +1070,7 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
 
           <div class="blocker">
             <strong>Why Ready</strong>
-            Conflict ratio is high. Wait for cleaner follow-through.
+            BUY=1/6 | SELL=5/6 | SELL
             <div class="sub" style="margin-top:8px;">Confirmation: Confirmed</div>
           </div>
         </div>
@@ -1081,22 +1081,22 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
       <div class="journey-grid">
         <div class="journey-section">
           <div class="journey-section-title">JRSX Structure</div>
-          <div class="journey-row"><div><div class="journey-label">H4</div><div class="journey-sub">Authority</div></div><div><span class="badge green">UP (24.02)</span></div></div>
-          <div class="journey-row"><div><div class="journey-label">H1</div><div class="journey-sub">Primary</div></div><div><span class="badge red">DOWN (35.97)</span></div></div>
-          <div class="journey-row"><div><div class="journey-label">M30</div><div class="journey-sub">Entry</div></div><div><span class="badge red">DOWN (18.48)</span></div></div>
+          <div class="journey-row"><div><div class="journey-label">H4</div></div><div><span class="badge amber">NA</span></div></div>
+          <div class="journey-row"><div><div class="journey-label">H1</div></div><div><span class="badge amber">NA</span></div></div>
+          <div class="journey-row"><div><div class="journey-label">M30</div></div><div><span class="badge amber">NA</span></div></div>
           <div class="journey-summary-grid">
-            <div class="mini-box"><div class="label">State</div><div class="value"><span class="badge slate">ENTRY ALIGNED DOWN</span></div></div>
-            <div class="mini-box"><div class="label">Bias</div><div class="value"><span class="badge red">-1</span></div></div>
+            <div class="mini-box"><div class="label">State</div><div class="value"><span class="badge purple">CONFLICT</span></div></div>
+            <div class="mini-box"><div class="label">Bias</div><div class="value"><span class="badge amber">+0</span></div></div>
           </div>
         </div>
         <div class="journey-section">
           <div class="journey-section-title">Execution State</div>
           <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge green">READY</span></div></div>
-          <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">Manage active trade</div></div>
+          <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">Wait for confirmation</div></div>
           <div class="journey-row"><div class="journey-label">Risk</div><div><span class="badge green">LOW</span></div></div>
           <div class="journey-note">
             <div class="journey-label">Note</div>
-            <div class="journey-value">Conflict ratio is high. Wait for cleaner follow-through.</div>
+            <div class="journey-value">BUY=1/6 | SELL=5/6 | SELL</div>
           </div>
         </div>
       </div>
@@ -1104,11 +1104,11 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
         <div class="journey-section-title">Current Trade</div>
         <div class="current-trade-grid">
           <div class="mini-box"><div class="label">Direction</div><div class="value"><span class="badge slate">BEAR</span></div></div>
-          <div class="mini-box"><div class="label">Status</div><div class="value"><span class="badge green">ACTIVE</span></div></div>
-          <div class="mini-box"><div class="label">Context Time</div><div class="value value-small">2026-03-26 01:00</div></div>
-          <div class="mini-box"><div class="label">Confirmation Time</div><div class="value value-small">2026-03-26 05:00</div></div>
-          <div class="mini-box"><div class="label">Current Price</div><div class="value">6335.50000</div></div>
-          <div class="mini-box"><div class="label">Move</div><div class="value">+245.40</div></div>
+          <div class="mini-box"><div class="label">Status</div><div class="value"><span class="badge green">CONFIRMED</span></div></div>
+          <div class="mini-box"><div class="label">Context Time</div><div class="value value-small">NA</div></div>
+          <div class="mini-box"><div class="label">Confirmation Time</div><div class="value value-small">NA</div></div>
+          <div class="mini-box"><div class="label">Current Price</div><div class="value">NA</div></div>
+          <div class="mini-box"><div class="label">Move</div><div class="value">NA</div></div>
         </div>
       </div>
     </div>
@@ -1127,19 +1127,19 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
             </div>
             <div class="price-box">
               <div class="price">1.39000</div>
-              <div class="sub">Updated 2026-03-30 23:00:00</div>
+              <div class="sub">Updated 2026-03-30 23:00</div>
             </div>
           </div>
 
           <div class="headline-grid">
-            <div class="mini-box"><div class="label">Signal</div><div class="value"><span class="badge slate">NONE</span></div></div>
-            <div class="mini-box"><div class="label">Strength</div><div class="value"><span class="badge amber">WAIT</span></div></div>
+            <div class="mini-box"><div class="label">Signal</div><div class="value"><span class="badge red">SELL</span></div></div>
+            <div class="mini-box"><div class="label">Strength</div><div class="value"><span class="badge blue">GOOD</span></div></div>
             <div class="mini-box"><div class="label">Confirmation</div><div class="value"><span class="badge amber">PENDING</span></div></div>
             <div class="mini-box"><div class="label">Journey</div><div class="value"><span class="badge green">ACTIVE</span></div></div>
           </div>
 
           <div class="section-title">Conditions</div>
-          <div class="condition-list"><div class="condition-row"><div class="condition-name">Context</div><div class="condition-state state-wait">NEUTRAL</div></div><div class="condition-row"><div class="condition-name">Setup</div><div class="condition-state state-wait">NO_SETUP</div></div><div class="condition-row"><div class="condition-name">Trigger</div><div class="condition-state state-wait">NO_TRIGGER</div></div><div class="condition-row"><div class="condition-name">Execution</div><div class="condition-state state-wait">WAIT</div></div><div class="condition-row"><div class="condition-name">JRSX</div><div class="condition-state state-wait">DOWN</div></div><div class="condition-row"><div class="condition-name">JRSX value</div><div class="condition-state state-wait">74.56</div></div></div>
+          <div class="condition-list"><div class="condition-row"><div class="condition-name">Close below pivot</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">MACD below zero</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">MACD below signal</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">Close below EMA20</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">EMA10 &lt; EMA20 &lt; EMA50</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">EMA50 &lt; EMA200</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">JRSX direction DOWN</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">JRSX zone valid</div><div class="condition-state state-no">NO</div></div></div>
 
           <div class="section-title">MTF Snapshot</div>
           <div class="condition-list">
@@ -1149,8 +1149,8 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
           </div>
 
           <div class="blocker">
-            <strong>Why Not Ready</strong>
-            Conflict ratio is high. Wait for cleaner follow-through.
+            <strong>Why Ready</strong>
+            BUY=3/6 | SELL=3/6 | NEUTRAL
             <div class="sub" style="margin-top:8px;">Confirmation: Pending</div>
           </div>
         </div>
@@ -1161,22 +1161,22 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
       <div class="journey-grid">
         <div class="journey-section">
           <div class="journey-section-title">JRSX Structure</div>
-          <div class="journey-row"><div><div class="journey-label">H4</div><div class="journey-sub">Authority</div></div><div><span class="badge red">DOWN (97.35)</span></div></div>
-          <div class="journey-row"><div><div class="journey-label">H1</div><div class="journey-sub">Primary</div></div><div><span class="badge red">DOWN (74.56)</span></div></div>
-          <div class="journey-row"><div><div class="journey-label">M30</div><div class="journey-sub">Entry</div></div><div><span class="badge green">UP (52.54)</span></div></div>
+          <div class="journey-row"><div><div class="journey-label">H4</div></div><div><span class="badge amber">NA</span></div></div>
+          <div class="journey-row"><div><div class="journey-label">H1</div></div><div><span class="badge amber">NA</span></div></div>
+          <div class="journey-row"><div><div class="journey-label">M30</div></div><div><span class="badge amber">NA</span></div></div>
           <div class="journey-summary-grid">
-            <div class="mini-box"><div class="label">State</div><div class="value"><span class="badge slate">DOWN TREND + PULLBACK</span></div></div>
-            <div class="mini-box"><div class="label">Bias</div><div class="value"><span class="badge red">-1</span></div></div>
+            <div class="mini-box"><div class="label">State</div><div class="value"><span class="badge purple">CONFLICT</span></div></div>
+            <div class="mini-box"><div class="label">Bias</div><div class="value"><span class="badge amber">+0</span></div></div>
           </div>
         </div>
         <div class="journey-section">
           <div class="journey-section-title">Execution State</div>
-          <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge red">BLOCKED</span></div></div>
-          <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">Wait for valid signal</div></div>
+          <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge amber">WAIT</span></div></div>
+          <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">Wait for confirmation</div></div>
           <div class="journey-row"><div class="journey-label">Risk</div><div><span class="badge blue">MEDIUM</span></div></div>
           <div class="journey-note">
             <div class="journey-label">Note</div>
-            <div class="journey-value">Conflict ratio is high. Wait for cleaner follow-through.</div>
+            <div class="journey-value">BUY=3/6 | SELL=3/6 | NEUTRAL</div>
           </div>
         </div>
       </div>
@@ -1184,11 +1184,11 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
         <div class="journey-section-title">Current Trade</div>
         <div class="current-trade-grid">
           <div class="mini-box"><div class="label">Direction</div><div class="value"><span class="badge slate">BULL</span></div></div>
-          <div class="mini-box"><div class="label">Status</div><div class="value"><span class="badge green">ACTIVE</span></div></div>
-          <div class="mini-box"><div class="label">Context Time</div><div class="value value-small">2026-03-30 01:00</div></div>
+          <div class="mini-box"><div class="label">Status</div><div class="value"><span class="badge amber">PENDING</span></div></div>
+          <div class="mini-box"><div class="label">Context Time</div><div class="value value-small">NA</div></div>
           <div class="mini-box"><div class="label">Confirmation Time</div><div class="value value-small">NA</div></div>
-          <div class="mini-box"><div class="label">Current Price</div><div class="value">1.39000</div></div>
-          <div class="mini-box"><div class="label">Move</div><div class="value">0.00</div></div>
+          <div class="mini-box"><div class="label">Current Price</div><div class="value">NA</div></div>
+          <div class="mini-box"><div class="label">Move</div><div class="value">NA</div></div>
         </div>
       </div>
     </div>
@@ -1207,19 +1207,19 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
             </div>
             <div class="price-box">
               <div class="price">0.80000</div>
-              <div class="sub">Updated 2026-03-30 22:00:00</div>
+              <div class="sub">Updated 2026-03-30 22:00</div>
             </div>
           </div>
 
           <div class="headline-grid">
-            <div class="mini-box"><div class="label">Signal</div><div class="value"><span class="badge slate">NONE</span></div></div>
-            <div class="mini-box"><div class="label">Strength</div><div class="value"><span class="badge amber">WAIT</span></div></div>
+            <div class="mini-box"><div class="label">Signal</div><div class="value"><span class="badge red">SELL</span></div></div>
+            <div class="mini-box"><div class="label">Strength</div><div class="value"><span class="badge blue">GOOD</span></div></div>
             <div class="mini-box"><div class="label">Confirmation</div><div class="value"><span class="badge amber">PENDING</span></div></div>
             <div class="mini-box"><div class="label">Journey</div><div class="value"><span class="badge green">ACTIVE</span></div></div>
           </div>
 
           <div class="section-title">Conditions</div>
-          <div class="condition-list"><div class="condition-row"><div class="condition-name">Context</div><div class="condition-state state-wait">NEUTRAL</div></div><div class="condition-row"><div class="condition-name">Setup</div><div class="condition-state state-wait">NO_SETUP</div></div><div class="condition-row"><div class="condition-name">Trigger</div><div class="condition-state state-wait">NO_TRIGGER</div></div><div class="condition-row"><div class="condition-name">Execution</div><div class="condition-state state-wait">WAIT</div></div><div class="condition-row"><div class="condition-name">JRSX</div><div class="condition-state state-wait">DOWN</div></div><div class="condition-row"><div class="condition-name">JRSX value</div><div class="condition-state state-wait">64.31</div></div></div>
+          <div class="condition-list"><div class="condition-row"><div class="condition-name">Close below pivot</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">MACD below zero</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">MACD below signal</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">Close below EMA20</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">EMA10 &lt; EMA20 &lt; EMA50</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">EMA50 &lt; EMA200</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">JRSX direction DOWN</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">JRSX zone valid</div><div class="condition-state state-no">NO</div></div></div>
 
           <div class="section-title">MTF Snapshot</div>
           <div class="condition-list">
@@ -1229,8 +1229,8 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
           </div>
 
           <div class="blocker">
-            <strong>Why Not Ready</strong>
-            Conflict ratio is high. Wait for cleaner follow-through.
+            <strong>Why Ready</strong>
+            BUY=3/6 | SELL=3/6 | NEUTRAL
             <div class="sub" style="margin-top:8px;">Confirmation: Pending</div>
           </div>
         </div>
@@ -1241,22 +1241,22 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
       <div class="journey-grid">
         <div class="journey-section">
           <div class="journey-section-title">JRSX Structure</div>
-          <div class="journey-row"><div><div class="journey-label">H4</div><div class="journey-sub">Authority</div></div><div><span class="badge green">UP (96.64)</span></div></div>
-          <div class="journey-row"><div><div class="journey-label">H1</div><div class="journey-sub">Primary</div></div><div><span class="badge red">DOWN (64.32)</span></div></div>
-          <div class="journey-row"><div><div class="journey-label">M30</div><div class="journey-sub">Entry</div></div><div><span class="badge red">DOWN (50.96)</span></div></div>
+          <div class="journey-row"><div><div class="journey-label">H4</div></div><div><span class="badge amber">NA</span></div></div>
+          <div class="journey-row"><div><div class="journey-label">H1</div></div><div><span class="badge amber">NA</span></div></div>
+          <div class="journey-row"><div><div class="journey-label">M30</div></div><div><span class="badge amber">NA</span></div></div>
           <div class="journey-summary-grid">
-            <div class="mini-box"><div class="label">State</div><div class="value"><span class="badge slate">ENTRY ALIGNED DOWN</span></div></div>
-            <div class="mini-box"><div class="label">Bias</div><div class="value"><span class="badge red">-1</span></div></div>
+            <div class="mini-box"><div class="label">State</div><div class="value"><span class="badge purple">CONFLICT</span></div></div>
+            <div class="mini-box"><div class="label">Bias</div><div class="value"><span class="badge amber">+0</span></div></div>
           </div>
         </div>
         <div class="journey-section">
           <div class="journey-section-title">Execution State</div>
-          <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge red">BLOCKED</span></div></div>
-          <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">Wait for valid signal</div></div>
+          <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge amber">WAIT</span></div></div>
+          <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">Wait for confirmation</div></div>
           <div class="journey-row"><div class="journey-label">Risk</div><div><span class="badge green">LOW</span></div></div>
           <div class="journey-note">
             <div class="journey-label">Note</div>
-            <div class="journey-value">Conflict ratio is high. Wait for cleaner follow-through.</div>
+            <div class="journey-value">BUY=3/6 | SELL=3/6 | NEUTRAL</div>
           </div>
         </div>
       </div>
@@ -1264,11 +1264,11 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
         <div class="journey-section-title">Current Trade</div>
         <div class="current-trade-grid">
           <div class="mini-box"><div class="label">Direction</div><div class="value"><span class="badge slate">BULL</span></div></div>
-          <div class="mini-box"><div class="label">Status</div><div class="value"><span class="badge green">ACTIVE</span></div></div>
-          <div class="mini-box"><div class="label">Context Time</div><div class="value value-small">2026-03-27 00:00</div></div>
+          <div class="mini-box"><div class="label">Status</div><div class="value"><span class="badge amber">PENDING</span></div></div>
+          <div class="mini-box"><div class="label">Context Time</div><div class="value value-small">NA</div></div>
           <div class="mini-box"><div class="label">Confirmation Time</div><div class="value value-small">NA</div></div>
-          <div class="mini-box"><div class="label">Current Price</div><div class="value">0.80000</div></div>
-          <div class="mini-box"><div class="label">Move</div><div class="value">+0.01</div></div>
+          <div class="mini-box"><div class="label">Current Price</div><div class="value">NA</div></div>
+          <div class="mini-box"><div class="label">Move</div><div class="value">NA</div></div>
         </div>
       </div>
     </div>
@@ -1286,20 +1286,20 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
               <div class="sub">H1</div>
             </div>
             <div class="price-box">
-              <div class="price">159.69000</div>
-              <div class="sub">Updated 2026-03-30 23:00:00</div>
+              <div class="price">159.70000</div>
+              <div class="sub">Updated 2026-03-30 23:00</div>
             </div>
           </div>
 
           <div class="headline-grid">
-            <div class="mini-box"><div class="label">Signal</div><div class="value"><span class="badge slate">NONE</span></div></div>
-            <div class="mini-box"><div class="label">Strength</div><div class="value"><span class="badge amber">WAIT</span></div></div>
+            <div class="mini-box"><div class="label">Signal</div><div class="value"><span class="badge green">BUY</span></div></div>
+            <div class="mini-box"><div class="label">Strength</div><div class="value"><span class="badge blue">GOOD</span></div></div>
             <div class="mini-box"><div class="label">Confirmation</div><div class="value"><span class="badge amber">PENDING</span></div></div>
             <div class="mini-box"><div class="label">Journey</div><div class="value"><span class="badge green">ACTIVE</span></div></div>
           </div>
 
           <div class="section-title">Conditions</div>
-          <div class="condition-list"><div class="condition-row"><div class="condition-name">Context</div><div class="condition-state state-wait">NEUTRAL</div></div><div class="condition-row"><div class="condition-name">Setup</div><div class="condition-state state-wait">NO_SETUP</div></div><div class="condition-row"><div class="condition-name">Trigger</div><div class="condition-state state-wait">NO_TRIGGER</div></div><div class="condition-row"><div class="condition-name">Execution</div><div class="condition-state state-wait">WAIT</div></div><div class="condition-row"><div class="condition-name">JRSX</div><div class="condition-state state-wait">UP</div></div><div class="condition-row"><div class="condition-name">JRSX value</div><div class="condition-state state-wait">40.10</div></div></div>
+          <div class="condition-list"><div class="condition-row"><div class="condition-name">Close above pivot</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">MACD above zero</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">MACD above signal</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">Close above EMA20</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">EMA10 &gt; EMA20 &gt; EMA50</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">EMA50 &gt; EMA200</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">JRSX direction UP</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">JRSX zone valid</div><div class="condition-state state-no">NO</div></div></div>
 
           <div class="section-title">MTF Snapshot</div>
           <div class="condition-list">
@@ -1309,8 +1309,8 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
           </div>
 
           <div class="blocker">
-            <strong>Why Not Ready</strong>
-            NEUTRAL: BUY=3 AND SELL=3
+            <strong>Why Ready</strong>
+            BUY=3/6 | SELL=3/6 | NEUTRAL
             <div class="sub" style="margin-top:8px;">Confirmation: Pending</div>
           </div>
         </div>
@@ -1321,22 +1321,22 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
       <div class="journey-grid">
         <div class="journey-section">
           <div class="journey-section-title">JRSX Structure</div>
-          <div class="journey-row"><div><div class="journey-label">H4</div><div class="journey-sub">Authority</div></div><div><span class="badge red">DOWN (51.94)</span></div></div>
-          <div class="journey-row"><div><div class="journey-label">H1</div><div class="journey-sub">Primary</div></div><div><span class="badge green">UP (40.11)</span></div></div>
-          <div class="journey-row"><div><div class="journey-label">M30</div><div class="journey-sub">Entry</div></div><div><span class="badge green">UP (64.75)</span></div></div>
+          <div class="journey-row"><div><div class="journey-label">H4</div></div><div><span class="badge amber">NA</span></div></div>
+          <div class="journey-row"><div><div class="journey-label">H1</div></div><div><span class="badge amber">NA</span></div></div>
+          <div class="journey-row"><div><div class="journey-label">M30</div></div><div><span class="badge amber">NA</span></div></div>
           <div class="journey-summary-grid">
-            <div class="mini-box"><div class="label">State</div><div class="value"><span class="badge slate">ENTRY ALIGNED UP</span></div></div>
-            <div class="mini-box"><div class="label">Bias</div><div class="value"><span class="badge green">+1</span></div></div>
+            <div class="mini-box"><div class="label">State</div><div class="value"><span class="badge purple">CONFLICT</span></div></div>
+            <div class="mini-box"><div class="label">Bias</div><div class="value"><span class="badge amber">+0</span></div></div>
           </div>
         </div>
         <div class="journey-section">
           <div class="journey-section-title">Execution State</div>
-          <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge red">BLOCKED</span></div></div>
-          <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">Wait for valid signal</div></div>
+          <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge amber">WAIT</span></div></div>
+          <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">Wait for confirmation</div></div>
           <div class="journey-row"><div class="journey-label">Risk</div><div><span class="badge green">LOW</span></div></div>
           <div class="journey-note">
             <div class="journey-label">Note</div>
-            <div class="journey-value">NEUTRAL: BUY=3 AND SELL=3</div>
+            <div class="journey-value">BUY=3/6 | SELL=3/6 | NEUTRAL</div>
           </div>
         </div>
       </div>
@@ -1344,11 +1344,11 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
         <div class="journey-section-title">Current Trade</div>
         <div class="current-trade-grid">
           <div class="mini-box"><div class="label">Direction</div><div class="value"><span class="badge slate">BEAR</span></div></div>
-          <div class="mini-box"><div class="label">Status</div><div class="value"><span class="badge green">ACTIVE</span></div></div>
-          <div class="mini-box"><div class="label">Context Time</div><div class="value value-small">2026-03-30 06:00</div></div>
+          <div class="mini-box"><div class="label">Status</div><div class="value"><span class="badge amber">PENDING</span></div></div>
+          <div class="mini-box"><div class="label">Context Time</div><div class="value value-small">NA</div></div>
           <div class="mini-box"><div class="label">Confirmation Time</div><div class="value value-small">NA</div></div>
-          <div class="mini-box"><div class="label">Current Price</div><div class="value">159.69000</div></div>
-          <div class="mini-box"><div class="label">Move</div><div class="value">+0.10</div></div>
+          <div class="mini-box"><div class="label">Current Price</div><div class="value">NA</div></div>
+          <div class="mini-box"><div class="label">Move</div><div class="value">NA</div></div>
         </div>
       </div>
     </div>
@@ -1366,8 +1366,8 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
               <div class="sub">H1</div>
             </div>
             <div class="price-box">
-              <div class="price">45165.20000</div>
-              <div class="sub">Updated 2026-03-30 23:00:00</div>
+              <div class="price">45179.30000</div>
+              <div class="sub">Updated 2026-03-30 23:00</div>
             </div>
           </div>
 
@@ -1379,7 +1379,7 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
           </div>
 
           <div class="section-title">Conditions</div>
-          <div class="condition-list"><div class="condition-row"><div class="condition-name">Context</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">MACD below signal</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">MACD below zero</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">Price below EMA10</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">EMA10 below pivot</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">JRSX direction</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">Trigger</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">Execution</div><div class="condition-state state-wait">WAIT</div></div></div>
+          <div class="condition-list"><div class="condition-row"><div class="condition-name">Close below pivot</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">MACD below zero</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">MACD below signal</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">Close below EMA20</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">EMA10 &lt; EMA20 &lt; EMA50</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">EMA50 &lt; EMA200</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">JRSX direction DOWN</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">JRSX zone valid</div><div class="condition-state state-yes">YES</div></div></div>
 
           <div class="section-title">MTF Snapshot</div>
           <div class="condition-list">
@@ -1390,7 +1390,7 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
 
           <div class="blocker">
             <strong>Why Ready</strong>
-            Conflict ratio is high. Wait for cleaner follow-through.
+            BUY=1/6 | SELL=6/6 | SELL
             <div class="sub" style="margin-top:8px;">Confirmation: Confirmed</div>
           </div>
         </div>
@@ -1401,22 +1401,22 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
       <div class="journey-grid">
         <div class="journey-section">
           <div class="journey-section-title">JRSX Structure</div>
-          <div class="journey-row"><div><div class="journey-label">H4</div><div class="journey-sub">Authority</div></div><div><span class="badge green">UP (27.12)</span></div></div>
-          <div class="journey-row"><div><div class="journey-label">H1</div><div class="journey-sub">Primary</div></div><div><span class="badge red">DOWN (52.03)</span></div></div>
-          <div class="journey-row"><div><div class="journey-label">M30</div><div class="journey-sub">Entry</div></div><div><span class="badge red">DOWN (27.31)</span></div></div>
+          <div class="journey-row"><div><div class="journey-label">H4</div></div><div><span class="badge amber">NA</span></div></div>
+          <div class="journey-row"><div><div class="journey-label">H1</div></div><div><span class="badge amber">NA</span></div></div>
+          <div class="journey-row"><div><div class="journey-label">M30</div></div><div><span class="badge amber">NA</span></div></div>
           <div class="journey-summary-grid">
-            <div class="mini-box"><div class="label">State</div><div class="value"><span class="badge slate">ENTRY ALIGNED DOWN</span></div></div>
-            <div class="mini-box"><div class="label">Bias</div><div class="value"><span class="badge red">-1</span></div></div>
+            <div class="mini-box"><div class="label">State</div><div class="value"><span class="badge purple">CONFLICT</span></div></div>
+            <div class="mini-box"><div class="label">Bias</div><div class="value"><span class="badge amber">+0</span></div></div>
           </div>
         </div>
         <div class="journey-section">
           <div class="journey-section-title">Execution State</div>
           <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge green">READY</span></div></div>
-          <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">Manage active trade</div></div>
+          <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">Wait for confirmation</div></div>
           <div class="journey-row"><div class="journey-label">Risk</div><div><span class="badge green">LOW</span></div></div>
           <div class="journey-note">
             <div class="journey-label">Note</div>
-            <div class="journey-value">Conflict ratio is high. Wait for cleaner follow-through.</div>
+            <div class="journey-value">BUY=1/6 | SELL=6/6 | SELL</div>
           </div>
         </div>
       </div>
@@ -1424,11 +1424,11 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
         <div class="journey-section-title">Current Trade</div>
         <div class="current-trade-grid">
           <div class="mini-box"><div class="label">Direction</div><div class="value"><span class="badge slate">BEAR</span></div></div>
-          <div class="mini-box"><div class="label">Status</div><div class="value"><span class="badge green">ACTIVE</span></div></div>
-          <div class="mini-box"><div class="label">Context Time</div><div class="value value-small">2026-03-26 01:00</div></div>
-          <div class="mini-box"><div class="label">Confirmation Time</div><div class="value value-small">2026-03-26 05:00</div></div>
-          <div class="mini-box"><div class="label">Current Price</div><div class="value">45165.20000</div></div>
-          <div class="mini-box"><div class="label">Move</div><div class="value">+1190.80</div></div>
+          <div class="mini-box"><div class="label">Status</div><div class="value"><span class="badge green">CONFIRMED</span></div></div>
+          <div class="mini-box"><div class="label">Context Time</div><div class="value value-small">NA</div></div>
+          <div class="mini-box"><div class="label">Confirmation Time</div><div class="value value-small">NA</div></div>
+          <div class="mini-box"><div class="label">Current Price</div><div class="value">NA</div></div>
+          <div class="mini-box"><div class="label">Move</div><div class="value">NA</div></div>
         </div>
       </div>
     </div>
@@ -1446,20 +1446,20 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
               <div class="sub">H1</div>
             </div>
             <div class="price-box">
-              <div class="price">3933.65000</div>
-              <div class="sub">Updated 2026-03-30 23:00:00</div>
+              <div class="price">3932.79000</div>
+              <div class="sub">Updated 2026-03-30 23:00</div>
             </div>
           </div>
 
           <div class="headline-grid">
-            <div class="mini-box"><div class="label">Signal</div><div class="value"><span class="badge slate">NONE</span></div></div>
-            <div class="mini-box"><div class="label">Strength</div><div class="value"><span class="badge amber">WAIT</span></div></div>
+            <div class="mini-box"><div class="label">Signal</div><div class="value"><span class="badge red">SELL</span></div></div>
+            <div class="mini-box"><div class="label">Strength</div><div class="value"><span class="badge blue">GOOD</span></div></div>
             <div class="mini-box"><div class="label">Confirmation</div><div class="value"><span class="badge green">CONFIRMED</span></div></div>
             <div class="mini-box"><div class="label">Journey</div><div class="value"><span class="badge green">ACTIVE</span></div></div>
           </div>
 
           <div class="section-title">Conditions</div>
-          <div class="condition-list"><div class="condition-row"><div class="condition-name">Context</div><div class="condition-state state-wait">NEUTRAL</div></div><div class="condition-row"><div class="condition-name">Setup</div><div class="condition-state state-wait">NO_SETUP</div></div><div class="condition-row"><div class="condition-name">Trigger</div><div class="condition-state state-wait">NO_TRIGGER</div></div><div class="condition-row"><div class="condition-name">Execution</div><div class="condition-state state-wait">WAIT</div></div><div class="condition-row"><div class="condition-name">JRSX</div><div class="condition-state state-wait">DOWN</div></div><div class="condition-row"><div class="condition-name">JRSX value</div><div class="condition-state state-wait">53.10</div></div></div>
+          <div class="condition-list"><div class="condition-row"><div class="condition-name">Close below pivot</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">MACD below zero</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">MACD below signal</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">Close below EMA20</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">EMA10 &lt; EMA20 &lt; EMA50</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">EMA50 &lt; EMA200</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">JRSX direction DOWN</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">JRSX zone valid</div><div class="condition-state state-yes">YES</div></div></div>
 
           <div class="section-title">MTF Snapshot</div>
           <div class="condition-list">
@@ -1469,8 +1469,8 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
           </div>
 
           <div class="blocker">
-            <strong>Why Not Ready</strong>
-            Conflict ratio is high. Wait for cleaner follow-through.
+            <strong>Why Ready</strong>
+            BUY=3/6 | SELL=3/6 | NEUTRAL
             <div class="sub" style="margin-top:8px;">Confirmation: Confirmed</div>
           </div>
         </div>
@@ -1481,22 +1481,22 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
       <div class="journey-grid">
         <div class="journey-section">
           <div class="journey-section-title">JRSX Structure</div>
-          <div class="journey-row"><div><div class="journey-label">H4</div><div class="journey-sub">Authority</div></div><div><span class="badge green">UP (68.37)</span></div></div>
-          <div class="journey-row"><div><div class="journey-label">H1</div><div class="journey-sub">Primary</div></div><div><span class="badge red">DOWN (53.11)</span></div></div>
-          <div class="journey-row"><div><div class="journey-label">M30</div><div class="journey-sub">Entry</div></div><div><span class="badge red">DOWN (30.60)</span></div></div>
+          <div class="journey-row"><div><div class="journey-label">H4</div></div><div><span class="badge amber">NA</span></div></div>
+          <div class="journey-row"><div><div class="journey-label">H1</div></div><div><span class="badge amber">NA</span></div></div>
+          <div class="journey-row"><div><div class="journey-label">M30</div></div><div><span class="badge amber">NA</span></div></div>
           <div class="journey-summary-grid">
-            <div class="mini-box"><div class="label">State</div><div class="value"><span class="badge slate">ENTRY ALIGNED DOWN</span></div></div>
-            <div class="mini-box"><div class="label">Bias</div><div class="value"><span class="badge red">-1</span></div></div>
+            <div class="mini-box"><div class="label">State</div><div class="value"><span class="badge purple">CONFLICT</span></div></div>
+            <div class="mini-box"><div class="label">Bias</div><div class="value"><span class="badge amber">+0</span></div></div>
           </div>
         </div>
         <div class="journey-section">
           <div class="journey-section-title">Execution State</div>
-          <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge red">BLOCKED</span></div></div>
-          <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">Wait for valid signal</div></div>
+          <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge green">READY</span></div></div>
+          <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">Wait for confirmation</div></div>
           <div class="journey-row"><div class="journey-label">Risk</div><div><span class="badge green">LOW</span></div></div>
           <div class="journey-note">
             <div class="journey-label">Note</div>
-            <div class="journey-value">Conflict ratio is high. Wait for cleaner follow-through.</div>
+            <div class="journey-value">BUY=3/6 | SELL=3/6 | NEUTRAL</div>
           </div>
         </div>
       </div>
@@ -1504,11 +1504,11 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
         <div class="journey-section-title">Current Trade</div>
         <div class="current-trade-grid">
           <div class="mini-box"><div class="label">Direction</div><div class="value"><span class="badge slate">BULL</span></div></div>
-          <div class="mini-box"><div class="label">Status</div><div class="value"><span class="badge green">ACTIVE</span></div></div>
-          <div class="mini-box"><div class="label">Context Time</div><div class="value value-small">2026-03-27 08:00</div></div>
-          <div class="mini-box"><div class="label">Confirmation Time</div><div class="value value-small">2026-03-27 11:00</div></div>
-          <div class="mini-box"><div class="label">Current Price</div><div class="value">3933.65000</div></div>
-          <div class="mini-box"><div class="label">Move</div><div class="value">+74.38</div></div>
+          <div class="mini-box"><div class="label">Status</div><div class="value"><span class="badge green">CONFIRMED</span></div></div>
+          <div class="mini-box"><div class="label">Context Time</div><div class="value value-small">NA</div></div>
+          <div class="mini-box"><div class="label">Confirmation Time</div><div class="value value-small">NA</div></div>
+          <div class="mini-box"><div class="label">Current Price</div><div class="value">NA</div></div>
+          <div class="mini-box"><div class="label">Move</div><div class="value">NA</div></div>
         </div>
       </div>
     </div>
@@ -1526,20 +1526,20 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
               <div class="sub">H1</div>
             </div>
             <div class="price-box">
-              <div class="price">4508.48000</div>
-              <div class="sub">Updated 2026-03-30 23:00:00</div>
+              <div class="price">4506.45000</div>
+              <div class="sub">Updated 2026-03-30 23:00</div>
             </div>
           </div>
 
           <div class="headline-grid">
-            <div class="mini-box"><div class="label">Signal</div><div class="value"><span class="badge slate">NONE</span></div></div>
-            <div class="mini-box"><div class="label">Strength</div><div class="value"><span class="badge amber">WAIT</span></div></div>
+            <div class="mini-box"><div class="label">Signal</div><div class="value"><span class="badge red">SELL</span></div></div>
+            <div class="mini-box"><div class="label">Strength</div><div class="value"><span class="badge blue">GOOD</span></div></div>
             <div class="mini-box"><div class="label">Confirmation</div><div class="value"><span class="badge green">CONFIRMED</span></div></div>
             <div class="mini-box"><div class="label">Journey</div><div class="value"><span class="badge green">ACTIVE</span></div></div>
           </div>
 
           <div class="section-title">Conditions</div>
-          <div class="condition-list"><div class="condition-row"><div class="condition-name">Context</div><div class="condition-state state-wait">NEUTRAL</div></div><div class="condition-row"><div class="condition-name">Setup</div><div class="condition-state state-wait">NO_SETUP</div></div><div class="condition-row"><div class="condition-name">Trigger</div><div class="condition-state state-wait">NO_TRIGGER</div></div><div class="condition-row"><div class="condition-name">Execution</div><div class="condition-state state-wait">WAIT</div></div><div class="condition-row"><div class="condition-name">JRSX</div><div class="condition-state state-wait">DOWN</div></div><div class="condition-row"><div class="condition-name">JRSX value</div><div class="condition-state state-wait">46.63</div></div></div>
+          <div class="condition-list"><div class="condition-row"><div class="condition-name">Close below pivot</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">MACD below zero</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">MACD below signal</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">Close below EMA20</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">EMA10 &lt; EMA20 &lt; EMA50</div><div class="condition-state state-no">NO</div></div><div class="condition-row"><div class="condition-name">EMA50 &lt; EMA200</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">JRSX direction DOWN</div><div class="condition-state state-yes">YES</div></div><div class="condition-row"><div class="condition-name">JRSX zone valid</div><div class="condition-state state-yes">YES</div></div></div>
 
           <div class="section-title">MTF Snapshot</div>
           <div class="condition-list">
@@ -1549,8 +1549,8 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
           </div>
 
           <div class="blocker">
-            <strong>Why Not Ready</strong>
-            NEUTRAL: BUY=3 AND SELL=3
+            <strong>Why Ready</strong>
+            BUY=3/6 | SELL=3/6 | NEUTRAL
             <div class="sub" style="margin-top:8px;">Confirmation: Confirmed</div>
           </div>
         </div>
@@ -1561,22 +1561,22 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
       <div class="journey-grid">
         <div class="journey-section">
           <div class="journey-section-title">JRSX Structure</div>
-          <div class="journey-row"><div><div class="journey-label">H4</div><div class="journey-sub">Authority</div></div><div><span class="badge green">UP (63.22)</span></div></div>
-          <div class="journey-row"><div><div class="journey-label">H1</div><div class="journey-sub">Primary</div></div><div><span class="badge red">DOWN (46.64)</span></div></div>
-          <div class="journey-row"><div><div class="journey-label">M30</div><div class="journey-sub">Entry</div></div><div><span class="badge red">DOWN (28.26)</span></div></div>
+          <div class="journey-row"><div><div class="journey-label">H4</div></div><div><span class="badge amber">NA</span></div></div>
+          <div class="journey-row"><div><div class="journey-label">H1</div></div><div><span class="badge amber">NA</span></div></div>
+          <div class="journey-row"><div><div class="journey-label">M30</div></div><div><span class="badge amber">NA</span></div></div>
           <div class="journey-summary-grid">
-            <div class="mini-box"><div class="label">State</div><div class="value"><span class="badge slate">ENTRY ALIGNED DOWN</span></div></div>
-            <div class="mini-box"><div class="label">Bias</div><div class="value"><span class="badge red">-1</span></div></div>
+            <div class="mini-box"><div class="label">State</div><div class="value"><span class="badge purple">CONFLICT</span></div></div>
+            <div class="mini-box"><div class="label">Bias</div><div class="value"><span class="badge amber">+0</span></div></div>
           </div>
         </div>
         <div class="journey-section">
           <div class="journey-section-title">Execution State</div>
-          <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge red">BLOCKED</span></div></div>
-          <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">Wait for valid signal</div></div>
+          <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge green">READY</span></div></div>
+          <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">Wait for confirmation</div></div>
           <div class="journey-row"><div class="journey-label">Risk</div><div><span class="badge green">LOW</span></div></div>
           <div class="journey-note">
             <div class="journey-label">Note</div>
-            <div class="journey-value">NEUTRAL: BUY=3 AND SELL=3</div>
+            <div class="journey-value">BUY=3/6 | SELL=3/6 | NEUTRAL</div>
           </div>
         </div>
       </div>
@@ -1584,11 +1584,11 @@ body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(-
         <div class="journey-section-title">Current Trade</div>
         <div class="current-trade-grid">
           <div class="mini-box"><div class="label">Direction</div><div class="value"><span class="badge slate">BULL</span></div></div>
-          <div class="mini-box"><div class="label">Status</div><div class="value"><span class="badge green">ACTIVE</span></div></div>
-          <div class="mini-box"><div class="label">Context Time</div><div class="value value-small">2026-03-30 05:00</div></div>
-          <div class="mini-box"><div class="label">Confirmation Time</div><div class="value value-small">2026-03-30 08:00</div></div>
-          <div class="mini-box"><div class="label">Current Price</div><div class="value">4508.48000</div></div>
-          <div class="mini-box"><div class="label">Move</div><div class="value">+27.17</div></div>
+          <div class="mini-box"><div class="label">Status</div><div class="value"><span class="badge green">CONFIRMED</span></div></div>
+          <div class="mini-box"><div class="label">Context Time</div><div class="value value-small">NA</div></div>
+          <div class="mini-box"><div class="label">Confirmation Time</div><div class="value value-small">NA</div></div>
+          <div class="mini-box"><div class="label">Current Price</div><div class="value">NA</div></div>
+          <div class="mini-box"><div class="label">Move</div><div class="value">NA</div></div>
         </div>
       </div>
     </div>
