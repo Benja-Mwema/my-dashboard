@@ -2295,28 +2295,28 @@ body {
                 <div class="card-title">Decision Card</div>
                 <div class="card-sub">H1 • M30 DOWN • H1 DOWN • H4 UP</div>
               </div>
-              <div class="status-badge amber">NONE</div>
+              <div class="status-badge green">BUY</div>
             </div>
 
             <div class="signal-main">
               <div>
                 <div class="signal-word">EURJPY.PRO</div>
                 <div class="signal-desc">
-                  Updated: 2026-03-18 08:00:00<br/>
+                  Updated: 2026-04-01 09:00:00<br/>
                   Direction: BULL • Journey start: 2026-04-01 05:00:00<br/>
                   Live trade: BULL @ 2026-04-01 05:00:00
                 </div>
               </div>
-              <div class="gauge" data-strength="WAIT" data-rules-score="0" data-rules-total="6">
+              <div class="gauge" data-strength="GOOD" data-rules-score="4" data-rules-total="6">
                 <div class="gauge-inner">
-                  <div class="score">WAIT</div>
+                  <div class="score">GOOD</div>
                   <div class="label">Strength</div>
                 </div>
               </div>
             </div>
 
             <div class="meta-grid">
-              <div class="meta"><div class="label">Current Price</div><div class="value">183.26</div></div>
+              <div class="meta"><div class="label">Current Price</div><div class="value">183.46</div></div>
               <div class="meta"><div class="label">Confirmation</div><div class="value"><span class="badge green">CONFIRMED</span></div></div>
               <div class="meta"><div class="label">Journey</div><div class="value"><span class="badge slate">LIVE</span></div></div>
               <div class="meta"><div class="label">Trade Status</div><div class="value"><span class="badge green">ACTIVE</span></div></div>
@@ -2330,9 +2330,9 @@ body {
                   <div class="card-title">6 Rules</div>
                   <div class="card-sub">Field-by-field from rules_card.rules, fallback to conditions</div>
                 </div>
-                <div class="status-badge amber">0/6</div>
+                <div class="status-badge green">4/6</div>
               </div>
-              <div class="rule-list"><div class="rule"><div class="rule-left"><div class="rule-name">Context</div><div class="rule-detail">Condition state from current row</div></div><div class="rule-state state-wait">NEUTRAL</div></div><div class="rule"><div class="rule-left"><div class="rule-name">Setup</div><div class="rule-detail">Condition state from current row</div></div><div class="rule-state state-wait">NO_SETUP</div></div><div class="rule"><div class="rule-left"><div class="rule-name">Pullback</div><div class="rule-detail">Condition state from current row</div></div><div class="rule-state state-wait">NONE</div></div><div class="rule"><div class="rule-left"><div class="rule-name">Trigger</div><div class="rule-detail">Condition state from current row</div></div><div class="rule-state state-no">NO</div></div><div class="rule"><div class="rule-left"><div class="rule-name">Execution</div><div class="rule-detail">Condition state from current row</div></div><div class="rule-state state-wait">WAIT</div></div><div class="rule"><div class="rule-left"><div class="rule-name">Phase</div><div class="rule-detail">Condition state from current row</div></div><div class="rule-state state-wait">MONITOR</div></div></div>
+              <div class="rule-list"><div class="rule"><div class="rule-left"><div class="rule-name">Rule 1 — MACD vs signal</div><div class="rule-detail">Value: 1</div></div><div class="rule-state state-yes">YES</div></div><div class="rule"><div class="rule-left"><div class="rule-name">Rule 2 — MACD vs zero</div><div class="rule-detail">Value: 1</div></div><div class="rule-state state-yes">YES</div></div><div class="rule"><div class="rule-left"><div class="rule-name">Rule 3 — Adaptive EMA rule</div><div class="rule-detail">Value: 0</div></div><div class="rule-state state-no">NO</div></div><div class="rule"><div class="rule-left"><div class="rule-name">Rule 4 — Price vs EMA10</div><div class="rule-detail">Value: 0</div></div><div class="rule-state state-no">NO</div></div><div class="rule"><div class="rule-left"><div class="rule-name">Rule 5 — EMA10 vs Pivot</div><div class="rule-detail">Value: 1</div></div><div class="rule-state state-yes">YES</div></div><div class="rule"><div class="rule-left"><div class="rule-name">Rule 6 — JRSX valid zone</div><div class="rule-detail">Value: 1</div></div><div class="rule-state state-yes">YES</div></div></div>
             </div>
 
             <div class="card">
@@ -2350,13 +2350,13 @@ body {
                   </div>
                   <div class="mini">Journey already produced a confirmed live trade. Current row trigger can wait without downgrading confirmation.</div>
                   <div class="progress"><span style="width:100%"></span></div>
-                  <div class="mini">Risk: MEDIUM • Rules: 0/6 • Current exec: BLOCKED • Last execution: 2026-04-01 05:00:00</div>
+                  <div class="mini">Risk: MEDIUM • Rules: 4/6 • Current exec: BLOCKED • Last execution: 2026-04-01 05:00:00</div>
                 </div>
 
                 <div class="confirm-item">
                   <div class="confirm-head"><div class="confirm-title">Why Not Ready</div></div>
-                  <div class="mini">Structure is building but has not reached 4-of-6 quality yet.</div>
-                  <div class="mini" style="margin-top:8px;">Signal reason: BUY_3_SELL_3</div>
+                  <div class="mini">Higher-timeframe conflict: H1 does not align with H4 authority.</div>
+                  <div class="mini" style="margin-top:8px;">Signal reason: BUY_SIDE_REACHED_4_PLUS_AND_WON</div>
                 </div>
               </div>
             </div>
@@ -2370,7 +2370,7 @@ body {
               </div>
             </div>
             <div class="metrics-grid">
-              <div class="meta"><div class="label">Close</div><div class="value">183.26</div></div><div class="meta"><div class="label">Pivot</div><div class="value">183.29</div></div><div class="meta"><div class="label">EMA10</div><div class="value">183.35</div></div><div class="meta"><div class="label">EMA20</div><div class="value">183.31</div></div><div class="meta"><div class="label">EMA50</div><div class="value">183.17</div></div><div class="meta"><div class="label">EMA200</div><div class="value">183.16</div></div><div class="meta"><div class="label">MACD Main</div><div class="value">0.073952</div></div><div class="meta"><div class="label">MACD Signal</div><div class="value">0.116488</div></div><div class="meta"><div class="label">MACD Hist</div><div class="value">-0.042536</div></div><div class="meta"><div class="label">JRSX</div><div class="value">50.34</div></div><div class="meta"><div class="label">Buy Count</div><div class="value">3</div></div><div class="meta"><div class="label">Sell Count</div><div class="value">3</div></div>
+              <div class="meta"><div class="label">Close</div><div class="value">183.46</div></div><div class="meta"><div class="label">Pivot</div><div class="value">183.29</div></div><div class="meta"><div class="label">EMA10</div><div class="value">183.49</div></div><div class="meta"><div class="label">EMA20</div><div class="value">183.43</div></div><div class="meta"><div class="label">EMA50</div><div class="value">183.45</div></div><div class="meta"><div class="label">EMA200</div><div class="value">183.65</div></div><div class="meta"><div class="label">MACD Main</div><div class="value">0.065088</div></div><div class="meta"><div class="label">MACD Signal</div><div class="value">0.057564</div></div><div class="meta"><div class="label">MACD Hist</div><div class="value">0.007525</div></div><div class="meta"><div class="label">JRSX</div><div class="value">61.09</div></div><div class="meta"><div class="label">Buy Count</div><div class="value">4</div></div><div class="meta"><div class="label">Sell Count</div><div class="value">2</div></div>
             </div>
           </div>
 
@@ -2403,9 +2403,9 @@ body {
         <div class="journey-grid">
           <div class="journey-section">
             <div class="journey-section-title">JRSX Structure</div>
-            <div class="journey-row"><div><div class="journey-label">H4</div><div class="journey-sub">Authority</div></div><div><span class="badge green">UP (70.15)</span></div></div>
-            <div class="journey-row"><div><div class="journey-label">H1</div><div class="journey-sub">Primary</div></div><div><span class="badge red">DOWN (50.34)</span></div></div>
-            <div class="journey-row"><div><div class="journey-label">M30</div><div class="journey-sub">Entry</div></div><div><span class="badge red">DOWN (37.71)</span></div></div>
+            <div class="journey-row"><div><div class="journey-label">H4</div><div class="journey-sub">Authority</div></div><div><span class="badge green">UP (45.05)</span></div></div>
+            <div class="journey-row"><div><div class="journey-label">H1</div><div class="journey-sub">Primary</div></div><div><span class="badge red">DOWN (61.06)</span></div></div>
+            <div class="journey-row"><div><div class="journey-label">M30</div><div class="journey-sub">Entry</div></div><div><span class="badge red">DOWN (58.80)</span></div></div>
             <div class="journey-summary-grid">
               <div class="mini-box">
                 <div class="label">State</div>
@@ -2421,11 +2421,11 @@ body {
           <div class="journey-section">
             <div class="journey-section-title">Execution State</div>
             <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge red">BLOCKED</span></div></div>
-            <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">Wait for valid signal</div></div>
+            <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">Wait for timeframe alignment</div></div>
             <div class="journey-row"><div class="journey-label">Risk</div><div><span class="badge blue">MEDIUM</span></div></div>
             <div class="journey-note">
               <div class="journey-label">Note</div>
-              <div class="journey-value journey-value-left">Structure is building but has not reached 4-of-6 quality yet.</div>
+              <div class="journey-value journey-value-left">Higher-timeframe conflict: H1 does not align with H4 authority.</div>
             </div>
           </div>
         </div>
@@ -2437,7 +2437,7 @@ body {
             <div class="mini-box"><div class="label">Status</div><div class="value"><span class="badge green">ACTIVE</span></div></div>
             <div class="mini-box"><div class="label">Start Time</div><div class="value value-small">2026-04-01 05:00:00</div></div>
             <div class="mini-box"><div class="label">End Time</div><div class="value value-small">2026-04-01 09:00:00</div></div>
-            <div class="mini-box"><div class="label">Current Price</div><div class="value">183.26</div></div>
+            <div class="mini-box"><div class="label">Current Price</div><div class="value">183.46</div></div>
             <div class="mini-box"><div class="label">Move</div><div class="value">-0.10</div></div>
             <div class="mini-box"><div class="label">Bars</div><div class="value">5</div></div>
             <div class="mini-box"><div class="label">Executions</div><div class="value">1</div></div>
@@ -2470,7 +2470,7 @@ body {
         <div class="step">
           <div class="step-title">Journey started</div>
           <div class="step-meta">2026-04-01 05:00:00</div>
-          <div class="step-note">BULL @ 2026-04-01 05:00:00 • Phase Monitor.</div>
+          <div class="step-note">BULL @ 2026-04-01 05:00:00 • Phase Pullback.</div>
         </div>
         
         <div class="step">
@@ -2482,7 +2482,7 @@ body {
         <div class="step">
           <div class="step-title">Current monitoring state</div>
           <div class="step-meta">BLOCKED</div>
-          <div class="step-note">Wait for valid signal</div>
+          <div class="step-note">Wait for timeframe alignment</div>
         </div>
         </div>
           </div>
