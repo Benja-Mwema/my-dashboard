@@ -196,7 +196,7 @@ body {
 .gauge-inner .label { color:var(--muted); font-size:12px; margin-top:4px; }
 .meta-grid, .mtf-grid, .metrics-grid {
   display:grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap:10px;
   margin-top:10px;
 }
@@ -449,7 +449,7 @@ body {
   <div class="topbar">
     <div class="brand">
       <h1>Institutional Trading Dashboard</h1>
-      <div class="sub">Advance dashboard • exact v3 schema mapping • field by field</div>
+      <div class="sub">Advance dashboard • regime-aware execution mapping • fully patched</div>
     </div>
     <div class="top-actions">
       <div class="pill"><strong>Auto refresh:</strong> 3600s</div>
@@ -504,6 +504,10 @@ body {
               <div class="meta"><div class="label">Confirmation</div><div class="value"><span class="badge green">CONFIRMED</span></div></div>
               <div class="meta"><div class="label">Journey</div><div class="value"><span class="badge slate">LIVE</span></div></div>
               <div class="meta"><div class="label">Trade Status</div><div class="value"><span class="badge green">ACTIVE</span></div></div>
+              <div class="meta"><div class="label">Exec Probability</div><div class="value"><span class="badge slate">88%</span></div></div>
+              <div class="meta"><div class="label">Trade Mode</div><div class="value"><span class="badge green">FULL_RISK</span></div></div>
+              <div class="meta"><div class="label">Asset Class</div><div class="value"><span class="badge slate">FX</span></div></div>
+              <div class="meta"><div class="label">Cluster</div><div class="value"><span class="badge slate">FX_C_PRECISION</span></div></div>
             </div>
           </div>
 
@@ -532,13 +536,13 @@ body {
                     <div class="confirm-title">Threshold tracker</div>
                     <div class="status-badge green">CONFIRMED</div>
                   </div>
-                  <div class="mini">Journey already produced a confirmed live trade. Current row trigger can wait without downgrading confirmation.</div>
+                  <div class="mini">Execution is active. Manage follow-through.</div>
                   <div class="progress"><span style="width:100%"></span></div>
-                  <div class="mini">Risk: LOW • Rules: 4/6 • Current exec: READY • Last execution: 2026-04-03 21:00:00</div>
+                  <div class="mini">Exec Prob: 88% • Risk: LOW • Rules: 4/6 • Current exec: READY • Trade mode: FULL_RISK • Last execution: 2026-04-03 21:00:00</div>
                 </div>
 
                 <div class="confirm-item">
-                  <div class="confirm-head"><div class="confirm-title">Why Ready</div></div>
+                  <div class="confirm-head"><div class="confirm-title">Why Tradable</div></div>
                   <div class="mini">Execution is active. Manage follow-through.</div>
                   <div class="mini" style="margin-top:8px;">Signal reason: SELL_SIDE_REACHED_4_PLUS_AND_WON</div>
                 </div>
@@ -569,6 +573,30 @@ body {
               <div class="meta"><div class="label">M30</div><div class="value"><span class="badge red">DOWN</span></div></div>
               <div class="meta"><div class="label">H1</div><div class="value"><span class="badge red">DOWN</span></div></div>
               <div class="meta"><div class="label">H4</div><div class="value"><span class="badge red">DOWN</span></div></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Current Row Diagnostics</div>
+                <div class="card-sub">Latest raw row state</div>
+              </div>
+            </div>
+            <div class="metrics-grid">
+              <div class="meta"><div class="label">Row Time</div><div class="value">2026-04-03 23:00:00</div></div><div class="meta"><div class="label">Context</div><div class="value"><span class="badge amber">NEUTRAL</span></div></div><div class="meta"><div class="label">Setup</div><div class="value"><span class="badge slate">SELL_SETUP</span></div></div><div class="meta"><div class="label">Direction</div><div class="value"><span class="badge red">BEAR</span></div></div><div class="meta"><div class="label">Signal State</div><div class="value"><span class="badge red">SELL</span></div></div><div class="meta"><div class="label">Signal Label</div><div class="value"><span class="badge red">SELL</span></div></div><div class="meta"><div class="label">Strength</div><div class="value"><span class="badge blue">GOOD</span></div></div><div class="meta"><div class="label">Pullback</div><div class="value"><span class="badge amber">NONE</span></div></div><div class="meta"><div class="label">Trigger</div><div class="value"><span class="badge slate">SELL_TRIGGER</span></div></div><div class="meta"><div class="label">Execution</div><div class="value"><span class="badge red">SELL</span></div></div><div class="meta"><div class="label">Buy Count</div><div class="value">1</div></div><div class="meta"><div class="label">Sell Count</div><div class="value">4</div></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Campaign Snapshot</div>
+                <div class="card-sub">Carried-forward campaign state used by the dashboard decision layer</div>
+              </div>
+            </div>
+            <div class="metrics-grid">
+              <div class="meta"><div class="label">Row Time</div><div class="value">2026-04-03 23:00:00</div></div><div class="meta"><div class="label">Context</div><div class="value"><span class="badge amber">NEUTRAL</span></div></div><div class="meta"><div class="label">Setup</div><div class="value"><span class="badge slate">SELL_SETUP</span></div></div><div class="meta"><div class="label">Direction</div><div class="value"><span class="badge red">BEAR</span></div></div><div class="meta"><div class="label">Signal State</div><div class="value"><span class="badge red">SELL</span></div></div><div class="meta"><div class="label">Signal Label</div><div class="value"><span class="badge red">SELL</span></div></div><div class="meta"><div class="label">Strength</div><div class="value"><span class="badge blue">GOOD</span></div></div><div class="meta"><div class="label">Pullback</div><div class="value"><span class="badge amber">NONE</span></div></div><div class="meta"><div class="label">Trigger</div><div class="value"><span class="badge slate">SELL_TRIGGER</span></div></div><div class="meta"><div class="label">Execution</div><div class="value"><span class="badge red">SELL</span></div></div><div class="meta"><div class="label">Buy Count</div><div class="value">1</div></div><div class="meta"><div class="label">Sell Count</div><div class="value">4</div></div>
             </div>
           </div>
         </div>
@@ -605,6 +633,7 @@ body {
           <div class="journey-section">
             <div class="journey-section-title">Execution State</div>
             <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge green">READY</span></div></div>
+            <div class="journey-row"><div class="journey-label">Exec Probability</div><div><span class="badge slate">88% • HIGH_PROB</span></div></div>
             <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">Manage active trade</div></div>
             <div class="journey-row"><div class="journey-label">Risk</div><div><span class="badge green">LOW</span></div></div>
             <div class="journey-note">
@@ -627,6 +656,9 @@ body {
             <div class="mini-box"><div class="label">Executions</div><div class="value">1</div></div>
             <div class="mini-box"><div class="label">Best Execution</div><div class="value value-small">2026-04-03 21:00:00</div></div>
             <div class="mini-box"><div class="label">Best Strength</div><div class="value"><span class="badge red">SELL</span></div></div>
+            <div class="mini-box"><div class="label">Last M15 Exit</div><div class="value value-small">2026.04.03 18:45</div></div>
+            <div class="mini-box"><div class="label">M15 Exit Dir</div><div class="value"><span class="badge slate">EXIT_SELL</span></div></div>
+            <div class="mini-box"><div class="label">M15 Exit Price</div><div class="value">109.93</div></div>
           </div>
         </div>
 
@@ -731,6 +763,10 @@ body {
               <div class="meta"><div class="label">Confirmation</div><div class="value"><span class="badge green">CONFIRMED</span></div></div>
               <div class="meta"><div class="label">Journey</div><div class="value"><span class="badge slate">LIVE</span></div></div>
               <div class="meta"><div class="label">Trade Status</div><div class="value"><span class="badge green">ACTIVE</span></div></div>
+              <div class="meta"><div class="label">Exec Probability</div><div class="value"><span class="badge slate">88%</span></div></div>
+              <div class="meta"><div class="label">Trade Mode</div><div class="value"><span class="badge green">FULL_RISK</span></div></div>
+              <div class="meta"><div class="label">Asset Class</div><div class="value"><span class="badge slate">INDEX</span></div></div>
+              <div class="meta"><div class="label">Cluster</div><div class="value"><span class="badge slate">INDEX_B_SCALING</span></div></div>
             </div>
           </div>
 
@@ -759,13 +795,13 @@ body {
                     <div class="confirm-title">Threshold tracker</div>
                     <div class="status-badge green">CONFIRMED</div>
                   </div>
-                  <div class="mini">Journey already produced a confirmed live trade. Current row trigger can wait without downgrading confirmation.</div>
+                  <div class="mini">Execution remains active while higher-timeframe conflict persists.</div>
                   <div class="progress"><span style="width:100%"></span></div>
-                  <div class="mini">Risk: MEDIUM • Rules: 5/6 • Current exec: READY • Last execution: 2026-04-02 12:00:00</div>
+                  <div class="mini">Exec Prob: 88% • Risk: MEDIUM • Rules: 5/6 • Current exec: READY • Trade mode: FULL_RISK • Last execution: 2026-04-02 12:00:00</div>
                 </div>
 
                 <div class="confirm-item">
-                  <div class="confirm-head"><div class="confirm-title">Why Ready</div></div>
+                  <div class="confirm-head"><div class="confirm-title">Why Tradable</div></div>
                   <div class="mini">Execution remains active while higher-timeframe conflict persists.</div>
                   <div class="mini" style="margin-top:8px;">Signal reason: SELL_SIDE_REACHED_4_PLUS_AND_WON</div>
                 </div>
@@ -796,6 +832,30 @@ body {
               <div class="meta"><div class="label">M30</div><div class="value"><span class="badge red">DOWN</span></div></div>
               <div class="meta"><div class="label">H1</div><div class="value"><span class="badge green">UP</span></div></div>
               <div class="meta"><div class="label">H4</div><div class="value"><span class="badge red">DOWN</span></div></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Current Row Diagnostics</div>
+                <div class="card-sub">Latest raw row state</div>
+              </div>
+            </div>
+            <div class="metrics-grid">
+              <div class="meta"><div class="label">Row Time</div><div class="value">2026-04-02 15:00:00</div></div><div class="meta"><div class="label">Context</div><div class="value"><span class="badge slate">BEAR_CONTEXT</span></div></div><div class="meta"><div class="label">Setup</div><div class="value"><span class="badge slate">SELL_SETUP</span></div></div><div class="meta"><div class="label">Direction</div><div class="value"><span class="badge red">BEAR</span></div></div><div class="meta"><div class="label">Signal State</div><div class="value"><span class="badge red">SELL</span></div></div><div class="meta"><div class="label">Signal Label</div><div class="value"><span class="badge slate">STRONG_SELL</span></div></div><div class="meta"><div class="label">Strength</div><div class="value"><span class="badge green">STRONG</span></div></div><div class="meta"><div class="label">Pullback</div><div class="value"><span class="badge slate">BEAR_PULLBACK_ACTIVE</span></div></div><div class="meta"><div class="label">Trigger</div><div class="value"><span class="badge slate">NO_TRIGGER</span></div></div><div class="meta"><div class="label">Execution</div><div class="value"><span class="badge amber">WAIT</span></div></div><div class="meta"><div class="label">Buy Count</div><div class="value">1</div></div><div class="meta"><div class="label">Sell Count</div><div class="value">5</div></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Campaign Snapshot</div>
+                <div class="card-sub">Carried-forward campaign state used by the dashboard decision layer</div>
+              </div>
+            </div>
+            <div class="metrics-grid">
+              <div class="meta"><div class="label">Row Time</div><div class="value">2026-04-02 15:00:00</div></div><div class="meta"><div class="label">Context</div><div class="value"><span class="badge slate">BEAR_CONTEXT</span></div></div><div class="meta"><div class="label">Setup</div><div class="value"><span class="badge slate">SELL_SETUP</span></div></div><div class="meta"><div class="label">Direction</div><div class="value"><span class="badge red">BEAR</span></div></div><div class="meta"><div class="label">Signal State</div><div class="value"><span class="badge red">SELL</span></div></div><div class="meta"><div class="label">Signal Label</div><div class="value"><span class="badge slate">STRONG_SELL</span></div></div><div class="meta"><div class="label">Strength</div><div class="value"><span class="badge green">STRONG</span></div></div><div class="meta"><div class="label">Pullback</div><div class="value"><span class="badge slate">BEAR_PULLBACK_ACTIVE</span></div></div><div class="meta"><div class="label">Trigger</div><div class="value"><span class="badge slate">NO_TRIGGER</span></div></div><div class="meta"><div class="label">Execution</div><div class="value"><span class="badge amber">WAIT</span></div></div><div class="meta"><div class="label">Buy Count</div><div class="value">1</div></div><div class="meta"><div class="label">Sell Count</div><div class="value">5</div></div>
             </div>
           </div>
         </div>
@@ -832,6 +892,7 @@ body {
           <div class="journey-section">
             <div class="journey-section-title">Execution State</div>
             <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge green">READY</span></div></div>
+            <div class="journey-row"><div class="journey-label">Exec Probability</div><div><span class="badge slate">88% • HIGH_PROB</span></div></div>
             <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">Manage active trade</div></div>
             <div class="journey-row"><div class="journey-label">Risk</div><div><span class="badge blue">MEDIUM</span></div></div>
             <div class="journey-note">
@@ -854,6 +915,9 @@ body {
             <div class="mini-box"><div class="label">Executions</div><div class="value">2</div></div>
             <div class="mini-box"><div class="label">Best Execution</div><div class="value value-small">2026-04-02 12:00:00</div></div>
             <div class="mini-box"><div class="label">Best Strength</div><div class="value"><span class="badge slate">STRONG_SELL</span></div></div>
+            <div class="mini-box"><div class="label">Last M15 Exit</div><div class="value value-small">2026.04.02 15:30</div></div>
+            <div class="mini-box"><div class="label">M15 Exit Dir</div><div class="value"><span class="badge slate">EXIT_SELL</span></div></div>
+            <div class="mini-box"><div class="label">M15 Exit Price</div><div class="value">8563.83</div></div>
           </div>
         </div>
 
@@ -958,6 +1022,10 @@ body {
               <div class="meta"><div class="label">Confirmation</div><div class="value"><span class="badge green">CONFIRMED</span></div></div>
               <div class="meta"><div class="label">Journey</div><div class="value"><span class="badge slate">LIVE</span></div></div>
               <div class="meta"><div class="label">Trade Status</div><div class="value"><span class="badge green">ACTIVE</span></div></div>
+              <div class="meta"><div class="label">Exec Probability</div><div class="value"><span class="badge slate">88%</span></div></div>
+              <div class="meta"><div class="label">Trade Mode</div><div class="value"><span class="badge green">FULL_RISK</span></div></div>
+              <div class="meta"><div class="label">Asset Class</div><div class="value"><span class="badge slate">INDEX</span></div></div>
+              <div class="meta"><div class="label">Cluster</div><div class="value"><span class="badge slate">INDEX_B_SCALING</span></div></div>
             </div>
           </div>
 
@@ -986,13 +1054,13 @@ body {
                     <div class="confirm-title">Threshold tracker</div>
                     <div class="status-badge green">CONFIRMED</div>
                   </div>
-                  <div class="mini">Journey already produced a confirmed live trade. Current row trigger can wait without downgrading confirmation.</div>
+                  <div class="mini">Execution remains active while higher-timeframe conflict persists.</div>
                   <div class="progress"><span style="width:100%"></span></div>
-                  <div class="mini">Risk: MEDIUM • Rules: 5/6 • Current exec: READY • Last execution: 2026-04-02 21:00:00</div>
+                  <div class="mini">Exec Prob: 88% • Risk: MEDIUM • Rules: 5/6 • Current exec: READY • Trade mode: FULL_RISK • Last execution: 2026-04-02 21:00:00</div>
                 </div>
 
                 <div class="confirm-item">
-                  <div class="confirm-head"><div class="confirm-title">Why Ready</div></div>
+                  <div class="confirm-head"><div class="confirm-title">Why Tradable</div></div>
                   <div class="mini">Execution remains active while higher-timeframe conflict persists.</div>
                   <div class="mini" style="margin-top:8px;">Signal reason: BUY_SIDE_REACHED_4_PLUS_AND_WON</div>
                 </div>
@@ -1023,6 +1091,30 @@ body {
               <div class="meta"><div class="label">M30</div><div class="value"><span class="badge green">UP</span></div></div>
               <div class="meta"><div class="label">H1</div><div class="value"><span class="badge green">UP</span></div></div>
               <div class="meta"><div class="label">H4</div><div class="value"><span class="badge red">DOWN</span></div></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Current Row Diagnostics</div>
+                <div class="card-sub">Latest raw row state</div>
+              </div>
+            </div>
+            <div class="metrics-grid">
+              <div class="meta"><div class="label">Row Time</div><div class="value">2026-04-02 22:00:00</div></div><div class="meta"><div class="label">Context</div><div class="value"><span class="badge amber">NEUTRAL</span></div></div><div class="meta"><div class="label">Setup</div><div class="value"><span class="badge slate">BUY_SETUP</span></div></div><div class="meta"><div class="label">Direction</div><div class="value"><span class="badge green">BULL</span></div></div><div class="meta"><div class="label">Signal State</div><div class="value"><span class="badge green">BUY</span></div></div><div class="meta"><div class="label">Signal Label</div><div class="value"><span class="badge slate">STRONG_BUY</span></div></div><div class="meta"><div class="label">Strength</div><div class="value"><span class="badge green">STRONG</span></div></div><div class="meta"><div class="label">Pullback</div><div class="value"><span class="badge amber">NONE</span></div></div><div class="meta"><div class="label">Trigger</div><div class="value"><span class="badge slate">BUY_TRIGGER</span></div></div><div class="meta"><div class="label">Execution</div><div class="value"><span class="badge slate">STRONG_BUY</span></div></div><div class="meta"><div class="label">Buy Count</div><div class="value">5</div></div><div class="meta"><div class="label">Sell Count</div><div class="value">2</div></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Campaign Snapshot</div>
+                <div class="card-sub">Carried-forward campaign state used by the dashboard decision layer</div>
+              </div>
+            </div>
+            <div class="metrics-grid">
+              <div class="meta"><div class="label">Row Time</div><div class="value">2026-04-02 22:00:00</div></div><div class="meta"><div class="label">Context</div><div class="value"><span class="badge amber">NEUTRAL</span></div></div><div class="meta"><div class="label">Setup</div><div class="value"><span class="badge slate">BUY_SETUP</span></div></div><div class="meta"><div class="label">Direction</div><div class="value"><span class="badge green">BULL</span></div></div><div class="meta"><div class="label">Signal State</div><div class="value"><span class="badge green">BUY</span></div></div><div class="meta"><div class="label">Signal Label</div><div class="value"><span class="badge slate">STRONG_BUY</span></div></div><div class="meta"><div class="label">Strength</div><div class="value"><span class="badge green">STRONG</span></div></div><div class="meta"><div class="label">Pullback</div><div class="value"><span class="badge amber">NONE</span></div></div><div class="meta"><div class="label">Trigger</div><div class="value"><span class="badge slate">BUY_TRIGGER</span></div></div><div class="meta"><div class="label">Execution</div><div class="value"><span class="badge slate">STRONG_BUY</span></div></div><div class="meta"><div class="label">Buy Count</div><div class="value">5</div></div><div class="meta"><div class="label">Sell Count</div><div class="value">2</div></div>
             </div>
           </div>
         </div>
@@ -1059,6 +1151,7 @@ body {
           <div class="journey-section">
             <div class="journey-section-title">Execution State</div>
             <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge green">READY</span></div></div>
+            <div class="journey-row"><div class="journey-label">Exec Probability</div><div><span class="badge slate">88% • HIGH_PROB</span></div></div>
             <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">Manage active trade</div></div>
             <div class="journey-row"><div class="journey-label">Risk</div><div><span class="badge blue">MEDIUM</span></div></div>
             <div class="journey-note">
@@ -1081,6 +1174,9 @@ body {
             <div class="mini-box"><div class="label">Executions</div><div class="value">2</div></div>
             <div class="mini-box"><div class="label">Best Execution</div><div class="value value-small">2026-04-02 21:00:00</div></div>
             <div class="mini-box"><div class="label">Best Strength</div><div class="value"><span class="badge slate">STRONG_BUY</span></div></div>
+            <div class="mini-box"><div class="label">Last M15 Exit</div><div class="value value-small">2026.04.02 18:45</div></div>
+            <div class="mini-box"><div class="label">M15 Exit Dir</div><div class="value"><span class="badge slate">EXIT_BUY</span></div></div>
+            <div class="mini-box"><div class="label">M15 Exit Price</div><div class="value">8000.69</div></div>
           </div>
         </div>
 
@@ -1185,6 +1281,10 @@ body {
               <div class="meta"><div class="label">Confirmation</div><div class="value"><span class="badge green">CONFIRMED</span></div></div>
               <div class="meta"><div class="label">Journey</div><div class="value"><span class="badge slate">LIVE</span></div></div>
               <div class="meta"><div class="label">Trade Status</div><div class="value"><span class="badge green">ACTIVE</span></div></div>
+              <div class="meta"><div class="label">Exec Probability</div><div class="value"><span class="badge slate">88%</span></div></div>
+              <div class="meta"><div class="label">Trade Mode</div><div class="value"><span class="badge green">FULL_RISK</span></div></div>
+              <div class="meta"><div class="label">Asset Class</div><div class="value"><span class="badge slate">INDEX</span></div></div>
+              <div class="meta"><div class="label">Cluster</div><div class="value"><span class="badge slate">INDEX_B_SCALING</span></div></div>
             </div>
           </div>
 
@@ -1213,13 +1313,13 @@ body {
                     <div class="confirm-title">Threshold tracker</div>
                     <div class="status-badge green">CONFIRMED</div>
                   </div>
-                  <div class="mini">Journey already produced a confirmed live trade. Current row trigger can wait without downgrading confirmation.</div>
+                  <div class="mini">Execution remains active while higher-timeframe conflict persists.</div>
                   <div class="progress"><span style="width:100%"></span></div>
-                  <div class="mini">Risk: MEDIUM • Rules: 5/6 • Current exec: READY • Last execution: 2026-04-02 23:00:00</div>
+                  <div class="mini">Exec Prob: 88% • Risk: MEDIUM • Rules: 5/6 • Current exec: READY • Trade mode: FULL_RISK • Last execution: 2026-04-02 23:00:00</div>
                 </div>
 
                 <div class="confirm-item">
-                  <div class="confirm-head"><div class="confirm-title">Why Ready</div></div>
+                  <div class="confirm-head"><div class="confirm-title">Why Tradable</div></div>
                   <div class="mini">Execution remains active while higher-timeframe conflict persists.</div>
                   <div class="mini" style="margin-top:8px;">Signal reason: BUY_SIDE_REACHED_4_PLUS_AND_WON</div>
                 </div>
@@ -1250,6 +1350,30 @@ body {
               <div class="meta"><div class="label">M30</div><div class="value"><span class="badge green">UP</span></div></div>
               <div class="meta"><div class="label">H1</div><div class="value"><span class="badge green">UP</span></div></div>
               <div class="meta"><div class="label">H4</div><div class="value"><span class="badge red">DOWN</span></div></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Current Row Diagnostics</div>
+                <div class="card-sub">Latest raw row state</div>
+              </div>
+            </div>
+            <div class="metrics-grid">
+              <div class="meta"><div class="label">Row Time</div><div class="value">2026-04-02 23:00:00</div></div><div class="meta"><div class="label">Context</div><div class="value"><span class="badge amber">NEUTRAL</span></div></div><div class="meta"><div class="label">Setup</div><div class="value"><span class="badge slate">BUY_SETUP</span></div></div><div class="meta"><div class="label">Direction</div><div class="value"><span class="badge green">BULL</span></div></div><div class="meta"><div class="label">Signal State</div><div class="value"><span class="badge green">BUY</span></div></div><div class="meta"><div class="label">Signal Label</div><div class="value"><span class="badge slate">STRONG_BUY</span></div></div><div class="meta"><div class="label">Strength</div><div class="value"><span class="badge green">STRONG</span></div></div><div class="meta"><div class="label">Pullback</div><div class="value"><span class="badge amber">NONE</span></div></div><div class="meta"><div class="label">Trigger</div><div class="value"><span class="badge slate">BUY_TRIGGER</span></div></div><div class="meta"><div class="label">Execution</div><div class="value"><span class="badge slate">STRONG_BUY</span></div></div><div class="meta"><div class="label">Buy Count</div><div class="value">5</div></div><div class="meta"><div class="label">Sell Count</div><div class="value">2</div></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Campaign Snapshot</div>
+                <div class="card-sub">Carried-forward campaign state used by the dashboard decision layer</div>
+              </div>
+            </div>
+            <div class="metrics-grid">
+              <div class="meta"><div class="label">Row Time</div><div class="value">2026-04-02 23:00:00</div></div><div class="meta"><div class="label">Context</div><div class="value"><span class="badge amber">NEUTRAL</span></div></div><div class="meta"><div class="label">Setup</div><div class="value"><span class="badge slate">BUY_SETUP</span></div></div><div class="meta"><div class="label">Direction</div><div class="value"><span class="badge green">BULL</span></div></div><div class="meta"><div class="label">Signal State</div><div class="value"><span class="badge green">BUY</span></div></div><div class="meta"><div class="label">Signal Label</div><div class="value"><span class="badge slate">STRONG_BUY</span></div></div><div class="meta"><div class="label">Strength</div><div class="value"><span class="badge green">STRONG</span></div></div><div class="meta"><div class="label">Pullback</div><div class="value"><span class="badge amber">NONE</span></div></div><div class="meta"><div class="label">Trigger</div><div class="value"><span class="badge slate">BUY_TRIGGER</span></div></div><div class="meta"><div class="label">Execution</div><div class="value"><span class="badge slate">STRONG_BUY</span></div></div><div class="meta"><div class="label">Buy Count</div><div class="value">5</div></div><div class="meta"><div class="label">Sell Count</div><div class="value">2</div></div>
             </div>
           </div>
         </div>
@@ -1286,6 +1410,7 @@ body {
           <div class="journey-section">
             <div class="journey-section-title">Execution State</div>
             <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge green">READY</span></div></div>
+            <div class="journey-row"><div class="journey-label">Exec Probability</div><div><span class="badge slate">88% • HIGH_PROB</span></div></div>
             <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">Manage active trade</div></div>
             <div class="journey-row"><div class="journey-label">Risk</div><div><span class="badge blue">MEDIUM</span></div></div>
             <div class="journey-note">
@@ -1308,6 +1433,9 @@ body {
             <div class="mini-box"><div class="label">Executions</div><div class="value">2</div></div>
             <div class="mini-box"><div class="label">Best Execution</div><div class="value value-small">2026-04-02 23:00:00</div></div>
             <div class="mini-box"><div class="label">Best Strength</div><div class="value"><span class="badge slate">STRONG_BUY</span></div></div>
+            <div class="mini-box"><div class="label">Last M15 Exit</div><div class="value value-small">2026.04.02 18:45</div></div>
+            <div class="mini-box"><div class="label">M15 Exit Dir</div><div class="value"><span class="badge slate">EXIT_BUY</span></div></div>
+            <div class="mini-box"><div class="label">M15 Exit Price</div><div class="value">23238.01</div></div>
           </div>
         </div>
 
@@ -1412,6 +1540,10 @@ body {
               <div class="meta"><div class="label">Confirmation</div><div class="value"><span class="badge green">CONFIRMED</span></div></div>
               <div class="meta"><div class="label">Journey</div><div class="value"><span class="badge slate">LIVE</span></div></div>
               <div class="meta"><div class="label">Trade Status</div><div class="value"><span class="badge green">ACTIVE</span></div></div>
+              <div class="meta"><div class="label">Exec Probability</div><div class="value"><span class="badge slate">88%</span></div></div>
+              <div class="meta"><div class="label">Trade Mode</div><div class="value"><span class="badge green">FULL_RISK</span></div></div>
+              <div class="meta"><div class="label">Asset Class</div><div class="value"><span class="badge slate">INDEX</span></div></div>
+              <div class="meta"><div class="label">Cluster</div><div class="value"><span class="badge slate">INDEX_B_SCALING</span></div></div>
             </div>
           </div>
 
@@ -1440,13 +1572,13 @@ body {
                     <div class="confirm-title">Threshold tracker</div>
                     <div class="status-badge green">CONFIRMED</div>
                   </div>
-                  <div class="mini">Journey already produced a confirmed live trade. Current row trigger can wait without downgrading confirmation.</div>
+                  <div class="mini">Execution remains active while higher-timeframe conflict persists.</div>
                   <div class="progress"><span style="width:100%"></span></div>
-                  <div class="mini">Risk: MEDIUM • Rules: 5/6 • Current exec: READY • Last execution: 2026-04-02 18:00:00</div>
+                  <div class="mini">Exec Prob: 88% • Risk: MEDIUM • Rules: 5/6 • Current exec: READY • Trade mode: FULL_RISK • Last execution: 2026-04-02 18:00:00</div>
                 </div>
 
                 <div class="confirm-item">
-                  <div class="confirm-head"><div class="confirm-title">Why Ready</div></div>
+                  <div class="confirm-head"><div class="confirm-title">Why Tradable</div></div>
                   <div class="mini">Execution remains active while higher-timeframe conflict persists.</div>
                   <div class="mini" style="margin-top:8px;">Signal reason: BUY_SIDE_REACHED_4_PLUS_AND_WON</div>
                 </div>
@@ -1477,6 +1609,30 @@ body {
               <div class="meta"><div class="label">M30</div><div class="value"><span class="badge green">UP</span></div></div>
               <div class="meta"><div class="label">H1</div><div class="value"><span class="badge green">UP</span></div></div>
               <div class="meta"><div class="label">H4</div><div class="value"><span class="badge red">DOWN</span></div></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Current Row Diagnostics</div>
+                <div class="card-sub">Latest raw row state</div>
+              </div>
+            </div>
+            <div class="metrics-grid">
+              <div class="meta"><div class="label">Row Time</div><div class="value">2026-04-02 20:00:00</div></div><div class="meta"><div class="label">Context</div><div class="value"><span class="badge amber">NEUTRAL</span></div></div><div class="meta"><div class="label">Setup</div><div class="value"><span class="badge slate">BUY_SETUP</span></div></div><div class="meta"><div class="label">Direction</div><div class="value"><span class="badge green">BULL</span></div></div><div class="meta"><div class="label">Signal State</div><div class="value"><span class="badge green">BUY</span></div></div><div class="meta"><div class="label">Signal Label</div><div class="value"><span class="badge slate">STRONG_BUY</span></div></div><div class="meta"><div class="label">Strength</div><div class="value"><span class="badge green">STRONG</span></div></div><div class="meta"><div class="label">Pullback</div><div class="value"><span class="badge amber">NONE</span></div></div><div class="meta"><div class="label">Trigger</div><div class="value"><span class="badge slate">NO_TRIGGER</span></div></div><div class="meta"><div class="label">Execution</div><div class="value"><span class="badge amber">WAIT</span></div></div><div class="meta"><div class="label">Buy Count</div><div class="value">5</div></div><div class="meta"><div class="label">Sell Count</div><div class="value">2</div></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Campaign Snapshot</div>
+                <div class="card-sub">Carried-forward campaign state used by the dashboard decision layer</div>
+              </div>
+            </div>
+            <div class="metrics-grid">
+              <div class="meta"><div class="label">Row Time</div><div class="value">2026-04-02 20:00:00</div></div><div class="meta"><div class="label">Context</div><div class="value"><span class="badge amber">NEUTRAL</span></div></div><div class="meta"><div class="label">Setup</div><div class="value"><span class="badge slate">BUY_SETUP</span></div></div><div class="meta"><div class="label">Direction</div><div class="value"><span class="badge green">BULL</span></div></div><div class="meta"><div class="label">Signal State</div><div class="value"><span class="badge green">BUY</span></div></div><div class="meta"><div class="label">Signal Label</div><div class="value"><span class="badge slate">STRONG_BUY</span></div></div><div class="meta"><div class="label">Strength</div><div class="value"><span class="badge green">STRONG</span></div></div><div class="meta"><div class="label">Pullback</div><div class="value"><span class="badge amber">NONE</span></div></div><div class="meta"><div class="label">Trigger</div><div class="value"><span class="badge slate">NO_TRIGGER</span></div></div><div class="meta"><div class="label">Execution</div><div class="value"><span class="badge amber">WAIT</span></div></div><div class="meta"><div class="label">Buy Count</div><div class="value">5</div></div><div class="meta"><div class="label">Sell Count</div><div class="value">2</div></div>
             </div>
           </div>
         </div>
@@ -1513,6 +1669,7 @@ body {
           <div class="journey-section">
             <div class="journey-section-title">Execution State</div>
             <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge green">READY</span></div></div>
+            <div class="journey-row"><div class="journey-label">Exec Probability</div><div><span class="badge slate">88% • HIGH_PROB</span></div></div>
             <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">Manage active trade</div></div>
             <div class="journey-row"><div class="journey-label">Risk</div><div><span class="badge blue">MEDIUM</span></div></div>
             <div class="journey-note">
@@ -1535,6 +1692,9 @@ body {
             <div class="mini-box"><div class="label">Executions</div><div class="value">1</div></div>
             <div class="mini-box"><div class="label">Best Execution</div><div class="value value-small">2026-04-02 18:00:00</div></div>
             <div class="mini-box"><div class="label">Best Strength</div><div class="value"><span class="badge green">BUY</span></div></div>
+            <div class="mini-box"><div class="label">Last M15 Exit</div><div class="value value-small">2026.04.02 19:15</div></div>
+            <div class="mini-box"><div class="label">M15 Exit Dir</div><div class="value"><span class="badge slate">EXIT_BUY</span></div></div>
+            <div class="mini-box"><div class="label">M15 Exit Price</div><div class="value">17589.83</div></div>
           </div>
         </div>
 
@@ -1639,6 +1799,10 @@ body {
               <div class="meta"><div class="label">Confirmation</div><div class="value"><span class="badge amber">PENDING</span></div></div>
               <div class="meta"><div class="label">Journey</div><div class="value"><span class="badge slate">LIVE</span></div></div>
               <div class="meta"><div class="label">Trade Status</div><div class="value"><span class="badge green">ACTIVE</span></div></div>
+              <div class="meta"><div class="label">Exec Probability</div><div class="value"><span class="badge green">72%</span></div></div>
+              <div class="meta"><div class="label">Trade Mode</div><div class="value"><span class="badge blue">REDUCED_RISK</span></div></div>
+              <div class="meta"><div class="label">Asset Class</div><div class="value"><span class="badge slate">INDEX</span></div></div>
+              <div class="meta"><div class="label">Cluster</div><div class="value"><span class="badge slate">INDEX_B_SCALING</span></div></div>
             </div>
           </div>
 
@@ -1667,9 +1831,9 @@ body {
                     <div class="confirm-title">Threshold tracker</div>
                     <div class="status-badge amber">PENDING</div>
                   </div>
-                  <div class="mini">Wait for timeframe alignment</div>
+                  <div class="mini">Execution conditions aligned. Monitoring trigger follow-through.</div>
                   <div class="progress"><span style="width:83%"></span></div>
-                  <div class="mini">Risk: MEDIUM • Rules: 5/6 • Current exec: WAIT</div>
+                  <div class="mini">Exec Prob: 72% • Risk: MEDIUM • Rules: 5/6 • Current exec: WAIT • Trade mode: REDUCED_RISK</div>
                 </div>
 
                 <div class="confirm-item">
@@ -1706,6 +1870,30 @@ body {
               <div class="meta"><div class="label">H4</div><div class="value"><span class="badge red">DOWN</span></div></div>
             </div>
           </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Current Row Diagnostics</div>
+                <div class="card-sub">Latest raw row state</div>
+              </div>
+            </div>
+            <div class="metrics-grid">
+              <div class="meta"><div class="label">Row Time</div><div class="value">2026-04-02 22:00:00</div></div><div class="meta"><div class="label">Context</div><div class="value"><span class="badge amber">NEUTRAL</span></div></div><div class="meta"><div class="label">Setup</div><div class="value"><span class="badge slate">BUY_SETUP</span></div></div><div class="meta"><div class="label">Direction</div><div class="value"><span class="badge green">BULL</span></div></div><div class="meta"><div class="label">Signal State</div><div class="value"><span class="badge green">BUY</span></div></div><div class="meta"><div class="label">Signal Label</div><div class="value"><span class="badge slate">STRONG_BUY</span></div></div><div class="meta"><div class="label">Strength</div><div class="value"><span class="badge green">STRONG</span></div></div><div class="meta"><div class="label">Pullback</div><div class="value"><span class="badge amber">NONE</span></div></div><div class="meta"><div class="label">Trigger</div><div class="value"><span class="badge slate">NO_TRIGGER</span></div></div><div class="meta"><div class="label">Execution</div><div class="value"><span class="badge amber">WAIT</span></div></div><div class="meta"><div class="label">Buy Count</div><div class="value">5</div></div><div class="meta"><div class="label">Sell Count</div><div class="value">2</div></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Campaign Snapshot</div>
+                <div class="card-sub">Carried-forward campaign state used by the dashboard decision layer</div>
+              </div>
+            </div>
+            <div class="metrics-grid">
+              <div class="meta"><div class="label">Row Time</div><div class="value">2026-04-02 22:00:00</div></div><div class="meta"><div class="label">Context</div><div class="value"><span class="badge amber">NEUTRAL</span></div></div><div class="meta"><div class="label">Setup</div><div class="value"><span class="badge slate">BUY_SETUP</span></div></div><div class="meta"><div class="label">Direction</div><div class="value"><span class="badge green">BULL</span></div></div><div class="meta"><div class="label">Signal State</div><div class="value"><span class="badge green">BUY</span></div></div><div class="meta"><div class="label">Signal Label</div><div class="value"><span class="badge slate">STRONG_BUY</span></div></div><div class="meta"><div class="label">Strength</div><div class="value"><span class="badge green">STRONG</span></div></div><div class="meta"><div class="label">Pullback</div><div class="value"><span class="badge amber">NONE</span></div></div><div class="meta"><div class="label">Trigger</div><div class="value"><span class="badge slate">NO_TRIGGER</span></div></div><div class="meta"><div class="label">Execution</div><div class="value"><span class="badge amber">WAIT</span></div></div><div class="meta"><div class="label">Buy Count</div><div class="value">5</div></div><div class="meta"><div class="label">Sell Count</div><div class="value">2</div></div>
+            </div>
+          </div>
         </div>
 
         
@@ -1740,6 +1928,7 @@ body {
           <div class="journey-section">
             <div class="journey-section-title">Execution State</div>
             <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge amber">WAIT</span></div></div>
+            <div class="journey-row"><div class="journey-label">Exec Probability</div><div><span class="badge green">72% • READY</span></div></div>
             <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">Wait for timeframe alignment</div></div>
             <div class="journey-row"><div class="journey-label">Risk</div><div><span class="badge blue">MEDIUM</span></div></div>
             <div class="journey-note">
@@ -1762,6 +1951,9 @@ body {
             <div class="mini-box"><div class="label">Executions</div><div class="value">0</div></div>
             <div class="mini-box"><div class="label">Best Execution</div><div class="value value-small">NA</div></div>
             <div class="mini-box"><div class="label">Best Strength</div><div class="value"><span class="badge amber">NA</span></div></div>
+            <div class="mini-box"><div class="label">Last M15 Exit</div><div class="value value-small">2026.04.02 18:45</div></div>
+            <div class="mini-box"><div class="label">M15 Exit Dir</div><div class="value"><span class="badge slate">EXIT_BUY</span></div></div>
+            <div class="mini-box"><div class="label">M15 Exit Price</div><div class="value">5719.43</div></div>
           </div>
         </div>
 
@@ -1866,6 +2058,10 @@ body {
               <div class="meta"><div class="label">Confirmation</div><div class="value"><span class="badge green">CONFIRMED</span></div></div>
               <div class="meta"><div class="label">Journey</div><div class="value"><span class="badge slate">LIVE</span></div></div>
               <div class="meta"><div class="label">Trade Status</div><div class="value"><span class="badge green">ACTIVE</span></div></div>
+              <div class="meta"><div class="label">Exec Probability</div><div class="value"><span class="badge slate">88%</span></div></div>
+              <div class="meta"><div class="label">Trade Mode</div><div class="value"><span class="badge green">FULL_RISK</span></div></div>
+              <div class="meta"><div class="label">Asset Class</div><div class="value"><span class="badge slate">INDEX</span></div></div>
+              <div class="meta"><div class="label">Cluster</div><div class="value"><span class="badge slate">INDEX_B_SCALING</span></div></div>
             </div>
           </div>
 
@@ -1894,13 +2090,13 @@ body {
                     <div class="confirm-title">Threshold tracker</div>
                     <div class="status-badge green">CONFIRMED</div>
                   </div>
-                  <div class="mini">Journey already produced a confirmed live trade. Current row trigger can wait without downgrading confirmation.</div>
+                  <div class="mini">Execution remains active while higher-timeframe conflict persists.</div>
                   <div class="progress"><span style="width:100%"></span></div>
-                  <div class="mini">Risk: MEDIUM • Rules: 5/6 • Current exec: READY • Last execution: 2026-04-02 20:00:00</div>
+                  <div class="mini">Exec Prob: 88% • Risk: MEDIUM • Rules: 5/6 • Current exec: READY • Trade mode: FULL_RISK • Last execution: 2026-04-02 20:00:00</div>
                 </div>
 
                 <div class="confirm-item">
-                  <div class="confirm-head"><div class="confirm-title">Why Ready</div></div>
+                  <div class="confirm-head"><div class="confirm-title">Why Tradable</div></div>
                   <div class="mini">Execution remains active while higher-timeframe conflict persists.</div>
                   <div class="mini" style="margin-top:8px;">Signal reason: BUY_SIDE_REACHED_4_PLUS_AND_WON</div>
                 </div>
@@ -1931,6 +2127,30 @@ body {
               <div class="meta"><div class="label">M30</div><div class="value"><span class="badge green">UP</span></div></div>
               <div class="meta"><div class="label">H1</div><div class="value"><span class="badge green">UP</span></div></div>
               <div class="meta"><div class="label">H4</div><div class="value"><span class="badge red">DOWN</span></div></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Current Row Diagnostics</div>
+                <div class="card-sub">Latest raw row state</div>
+              </div>
+            </div>
+            <div class="metrics-grid">
+              <div class="meta"><div class="label">Row Time</div><div class="value">2026-04-02 21:00:00</div></div><div class="meta"><div class="label">Context</div><div class="value"><span class="badge amber">NEUTRAL</span></div></div><div class="meta"><div class="label">Setup</div><div class="value"><span class="badge slate">BUY_SETUP</span></div></div><div class="meta"><div class="label">Direction</div><div class="value"><span class="badge green">BULL</span></div></div><div class="meta"><div class="label">Signal State</div><div class="value"><span class="badge green">BUY</span></div></div><div class="meta"><div class="label">Signal Label</div><div class="value"><span class="badge slate">STRONG_BUY</span></div></div><div class="meta"><div class="label">Strength</div><div class="value"><span class="badge green">STRONG</span></div></div><div class="meta"><div class="label">Pullback</div><div class="value"><span class="badge amber">NONE</span></div></div><div class="meta"><div class="label">Trigger</div><div class="value"><span class="badge slate">BUY_TRIGGER</span></div></div><div class="meta"><div class="label">Execution</div><div class="value"><span class="badge slate">STRONG_BUY</span></div></div><div class="meta"><div class="label">Buy Count</div><div class="value">5</div></div><div class="meta"><div class="label">Sell Count</div><div class="value">2</div></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Campaign Snapshot</div>
+                <div class="card-sub">Carried-forward campaign state used by the dashboard decision layer</div>
+              </div>
+            </div>
+            <div class="metrics-grid">
+              <div class="meta"><div class="label">Row Time</div><div class="value">2026-04-02 21:00:00</div></div><div class="meta"><div class="label">Context</div><div class="value"><span class="badge amber">NEUTRAL</span></div></div><div class="meta"><div class="label">Setup</div><div class="value"><span class="badge slate">BUY_SETUP</span></div></div><div class="meta"><div class="label">Direction</div><div class="value"><span class="badge green">BULL</span></div></div><div class="meta"><div class="label">Signal State</div><div class="value"><span class="badge green">BUY</span></div></div><div class="meta"><div class="label">Signal Label</div><div class="value"><span class="badge slate">STRONG_BUY</span></div></div><div class="meta"><div class="label">Strength</div><div class="value"><span class="badge green">STRONG</span></div></div><div class="meta"><div class="label">Pullback</div><div class="value"><span class="badge amber">NONE</span></div></div><div class="meta"><div class="label">Trigger</div><div class="value"><span class="badge slate">BUY_TRIGGER</span></div></div><div class="meta"><div class="label">Execution</div><div class="value"><span class="badge slate">STRONG_BUY</span></div></div><div class="meta"><div class="label">Buy Count</div><div class="value">5</div></div><div class="meta"><div class="label">Sell Count</div><div class="value">2</div></div>
             </div>
           </div>
         </div>
@@ -1967,6 +2187,7 @@ body {
           <div class="journey-section">
             <div class="journey-section-title">Execution State</div>
             <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge green">READY</span></div></div>
+            <div class="journey-row"><div class="journey-label">Exec Probability</div><div><span class="badge slate">88% • HIGH_PROB</span></div></div>
             <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">Manage active trade</div></div>
             <div class="journey-row"><div class="journey-label">Risk</div><div><span class="badge blue">MEDIUM</span></div></div>
             <div class="journey-note">
@@ -1989,6 +2210,9 @@ body {
             <div class="mini-box"><div class="label">Executions</div><div class="value">1</div></div>
             <div class="mini-box"><div class="label">Best Execution</div><div class="value value-small">2026-04-02 20:00:00</div></div>
             <div class="mini-box"><div class="label">Best Strength</div><div class="value"><span class="badge slate">STRONG_BUY</span></div></div>
+            <div class="mini-box"><div class="label">Last M15 Exit</div><div class="value value-small">2026.04.02 18:30</div></div>
+            <div class="mini-box"><div class="label">M15 Exit Dir</div><div class="value"><span class="badge slate">EXIT_BUY</span></div></div>
+            <div class="mini-box"><div class="label">M15 Exit Price</div><div class="value">25310.90</div></div>
           </div>
         </div>
 
@@ -2093,6 +2317,10 @@ body {
               <div class="meta"><div class="label">Confirmation</div><div class="value"><span class="badge green">CONFIRMED</span></div></div>
               <div class="meta"><div class="label">Journey</div><div class="value"><span class="badge slate">LIVE</span></div></div>
               <div class="meta"><div class="label">Trade Status</div><div class="value"><span class="badge green">ACTIVE</span></div></div>
+              <div class="meta"><div class="label">Exec Probability</div><div class="value"><span class="badge slate">88%</span></div></div>
+              <div class="meta"><div class="label">Trade Mode</div><div class="value"><span class="badge green">FULL_RISK</span></div></div>
+              <div class="meta"><div class="label">Asset Class</div><div class="value"><span class="badge slate">INDEX</span></div></div>
+              <div class="meta"><div class="label">Cluster</div><div class="value"><span class="badge slate">INDEX_B_SCALING</span></div></div>
             </div>
           </div>
 
@@ -2121,13 +2349,13 @@ body {
                     <div class="confirm-title">Threshold tracker</div>
                     <div class="status-badge green">CONFIRMED</div>
                   </div>
-                  <div class="mini">Journey already produced a confirmed live trade. Current row trigger can wait without downgrading confirmation.</div>
+                  <div class="mini">Execution remains active while higher-timeframe conflict persists.</div>
                   <div class="progress"><span style="width:100%"></span></div>
-                  <div class="mini">Risk: MEDIUM • Rules: 5/6 • Current exec: READY • Last execution: 2026-04-03 15:00:00</div>
+                  <div class="mini">Exec Prob: 88% • Risk: MEDIUM • Rules: 5/6 • Current exec: READY • Trade mode: FULL_RISK • Last execution: 2026-04-03 15:00:00</div>
                 </div>
 
                 <div class="confirm-item">
-                  <div class="confirm-head"><div class="confirm-title">Why Ready</div></div>
+                  <div class="confirm-head"><div class="confirm-title">Why Tradable</div></div>
                   <div class="mini">Execution remains active while higher-timeframe conflict persists.</div>
                   <div class="mini" style="margin-top:8px;">Signal reason: BUY_SIDE_REACHED_4_PLUS_AND_WON</div>
                 </div>
@@ -2158,6 +2386,30 @@ body {
               <div class="meta"><div class="label">M30</div><div class="value"><span class="badge green">UP</span></div></div>
               <div class="meta"><div class="label">H1</div><div class="value"><span class="badge green">UP</span></div></div>
               <div class="meta"><div class="label">H4</div><div class="value"><span class="badge red">DOWN</span></div></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Current Row Diagnostics</div>
+                <div class="card-sub">Latest raw row state</div>
+              </div>
+            </div>
+            <div class="metrics-grid">
+              <div class="meta"><div class="label">Row Time</div><div class="value">2026-04-03 16:00:00</div></div><div class="meta"><div class="label">Context</div><div class="value"><span class="badge amber">NEUTRAL</span></div></div><div class="meta"><div class="label">Setup</div><div class="value"><span class="badge slate">BUY_SETUP</span></div></div><div class="meta"><div class="label">Direction</div><div class="value"><span class="badge green">BULL</span></div></div><div class="meta"><div class="label">Signal State</div><div class="value"><span class="badge green">BUY</span></div></div><div class="meta"><div class="label">Signal Label</div><div class="value"><span class="badge slate">STRONG_BUY</span></div></div><div class="meta"><div class="label">Strength</div><div class="value"><span class="badge green">STRONG</span></div></div><div class="meta"><div class="label">Pullback</div><div class="value"><span class="badge amber">NONE</span></div></div><div class="meta"><div class="label">Trigger</div><div class="value"><span class="badge slate">BUY_TRIGGER</span></div></div><div class="meta"><div class="label">Execution</div><div class="value"><span class="badge slate">STRONG_BUY</span></div></div><div class="meta"><div class="label">Buy Count</div><div class="value">5</div></div><div class="meta"><div class="label">Sell Count</div><div class="value">2</div></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Campaign Snapshot</div>
+                <div class="card-sub">Carried-forward campaign state used by the dashboard decision layer</div>
+              </div>
+            </div>
+            <div class="metrics-grid">
+              <div class="meta"><div class="label">Row Time</div><div class="value">2026-04-03 16:00:00</div></div><div class="meta"><div class="label">Context</div><div class="value"><span class="badge amber">NEUTRAL</span></div></div><div class="meta"><div class="label">Setup</div><div class="value"><span class="badge slate">BUY_SETUP</span></div></div><div class="meta"><div class="label">Direction</div><div class="value"><span class="badge green">BULL</span></div></div><div class="meta"><div class="label">Signal State</div><div class="value"><span class="badge green">BUY</span></div></div><div class="meta"><div class="label">Signal Label</div><div class="value"><span class="badge slate">STRONG_BUY</span></div></div><div class="meta"><div class="label">Strength</div><div class="value"><span class="badge green">STRONG</span></div></div><div class="meta"><div class="label">Pullback</div><div class="value"><span class="badge amber">NONE</span></div></div><div class="meta"><div class="label">Trigger</div><div class="value"><span class="badge slate">BUY_TRIGGER</span></div></div><div class="meta"><div class="label">Execution</div><div class="value"><span class="badge slate">STRONG_BUY</span></div></div><div class="meta"><div class="label">Buy Count</div><div class="value">5</div></div><div class="meta"><div class="label">Sell Count</div><div class="value">2</div></div>
             </div>
           </div>
         </div>
@@ -2194,6 +2446,7 @@ body {
           <div class="journey-section">
             <div class="journey-section-title">Execution State</div>
             <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge green">READY</span></div></div>
+            <div class="journey-row"><div class="journey-label">Exec Probability</div><div><span class="badge slate">88% • HIGH_PROB</span></div></div>
             <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">Manage active trade</div></div>
             <div class="journey-row"><div class="journey-label">Risk</div><div><span class="badge blue">MEDIUM</span></div></div>
             <div class="journey-note">
@@ -2216,6 +2469,9 @@ body {
             <div class="mini-box"><div class="label">Executions</div><div class="value">1</div></div>
             <div class="mini-box"><div class="label">Best Execution</div><div class="value value-small">2026-04-03 15:00:00</div></div>
             <div class="mini-box"><div class="label">Best Strength</div><div class="value"><span class="badge slate">STRONG_BUY</span></div></div>
+            <div class="mini-box"><div class="label">Last M15 Exit</div><div class="value value-small">2026.04.03 15:45</div></div>
+            <div class="mini-box"><div class="label">M15 Exit Dir</div><div class="value"><span class="badge slate">EXIT_BUY</span></div></div>
+            <div class="mini-box"><div class="label">M15 Exit Price</div><div class="value">53402.34</div></div>
           </div>
         </div>
 
@@ -2303,8 +2559,8 @@ body {
                 <div class="signal-word">NAS100.PRO</div>
                 <div class="signal-desc">
                   Updated: 2026-04-03 16:00:00<br/>
-                  Direction: BULL • Journey start: 2026-04-02 19:00:00<br/>
-                  Live trade: BULL @ 2026-04-02 19:00:00
+                  Direction: BULL • Journey start: NA<br/>
+                  Live trade: No Live Trade
                 </div>
               </div>
               <div class="gauge" data-strength="WAIT" data-rules-score="0" data-rules-total="8">
@@ -2319,7 +2575,11 @@ body {
               <div class="meta"><div class="label">Current Price</div><div class="value">23955.60</div></div>
               <div class="meta"><div class="label">Confirmation</div><div class="value"><span class="badge amber">PENDING</span></div></div>
               <div class="meta"><div class="label">Journey</div><div class="value"><span class="badge slate">MONITOR</span></div></div>
-              <div class="meta"><div class="label">Trade Status</div><div class="value"><span class="badge slate">COMPLETED</span></div></div>
+              <div class="meta"><div class="label">Trade Status</div><div class="value"><span class="badge amber">NONE</span></div></div>
+              <div class="meta"><div class="label">Exec Probability</div><div class="value"><span class="badge amber">0%</span></div></div>
+              <div class="meta"><div class="label">Trade Mode</div><div class="value"><span class="badge red">BLOCKED</span></div></div>
+              <div class="meta"><div class="label">Asset Class</div><div class="value"><span class="badge slate">INDEX</span></div></div>
+              <div class="meta"><div class="label">Cluster</div><div class="value"><span class="badge slate">INDEX_E_MIXED</span></div></div>
             </div>
           </div>
 
@@ -2348,14 +2608,14 @@ body {
                     <div class="confirm-title">Threshold tracker</div>
                     <div class="status-badge amber">PENDING</div>
                   </div>
-                  <div class="mini">Execution not permitted by structure gate</div>
-                  <div class="progress"><span style="width:20%"></span></div>
-                  <div class="mini">Risk: HIGH • Rules: 0/8 • Current exec: BLOCKED • Last execution: 2026-04-03 01:00:00</div>
+                  <div class="mini">Live journey is closed. Monitoring next opportunity.</div>
+                  <div class="progress"><span style="width:0%"></span></div>
+                  <div class="mini">Exec Prob: 0% • Risk: NA • Rules: 0/8 • Current exec: BLOCKED • Trade mode: BLOCKED</div>
                 </div>
 
                 <div class="confirm-item">
                   <div class="confirm-head"><div class="confirm-title">Why Not Ready</div></div>
-                  <div class="mini">INDEX_E_MIXED remains blocked until structure improves.</div>
+                  <div class="mini">Live journey is closed. Monitoring next opportunity.</div>
                   <div class="mini" style="margin-top:8px;">Signal reason: BUY_3_SELL_3</div>
                 </div>
               </div>
@@ -2387,6 +2647,30 @@ body {
               <div class="meta"><div class="label">H4</div><div class="value"><span class="badge red">DOWN</span></div></div>
             </div>
           </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Current Row Diagnostics</div>
+                <div class="card-sub">Latest raw row state</div>
+              </div>
+            </div>
+            <div class="metrics-grid">
+              <div class="meta"><div class="label">Row Time</div><div class="value">2026-04-03 16:00:00</div></div><div class="meta"><div class="label">Context</div><div class="value"><span class="badge slate">BULL_CONTEXT</span></div></div><div class="meta"><div class="label">Setup</div><div class="value"><span class="badge slate">NO_SETUP</span></div></div><div class="meta"><div class="label">Direction</div><div class="value"><span class="badge amber">NONE</span></div></div><div class="meta"><div class="label">Signal State</div><div class="value"><span class="badge amber">NEUTRAL</span></div></div><div class="meta"><div class="label">Signal Label</div><div class="value"><span class="badge amber">NEUTRAL</span></div></div><div class="meta"><div class="label">Strength</div><div class="value"><span class="badge amber">WAIT</span></div></div><div class="meta"><div class="label">Pullback</div><div class="value"><span class="badge slate">BULL_PULLBACK_ENDING</span></div></div><div class="meta"><div class="label">Trigger</div><div class="value"><span class="badge slate">NO_TRIGGER</span></div></div><div class="meta"><div class="label">Execution</div><div class="value"><span class="badge amber">WAIT</span></div></div><div class="meta"><div class="label">Buy Count</div><div class="value">3</div></div><div class="meta"><div class="label">Sell Count</div><div class="value">3</div></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Campaign Snapshot</div>
+                <div class="card-sub">Carried-forward campaign state used by the dashboard decision layer</div>
+              </div>
+            </div>
+            <div class="metrics-grid">
+              <div class="meta"><div class="label">Row Time</div><div class="value">2026-04-03 16:00:00</div></div><div class="meta"><div class="label">Context</div><div class="value"><span class="badge slate">BULL_CONTEXT</span></div></div><div class="meta"><div class="label">Setup</div><div class="value"><span class="badge slate">NO_SETUP</span></div></div><div class="meta"><div class="label">Direction</div><div class="value"><span class="badge amber">NONE</span></div></div><div class="meta"><div class="label">Signal State</div><div class="value"><span class="badge amber">NEUTRAL</span></div></div><div class="meta"><div class="label">Signal Label</div><div class="value"><span class="badge amber">NEUTRAL</span></div></div><div class="meta"><div class="label">Strength</div><div class="value"><span class="badge amber">WAIT</span></div></div><div class="meta"><div class="label">Pullback</div><div class="value"><span class="badge slate">BULL_PULLBACK_ENDING</span></div></div><div class="meta"><div class="label">Trigger</div><div class="value"><span class="badge slate">NO_TRIGGER</span></div></div><div class="meta"><div class="label">Execution</div><div class="value"><span class="badge amber">WAIT</span></div></div><div class="meta"><div class="label">Buy Count</div><div class="value">3</div></div><div class="meta"><div class="label">Sell Count</div><div class="value">3</div></div>
+            </div>
+          </div>
         </div>
 
         
@@ -2397,7 +2681,7 @@ body {
             <div class="card-title">Trade Journey</div>
             <div class="card-sub">Context → signal → confirmation</div>
           </div>
-          <div class="status-badge slate">COMPLETED</div>
+          <div class="status-badge amber">NONE</div>
         </div>
 
         <div class="journey-grid">
@@ -2420,12 +2704,13 @@ body {
 
           <div class="journey-section">
             <div class="journey-section-title">Execution State</div>
-            <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge red">BLOCKED</span></div></div>
-            <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">Execution not permitted by structure gate</div></div>
-            <div class="journey-row"><div class="journey-label">Risk</div><div><span class="badge red">HIGH</span></div></div>
+            <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge amber">NONE</span></div></div>
+            <div class="journey-row"><div class="journey-label">Exec Probability</div><div><span class="badge amber">0% • NONE</span></div></div>
+            <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">Wait for next journey</div></div>
+            <div class="journey-row"><div class="journey-label">Risk</div><div><span class="badge amber">NA</span></div></div>
             <div class="journey-note">
               <div class="journey-label">Note</div>
-              <div class="journey-value journey-value-left">INDEX_E_MIXED remains blocked until structure improves.</div>
+              <div class="journey-value journey-value-left">Journey closed by flip or NONE.</div>
             </div>
           </div>
         </div>
@@ -2433,16 +2718,19 @@ body {
         <div class="current-trade-wrap">
           <div class="journey-section-title">Current Trade</div>
           <div class="current-trade-grid">
-            <div class="mini-box"><div class="label">Direction</div><div class="value"><span class="badge green">BULL</span></div></div>
-            <div class="mini-box"><div class="label">Status</div><div class="value"><span class="badge slate">COMPLETED</span></div></div>
-            <div class="mini-box"><div class="label">Start Time</div><div class="value value-small">2026-04-02 19:00:00</div></div>
-            <div class="mini-box"><div class="label">End Time</div><div class="value value-small">2026-04-03 09:00:00</div></div>
+            <div class="mini-box"><div class="label">Direction</div><div class="value"><span class="badge red">BEAR</span></div></div>
+            <div class="mini-box"><div class="label">Status</div><div class="value"><span class="badge amber">NONE</span></div></div>
+            <div class="mini-box"><div class="label">Start Time</div><div class="value value-small">NA</div></div>
+            <div class="mini-box"><div class="label">End Time</div><div class="value value-small">NA</div></div>
             <div class="mini-box"><div class="label">Current Price</div><div class="value">23955.60</div></div>
-            <div class="mini-box"><div class="label">Move</div><div class="value">+31.40</div></div>
-            <div class="mini-box"><div class="label">Bars</div><div class="value">14</div></div>
-            <div class="mini-box"><div class="label">Executions</div><div class="value">2</div></div>
-            <div class="mini-box"><div class="label">Best Execution</div><div class="value value-small">2026-04-03 01:00:00</div></div>
-            <div class="mini-box"><div class="label">Best Strength</div><div class="value"><span class="badge green">CONFIRMED_BUY</span></div></div>
+            <div class="mini-box"><div class="label">Move</div><div class="value">NA</div></div>
+            <div class="mini-box"><div class="label">Bars</div><div class="value">0</div></div>
+            <div class="mini-box"><div class="label">Executions</div><div class="value">0</div></div>
+            <div class="mini-box"><div class="label">Best Execution</div><div class="value value-small">NA</div></div>
+            <div class="mini-box"><div class="label">Best Strength</div><div class="value"><span class="badge amber">NA</span></div></div>
+            <div class="mini-box"><div class="label">Last M15 Exit</div><div class="value value-small">2026.04.03 07:00</div></div>
+            <div class="mini-box"><div class="label">M15 Exit Dir</div><div class="value"><span class="badge slate">EXIT_SELL</span></div></div>
+            <div class="mini-box"><div class="label">M15 Exit Price</div><div class="value">23969.30</div></div>
           </div>
         </div>
 
@@ -2468,21 +2756,21 @@ body {
           <div class="timeline-wrap">
             <div class="timeline">
         <div class="step">
-          <div class="step-title">Journey started</div>
-          <div class="step-meta">2026-04-02 19:00:00</div>
-          <div class="step-note">BULL @ 2026-04-02 19:00:00 • Phase Monitor.</div>
+          <div class="step-title">Live journey closed</div>
+          <div class="step-meta">COMPLETED</div>
+          <div class="step-note">Journey ended because signal flipped or dropped to NONE. UI correctly suppresses stale live trade rendering.</div>
         </div>
         
         <div class="step">
-          <div class="step-title">Execution milestone</div>
-          <div class="step-meta">2026-04-03 01:00:00</div>
-          <div class="step-note">CONFIRMED_BUY at 24028.20</div>
+          <div class="step-title">Previous trade</div>
+          <div class="step-meta">2026-04-02 17:00:00</div>
+          <div class="step-note">BEAR @ 2026-04-02 06:00:00 • Completed.</div>
         </div>
         
         <div class="step">
           <div class="step-title">Current monitoring state</div>
-          <div class="step-meta">BLOCKED</div>
-          <div class="step-note">Execution not permitted by structure gate</div>
+          <div class="step-meta">NONE</div>
+          <div class="step-note">Waiting for the next valid journey to appear.</div>
         </div>
         </div>
           </div>
@@ -2547,6 +2835,10 @@ body {
               <div class="meta"><div class="label">Confirmation</div><div class="value"><span class="badge green">CONFIRMED</span></div></div>
               <div class="meta"><div class="label">Journey</div><div class="value"><span class="badge slate">LIVE</span></div></div>
               <div class="meta"><div class="label">Trade Status</div><div class="value"><span class="badge green">ACTIVE</span></div></div>
+              <div class="meta"><div class="label">Exec Probability</div><div class="value"><span class="badge slate">88%</span></div></div>
+              <div class="meta"><div class="label">Trade Mode</div><div class="value"><span class="badge green">FULL_RISK</span></div></div>
+              <div class="meta"><div class="label">Asset Class</div><div class="value"><span class="badge slate">INDEX</span></div></div>
+              <div class="meta"><div class="label">Cluster</div><div class="value"><span class="badge slate">INDEX_B_SCALING</span></div></div>
             </div>
           </div>
 
@@ -2575,13 +2867,13 @@ body {
                     <div class="confirm-title">Threshold tracker</div>
                     <div class="status-badge green">CONFIRMED</div>
                   </div>
-                  <div class="mini">Journey already produced a confirmed live trade. Current row trigger can wait without downgrading confirmation.</div>
+                  <div class="mini">Execution remains active while higher-timeframe conflict persists.</div>
                   <div class="progress"><span style="width:100%"></span></div>
-                  <div class="mini">Risk: MEDIUM • Rules: 5/6 • Current exec: READY • Last execution: 2026-04-02 20:00:00</div>
+                  <div class="mini">Exec Prob: 88% • Risk: MEDIUM • Rules: 5/6 • Current exec: READY • Trade mode: FULL_RISK • Last execution: 2026-04-02 20:00:00</div>
                 </div>
 
                 <div class="confirm-item">
-                  <div class="confirm-head"><div class="confirm-title">Why Ready</div></div>
+                  <div class="confirm-head"><div class="confirm-title">Why Tradable</div></div>
                   <div class="mini">Execution remains active while higher-timeframe conflict persists.</div>
                   <div class="mini" style="margin-top:8px;">Signal reason: BUY_SIDE_REACHED_4_PLUS_AND_WON</div>
                 </div>
@@ -2612,6 +2904,30 @@ body {
               <div class="meta"><div class="label">M30</div><div class="value"><span class="badge red">DOWN</span></div></div>
               <div class="meta"><div class="label">H1</div><div class="value"><span class="badge green">UP</span></div></div>
               <div class="meta"><div class="label">H4</div><div class="value"><span class="badge red">DOWN</span></div></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Current Row Diagnostics</div>
+                <div class="card-sub">Latest raw row state</div>
+              </div>
+            </div>
+            <div class="metrics-grid">
+              <div class="meta"><div class="label">Row Time</div><div class="value">2026-04-02 22:00:00</div></div><div class="meta"><div class="label">Context</div><div class="value"><span class="badge amber">NEUTRAL</span></div></div><div class="meta"><div class="label">Setup</div><div class="value"><span class="badge slate">BUY_SETUP</span></div></div><div class="meta"><div class="label">Direction</div><div class="value"><span class="badge green">BULL</span></div></div><div class="meta"><div class="label">Signal State</div><div class="value"><span class="badge green">BUY</span></div></div><div class="meta"><div class="label">Signal Label</div><div class="value"><span class="badge slate">STRONG_BUY</span></div></div><div class="meta"><div class="label">Strength</div><div class="value"><span class="badge green">STRONG</span></div></div><div class="meta"><div class="label">Pullback</div><div class="value"><span class="badge amber">NONE</span></div></div><div class="meta"><div class="label">Trigger</div><div class="value"><span class="badge slate">BUY_TRIGGER</span></div></div><div class="meta"><div class="label">Execution</div><div class="value"><span class="badge slate">STRONG_BUY</span></div></div><div class="meta"><div class="label">Buy Count</div><div class="value">5</div></div><div class="meta"><div class="label">Sell Count</div><div class="value">2</div></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Campaign Snapshot</div>
+                <div class="card-sub">Carried-forward campaign state used by the dashboard decision layer</div>
+              </div>
+            </div>
+            <div class="metrics-grid">
+              <div class="meta"><div class="label">Row Time</div><div class="value">2026-04-02 22:00:00</div></div><div class="meta"><div class="label">Context</div><div class="value"><span class="badge amber">NEUTRAL</span></div></div><div class="meta"><div class="label">Setup</div><div class="value"><span class="badge slate">BUY_SETUP</span></div></div><div class="meta"><div class="label">Direction</div><div class="value"><span class="badge green">BULL</span></div></div><div class="meta"><div class="label">Signal State</div><div class="value"><span class="badge green">BUY</span></div></div><div class="meta"><div class="label">Signal Label</div><div class="value"><span class="badge slate">STRONG_BUY</span></div></div><div class="meta"><div class="label">Strength</div><div class="value"><span class="badge green">STRONG</span></div></div><div class="meta"><div class="label">Pullback</div><div class="value"><span class="badge amber">NONE</span></div></div><div class="meta"><div class="label">Trigger</div><div class="value"><span class="badge slate">BUY_TRIGGER</span></div></div><div class="meta"><div class="label">Execution</div><div class="value"><span class="badge slate">STRONG_BUY</span></div></div><div class="meta"><div class="label">Buy Count</div><div class="value">5</div></div><div class="meta"><div class="label">Sell Count</div><div class="value">2</div></div>
             </div>
           </div>
         </div>
@@ -2648,6 +2964,7 @@ body {
           <div class="journey-section">
             <div class="journey-section-title">Execution State</div>
             <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge green">READY</span></div></div>
+            <div class="journey-row"><div class="journey-label">Exec Probability</div><div><span class="badge slate">88% • HIGH_PROB</span></div></div>
             <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">Manage active trade</div></div>
             <div class="journey-row"><div class="journey-label">Risk</div><div><span class="badge blue">MEDIUM</span></div></div>
             <div class="journey-note">
@@ -2670,6 +2987,9 @@ body {
             <div class="mini-box"><div class="label">Executions</div><div class="value">2</div></div>
             <div class="mini-box"><div class="label">Best Execution</div><div class="value value-small">2026-04-02 20:00:00</div></div>
             <div class="mini-box"><div class="label">Best Strength</div><div class="value"><span class="badge green">BUY</span></div></div>
+            <div class="mini-box"><div class="label">Last M15 Exit</div><div class="value value-small">2026.04.02 18:45</div></div>
+            <div class="mini-box"><div class="label">M15 Exit Dir</div><div class="value"><span class="badge slate">EXIT_BUY</span></div></div>
+            <div class="mini-box"><div class="label">M15 Exit Price</div><div class="value">13022.30</div></div>
           </div>
         </div>
 
@@ -2774,6 +3094,10 @@ body {
               <div class="meta"><div class="label">Confirmation</div><div class="value"><span class="badge green">CONFIRMED</span></div></div>
               <div class="meta"><div class="label">Journey</div><div class="value"><span class="badge slate">LIVE</span></div></div>
               <div class="meta"><div class="label">Trade Status</div><div class="value"><span class="badge green">ACTIVE</span></div></div>
+              <div class="meta"><div class="label">Exec Probability</div><div class="value"><span class="badge slate">88%</span></div></div>
+              <div class="meta"><div class="label">Trade Mode</div><div class="value"><span class="badge red">BLOCKED</span></div></div>
+              <div class="meta"><div class="label">Asset Class</div><div class="value"><span class="badge slate">INDEX</span></div></div>
+              <div class="meta"><div class="label">Cluster</div><div class="value"><span class="badge slate">INDEX_E_MIXED</span></div></div>
             </div>
           </div>
 
@@ -2802,9 +3126,9 @@ body {
                     <div class="confirm-title">Threshold tracker</div>
                     <div class="status-badge green">CONFIRMED</div>
                   </div>
-                  <div class="mini">Journey already produced a confirmed live trade. Current row trigger can wait without downgrading confirmation.</div>
+                  <div class="mini">INDEX_E_MIXED remains blocked until structure improves.</div>
                   <div class="progress"><span style="width:100%"></span></div>
-                  <div class="mini">Risk: HIGH • Rules: 4/6 • Current exec: BLOCKED • Last execution: 2026-04-03 14:00:00</div>
+                  <div class="mini">Exec Prob: 88% • Risk: HIGH • Rules: 4/6 • Current exec: BLOCKED • Trade mode: BLOCKED • Last execution: 2026-04-03 14:00:00</div>
                 </div>
 
                 <div class="confirm-item">
@@ -2841,6 +3165,30 @@ body {
               <div class="meta"><div class="label">H4</div><div class="value"><span class="badge red">DOWN</span></div></div>
             </div>
           </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Current Row Diagnostics</div>
+                <div class="card-sub">Latest raw row state</div>
+              </div>
+            </div>
+            <div class="metrics-grid">
+              <div class="meta"><div class="label">Row Time</div><div class="value">2026-04-03 16:00:00</div></div><div class="meta"><div class="label">Context</div><div class="value"><span class="badge slate">BULL_CONTEXT</span></div></div><div class="meta"><div class="label">Setup</div><div class="value"><span class="badge slate">NO_SETUP</span></div></div><div class="meta"><div class="label">Direction</div><div class="value"><span class="badge amber">NONE</span></div></div><div class="meta"><div class="label">Signal State</div><div class="value"><span class="badge amber">NEUTRAL</span></div></div><div class="meta"><div class="label">Signal Label</div><div class="value"><span class="badge amber">NEUTRAL</span></div></div><div class="meta"><div class="label">Strength</div><div class="value"><span class="badge amber">WAIT</span></div></div><div class="meta"><div class="label">Pullback</div><div class="value"><span class="badge slate">BULL_PULLBACK_ENDING</span></div></div><div class="meta"><div class="label">Trigger</div><div class="value"><span class="badge slate">NO_TRIGGER</span></div></div><div class="meta"><div class="label">Execution</div><div class="value"><span class="badge amber">WAIT</span></div></div><div class="meta"><div class="label">Buy Count</div><div class="value">3</div></div><div class="meta"><div class="label">Sell Count</div><div class="value">3</div></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Campaign Snapshot</div>
+                <div class="card-sub">Carried-forward campaign state used by the dashboard decision layer</div>
+              </div>
+            </div>
+            <div class="metrics-grid">
+              <div class="meta"><div class="label">Row Time</div><div class="value">2026-04-03 14:00:00</div></div><div class="meta"><div class="label">Context</div><div class="value"><span class="badge slate">BULL_CONTEXT</span></div></div><div class="meta"><div class="label">Setup</div><div class="value"><span class="badge slate">BUY_SETUP</span></div></div><div class="meta"><div class="label">Direction</div><div class="value"><span class="badge green">BULL</span></div></div><div class="meta"><div class="label">Signal State</div><div class="value"><span class="badge green">BUY</span></div></div><div class="meta"><div class="label">Signal Label</div><div class="value"><span class="badge green">BUY</span></div></div><div class="meta"><div class="label">Strength</div><div class="value"><span class="badge blue">GOOD</span></div></div><div class="meta"><div class="label">Pullback</div><div class="value"><span class="badge slate">BULL_PULLBACK_ENDING</span></div></div><div class="meta"><div class="label">Trigger</div><div class="value"><span class="badge slate">BUY_TRIGGER</span></div></div><div class="meta"><div class="label">Execution</div><div class="value"><span class="badge green">BUY</span></div></div><div class="meta"><div class="label">Buy Count</div><div class="value">4</div></div><div class="meta"><div class="label">Sell Count</div><div class="value">2</div></div>
+            </div>
+          </div>
         </div>
 
         
@@ -2875,6 +3223,7 @@ body {
           <div class="journey-section">
             <div class="journey-section-title">Execution State</div>
             <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge red">BLOCKED</span></div></div>
+            <div class="journey-row"><div class="journey-label">Exec Probability</div><div><span class="badge slate">88% • HIGH_PROB</span></div></div>
             <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">Execution not permitted by structure gate</div></div>
             <div class="journey-row"><div class="journey-label">Risk</div><div><span class="badge red">HIGH</span></div></div>
             <div class="journey-note">
@@ -2897,6 +3246,9 @@ body {
             <div class="mini-box"><div class="label">Executions</div><div class="value">1</div></div>
             <div class="mini-box"><div class="label">Best Execution</div><div class="value value-small">2026-04-03 14:00:00</div></div>
             <div class="mini-box"><div class="label">Best Strength</div><div class="value"><span class="badge green">BUY</span></div></div>
+            <div class="mini-box"><div class="label">Last M15 Exit</div><div class="value value-small">2026.04.03 06:30</div></div>
+            <div class="mini-box"><div class="label">M15 Exit Dir</div><div class="value"><span class="badge slate">EXIT_SELL</span></div></div>
+            <div class="mini-box"><div class="label">M15 Exit Price</div><div class="value">6566.38</div></div>
           </div>
         </div>
 
@@ -3001,6 +3353,10 @@ body {
               <div class="meta"><div class="label">Confirmation</div><div class="value"><span class="badge green">CONFIRMED</span></div></div>
               <div class="meta"><div class="label">Journey</div><div class="value"><span class="badge slate">LIVE</span></div></div>
               <div class="meta"><div class="label">Trade Status</div><div class="value"><span class="badge green">ACTIVE</span></div></div>
+              <div class="meta"><div class="label">Exec Probability</div><div class="value"><span class="badge slate">88%</span></div></div>
+              <div class="meta"><div class="label">Trade Mode</div><div class="value"><span class="badge green">FULL_RISK</span></div></div>
+              <div class="meta"><div class="label">Asset Class</div><div class="value"><span class="badge slate">INDEX</span></div></div>
+              <div class="meta"><div class="label">Cluster</div><div class="value"><span class="badge slate">INDEX_B_SCALING</span></div></div>
             </div>
           </div>
 
@@ -3029,13 +3385,13 @@ body {
                     <div class="confirm-title">Threshold tracker</div>
                     <div class="status-badge green">CONFIRMED</div>
                   </div>
-                  <div class="mini">Journey already produced a confirmed live trade. Current row trigger can wait without downgrading confirmation.</div>
+                  <div class="mini">Execution remains active while higher-timeframe conflict persists.</div>
                   <div class="progress"><span style="width:100%"></span></div>
-                  <div class="mini">Risk: MEDIUM • Rules: 6/6 • Current exec: READY • Last execution: 2026-04-02 20:00:00</div>
+                  <div class="mini">Exec Prob: 88% • Risk: MEDIUM • Rules: 6/6 • Current exec: READY • Trade mode: FULL_RISK • Last execution: 2026-04-02 20:00:00</div>
                 </div>
 
                 <div class="confirm-item">
-                  <div class="confirm-head"><div class="confirm-title">Why Ready</div></div>
+                  <div class="confirm-head"><div class="confirm-title">Why Tradable</div></div>
                   <div class="mini">Execution remains active while higher-timeframe conflict persists.</div>
                   <div class="mini" style="margin-top:8px;">Signal reason: BUY_SIDE_REACHED_4_PLUS_AND_WON</div>
                 </div>
@@ -3066,6 +3422,30 @@ body {
               <div class="meta"><div class="label">M30</div><div class="value"><span class="badge green">UP</span></div></div>
               <div class="meta"><div class="label">H1</div><div class="value"><span class="badge green">UP</span></div></div>
               <div class="meta"><div class="label">H4</div><div class="value"><span class="badge red">DOWN</span></div></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Current Row Diagnostics</div>
+                <div class="card-sub">Latest raw row state</div>
+              </div>
+            </div>
+            <div class="metrics-grid">
+              <div class="meta"><div class="label">Row Time</div><div class="value">2026-04-02 23:00:00</div></div><div class="meta"><div class="label">Context</div><div class="value"><span class="badge slate">BULL_CONTEXT</span></div></div><div class="meta"><div class="label">Setup</div><div class="value"><span class="badge slate">BUY_SETUP</span></div></div><div class="meta"><div class="label">Direction</div><div class="value"><span class="badge green">BULL</span></div></div><div class="meta"><div class="label">Signal State</div><div class="value"><span class="badge green">BUY</span></div></div><div class="meta"><div class="label">Signal Label</div><div class="value"><span class="badge green">CONFIRMED_BUY</span></div></div><div class="meta"><div class="label">Strength</div><div class="value"><span class="badge green">CONFIRMED</span></div></div><div class="meta"><div class="label">Pullback</div><div class="value"><span class="badge slate">BULL_PULLBACK_ACTIVE</span></div></div><div class="meta"><div class="label">Trigger</div><div class="value"><span class="badge slate">BUY_TRIGGER</span></div></div><div class="meta"><div class="label">Execution</div><div class="value"><span class="badge green">CONFIRMED_BUY</span></div></div><div class="meta"><div class="label">Buy Count</div><div class="value">6</div></div><div class="meta"><div class="label">Sell Count</div><div class="value">1</div></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Campaign Snapshot</div>
+                <div class="card-sub">Carried-forward campaign state used by the dashboard decision layer</div>
+              </div>
+            </div>
+            <div class="metrics-grid">
+              <div class="meta"><div class="label">Row Time</div><div class="value">2026-04-02 23:00:00</div></div><div class="meta"><div class="label">Context</div><div class="value"><span class="badge slate">BULL_CONTEXT</span></div></div><div class="meta"><div class="label">Setup</div><div class="value"><span class="badge slate">BUY_SETUP</span></div></div><div class="meta"><div class="label">Direction</div><div class="value"><span class="badge green">BULL</span></div></div><div class="meta"><div class="label">Signal State</div><div class="value"><span class="badge green">BUY</span></div></div><div class="meta"><div class="label">Signal Label</div><div class="value"><span class="badge green">CONFIRMED_BUY</span></div></div><div class="meta"><div class="label">Strength</div><div class="value"><span class="badge green">CONFIRMED</span></div></div><div class="meta"><div class="label">Pullback</div><div class="value"><span class="badge slate">BULL_PULLBACK_ACTIVE</span></div></div><div class="meta"><div class="label">Trigger</div><div class="value"><span class="badge slate">BUY_TRIGGER</span></div></div><div class="meta"><div class="label">Execution</div><div class="value"><span class="badge green">CONFIRMED_BUY</span></div></div><div class="meta"><div class="label">Buy Count</div><div class="value">6</div></div><div class="meta"><div class="label">Sell Count</div><div class="value">1</div></div>
             </div>
           </div>
         </div>
@@ -3102,6 +3482,7 @@ body {
           <div class="journey-section">
             <div class="journey-section-title">Execution State</div>
             <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge green">READY</span></div></div>
+            <div class="journey-row"><div class="journey-label">Exec Probability</div><div><span class="badge slate">88% • HIGH_PROB</span></div></div>
             <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">Manage active trade</div></div>
             <div class="journey-row"><div class="journey-label">Risk</div><div><span class="badge blue">MEDIUM</span></div></div>
             <div class="journey-note">
@@ -3124,6 +3505,9 @@ body {
             <div class="mini-box"><div class="label">Executions</div><div class="value">2</div></div>
             <div class="mini-box"><div class="label">Best Execution</div><div class="value value-small">2026-04-02 20:00:00</div></div>
             <div class="mini-box"><div class="label">Best Strength</div><div class="value"><span class="badge green">CONFIRMED_BUY</span></div></div>
+            <div class="mini-box"><div class="label">Last M15 Exit</div><div class="value value-small">2026.04.02 18:45</div></div>
+            <div class="mini-box"><div class="label">M15 Exit Dir</div><div class="value"><span class="badge slate">EXIT_BUY</span></div></div>
+            <div class="mini-box"><div class="label">M15 Exit Price</div><div class="value">10474.37</div></div>
           </div>
         </div>
 
@@ -3228,6 +3612,10 @@ body {
               <div class="meta"><div class="label">Confirmation</div><div class="value"><span class="badge amber">PENDING</span></div></div>
               <div class="meta"><div class="label">Journey</div><div class="value"><span class="badge slate">LIVE</span></div></div>
               <div class="meta"><div class="label">Trade Status</div><div class="value"><span class="badge green">ACTIVE</span></div></div>
+              <div class="meta"><div class="label">Exec Probability</div><div class="value"><span class="badge green">72%</span></div></div>
+              <div class="meta"><div class="label">Trade Mode</div><div class="value"><span class="badge red">BLOCKED</span></div></div>
+              <div class="meta"><div class="label">Asset Class</div><div class="value"><span class="badge slate">INDEX</span></div></div>
+              <div class="meta"><div class="label">Cluster</div><div class="value"><span class="badge slate">INDEX_E_MIXED</span></div></div>
             </div>
           </div>
 
@@ -3256,9 +3644,9 @@ body {
                     <div class="confirm-title">Threshold tracker</div>
                     <div class="status-badge amber">PENDING</div>
                   </div>
-                  <div class="mini">Execution not permitted by structure gate</div>
+                  <div class="mini">INDEX_E_MIXED remains blocked until structure improves.</div>
                   <div class="progress"><span style="width:83%"></span></div>
-                  <div class="mini">Risk: HIGH • Rules: 5/6 • Current exec: BLOCKED</div>
+                  <div class="mini">Exec Prob: 72% • Risk: HIGH • Rules: 5/6 • Current exec: BLOCKED • Trade mode: BLOCKED</div>
                 </div>
 
                 <div class="confirm-item">
@@ -3295,6 +3683,30 @@ body {
               <div class="meta"><div class="label">H4</div><div class="value"><span class="badge red">DOWN</span></div></div>
             </div>
           </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Current Row Diagnostics</div>
+                <div class="card-sub">Latest raw row state</div>
+              </div>
+            </div>
+            <div class="metrics-grid">
+              <div class="meta"><div class="label">Row Time</div><div class="value">2026-04-03 16:00:00</div></div><div class="meta"><div class="label">Context</div><div class="value"><span class="badge slate">BULL_CONTEXT</span></div></div><div class="meta"><div class="label">Setup</div><div class="value"><span class="badge slate">NO_SETUP</span></div></div><div class="meta"><div class="label">Direction</div><div class="value"><span class="badge amber">NONE</span></div></div><div class="meta"><div class="label">Signal State</div><div class="value"><span class="badge amber">NEUTRAL</span></div></div><div class="meta"><div class="label">Signal Label</div><div class="value"><span class="badge amber">NEUTRAL</span></div></div><div class="meta"><div class="label">Strength</div><div class="value"><span class="badge amber">WAIT</span></div></div><div class="meta"><div class="label">Pullback</div><div class="value"><span class="badge slate">BULL_PULLBACK_ENDING</span></div></div><div class="meta"><div class="label">Trigger</div><div class="value"><span class="badge slate">NO_TRIGGER</span></div></div><div class="meta"><div class="label">Execution</div><div class="value"><span class="badge amber">WAIT</span></div></div><div class="meta"><div class="label">Buy Count</div><div class="value">3</div></div><div class="meta"><div class="label">Sell Count</div><div class="value">3</div></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Campaign Snapshot</div>
+                <div class="card-sub">Carried-forward campaign state used by the dashboard decision layer</div>
+              </div>
+            </div>
+            <div class="metrics-grid">
+              <div class="meta"><div class="label">Row Time</div><div class="value">2026-04-03 14:00:00</div></div><div class="meta"><div class="label">Context</div><div class="value"><span class="badge slate">BULL_CONTEXT</span></div></div><div class="meta"><div class="label">Setup</div><div class="value"><span class="badge slate">BUY_SETUP</span></div></div><div class="meta"><div class="label">Direction</div><div class="value"><span class="badge green">BULL</span></div></div><div class="meta"><div class="label">Signal State</div><div class="value"><span class="badge green">BUY</span></div></div><div class="meta"><div class="label">Signal Label</div><div class="value"><span class="badge slate">STRONG_BUY</span></div></div><div class="meta"><div class="label">Strength</div><div class="value"><span class="badge green">STRONG</span></div></div><div class="meta"><div class="label">Pullback</div><div class="value"><span class="badge slate">BULL_PULLBACK_ACTIVE</span></div></div><div class="meta"><div class="label">Trigger</div><div class="value"><span class="badge slate">NO_TRIGGER</span></div></div><div class="meta"><div class="label">Execution</div><div class="value"><span class="badge amber">WAIT</span></div></div><div class="meta"><div class="label">Buy Count</div><div class="value">5</div></div><div class="meta"><div class="label">Sell Count</div><div class="value">2</div></div>
+            </div>
+          </div>
         </div>
 
         
@@ -3329,6 +3741,7 @@ body {
           <div class="journey-section">
             <div class="journey-section-title">Execution State</div>
             <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge red">BLOCKED</span></div></div>
+            <div class="journey-row"><div class="journey-label">Exec Probability</div><div><span class="badge green">72% • READY</span></div></div>
             <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">Execution not permitted by structure gate</div></div>
             <div class="journey-row"><div class="journey-label">Risk</div><div><span class="badge red">HIGH</span></div></div>
             <div class="journey-note">
@@ -3351,6 +3764,9 @@ body {
             <div class="mini-box"><div class="label">Executions</div><div class="value">0</div></div>
             <div class="mini-box"><div class="label">Best Execution</div><div class="value value-small">NA</div></div>
             <div class="mini-box"><div class="label">Best Strength</div><div class="value"><span class="badge amber">NA</span></div></div>
+            <div class="mini-box"><div class="label">Last M15 Exit</div><div class="value value-small">2026.04.03 06:45</div></div>
+            <div class="mini-box"><div class="label">M15 Exit Dir</div><div class="value"><span class="badge slate">EXIT_SELL</span></div></div>
+            <div class="mini-box"><div class="label">M15 Exit Price</div><div class="value">46417.14</div></div>
           </div>
         </div>
 
@@ -3438,8 +3854,8 @@ body {
                 <div class="signal-word">XAGUSD.PRO</div>
                 <div class="signal-desc">
                   Updated: 2026-04-02 23:00:00<br/>
-                  Direction: BEAR • Journey start: 2026-04-02 04:00:00<br/>
-                  Live trade: BEAR @ 2026-04-02 04:00:00
+                  Direction: BEAR • Journey start: NA<br/>
+                  Live trade: No Live Trade
                 </div>
               </div>
               <div class="gauge" data-strength="WAIT" data-rules-score="0" data-rules-total="8">
@@ -3454,7 +3870,11 @@ body {
               <div class="meta"><div class="label">Current Price</div><div class="value">73.010</div></div>
               <div class="meta"><div class="label">Confirmation</div><div class="value"><span class="badge amber">PENDING</span></div></div>
               <div class="meta"><div class="label">Journey</div><div class="value"><span class="badge slate">MONITOR</span></div></div>
-              <div class="meta"><div class="label">Trade Status</div><div class="value"><span class="badge slate">COMPLETED</span></div></div>
+              <div class="meta"><div class="label">Trade Status</div><div class="value"><span class="badge amber">NONE</span></div></div>
+              <div class="meta"><div class="label">Exec Probability</div><div class="value"><span class="badge amber">0%</span></div></div>
+              <div class="meta"><div class="label">Trade Mode</div><div class="value"><span class="badge red">BLOCKED</span></div></div>
+              <div class="meta"><div class="label">Asset Class</div><div class="value"><span class="badge slate">COMMODITY</span></div></div>
+              <div class="meta"><div class="label">Cluster</div><div class="value"><span class="badge slate">COMMODITY_E_MIXED</span></div></div>
             </div>
           </div>
 
@@ -3483,14 +3903,14 @@ body {
                     <div class="confirm-title">Threshold tracker</div>
                     <div class="status-badge amber">PENDING</div>
                   </div>
-                  <div class="mini">Execution not permitted by structure gate</div>
-                  <div class="progress"><span style="width:20%"></span></div>
-                  <div class="mini">Risk: HIGH • Rules: 0/8 • Current exec: BLOCKED • Last execution: 2026-04-02 07:00:00</div>
+                  <div class="mini">Live journey is closed. Monitoring next opportunity.</div>
+                  <div class="progress"><span style="width:0%"></span></div>
+                  <div class="mini">Exec Prob: 0% • Risk: NA • Rules: 0/8 • Current exec: BLOCKED • Trade mode: BLOCKED</div>
                 </div>
 
                 <div class="confirm-item">
                   <div class="confirm-head"><div class="confirm-title">Why Not Ready</div></div>
-                  <div class="mini">COMMODITY_E_MIXED remains blocked until structure improves.</div>
+                  <div class="mini">Live journey is closed. Monitoring next opportunity.</div>
                   <div class="mini" style="margin-top:8px;">Signal reason: BUY_3_SELL_3</div>
                 </div>
               </div>
@@ -3522,6 +3942,30 @@ body {
               <div class="meta"><div class="label">H4</div><div class="value"><span class="badge red">DOWN</span></div></div>
             </div>
           </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Current Row Diagnostics</div>
+                <div class="card-sub">Latest raw row state</div>
+              </div>
+            </div>
+            <div class="metrics-grid">
+              <div class="meta"><div class="label">Row Time</div><div class="value">2026-04-02 23:00:00</div></div><div class="meta"><div class="label">Context</div><div class="value"><span class="badge slate">BEAR_CONTEXT</span></div></div><div class="meta"><div class="label">Setup</div><div class="value"><span class="badge slate">NO_SETUP</span></div></div><div class="meta"><div class="label">Direction</div><div class="value"><span class="badge amber">NONE</span></div></div><div class="meta"><div class="label">Signal State</div><div class="value"><span class="badge amber">NEUTRAL</span></div></div><div class="meta"><div class="label">Signal Label</div><div class="value"><span class="badge amber">NEUTRAL</span></div></div><div class="meta"><div class="label">Strength</div><div class="value"><span class="badge amber">WAIT</span></div></div><div class="meta"><div class="label">Pullback</div><div class="value"><span class="badge slate">BEAR_PULLBACK_ACTIVE</span></div></div><div class="meta"><div class="label">Trigger</div><div class="value"><span class="badge slate">NO_TRIGGER</span></div></div><div class="meta"><div class="label">Execution</div><div class="value"><span class="badge amber">WAIT</span></div></div><div class="meta"><div class="label">Buy Count</div><div class="value">3</div></div><div class="meta"><div class="label">Sell Count</div><div class="value">3</div></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Campaign Snapshot</div>
+                <div class="card-sub">Carried-forward campaign state used by the dashboard decision layer</div>
+              </div>
+            </div>
+            <div class="metrics-grid">
+              <div class="meta"><div class="label">Row Time</div><div class="value">2026-04-02 23:00:00</div></div><div class="meta"><div class="label">Context</div><div class="value"><span class="badge slate">BEAR_CONTEXT</span></div></div><div class="meta"><div class="label">Setup</div><div class="value"><span class="badge slate">NO_SETUP</span></div></div><div class="meta"><div class="label">Direction</div><div class="value"><span class="badge amber">NONE</span></div></div><div class="meta"><div class="label">Signal State</div><div class="value"><span class="badge amber">NEUTRAL</span></div></div><div class="meta"><div class="label">Signal Label</div><div class="value"><span class="badge amber">NEUTRAL</span></div></div><div class="meta"><div class="label">Strength</div><div class="value"><span class="badge amber">WAIT</span></div></div><div class="meta"><div class="label">Pullback</div><div class="value"><span class="badge slate">BEAR_PULLBACK_ACTIVE</span></div></div><div class="meta"><div class="label">Trigger</div><div class="value"><span class="badge slate">NO_TRIGGER</span></div></div><div class="meta"><div class="label">Execution</div><div class="value"><span class="badge amber">WAIT</span></div></div><div class="meta"><div class="label">Buy Count</div><div class="value">3</div></div><div class="meta"><div class="label">Sell Count</div><div class="value">3</div></div>
+            </div>
+          </div>
         </div>
 
         
@@ -3532,7 +3976,7 @@ body {
             <div class="card-title">Trade Journey</div>
             <div class="card-sub">Context → signal → confirmation</div>
           </div>
-          <div class="status-badge slate">COMPLETED</div>
+          <div class="status-badge amber">NONE</div>
         </div>
 
         <div class="journey-grid">
@@ -3555,12 +3999,13 @@ body {
 
           <div class="journey-section">
             <div class="journey-section-title">Execution State</div>
-            <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge red">BLOCKED</span></div></div>
-            <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">Execution not permitted by structure gate</div></div>
-            <div class="journey-row"><div class="journey-label">Risk</div><div><span class="badge red">HIGH</span></div></div>
+            <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge amber">NONE</span></div></div>
+            <div class="journey-row"><div class="journey-label">Exec Probability</div><div><span class="badge amber">0% • NONE</span></div></div>
+            <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">Wait for next journey</div></div>
+            <div class="journey-row"><div class="journey-label">Risk</div><div><span class="badge amber">NA</span></div></div>
             <div class="journey-note">
               <div class="journey-label">Note</div>
-              <div class="journey-value journey-value-left">COMMODITY_E_MIXED remains blocked until structure improves.</div>
+              <div class="journey-value journey-value-left">Journey closed by flip or NONE.</div>
             </div>
           </div>
         </div>
@@ -3568,16 +4013,19 @@ body {
         <div class="current-trade-wrap">
           <div class="journey-section-title">Current Trade</div>
           <div class="current-trade-grid">
-            <div class="mini-box"><div class="label">Direction</div><div class="value"><span class="badge red">BEAR</span></div></div>
-            <div class="mini-box"><div class="label">Status</div><div class="value"><span class="badge slate">COMPLETED</span></div></div>
-            <div class="mini-box"><div class="label">Start Time</div><div class="value value-small">2026-04-02 04:00:00</div></div>
-            <div class="mini-box"><div class="label">End Time</div><div class="value value-small">2026-04-02 17:00:00</div></div>
+            <div class="mini-box"><div class="label">Direction</div><div class="value"><span class="badge green">BULL</span></div></div>
+            <div class="mini-box"><div class="label">Status</div><div class="value"><span class="badge amber">NONE</span></div></div>
+            <div class="mini-box"><div class="label">Start Time</div><div class="value value-small">NA</div></div>
+            <div class="mini-box"><div class="label">End Time</div><div class="value value-small">NA</div></div>
             <div class="mini-box"><div class="label">Current Price</div><div class="value">73.010</div></div>
-            <div class="mini-box"><div class="label">Move</div><div class="value">+0.36</div></div>
-            <div class="mini-box"><div class="label">Bars</div><div class="value">14</div></div>
-            <div class="mini-box"><div class="label">Executions</div><div class="value">2</div></div>
-            <div class="mini-box"><div class="label">Best Execution</div><div class="value value-small">2026-04-02 07:00:00</div></div>
-            <div class="mini-box"><div class="label">Best Strength</div><div class="value"><span class="badge red">CONFIRMED_SELL</span></div></div>
+            <div class="mini-box"><div class="label">Move</div><div class="value">NA</div></div>
+            <div class="mini-box"><div class="label">Bars</div><div class="value">0</div></div>
+            <div class="mini-box"><div class="label">Executions</div><div class="value">0</div></div>
+            <div class="mini-box"><div class="label">Best Execution</div><div class="value value-small">NA</div></div>
+            <div class="mini-box"><div class="label">Best Strength</div><div class="value"><span class="badge amber">NA</span></div></div>
+            <div class="mini-box"><div class="label">Last M15 Exit</div><div class="value value-small">2026.04.02 18:45</div></div>
+            <div class="mini-box"><div class="label">M15 Exit Dir</div><div class="value"><span class="badge slate">EXIT_BUY</span></div></div>
+            <div class="mini-box"><div class="label">M15 Exit Price</div><div class="value">72.878</div></div>
           </div>
         </div>
 
@@ -3603,21 +4051,21 @@ body {
           <div class="timeline-wrap">
             <div class="timeline">
         <div class="step">
-          <div class="step-title">Journey started</div>
-          <div class="step-meta">2026-04-02 04:00:00</div>
-          <div class="step-note">BEAR @ 2026-04-02 04:00:00 • Phase Monitor.</div>
+          <div class="step-title">Live journey closed</div>
+          <div class="step-meta">INVALIDATED</div>
+          <div class="step-note">Journey ended because signal flipped or dropped to NONE. UI correctly suppresses stale live trade rendering.</div>
         </div>
         
         <div class="step">
-          <div class="step-title">Execution milestone</div>
-          <div class="step-meta">2026-04-02 07:00:00</div>
-          <div class="step-note">CONFIRMED_SELL at 72.000</div>
+          <div class="step-title">Previous trade</div>
+          <div class="step-meta">2026-04-02 04:00:00</div>
+          <div class="step-note">BULL @ 2026-04-02 01:00:00 • Invalidated.</div>
         </div>
         
         <div class="step">
           <div class="step-title">Current monitoring state</div>
-          <div class="step-meta">BLOCKED</div>
-          <div class="step-note">Execution not permitted by structure gate</div>
+          <div class="step-meta">NONE</div>
+          <div class="step-note">Waiting for the next valid journey to appear.</div>
         </div>
         </div>
           </div>
@@ -3682,6 +4130,10 @@ body {
               <div class="meta"><div class="label">Confirmation</div><div class="value"><span class="badge amber">PENDING</span></div></div>
               <div class="meta"><div class="label">Journey</div><div class="value"><span class="badge slate">LIVE</span></div></div>
               <div class="meta"><div class="label">Trade Status</div><div class="value"><span class="badge green">ACTIVE</span></div></div>
+              <div class="meta"><div class="label">Exec Probability</div><div class="value"><span class="badge amber">12%</span></div></div>
+              <div class="meta"><div class="label">Trade Mode</div><div class="value"><span class="badge red">BLOCKED</span></div></div>
+              <div class="meta"><div class="label">Asset Class</div><div class="value"><span class="badge slate">COMMODITY</span></div></div>
+              <div class="meta"><div class="label">Cluster</div><div class="value"><span class="badge slate">COMMODITY_E_MIXED</span></div></div>
             </div>
           </div>
 
@@ -3710,9 +4162,9 @@ body {
                     <div class="confirm-title">Threshold tracker</div>
                     <div class="status-badge amber">PENDING</div>
                   </div>
-                  <div class="mini">Execution not permitted by structure gate</div>
+                  <div class="mini">COMMODITY_E_MIXED remains blocked until structure improves.</div>
                   <div class="progress"><span style="width:67%"></span></div>
-                  <div class="mini">Risk: HIGH • Rules: 4/6 • Current exec: BLOCKED</div>
+                  <div class="mini">Exec Prob: 12% • Risk: HIGH • Rules: 4/6 • Current exec: BLOCKED • Trade mode: BLOCKED</div>
                 </div>
 
                 <div class="confirm-item">
@@ -3749,6 +4201,30 @@ body {
               <div class="meta"><div class="label">H4</div><div class="value"><span class="badge red">DOWN</span></div></div>
             </div>
           </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Current Row Diagnostics</div>
+                <div class="card-sub">Latest raw row state</div>
+              </div>
+            </div>
+            <div class="metrics-grid">
+              <div class="meta"><div class="label">Row Time</div><div class="value">2026-04-02 23:00:00</div></div><div class="meta"><div class="label">Context</div><div class="value"><span class="badge amber">NEUTRAL</span></div></div><div class="meta"><div class="label">Setup</div><div class="value"><span class="badge slate">NO_SETUP</span></div></div><div class="meta"><div class="label">Direction</div><div class="value"><span class="badge amber">NONE</span></div></div><div class="meta"><div class="label">Signal State</div><div class="value"><span class="badge amber">NEUTRAL</span></div></div><div class="meta"><div class="label">Signal Label</div><div class="value"><span class="badge amber">NEUTRAL</span></div></div><div class="meta"><div class="label">Strength</div><div class="value"><span class="badge amber">WAIT</span></div></div><div class="meta"><div class="label">Pullback</div><div class="value"><span class="badge amber">NONE</span></div></div><div class="meta"><div class="label">Trigger</div><div class="value"><span class="badge slate">NO_TRIGGER</span></div></div><div class="meta"><div class="label">Execution</div><div class="value"><span class="badge amber">WAIT</span></div></div><div class="meta"><div class="label">Buy Count</div><div class="value">3</div></div><div class="meta"><div class="label">Sell Count</div><div class="value">3</div></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Campaign Snapshot</div>
+                <div class="card-sub">Carried-forward campaign state used by the dashboard decision layer</div>
+              </div>
+            </div>
+            <div class="metrics-grid">
+              <div class="meta"><div class="label">Row Time</div><div class="value">2026-04-02 20:00:00</div></div><div class="meta"><div class="label">Context</div><div class="value"><span class="badge slate">BEAR_CONTEXT</span></div></div><div class="meta"><div class="label">Setup</div><div class="value"><span class="badge slate">SELL_SETUP</span></div></div><div class="meta"><div class="label">Direction</div><div class="value"><span class="badge red">BEAR</span></div></div><div class="meta"><div class="label">Signal State</div><div class="value"><span class="badge red">SELL</span></div></div><div class="meta"><div class="label">Signal Label</div><div class="value"><span class="badge red">SELL</span></div></div><div class="meta"><div class="label">Strength</div><div class="value"><span class="badge blue">GOOD</span></div></div><div class="meta"><div class="label">Pullback</div><div class="value"><span class="badge slate">BEAR_PULLBACK_ACTIVE</span></div></div><div class="meta"><div class="label">Trigger</div><div class="value"><span class="badge slate">NO_TRIGGER</span></div></div><div class="meta"><div class="label">Execution</div><div class="value"><span class="badge amber">WAIT</span></div></div><div class="meta"><div class="label">Buy Count</div><div class="value">2</div></div><div class="meta"><div class="label">Sell Count</div><div class="value">4</div></div>
+            </div>
+          </div>
         </div>
 
         
@@ -3783,6 +4259,7 @@ body {
           <div class="journey-section">
             <div class="journey-section-title">Execution State</div>
             <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge red">BLOCKED</span></div></div>
+            <div class="journey-row"><div class="journey-label">Exec Probability</div><div><span class="badge amber">12% • WAIT</span></div></div>
             <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">Execution not permitted by structure gate</div></div>
             <div class="journey-row"><div class="journey-label">Risk</div><div><span class="badge red">HIGH</span></div></div>
             <div class="journey-note">
@@ -3805,6 +4282,9 @@ body {
             <div class="mini-box"><div class="label">Executions</div><div class="value">0</div></div>
             <div class="mini-box"><div class="label">Best Execution</div><div class="value value-small">NA</div></div>
             <div class="mini-box"><div class="label">Best Strength</div><div class="value"><span class="badge amber">NA</span></div></div>
+            <div class="mini-box"><div class="label">Last M15 Exit</div><div class="value value-small">2026.04.02 18:30</div></div>
+            <div class="mini-box"><div class="label">M15 Exit Dir</div><div class="value"><span class="badge slate">EXIT_BUY</span></div></div>
+            <div class="mini-box"><div class="label">M15 Exit Price</div><div class="value">4067.72</div></div>
           </div>
         </div>
 
@@ -3909,6 +4389,10 @@ body {
               <div class="meta"><div class="label">Confirmation</div><div class="value"><span class="badge amber">PENDING</span></div></div>
               <div class="meta"><div class="label">Journey</div><div class="value"><span class="badge slate">LIVE</span></div></div>
               <div class="meta"><div class="label">Trade Status</div><div class="value"><span class="badge green">ACTIVE</span></div></div>
+              <div class="meta"><div class="label">Exec Probability</div><div class="value"><span class="badge amber">12%</span></div></div>
+              <div class="meta"><div class="label">Trade Mode</div><div class="value"><span class="badge red">BLOCKED</span></div></div>
+              <div class="meta"><div class="label">Asset Class</div><div class="value"><span class="badge slate">COMMODITY</span></div></div>
+              <div class="meta"><div class="label">Cluster</div><div class="value"><span class="badge slate">COMMODITY_E_MIXED</span></div></div>
             </div>
           </div>
 
@@ -3937,9 +4421,9 @@ body {
                     <div class="confirm-title">Threshold tracker</div>
                     <div class="status-badge amber">PENDING</div>
                   </div>
-                  <div class="mini">Execution not permitted by structure gate</div>
+                  <div class="mini">COMMODITY_E_MIXED remains blocked until structure improves.</div>
                   <div class="progress"><span style="width:67%"></span></div>
-                  <div class="mini">Risk: HIGH • Rules: 4/6 • Current exec: BLOCKED</div>
+                  <div class="mini">Exec Prob: 12% • Risk: HIGH • Rules: 4/6 • Current exec: BLOCKED • Trade mode: BLOCKED</div>
                 </div>
 
                 <div class="confirm-item">
@@ -3976,6 +4460,30 @@ body {
               <div class="meta"><div class="label">H4</div><div class="value"><span class="badge red">DOWN</span></div></div>
             </div>
           </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Current Row Diagnostics</div>
+                <div class="card-sub">Latest raw row state</div>
+              </div>
+            </div>
+            <div class="metrics-grid">
+              <div class="meta"><div class="label">Row Time</div><div class="value">2026-04-02 23:00:00</div></div><div class="meta"><div class="label">Context</div><div class="value"><span class="badge slate">BEAR_CONTEXT</span></div></div><div class="meta"><div class="label">Setup</div><div class="value"><span class="badge slate">NO_SETUP</span></div></div><div class="meta"><div class="label">Direction</div><div class="value"><span class="badge amber">NONE</span></div></div><div class="meta"><div class="label">Signal State</div><div class="value"><span class="badge amber">NEUTRAL</span></div></div><div class="meta"><div class="label">Signal Label</div><div class="value"><span class="badge amber">NEUTRAL</span></div></div><div class="meta"><div class="label">Strength</div><div class="value"><span class="badge amber">WAIT</span></div></div><div class="meta"><div class="label">Pullback</div><div class="value"><span class="badge slate">BEAR_PULLBACK_ACTIVE</span></div></div><div class="meta"><div class="label">Trigger</div><div class="value"><span class="badge slate">NO_TRIGGER</span></div></div><div class="meta"><div class="label">Execution</div><div class="value"><span class="badge amber">WAIT</span></div></div><div class="meta"><div class="label">Buy Count</div><div class="value">3</div></div><div class="meta"><div class="label">Sell Count</div><div class="value">3</div></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Campaign Snapshot</div>
+                <div class="card-sub">Carried-forward campaign state used by the dashboard decision layer</div>
+              </div>
+            </div>
+            <div class="metrics-grid">
+              <div class="meta"><div class="label">Row Time</div><div class="value">2026-04-02 20:00:00</div></div><div class="meta"><div class="label">Context</div><div class="value"><span class="badge slate">BEAR_CONTEXT</span></div></div><div class="meta"><div class="label">Setup</div><div class="value"><span class="badge slate">SELL_SETUP</span></div></div><div class="meta"><div class="label">Direction</div><div class="value"><span class="badge red">BEAR</span></div></div><div class="meta"><div class="label">Signal State</div><div class="value"><span class="badge red">SELL</span></div></div><div class="meta"><div class="label">Signal Label</div><div class="value"><span class="badge red">SELL</span></div></div><div class="meta"><div class="label">Strength</div><div class="value"><span class="badge blue">GOOD</span></div></div><div class="meta"><div class="label">Pullback</div><div class="value"><span class="badge slate">BEAR_PULLBACK_ACTIVE</span></div></div><div class="meta"><div class="label">Trigger</div><div class="value"><span class="badge slate">NO_TRIGGER</span></div></div><div class="meta"><div class="label">Execution</div><div class="value"><span class="badge amber">WAIT</span></div></div><div class="meta"><div class="label">Buy Count</div><div class="value">2</div></div><div class="meta"><div class="label">Sell Count</div><div class="value">4</div></div>
+            </div>
+          </div>
         </div>
 
         
@@ -4010,6 +4518,7 @@ body {
           <div class="journey-section">
             <div class="journey-section-title">Execution State</div>
             <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge red">BLOCKED</span></div></div>
+            <div class="journey-row"><div class="journey-label">Exec Probability</div><div><span class="badge amber">12% • WAIT</span></div></div>
             <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">Execution not permitted by structure gate</div></div>
             <div class="journey-row"><div class="journey-label">Risk</div><div><span class="badge red">HIGH</span></div></div>
             <div class="journey-note">
@@ -4032,6 +4541,9 @@ body {
             <div class="mini-box"><div class="label">Executions</div><div class="value">0</div></div>
             <div class="mini-box"><div class="label">Best Execution</div><div class="value value-small">NA</div></div>
             <div class="mini-box"><div class="label">Best Strength</div><div class="value"><span class="badge amber">NA</span></div></div>
+            <div class="mini-box"><div class="label">Last M15 Exit</div><div class="value value-small">2026.04.02 18:45</div></div>
+            <div class="mini-box"><div class="label">M15 Exit Dir</div><div class="value"><span class="badge slate">EXIT_BUY</span></div></div>
+            <div class="mini-box"><div class="label">M15 Exit Price</div><div class="value">4692.60</div></div>
           </div>
         </div>
 
@@ -4103,7 +4615,7 @@ body {
     </section>
     
 
-  <div class="footer-note">Generated by dashboard_builder_terminal.py • v3 schema adapter</div>
+  <div class="footer-note">Generated by advance_dashboard_terminal.py • patched decision-consistent adapter</div>
 </div>
 
 <script>
