@@ -112,18 +112,18 @@ body {
   <div class="topbar">
     <div class="brand">
       <h1>Institutional Trading Terminal</h1>
-      <div class="sub">Restored institutional UI • clean stable layout • MTF JRSX + up/down</div>
+      <div class="sub">Restored institutional UI • clean stable layout • truth-based confirmation</div>
     </div>
   </div>
 
   <div class="toolbar">
     <div>
       <div class="toolbar-label">Confirmation Groups</div>
-      <div class="group-tabs"><button class="group-tab active" type="button" data-group="all">All <span class="group-count">16</span></button><button class="group-tab" type="button" data-group="pending">Pending <span class="group-count">0</span></button><button class="group-tab" type="button" data-group="confirmed">Confirmed <span class="group-count">16</span></button></div>
+      <div class="group-tabs"><button class="group-tab active" type="button" data-group="all">All <span class="group-count">16</span></button><button class="group-tab" type="button" data-group="pending">Pending <span class="group-count">10</span></button><button class="group-tab" type="button" data-group="confirmed">Confirmed <span class="group-count">6</span></button></div>
     </div>
     <div>
       <div class="toolbar-label">Symbols</div>
-      <div class="symbol-tabs"><button class="tab active" type="button" data-tab="tab-AUDJPY.PRO" data-groups="all,confirmed">AUDJPY.PRO</button><button class="tab" type="button" data-tab="tab-AUS200.PRO" data-groups="all,confirmed">AUS200.PRO</button><button class="tab" type="button" data-tab="tab-CAC40.PRO" data-groups="all,confirmed">CAC40.PRO</button><button class="tab" type="button" data-tab="tab-DAX40.PRO" data-groups="all,confirmed">DAX40.PRO</button><button class="tab" type="button" data-tab="tab-ESP35.PRO" data-groups="all,confirmed">ESP35.PRO</button><button class="tab" type="button" data-tab="tab-ESX50.PRO" data-groups="all,confirmed">ESX50.PRO</button><button class="tab" type="button" data-tab="tab-HSI50.PRO" data-groups="all,confirmed">HSI50.PRO</button><button class="tab" type="button" data-tab="tab-JPN225.PRO" data-groups="all,confirmed">JPN225.PRO</button><button class="tab" type="button" data-tab="tab-NAS100.PRO" data-groups="all,confirmed">NAS100.PRO</button><button class="tab" type="button" data-tab="tab-SMI20.PRO" data-groups="all,confirmed">SMI20.PRO</button><button class="tab" type="button" data-tab="tab-SP500.PRO" data-groups="all,confirmed">SP500.PRO</button><button class="tab" type="button" data-tab="tab-UK100.PRO" data-groups="all,confirmed">UK100.PRO</button><button class="tab" type="button" data-tab="tab-WS30.PRO" data-groups="all,confirmed">WS30.PRO</button><button class="tab" type="button" data-tab="tab-XAGUSD.PRO" data-groups="all,confirmed">XAGUSD.PRO</button><button class="tab" type="button" data-tab="tab-XAUEUR.PRO" data-groups="all,confirmed">XAUEUR.PRO</button><button class="tab" type="button" data-tab="tab-XAUUSD.PRO" data-groups="all,confirmed">XAUUSD.PRO</button></div>
+      <div class="symbol-tabs"><button class="tab active" type="button" data-tab="tab-AUDJPY.PRO" data-groups="all,confirmed">AUDJPY.PRO</button><button class="tab" type="button" data-tab="tab-AUS200.PRO" data-groups="all,pending">AUS200.PRO</button><button class="tab" type="button" data-tab="tab-CAC40.PRO" data-groups="all,pending">CAC40.PRO</button><button class="tab" type="button" data-tab="tab-DAX40.PRO" data-groups="all,pending">DAX40.PRO</button><button class="tab" type="button" data-tab="tab-ESP35.PRO" data-groups="all,pending">ESP35.PRO</button><button class="tab" type="button" data-tab="tab-ESX50.PRO" data-groups="all,pending">ESX50.PRO</button><button class="tab" type="button" data-tab="tab-HSI50.PRO" data-groups="all,confirmed">HSI50.PRO</button><button class="tab" type="button" data-tab="tab-JPN225.PRO" data-groups="all,pending">JPN225.PRO</button><button class="tab" type="button" data-tab="tab-NAS100.PRO" data-groups="all,pending">NAS100.PRO</button><button class="tab" type="button" data-tab="tab-SMI20.PRO" data-groups="all,confirmed">SMI20.PRO</button><button class="tab" type="button" data-tab="tab-SP500.PRO" data-groups="all,pending">SP500.PRO</button><button class="tab" type="button" data-tab="tab-UK100.PRO" data-groups="all,pending">UK100.PRO</button><button class="tab" type="button" data-tab="tab-WS30.PRO" data-groups="all,confirmed">WS30.PRO</button><button class="tab" type="button" data-tab="tab-XAGUSD.PRO" data-groups="all,pending">XAGUSD.PRO</button><button class="tab" type="button" data-tab="tab-XAUEUR.PRO" data-groups="all,confirmed">XAUEUR.PRO</button><button class="tab" type="button" data-tab="tab-XAUUSD.PRO" data-groups="all,confirmed">XAUUSD.PRO</button></div>
     </div>
   </div>
 
@@ -135,7 +135,7 @@ body {
         <div class="card-header">
           <div>
             <div class="card-title">Decision Card</div>
-            <div class="card-sub">H1 • M30 UP • JRSX 45.65 • U:1 D:0 • H1 DOWN • JRSX 72.32 • U:0 D:1 • H4 UP • JRSX 67.78 • U:1 D:0</div>
+            <div class="card-sub">H1 • M30 UP (JRSX 45.65) U:1 D:0 • H1 DOWN (JRSX 72.32) U:0 D:1 • H4 UP (JRSX 67.78) U:1 D:0</div>
           </div>
           <div class="status-badge green">BUY</div>
         </div>
@@ -188,9 +188,9 @@ body {
             <div class="confirm-item">
               <div class="confirm-head">
                 <div class="confirm-title">Threshold tracker</div>
-                <div class="status-badge green">ALLOW</div>
+                <div class="status-badge blue">EXECUTE_REDUCED</div>
               </div>
-              <div class="mini">Action: EXECUTE_REDUCED</div>
+              <div class="mini">Optimizer: EXECUTE_REDUCED</div>
               <div class="progress"><span style="width:83%"></span></div>
               <div class="mini">Risk size: 0.35 • Score: 48.0</div>
             </div>
@@ -227,6 +227,37 @@ body {
           <div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>H4</div><div class='mtf-inline-value'><span class='badge green'>UP</span><span class='mtf-jrsx'>(JRSX 67.78)</span></div></div><div class='mini mtf-flags'>U:1 D:0</div></div><div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>H1</div><div class='mtf-inline-value'><span class='badge red'>DOWN</span><span class='mtf-jrsx'>(JRSX 72.32)</span></div></div><div class='mini mtf-flags'>U:0 D:1</div></div><div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>M30</div><div class='mtf-inline-value'><span class='badge green'>UP</span><span class='mtf-jrsx'>(JRSX 45.65)</span></div></div><div class='mini mtf-flags'>U:1 D:0</div></div>
         </div>
       </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Conditions</div>
+            <div class="card-sub">Context, trigger, execution, merge</div>
+          </div>
+        </div>
+        <div>
+          <div class='cond'><span>Context</span><span class='badge slate'>BULL_CONTEXT</span></div><div class='cond'><span>Setup</span><span class='badge slate'>BUY_SETUP</span></div><div class='cond'><span>Structure</span><span class='badge slate'>B_SCALING</span></div><div class='cond'><span>Trigger</span><span class='badge slate'>BUY_TRIGGER</span></div><div class='cond'><span>Execution</span><span class='badge slate'>STRONG_BUY</span></div><div class='cond'><span>Optimizer Grade</span><span class='badge blue'>B</span></div><div class='cond'><span>Execution Filter</span><span class='badge green'>ALLOW</span></div><div class='cond'><span>Recommended Action</span><span class='badge blue'>EXECUTE_REDUCED</span></div><div class='cond'><span>MTF Merge</span><span class='badge slate'>MERGED</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Merge / Exit Diagnostics</div>
+            <div class="card-sub">MTF merge trace and latest M15 exit</div>
+          </div>
+        </div>
+        <div class="metrics-grid">
+          <div class="meta"><div class="label">MTF Merge</div><div class="value">MERGED</div></div>
+          <div class="meta"><div class="label">Rows Merged</div><div class="value">1</div></div>
+          <div class="meta"><div class="label">Bull Align</div><div class="value">2</div></div>
+          <div class="meta"><div class="label">Bear Align</div><div class="value">1</div></div>
+          <div class="meta"><div class="label">M15 Exit</div><div class="value">EXIT_BUY</div></div>
+          <div class="meta"><div class="label">M15 Exit Time</div><div class="value value-small">2026.04.06 12:30</div></div>
+          <div class="meta"><div class="label">M15 Exit Price</div><div class="value">110.6328</div></div>
+          <div class="meta"><div class="label">MTF Source</div><div class="value value-small">audjpy_mtf_alignment_file.csv</div></div>
+        </div>
+      </div>
     </div>
 
     <div class="journey-stack">
@@ -247,8 +278,9 @@ body {
 
           <div class="journey-section">
             <div class="journey-section-title">Execution State</div>
-            <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge green">ALLOW</span></div></div>
-            <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">EXECUTE REDUCED</div></div>
+            <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge blue">EXECUTE_REDUCED</span></div></div>
+            <div class="journey-row"><div class="journey-label">Signal</div><div class="journey-value">BUY</div></div>
+            <div class="journey-row"><div class="journey-label">Strength</div><div class="journey-value">STRONG_BUY</div></div>
             <div class="journey-row"><div class="journey-label">Risk Size</div><div class="journey-value">0.35</div></div>
             <div class="journey-note">
               <div class="journey-label">Note</div>
@@ -292,7 +324,7 @@ body {
         <div class="card-header">
           <div>
             <div class="card-title">Decision Card</div>
-            <div class="card-sub">H1 • M30 DOWN • JRSX 46.25 • U:0 D:1 • H1 UP • JRSX 29.41 • U:1 D:0 • H4 DOWN • JRSX 68.77 • U:0 D:1</div>
+            <div class="card-sub">H1 • M30 DOWN (JRSX 46.25) U:0 D:1 • H1 UP (JRSX 29.41) U:1 D:0 • H4 DOWN (JRSX 68.77) U:0 D:1</div>
           </div>
           <div class="status-badge red">SELL</div>
         </div>
@@ -314,7 +346,7 @@ body {
         </div>
         <div class="meta-grid">
           <div class="meta"><div class="label">Current Price</div><div class="value">8576.90</div></div>
-          <div class="meta"><div class="label">Confirmation</div><div class="value"><span class="badge green">CONFIRMED</span></div></div>
+          <div class="meta"><div class="label">Confirmation</div><div class="value"><span class="badge amber">PENDING</span></div></div>
           <div class="meta"><div class="label">Journey</div><div class="value"><span class="badge slate">LIVE</span></div></div>
           <div class="meta"><div class="label">Trade Status</div><div class="value"><span class="badge green">ACTIVE</span></div></div>
         </div>
@@ -345,16 +377,16 @@ body {
             <div class="confirm-item">
               <div class="confirm-head">
                 <div class="confirm-title">Threshold tracker</div>
-                <div class="status-badge green">ALLOW</div>
+                <div class="status-badge red">BLOCKED</div>
               </div>
-              <div class="mini">Action: EXECUTE_REDUCED</div>
+              <div class="mini">Optimizer: EXECUTE_REDUCED</div>
               <div class="progress"><span style="width:83%"></span></div>
               <div class="mini">Risk size: 0.35 • Score: 50.0</div>
             </div>
 
             <div class="confirm-item">
-              <div class="confirm-head"><div class="confirm-title">Why Ready</div></div>
-              <div class="mini">B continuation in trend/scaling structure</div>
+              <div class="confirm-head"><div class="confirm-title">Why Not Ready</div></div>
+              <div class="mini">NO_TRIGGER</div>
               <div class="mini" style="margin-top:8px;">Type: CONTINUATION • Grade: B</div>
             </div>
           </div>
@@ -384,6 +416,37 @@ body {
           <div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>H4</div><div class='mtf-inline-value'><span class='badge red'>DOWN</span><span class='mtf-jrsx'>(JRSX 68.77)</span></div></div><div class='mini mtf-flags'>U:0 D:1</div></div><div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>H1</div><div class='mtf-inline-value'><span class='badge green'>UP</span><span class='mtf-jrsx'>(JRSX 29.41)</span></div></div><div class='mini mtf-flags'>U:1 D:0</div></div><div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>M30</div><div class='mtf-inline-value'><span class='badge red'>DOWN</span><span class='mtf-jrsx'>(JRSX 46.25)</span></div></div><div class='mini mtf-flags'>U:0 D:1</div></div>
         </div>
       </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Conditions</div>
+            <div class="card-sub">Context, trigger, execution, merge</div>
+          </div>
+        </div>
+        <div>
+          <div class='cond'><span>Context</span><span class='badge slate'>BEAR_CONTEXT</span></div><div class='cond'><span>Setup</span><span class='badge slate'>SELL_SETUP</span></div><div class='cond'><span>Structure</span><span class='badge slate'>E_MIXED</span></div><div class='cond'><span>Trigger</span><span class='badge slate'>NO_TRIGGER</span></div><div class='cond'><span>Execution</span><span class='badge amber'>WAIT</span></div><div class='cond'><span>Optimizer Grade</span><span class='badge blue'>B</span></div><div class='cond'><span>Execution Filter</span><span class='badge green'>ALLOW</span></div><div class='cond'><span>Recommended Action</span><span class='badge blue'>EXECUTE_REDUCED</span></div><div class='cond'><span>MTF Merge</span><span class='badge slate'>MERGED</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Merge / Exit Diagnostics</div>
+            <div class="card-sub">MTF merge trace and latest M15 exit</div>
+          </div>
+        </div>
+        <div class="metrics-grid">
+          <div class="meta"><div class="label">MTF Merge</div><div class="value">MERGED</div></div>
+          <div class="meta"><div class="label">Rows Merged</div><div class="value">1</div></div>
+          <div class="meta"><div class="label">Bull Align</div><div class="value">1</div></div>
+          <div class="meta"><div class="label">Bear Align</div><div class="value">2</div></div>
+          <div class="meta"><div class="label">M15 Exit</div><div class="value">EXIT_SELL</div></div>
+          <div class="meta"><div class="label">M15 Exit Time</div><div class="value value-small">2026.04.02 15:30</div></div>
+          <div class="meta"><div class="label">M15 Exit Price</div><div class="value">8563.83</div></div>
+          <div class="meta"><div class="label">MTF Source</div><div class="value value-small">aus200_mtf_alignment_file.csv</div></div>
+        </div>
+      </div>
     </div>
 
     <div class="journey-stack">
@@ -404,12 +467,13 @@ body {
 
           <div class="journey-section">
             <div class="journey-section-title">Execution State</div>
-            <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge green">ALLOW</span></div></div>
-            <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">EXECUTE REDUCED</div></div>
+            <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge red">BLOCKED</span></div></div>
+            <div class="journey-row"><div class="journey-label">Signal</div><div class="journey-value">NO_SIGNAL</div></div>
+            <div class="journey-row"><div class="journey-label">Strength</div><div class="journey-value">WAIT</div></div>
             <div class="journey-row"><div class="journey-label">Risk Size</div><div class="journey-value">0.35</div></div>
             <div class="journey-note">
               <div class="journey-label">Note</div>
-              <div class="journey-value journey-value-left">B continuation in trend/scaling structure</div>
+              <div class="journey-value journey-value-left">NO_TRIGGER</div>
             </div>
           </div>
         </div>
@@ -449,7 +513,7 @@ body {
         <div class="card-header">
           <div>
             <div class="card-title">Decision Card</div>
-            <div class="card-sub">H1 • M30 UP • JRSX 83.41 • U:1 D:0 • H1 UP • JRSX 58.41 • U:1 D:0 • H4 DOWN • JRSX 70.55 • U:0 D:1</div>
+            <div class="card-sub">H1 • M30 UP (JRSX 83.41) U:1 D:0 • H1 UP (JRSX 58.41) U:1 D:0 • H4 DOWN (JRSX 70.55) U:0 D:1</div>
           </div>
           <div class="status-badge green">BUY</div>
         </div>
@@ -471,7 +535,7 @@ body {
         </div>
         <div class="meta-grid">
           <div class="meta"><div class="label">Current Price</div><div class="value">7989.60</div></div>
-          <div class="meta"><div class="label">Confirmation</div><div class="value"><span class="badge green">CONFIRMED</span></div></div>
+          <div class="meta"><div class="label">Confirmation</div><div class="value"><span class="badge amber">PENDING</span></div></div>
           <div class="meta"><div class="label">Journey</div><div class="value"><span class="badge slate">LIVE</span></div></div>
           <div class="meta"><div class="label">Trade Status</div><div class="value"><span class="badge green">ACTIVE</span></div></div>
         </div>
@@ -502,16 +566,16 @@ body {
             <div class="confirm-item">
               <div class="confirm-head">
                 <div class="confirm-title">Threshold tracker</div>
-                <div class="status-badge green">ALLOW</div>
+                <div class="status-badge red">BLOCKED</div>
               </div>
-              <div class="mini">Action: EXECUTE_REDUCED</div>
+              <div class="mini">Optimizer: EXECUTE_REDUCED</div>
               <div class="progress"><span style="width:67%"></span></div>
               <div class="mini">Risk size: 0.35 • Score: 48.0</div>
             </div>
 
             <div class="confirm-item">
-              <div class="confirm-head"><div class="confirm-title">Why Ready</div></div>
-              <div class="mini">B continuation in trend/scaling structure</div>
+              <div class="confirm-head"><div class="confirm-title">Why Not Ready</div></div>
+              <div class="mini">NO_TRIGGER</div>
               <div class="mini" style="margin-top:8px;">Type: CONTINUATION • Grade: B</div>
             </div>
           </div>
@@ -541,6 +605,37 @@ body {
           <div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>H4</div><div class='mtf-inline-value'><span class='badge red'>DOWN</span><span class='mtf-jrsx'>(JRSX 70.55)</span></div></div><div class='mini mtf-flags'>U:0 D:1</div></div><div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>H1</div><div class='mtf-inline-value'><span class='badge green'>UP</span><span class='mtf-jrsx'>(JRSX 58.41)</span></div></div><div class='mini mtf-flags'>U:1 D:0</div></div><div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>M30</div><div class='mtf-inline-value'><span class='badge green'>UP</span><span class='mtf-jrsx'>(JRSX 83.41)</span></div></div><div class='mini mtf-flags'>U:1 D:0</div></div>
         </div>
       </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Conditions</div>
+            <div class="card-sub">Context, trigger, execution, merge</div>
+          </div>
+        </div>
+        <div>
+          <div class='cond'><span>Context</span><span class='badge slate'>BULL_CONTEXT</span></div><div class='cond'><span>Setup</span><span class='badge slate'>BUY_SETUP</span></div><div class='cond'><span>Structure</span><span class='badge slate'>E_MIXED</span></div><div class='cond'><span>Trigger</span><span class='badge slate'>NO_TRIGGER</span></div><div class='cond'><span>Execution</span><span class='badge amber'>WAIT</span></div><div class='cond'><span>Optimizer Grade</span><span class='badge blue'>B</span></div><div class='cond'><span>Execution Filter</span><span class='badge green'>ALLOW</span></div><div class='cond'><span>Recommended Action</span><span class='badge blue'>EXECUTE_REDUCED</span></div><div class='cond'><span>MTF Merge</span><span class='badge slate'>MERGED</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Merge / Exit Diagnostics</div>
+            <div class="card-sub">MTF merge trace and latest M15 exit</div>
+          </div>
+        </div>
+        <div class="metrics-grid">
+          <div class="meta"><div class="label">MTF Merge</div><div class="value">MERGED</div></div>
+          <div class="meta"><div class="label">Rows Merged</div><div class="value">1</div></div>
+          <div class="meta"><div class="label">Bull Align</div><div class="value">2</div></div>
+          <div class="meta"><div class="label">Bear Align</div><div class="value">1</div></div>
+          <div class="meta"><div class="label">M15 Exit</div><div class="value">EXIT_BUY</div></div>
+          <div class="meta"><div class="label">M15 Exit Time</div><div class="value value-small">2026.04.02 18:45</div></div>
+          <div class="meta"><div class="label">M15 Exit Price</div><div class="value">8000.69</div></div>
+          <div class="meta"><div class="label">MTF Source</div><div class="value value-small">cac40_mtf_alignment_file.csv</div></div>
+        </div>
+      </div>
     </div>
 
     <div class="journey-stack">
@@ -561,12 +656,13 @@ body {
 
           <div class="journey-section">
             <div class="journey-section-title">Execution State</div>
-            <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge green">ALLOW</span></div></div>
-            <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">EXECUTE REDUCED</div></div>
+            <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge red">BLOCKED</span></div></div>
+            <div class="journey-row"><div class="journey-label">Signal</div><div class="journey-value">NO_SIGNAL</div></div>
+            <div class="journey-row"><div class="journey-label">Strength</div><div class="journey-value">WAIT</div></div>
             <div class="journey-row"><div class="journey-label">Risk Size</div><div class="journey-value">0.35</div></div>
             <div class="journey-note">
               <div class="journey-label">Note</div>
-              <div class="journey-value journey-value-left">B continuation in trend/scaling structure</div>
+              <div class="journey-value journey-value-left">NO_TRIGGER</div>
             </div>
           </div>
         </div>
@@ -606,7 +702,7 @@ body {
         <div class="card-header">
           <div>
             <div class="card-title">Decision Card</div>
-            <div class="card-sub">H1 • M30 UP • JRSX 91.57 • U:1 D:0 • H1 UP • JRSX 69.92 • U:1 D:0 • H4 DOWN • JRSX 58.16 • U:0 D:1</div>
+            <div class="card-sub">H1 • M30 UP (JRSX 91.57) U:1 D:0 • H1 UP (JRSX 69.92) U:1 D:0 • H4 DOWN (JRSX 58.16) U:0 D:1</div>
           </div>
           <div class="status-badge green">BUY</div>
         </div>
@@ -628,7 +724,7 @@ body {
         </div>
         <div class="meta-grid">
           <div class="meta"><div class="label">Current Price</div><div class="value">23206.60</div></div>
-          <div class="meta"><div class="label">Confirmation</div><div class="value"><span class="badge green">CONFIRMED</span></div></div>
+          <div class="meta"><div class="label">Confirmation</div><div class="value"><span class="badge amber">PENDING</span></div></div>
           <div class="meta"><div class="label">Journey</div><div class="value"><span class="badge slate">LIVE</span></div></div>
           <div class="meta"><div class="label">Trade Status</div><div class="value"><span class="badge green">ACTIVE</span></div></div>
         </div>
@@ -659,16 +755,16 @@ body {
             <div class="confirm-item">
               <div class="confirm-head">
                 <div class="confirm-title">Threshold tracker</div>
-                <div class="status-badge green">ALLOW</div>
+                <div class="status-badge red">BLOCKED</div>
               </div>
-              <div class="mini">Action: EXECUTE_REDUCED</div>
+              <div class="mini">Optimizer: EXECUTE_REDUCED</div>
               <div class="progress"><span style="width:67%"></span></div>
               <div class="mini">Risk size: 0.35 • Score: 48.0</div>
             </div>
 
             <div class="confirm-item">
-              <div class="confirm-head"><div class="confirm-title">Why Ready</div></div>
-              <div class="mini">B continuation in trend/scaling structure</div>
+              <div class="confirm-head"><div class="confirm-title">Why Not Ready</div></div>
+              <div class="mini">NO_TRIGGER</div>
               <div class="mini" style="margin-top:8px;">Type: CONTINUATION • Grade: B</div>
             </div>
           </div>
@@ -698,6 +794,37 @@ body {
           <div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>H4</div><div class='mtf-inline-value'><span class='badge red'>DOWN</span><span class='mtf-jrsx'>(JRSX 58.16)</span></div></div><div class='mini mtf-flags'>U:0 D:1</div></div><div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>H1</div><div class='mtf-inline-value'><span class='badge green'>UP</span><span class='mtf-jrsx'>(JRSX 69.92)</span></div></div><div class='mini mtf-flags'>U:1 D:0</div></div><div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>M30</div><div class='mtf-inline-value'><span class='badge green'>UP</span><span class='mtf-jrsx'>(JRSX 91.57)</span></div></div><div class='mini mtf-flags'>U:1 D:0</div></div>
         </div>
       </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Conditions</div>
+            <div class="card-sub">Context, trigger, execution, merge</div>
+          </div>
+        </div>
+        <div>
+          <div class='cond'><span>Context</span><span class='badge slate'>BULL_CONTEXT</span></div><div class='cond'><span>Setup</span><span class='badge slate'>BUY_SETUP</span></div><div class='cond'><span>Structure</span><span class='badge slate'>E_MIXED</span></div><div class='cond'><span>Trigger</span><span class='badge slate'>NO_TRIGGER</span></div><div class='cond'><span>Execution</span><span class='badge amber'>WAIT</span></div><div class='cond'><span>Optimizer Grade</span><span class='badge blue'>B</span></div><div class='cond'><span>Execution Filter</span><span class='badge green'>ALLOW</span></div><div class='cond'><span>Recommended Action</span><span class='badge blue'>EXECUTE_REDUCED</span></div><div class='cond'><span>MTF Merge</span><span class='badge slate'>MERGED</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Merge / Exit Diagnostics</div>
+            <div class="card-sub">MTF merge trace and latest M15 exit</div>
+          </div>
+        </div>
+        <div class="metrics-grid">
+          <div class="meta"><div class="label">MTF Merge</div><div class="value">MERGED</div></div>
+          <div class="meta"><div class="label">Rows Merged</div><div class="value">1</div></div>
+          <div class="meta"><div class="label">Bull Align</div><div class="value">2</div></div>
+          <div class="meta"><div class="label">Bear Align</div><div class="value">1</div></div>
+          <div class="meta"><div class="label">M15 Exit</div><div class="value">EXIT_BUY</div></div>
+          <div class="meta"><div class="label">M15 Exit Time</div><div class="value value-small">2026.04.02 18:45</div></div>
+          <div class="meta"><div class="label">M15 Exit Price</div><div class="value">23238.01</div></div>
+          <div class="meta"><div class="label">MTF Source</div><div class="value value-small">dax40_mtf_alignment_file.csv</div></div>
+        </div>
+      </div>
     </div>
 
     <div class="journey-stack">
@@ -718,12 +845,13 @@ body {
 
           <div class="journey-section">
             <div class="journey-section-title">Execution State</div>
-            <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge green">ALLOW</span></div></div>
-            <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">EXECUTE REDUCED</div></div>
+            <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge red">BLOCKED</span></div></div>
+            <div class="journey-row"><div class="journey-label">Signal</div><div class="journey-value">NO_SIGNAL</div></div>
+            <div class="journey-row"><div class="journey-label">Strength</div><div class="journey-value">WAIT</div></div>
             <div class="journey-row"><div class="journey-label">Risk Size</div><div class="journey-value">0.35</div></div>
             <div class="journey-note">
               <div class="journey-label">Note</div>
-              <div class="journey-value journey-value-left">B continuation in trend/scaling structure</div>
+              <div class="journey-value journey-value-left">NO_TRIGGER</div>
             </div>
           </div>
         </div>
@@ -763,7 +891,7 @@ body {
         <div class="card-header">
           <div>
             <div class="card-title">Decision Card</div>
-            <div class="card-sub">H1 • M30 UP • JRSX 80.26 • U:1 D:0 • H1 UP • JRSX 49.44 • U:1 D:0 • H4 DOWN • JRSX 71.79 • U:0 D:1</div>
+            <div class="card-sub">H1 • M30 UP (JRSX 80.26) U:1 D:0 • H1 UP (JRSX 49.44) U:1 D:0 • H4 DOWN (JRSX 71.79) U:0 D:1</div>
           </div>
           <div class="status-badge green">BUY</div>
         </div>
@@ -785,7 +913,7 @@ body {
         </div>
         <div class="meta-grid">
           <div class="meta"><div class="label">Current Price</div><div class="value">17536.90</div></div>
-          <div class="meta"><div class="label">Confirmation</div><div class="value"><span class="badge green">CONFIRMED</span></div></div>
+          <div class="meta"><div class="label">Confirmation</div><div class="value"><span class="badge amber">PENDING</span></div></div>
           <div class="meta"><div class="label">Journey</div><div class="value"><span class="badge amber">NONE</span></div></div>
           <div class="meta"><div class="label">Trade Status</div><div class="value"><span class="badge slate">COMPLETED</span></div></div>
         </div>
@@ -816,16 +944,16 @@ body {
             <div class="confirm-item">
               <div class="confirm-head">
                 <div class="confirm-title">Threshold tracker</div>
-                <div class="status-badge green">ALLOW</div>
+                <div class="status-badge red">BLOCKED</div>
               </div>
-              <div class="mini">Action: SCALP_OR_REDUCED</div>
+              <div class="mini">Optimizer: SCALP_OR_REDUCED</div>
               <div class="progress"><span style="width:67%"></span></div>
               <div class="mini">Risk size: 0.1 • Score: 42.0</div>
             </div>
 
             <div class="confirm-item">
-              <div class="confirm-head"><div class="confirm-title">Why Ready</div></div>
-              <div class="mini">Selective C precision / positive continuation</div>
+              <div class="confirm-head"><div class="confirm-title">Why Not Ready</div></div>
+              <div class="mini">NO_TRIGGER</div>
               <div class="mini" style="margin-top:8px;">Type: CONTINUATION • Grade: C</div>
             </div>
           </div>
@@ -855,6 +983,37 @@ body {
           <div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>H4</div><div class='mtf-inline-value'><span class='badge red'>DOWN</span><span class='mtf-jrsx'>(JRSX 71.79)</span></div></div><div class='mini mtf-flags'>U:0 D:1</div></div><div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>H1</div><div class='mtf-inline-value'><span class='badge green'>UP</span><span class='mtf-jrsx'>(JRSX 49.44)</span></div></div><div class='mini mtf-flags'>U:1 D:0</div></div><div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>M30</div><div class='mtf-inline-value'><span class='badge green'>UP</span><span class='mtf-jrsx'>(JRSX 80.26)</span></div></div><div class='mini mtf-flags'>U:1 D:0</div></div>
         </div>
       </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Conditions</div>
+            <div class="card-sub">Context, trigger, execution, merge</div>
+          </div>
+        </div>
+        <div>
+          <div class='cond'><span>Context</span><span class='badge slate'>BULL_CONTEXT</span></div><div class='cond'><span>Setup</span><span class='badge slate'>BUY_SETUP</span></div><div class='cond'><span>Structure</span><span class='badge slate'>E_MIXED</span></div><div class='cond'><span>Trigger</span><span class='badge slate'>NO_TRIGGER</span></div><div class='cond'><span>Execution</span><span class='badge amber'>WAIT</span></div><div class='cond'><span>Optimizer Grade</span><span class='badge amber'>C</span></div><div class='cond'><span>Execution Filter</span><span class='badge green'>ALLOW</span></div><div class='cond'><span>Recommended Action</span><span class='badge amber'>SCALP_OR_REDUCED</span></div><div class='cond'><span>MTF Merge</span><span class='badge slate'>MERGED</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Merge / Exit Diagnostics</div>
+            <div class="card-sub">MTF merge trace and latest M15 exit</div>
+          </div>
+        </div>
+        <div class="metrics-grid">
+          <div class="meta"><div class="label">MTF Merge</div><div class="value">MERGED</div></div>
+          <div class="meta"><div class="label">Rows Merged</div><div class="value">1</div></div>
+          <div class="meta"><div class="label">Bull Align</div><div class="value">2</div></div>
+          <div class="meta"><div class="label">Bear Align</div><div class="value">1</div></div>
+          <div class="meta"><div class="label">M15 Exit</div><div class="value">EXIT_BUY</div></div>
+          <div class="meta"><div class="label">M15 Exit Time</div><div class="value value-small">2026.04.02 19:15</div></div>
+          <div class="meta"><div class="label">M15 Exit Price</div><div class="value">17589.83</div></div>
+          <div class="meta"><div class="label">MTF Source</div><div class="value value-small">esp35_mtf_alignment_file.csv</div></div>
+        </div>
+      </div>
     </div>
 
     <div class="journey-stack">
@@ -875,12 +1034,13 @@ body {
 
           <div class="journey-section">
             <div class="journey-section-title">Execution State</div>
-            <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge green">ALLOW</span></div></div>
-            <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">SCALP OR REDUCED</div></div>
+            <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge red">BLOCKED</span></div></div>
+            <div class="journey-row"><div class="journey-label">Signal</div><div class="journey-value">NO_SIGNAL</div></div>
+            <div class="journey-row"><div class="journey-label">Strength</div><div class="journey-value">WAIT</div></div>
             <div class="journey-row"><div class="journey-label">Risk Size</div><div class="journey-value">0.1</div></div>
             <div class="journey-note">
               <div class="journey-label">Note</div>
-              <div class="journey-value journey-value-left">Selective C precision / positive continuation</div>
+              <div class="journey-value journey-value-left">NO_TRIGGER</div>
             </div>
           </div>
         </div>
@@ -920,7 +1080,7 @@ body {
         <div class="card-header">
           <div>
             <div class="card-title">Decision Card</div>
-            <div class="card-sub">H1 • M30 UP • JRSX 86.86 • U:1 D:0 • H1 UP • JRSX 55.30 • U:1 D:0 • H4 DOWN • JRSX 66.22 • U:0 D:1</div>
+            <div class="card-sub">H1 • M30 UP (JRSX 86.86) U:1 D:0 • H1 UP (JRSX 55.30) U:1 D:0 • H4 DOWN (JRSX 66.22) U:0 D:1</div>
           </div>
           <div class="status-badge green">BUY</div>
         </div>
@@ -942,7 +1102,7 @@ body {
         </div>
         <div class="meta-grid">
           <div class="meta"><div class="label">Current Price</div><div class="value">5694.30</div></div>
-          <div class="meta"><div class="label">Confirmation</div><div class="value"><span class="badge green">CONFIRMED</span></div></div>
+          <div class="meta"><div class="label">Confirmation</div><div class="value"><span class="badge amber">PENDING</span></div></div>
           <div class="meta"><div class="label">Journey</div><div class="value"><span class="badge amber">NONE</span></div></div>
           <div class="meta"><div class="label">Trade Status</div><div class="value"><span class="badge slate">COMPLETED</span></div></div>
         </div>
@@ -973,16 +1133,16 @@ body {
             <div class="confirm-item">
               <div class="confirm-head">
                 <div class="confirm-title">Threshold tracker</div>
-                <div class="status-badge green">ALLOW</div>
+                <div class="status-badge red">BLOCKED</div>
               </div>
-              <div class="mini">Action: EXECUTE_REDUCED</div>
+              <div class="mini">Optimizer: EXECUTE_REDUCED</div>
               <div class="progress"><span style="width:67%"></span></div>
               <div class="mini">Risk size: 0.35 • Score: 48.0</div>
             </div>
 
             <div class="confirm-item">
-              <div class="confirm-head"><div class="confirm-title">Why Ready</div></div>
-              <div class="mini">B continuation in trend/scaling structure</div>
+              <div class="confirm-head"><div class="confirm-title">Why Not Ready</div></div>
+              <div class="mini">NO_TRIGGER</div>
               <div class="mini" style="margin-top:8px;">Type: CONTINUATION • Grade: B</div>
             </div>
           </div>
@@ -1012,6 +1172,37 @@ body {
           <div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>H4</div><div class='mtf-inline-value'><span class='badge red'>DOWN</span><span class='mtf-jrsx'>(JRSX 66.22)</span></div></div><div class='mini mtf-flags'>U:0 D:1</div></div><div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>H1</div><div class='mtf-inline-value'><span class='badge green'>UP</span><span class='mtf-jrsx'>(JRSX 55.30)</span></div></div><div class='mini mtf-flags'>U:1 D:0</div></div><div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>M30</div><div class='mtf-inline-value'><span class='badge green'>UP</span><span class='mtf-jrsx'>(JRSX 86.86)</span></div></div><div class='mini mtf-flags'>U:1 D:0</div></div>
         </div>
       </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Conditions</div>
+            <div class="card-sub">Context, trigger, execution, merge</div>
+          </div>
+        </div>
+        <div>
+          <div class='cond'><span>Context</span><span class='badge slate'>BULL_CONTEXT</span></div><div class='cond'><span>Setup</span><span class='badge slate'>BUY_SETUP</span></div><div class='cond'><span>Structure</span><span class='badge slate'>E_MIXED</span></div><div class='cond'><span>Trigger</span><span class='badge slate'>NO_TRIGGER</span></div><div class='cond'><span>Execution</span><span class='badge amber'>WAIT</span></div><div class='cond'><span>Optimizer Grade</span><span class='badge blue'>B</span></div><div class='cond'><span>Execution Filter</span><span class='badge green'>ALLOW</span></div><div class='cond'><span>Recommended Action</span><span class='badge blue'>EXECUTE_REDUCED</span></div><div class='cond'><span>MTF Merge</span><span class='badge slate'>MERGED</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Merge / Exit Diagnostics</div>
+            <div class="card-sub">MTF merge trace and latest M15 exit</div>
+          </div>
+        </div>
+        <div class="metrics-grid">
+          <div class="meta"><div class="label">MTF Merge</div><div class="value">MERGED</div></div>
+          <div class="meta"><div class="label">Rows Merged</div><div class="value">1</div></div>
+          <div class="meta"><div class="label">Bull Align</div><div class="value">2</div></div>
+          <div class="meta"><div class="label">Bear Align</div><div class="value">1</div></div>
+          <div class="meta"><div class="label">M15 Exit</div><div class="value">EXIT_BUY</div></div>
+          <div class="meta"><div class="label">M15 Exit Time</div><div class="value value-small">2026.04.02 18:45</div></div>
+          <div class="meta"><div class="label">M15 Exit Price</div><div class="value">5719.43</div></div>
+          <div class="meta"><div class="label">MTF Source</div><div class="value value-small">esx50_mtf_alignment_file.csv</div></div>
+        </div>
+      </div>
     </div>
 
     <div class="journey-stack">
@@ -1032,12 +1223,13 @@ body {
 
           <div class="journey-section">
             <div class="journey-section-title">Execution State</div>
-            <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge green">ALLOW</span></div></div>
-            <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">EXECUTE REDUCED</div></div>
+            <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge red">BLOCKED</span></div></div>
+            <div class="journey-row"><div class="journey-label">Signal</div><div class="journey-value">NO_SIGNAL</div></div>
+            <div class="journey-row"><div class="journey-label">Strength</div><div class="journey-value">WAIT</div></div>
             <div class="journey-row"><div class="journey-label">Risk Size</div><div class="journey-value">0.35</div></div>
             <div class="journey-note">
               <div class="journey-label">Note</div>
-              <div class="journey-value journey-value-left">B continuation in trend/scaling structure</div>
+              <div class="journey-value journey-value-left">NO_TRIGGER</div>
             </div>
           </div>
         </div>
@@ -1077,7 +1269,7 @@ body {
         <div class="card-header">
           <div>
             <div class="card-title">Decision Card</div>
-            <div class="card-sub">H1 • M30 UP • JRSX 71.99 • U:1 D:0 • H1 UP • JRSX 56.92 • U:1 D:0 • H4 DOWN • JRSX 60.13 • U:0 D:1</div>
+            <div class="card-sub">H1 • M30 UP (JRSX 71.99) U:1 D:0 • H1 UP (JRSX 56.92) U:1 D:0 • H4 DOWN (JRSX 60.13) U:0 D:1</div>
           </div>
           <div class="status-badge green">BUY</div>
         </div>
@@ -1130,9 +1322,9 @@ body {
             <div class="confirm-item">
               <div class="confirm-head">
                 <div class="confirm-title">Threshold tracker</div>
-                <div class="status-badge green">ALLOW</div>
+                <div class="status-badge blue">EXECUTE_REDUCED</div>
               </div>
-              <div class="mini">Action: EXECUTE_REDUCED</div>
+              <div class="mini">Optimizer: EXECUTE_REDUCED</div>
               <div class="progress"><span style="width:83%"></span></div>
               <div class="mini">Risk size: 0.35 • Score: 48.0</div>
             </div>
@@ -1166,7 +1358,38 @@ body {
           </div>
         </div>
         <div class="mtf-grid">
-          <div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>H4</div><div class='mtf-inline-value'><span class='badge red'>DOWN</span><span class='mtf-jrsx'>(JRSX 60.13)</span></div></div><div class='mini mtf-flags'>U:0 D:1</div></div><div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>H1</div><div class='mtf-inline-value'><span class='badge green'>UP</span><span class='mtf-jrsx'>(JRSX 56.92)</span></div></div><div class='mini mtf-flags'>U:1 D:0</div></div><div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>M30</div><div class='mtf-inline-value'><span class='badge green'>UP</span><span class='mtf-jrsx'>(JRSX 72)</span></div></div><div class='mini mtf-flags'>U:1 D:0</div></div>
+          <div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>H4</div><div class='mtf-inline-value'><span class='badge red'>DOWN</span><span class='mtf-jrsx'>(JRSX 60.13)</span></div></div><div class='mini mtf-flags'>U:0 D:1</div></div><div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>H1</div><div class='mtf-inline-value'><span class='badge green'>UP</span><span class='mtf-jrsx'>(JRSX 56.92)</span></div></div><div class='mini mtf-flags'>U:1 D:0</div></div><div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>M30</div><div class='mtf-inline-value'><span class='badge green'>UP</span><span class='mtf-jrsx'>(JRSX 71.99)</span></div></div><div class='mini mtf-flags'>U:1 D:0</div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Conditions</div>
+            <div class="card-sub">Context, trigger, execution, merge</div>
+          </div>
+        </div>
+        <div>
+          <div class='cond'><span>Context</span><span class='badge slate'>BULL_CONTEXT</span></div><div class='cond'><span>Setup</span><span class='badge slate'>BUY_SETUP</span></div><div class='cond'><span>Structure</span><span class='badge slate'>B_SCALING</span></div><div class='cond'><span>Trigger</span><span class='badge slate'>BUY_TRIGGER</span></div><div class='cond'><span>Execution</span><span class='badge slate'>STRONG_BUY</span></div><div class='cond'><span>Optimizer Grade</span><span class='badge blue'>B</span></div><div class='cond'><span>Execution Filter</span><span class='badge green'>ALLOW</span></div><div class='cond'><span>Recommended Action</span><span class='badge blue'>EXECUTE_REDUCED</span></div><div class='cond'><span>MTF Merge</span><span class='badge slate'>MERGED</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Merge / Exit Diagnostics</div>
+            <div class="card-sub">MTF merge trace and latest M15 exit</div>
+          </div>
+        </div>
+        <div class="metrics-grid">
+          <div class="meta"><div class="label">MTF Merge</div><div class="value">MERGED</div></div>
+          <div class="meta"><div class="label">Rows Merged</div><div class="value">1</div></div>
+          <div class="meta"><div class="label">Bull Align</div><div class="value">2</div></div>
+          <div class="meta"><div class="label">Bear Align</div><div class="value">1</div></div>
+          <div class="meta"><div class="label">M15 Exit</div><div class="value">EXIT_BUY</div></div>
+          <div class="meta"><div class="label">M15 Exit Time</div><div class="value value-small">2026.04.02 18:30</div></div>
+          <div class="meta"><div class="label">M15 Exit Price</div><div class="value">25310.9</div></div>
+          <div class="meta"><div class="label">MTF Source</div><div class="value value-small">hsi50_mtf_alignment_file.csv</div></div>
         </div>
       </div>
     </div>
@@ -1184,13 +1407,14 @@ body {
         <div class="journey-grid">
           <div class="journey-section">
             <div class="journey-section-title">JRSX Structure</div>
-            <div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>H4</div><div class='mtf-inline-value'><span class='badge red'>DOWN</span><span class='mtf-jrsx'>(JRSX 60.13)</span></div></div><div class='mini mtf-flags'>U:0 D:1</div></div><div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>H1</div><div class='mtf-inline-value'><span class='badge green'>UP</span><span class='mtf-jrsx'>(JRSX 56.92)</span></div></div><div class='mini mtf-flags'>U:1 D:0</div></div><div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>M30</div><div class='mtf-inline-value'><span class='badge green'>UP</span><span class='mtf-jrsx'>(JRSX 72)</span></div></div><div class='mini mtf-flags'>U:1 D:0</div></div>
+            <div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>H4</div><div class='mtf-inline-value'><span class='badge red'>DOWN</span><span class='mtf-jrsx'>(JRSX 60.13)</span></div></div><div class='mini mtf-flags'>U:0 D:1</div></div><div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>H1</div><div class='mtf-inline-value'><span class='badge green'>UP</span><span class='mtf-jrsx'>(JRSX 56.92)</span></div></div><div class='mini mtf-flags'>U:1 D:0</div></div><div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>M30</div><div class='mtf-inline-value'><span class='badge green'>UP</span><span class='mtf-jrsx'>(JRSX 71.99)</span></div></div><div class='mini mtf-flags'>U:1 D:0</div></div>
           </div>
 
           <div class="journey-section">
             <div class="journey-section-title">Execution State</div>
-            <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge green">ALLOW</span></div></div>
-            <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">EXECUTE REDUCED</div></div>
+            <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge blue">EXECUTE_REDUCED</span></div></div>
+            <div class="journey-row"><div class="journey-label">Signal</div><div class="journey-value">BUY</div></div>
+            <div class="journey-row"><div class="journey-label">Strength</div><div class="journey-value">STRONG_BUY</div></div>
             <div class="journey-row"><div class="journey-label">Risk Size</div><div class="journey-value">0.35</div></div>
             <div class="journey-note">
               <div class="journey-label">Note</div>
@@ -1234,7 +1458,7 @@ body {
         <div class="card-header">
           <div>
             <div class="card-title">Decision Card</div>
-            <div class="card-sub">H1 • M30 UP • JRSX 59.14 • U:1 D:0 • H1 UP • JRSX 55.31 • U:1 D:0 • H4 UP • JRSX 64.43 • U:1 D:0</div>
+            <div class="card-sub">H1 • M30 UP (JRSX 59.14) U:1 D:0 • H1 UP (JRSX 55.31) U:1 D:0 • H4 UP (JRSX 64.43) U:1 D:0</div>
           </div>
           <div class="status-badge green">BUY</div>
         </div>
@@ -1256,7 +1480,7 @@ body {
         </div>
         <div class="meta-grid">
           <div class="meta"><div class="label">Current Price</div><div class="value">53841.50</div></div>
-          <div class="meta"><div class="label">Confirmation</div><div class="value"><span class="badge green">CONFIRMED</span></div></div>
+          <div class="meta"><div class="label">Confirmation</div><div class="value"><span class="badge amber">PENDING</span></div></div>
           <div class="meta"><div class="label">Journey</div><div class="value"><span class="badge slate">LIVE</span></div></div>
           <div class="meta"><div class="label">Trade Status</div><div class="value"><span class="badge green">ACTIVE</span></div></div>
         </div>
@@ -1287,16 +1511,16 @@ body {
             <div class="confirm-item">
               <div class="confirm-head">
                 <div class="confirm-title">Threshold tracker</div>
-                <div class="status-badge green">ALLOW</div>
+                <div class="status-badge red">BLOCKED</div>
               </div>
-              <div class="mini">Action: EXECUTE_REDUCED</div>
+              <div class="mini">Optimizer: EXECUTE_REDUCED</div>
               <div class="progress"><span style="width:67%"></span></div>
               <div class="mini">Risk size: 0.35 • Score: 51.0</div>
             </div>
 
             <div class="confirm-item">
-              <div class="confirm-head"><div class="confirm-title">Why Ready</div></div>
-              <div class="mini">B continuation in trend/scaling structure</div>
+              <div class="confirm-head"><div class="confirm-title">Why Not Ready</div></div>
+              <div class="mini">NO_TRIGGER</div>
               <div class="mini" style="margin-top:8px;">Type: CONTINUATION • Grade: B</div>
             </div>
           </div>
@@ -1326,6 +1550,37 @@ body {
           <div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>H4</div><div class='mtf-inline-value'><span class='badge green'>UP</span><span class='mtf-jrsx'>(JRSX 64.43)</span></div></div><div class='mini mtf-flags'>U:1 D:0</div></div><div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>H1</div><div class='mtf-inline-value'><span class='badge green'>UP</span><span class='mtf-jrsx'>(JRSX 55.31)</span></div></div><div class='mini mtf-flags'>U:1 D:0</div></div><div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>M30</div><div class='mtf-inline-value'><span class='badge green'>UP</span><span class='mtf-jrsx'>(JRSX 59.14)</span></div></div><div class='mini mtf-flags'>U:1 D:0</div></div>
         </div>
       </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Conditions</div>
+            <div class="card-sub">Context, trigger, execution, merge</div>
+          </div>
+        </div>
+        <div>
+          <div class='cond'><span>Context</span><span class='badge slate'>BULL_CONTEXT</span></div><div class='cond'><span>Setup</span><span class='badge slate'>BUY_SETUP</span></div><div class='cond'><span>Structure</span><span class='badge slate'>E_MIXED</span></div><div class='cond'><span>Trigger</span><span class='badge slate'>NO_TRIGGER</span></div><div class='cond'><span>Execution</span><span class='badge amber'>WAIT</span></div><div class='cond'><span>Optimizer Grade</span><span class='badge blue'>B</span></div><div class='cond'><span>Execution Filter</span><span class='badge green'>ALLOW</span></div><div class='cond'><span>Recommended Action</span><span class='badge blue'>EXECUTE_REDUCED</span></div><div class='cond'><span>MTF Merge</span><span class='badge slate'>MERGED</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Merge / Exit Diagnostics</div>
+            <div class="card-sub">MTF merge trace and latest M15 exit</div>
+          </div>
+        </div>
+        <div class="metrics-grid">
+          <div class="meta"><div class="label">MTF Merge</div><div class="value">MERGED</div></div>
+          <div class="meta"><div class="label">Rows Merged</div><div class="value">1</div></div>
+          <div class="meta"><div class="label">Bull Align</div><div class="value">3</div></div>
+          <div class="meta"><div class="label">Bear Align</div><div class="value">0</div></div>
+          <div class="meta"><div class="label">M15 Exit</div><div class="value">EXIT_SELL</div></div>
+          <div class="meta"><div class="label">M15 Exit Time</div><div class="value value-small">2026.04.06 16:30</div></div>
+          <div class="meta"><div class="label">M15 Exit Price</div><div class="value">53434.93</div></div>
+          <div class="meta"><div class="label">MTF Source</div><div class="value value-small">jpn225_mtf_alignment_file.csv</div></div>
+        </div>
+      </div>
     </div>
 
     <div class="journey-stack">
@@ -1346,12 +1601,13 @@ body {
 
           <div class="journey-section">
             <div class="journey-section-title">Execution State</div>
-            <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge green">ALLOW</span></div></div>
-            <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">EXECUTE REDUCED</div></div>
+            <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge red">BLOCKED</span></div></div>
+            <div class="journey-row"><div class="journey-label">Signal</div><div class="journey-value">NO_SIGNAL</div></div>
+            <div class="journey-row"><div class="journey-label">Strength</div><div class="journey-value">WAIT</div></div>
             <div class="journey-row"><div class="journey-label">Risk Size</div><div class="journey-value">0.35</div></div>
             <div class="journey-note">
               <div class="journey-label">Note</div>
-              <div class="journey-value journey-value-left">B continuation in trend/scaling structure</div>
+              <div class="journey-value journey-value-left">NO_TRIGGER</div>
             </div>
           </div>
         </div>
@@ -1391,7 +1647,7 @@ body {
         <div class="card-header">
           <div>
             <div class="card-title">Decision Card</div>
-            <div class="card-sub">H1 • M30 UP • JRSX 48.98 • U:1 D:0 • H1 DOWN • JRSX 57.00 • U:0 D:1 • H4 UP • JRSX 68.31 • U:1 D:0</div>
+            <div class="card-sub">H1 • M30 UP (JRSX 48.98) U:1 D:0 • H1 DOWN (JRSX 57.00) U:0 D:1 • H4 UP (JRSX 68.31) U:1 D:0</div>
           </div>
           <div class="status-badge green">BUY</div>
         </div>
@@ -1413,7 +1669,7 @@ body {
         </div>
         <div class="meta-grid">
           <div class="meta"><div class="label">Current Price</div><div class="value">24172.40</div></div>
-          <div class="meta"><div class="label">Confirmation</div><div class="value"><span class="badge green">CONFIRMED</span></div></div>
+          <div class="meta"><div class="label">Confirmation</div><div class="value"><span class="badge amber">PENDING</span></div></div>
           <div class="meta"><div class="label">Journey</div><div class="value"><span class="badge slate">LIVE</span></div></div>
           <div class="meta"><div class="label">Trade Status</div><div class="value"><span class="badge green">ACTIVE</span></div></div>
         </div>
@@ -1444,16 +1700,16 @@ body {
             <div class="confirm-item">
               <div class="confirm-head">
                 <div class="confirm-title">Threshold tracker</div>
-                <div class="status-badge green">ALLOW</div>
+                <div class="status-badge red">BLOCKED</div>
               </div>
-              <div class="mini">Action: EXECUTE_REDUCED</div>
+              <div class="mini">Optimizer: EXECUTE_REDUCED</div>
               <div class="progress"><span style="width:67%"></span></div>
               <div class="mini">Risk size: 0.35 • Score: 53.0</div>
             </div>
 
             <div class="confirm-item">
-              <div class="confirm-head"><div class="confirm-title">Why Ready</div></div>
-              <div class="mini">B continuation in trend/scaling structure</div>
+              <div class="confirm-head"><div class="confirm-title">Why Not Ready</div></div>
+              <div class="mini">NO_TRIGGER</div>
               <div class="mini" style="margin-top:8px;">Type: CONTINUATION • Grade: B</div>
             </div>
           </div>
@@ -1480,7 +1736,38 @@ body {
           </div>
         </div>
         <div class="mtf-grid">
-          <div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>H4</div><div class='mtf-inline-value'><span class='badge green'>UP</span><span class='mtf-jrsx'>(JRSX 68.31)</span></div></div><div class='mini mtf-flags'>U:1 D:0</div></div><div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>H1</div><div class='mtf-inline-value'><span class='badge red'>DOWN</span><span class='mtf-jrsx'>(JRSX 57)</span></div></div><div class='mini mtf-flags'>U:0 D:1</div></div><div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>M30</div><div class='mtf-inline-value'><span class='badge green'>UP</span><span class='mtf-jrsx'>(JRSX 49)</span></div></div><div class='mini mtf-flags'>U:1 D:0</div></div>
+          <div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>H4</div><div class='mtf-inline-value'><span class='badge green'>UP</span><span class='mtf-jrsx'>(JRSX 68.31)</span></div></div><div class='mini mtf-flags'>U:1 D:0</div></div><div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>H1</div><div class='mtf-inline-value'><span class='badge red'>DOWN</span><span class='mtf-jrsx'>(JRSX 57.00)</span></div></div><div class='mini mtf-flags'>U:0 D:1</div></div><div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>M30</div><div class='mtf-inline-value'><span class='badge green'>UP</span><span class='mtf-jrsx'>(JRSX 48.98)</span></div></div><div class='mini mtf-flags'>U:1 D:0</div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Conditions</div>
+            <div class="card-sub">Context, trigger, execution, merge</div>
+          </div>
+        </div>
+        <div>
+          <div class='cond'><span>Context</span><span class='badge slate'>BULL_CONTEXT</span></div><div class='cond'><span>Setup</span><span class='badge slate'>BUY_SETUP</span></div><div class='cond'><span>Structure</span><span class='badge slate'>E_MIXED</span></div><div class='cond'><span>Trigger</span><span class='badge slate'>NO_TRIGGER</span></div><div class='cond'><span>Execution</span><span class='badge amber'>WAIT</span></div><div class='cond'><span>Optimizer Grade</span><span class='badge blue'>B</span></div><div class='cond'><span>Execution Filter</span><span class='badge green'>ALLOW</span></div><div class='cond'><span>Recommended Action</span><span class='badge blue'>EXECUTE_REDUCED</span></div><div class='cond'><span>MTF Merge</span><span class='badge slate'>MERGED</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Merge / Exit Diagnostics</div>
+            <div class="card-sub">MTF merge trace and latest M15 exit</div>
+          </div>
+        </div>
+        <div class="metrics-grid">
+          <div class="meta"><div class="label">MTF Merge</div><div class="value">MERGED</div></div>
+          <div class="meta"><div class="label">Rows Merged</div><div class="value">1</div></div>
+          <div class="meta"><div class="label">Bull Align</div><div class="value">2</div></div>
+          <div class="meta"><div class="label">Bear Align</div><div class="value">1</div></div>
+          <div class="meta"><div class="label">M15 Exit</div><div class="value">EXIT_SELL</div></div>
+          <div class="meta"><div class="label">M15 Exit Time</div><div class="value value-small">2026.04.06 15:45</div></div>
+          <div class="meta"><div class="label">M15 Exit Price</div><div class="value">24098.32</div></div>
+          <div class="meta"><div class="label">MTF Source</div><div class="value value-small">nas100_mtf_alignment_file.csv</div></div>
         </div>
       </div>
     </div>
@@ -1498,17 +1785,18 @@ body {
         <div class="journey-grid">
           <div class="journey-section">
             <div class="journey-section-title">JRSX Structure</div>
-            <div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>H4</div><div class='mtf-inline-value'><span class='badge green'>UP</span><span class='mtf-jrsx'>(JRSX 68.31)</span></div></div><div class='mini mtf-flags'>U:1 D:0</div></div><div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>H1</div><div class='mtf-inline-value'><span class='badge red'>DOWN</span><span class='mtf-jrsx'>(JRSX 57)</span></div></div><div class='mini mtf-flags'>U:0 D:1</div></div><div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>M30</div><div class='mtf-inline-value'><span class='badge green'>UP</span><span class='mtf-jrsx'>(JRSX 49)</span></div></div><div class='mini mtf-flags'>U:1 D:0</div></div>
+            <div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>H4</div><div class='mtf-inline-value'><span class='badge green'>UP</span><span class='mtf-jrsx'>(JRSX 68.31)</span></div></div><div class='mini mtf-flags'>U:1 D:0</div></div><div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>H1</div><div class='mtf-inline-value'><span class='badge red'>DOWN</span><span class='mtf-jrsx'>(JRSX 57.00)</span></div></div><div class='mini mtf-flags'>U:0 D:1</div></div><div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>M30</div><div class='mtf-inline-value'><span class='badge green'>UP</span><span class='mtf-jrsx'>(JRSX 48.98)</span></div></div><div class='mini mtf-flags'>U:1 D:0</div></div>
           </div>
 
           <div class="journey-section">
             <div class="journey-section-title">Execution State</div>
-            <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge green">ALLOW</span></div></div>
-            <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">EXECUTE REDUCED</div></div>
+            <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge red">BLOCKED</span></div></div>
+            <div class="journey-row"><div class="journey-label">Signal</div><div class="journey-value">NO_SIGNAL</div></div>
+            <div class="journey-row"><div class="journey-label">Strength</div><div class="journey-value">WAIT</div></div>
             <div class="journey-row"><div class="journey-label">Risk Size</div><div class="journey-value">0.35</div></div>
             <div class="journey-note">
               <div class="journey-label">Note</div>
-              <div class="journey-value journey-value-left">B continuation in trend/scaling structure</div>
+              <div class="journey-value journey-value-left">NO_TRIGGER</div>
             </div>
           </div>
         </div>
@@ -1548,7 +1836,7 @@ body {
         <div class="card-header">
           <div>
             <div class="card-title">Decision Card</div>
-            <div class="card-sub">H1 • M30 DOWN • JRSX 66.32 • U:0 D:1 • H1 UP • JRSX 50.91 • U:1 D:0 • H4 DOWN • JRSX 71.90 • U:0 D:1</div>
+            <div class="card-sub">H1 • M30 DOWN (JRSX 66.32) U:0 D:1 • H1 UP (JRSX 50.91) U:1 D:0 • H4 DOWN (JRSX 71.90) U:0 D:1</div>
           </div>
           <div class="status-badge green">BUY</div>
         </div>
@@ -1601,9 +1889,9 @@ body {
             <div class="confirm-item">
               <div class="confirm-head">
                 <div class="confirm-title">Threshold tracker</div>
-                <div class="status-badge green">ALLOW</div>
+                <div class="status-badge amber">SCALP_OR_REDUCED</div>
               </div>
-              <div class="mini">Action: SCALP_OR_REDUCED</div>
+              <div class="mini">Optimizer: SCALP_OR_REDUCED</div>
               <div class="progress"><span style="width:83%"></span></div>
               <div class="mini">Risk size: 0.1 • Score: 47.0</div>
             </div>
@@ -1640,6 +1928,37 @@ body {
           <div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>H4</div><div class='mtf-inline-value'><span class='badge red'>DOWN</span><span class='mtf-jrsx'>(JRSX 71.90)</span></div></div><div class='mini mtf-flags'>U:0 D:1</div></div><div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>H1</div><div class='mtf-inline-value'><span class='badge green'>UP</span><span class='mtf-jrsx'>(JRSX 50.91)</span></div></div><div class='mini mtf-flags'>U:1 D:0</div></div><div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>M30</div><div class='mtf-inline-value'><span class='badge red'>DOWN</span><span class='mtf-jrsx'>(JRSX 66.32)</span></div></div><div class='mini mtf-flags'>U:0 D:1</div></div>
         </div>
       </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Conditions</div>
+            <div class="card-sub">Context, trigger, execution, merge</div>
+          </div>
+        </div>
+        <div>
+          <div class='cond'><span>Context</span><span class='badge slate'>BULL_CONTEXT</span></div><div class='cond'><span>Setup</span><span class='badge slate'>BUY_SETUP</span></div><div class='cond'><span>Structure</span><span class='badge slate'>B_SCALING</span></div><div class='cond'><span>Trigger</span><span class='badge slate'>BUY_TRIGGER</span></div><div class='cond'><span>Execution</span><span class='badge slate'>STRONG_BUY</span></div><div class='cond'><span>Optimizer Grade</span><span class='badge amber'>C</span></div><div class='cond'><span>Execution Filter</span><span class='badge green'>ALLOW</span></div><div class='cond'><span>Recommended Action</span><span class='badge amber'>SCALP_OR_REDUCED</span></div><div class='cond'><span>MTF Merge</span><span class='badge slate'>MERGED</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Merge / Exit Diagnostics</div>
+            <div class="card-sub">MTF merge trace and latest M15 exit</div>
+          </div>
+        </div>
+        <div class="metrics-grid">
+          <div class="meta"><div class="label">MTF Merge</div><div class="value">MERGED</div></div>
+          <div class="meta"><div class="label">Rows Merged</div><div class="value">1</div></div>
+          <div class="meta"><div class="label">Bull Align</div><div class="value">1</div></div>
+          <div class="meta"><div class="label">Bear Align</div><div class="value">2</div></div>
+          <div class="meta"><div class="label">M15 Exit</div><div class="value">EXIT_BUY</div></div>
+          <div class="meta"><div class="label">M15 Exit Time</div><div class="value value-small">2026.04.02 18:45</div></div>
+          <div class="meta"><div class="label">M15 Exit Price</div><div class="value">13022.3</div></div>
+          <div class="meta"><div class="label">MTF Source</div><div class="value value-small">smi20_mtf_alignment_file.csv</div></div>
+        </div>
+      </div>
     </div>
 
     <div class="journey-stack">
@@ -1660,8 +1979,9 @@ body {
 
           <div class="journey-section">
             <div class="journey-section-title">Execution State</div>
-            <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge green">ALLOW</span></div></div>
-            <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">SCALP OR REDUCED</div></div>
+            <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge amber">SCALP_OR_REDUCED</span></div></div>
+            <div class="journey-row"><div class="journey-label">Signal</div><div class="journey-value">BUY</div></div>
+            <div class="journey-row"><div class="journey-label">Strength</div><div class="journey-value">STRONG_BUY</div></div>
             <div class="journey-row"><div class="journey-label">Risk Size</div><div class="journey-value">0.1</div></div>
             <div class="journey-note">
               <div class="journey-label">Note</div>
@@ -1705,7 +2025,7 @@ body {
         <div class="card-header">
           <div>
             <div class="card-title">Decision Card</div>
-            <div class="card-sub">H1 • M30 UP • JRSX 55.36 • U:1 D:0 • H1 DOWN • JRSX 61.15 • U:0 D:1 • H4 UP • JRSX 63.18 • U:1 D:0</div>
+            <div class="card-sub">H1 • M30 UP (JRSX 55.36) U:1 D:0 • H1 DOWN (JRSX 61.15) U:0 D:1 • H4 UP (JRSX 63.18) U:1 D:0</div>
           </div>
           <div class="status-badge green">BUY</div>
         </div>
@@ -1727,7 +2047,7 @@ body {
         </div>
         <div class="meta-grid">
           <div class="meta"><div class="label">Current Price</div><div class="value">6604.90</div></div>
-          <div class="meta"><div class="label">Confirmation</div><div class="value"><span class="badge green">CONFIRMED</span></div></div>
+          <div class="meta"><div class="label">Confirmation</div><div class="value"><span class="badge amber">PENDING</span></div></div>
           <div class="meta"><div class="label">Journey</div><div class="value"><span class="badge slate">LIVE</span></div></div>
           <div class="meta"><div class="label">Trade Status</div><div class="value"><span class="badge green">ACTIVE</span></div></div>
         </div>
@@ -1758,16 +2078,16 @@ body {
             <div class="confirm-item">
               <div class="confirm-head">
                 <div class="confirm-title">Threshold tracker</div>
-                <div class="status-badge green">ALLOW</div>
+                <div class="status-badge red">BLOCKED</div>
               </div>
-              <div class="mini">Action: EXECUTE</div>
+              <div class="mini">Optimizer: EXECUTE</div>
               <div class="progress"><span style="width:67%"></span></div>
               <div class="mini">Risk size: 1.0 • Score: 56.0</div>
             </div>
 
             <div class="confirm-item">
-              <div class="confirm-head"><div class="confirm-title">Why Ready</div></div>
-              <div class="mini">A grade always tradeable</div>
+              <div class="confirm-head"><div class="confirm-title">Why Not Ready</div></div>
+              <div class="mini">NO_TRIGGER</div>
               <div class="mini" style="margin-top:8px;">Type: CONTINUATION • Grade: A</div>
             </div>
           </div>
@@ -1797,6 +2117,37 @@ body {
           <div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>H4</div><div class='mtf-inline-value'><span class='badge green'>UP</span><span class='mtf-jrsx'>(JRSX 63.18)</span></div></div><div class='mini mtf-flags'>U:1 D:0</div></div><div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>H1</div><div class='mtf-inline-value'><span class='badge red'>DOWN</span><span class='mtf-jrsx'>(JRSX 61.15)</span></div></div><div class='mini mtf-flags'>U:0 D:1</div></div><div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>M30</div><div class='mtf-inline-value'><span class='badge green'>UP</span><span class='mtf-jrsx'>(JRSX 55.36)</span></div></div><div class='mini mtf-flags'>U:1 D:0</div></div>
         </div>
       </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Conditions</div>
+            <div class="card-sub">Context, trigger, execution, merge</div>
+          </div>
+        </div>
+        <div>
+          <div class='cond'><span>Context</span><span class='badge slate'>BULL_CONTEXT</span></div><div class='cond'><span>Setup</span><span class='badge slate'>BUY_SETUP</span></div><div class='cond'><span>Structure</span><span class='badge slate'>E_MIXED</span></div><div class='cond'><span>Trigger</span><span class='badge slate'>NO_TRIGGER</span></div><div class='cond'><span>Execution</span><span class='badge amber'>WAIT</span></div><div class='cond'><span>Optimizer Grade</span><span class='badge green'>A</span></div><div class='cond'><span>Execution Filter</span><span class='badge green'>ALLOW</span></div><div class='cond'><span>Recommended Action</span><span class='badge green'>EXECUTE</span></div><div class='cond'><span>MTF Merge</span><span class='badge slate'>MERGED</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Merge / Exit Diagnostics</div>
+            <div class="card-sub">MTF merge trace and latest M15 exit</div>
+          </div>
+        </div>
+        <div class="metrics-grid">
+          <div class="meta"><div class="label">MTF Merge</div><div class="value">MERGED</div></div>
+          <div class="meta"><div class="label">Rows Merged</div><div class="value">1</div></div>
+          <div class="meta"><div class="label">Bull Align</div><div class="value">2</div></div>
+          <div class="meta"><div class="label">Bear Align</div><div class="value">1</div></div>
+          <div class="meta"><div class="label">M15 Exit</div><div class="value">EXIT_SELL</div></div>
+          <div class="meta"><div class="label">M15 Exit Time</div><div class="value value-small">2026.04.06 15:45</div></div>
+          <div class="meta"><div class="label">M15 Exit Price</div><div class="value">6582.35</div></div>
+          <div class="meta"><div class="label">MTF Source</div><div class="value value-small">sp500_mtf_alignment_file.csv</div></div>
+        </div>
+      </div>
     </div>
 
     <div class="journey-stack">
@@ -1817,12 +2168,13 @@ body {
 
           <div class="journey-section">
             <div class="journey-section-title">Execution State</div>
-            <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge green">ALLOW</span></div></div>
-            <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">EXECUTE</div></div>
+            <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge red">BLOCKED</span></div></div>
+            <div class="journey-row"><div class="journey-label">Signal</div><div class="journey-value">NO_SIGNAL</div></div>
+            <div class="journey-row"><div class="journey-label">Strength</div><div class="journey-value">WAIT</div></div>
             <div class="journey-row"><div class="journey-label">Risk Size</div><div class="journey-value">1.0</div></div>
             <div class="journey-note">
               <div class="journey-label">Note</div>
-              <div class="journey-value journey-value-left">A grade always tradeable</div>
+              <div class="journey-value journey-value-left">NO_TRIGGER</div>
             </div>
           </div>
         </div>
@@ -1862,7 +2214,7 @@ body {
         <div class="card-header">
           <div>
             <div class="card-title">Decision Card</div>
-            <div class="card-sub">H1 • M30 UP • JRSX 79.84 • U:1 D:0 • H1 UP • JRSX 74.49 • U:1 D:0 • H4 DOWN • JRSX 71.27 • U:0 D:1</div>
+            <div class="card-sub">H1 • M30 UP (JRSX 79.84) U:1 D:0 • H1 UP (JRSX 74.49) U:1 D:0 • H4 DOWN (JRSX 71.27) U:0 D:1</div>
           </div>
           <div class="status-badge green">BUY</div>
         </div>
@@ -1884,7 +2236,7 @@ body {
         </div>
         <div class="meta-grid">
           <div class="meta"><div class="label">Current Price</div><div class="value">10449.80</div></div>
-          <div class="meta"><div class="label">Confirmation</div><div class="value"><span class="badge green">CONFIRMED</span></div></div>
+          <div class="meta"><div class="label">Confirmation</div><div class="value"><span class="badge amber">PENDING</span></div></div>
           <div class="meta"><div class="label">Journey</div><div class="value"><span class="badge slate">LIVE</span></div></div>
           <div class="meta"><div class="label">Trade Status</div><div class="value"><span class="badge green">ACTIVE</span></div></div>
         </div>
@@ -1915,16 +2267,16 @@ body {
             <div class="confirm-item">
               <div class="confirm-head">
                 <div class="confirm-title">Threshold tracker</div>
-                <div class="status-badge green">ALLOW</div>
+                <div class="status-badge red">BLOCKED</div>
               </div>
-              <div class="mini">Action: EXECUTE_REDUCED</div>
+              <div class="mini">Optimizer: EXECUTE_REDUCED</div>
               <div class="progress"><span style="width:83%"></span></div>
               <div class="mini">Risk size: 0.35 • Score: 48.0</div>
             </div>
 
             <div class="confirm-item">
-              <div class="confirm-head"><div class="confirm-title">Why Ready</div></div>
-              <div class="mini">B continuation in trend/scaling structure</div>
+              <div class="confirm-head"><div class="confirm-title">Why Not Ready</div></div>
+              <div class="mini">NO_TRIGGER</div>
               <div class="mini" style="margin-top:8px;">Type: CONTINUATION • Grade: B</div>
             </div>
           </div>
@@ -1954,6 +2306,37 @@ body {
           <div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>H4</div><div class='mtf-inline-value'><span class='badge red'>DOWN</span><span class='mtf-jrsx'>(JRSX 71.27)</span></div></div><div class='mini mtf-flags'>U:0 D:1</div></div><div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>H1</div><div class='mtf-inline-value'><span class='badge green'>UP</span><span class='mtf-jrsx'>(JRSX 74.49)</span></div></div><div class='mini mtf-flags'>U:1 D:0</div></div><div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>M30</div><div class='mtf-inline-value'><span class='badge green'>UP</span><span class='mtf-jrsx'>(JRSX 79.84)</span></div></div><div class='mini mtf-flags'>U:1 D:0</div></div>
         </div>
       </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Conditions</div>
+            <div class="card-sub">Context, trigger, execution, merge</div>
+          </div>
+        </div>
+        <div>
+          <div class='cond'><span>Context</span><span class='badge slate'>BULL_CONTEXT</span></div><div class='cond'><span>Setup</span><span class='badge slate'>BUY_SETUP</span></div><div class='cond'><span>Structure</span><span class='badge slate'>E_MIXED</span></div><div class='cond'><span>Trigger</span><span class='badge slate'>NO_TRIGGER</span></div><div class='cond'><span>Execution</span><span class='badge amber'>WAIT</span></div><div class='cond'><span>Optimizer Grade</span><span class='badge blue'>B</span></div><div class='cond'><span>Execution Filter</span><span class='badge green'>ALLOW</span></div><div class='cond'><span>Recommended Action</span><span class='badge blue'>EXECUTE_REDUCED</span></div><div class='cond'><span>MTF Merge</span><span class='badge slate'>MERGED</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Merge / Exit Diagnostics</div>
+            <div class="card-sub">MTF merge trace and latest M15 exit</div>
+          </div>
+        </div>
+        <div class="metrics-grid">
+          <div class="meta"><div class="label">MTF Merge</div><div class="value">MERGED</div></div>
+          <div class="meta"><div class="label">Rows Merged</div><div class="value">1</div></div>
+          <div class="meta"><div class="label">Bull Align</div><div class="value">2</div></div>
+          <div class="meta"><div class="label">Bear Align</div><div class="value">1</div></div>
+          <div class="meta"><div class="label">M15 Exit</div><div class="value">EXIT_BUY</div></div>
+          <div class="meta"><div class="label">M15 Exit Time</div><div class="value value-small">2026.04.02 18:45</div></div>
+          <div class="meta"><div class="label">M15 Exit Price</div><div class="value">10474.37</div></div>
+          <div class="meta"><div class="label">MTF Source</div><div class="value value-small">uk100_mtf_alignment_file.csv</div></div>
+        </div>
+      </div>
     </div>
 
     <div class="journey-stack">
@@ -1974,12 +2357,13 @@ body {
 
           <div class="journey-section">
             <div class="journey-section-title">Execution State</div>
-            <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge green">ALLOW</span></div></div>
-            <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">EXECUTE REDUCED</div></div>
+            <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge red">BLOCKED</span></div></div>
+            <div class="journey-row"><div class="journey-label">Signal</div><div class="journey-value">NO_SIGNAL</div></div>
+            <div class="journey-row"><div class="journey-label">Strength</div><div class="journey-value">WAIT</div></div>
             <div class="journey-row"><div class="journey-label">Risk Size</div><div class="journey-value">0.35</div></div>
             <div class="journey-note">
               <div class="journey-label">Note</div>
-              <div class="journey-value journey-value-left">B continuation in trend/scaling structure</div>
+              <div class="journey-value journey-value-left">NO_TRIGGER</div>
             </div>
           </div>
         </div>
@@ -2019,7 +2403,7 @@ body {
         <div class="card-header">
           <div>
             <div class="card-title">Decision Card</div>
-            <div class="card-sub">H1 • M30 UP • JRSX 61.29 • U:1 D:0 • H1 UP • JRSX 66.06 • U:1 D:0 • H4 UP • JRSX 54.97 • U:1 D:0</div>
+            <div class="card-sub">H1 • M30 UP (JRSX 61.29) U:1 D:0 • H1 UP (JRSX 66.06) U:1 D:0 • H4 UP (JRSX 54.97) U:1 D:0</div>
           </div>
           <div class="status-badge green">BUY</div>
         </div>
@@ -2072,9 +2456,9 @@ body {
             <div class="confirm-item">
               <div class="confirm-head">
                 <div class="confirm-title">Threshold tracker</div>
-                <div class="status-badge green">ALLOW</div>
+                <div class="status-badge green">EXECUTE</div>
               </div>
-              <div class="mini">Action: EXECUTE</div>
+              <div class="mini">Optimizer: EXECUTE</div>
               <div class="progress"><span style="width:100%"></span></div>
               <div class="mini">Risk size: 1.0 • Score: 56.0</div>
             </div>
@@ -2108,7 +2492,38 @@ body {
           </div>
         </div>
         <div class="mtf-grid">
-          <div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>H4</div><div class='mtf-inline-value'><span class='badge green'>UP</span><span class='mtf-jrsx'>(JRSX 55)</span></div></div><div class='mini mtf-flags'>U:1 D:0</div></div><div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>H1</div><div class='mtf-inline-value'><span class='badge green'>UP</span><span class='mtf-jrsx'>(JRSX 66.06)</span></div></div><div class='mini mtf-flags'>U:1 D:0</div></div><div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>M30</div><div class='mtf-inline-value'><span class='badge green'>UP</span><span class='mtf-jrsx'>(JRSX 61.29)</span></div></div><div class='mini mtf-flags'>U:1 D:0</div></div>
+          <div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>H4</div><div class='mtf-inline-value'><span class='badge green'>UP</span><span class='mtf-jrsx'>(JRSX 54.97)</span></div></div><div class='mini mtf-flags'>U:1 D:0</div></div><div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>H1</div><div class='mtf-inline-value'><span class='badge green'>UP</span><span class='mtf-jrsx'>(JRSX 66.06)</span></div></div><div class='mini mtf-flags'>U:1 D:0</div></div><div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>M30</div><div class='mtf-inline-value'><span class='badge green'>UP</span><span class='mtf-jrsx'>(JRSX 61.29)</span></div></div><div class='mini mtf-flags'>U:1 D:0</div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Conditions</div>
+            <div class="card-sub">Context, trigger, execution, merge</div>
+          </div>
+        </div>
+        <div>
+          <div class='cond'><span>Context</span><span class='badge slate'>BULL_CONTEXT</span></div><div class='cond'><span>Setup</span><span class='badge slate'>BUY_SETUP</span></div><div class='cond'><span>Structure</span><span class='badge slate'>A_TREND</span></div><div class='cond'><span>Trigger</span><span class='badge slate'>BUY_TRIGGER</span></div><div class='cond'><span>Execution</span><span class='badge slate'>CONFIRMED_BUY</span></div><div class='cond'><span>Optimizer Grade</span><span class='badge green'>A</span></div><div class='cond'><span>Execution Filter</span><span class='badge green'>ALLOW</span></div><div class='cond'><span>Recommended Action</span><span class='badge green'>EXECUTE</span></div><div class='cond'><span>MTF Merge</span><span class='badge slate'>MERGED</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Merge / Exit Diagnostics</div>
+            <div class="card-sub">MTF merge trace and latest M15 exit</div>
+          </div>
+        </div>
+        <div class="metrics-grid">
+          <div class="meta"><div class="label">MTF Merge</div><div class="value">MERGED</div></div>
+          <div class="meta"><div class="label">Rows Merged</div><div class="value">1</div></div>
+          <div class="meta"><div class="label">Bull Align</div><div class="value">3</div></div>
+          <div class="meta"><div class="label">Bear Align</div><div class="value">0</div></div>
+          <div class="meta"><div class="label">M15 Exit</div><div class="value">EXIT_SELL</div></div>
+          <div class="meta"><div class="label">M15 Exit Time</div><div class="value value-small">2026.04.06 15:45</div></div>
+          <div class="meta"><div class="label">M15 Exit Price</div><div class="value">46423.87</div></div>
+          <div class="meta"><div class="label">MTF Source</div><div class="value value-small">ws30_mtf_alignment_file.csv</div></div>
         </div>
       </div>
     </div>
@@ -2126,13 +2541,14 @@ body {
         <div class="journey-grid">
           <div class="journey-section">
             <div class="journey-section-title">JRSX Structure</div>
-            <div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>H4</div><div class='mtf-inline-value'><span class='badge green'>UP</span><span class='mtf-jrsx'>(JRSX 55)</span></div></div><div class='mini mtf-flags'>U:1 D:0</div></div><div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>H1</div><div class='mtf-inline-value'><span class='badge green'>UP</span><span class='mtf-jrsx'>(JRSX 66.06)</span></div></div><div class='mini mtf-flags'>U:1 D:0</div></div><div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>M30</div><div class='mtf-inline-value'><span class='badge green'>UP</span><span class='mtf-jrsx'>(JRSX 61.29)</span></div></div><div class='mini mtf-flags'>U:1 D:0</div></div>
+            <div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>H4</div><div class='mtf-inline-value'><span class='badge green'>UP</span><span class='mtf-jrsx'>(JRSX 54.97)</span></div></div><div class='mini mtf-flags'>U:1 D:0</div></div><div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>H1</div><div class='mtf-inline-value'><span class='badge green'>UP</span><span class='mtf-jrsx'>(JRSX 66.06)</span></div></div><div class='mini mtf-flags'>U:1 D:0</div></div><div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>M30</div><div class='mtf-inline-value'><span class='badge green'>UP</span><span class='mtf-jrsx'>(JRSX 61.29)</span></div></div><div class='mini mtf-flags'>U:1 D:0</div></div>
           </div>
 
           <div class="journey-section">
             <div class="journey-section-title">Execution State</div>
-            <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge green">ALLOW</span></div></div>
-            <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">EXECUTE</div></div>
+            <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge green">EXECUTE</span></div></div>
+            <div class="journey-row"><div class="journey-label">Signal</div><div class="journey-value">BUY</div></div>
+            <div class="journey-row"><div class="journey-label">Strength</div><div class="journey-value">CONFIRMED_BUY</div></div>
             <div class="journey-row"><div class="journey-label">Risk Size</div><div class="journey-value">1.0</div></div>
             <div class="journey-note">
               <div class="journey-label">Note</div>
@@ -2176,7 +2592,7 @@ body {
         <div class="card-header">
           <div>
             <div class="card-title">Decision Card</div>
-            <div class="card-sub">H1 • M30 UP • JRSX 49.28 • U:1 D:0 • H1 UP • JRSX 54.77 • U:1 D:0 • H4 UP • JRSX 43.15 • U:1 D:0</div>
+            <div class="card-sub">H1 • M30 UP (JRSX 49.28) U:1 D:0 • H1 UP (JRSX 54.77) U:1 D:0 • H4 UP (JRSX 43.15) U:1 D:0</div>
           </div>
           <div class="status-badge green">BUY</div>
         </div>
@@ -2198,7 +2614,7 @@ body {
         </div>
         <div class="meta-grid">
           <div class="meta"><div class="label">Current Price</div><div class="value">73.030</div></div>
-          <div class="meta"><div class="label">Confirmation</div><div class="value"><span class="badge green">CONFIRMED</span></div></div>
+          <div class="meta"><div class="label">Confirmation</div><div class="value"><span class="badge amber">PENDING</span></div></div>
           <div class="meta"><div class="label">Journey</div><div class="value"><span class="badge amber">NONE</span></div></div>
           <div class="meta"><div class="label">Trade Status</div><div class="value"><span class="badge slate">INVALIDATED</span></div></div>
         </div>
@@ -2229,16 +2645,16 @@ body {
             <div class="confirm-item">
               <div class="confirm-head">
                 <div class="confirm-title">Threshold tracker</div>
-                <div class="status-badge green">ALLOW</div>
+                <div class="status-badge red">BLOCKED</div>
               </div>
-              <div class="mini">Action: EXECUTE_REDUCED</div>
+              <div class="mini">Optimizer: EXECUTE_REDUCED</div>
               <div class="progress"><span style="width:67%"></span></div>
               <div class="mini">Risk size: 0.35 • Score: 51.0</div>
             </div>
 
             <div class="confirm-item">
-              <div class="confirm-head"><div class="confirm-title">Why Ready</div></div>
-              <div class="mini">B continuation in trend/scaling structure</div>
+              <div class="confirm-head"><div class="confirm-title">Why Not Ready</div></div>
+              <div class="mini">NO_TRIGGER</div>
               <div class="mini" style="margin-top:8px;">Type: CONTINUATION • Grade: B</div>
             </div>
           </div>
@@ -2268,6 +2684,37 @@ body {
           <div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>H4</div><div class='mtf-inline-value'><span class='badge green'>UP</span><span class='mtf-jrsx'>(JRSX 43.15)</span></div></div><div class='mini mtf-flags'>U:1 D:0</div></div><div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>H1</div><div class='mtf-inline-value'><span class='badge green'>UP</span><span class='mtf-jrsx'>(JRSX 54.77)</span></div></div><div class='mini mtf-flags'>U:1 D:0</div></div><div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>M30</div><div class='mtf-inline-value'><span class='badge green'>UP</span><span class='mtf-jrsx'>(JRSX 49.28)</span></div></div><div class='mini mtf-flags'>U:1 D:0</div></div>
         </div>
       </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Conditions</div>
+            <div class="card-sub">Context, trigger, execution, merge</div>
+          </div>
+        </div>
+        <div>
+          <div class='cond'><span>Context</span><span class='badge slate'>BULL_CONTEXT</span></div><div class='cond'><span>Setup</span><span class='badge slate'>BUY_SETUP</span></div><div class='cond'><span>Structure</span><span class='badge slate'>E_MIXED</span></div><div class='cond'><span>Trigger</span><span class='badge slate'>NO_TRIGGER</span></div><div class='cond'><span>Execution</span><span class='badge amber'>WAIT</span></div><div class='cond'><span>Optimizer Grade</span><span class='badge blue'>B</span></div><div class='cond'><span>Execution Filter</span><span class='badge green'>ALLOW</span></div><div class='cond'><span>Recommended Action</span><span class='badge blue'>EXECUTE_REDUCED</span></div><div class='cond'><span>MTF Merge</span><span class='badge slate'>MERGED</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Merge / Exit Diagnostics</div>
+            <div class="card-sub">MTF merge trace and latest M15 exit</div>
+          </div>
+        </div>
+        <div class="metrics-grid">
+          <div class="meta"><div class="label">MTF Merge</div><div class="value">MERGED</div></div>
+          <div class="meta"><div class="label">Rows Merged</div><div class="value">1</div></div>
+          <div class="meta"><div class="label">Bull Align</div><div class="value">3</div></div>
+          <div class="meta"><div class="label">Bear Align</div><div class="value">0</div></div>
+          <div class="meta"><div class="label">M15 Exit</div><div class="value">EXIT_SELL</div></div>
+          <div class="meta"><div class="label">M15 Exit Time</div><div class="value value-small">2026.04.06 18:45</div></div>
+          <div class="meta"><div class="label">M15 Exit Price</div><div class="value">71.7255</div></div>
+          <div class="meta"><div class="label">MTF Source</div><div class="value value-small">xagusd_mtf_alignment_file.csv</div></div>
+        </div>
+      </div>
     </div>
 
     <div class="journey-stack">
@@ -2288,12 +2735,13 @@ body {
 
           <div class="journey-section">
             <div class="journey-section-title">Execution State</div>
-            <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge green">ALLOW</span></div></div>
-            <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">EXECUTE REDUCED</div></div>
+            <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge red">BLOCKED</span></div></div>
+            <div class="journey-row"><div class="journey-label">Signal</div><div class="journey-value">NO_SIGNAL</div></div>
+            <div class="journey-row"><div class="journey-label">Strength</div><div class="journey-value">WAIT</div></div>
             <div class="journey-row"><div class="journey-label">Risk Size</div><div class="journey-value">0.35</div></div>
             <div class="journey-note">
               <div class="journey-label">Note</div>
-              <div class="journey-value journey-value-left">B continuation in trend/scaling structure</div>
+              <div class="journey-value journey-value-left">NO_TRIGGER</div>
             </div>
           </div>
         </div>
@@ -2333,7 +2781,7 @@ body {
         <div class="card-header">
           <div>
             <div class="card-title">Decision Card</div>
-            <div class="card-sub">H1 • M30 DOWN • JRSX 28.47 • U:0 D:1 • H1 DOWN • JRSX 43.27 • U:0 D:1 • H4 DOWN • JRSX 45.80 • U:0 D:1</div>
+            <div class="card-sub">H1 • M30 DOWN (JRSX 28.47) U:0 D:1 • H1 DOWN (JRSX 43.27) U:0 D:1 • H4 DOWN (JRSX 45.80) U:0 D:1</div>
           </div>
           <div class="status-badge red">SELL</div>
         </div>
@@ -2386,9 +2834,9 @@ body {
             <div class="confirm-item">
               <div class="confirm-head">
                 <div class="confirm-title">Threshold tracker</div>
-                <div class="status-badge green">ALLOW</div>
+                <div class="status-badge green">EXECUTE</div>
               </div>
-              <div class="mini">Action: EXECUTE</div>
+              <div class="mini">Optimizer: EXECUTE</div>
               <div class="progress"><span style="width:100%"></span></div>
               <div class="mini">Risk size: 1.0 • Score: 56.0</div>
             </div>
@@ -2425,6 +2873,37 @@ body {
           <div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>H4</div><div class='mtf-inline-value'><span class='badge red'>DOWN</span><span class='mtf-jrsx'>(JRSX 45.80)</span></div></div><div class='mini mtf-flags'>U:0 D:1</div></div><div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>H1</div><div class='mtf-inline-value'><span class='badge red'>DOWN</span><span class='mtf-jrsx'>(JRSX 43.27)</span></div></div><div class='mini mtf-flags'>U:0 D:1</div></div><div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>M30</div><div class='mtf-inline-value'><span class='badge red'>DOWN</span><span class='mtf-jrsx'>(JRSX 28.47)</span></div></div><div class='mini mtf-flags'>U:0 D:1</div></div>
         </div>
       </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Conditions</div>
+            <div class="card-sub">Context, trigger, execution, merge</div>
+          </div>
+        </div>
+        <div>
+          <div class='cond'><span>Context</span><span class='badge slate'>BEAR_CONTEXT</span></div><div class='cond'><span>Setup</span><span class='badge slate'>SELL_SETUP</span></div><div class='cond'><span>Structure</span><span class='badge slate'>A_TREND</span></div><div class='cond'><span>Trigger</span><span class='badge slate'>SELL_TRIGGER</span></div><div class='cond'><span>Execution</span><span class='badge slate'>CONFIRMED_SELL</span></div><div class='cond'><span>Optimizer Grade</span><span class='badge green'>A</span></div><div class='cond'><span>Execution Filter</span><span class='badge green'>ALLOW</span></div><div class='cond'><span>Recommended Action</span><span class='badge green'>EXECUTE</span></div><div class='cond'><span>MTF Merge</span><span class='badge slate'>MERGED</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Merge / Exit Diagnostics</div>
+            <div class="card-sub">MTF merge trace and latest M15 exit</div>
+          </div>
+        </div>
+        <div class="metrics-grid">
+          <div class="meta"><div class="label">MTF Merge</div><div class="value">MERGED</div></div>
+          <div class="meta"><div class="label">Rows Merged</div><div class="value">1</div></div>
+          <div class="meta"><div class="label">Bull Align</div><div class="value">0</div></div>
+          <div class="meta"><div class="label">Bear Align</div><div class="value">3</div></div>
+          <div class="meta"><div class="label">M15 Exit</div><div class="value">EXIT_SELL</div></div>
+          <div class="meta"><div class="label">M15 Exit Time</div><div class="value value-small">2026.04.06 21:45</div></div>
+          <div class="meta"><div class="label">M15 Exit Price</div><div class="value">4018.662</div></div>
+          <div class="meta"><div class="label">MTF Source</div><div class="value value-small">xaueur_mtf_alignment_file.csv</div></div>
+        </div>
+      </div>
     </div>
 
     <div class="journey-stack">
@@ -2445,8 +2924,9 @@ body {
 
           <div class="journey-section">
             <div class="journey-section-title">Execution State</div>
-            <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge green">ALLOW</span></div></div>
-            <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">EXECUTE</div></div>
+            <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge green">EXECUTE</span></div></div>
+            <div class="journey-row"><div class="journey-label">Signal</div><div class="journey-value">SELL</div></div>
+            <div class="journey-row"><div class="journey-label">Strength</div><div class="journey-value">CONFIRMED_SELL</div></div>
             <div class="journey-row"><div class="journey-label">Risk Size</div><div class="journey-value">1.0</div></div>
             <div class="journey-note">
               <div class="journey-label">Note</div>
@@ -2490,7 +2970,7 @@ body {
         <div class="card-header">
           <div>
             <div class="card-title">Decision Card</div>
-            <div class="card-sub">H1 • M30 DOWN • JRSX 29.73 • U:0 D:1 • H1 DOWN • JRSX 45.66 • U:0 D:1 • H4 DOWN • JRSX 45.45 • U:0 D:1</div>
+            <div class="card-sub">H1 • M30 DOWN (JRSX 29.73) U:0 D:1 • H1 DOWN (JRSX 45.66) U:0 D:1 • H4 DOWN (JRSX 45.45) U:0 D:1</div>
           </div>
           <div class="status-badge red">SELL</div>
         </div>
@@ -2543,9 +3023,9 @@ body {
             <div class="confirm-item">
               <div class="confirm-head">
                 <div class="confirm-title">Threshold tracker</div>
-                <div class="status-badge green">ALLOW</div>
+                <div class="status-badge green">EXECUTE</div>
               </div>
-              <div class="mini">Action: EXECUTE</div>
+              <div class="mini">Optimizer: EXECUTE</div>
               <div class="progress"><span style="width:100%"></span></div>
               <div class="mini">Risk size: 1.0 • Score: 56.0</div>
             </div>
@@ -2582,6 +3062,37 @@ body {
           <div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>H4</div><div class='mtf-inline-value'><span class='badge red'>DOWN</span><span class='mtf-jrsx'>(JRSX 45.45)</span></div></div><div class='mini mtf-flags'>U:0 D:1</div></div><div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>H1</div><div class='mtf-inline-value'><span class='badge red'>DOWN</span><span class='mtf-jrsx'>(JRSX 45.66)</span></div></div><div class='mini mtf-flags'>U:0 D:1</div></div><div class='mini-box mini-box-inline'><div class='mini-box-top'><div class='label'>M30</div><div class='mtf-inline-value'><span class='badge red'>DOWN</span><span class='mtf-jrsx'>(JRSX 29.73)</span></div></div><div class='mini mtf-flags'>U:0 D:1</div></div>
         </div>
       </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Conditions</div>
+            <div class="card-sub">Context, trigger, execution, merge</div>
+          </div>
+        </div>
+        <div>
+          <div class='cond'><span>Context</span><span class='badge slate'>BEAR_CONTEXT</span></div><div class='cond'><span>Setup</span><span class='badge slate'>SELL_SETUP</span></div><div class='cond'><span>Structure</span><span class='badge slate'>A_TREND</span></div><div class='cond'><span>Trigger</span><span class='badge slate'>SELL_TRIGGER</span></div><div class='cond'><span>Execution</span><span class='badge slate'>CONFIRMED_SELL</span></div><div class='cond'><span>Optimizer Grade</span><span class='badge green'>A</span></div><div class='cond'><span>Execution Filter</span><span class='badge green'>ALLOW</span></div><div class='cond'><span>Recommended Action</span><span class='badge green'>EXECUTE</span></div><div class='cond'><span>MTF Merge</span><span class='badge slate'>MERGED</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Merge / Exit Diagnostics</div>
+            <div class="card-sub">MTF merge trace and latest M15 exit</div>
+          </div>
+        </div>
+        <div class="metrics-grid">
+          <div class="meta"><div class="label">MTF Merge</div><div class="value">MERGED</div></div>
+          <div class="meta"><div class="label">Rows Merged</div><div class="value">1</div></div>
+          <div class="meta"><div class="label">Bull Align</div><div class="value">0</div></div>
+          <div class="meta"><div class="label">Bear Align</div><div class="value">3</div></div>
+          <div class="meta"><div class="label">M15 Exit</div><div class="value">EXIT_SELL</div></div>
+          <div class="meta"><div class="label">M15 Exit Time</div><div class="value value-small">2026.04.06 16:45</div></div>
+          <div class="meta"><div class="label">M15 Exit Price</div><div class="value">4648.183</div></div>
+          <div class="meta"><div class="label">MTF Source</div><div class="value value-small">xauusd_mtf_alignment_file.csv</div></div>
+        </div>
+      </div>
     </div>
 
     <div class="journey-stack">
@@ -2602,8 +3113,9 @@ body {
 
           <div class="journey-section">
             <div class="journey-section-title">Execution State</div>
-            <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge green">ALLOW</span></div></div>
-            <div class="journey-row"><div class="journey-label">Next</div><div class="journey-value">EXECUTE</div></div>
+            <div class="journey-row"><div class="journey-label">Status</div><div><span class="badge green">EXECUTE</span></div></div>
+            <div class="journey-row"><div class="journey-label">Signal</div><div class="journey-value">SELL</div></div>
+            <div class="journey-row"><div class="journey-label">Strength</div><div class="journey-value">CONFIRMED_SELL</div></div>
             <div class="journey-row"><div class="journey-label">Risk Size</div><div class="journey-value">1.0</div></div>
             <div class="journey-note">
               <div class="journey-label">Note</div>
