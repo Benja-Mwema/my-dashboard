@@ -4652,12 +4652,13 @@ function buildPath(points) {
   }).join(' ');
 }
 
-function drawSeries(svg, labels, values, min, max, colorClass, width, height, pad) {
+function drawSeries(svg, labels, values, min, max, colorClass, strokeWidth, chartWidth, chartHeight, pad) {
   const pts = [];
-  const xStep = labels.length > 1 ? (width - pad * 2) / (labels.length - 1) : 0;
+  const xStep = labels.length > 1 ? (chartWidth - pad * 2) / (labels.length - 1) : 0;
   values.forEach(function(v, i) {
-    if (v === null || v === undefined || Number.isNaN(Number(v))) return;
-    pts.push({ x: pad + i * xStep, y: scaleY(Number(v), min, max, height, pad) });
+    const num = parseFloat(v);
+    if (Number.isNaN(num)) return;
+    pts.push({ x: pad + i * xStep, y: scaleY(num, min, max, chartHeight, pad) });
   });
   if (!pts.length) return;
 
@@ -4676,7 +4677,7 @@ function drawSeries(svg, labels, values, min, max, colorClass, width, height, pa
   path.setAttribute('class', colorClass);
   path.setAttribute('stroke', strokeMap[colorClass] || '#eef5ff');
   if (colorClass === 'series-pivot') path.setAttribute('stroke-dasharray', '5 5');
-  path.setAttribute('stroke-width', width);
+  path.setAttribute('stroke-width', strokeWidth);
   path.setAttribute('stroke-linecap', 'round');
   path.setAttribute('stroke-linejoin', 'round');
   svg.appendChild(path);
@@ -4692,7 +4693,8 @@ function buildMultiChart(svg, payload) {
   seriesNames.forEach(function(name) {
     const arr = Array.isArray(payload[name]) ? payload[name] : [];
     arr.forEach(function(v) {
-      if (v !== null && v !== undefined && !Number.isNaN(Number(v))) all.push(Number(v));
+      const num = parseFloat(v);
+      if (!Number.isNaN(num)) all.push(num);
     });
   });
   if (!labels.length || !all.length) {
@@ -4744,7 +4746,7 @@ function paintCharts() {
     let payload = {};
     const dataNode = box.querySelector('script.chart-data');
     const raw = dataNode ? (dataNode.textContent || '{}') : (box.getAttribute('data-chart') || '{}');
-    try { payload = JSON.parse(raw); } catch (err) { payload = {}; }
+    try { payload = JSON.parse(raw); } catch (err) { payload = {}; console.error('Chart JSON parse failed', err, raw); }
     const svg = box.querySelector('svg.line-chart');
     buildMultiChart(svg, payload);
   });
