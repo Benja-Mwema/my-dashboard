@@ -88,7 +88,7 @@ th { color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacin
   <div class="topbar">
     <div>
       <h1>Institutional Dashboard Terminal v8</h1>
-      <div class="meta">Generated: 2026-04-24 00:57:49</div>
+      <div class="meta">Generated: 2026-04-24 01:03:16</div>
     </div>
     <div class="summary-grid"><div class="summary-card"><div class="summary-label">Symbols</div><div class="summary-value">11</div></div><div class="summary-card"><div class="summary-label">Confirmed</div><div class="summary-value">0</div></div><div class="summary-card"><div class="summary-label">Watchlist</div><div class="summary-value">11</div></div><div class="summary-card"><div class="summary-label">Active Symbols</div><div class="summary-value">0</div></div><div class="summary-card"><div class="summary-label">Active Trades</div><div class="summary-value">0</div></div><div class="summary-card"><div class="summary-label">Blocked</div><div class="summary-value">0</div></div><div class="summary-card"><div class="summary-label">Candidates A/B/C</div><div class="summary-value">0/0/0</div></div><div class="summary-card"><div class="summary-label">Last Update</div><div class="summary-value">2026-04-24 00:45:00</div></div></div>
   </div>
@@ -124,7 +124,7 @@ th { color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacin
           <td><span class="badge bad">NO_TRIGGER</span></td>
           <td><span class="badge neutral">NEUTRAL_CONTEXT</span></td>
           <td><span class="badge neutral">NONE</span></td>
-          <td><span class="badge neutral">—</span></td>
+          <td><span class="badge bad">NO_TRADE</span></td>
           <td>2026-04-24 00:45:00</td>
         </tr>
         
@@ -220,7 +220,7 @@ th { color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacin
           <td><span class="badge bad">NO_TRIGGER</span></td>
           <td><span class="badge neutral">BEAR_CONTEXT</span></td>
           <td><span class="badge neutral">NONE</span></td>
-          <td><span class="badge neutral">—</span></td>
+          <td><span class="badge bad">NO_TRADE</span></td>
           <td>2026-04-23 23:45:00</td>
         </tr>
         
@@ -232,7 +232,7 @@ th { color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacin
           <td><span class="badge bad">NO_TRIGGER</span></td>
           <td><span class="badge neutral">BEAR_CONTEXT</span></td>
           <td><span class="badge neutral">NONE</span></td>
-          <td><span class="badge neutral">—</span></td>
+          <td><span class="badge bad">NO_TRADE</span></td>
           <td>2026-04-23 23:45:00</td>
         </tr>
         
@@ -244,7 +244,7 @@ th { color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacin
           <td><span class="badge bad">NO_TRIGGER</span></td>
           <td><span class="badge neutral">BEAR_CONTEXT</span></td>
           <td><span class="badge neutral">NONE</span></td>
-          <td><span class="badge neutral">—</span></td>
+          <td><span class="badge bad">NO_TRADE</span></td>
           <td>2026-04-23 23:15:00</td>
         </tr>
         </tbody>
@@ -310,7 +310,407 @@ th { color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacin
               <th>Trade ID</th>
             </tr>
           </thead>
-          <tbody></tbody>
+          <tbody>
+        <tr>
+          <td>2026-04-23 14:45:00</td>
+          <td>USDJPY</td>
+          <td><span class="badge good">BUY</span></td>
+          <td>BUY_USDJPY_CLEAN_CONTINUATION</td>
+          <td>C</td>
+          <td><span class="badge neutral">BE_HIT_AFTER_TP1</span></td>
+          <td>BREAKEVEN</td>
+          <td>0.0%</td>
+          <td>-0.04</td>
+          <td>0.01</td>
+          <td>1.03</td>
+          <td>—</td>
+          <td>USDJPY_T0001</td>
+        </tr>
+        
+        <tr>
+          <td>2026-04-22 09:45:00</td>
+          <td>XAUEUR</td>
+          <td><span class="badge good">SELL</span></td>
+          <td>SELL_XAUEUR_ACCUMULATION</td>
+          <td>C</td>
+          <td><span class="badge neutral">BE_HIT_AFTER_TP1</span></td>
+          <td>BREAKEVEN</td>
+          <td>0.0%</td>
+          <td>-0.00</td>
+          <td>0.03</td>
+          <td>1.06</td>
+          <td>—</td>
+          <td>XAUEUR_T0005</td>
+        </tr>
+        
+        <tr>
+          <td>2026-04-21 17:00:00</td>
+          <td>UK100</td>
+          <td><span class="badge good">SELL</span></td>
+          <td>SELL_UK100_LOW_NOISE_JRSX_GUARDED</td>
+          <td>C</td>
+          <td><span class="badge neutral">TP2_HIT</span></td>
+          <td>SUCCESS</td>
+          <td>60.0%</td>
+          <td>2.73</td>
+          <td>0.57</td>
+          <td>1.14</td>
+          <td>—</td>
+          <td>UK100_T0004</td>
+        </tr>
+        
+        <tr>
+          <td>2026-04-20 01:00:00</td>
+          <td>UK100</td>
+          <td><span class="badge good">SELL</span></td>
+          <td>SELL_UK100_LOW_NOISE_JRSX_GUARDED</td>
+          <td>C</td>
+          <td><span class="badge neutral">BE_HIT_AFTER_TP1</span></td>
+          <td>BREAKEVEN</td>
+          <td>0.0%</td>
+          <td>-0.21</td>
+          <td>1.13</td>
+          <td>2.42</td>
+          <td>—</td>
+          <td>UK100_T0003</td>
+        </tr>
+        
+        <tr>
+          <td>2026-04-17 16:00:00</td>
+          <td>XAUUSD</td>
+          <td><span class="badge good">SELL</span></td>
+          <td>SELL_XAUUSD_INTERNAL_PRESSURE</td>
+          <td>—</td>
+          <td><span class="badge neutral">TP2_HIT</span></td>
+          <td>SUCCESS</td>
+          <td>57.5%</td>
+          <td>2.22</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>XAUUSD_T0005</td>
+        </tr>
+        
+        <tr>
+          <td>2026-04-17 15:45:00</td>
+          <td>XAGUSD</td>
+          <td><span class="badge good">BUY</span></td>
+          <td>BUY_XAGUSD_EXPANSION</td>
+          <td>C</td>
+          <td><span class="badge neutral">TP2_HIT</span></td>
+          <td>SUCCESS</td>
+          <td>43.3%</td>
+          <td>1.09</td>
+          <td>0.82</td>
+          <td>1.64</td>
+          <td>—</td>
+          <td>XAGUSD_T0002</td>
+        </tr>
+        
+        <tr>
+          <td>2026-04-14 21:15:00</td>
+          <td>AUDJPY</td>
+          <td><span class="badge good">BUY</span></td>
+          <td>BUY_AUDJPY_CONTINUATION_SAFE</td>
+          <td>C</td>
+          <td><span class="badge neutral">BE_HIT_AFTER_TP1</span></td>
+          <td>BREAKEVEN</td>
+          <td>0.0%</td>
+          <td>0.00</td>
+          <td>0.02</td>
+          <td>1.03</td>
+          <td>—</td>
+          <td>AUDJPY_T0004</td>
+        </tr>
+        
+        <tr>
+          <td>2026-04-14 20:30:00</td>
+          <td>SP500</td>
+          <td><span class="badge good">BUY</span></td>
+          <td>BUY_sp500_LOW_NOISE_JRSX_GUARDED</td>
+          <td>C</td>
+          <td><span class="badge neutral">TP2_HIT</span></td>
+          <td>SUCCESS</td>
+          <td>60.1%</td>
+          <td>2.94</td>
+          <td>0.24</td>
+          <td>1.49</td>
+          <td>—</td>
+          <td>SP500_T0002</td>
+        </tr>
+        
+        <tr>
+          <td>2026-04-14 20:00:00</td>
+          <td>XAUEUR</td>
+          <td><span class="badge good">BUY</span></td>
+          <td>BUY_XAUEUR_ACCUMULATION</td>
+          <td>C</td>
+          <td><span class="badge neutral">TP2_HIT</span></td>
+          <td>SUCCESS</td>
+          <td>64.1%</td>
+          <td>2.56</td>
+          <td>0.49</td>
+          <td>0.98</td>
+          <td>—</td>
+          <td>XAUEUR_T0004</td>
+        </tr>
+        
+        <tr>
+          <td>2026-04-08 01:00:00</td>
+          <td>XAUEUR</td>
+          <td><span class="badge good">BUY</span></td>
+          <td>BUY_XAUEUR_ACCUMULATION</td>
+          <td>C</td>
+          <td><span class="badge neutral">TP2_HIT</span></td>
+          <td>SUCCESS</td>
+          <td>36.1%</td>
+          <td>0.81</td>
+          <td>0.91</td>
+          <td>2.82</td>
+          <td>—</td>
+          <td>XAUEUR_T0003</td>
+        </tr>
+        
+        <tr>
+          <td>2026-04-07 17:15:00</td>
+          <td>AUDJPY</td>
+          <td><span class="badge good">BUY</span></td>
+          <td>BUY_AUDJPY_CONTINUATION_SAFE</td>
+          <td>C</td>
+          <td><span class="badge neutral">TP2_HIT</span></td>
+          <td>SUCCESS</td>
+          <td>56.1%</td>
+          <td>1.28</td>
+          <td>0.02</td>
+          <td>1.03</td>
+          <td>—</td>
+          <td>AUDJPY_T0003</td>
+        </tr>
+        
+        <tr>
+          <td>2026-04-06 16:15:00</td>
+          <td>SP500</td>
+          <td><span class="badge good">BUY</span></td>
+          <td>BUY_sp500_LOW_NOISE_JRSX_GUARDED</td>
+          <td>C</td>
+          <td><span class="badge neutral">BE_HIT_AFTER_TP1</span></td>
+          <td>BREAKEVEN</td>
+          <td>0.0%</td>
+          <td>-0.02</td>
+          <td>0.24</td>
+          <td>1.49</td>
+          <td>—</td>
+          <td>SP500_T0001</td>
+        </tr>
+        
+        <tr>
+          <td>2026-04-02 02:00:00</td>
+          <td>XAUEUR</td>
+          <td><span class="badge good">SELL</span></td>
+          <td>SELL_XAUEUR_ACCUMULATION</td>
+          <td>C</td>
+          <td><span class="badge neutral">TP2_HIT</span></td>
+          <td>SUCCESS</td>
+          <td>51.8%</td>
+          <td>1.08</td>
+          <td>0.03</td>
+          <td>1.06</td>
+          <td>—</td>
+          <td>XAUEUR_T0002</td>
+        </tr>
+        
+        <tr>
+          <td>2026-04-01 03:15:00</td>
+          <td>XAUUSD</td>
+          <td><span class="badge good">SELL</span></td>
+          <td>SELL_XAUUSD_INTERNAL_PRESSURE</td>
+          <td>—</td>
+          <td><span class="badge neutral">TP2_HIT</span></td>
+          <td>SUCCESS</td>
+          <td>59.5%</td>
+          <td>1.47</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>XAUUSD_T0004</td>
+        </tr>
+        
+        <tr>
+          <td>2026-04-01 02:30:00</td>
+          <td>UK100</td>
+          <td><span class="badge good">SELL</span></td>
+          <td>SELL_UK100_LOW_NOISE_JRSX_GUARDED</td>
+          <td>C</td>
+          <td><span class="badge neutral">TP2_HIT</span></td>
+          <td>SUCCESS</td>
+          <td>54.1%</td>
+          <td>1.37</td>
+          <td>1.13</td>
+          <td>2.42</td>
+          <td>—</td>
+          <td>UK100_T0002</td>
+        </tr>
+        
+        <tr>
+          <td>2026-03-31 21:45:00</td>
+          <td>CAC40</td>
+          <td><span class="badge good">BUY</span></td>
+          <td>BUY_CAC40_REGIME_CONFIRM_RECONSTRUCTED</td>
+          <td>C</td>
+          <td><span class="badge neutral">TP2_HIT</span></td>
+          <td>SUCCESS</td>
+          <td>3.8%</td>
+          <td>0.04</td>
+          <td>0.99</td>
+          <td>1.98</td>
+          <td>—</td>
+          <td>CAC40_T0002</td>
+        </tr>
+        
+        <tr>
+          <td>2026-03-31 19:30:00</td>
+          <td>XAGUSD</td>
+          <td><span class="badge good">BUY</span></td>
+          <td>BUY_XAGUSD_EXPANSION</td>
+          <td>C</td>
+          <td><span class="badge neutral">TP2_HIT</span></td>
+          <td>SUCCESS</td>
+          <td>60.1%</td>
+          <td>2.16</td>
+          <td>0.48</td>
+          <td>0.95</td>
+          <td>—</td>
+          <td>XAGUSD_T0001</td>
+        </tr>
+        
+        <tr>
+          <td>2026-03-31 01:45:00</td>
+          <td>AUDJPY</td>
+          <td><span class="badge good">BUY</span></td>
+          <td>BUY_AUDJPY_CONTINUATION_SAFE</td>
+          <td>C</td>
+          <td><span class="badge neutral">OPPOSITE_ENTRY_SIGNAL</span></td>
+          <td>PROTECTIVE_EXIT</td>
+          <td>19.7%</td>
+          <td>0.69</td>
+          <td>0.02</td>
+          <td>1.03</td>
+          <td>—</td>
+          <td>AUDJPY_T0002</td>
+        </tr>
+        
+        <tr>
+          <td>2026-03-30 11:15:00</td>
+          <td>UK100</td>
+          <td><span class="badge good">BUY</span></td>
+          <td>SELL_UK100_LOW_NOISE_JRSX_GUARDED</td>
+          <td>C</td>
+          <td><span class="badge neutral">TP2_HIT</span></td>
+          <td>SUCCESS</td>
+          <td>33.3%</td>
+          <td>0.61</td>
+          <td>0.77</td>
+          <td>1.55</td>
+          <td>—</td>
+          <td>UK100_T0001</td>
+        </tr>
+        
+        <tr>
+          <td>2026-03-26 14:45:00</td>
+          <td>AUDJPY</td>
+          <td><span class="badge good">SELL</span></td>
+          <td>BUY_AUDJPY_CONTINUATION_SAFE</td>
+          <td>C</td>
+          <td><span class="badge neutral">TP2_HIT</span></td>
+          <td>SUCCESS</td>
+          <td>37.0%</td>
+          <td>0.62</td>
+          <td>0.69</td>
+          <td>1.37</td>
+          <td>—</td>
+          <td>AUDJPY_T0001</td>
+        </tr>
+        
+        <tr>
+          <td>2026-03-26 08:45:00</td>
+          <td>XAUEUR</td>
+          <td><span class="badge good">SELL</span></td>
+          <td>SELL_XAUEUR_ACCUMULATION</td>
+          <td>C</td>
+          <td><span class="badge neutral">BE_HIT_AFTER_TP1</span></td>
+          <td>BREAKEVEN</td>
+          <td>0.0%</td>
+          <td>-0.14</td>
+          <td>0.03</td>
+          <td>1.06</td>
+          <td>—</td>
+          <td>XAUEUR_T0001</td>
+        </tr>
+        
+        <tr>
+          <td>2026-03-26 08:30:00</td>
+          <td>XAUUSD</td>
+          <td><span class="badge good">SELL</span></td>
+          <td>SELL_XAUUSD_INTERNAL_PRESSURE</td>
+          <td>—</td>
+          <td><span class="badge neutral">BE_HIT_AFTER_TP1</span></td>
+          <td>BREAKEVEN</td>
+          <td>0.0%</td>
+          <td>-0.00</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>XAUUSD_T0003</td>
+        </tr>
+        
+        <tr>
+          <td>2026-03-18 13:45:00</td>
+          <td>XAUUSD</td>
+          <td><span class="badge good">SELL</span></td>
+          <td>SELL_XAUUSD_BREAKOUT_CAPTURE</td>
+          <td>C</td>
+          <td><span class="badge neutral">TP2_HIT</span></td>
+          <td>SUCCESS</td>
+          <td>26.0%</td>
+          <td>0.45</td>
+          <td>0.88</td>
+          <td>1.76</td>
+          <td>—</td>
+          <td>XAUUSD_T0002</td>
+        </tr>
+        
+        <tr>
+          <td>2026-03-17 17:45:00</td>
+          <td>CAC40</td>
+          <td><span class="badge good">BUY</span></td>
+          <td>BUY_CAC40_REGIME_CONFIRM_RECONSTRUCTED</td>
+          <td>C</td>
+          <td><span class="badge neutral">TP2_HIT</span></td>
+          <td>SUCCESS</td>
+          <td>45.1%</td>
+          <td>1.00</td>
+          <td>0.03</td>
+          <td>0.03</td>
+          <td>—</td>
+          <td>CAC40_T0001</td>
+        </tr>
+        
+        <tr>
+          <td>2026-03-13 23:15:00</td>
+          <td>XAUUSD</td>
+          <td><span class="badge good">SELL</span></td>
+          <td>SELL_XAUUSD_INTERNAL_PRESSURE</td>
+          <td>—</td>
+          <td><span class="badge neutral">TP2_HIT</span></td>
+          <td>SUCCESS</td>
+          <td>55.8%</td>
+          <td>3.50</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>XAUUSD_T0001</td>
+        </tr>
+        </tbody>
         </table>
       </div>
     </div>
@@ -396,7 +796,7 @@ th { color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacin
       <div class="mini-badges">
         <span class="badge neutral">—</span>
         <span class="badge neutral">—</span>
-        <span class="badge neutral">—</span>
+        <span class="badge bad">NO_TRADE</span>
       </div>
     </div>
 
@@ -754,7 +1154,7 @@ th { color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacin
       <div class="mini-badges">
         <span class="badge good">SELL</span>
         <span class="badge neutral">C</span>
-        <span class="badge neutral">—</span>
+        <span class="badge bad">NO_TRADE</span>
       </div>
     </div>
 
@@ -1112,7 +1512,7 @@ th { color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacin
       <div class="mini-badges">
         <span class="badge good">SELL</span>
         <span class="badge neutral">C</span>
-        <span class="badge neutral">—</span>
+        <span class="badge bad">NO_TRADE</span>
       </div>
     </div>
 
@@ -3120,7 +3520,7 @@ th { color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacin
       <div class="mini-badges">
         <span class="badge neutral">—</span>
         <span class="badge neutral">—</span>
-        <span class="badge neutral">—</span>
+        <span class="badge bad">NO_TRADE</span>
       </div>
     </div>
 
