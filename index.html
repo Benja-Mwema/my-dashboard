@@ -110,10 +110,10 @@ th { color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacin
   <div class="topbar">
     <div>
       <h1>Institutional Dashboard Terminal</h1>
-      <div class="meta">Generated: 2026-04-23 06:11:16</div>
+      <div class="meta">Generated: 2026-04-23 06:19:45</div>
     </div>
     <div class="summary-grid">
-      <div class="summary-card"><div class="summary-label">Symbols</div><div class="summary-value">11</div></div><div class="summary-card"><div class="summary-label">Confirmed</div><div class="summary-value">0</div></div><div class="summary-card"><div class="summary-label">Watchlist</div><div class="summary-value">0</div></div><div class="summary-card"><div class="summary-label">Active Symbols</div><div class="summary-value">1</div></div><div class="summary-card"><div class="summary-label">Active Trades</div><div class="summary-value">7</div></div><div class="summary-card"><div class="summary-label">Blocked</div><div class="summary-value">11</div></div><div class="summary-card"><div class="summary-label">Candidates A/B/C</div><div class="summary-value">0/1/100</div></div><div class="summary-card"><div class="summary-label">Last Update</div><div class="summary-value">2026-04-23 06:00:00</div></div>
+      <div class="summary-card"><div class="summary-label">Symbols</div><div class="summary-value">11</div></div><div class="summary-card"><div class="summary-label">Confirmed</div><div class="summary-value">0</div></div><div class="summary-card"><div class="summary-label">Watchlist</div><div class="summary-value">0</div></div><div class="summary-card"><div class="summary-label">Active Symbols</div><div class="summary-value">1</div></div><div class="summary-card"><div class="summary-label">Active Trades</div><div class="summary-value">9</div></div><div class="summary-card"><div class="summary-label">Blocked</div><div class="summary-value">11</div></div><div class="summary-card"><div class="summary-label">Candidates A/B/C</div><div class="summary-value">0/1/100</div></div><div class="summary-card"><div class="summary-label">Last Update</div><div class="summary-value">2026-04-23 06:00:00</div></div>
     </div>
   </div>
 
@@ -233,8 +233,8 @@ th { color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacin
         <tr>
           <td>AUDJPY</td>
           <td><span class="badge bad">BLOCKED</span></td>
-          <td>—</td>
-          <td><span class="badge bad">NO_TRADE</span></td>
+          <td>C</td>
+          <td><span class="badge warn">WATCHLIST</span></td>
           <td><span class="badge neutral">SELL_TRIGGER</span></td>
           <td><span class="badge neutral">BEAR_CONTEXT</span></td>
           <td><span class="badge neutral">NONE</span></td>
@@ -302,6 +302,24 @@ th { color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacin
             <div><span>Entry</span><strong>10,402.40</strong></div>
             <div><span>Current</span><strong>10,402.40</strong></div>
             <div><span>TP1</span><strong>10,336.90</strong></div>
+            <div><span>Status</span><strong>—</strong></div>
+          </div>
+          <div class="subtle">—</div>
+        </div>
+        
+        <div class="mini-card">
+          <div class="mini-head">
+            <strong>AUDJPY</strong>
+            <div class="mini-badges">
+              <span class="badge good">SELL</span>
+              <span class="badge neutral">C</span>
+              <span class="badge bad">BLOCKED</span>
+            </div>
+          </div>
+          <div class="kv-grid">
+            <div><span>Entry</span><strong>113.97</strong></div>
+            <div><span>Current</span><strong>113.97</strong></div>
+            <div><span>TP1</span><strong>113.80</strong></div>
             <div><span>Status</span><strong>—</strong></div>
           </div>
           <div class="subtle">—</div>
@@ -446,6 +464,56 @@ th { color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacin
               
                 <div class="stack-row">
                   <div class="stack-head">
+                    <div class="stack-title">2026-04-23 05:45:00 · SELL_AUDJPY_CONTINUATION_SAFE</div>
+                    <div class="mini-badges">
+                      <span class="badge good">SELL</span>
+                      <span class="badge warn">WATCHLIST</span>
+                    </div>
+                  </div>
+
+                  <div class="kv-grid">
+                    <div><span>Entry</span><strong>113.98</strong></div>
+                    <div><span>SL</span><strong>114.30</strong></div>
+                    <div><span>TP1</span><strong>113.80</strong></div>
+                    <div><span>TP2</span><strong>113.69</strong></div>
+                  </div>
+
+                  <div class="chip-row">
+                    <span class="badge neutral">A_ALIGN_4_4</span>
+                    <span class="badge bad">DOWN</span>
+                    <span class="badge neutral">PREVIOUS_SELL_EXIT</span>
+                  </div>
+
+                  <div class="subtle">Setup exists but H4 structure/readiness is weak</div>
+                </div>
+                
+                <div class="stack-row">
+                  <div class="stack-head">
+                    <div class="stack-title">2026-04-23 03:00:00 · SELL_AUDJPY_CONTINUATION_SAFE</div>
+                    <div class="mini-badges">
+                      <span class="badge good">SELL</span>
+                      <span class="badge warn">WATCHLIST</span>
+                    </div>
+                  </div>
+
+                  <div class="kv-grid">
+                    <div><span>Entry</span><strong>114.02</strong></div>
+                    <div><span>SL</span><strong>114.30</strong></div>
+                    <div><span>TP1</span><strong>113.80</strong></div>
+                    <div><span>TP2</span><strong>113.69</strong></div>
+                  </div>
+
+                  <div class="chip-row">
+                    <span class="badge neutral">A_ALIGN_4_4</span>
+                    <span class="badge bad">DOWN</span>
+                    <span class="badge neutral">PREVIOUS_SELL_EXIT</span>
+                  </div>
+
+                  <div class="subtle">Setup exists but H4 structure/readiness is weak</div>
+                </div>
+                
+                <div class="stack-row">
+                  <div class="stack-head">
                     <div class="stack-title">2026-04-15 17:00:00 · BUY_AUDJPY_CONTINUATION_SAFE</div>
                     <div class="mini-badges">
                       <span class="badge good">BUY</span>
@@ -462,56 +530,6 @@ th { color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacin
 
                   <div class="chip-row">
                     <span class="badge neutral">A_ALIGN_4_4</span>
-                    <span class="badge good">UP</span>
-                    <span class="badge neutral">NEXT_BUY_EXIT_ABOVE_PRICE</span>
-                  </div>
-
-                  <div class="subtle">Late continuation after structure already moved</div>
-                </div>
-                
-                <div class="stack-row">
-                  <div class="stack-head">
-                    <div class="stack-title">2026-04-15 15:30:00 · BUY_AUDJPY_CONTINUATION_SAFE</div>
-                    <div class="mini-badges">
-                      <span class="badge good">BUY</span>
-                      <span class="badge warn">POST_BREAKOUT_WAIT</span>
-                    </div>
-                  </div>
-
-                  <div class="kv-grid">
-                    <div><span>Entry</span><strong>113.57</strong></div>
-                    <div><span>SL</span><strong>112.87</strong></div>
-                    <div><span>TP1</span><strong>114.11</strong></div>
-                    <div><span>TP2</span><strong>114.66</strong></div>
-                  </div>
-
-                  <div class="chip-row">
-                    <span class="badge neutral">A_ALIGN_4_4</span>
-                    <span class="badge good">UP</span>
-                    <span class="badge neutral">NEXT_BUY_EXIT_ABOVE_PRICE</span>
-                  </div>
-
-                  <div class="subtle">Late continuation after structure already moved</div>
-                </div>
-                
-                <div class="stack-row">
-                  <div class="stack-head">
-                    <div class="stack-title">2026-04-15 14:30:00 · BUY_AUDJPY_CONTINUATION_SAFE</div>
-                    <div class="mini-badges">
-                      <span class="badge good">BUY</span>
-                      <span class="badge warn">POST_BREAKOUT_WAIT</span>
-                    </div>
-                  </div>
-
-                  <div class="kv-grid">
-                    <div><span>Entry</span><strong>113.49</strong></div>
-                    <div><span>SL</span><strong>112.87</strong></div>
-                    <div><span>TP1</span><strong>114.03</strong></div>
-                    <div><span>TP2</span><strong>114.58</strong></div>
-                  </div>
-
-                  <div class="chip-row">
-                    <span class="badge neutral">B_ALIGN_3_4</span>
                     <span class="badge good">UP</span>
                     <span class="badge neutral">NEXT_BUY_EXIT_ABOVE_PRICE</span>
                   </div>
@@ -777,6 +795,42 @@ th { color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacin
                     <div><span>SL</span><strong>55,838.00</strong></div>
                     <div><span>TP1</span><strong>59,713.50</strong></div>
                     <div><span>TP2</span><strong>61,262.90</strong></div>
+                  </div>
+
+                  <div class="chip-row">
+                    <span class="badge neutral">A_ALIGN_4_4</span>
+                    <span class="badge good">UP</span>
+                    <span class="badge neutral">NEXT_BUY_EXIT_ABOVE_PRICE</span>
+                  </div>
+
+                  <div class="subtle">Late continuation after structure already moved</div>
+                </div>
+                
+            </div>
+            
+            <div class="group-card">
+              <div class="mini-head">
+                <strong>SP500</strong>
+                <div class="mini-badges">
+                  <span class="badge neutral">C</span>
+                  <span class="pill">1 shown</span>
+                </div>
+              </div>
+              
+                <div class="stack-row">
+                  <div class="stack-head">
+                    <div class="stack-title">2026-04-14 17:00:00 · BUY_sp500_LOW_NOISE_JRSX_GUARDED</div>
+                    <div class="mini-badges">
+                      <span class="badge good">BUY</span>
+                      <span class="badge warn">POST_BREAKOUT_WAIT</span>
+                    </div>
+                  </div>
+
+                  <div class="kv-grid">
+                    <div><span>Entry</span><strong>6,932.90</strong></div>
+                    <div><span>SL</span><strong>6,728.90</strong></div>
+                    <div><span>TP1</span><strong>7,050.30</strong></div>
+                    <div><span>TP2</span><strong>7,167.70</strong></div>
                   </div>
 
                   <div class="chip-row">
@@ -1178,6 +1232,58 @@ th { color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacin
     <div class="card">
       <div class="card-title">Active Trades</div>
       <div class="candidate-grid grouped-grid">
+        <div class="group-card">
+          <div class="mini-head">
+            <strong>AUDJPY</strong>
+            <div class="mini-badges">
+              <span class="pill">2 rows</span>
+            </div>
+          </div>
+          
+            <div class="stack-row today-row">
+              <div class="stack-head">
+                <div class="stack-title">AUDJPY_SELL_20260423054500</div>
+                <div class="mini-badges">
+                  <span class="pill pill-recency today">TODAY</span>
+                  <span class="badge good">SELL</span>
+                  <span class="badge neutral">C</span>
+                  <span class="badge neutral">DAILY_QUALIFIED</span>
+                </div>
+              </div>
+
+              <div class="trade-line-grid">
+                <div><span>DateTime</span><strong>2026-04-23 05:45:00</strong></div>
+                <div><span>Entry</span><strong>113.98</strong></div>
+                <div><span>Current</span><strong>113.98</strong></div>
+                <div><span>TP1</span><strong>113.80</strong></div>
+                <div><span>TP2</span><strong>113.69</strong></div>
+                <div><span>SL</span><strong>114.30</strong></div>
+              </div>
+            </div>
+            
+            <div class="stack-row today-row">
+              <div class="stack-head">
+                <div class="stack-title">AUDJPY_SELL_20260423030000</div>
+                <div class="mini-badges">
+                  <span class="pill pill-recency today">TODAY</span>
+                  <span class="badge good">SELL</span>
+                  <span class="badge neutral">C</span>
+                  <span class="badge neutral">DAILY_QUALIFIED</span>
+                </div>
+              </div>
+
+              <div class="trade-line-grid">
+                <div><span>DateTime</span><strong>2026-04-23 03:00:00</strong></div>
+                <div><span>Entry</span><strong>114.02</strong></div>
+                <div><span>Current</span><strong>114.02</strong></div>
+                <div><span>TP1</span><strong>113.80</strong></div>
+                <div><span>TP2</span><strong>113.69</strong></div>
+                <div><span>SL</span><strong>114.30</strong></div>
+              </div>
+            </div>
+            
+        </div>
+        
         <div class="group-card">
           <div class="mini-head">
             <strong>UK100</strong>
@@ -3430,7 +3536,7 @@ th { color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacin
 
         <article class="card">
           <div class="card-title">Structure / Readiness</div>
-          <div class="kv-row"><span>Bias</span><strong>NEUTRAL</strong></div><div class="kv-row"><span>Phase</span><strong>BEARISH_CONTINUATION_OR_PULLBACK</strong></div><div class="kv-row"><span>Readiness</span><strong>NOT_READY</strong></div><div class="kv-row"><span>Score</span><strong>0.0</strong></div><div class="kv-row"><span>Note</span><strong>WEAK_NEUTRAL</strong></div><div class="kv-row"><span>Active Resistance</span><strong>7,146.20</strong></div><div class="kv-row"><span>Active Support</span><strong>7,049.70</strong></div><div class="kv-row"><span>Next Resistance</span><strong>7,147.40</strong></div><div class="kv-row"><span>Next Support</span><strong>7,051.90</strong></div><div class="kv-row"><span>Vs Resistance</span><strong>BELOW</strong></div><div class="kv-row"><span>Vs Support</span><strong>ABOVE</strong></div><div class="kv-row"><span>Last H1 Swing High</span><strong>7,138.30</strong></div><div class="kv-row"><span>Last H1 Swing Low</span><strong>7,098.40</strong></div>
+          <div class="kv-row"><span>Bias</span><strong>NEUTRAL</strong></div><div class="kv-row"><span>Phase</span><strong>BEARISH_CONTINUATION_OR_PULLBACK</strong></div><div class="kv-row"><span>Readiness</span><strong>NOT_READY</strong></div><div class="kv-row"><span>Score</span><strong>0.0</strong></div><div class="kv-row"><span>Note</span><strong>WEAK_NEUTRAL</strong></div><div class="kv-row"><span>Active Resistance</span><strong>7,146.20</strong></div><div class="kv-row"><span>Active Support</span><strong>7,049.70</strong></div><div class="kv-row"><span>Next Resistance</span><strong>7,147.40</strong></div><div class="kv-row"><span>Next Support</span><strong>7,051.90</strong></div><div class="kv-row"><span>Vs Resistance</span><strong>BELOW</strong></div><div class="kv-row"><span>Vs Support</span><strong>ABOVE</strong></div><div class="kv-row"><span>Last H1 Swing High</span><strong>7,138.30</strong></div><div class="kv-row"><span>Last H1 Swing Low</span><strong>7,071.90</strong></div>
         </article>
 
         <article class="card block-span-2">
@@ -3475,10 +3581,10 @@ th { color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacin
 
         <article class="card">
           <div class="card-title">Targets</div>
-          <div class="kv-row"><span>H4 Exit</span><strong>6,870.59</strong></div>
+          <div class="kv-row"><span>H4 Exit</span><strong>7,073.52</strong></div>
           <div class="kv-row"><span>Exit Type</span><strong>BUY_EXIT</strong></div>
-          <div class="kv-row"><span>Source</span><strong>PREVIOUS_BUY_EXIT</strong></div>
-          <div class="kv-row"><span>Signal ID</span><strong>SP500_BUY_20260413194500</strong></div>
+          <div class="kv-row"><span>Source</span><strong>NEXT_BUY_EXIT_ABOVE_PRICE</strong></div>
+          <div class="kv-row"><span>Signal ID</span><strong>SP500_BUY_20260414170000</strong></div>
         </article>
 
         <article class="card block-span-3">
@@ -3508,6 +3614,15 @@ th { color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacin
           </tr>
         </thead>
         <tbody>
+        <tr>
+          <td>2026-04-14 17:00:00</td>
+          <td><span class="badge good">BUY</span></td>
+          <td>BUY_sp500_LOW_NOISE_JRSX_GUARDED</td>
+          <td>C</td>
+          <td><span class="badge bad">BLOCKED</span></td>
+          <td>0.0%</td>
+          <td>—</td>
+        </tr>
         <tr>
           <td>2026-04-13 19:45:00</td>
           <td><span class="badge good">BUY</span></td>
@@ -3545,7 +3660,25 @@ th { color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacin
           <td>—</td>
         </tr>
         <tr>
+          <td>2026-04-10 15:15:00</td>
+          <td><span class="badge good">BUY</span></td>
+          <td>BUY_sp500_LOW_NOISE_JRSX_GUARDED</td>
+          <td>C</td>
+          <td><span class="badge bad">BLOCKED</span></td>
+          <td>0.0%</td>
+          <td>—</td>
+        </tr>
+        <tr>
           <td>2026-04-07 01:00:00</td>
+          <td><span class="badge good">BUY</span></td>
+          <td>BUY_sp500_LOW_NOISE_JRSX_GUARDED</td>
+          <td>C</td>
+          <td><span class="badge bad">BLOCKED</span></td>
+          <td>0.0%</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>2026-04-06 23:30:00</td>
           <td><span class="badge good">BUY</span></td>
           <td>BUY_sp500_LOW_NOISE_JRSX_GUARDED</td>
           <td>C</td>
@@ -3608,6 +3741,15 @@ th { color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacin
           <td>—</td>
         </tr>
         <tr>
+          <td>2026-04-01 19:30:00</td>
+          <td><span class="badge good">BUY</span></td>
+          <td>BUY_sp500_LOW_NOISE_JRSX_GUARDED</td>
+          <td>C</td>
+          <td><span class="badge bad">BLOCKED</span></td>
+          <td>0.0%</td>
+          <td>—</td>
+        </tr>
+        <tr>
           <td>2026-03-31 21:00:00</td>
           <td><span class="badge good">BUY</span></td>
           <td>BUY_sp500_LOW_NOISE_JRSX_GUARDED</td>
@@ -3647,42 +3789,6 @@ th { color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacin
           <td>2026-03-31 12:00:00</td>
           <td><span class="badge good">BUY</span></td>
           <td>BUY_sp500_LOW_NOISE_JRSX_GUARDED</td>
-          <td>C</td>
-          <td><span class="badge bad">BLOCKED</span></td>
-          <td>0.0%</td>
-          <td>—</td>
-        </tr>
-        <tr>
-          <td>2026-03-31 10:30:00</td>
-          <td><span class="badge good">BUY</span></td>
-          <td>BUY_sp500_LOW_NOISE_JRSX_GUARDED</td>
-          <td>C</td>
-          <td><span class="badge bad">BLOCKED</span></td>
-          <td>0.0%</td>
-          <td>—</td>
-        </tr>
-        <tr>
-          <td>2026-03-31 05:15:00</td>
-          <td><span class="badge good">BUY</span></td>
-          <td>BUY_sp500_LOW_NOISE_JRSX_GUARDED</td>
-          <td>C</td>
-          <td><span class="badge bad">BLOCKED</span></td>
-          <td>0.0%</td>
-          <td>—</td>
-        </tr>
-        <tr>
-          <td>2026-03-26 14:45:00</td>
-          <td><span class="badge good">SELL</span></td>
-          <td>SELL_SP500_LOW_NOISE_JRSX_GUARDED</td>
-          <td>C</td>
-          <td><span class="badge bad">BLOCKED</span></td>
-          <td>0.0%</td>
-          <td>—</td>
-        </tr>
-        <tr>
-          <td>2026-03-26 12:15:00</td>
-          <td><span class="badge good">SELL</span></td>
-          <td>SELL_SP500_LOW_NOISE_JRSX_GUARDED</td>
           <td>C</td>
           <td><span class="badge bad">BLOCKED</span></td>
           <td>0.0%</td>
@@ -3736,19 +3842,19 @@ th { color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacin
         </div><div class="tf-card">
             <div class="tf-head">M30</div>
             <div><span class="badge bad">DOWN</span></div>
-            <div class="subtle">JRSX 24.64</div>
+            <div class="subtle">JRSX 24.43</div>
         </div><div class="tf-card">
             <div class="tf-head">H1</div>
             <div><span class="badge bad">DOWN</span></div>
-            <div class="subtle">JRSX 12.90</div>
+            <div class="subtle">JRSX 12.80</div>
         </div><div class="tf-card">
             <div class="tf-head">H4</div>
             <div><span class="badge bad">DOWN</span></div>
-            <div class="subtle">JRSX 21.00</div>
+            <div class="subtle">JRSX 20.95</div>
         </div><div class="tf-card">
             <div class="tf-head">D1</div>
             <div><span class="badge bad">DOWN</span></div>
-            <div class="subtle">JRSX 66.24</div>
+            <div class="subtle">JRSX 66.20</div>
         </div></div>
     <div class="chip-row top-gap">
       <span class="badge neutral">A_ALIGN_4_4</span>
@@ -3760,7 +3866,7 @@ th { color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacin
 
         <article class="card">
           <div class="card-title">Structure / Readiness</div>
-          <div class="kv-row"><span>Bias</span><strong>NEUTRAL</strong></div><div class="kv-row"><span>Phase</span><strong>BREAKOUT_DOWN</strong></div><div class="kv-row"><span>Readiness</span><strong>TRIGGERED</strong></div><div class="kv-row"><span>Score</span><strong>100.0</strong></div><div class="kv-row"><span>Note</span><strong>PRICE_ALREADY_BELOW_ACTIVE_SUPPORT</strong></div><div class="kv-row"><span>Active Resistance</span><strong>10,523.40</strong></div><div class="kv-row"><span>Active Support</span><strong>10,457.90</strong></div><div class="kv-row"><span>Next Resistance</span><strong>10,634.80</strong></div><div class="kv-row"><span>Next Support</span><strong>10,424.60</strong></div><div class="kv-row"><span>Vs Resistance</span><strong>BELOW</strong></div><div class="kv-row"><span>Vs Support</span><strong>BELOW</strong></div><div class="kv-row"><span>Last H1 Swing High</span><strong>10,460.60</strong></div><div class="kv-row"><span>Last H1 Swing Low</span><strong>10,399.80</strong></div>
+          <div class="kv-row"><span>Bias</span><strong>NEUTRAL</strong></div><div class="kv-row"><span>Phase</span><strong>BREAKOUT_DOWN</strong></div><div class="kv-row"><span>Readiness</span><strong>TRIGGERED</strong></div><div class="kv-row"><span>Score</span><strong>100.0</strong></div><div class="kv-row"><span>Note</span><strong>PRICE_ALREADY_BELOW_ACTIVE_SUPPORT</strong></div><div class="kv-row"><span>Active Resistance</span><strong>10,523.40</strong></div><div class="kv-row"><span>Active Support</span><strong>10,457.90</strong></div><div class="kv-row"><span>Next Resistance</span><strong>10,634.80</strong></div><div class="kv-row"><span>Next Support</span><strong>10,424.60</strong></div><div class="kv-row"><span>Vs Resistance</span><strong>BELOW</strong></div><div class="kv-row"><span>Vs Support</span><strong>BELOW</strong></div><div class="kv-row"><span>Last H1 Swing High</span><strong>10,460.60</strong></div><div class="kv-row"><span>Last H1 Swing Low</span><strong>10,386.90</strong></div>
         </article>
 
         <article class="card block-span-2">
@@ -4033,8 +4139,8 @@ th { color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacin
         </div>
         <div class="header-badges">
           <span class="badge bad">BLOCKED</span>
-          <span class="badge neutral">—</span>
-          <span class="badge bad">NO_TRADE</span>
+          <span class="badge neutral">C</span>
+          <span class="badge warn">WATCHLIST</span>
           <span class="badge neutral">AUDJPY_CONTINUATION_SAFE</span>
         </div>
       </div>
@@ -4066,23 +4172,23 @@ th { color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacin
         </div><div class="tf-card">
             <div class="tf-head">M30</div>
             <div><span class="badge bad">DOWN</span></div>
-            <div class="subtle">JRSX 34.59</div>
+            <div class="subtle">JRSX 34.28</div>
         </div><div class="tf-card">
             <div class="tf-head">H1</div>
             <div><span class="badge bad">DOWN</span></div>
-            <div class="subtle">JRSX 43.75</div>
+            <div class="subtle">JRSX 43.45</div>
         </div><div class="tf-card">
             <div class="tf-head">H4</div>
             <div><span class="badge bad">DOWN</span></div>
-            <div class="subtle">JRSX 59.45</div>
+            <div class="subtle">JRSX 59.23</div>
         </div><div class="tf-card">
             <div class="tf-head">D1</div>
-            <div><span class="badge good">UP</span></div>
-            <div class="subtle">JRSX 91.76</div>
+            <div><span class="badge bad">DOWN</span></div>
+            <div class="subtle">JRSX 91.70</div>
         </div></div>
     <div class="chip-row top-gap">
       <span class="badge neutral">A_ALIGN_4_4</span>
-      <span class="badge good">UP</span>
+      <span class="badge bad">DOWN</span>
       <span class="pill">4.0</span>
     </div>
     
@@ -4090,7 +4196,7 @@ th { color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacin
 
         <article class="card">
           <div class="card-title">Structure / Readiness</div>
-          <div class="kv-row"><span>Bias</span><strong>BULLISH</strong></div><div class="kv-row"><span>Phase</span><strong>BULLISH_CONTINUATION_OR_PULLBACK</strong></div><div class="kv-row"><span>Readiness</span><strong>NOT_READY</strong></div><div class="kv-row"><span>Score</span><strong>20.0</strong></div><div class="kv-row"><span>Note</span><strong>BULLISH_STRUCTURE</strong></div><div class="kv-row"><span>Active Resistance</span><strong>114.30</strong></div><div class="kv-row"><span>Active Support</span><strong>113.80</strong></div><div class="kv-row"><span>Next Resistance</span><strong>114.15</strong></div><div class="kv-row"><span>Next Support</span><strong>113.69</strong></div><div class="kv-row"><span>Vs Resistance</span><strong>BELOW</strong></div><div class="kv-row"><span>Vs Support</span><strong>ABOVE</strong></div><div class="kv-row"><span>Last H1 Swing High</span><strong>114.13</strong></div><div class="kv-row"><span>Last H1 Swing Low</span><strong>113.96</strong></div>
+          <div class="kv-row"><span>Bias</span><strong>BULLISH</strong></div><div class="kv-row"><span>Phase</span><strong>BULLISH_CONTINUATION_OR_PULLBACK</strong></div><div class="kv-row"><span>Readiness</span><strong>NOT_READY</strong></div><div class="kv-row"><span>Score</span><strong>20.0</strong></div><div class="kv-row"><span>Note</span><strong>BULLISH_STRUCTURE</strong></div><div class="kv-row"><span>Active Resistance</span><strong>114.30</strong></div><div class="kv-row"><span>Active Support</span><strong>113.80</strong></div><div class="kv-row"><span>Next Resistance</span><strong>114.15</strong></div><div class="kv-row"><span>Next Support</span><strong>113.69</strong></div><div class="kv-row"><span>Vs Resistance</span><strong>BELOW</strong></div><div class="kv-row"><span>Vs Support</span><strong>ABOVE</strong></div><div class="kv-row"><span>Last H1 Swing High</span><strong>114.13</strong></div><div class="kv-row"><span>Last H1 Swing Low</span><strong>113.94</strong></div>
         </article>
 
         <article class="card block-span-2">
@@ -4099,24 +4205,24 @@ th { color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacin
     <div class="mini-head">
       <strong>No Trade</strong>
       <div class="mini-badges">
-        <span class="badge neutral">—</span>
-        <span class="badge neutral">—</span>
+        <span class="badge good">SELL</span>
+        <span class="badge neutral">C</span>
         <span class="badge neutral">—</span>
       </div>
     </div>
 
     <div class="kv-grid kv-grid-4">
-      <div><span>Type</span><strong>NO_SIGNAL</strong></div>
-      <div><span>Priority</span><strong>NO_TRADE</strong></div>
+      <div><span>Type</span><strong>WEAK_STRUCTURE_SETUP</strong></div>
+      <div><span>Priority</span><strong>WATCHLIST</strong></div>
       <div><span>Entry</span><strong>113.97</strong></div>
       <div><span>Current</span><strong>113.97</strong></div>
-      <div><span>TP1</span><strong>—</strong></div>
-      <div><span>TP2</span><strong>—</strong></div>
-      <div><span>TP3</span><strong>—</strong></div>
-      <div><span>SL</span><strong>—</strong></div>
-      <div><span>RR1</span><strong>—</strong></div>
-      <div><span>RR2</span><strong>—</strong></div>
-      <div><span>RR3</span><strong>—</strong></div>
+      <div><span>TP1</span><strong>113.80</strong></div>
+      <div><span>TP2</span><strong>113.69</strong></div>
+      <div><span>TP3</span><strong>113.18</strong></div>
+      <div><span>SL</span><strong>114.30</strong></div>
+      <div><span>RR1</span><strong>0.52</strong></div>
+      <div><span>RR2</span><strong>0.86</strong></div>
+      <div><span>RR3</span><strong>2.38</strong></div>
       <div><span>Exit Reason</span><strong>—</strong></div>
     </div>
 
@@ -4135,10 +4241,10 @@ th { color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacin
 
         <article class="card">
           <div class="card-title">Targets</div>
-          <div class="kv-row"><span>H4 Exit</span><strong>114.29</strong></div>
-          <div class="kv-row"><span>Exit Type</span><strong>BUY_EXIT</strong></div>
-          <div class="kv-row"><span>Source</span><strong>NEXT_BUY_EXIT_ABOVE_PRICE</strong></div>
-          <div class="kv-row"><span>Signal ID</span><strong>AUDJPY_BUY_20260415170000</strong></div>
+          <div class="kv-row"><span>H4 Exit</span><strong>108.86</strong></div>
+          <div class="kv-row"><span>Exit Type</span><strong>SELL_EXIT</strong></div>
+          <div class="kv-row"><span>Source</span><strong>PREVIOUS_SELL_EXIT</strong></div>
+          <div class="kv-row"><span>Signal ID</span><strong>AUDJPY_SELL_20260423054500</strong></div>
         </article>
 
         <article class="card block-span-3">
@@ -4172,18 +4278,18 @@ th { color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacin
           <td>2026-04-23 05:45:00</td>
           <td><span class="badge good">SELL</span></td>
           <td>SELL_AUDJPY_CONTINUATION_SAFE</td>
-          <td>—</td>
+          <td>C</td>
           <td><span class="badge bad">BLOCKED</span></td>
-          <td>—</td>
+          <td>0.0%</td>
           <td>—</td>
         </tr>
         <tr>
           <td>2026-04-23 03:00:00</td>
           <td><span class="badge good">SELL</span></td>
           <td>SELL_AUDJPY_CONTINUATION_SAFE</td>
-          <td>—</td>
+          <td>C</td>
           <td><span class="badge bad">BLOCKED</span></td>
-          <td>—</td>
+          <td>0.0%</td>
           <td>—</td>
         </tr>
         <tr>
@@ -4420,7 +4526,7 @@ th { color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacin
 
         <article class="card">
           <div class="card-title">Structure / Readiness</div>
-          <div class="kv-row"><span>Bias</span><strong>BULLISH</strong></div><div class="kv-row"><span>Phase</span><strong>BULLISH_CONTINUATION_OR_PULLBACK</strong></div><div class="kv-row"><span>Readiness</span><strong>NOT_READY</strong></div><div class="kv-row"><span>Score</span><strong>20.0</strong></div><div class="kv-row"><span>Note</span><strong>BULLISH_STRUCTURE</strong></div><div class="kv-row"><span>Active Resistance</span><strong>159.64</strong></div><div class="kv-row"><span>Active Support</span><strong>159.10</strong></div><div class="kv-row"><span>Next Resistance</span><strong>159.20</strong></div><div class="kv-row"><span>Next Support</span><strong>158.55</strong></div><div class="kv-row"><span>Vs Resistance</span><strong>BELOW</strong></div><div class="kv-row"><span>Vs Support</span><strong>ABOVE</strong></div><div class="kv-row"><span>Last H1 Swing High</span><strong>159.69</strong></div><div class="kv-row"><span>Last H1 Swing Low</span><strong>159.36</strong></div>
+          <div class="kv-row"><span>Bias</span><strong>BULLISH</strong></div><div class="kv-row"><span>Phase</span><strong>BULLISH_CONTINUATION_OR_PULLBACK</strong></div><div class="kv-row"><span>Readiness</span><strong>NOT_READY</strong></div><div class="kv-row"><span>Score</span><strong>20.0</strong></div><div class="kv-row"><span>Note</span><strong>BULLISH_STRUCTURE</strong></div><div class="kv-row"><span>Active Resistance</span><strong>159.64</strong></div><div class="kv-row"><span>Active Support</span><strong>159.10</strong></div><div class="kv-row"><span>Next Resistance</span><strong>159.20</strong></div><div class="kv-row"><span>Next Support</span><strong>158.55</strong></div><div class="kv-row"><span>Vs Resistance</span><strong>BELOW</strong></div><div class="kv-row"><span>Vs Support</span><strong>ABOVE</strong></div><div class="kv-row"><span>Last H1 Swing High</span><strong>159.56</strong></div><div class="kv-row"><span>Last H1 Swing Low</span><strong>159.36</strong></div>
         </article>
 
         <article class="card block-span-2">
@@ -4730,15 +4836,15 @@ th { color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacin
         </div><div class="tf-card">
             <div class="tf-head">H1</div>
             <div><span class="badge bad">DOWN</span></div>
-            <div class="subtle">JRSX 46.74</div>
+            <div class="subtle">JRSX 46.67</div>
         </div><div class="tf-card">
             <div class="tf-head">H4</div>
             <div><span class="badge bad">DOWN</span></div>
-            <div class="subtle">JRSX 66.34</div>
+            <div class="subtle">JRSX 66.05</div>
         </div><div class="tf-card">
             <div class="tf-head">D1</div>
             <div><span class="badge bad">DOWN</span></div>
-            <div class="subtle">JRSX 76.97</div>
+            <div class="subtle">JRSX 76.92</div>
         </div></div>
     <div class="chip-row top-gap">
       <span class="badge neutral">A_ALIGN_4_4</span>
@@ -4750,7 +4856,7 @@ th { color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacin
 
         <article class="card">
           <div class="card-title">Structure / Readiness</div>
-          <div class="kv-row"><span>Bias</span><strong>NEUTRAL</strong></div><div class="kv-row"><span>Phase</span><strong>RANGE_OR_TRANSITION</strong></div><div class="kv-row"><span>Readiness</span><strong>NOT_READY</strong></div><div class="kv-row"><span>Score</span><strong>0.0</strong></div><div class="kv-row"><span>Note</span><strong>WEAK_NEUTRAL|TRANSITION_EARLY</strong></div><div class="kv-row"><span>Active Resistance</span><strong>215.66</strong></div><div class="kv-row"><span>Active Support</span><strong>214.92</strong></div><div class="kv-row"><span>Next Resistance</span><strong>215.42</strong></div><div class="kv-row"><span>Next Support</span><strong>214.96</strong></div><div class="kv-row"><span>Vs Resistance</span><strong>BELOW</strong></div><div class="kv-row"><span>Vs Support</span><strong>ABOVE</strong></div><div class="kv-row"><span>Last H1 Swing High</span><strong>215.36</strong></div><div class="kv-row"><span>Last H1 Swing Low</span><strong>215.03</strong></div>
+          <div class="kv-row"><span>Bias</span><strong>NEUTRAL</strong></div><div class="kv-row"><span>Phase</span><strong>RANGE_OR_TRANSITION</strong></div><div class="kv-row"><span>Readiness</span><strong>NOT_READY</strong></div><div class="kv-row"><span>Score</span><strong>0.0</strong></div><div class="kv-row"><span>Note</span><strong>WEAK_NEUTRAL|TRANSITION_EARLY</strong></div><div class="kv-row"><span>Active Resistance</span><strong>215.66</strong></div><div class="kv-row"><span>Active Support</span><strong>214.92</strong></div><div class="kv-row"><span>Next Resistance</span><strong>215.42</strong></div><div class="kv-row"><span>Next Support</span><strong>214.96</strong></div><div class="kv-row"><span>Vs Resistance</span><strong>BELOW</strong></div><div class="kv-row"><span>Vs Support</span><strong>ABOVE</strong></div><div class="kv-row"><span>Last H1 Swing High</span><strong>215.30</strong></div><div class="kv-row"><span>Last H1 Swing Low</span><strong>215.03</strong></div>
         </article>
 
         <article class="card block-span-2">
