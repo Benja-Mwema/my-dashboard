@@ -53,55 +53,55 @@ th { color:var(--muted); font-weight:600; text-transform:uppercase; letter-spaci
 <body>
   <div class="header">
     <h1>Institutional Trading Dashboard</h1>
-    <p>Generated 2026-04-25 16:03:45 · Structure → Entry → Risk → Lifecycle → Scoring → Live</p>
+    <p>Generated 2026-04-25 22:59:19 · Structure → Entry → Risk → Lifecycle → Scoring → Live</p>
   </div>
   <div class="wrap">
     <div class="grid">
         <div class="card">
           <div class="label">Total trades</div>
-          <div class="value">103</div>
+          <div class="value">4</div>
           <div class="sub">all scored trades</div>
         </div>
         
 
         <div class="card">
           <div class="label">Closed</div>
-          <div class="value">82</div>
+          <div class="value">4</div>
           <div class="sub">completed lifecycle</div>
         </div>
         
 
         <div class="card">
           <div class="label">Active</div>
-          <div class="value">14</div>
+          <div class="value">0</div>
           <div class="sub">currently open / unresolved</div>
         </div>
         
 
         <div class="card">
           <div class="label">Live signals</div>
-          <div class="value">1</div>
+          <div class="value">2</div>
           <div class="sub">pending execution</div>
         </div>
         
 
         <div class="card">
           <div class="label">Net points</div>
-          <div class="value">2,817.57</div>
+          <div class="value">-65.00</div>
           <div class="sub">portfolio total</div>
         </div>
         
 
         <div class="card">
           <div class="label">Avg score</div>
-          <div class="value">59.7</div>
+          <div class="value">63.2</div>
           <div class="sub">execution quality</div>
         </div>
         </div>
 
     <div class="section">
       <h2>Grade distribution</h2>
-      <div class="pills"><span class='pill'>A: 32</span><span class='pill'>D: 28</span><span class='pill'>B: 22</span><span class='pill'>ACTIVE: 14</span><span class='pill'>EXPIRED: 5</span><span class='pill'>C: 2</span></div>
+      <div class="pills"><span class='pill'>B: 3</span><span class='pill'>D: 1</span></div>
     </div>
 
     <div class="section">
@@ -110,15 +110,35 @@ th { color:var(--muted); font-weight:600; text-transform:uppercase; letter-spaci
         <div class="signal-card">
           <div class="signal-top"><span>CAC40</span><b class="side-sell">SELL</b></div>
           <div class="signal-meta">
-            Signal 2026-04-24 09:15<br>
+            Signal 2026-04-24 10:15<br>
             Current as of 2026-04-24 22:30<br>
-            Grade B · Score 79.0 · Lot 0.01
+            Grade B · Score 90.0 · Lot 0.01
           </div>
           <div class="levels">
-            <span>Entry <b>8,155.90</b></span>
+            <span>Entry <b>8,178.10</b></span>
             <span>Current <b>8,180.90</b></span>
-            <span>SL <b>8,220.90</b></span>
-            <span>TP1 <b>8,110.90</b></span>
+            <span>SL <b>8,241.30</b></span>
+            <span>TP1 <b>8,133.10</b></span>
+          </div>
+          <div class="progress-wrap">
+            <div class="progress-label"><span>TP1 progress</span><span>0.0%</span></div>
+            <div class="progress"><div class="progress-bar muted" style="width:0.0%"></div></div>
+          </div>
+        </div>
+    
+
+        <div class="signal-card">
+          <div class="signal-top"><span>CAC40</span><b class="side-sell">SELL</b></div>
+          <div class="signal-meta">
+            Signal 2026-04-24 09:00<br>
+            Current as of 2026-04-24 22:30<br>
+            Grade B · Score 84.0 · Lot 0.01
+          </div>
+          <div class="levels">
+            <span>Entry <b>8,172.90</b></span>
+            <span>Current <b>8,180.90</b></span>
+            <span>SL <b>8,237.90</b></span>
+            <span>TP1 <b>8,127.90</b></span>
           </div>
           <div class="progress-wrap">
             <div class="progress-label"><span>TP1 progress</span><span>0.0%</span></div>
@@ -132,17 +152,8 @@ th { color:var(--muted); font-weight:600; text-transform:uppercase; letter-spaci
       <h2>Symbol performance</h2>
       <table>
         <thead><tr><th>Symbol</th><th>Trades</th><th>Score</th><th>TP1</th><th>TP2+</th><th>SL</th><th>Net points</th></tr></thead>
-        <tbody><tr><td>WS30</td><td>15</td><td>79.8</td><td>86.7%</td><td>46.7%</td><td>13.3%</td><td>1,670.00</td></tr>
-<tr><td>JPN225</td><td>23</td><td>52.7</td><td>43.5%</td><td>30.4%</td><td>39.1%</td><td>1,343.00</td></tr>
-<tr><td>NAS100</td><td>9</td><td>68.4</td><td>44.4%</td><td>11.1%</td><td>11.1%</td><td>218.80</td></tr>
-<tr><td>DAX40</td><td>1</td><td>100.0</td><td>100.0%</td><td>100.0%</td><td>0.0%</td><td>135.00</td></tr>
-<tr><td>SP500</td><td>10</td><td>54.1</td><td>30.0%</td><td>20.0%</td><td>20.0%</td><td>36.90</td></tr>
-<tr><td>GBPJPY</td><td>13</td><td>64.2</td><td>61.5%</td><td>53.8%</td><td>7.7%</td><td>4.26</td></tr>
-<tr><td>USDJPY</td><td>7</td><td>78.4</td><td>85.7%</td><td>42.9%</td><td>14.3%</td><td>1.15</td></tr>
-<tr><td>AUDJPY</td><td>6</td><td>66.3</td><td>66.7%</td><td>66.7%</td><td>33.3%</td><td>0.96</td></tr>
-<tr><td>XAUUSD</td><td>6</td><td>71.0</td><td>83.3%</td><td>0.0%</td><td>16.7%</td><td>-55.00</td></tr>
-<tr><td>UK100</td><td>2</td><td>0.0</td><td>0.0%</td><td>0.0%</td><td>100.0%</td><td>-130.00</td></tr>
-<tr><td>CAC40</td><td>11</td><td>24.9</td><td>9.1%</td><td>0.0%</td><td>63.6%</td><td>-407.50</td></tr></tbody>
+        <tbody><tr><td>USDJPY</td><td>1</td><td>79.0</td><td>100.0%</td><td>0.0%</td><td>0.0%</td><td>0.00</td></tr>
+<tr><td>CAC40</td><td>3</td><td>58.0</td><td>66.7%</td><td>0.0%</td><td>33.3%</td><td>-65.00</td></tr></tbody>
       </table>
     </div>
   </div>
