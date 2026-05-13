@@ -104,20 +104,20 @@ td small { color:var(--muted); }
   <div class="header-top">
     <div>
       <h1>Institutional Daily Journey Dashboard</h1>
-      <p class="subtle">Trade date 2026-05-13 · Generated 2026-05-13T11:51:00.492739</p>
+      <p class="subtle">Trade date 2026-05-13 · Generated 2026-05-13T12:01:10.510679</p>
     </div>
     <div class="mode">LIVE INCREMENTAL · 15 MIN REFRESH</div>
   </div>
   <div class="stats">
     <div class="stat"><span>Symbols</span><b>15</b></div>
-    <div class="stat"><span>Events</span><b>257</b></div>
+    <div class="stat"><span>Events</span><b>263</b></div>
     <div class="stat"><span>Entries</span><b>15</b></div>
     <div class="stat"><span>Focus</span><b>1</b></div>
     <div class="stat"><span>Ready</span><b>0</b></div>
     <div class="stat"><span>ML Candidates</span><b>1</b></div>
   </div>
 </header>
-<div class="status-strip"><span class="pill count-chip">ML CANDIDATE 7</span><span class="pill count-chip">STRUCTURE FORMING 18</span><span class="pill count-chip">NO SETUP 232</span></div>
+<div class="status-strip"><span class="pill count-chip">ML CANDIDATE 8</span><span class="pill count-chip">STRUCTURE FORMING 19</span><span class="pill count-chip">NO SETUP 236</span></div>
 
     <div class="focus-strip">
       <div><span>Focus</span><b>EURUSD</b></div>
@@ -133,13 +133,13 @@ td small { color:var(--muted); }
         <h2>FX</h2>
         <p>7 symbols · tabs are sorted by actionable status and risk severity.</p>
       </div>
-      <div class="symbol-tabs"><button class="symbol-tab active tab-ml sev-high" onclick="showSymbol('FX', 'EURUSD', this)">EURUSD<span>ML_CANDIDATE</span></button><button class="symbol-tab  tab-forming sev-medium" onclick="showSymbol('FX', 'AUDJPY', this)">AUDJPY<span>STRUCTURE_FORMING</span></button><button class="symbol-tab  tab-forming sev-medium" onclick="showSymbol('FX', 'GBPUSD', this)">GBPUSD<span>STRUCTURE_FORMING</span></button><button class="symbol-tab  tab-none sev-medium" onclick="showSymbol('FX', 'GBPJPY', this)">GBPJPY<span>NO_SETUP</span></button><button class="symbol-tab  tab-none sev-medium" onclick="showSymbol('FX', 'USDCAD', this)">USDCAD<span>NO_SETUP</span></button><button class="symbol-tab  tab-none sev-medium" onclick="showSymbol('FX', 'USDCHF', this)">USDCHF<span>NO_SETUP</span></button><button class="symbol-tab  tab-none sev-medium" onclick="showSymbol('FX', 'USDJPY', this)">USDJPY<span>NO_SETUP</span></button></div>
+      <div class="symbol-tabs"><button class="symbol-tab active tab-ml sev-medium" onclick="showSymbol('FX', 'EURUSD', this)">EURUSD<span>ML_CANDIDATE</span></button><button class="symbol-tab  tab-forming sev-medium" onclick="showSymbol('FX', 'AUDJPY', this)">AUDJPY<span>STRUCTURE_FORMING</span></button><button class="symbol-tab  tab-forming sev-medium" onclick="showSymbol('FX', 'GBPUSD', this)">GBPUSD<span>STRUCTURE_FORMING</span></button><button class="symbol-tab  tab-none sev-medium" onclick="showSymbol('FX', 'GBPJPY', this)">GBPJPY<span>NO_SETUP</span></button><button class="symbol-tab  tab-none sev-medium" onclick="showSymbol('FX', 'USDCAD', this)">USDCAD<span>NO_SETUP</span></button><button class="symbol-tab  tab-none sev-medium" onclick="showSymbol('FX', 'USDCHF', this)">USDCHF<span>NO_SETUP</span></button><button class="symbol-tab  tab-none sev-medium" onclick="showSymbol('FX', 'USDJPY', this)">USDJPY<span>NO_SETUP</span></button></div>
       <div class="symbol-panels"><div id="symbol-FX-EURUSD" class="symbol-panel active">
     <article id="card-EURUSD" class="symbol-card border-ml">
       <header class="symbol-header">
         <div>
           <h2>EURUSD</h2>
-          <p>FX · FX Bias-First Regime Engine · D1/H1/H4 structure authority · 23 events · Current ML_CANDIDATE</p>
+          <p>FX · FX Bias-First Regime Engine · D1/H1/H4 structure authority · 24 events · Current ML_CANDIDATE</p>
         </div>
         <div class="symbol-badges">
           <span class="pill status-ml">ML_CANDIDATE</span>
@@ -150,25 +150,25 @@ td small { color:var(--muted); }
       </header>
       
     <section class="latest-grid">
-      <div class="readiness-card sev-high" title="Label: SELL JRSX BLOCKED
-Severity: HIGH
-Action: Avoid execution until JRSX returns inside the side-aware acceptance zone.
-Warnings: JRSX_SIDE_BLOCK, D1_COUNTER_MOVE
-Confirmations: ENGINE_BIAS_FIRST_REGIME, MTF_SELL2, PV-
+      <div class="readiness-card sev-medium" title="Label: COUNTER-MOVE ACTIVE
+Severity: MEDIUM
+Action: Avoid late continuation; use counter-move only as watch/transition unless execution confirms.
+Warnings: MTF_MIXED, D1_COUNTER_MOVE
+Confirmations: ENGINE_BIAS_FIRST_REGIME, PV-, JRSX_OK_BUY
 D1: D1_BUY_COUNTER_PULLBACK
-MTF: SELL strength 2
-JRSX: FALSE SELL
+MTF: MIXED strength 0
+JRSX: TRUE BUY
 Pivot: PV- SELL">
         <div class="eyebrow">Institutional Readiness</div>
-        <h3>SELL JRSX BLOCKED</h3>
-        <p>Avoid execution until JRSX returns inside the side-aware acceptance zone.</p>
-        <div class="chip-row"><span class="pill warn-chip">JRSX SIDE BLOCK</span><span class="pill warn-chip">D1 COUNTER MOVE</span></div>
-        <div class="chip-row"><span class="pill ok-chip">ENGINE BIAS FIRST REGIME</span><span class="pill ok-chip">MTF SELL2</span><span class="pill ok-chip">PV-</span></div>
+        <h3>COUNTER-MOVE ACTIVE</h3>
+        <p>Avoid late continuation; use counter-move only as watch/transition unless execution confirms.</p>
+        <div class="chip-row"><span class="pill warn-chip">MTF MIXED</span><span class="pill warn-chip">D1 COUNTER MOVE</span></div>
+        <div class="chip-row"><span class="pill ok-chip">ENGINE BIAS FIRST REGIME</span><span class="pill ok-chip">PV-</span><span class="pill ok-chip">JRSX OK BUY</span></div>
       </div>
       <div class="mini-card">
         <span>Status</span>
         <b><span class="pill status-ml">ML_CANDIDATE</span></b>
-        <small>Latest 11:30 · Best ML_CANDIDATE</small>
+        <small>Latest 12:00 · Best ML_CANDIDATE</small>
       </div>
       <div class="mini-card" title="Profile: FX Bias-First Regime Engine
 Engine: BIAS_FIRST_REGIME
@@ -179,9 +179,9 @@ Description: FX prioritizes daily state, H1/H4 structure, and M30 confirmation b
         <small>Fields are interpreted with asset-specific weighting</small>
       </div>
       <div class="mini-card" title="Market: CLEAN_BEAR_ALIGNMENT
-Readiness: SELL JRSX BLOCKED
-Severity: HIGH
-Action: Avoid execution until JRSX returns inside the side-aware acceptance zone.">
+Readiness: COUNTER-MOVE ACTIVE
+Severity: MEDIUM
+Action: Avoid late continuation; use counter-move only as watch/transition unless execution confirms.">
         <span>Market</span>
         <b class="market market-bear">CLEAN BEAR ALIGNMENT</b>
         <small>Environment context before signal interpretation</small>
@@ -189,68 +189,68 @@ Action: Avoid execution until JRSX returns inside the side-aware acceptance zone
       <div class="mini-card" title="Display side: BUY
 Type: ML_CANDIDATE
 Confidence: MEDIUM
-Reason: Candidate side from ML/combined engine; support=RISK conflict=MTF,JRSX,PIVOT.
+Reason: Candidate side from ML/combined engine; support=RISK,JRSX conflict=PIVOT.
 Raw side: BUY
 Execution side: NONE
 Candidate side: BUY
-Bias side: SELL
+Bias side: MIXED
 Risk side: BUY
 Pivot side: SELL
-JRSX side: SELL
-Support: RISK
-Conflict: MTF, JRSX, PIVOT">
+JRSX side: BUY
+Support: RISK, JRSX
+Conflict: PIVOT">
         <span>Display Side / Grade</span>
         <b><span class="pill side-buy">BUY</span> <span class="pill type-ml">ML_CANDIDATE</span> <span class="pill grade-b">Grade B</span></b>
-        <small>MEDIUM confidence · raw BUY · Price 1.17149</small>
+        <small>MEDIUM confidence · raw BUY · Price 1.17106</small>
       </div>
       <div class="mini-card" title="Flag: True
 Side: BUY
 Level: LOW
-Score: 48
+Score: 46
 Phase: LIVE_SELL_FRAGILE_WATCH_BUY
-Reason: SELL_DOMINANT_HTF | D1_BUY_COUNTER_PULLBACK | SELL_NEAR_LOW | ENTRY_LAYER_ALREADY_BUY">
+Reason: SELL_DOMINANT_HTF | M15_COUNTER_BUY | D1_BUY_COUNTER_PULLBACK | ENTRY_LAYER_ALREADY_BUY">
         <span>Direction Risk</span>
-        <b>LOW · watch BUY · 48/100</b>
-        <small>SELL DOMINANT HTF | D1 BUY COUNTER PULLBACK | SELL NEAR LOW | ENTRY LAYE...</small>
+        <b>LOW · watch BUY · 46/100</b>
+        <small>SELL DOMINANT HTF | M15 COUNTER BUY | D1 BUY COUNTER PULLBACK | ENTRY LA...</small>
       </div>
-      <div class="mini-card" title="M15: SELL | source=2026-05-13T10:45:00 | close=2026-05-13T11:00:00 | closed=True | age=None
-M30: SELL | source=2026-05-13T11:00:00 | close=2026-05-13T11:30:00 | closed=True | age=None
+      <div class="mini-card" title="M15: BUY | source=2026-05-13T11:15:00 | close=2026-05-13T11:30:00 | closed=True | age=None
+M30: SELL | source=2026-05-13T11:30:00 | close=2026-05-13T12:00:00 | closed=True | age=None
 H1: SELL | source=2026-05-13T10:00:00 | close=2026-05-13T11:00:00 | closed=True | age=None
 H4: SELL | source=2026-05-13T04:00:00 | close=2026-05-13T08:00:00 | closed=True | age=None
 D1: BUY | source=2026-05-12T00:00:00 | close=2026-05-13T00:00:00 | closed=True | age=None">
         <span>MTF</span>
-        <b>SELL/SELL/SELL/SELL/BUY</b>
-        <small>1 | SELL2 | DOWN | FALSE | PV-</small>
+        <b>BUY/SELL/SELL/SELL/BUY</b>
+        <small>1 | MIXED0 | DOWN | TRUE | PV-</small>
       </div>
-      <div class="mini-card" title="Side status: FALSE
-Reason: SELL_OVERSOLD_BLOCK
-Bias side: SELL
-M15: 7.44 / SELL
-M30: 12.91 / SELL
+      <div class="mini-card" title="Side status: TRUE
+Reason: BUY_JRSX_OK
+Bias side: BUY
+M15: 5.88 / BUY
+M30: 9.78 / SELL
 H1: 34.2 / SELL
 H4: 31.58 / SELL
 D1: 54.91 / BUY
 Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">
         <span>JRSX</span>
-        <b>FALSE SELL · M15 7.44 · M30 12.91 · H1 34.2</b>
-        <small>SELL_OVERSOLD_BLOCK</small>
+        <b>TRUE BUY · M15 5.88 · M30 9.78 · H1 34.2</b>
+        <small>BUY_JRSX_OK</small>
       </div>
-      <div class="mini-card" title="Message: Daily BUY context is pulling back. Prepare for SELL pullback or later BUY continuation (-0.19%)
+      <div class="mini-card" title="Message: Daily BUY context is pulling back. Prepare for SELL pullback or later BUY continuation (-0.23%)
 State: D1_BUY_COUNTER_PULLBACK
 Direction: DOWN
-Progress: -0.1942458914438143%
-Points: -0.00228
+Progress: -0.2308799850055794%
+Points: -0.0027099999999999
 Day open: 1.17377
-As of: 2026-05-13T11:00:00">
+As of: 2026-05-13T11:30:00">
         <span>D1 Day</span>
-        <b>D1 BUY COUNTER PULLBACK · DOWN · -0.19%</b>
+        <b>D1 BUY COUNTER PULLBACK · DOWN · -0.23%</b>
         <small>PV 1.17498 · R1 1.17779 · S1 1.17118</small>
       </div>
     </section>
     
-      <div class="count-row"><span class="pill count-chip">ML CANDIDATE 7</span><span class="pill count-chip">STRUCTURE FORMING 2</span><span class="pill count-chip">NO SETUP 14</span></div>
+      <div class="count-row"><span class="pill count-chip">ML CANDIDATE 8</span><span class="pill count-chip">STRUCTURE FORMING 2</span><span class="pill count-chip">NO SETUP 14</span></div>
       <details class="journey" open>
-        <summary>Daily M15 journey (23 rows)</summary>
+        <summary>Daily M15 journey (24 rows)</summary>
         <div class="table-wrap">
           <table>
             <thead>
@@ -1824,6 +1824,74 @@ As of: 2026-05-13T11:00:00">D1 BUY COUNTER PULLBACK · DOWN · -0.19%</td>
       <td class="num">-</td>
       <td class="num">-</td>
     </tr>
+    
+    <tr class="row-ml">
+      <td class="time">12:00</td>
+      <td><span class="pill status-ml">ML_CANDIDATE</span></td>
+      <td class="num">1.17106</td>
+      <td title="Display side: BUY
+Type: ML_CANDIDATE
+Confidence: MEDIUM
+Reason: Candidate side from ML/combined engine; support=RISK,JRSX conflict=PIVOT.
+Raw side: BUY
+Execution side: NONE
+Candidate side: BUY
+Bias side: MIXED
+Risk side: BUY
+Pivot side: SELL
+JRSX side: BUY
+Support: RISK, JRSX
+Conflict: PIVOT"><span class="pill side-buy">BUY</span><br><small>ML_CANDIDATE · MEDIUM · raw BUY</small></td>
+      <td><span class="pill grade-b">B</span></td>
+      <td class="num">76</td>
+      <td title="Market: CLEAN_BEAR_ALIGNMENT
+Readiness: COUNTER-MOVE ACTIVE
+Severity: MEDIUM
+Action: Avoid late continuation; use counter-move only as watch/transition unless execution confirms."><span class="market market-bear">CLEAN BEAR ALIGNMENT</span></td>
+      <td title="Profile: FX Bias-First Regime Engine
+Engine: BIAS_FIRST_REGIME
+Primary driver: D1/H1/H4 structure authority
+Description: FX prioritizes daily state, H1/H4 structure, and M30 confirmation before execution."><b>BIAS_FIRST_REGIME</b><br><small>D1/H1/H4 structure authority</small></td>
+      <td title="Label: COUNTER-MOVE ACTIVE
+Severity: MEDIUM
+Action: Avoid late continuation; use counter-move only as watch/transition unless execution confirms.
+Warnings: MTF_MIXED, D1_COUNTER_MOVE
+Confirmations: ENGINE_BIAS_FIRST_REGIME, PV-, JRSX_OK_BUY
+D1: D1_BUY_COUNTER_PULLBACK
+MTF: MIXED strength 0
+JRSX: TRUE BUY
+Pivot: PV- SELL"><b>COUNTER-MOVE ACTIVE</b><br><small>MEDIUM</small></td>
+      <td title="M15: BUY | source=2026-05-13T11:15:00 | close=2026-05-13T11:30:00 | closed=True | age=None
+M30: SELL | source=2026-05-13T11:30:00 | close=2026-05-13T12:00:00 | closed=True | age=None
+H1: SELL | source=2026-05-13T10:00:00 | close=2026-05-13T11:00:00 | closed=True | age=None
+H4: SELL | source=2026-05-13T04:00:00 | close=2026-05-13T08:00:00 | closed=True | age=None
+D1: BUY | source=2026-05-12T00:00:00 | close=2026-05-13T00:00:00 | closed=True | age=None" class="mono">BUY/SELL/SELL/SELL/BUY</td>
+      <td title="Flag: True
+Side: BUY
+Level: LOW
+Score: 46
+Phase: LIVE_SELL_FRAGILE_WATCH_BUY
+Reason: SELL_DOMINANT_HTF | M15_COUNTER_BUY | D1_BUY_COUNTER_PULLBACK | ENTRY_LAYER_ALREADY_BUY">LOW · watch BUY · 46/100</td>
+      <td title="Side status: TRUE
+Reason: BUY_JRSX_OK
+Bias side: BUY
+M15: 5.88 / BUY
+M30: 9.78 / SELL
+H1: 34.2 / SELL
+H4: 31.58 / SELL
+D1: 54.91 / BUY
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE BUY · M15 5.88 · M30 9.78 · H1 34.2</td>
+      <td title="Message: Daily BUY context is pulling back. Prepare for SELL pullback or later BUY continuation (-0.23%)
+State: D1_BUY_COUNTER_PULLBACK
+Direction: DOWN
+Progress: -0.2308799850055794%
+Points: -0.0027099999999999
+Day open: 1.17377
+As of: 2026-05-13T11:30:00">D1 BUY COUNTER PULLBACK · DOWN · -0.23%</td>
+      <td>PV 1.17498 · R1 1.17779 · S1 1.17118</td>
+      <td class="num">-</td>
+      <td class="num">-</td>
+    </tr>
     </tbody>
           </table>
         </div>
@@ -2985,7 +3053,7 @@ As of: 2026-05-13T07:00:00">D1 BUY STALLING · UP · -0.01%</td>
       <header class="symbol-header">
         <div>
           <h2>GBPUSD</h2>
-          <p>FX · FX Bias-First Regime Engine · D1/H1/H4 structure authority · 23 events · Current STRUCTURE_FORMING</p>
+          <p>FX · FX Bias-First Regime Engine · D1/H1/H4 structure authority · 24 events · Current STRUCTURE_FORMING</p>
         </div>
         <div class="symbol-badges">
           <span class="pill status-forming">STRUCTURE_FORMING</span>
@@ -3014,7 +3082,7 @@ Pivot: PV- SELL">
       <div class="mini-card">
         <span>Status</span>
         <b><span class="pill status-forming">STRUCTURE_FORMING</span></b>
-        <small>Latest 11:30 · Best STRUCTURE_FORMING</small>
+        <small>Latest 12:00 · Best STRUCTURE_FORMING</small>
       </div>
       <div class="mini-card" title="Profile: FX Bias-First Regime Engine
 Engine: BIAS_FIRST_REGIME
@@ -3047,7 +3115,7 @@ Support: MTF
 Conflict: NONE">
         <span>Display Side / Grade</span>
         <b><span class="pill side-sell">SELL</span> <span class="pill type-bias">BIAS</span> <span class="pill grade-x">Grade -</span></b>
-        <small>HIGH confidence · raw NONE · Price 1.35273</small>
+        <small>HIGH confidence · raw NONE · Price 1.35281</small>
       </div>
       <div class="mini-card" title="Flag: True
 Side: BUY
@@ -3059,8 +3127,8 @@ Reason: SELL_DOMINANT_HTF | D1_SELL_FADING">
         <b>LOW · watch BUY · 36/100</b>
         <small>SELL DOMINANT HTF | D1 SELL FADING</small>
       </div>
-      <div class="mini-card" title="M15: SELL | source=2026-05-13T10:45:00 | close=2026-05-13T11:00:00 | closed=True | age=None
-M30: SELL | source=2026-05-13T11:00:00 | close=2026-05-13T11:30:00 | closed=True | age=None
+      <div class="mini-card" title="M15: SELL | source=2026-05-13T11:15:00 | close=2026-05-13T11:30:00 | closed=True | age=None
+M30: SELL | source=2026-05-13T11:30:00 | close=2026-05-13T12:00:00 | closed=True | age=None
 H1: SELL | source=2026-05-13T10:00:00 | close=2026-05-13T11:00:00 | closed=True | age=None
 H4: SELL | source=2026-05-13T04:00:00 | close=2026-05-13T08:00:00 | closed=True | age=None
 D1: SELL | source=2026-05-12T00:00:00 | close=2026-05-13T00:00:00 | closed=True | age=None">
@@ -3071,32 +3139,32 @@ D1: SELL | source=2026-05-12T00:00:00 | close=2026-05-13T00:00:00 | closed=True 
       <div class="mini-card" title="Side status: TRUE
 Reason: SELL_JRSX_OK
 Bias side: SELL
-M15: 33.45 / SELL
-M30: 42.42 / SELL
+M15: 29.57 / SELL
+M30: 39.78 / SELL
 H1: 57.13 / SELL
 H4: 30.47 / SELL
 D1: 60.17 / SELL
 Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">
         <span>JRSX</span>
-        <b>TRUE SELL · M15 33.45 · M30 42.42 · H1 57.13</b>
+        <b>TRUE SELL · M15 29.57 · M30 39.78 · H1 57.13</b>
         <small>SELL_JRSX_OK</small>
       </div>
-      <div class="mini-card" title="Message: Daily SELL is weakening. Prepare for possible BUY reversal (-0.07%)
+      <div class="mini-card" title="Message: Daily SELL is weakening. Prepare for possible BUY reversal (-0.06%)
 State: D1_SELL_FADING
 Direction: DOWN
-Progress: -0.0679643925682437%
-Points: -0.00092
+Progress: -0.0620544453883907%
+Points: -0.0008399999999999
 Day open: 1.35365
-As of: 2026-05-13T11:00:00">
+As of: 2026-05-13T11:30:00">
         <span>D1 Day</span>
-        <b>D1 SELL FADING · DOWN · -0.07%</b>
+        <b>D1 SELL FADING · DOWN · -0.06%</b>
         <small>PV 1.355 · R1 1.35997 · S1 1.34901</small>
       </div>
     </section>
     
-      <div class="count-row"><span class="pill count-chip">STRUCTURE FORMING 3</span><span class="pill count-chip">NO SETUP 20</span></div>
+      <div class="count-row"><span class="pill count-chip">STRUCTURE FORMING 4</span><span class="pill count-chip">NO SETUP 20</span></div>
       <details class="journey" open>
-        <summary>Daily M15 journey (23 rows)</summary>
+        <summary>Daily M15 journey (24 rows)</summary>
         <div class="table-wrap">
           <table>
             <thead>
@@ -4670,6 +4738,74 @@ As of: 2026-05-13T11:00:00">D1 SELL FADING · DOWN · -0.07%</td>
       <td class="num">-</td>
       <td class="num">-</td>
     </tr>
+    
+    <tr class="row-forming">
+      <td class="time">12:00</td>
+      <td><span class="pill status-forming">STRUCTURE_FORMING</span></td>
+      <td class="num">1.35281</td>
+      <td title="Display side: SELL
+Type: BIAS
+Confidence: HIGH
+Reason: Display side derived from MTF regime SELL3; no confirmed entry side yet.
+Raw side: NONE
+Execution side: NONE
+Candidate side: NONE
+Bias side: SELL
+Risk side: BUY
+Pivot side: SELL
+JRSX side: SELL
+Support: MTF
+Conflict: NONE"><span class="pill side-sell">SELL</span><br><small>BIAS · HIGH · raw NONE</small></td>
+      <td><span class="pill grade-x">-</span></td>
+      <td class="num">0</td>
+      <td title="Market: STRONG_BEAR_TREND
+Readiness: DAILY MOMENTUM WEAKENING
+Severity: MEDIUM
+Action: Reduce aggression. Require stronger M15/M30 trigger and pivot confirmation."><span class="market market-strong-bear">STRONG BEAR TREND</span></td>
+      <td title="Profile: FX Bias-First Regime Engine
+Engine: BIAS_FIRST_REGIME
+Primary driver: D1/H1/H4 structure authority
+Description: FX prioritizes daily state, H1/H4 structure, and M30 confirmation before execution."><b>BIAS_FIRST_REGIME</b><br><small>D1/H1/H4 structure authority</small></td>
+      <td title="Label: DAILY MOMENTUM WEAKENING
+Severity: MEDIUM
+Action: Reduce aggression. Require stronger M15/M30 trigger and pivot confirmation.
+Warnings: D1_FADING
+Confirmations: ENGINE_BIAS_FIRST_REGIME, MTF_SELL3, PV-, JRSX_OK_SELL
+D1: D1_SELL_FADING
+MTF: SELL strength 3
+JRSX: TRUE SELL
+Pivot: PV- SELL"><b>DAILY MOMENTUM WEAKENING</b><br><small>MEDIUM</small></td>
+      <td title="M15: SELL | source=2026-05-13T11:15:00 | close=2026-05-13T11:30:00 | closed=True | age=None
+M30: SELL | source=2026-05-13T11:30:00 | close=2026-05-13T12:00:00 | closed=True | age=None
+H1: SELL | source=2026-05-13T10:00:00 | close=2026-05-13T11:00:00 | closed=True | age=None
+H4: SELL | source=2026-05-13T04:00:00 | close=2026-05-13T08:00:00 | closed=True | age=None
+D1: SELL | source=2026-05-12T00:00:00 | close=2026-05-13T00:00:00 | closed=True | age=None" class="mono">SELL/SELL/SELL/SELL/SELL</td>
+      <td title="Flag: True
+Side: BUY
+Level: LOW
+Score: 36
+Phase: LIVE_SELL_FRAGILE_WATCH_BUY
+Reason: SELL_DOMINANT_HTF | D1_SELL_FADING">LOW · watch BUY · 36/100</td>
+      <td title="Side status: TRUE
+Reason: SELL_JRSX_OK
+Bias side: SELL
+M15: 29.57 / SELL
+M30: 39.78 / SELL
+H1: 57.13 / SELL
+H4: 30.47 / SELL
+D1: 60.17 / SELL
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE SELL · M15 29.57 · M30 39.78 · H1 57.13</td>
+      <td title="Message: Daily SELL is weakening. Prepare for possible BUY reversal (-0.06%)
+State: D1_SELL_FADING
+Direction: DOWN
+Progress: -0.0620544453883907%
+Points: -0.0008399999999999
+Day open: 1.35365
+As of: 2026-05-13T11:30:00">D1 SELL FADING · DOWN · -0.06%</td>
+      <td>PV 1.355 · R1 1.35997 · S1 1.34901</td>
+      <td class="num">-</td>
+      <td class="num">-</td>
+    </tr>
     </tbody>
           </table>
         </div>
@@ -5831,7 +5967,7 @@ As of: 2026-05-13T07:00:00">D1 BUY STALLING · UP · 0.01%</td>
       <header class="symbol-header">
         <div>
           <h2>USDCAD</h2>
-          <p>FX · FX Bias-First Regime Engine · D1/H1/H4 structure authority · 23 events · Current NO_SETUP</p>
+          <p>FX · FX Bias-First Regime Engine · D1/H1/H4 structure authority · 24 events · Current NO_SETUP</p>
         </div>
         <div class="symbol-badges">
           <span class="pill status-none">NO_SETUP</span>
@@ -5842,9 +5978,9 @@ As of: 2026-05-13T07:00:00">D1 BUY STALLING · UP · 0.01%</td>
       </header>
       
     <section class="latest-grid">
-      <div class="readiness-card sev-medium" title="Label: DAILY MOMENTUM WEAKENING
+      <div class="readiness-card sev-medium" title="Label: MIXED WEAKENING — WATCH SELL
 Severity: MEDIUM
-Action: Reduce aggression. Require stronger M15/M30 trigger and pivot confirmation.
+Action: Treat current MIXED as fragile. Monitor SELL trigger and pivot behavior.
 Warnings: MTF_MIXED, D1_FADING
 Confirmations: ENGINE_BIAS_FIRST_REGIME, PV+, JRSX_OK_SELL
 D1: D1_BUY_FADING
@@ -5852,15 +5988,15 @@ MTF: MIXED strength 0
 JRSX: TRUE SELL
 Pivot: PV+ BUY">
         <div class="eyebrow">Institutional Readiness</div>
-        <h3>DAILY MOMENTUM WEAKENING</h3>
-        <p>Reduce aggression. Require stronger M15/M30 trigger and pivot confirmation.</p>
+        <h3>MIXED WEAKENING — WATCH SELL</h3>
+        <p>Treat current MIXED as fragile. Monitor SELL trigger and pivot behavior.</p>
         <div class="chip-row"><span class="pill warn-chip">MTF MIXED</span><span class="pill warn-chip">D1 FADING</span></div>
         <div class="chip-row"><span class="pill ok-chip">ENGINE BIAS FIRST REGIME</span><span class="pill ok-chip">PV+</span><span class="pill ok-chip">JRSX OK SELL</span></div>
       </div>
       <div class="mini-card">
         <span>Status</span>
         <b><span class="pill status-none">NO_SETUP</span></b>
-        <small>Latest 11:30 · Best NO_SETUP</small>
+        <small>Latest 12:00 · Best NO_SETUP</small>
       </div>
       <div class="mini-card" title="Profile: FX Bias-First Regime Engine
 Engine: BIAS_FIRST_REGIME
@@ -5871,17 +6007,17 @@ Description: FX prioritizes daily state, H1/H4 structure, and M30 confirmation b
         <small>Fields are interpreted with asset-specific weighting</small>
       </div>
       <div class="mini-card" title="Market: NO_TRADE_ZONE
-Readiness: DAILY MOMENTUM WEAKENING
+Readiness: MIXED WEAKENING — WATCH SELL
 Severity: MEDIUM
-Action: Reduce aggression. Require stronger M15/M30 trigger and pivot confirmation.">
+Action: Treat current MIXED as fragile. Monitor SELL trigger and pivot behavior.">
         <span>Market</span>
         <b class="market market-none">NO TRADE ZONE</b>
         <small>Environment context before signal interpretation</small>
       </div>
       <div class="mini-card" title="Display side: SELL
 Type: RISK_WATCH
-Confidence: LOW
-Reason: No confirmed trade side; direction-change layer says watch SELL (LOW).
+Confidence: MEDIUM
+Reason: No confirmed trade side; direction-change layer says watch SELL (MEDIUM).
 Raw side: NONE
 Execution side: NONE
 Candidate side: NONE
@@ -5893,56 +6029,56 @@ Support: RISK
 Conflict: NONE">
         <span>Display Side / Grade</span>
         <b><span class="pill side-sell">SELL</span> <span class="pill type-risk">RISK_WATCH</span> <span class="pill grade-x">Grade -</span></b>
-        <small>LOW confidence · raw NONE · Price 1.37058</small>
+        <small>MEDIUM confidence · raw NONE · Price 1.37042</small>
       </div>
       <div class="mini-card" title="Flag: True
 Side: SELL
-Level: LOW
-Score: 44
+Level: MEDIUM
+Score: 54
 Phase: LIVE_BUY_FRAGILE_WATCH_SELL
-Reason: M15_COUNTER_SELL | D1_BUY_FADING | NON_CLEAN_BULL_CONTEXT">
+Reason: M15_COUNTER_SELL | M30_COUNTER_SELL | D1_BUY_FADING | NON_CLEAN_BULL_CONTEXT">
         <span>Direction Risk</span>
-        <b>LOW · watch SELL · 44/100</b>
-        <small>M15 COUNTER SELL | D1 BUY FADING | NON CLEAN BULL CONTEXT</small>
+        <b>MEDIUM · watch SELL · 54/100</b>
+        <small>M15 COUNTER SELL | M30 COUNTER SELL | D1 BUY FADING | NON CLEAN BULL CON...</small>
       </div>
-      <div class="mini-card" title="M15: SELL | source=2026-05-13T10:45:00 | close=2026-05-13T11:00:00 | closed=True | age=None
-M30: BUY | source=2026-05-13T11:00:00 | close=2026-05-13T11:30:00 | closed=True | age=None
+      <div class="mini-card" title="M15: SELL | source=2026-05-13T11:15:00 | close=2026-05-13T11:30:00 | closed=True | age=None
+M30: SELL | source=2026-05-13T11:30:00 | close=2026-05-13T12:00:00 | closed=True | age=None
 H1: BUY | source=2026-05-13T10:00:00 | close=2026-05-13T11:00:00 | closed=True | age=None
 H4: SELL | source=2026-05-13T04:00:00 | close=2026-05-13T08:00:00 | closed=True | age=None
 D1: BUY | source=2026-05-12T00:00:00 | close=2026-05-13T00:00:00 | closed=True | age=None">
         <span>MTF</span>
-        <b>SELL/BUY/BUY/SELL/BUY</b>
+        <b>SELL/SELL/BUY/SELL/BUY</b>
         <small>1 | MIXED0 | UP | TRUE | PV+</small>
       </div>
       <div class="mini-card" title="Side status: TRUE
 Reason: SELL_JRSX_OK
 Bias side: SELL
-M15: 95.19 / SELL
-M30: 77.28 / BUY
+M15: 86.58 / SELL
+M30: 77.11 / SELL
 H1: 42.3 / BUY
 H4: 63.84 / SELL
 D1: 47.8 / BUY
 Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">
         <span>JRSX</span>
-        <b>TRUE SELL · M15 95.19 · M30 77.28 · H1 42.3</b>
+        <b>TRUE SELL · M15 86.58 · M30 77.11 · H1 42.3</b>
         <small>SELL_JRSX_OK</small>
       </div>
-      <div class="mini-card" title="Message: Daily BUY is weakening. Be careful buying late (0.05%)
+      <div class="mini-card" title="Message: Daily BUY is weakening. Be careful buying late (0.03%)
 State: D1_BUY_FADING
 Direction: UP
-Progress: 0.0459870798204247%
-Points: 0.0006299999999999
+Progress: 0.0343078214533355%
+Points: 0.0004699999999999
 Day open: 1.36995
-As of: 2026-05-13T11:00:00">
+As of: 2026-05-13T11:30:00">
         <span>D1 Day</span>
-        <b>D1 BUY FADING · UP · 0.05%</b>
+        <b>D1 BUY FADING · UP · 0.03%</b>
         <small>PV 1.3695 · R1 1.37257 · S1 1.36658</small>
       </div>
     </section>
     
-      <div class="count-row"><span class="pill count-chip">NO SETUP 23</span></div>
+      <div class="count-row"><span class="pill count-chip">NO SETUP 24</span></div>
       <details class="journey" open>
-        <summary>Daily M15 journey (23 rows)</summary>
+        <summary>Daily M15 journey (24 rows)</summary>
         <div class="table-wrap">
           <table>
             <thead>
@@ -7516,6 +7652,74 @@ As of: 2026-05-13T11:00:00">D1 BUY FADING · UP · 0.05%</td>
       <td class="num">-</td>
       <td class="num">-</td>
     </tr>
+    
+    <tr class="row-none">
+      <td class="time">12:00</td>
+      <td><span class="pill status-none">NO_SETUP</span></td>
+      <td class="num">1.37042</td>
+      <td title="Display side: SELL
+Type: RISK_WATCH
+Confidence: MEDIUM
+Reason: No confirmed trade side; direction-change layer says watch SELL (MEDIUM).
+Raw side: NONE
+Execution side: NONE
+Candidate side: NONE
+Bias side: MIXED
+Risk side: SELL
+Pivot side: BUY
+JRSX side: SELL
+Support: RISK
+Conflict: NONE"><span class="pill side-sell">SELL</span><br><small>RISK_WATCH · MEDIUM · raw NONE</small></td>
+      <td><span class="pill grade-x">-</span></td>
+      <td class="num">0</td>
+      <td title="Market: NO_TRADE_ZONE
+Readiness: MIXED WEAKENING — WATCH SELL
+Severity: MEDIUM
+Action: Treat current MIXED as fragile. Monitor SELL trigger and pivot behavior."><span class="market market-none">NO TRADE ZONE</span></td>
+      <td title="Profile: FX Bias-First Regime Engine
+Engine: BIAS_FIRST_REGIME
+Primary driver: D1/H1/H4 structure authority
+Description: FX prioritizes daily state, H1/H4 structure, and M30 confirmation before execution."><b>BIAS_FIRST_REGIME</b><br><small>D1/H1/H4 structure authority</small></td>
+      <td title="Label: MIXED WEAKENING — WATCH SELL
+Severity: MEDIUM
+Action: Treat current MIXED as fragile. Monitor SELL trigger and pivot behavior.
+Warnings: MTF_MIXED, D1_FADING
+Confirmations: ENGINE_BIAS_FIRST_REGIME, PV+, JRSX_OK_SELL
+D1: D1_BUY_FADING
+MTF: MIXED strength 0
+JRSX: TRUE SELL
+Pivot: PV+ BUY"><b>MIXED WEAKENING — WATCH SELL</b><br><small>MEDIUM</small></td>
+      <td title="M15: SELL | source=2026-05-13T11:15:00 | close=2026-05-13T11:30:00 | closed=True | age=None
+M30: SELL | source=2026-05-13T11:30:00 | close=2026-05-13T12:00:00 | closed=True | age=None
+H1: BUY | source=2026-05-13T10:00:00 | close=2026-05-13T11:00:00 | closed=True | age=None
+H4: SELL | source=2026-05-13T04:00:00 | close=2026-05-13T08:00:00 | closed=True | age=None
+D1: BUY | source=2026-05-12T00:00:00 | close=2026-05-13T00:00:00 | closed=True | age=None" class="mono">SELL/SELL/BUY/SELL/BUY</td>
+      <td title="Flag: True
+Side: SELL
+Level: MEDIUM
+Score: 54
+Phase: LIVE_BUY_FRAGILE_WATCH_SELL
+Reason: M15_COUNTER_SELL | M30_COUNTER_SELL | D1_BUY_FADING | NON_CLEAN_BULL_CONTEXT">MEDIUM · watch SELL · 54/100</td>
+      <td title="Side status: TRUE
+Reason: SELL_JRSX_OK
+Bias side: SELL
+M15: 86.58 / SELL
+M30: 77.11 / SELL
+H1: 42.3 / BUY
+H4: 63.84 / SELL
+D1: 47.8 / BUY
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE SELL · M15 86.58 · M30 77.11 · H1 42.3</td>
+      <td title="Message: Daily BUY is weakening. Be careful buying late (0.03%)
+State: D1_BUY_FADING
+Direction: UP
+Progress: 0.0343078214533355%
+Points: 0.0004699999999999
+Day open: 1.36995
+As of: 2026-05-13T11:30:00">D1 BUY FADING · UP · 0.03%</td>
+      <td>PV 1.3695 · R1 1.37257 · S1 1.36658</td>
+      <td class="num">-</td>
+      <td class="num">-</td>
+    </tr>
     </tbody>
           </table>
         </div>
@@ -7526,7 +7730,7 @@ As of: 2026-05-13T11:00:00">D1 BUY FADING · UP · 0.05%</td>
       <header class="symbol-header">
         <div>
           <h2>USDCHF</h2>
-          <p>FX · FX Bias-First Regime Engine · D1/H1/H4 structure authority · 23 events · Current NO_SETUP</p>
+          <p>FX · FX Bias-First Regime Engine · D1/H1/H4 structure authority · 24 events · Current NO_SETUP</p>
         </div>
         <div class="symbol-badges">
           <span class="pill status-none">NO_SETUP</span>
@@ -7540,22 +7744,22 @@ As of: 2026-05-13T11:00:00">D1 BUY FADING · UP · 0.05%</td>
       <div class="readiness-card sev-medium" title="Label: BUY WEAKENING — WATCH BUY
 Severity: MEDIUM
 Action: Treat current BUY as fragile. Monitor BUY trigger and pivot behavior.
-Warnings: D1_COUNTER_MOVE
-Confirmations: ENGINE_BIAS_FIRST_REGIME, MTF_BUY1, PV+, JRSX_OK_BUY
+Warnings: JRSX_SIDE_BLOCK, D1_COUNTER_MOVE
+Confirmations: ENGINE_BIAS_FIRST_REGIME, MTF_BUY1, PV+
 D1: D1_SELL_COUNTER_BOUNCE
 MTF: BUY strength 1
-JRSX: TRUE BUY
+JRSX: FALSE BUY
 Pivot: PV+ BUY">
         <div class="eyebrow">Institutional Readiness</div>
         <h3>BUY WEAKENING — WATCH BUY</h3>
         <p>Treat current BUY as fragile. Monitor BUY trigger and pivot behavior.</p>
-        <div class="chip-row"><span class="pill warn-chip">D1 COUNTER MOVE</span></div>
-        <div class="chip-row"><span class="pill ok-chip">ENGINE BIAS FIRST REGIME</span><span class="pill ok-chip">MTF BUY1</span><span class="pill ok-chip">PV+</span><span class="pill ok-chip">JRSX OK BUY</span></div>
+        <div class="chip-row"><span class="pill warn-chip">JRSX SIDE BLOCK</span><span class="pill warn-chip">D1 COUNTER MOVE</span></div>
+        <div class="chip-row"><span class="pill ok-chip">ENGINE BIAS FIRST REGIME</span><span class="pill ok-chip">MTF BUY1</span><span class="pill ok-chip">PV+</span></div>
       </div>
       <div class="mini-card">
         <span>Status</span>
         <b><span class="pill status-none">NO_SETUP</span></b>
-        <small>Latest 11:30 · Best NO_SETUP</small>
+        <small>Latest 12:00 · Best NO_SETUP</small>
       </div>
       <div class="mini-card" title="Profile: FX Bias-First Regime Engine
 Engine: BIAS_FIRST_REGIME
@@ -7588,7 +7792,7 @@ Support: RISK
 Conflict: NONE">
         <span>Display Side / Grade</span>
         <b><span class="pill side-buy">BUY</span> <span class="pill type-risk">RISK_WATCH</span> <span class="pill grade-x">Grade -</span></b>
-        <small>MEDIUM confidence · raw NONE · Price 0.7813</small>
+        <small>MEDIUM confidence · raw NONE · Price 0.78146</small>
       </div>
       <div class="mini-card" title="Flag: True
 Side: BUY
@@ -7600,44 +7804,44 @@ Reason: M15_COUNTER_BUY | M30_COUNTER_BUY | D1_SELL_COUNTER_BOUNCE | NON_CLEAN_B
         <b>MEDIUM · watch BUY · 54/100</b>
         <small>M15 COUNTER BUY | M30 COUNTER BUY | D1 SELL COUNTER BOUNCE | NON CLEAN B...</small>
       </div>
-      <div class="mini-card" title="M15: BUY | source=2026-05-13T10:45:00 | close=2026-05-13T11:00:00 | closed=True | age=None
-M30: BUY | source=2026-05-13T11:00:00 | close=2026-05-13T11:30:00 | closed=True | age=None
+      <div class="mini-card" title="M15: BUY | source=2026-05-13T11:15:00 | close=2026-05-13T11:30:00 | closed=True | age=None
+M30: BUY | source=2026-05-13T11:30:00 | close=2026-05-13T12:00:00 | closed=True | age=None
 H1: BUY | source=2026-05-13T10:00:00 | close=2026-05-13T11:00:00 | closed=True | age=None
 H4: SELL | source=2026-05-13T04:00:00 | close=2026-05-13T08:00:00 | closed=True | age=None
 D1: SELL | source=2026-05-12T00:00:00 | close=2026-05-13T00:00:00 | closed=True | age=None">
         <span>MTF</span>
         <b>BUY/BUY/BUY/SELL/SELL</b>
-        <small>1 | BUY1 | UP | TRUE | PV+</small>
+        <small>1 | BUY1 | UP | FALSE | PV+</small>
       </div>
-      <div class="mini-card" title="Side status: TRUE
-Reason: BUY_JRSX_OK
+      <div class="mini-card" title="Side status: FALSE
+Reason: BUY_OVERBOUGHT_BLOCK
 Bias side: BUY
-M15: 83.37 / BUY
-M30: 77.55 / BUY
+M15: 87.02 / BUY
+M30: 82.84 / BUY
 H1: 44.72 / BUY
 H4: 68.54 / SELL
 D1: 37.32 / SELL
 Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">
         <span>JRSX</span>
-        <b>TRUE BUY · M15 83.37 · M30 77.55 · H1 44.72</b>
-        <small>BUY_JRSX_OK</small>
+        <b>FALSE BUY · M15 87.02 · M30 82.84 · H1 44.72</b>
+        <small>BUY_OVERBOUGHT_BLOCK</small>
       </div>
-      <div class="mini-card" title="Message: Daily SELL context is bouncing upward. Prepare for BUY counter-bounce (0.08%)
+      <div class="mini-card" title="Message: Daily SELL context is bouncing upward. Prepare for BUY counter-bounce (0.10%)
 State: D1_SELL_COUNTER_BOUNCE
 Direction: UP
-Progress: 0.0794179433314487%
-Points: 0.0006199999999999
+Progress: 0.0999128964492497%
+Points: 0.00078
 Day open: 0.78068
-As of: 2026-05-13T11:00:00">
+As of: 2026-05-13T11:30:00">
         <span>D1 Day</span>
-        <b>D1 SELL COUNTER BOUNCE · UP · 0.08%</b>
+        <b>D1 SELL COUNTER BOUNCE · UP · 0.10%</b>
         <small>PV 0.77974 · R1 0.78307 · S1 0.77715</small>
       </div>
     </section>
     
-      <div class="count-row"><span class="pill count-chip">NO SETUP 23</span></div>
+      <div class="count-row"><span class="pill count-chip">NO SETUP 24</span></div>
       <details class="journey" open>
-        <summary>Daily M15 journey (23 rows)</summary>
+        <summary>Daily M15 journey (24 rows)</summary>
         <div class="table-wrap">
           <table>
             <thead>
@@ -9211,6 +9415,74 @@ As of: 2026-05-13T11:00:00">D1 SELL COUNTER BOUNCE · UP · 0.08%</td>
       <td class="num">-</td>
       <td class="num">-</td>
     </tr>
+    
+    <tr class="row-none">
+      <td class="time">12:00</td>
+      <td><span class="pill status-none">NO_SETUP</span></td>
+      <td class="num">0.78146</td>
+      <td title="Display side: BUY
+Type: RISK_WATCH
+Confidence: MEDIUM
+Reason: No confirmed trade side; direction-change layer says watch BUY (MEDIUM).
+Raw side: NONE
+Execution side: NONE
+Candidate side: NONE
+Bias side: BUY
+Risk side: BUY
+Pivot side: BUY
+JRSX side: BUY
+Support: RISK
+Conflict: NONE"><span class="pill side-buy">BUY</span><br><small>RISK_WATCH · MEDIUM · raw NONE</small></td>
+      <td><span class="pill grade-x">-</span></td>
+      <td class="num">0</td>
+      <td title="Market: NO_TRADE_ZONE
+Readiness: BUY WEAKENING — WATCH BUY
+Severity: MEDIUM
+Action: Treat current BUY as fragile. Monitor BUY trigger and pivot behavior."><span class="market market-none">NO TRADE ZONE</span></td>
+      <td title="Profile: FX Bias-First Regime Engine
+Engine: BIAS_FIRST_REGIME
+Primary driver: D1/H1/H4 structure authority
+Description: FX prioritizes daily state, H1/H4 structure, and M30 confirmation before execution."><b>BIAS_FIRST_REGIME</b><br><small>D1/H1/H4 structure authority</small></td>
+      <td title="Label: BUY WEAKENING — WATCH BUY
+Severity: MEDIUM
+Action: Treat current BUY as fragile. Monitor BUY trigger and pivot behavior.
+Warnings: JRSX_SIDE_BLOCK, D1_COUNTER_MOVE
+Confirmations: ENGINE_BIAS_FIRST_REGIME, MTF_BUY1, PV+
+D1: D1_SELL_COUNTER_BOUNCE
+MTF: BUY strength 1
+JRSX: FALSE BUY
+Pivot: PV+ BUY"><b>BUY WEAKENING — WATCH BUY</b><br><small>MEDIUM</small></td>
+      <td title="M15: BUY | source=2026-05-13T11:15:00 | close=2026-05-13T11:30:00 | closed=True | age=None
+M30: BUY | source=2026-05-13T11:30:00 | close=2026-05-13T12:00:00 | closed=True | age=None
+H1: BUY | source=2026-05-13T10:00:00 | close=2026-05-13T11:00:00 | closed=True | age=None
+H4: SELL | source=2026-05-13T04:00:00 | close=2026-05-13T08:00:00 | closed=True | age=None
+D1: SELL | source=2026-05-12T00:00:00 | close=2026-05-13T00:00:00 | closed=True | age=None" class="mono">BUY/BUY/BUY/SELL/SELL</td>
+      <td title="Flag: True
+Side: BUY
+Level: MEDIUM
+Score: 54
+Phase: LIVE_SELL_FRAGILE_WATCH_BUY
+Reason: M15_COUNTER_BUY | M30_COUNTER_BUY | D1_SELL_COUNTER_BOUNCE | NON_CLEAN_BEAR_CONTEXT">MEDIUM · watch BUY · 54/100</td>
+      <td title="Side status: FALSE
+Reason: BUY_OVERBOUGHT_BLOCK
+Bias side: BUY
+M15: 87.02 / BUY
+M30: 82.84 / BUY
+H1: 44.72 / BUY
+H4: 68.54 / SELL
+D1: 37.32 / SELL
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">FALSE BUY · M15 87.02 · M30 82.84 · H1 44.72</td>
+      <td title="Message: Daily SELL context is bouncing upward. Prepare for BUY counter-bounce (0.10%)
+State: D1_SELL_COUNTER_BOUNCE
+Direction: UP
+Progress: 0.0999128964492497%
+Points: 0.00078
+Day open: 0.78068
+As of: 2026-05-13T11:30:00">D1 SELL COUNTER BOUNCE · UP · 0.10%</td>
+      <td>PV 0.77974 · R1 0.78307 · S1 0.77715</td>
+      <td class="num">-</td>
+      <td class="num">-</td>
+    </tr>
     </tbody>
           </table>
         </div>
@@ -9221,12 +9493,12 @@ As of: 2026-05-13T11:00:00">D1 SELL COUNTER BOUNCE · UP · 0.08%</td>
       <header class="symbol-header">
         <div>
           <h2>USDJPY</h2>
-          <p>FX · FX Bias-First Regime Engine · D1/H1/H4 structure authority · 23 events · Current NO_SETUP</p>
+          <p>FX · FX Bias-First Regime Engine · D1/H1/H4 structure authority · 24 events · Current NO_SETUP</p>
         </div>
         <div class="symbol-badges">
           <span class="pill status-none">NO_SETUP</span>
-          <span class="pill side-sell">SELL</span>
-          <span class="pill type-risk">RISK_WATCH</span>
+          <span class="pill side-buy">BUY</span>
+          <span class="pill type-watch">PIVOT_JRSX_WATCH</span>
           <span class="pill count-chip">Best STRUCTURE_FORMING</span>
         </div>
       </header>
@@ -9250,7 +9522,7 @@ Pivot: PV+ BUY">
       <div class="mini-card">
         <span>Status</span>
         <b><span class="pill status-none">NO_SETUP</span></b>
-        <small>Latest 11:30 · Best STRUCTURE_FORMING</small>
+        <small>Latest 12:00 · Best STRUCTURE_FORMING</small>
       </div>
       <div class="mini-card" title="Profile: FX Bias-First Regime Engine
 Engine: BIAS_FIRST_REGIME
@@ -9268,71 +9540,71 @@ Action: Reduce aggression. Require stronger M15/M30 trigger and pivot confirmati
         <b class="market market-none">NO TRADE ZONE</b>
         <small>Environment context before signal interpretation</small>
       </div>
-      <div class="mini-card" title="Display side: SELL
-Type: RISK_WATCH
+      <div class="mini-card" title="Display side: BUY
+Type: PIVOT_JRSX_WATCH
 Confidence: LOW
-Reason: No confirmed trade side; direction-change layer says watch SELL (LOW).
+Reason: Pivot (PV+) and JRSX side agree, but MTF/entry engine is not confirmed.
 Raw side: NONE
 Execution side: NONE
 Candidate side: NONE
 Bias side: BUY
-Risk side: SELL
+Risk side: NONE
 Pivot side: BUY
 JRSX side: BUY
-Support: RISK
+Support: PIVOT, JRSX
 Conflict: NONE">
         <span>Display Side / Grade</span>
-        <b><span class="pill side-sell">SELL</span> <span class="pill type-risk">RISK_WATCH</span> <span class="pill grade-x">Grade -</span></b>
-        <small>LOW confidence · raw NONE · Price 157.766</small>
+        <b><span class="pill side-buy">BUY</span> <span class="pill type-watch">PIVOT_JRSX_WATCH</span> <span class="pill grade-x">Grade -</span></b>
+        <small>LOW confidence · raw NONE · Price 157.774</small>
       </div>
-      <div class="mini-card" title="Flag: True
-Side: SELL
-Level: LOW
-Score: 46
-Phase: LIVE_BUY_FRAGILE_WATCH_SELL
-Reason: D1_BUY_FADING | NON_CLEAN_BULL_CONTEXT | BUY_NEAR_HIGH">
+      <div class="mini-card" title="Flag: False
+Side: NONE
+Level: NONE
+Score: 32
+Phase: LIVE_BUY_CONTROL
+Reason: D1_BUY_FADING | NON_CLEAN_BULL_CONTEXT">
         <span>Direction Risk</span>
-        <b>LOW · watch SELL · 46/100</b>
-        <small>D1 BUY FADING | NON CLEAN BULL CONTEXT | BUY NEAR HIGH</small>
+        <b>Stable · 32/100</b>
+        <small>D1 BUY FADING | NON CLEAN BULL CONTEXT</small>
       </div>
-      <div class="mini-card" title="M15: BUY | source=2026-05-13T10:45:00 | close=2026-05-13T11:00:00 | closed=True | age=None
-M30: BUY | source=2026-05-13T11:00:00 | close=2026-05-13T11:30:00 | closed=True | age=None
+      <div class="mini-card" title="M15: BUY | source=2026-05-13T11:15:00 | close=2026-05-13T11:30:00 | closed=True | age=None
+M30: BUY | source=2026-05-13T11:30:00 | close=2026-05-13T12:00:00 | closed=True | age=None
 H1: BUY | source=2026-05-13T10:00:00 | close=2026-05-13T11:00:00 | closed=True | age=None
 H4: SELL | source=2026-05-13T04:00:00 | close=2026-05-13T08:00:00 | closed=True | age=None
 D1: BUY | source=2026-05-12T00:00:00 | close=2026-05-13T00:00:00 | closed=True | age=None">
         <span>MTF</span>
         <b>BUY/BUY/BUY/SELL/BUY</b>
-        <small>1 | BUY1 | UP | TRUE | PV+</small>
+        <small>2 | BUY1 | UP | TRUE | PV+</small>
       </div>
       <div class="mini-card" title="Side status: TRUE
 Reason: BUY_JRSX_OK
 Bias side: BUY
-M15: 60.72 / BUY
-M30: 67.35 / BUY
+M15: 62.4 / BUY
+M30: 68.59 / BUY
 H1: 62.73 / BUY
 H4: 83.02 / SELL
 D1: 33.51 / BUY
 Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">
         <span>JRSX</span>
-        <b>TRUE BUY · M15 60.72 · M30 67.35 · H1 62.73</b>
+        <b>TRUE BUY · M15 62.4 · M30 68.59 · H1 62.73</b>
         <small>BUY_JRSX_OK</small>
       </div>
-      <div class="mini-card" title="Message: Daily BUY is weakening. Be careful buying late (0.07%)
+      <div class="mini-card" title="Message: Daily BUY is weakening. Be careful buying late (0.08%)
 State: D1_BUY_FADING
 Direction: UP
-Progress: 0.07231116636643%
-Points: 0.1140000000000043
+Progress: 0.0773856341816241%
+Points: 0.1220000000000141
 Day open: 157.652
-As of: 2026-05-13T11:00:00">
+As of: 2026-05-13T11:30:00">
         <span>D1 Day</span>
-        <b>D1 BUY FADING · UP · 0.07%</b>
+        <b>D1 BUY FADING · UP · 0.08%</b>
         <small>PV 157.371 · R1 157.987 · S1 156.982</small>
       </div>
     </section>
     
-      <div class="count-row"><span class="pill count-chip">STRUCTURE FORMING 4</span><span class="pill count-chip">NO SETUP 19</span></div>
+      <div class="count-row"><span class="pill count-chip">STRUCTURE FORMING 4</span><span class="pill count-chip">NO SETUP 20</span></div>
       <details class="journey" open>
-        <summary>Daily M15 journey (23 rows)</summary>
+        <summary>Daily M15 journey (24 rows)</summary>
         <div class="table-wrap">
           <table>
             <thead>
@@ -10902,6 +11174,74 @@ Progress: 0.07231116636643%
 Points: 0.1140000000000043
 Day open: 157.652
 As of: 2026-05-13T11:00:00">D1 BUY FADING · UP · 0.07%</td>
+      <td>PV 157.371 · R1 157.987 · S1 156.982</td>
+      <td class="num">-</td>
+      <td class="num">-</td>
+    </tr>
+    
+    <tr class="row-none">
+      <td class="time">12:00</td>
+      <td><span class="pill status-none">NO_SETUP</span></td>
+      <td class="num">157.774</td>
+      <td title="Display side: BUY
+Type: PIVOT_JRSX_WATCH
+Confidence: LOW
+Reason: Pivot (PV+) and JRSX side agree, but MTF/entry engine is not confirmed.
+Raw side: NONE
+Execution side: NONE
+Candidate side: NONE
+Bias side: BUY
+Risk side: NONE
+Pivot side: BUY
+JRSX side: BUY
+Support: PIVOT, JRSX
+Conflict: NONE"><span class="pill side-buy">BUY</span><br><small>PIVOT_JRSX_WATCH · LOW · raw NONE</small></td>
+      <td><span class="pill grade-x">-</span></td>
+      <td class="num">0</td>
+      <td title="Market: NO_TRADE_ZONE
+Readiness: DAILY MOMENTUM WEAKENING
+Severity: MEDIUM
+Action: Reduce aggression. Require stronger M15/M30 trigger and pivot confirmation."><span class="market market-none">NO TRADE ZONE</span></td>
+      <td title="Profile: FX Bias-First Regime Engine
+Engine: BIAS_FIRST_REGIME
+Primary driver: D1/H1/H4 structure authority
+Description: FX prioritizes daily state, H1/H4 structure, and M30 confirmation before execution."><b>BIAS_FIRST_REGIME</b><br><small>D1/H1/H4 structure authority</small></td>
+      <td title="Label: DAILY MOMENTUM WEAKENING
+Severity: MEDIUM
+Action: Reduce aggression. Require stronger M15/M30 trigger and pivot confirmation.
+Warnings: D1_FADING
+Confirmations: ENGINE_BIAS_FIRST_REGIME, MTF_BUY1, PV+, JRSX_OK_BUY
+D1: D1_BUY_FADING
+MTF: BUY strength 1
+JRSX: TRUE BUY
+Pivot: PV+ BUY"><b>DAILY MOMENTUM WEAKENING</b><br><small>MEDIUM</small></td>
+      <td title="M15: BUY | source=2026-05-13T11:15:00 | close=2026-05-13T11:30:00 | closed=True | age=None
+M30: BUY | source=2026-05-13T11:30:00 | close=2026-05-13T12:00:00 | closed=True | age=None
+H1: BUY | source=2026-05-13T10:00:00 | close=2026-05-13T11:00:00 | closed=True | age=None
+H4: SELL | source=2026-05-13T04:00:00 | close=2026-05-13T08:00:00 | closed=True | age=None
+D1: BUY | source=2026-05-12T00:00:00 | close=2026-05-13T00:00:00 | closed=True | age=None" class="mono">BUY/BUY/BUY/SELL/BUY</td>
+      <td title="Flag: False
+Side: NONE
+Level: NONE
+Score: 32
+Phase: LIVE_BUY_CONTROL
+Reason: D1_BUY_FADING | NON_CLEAN_BULL_CONTEXT">Stable · 32/100</td>
+      <td title="Side status: TRUE
+Reason: BUY_JRSX_OK
+Bias side: BUY
+M15: 62.4 / BUY
+M30: 68.59 / BUY
+H1: 62.73 / BUY
+H4: 83.02 / SELL
+D1: 33.51 / BUY
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE BUY · M15 62.4 · M30 68.59 · H1 62.73</td>
+      <td title="Message: Daily BUY is weakening. Be careful buying late (0.08%)
+State: D1_BUY_FADING
+Direction: UP
+Progress: 0.0773856341816241%
+Points: 0.1220000000000141
+Day open: 157.652
+As of: 2026-05-13T11:30:00">D1 BUY FADING · UP · 0.08%</td>
       <td>PV 157.371 · R1 157.987 · S1 156.982</td>
       <td class="num">-</td>
       <td class="num">-</td>
@@ -18039,7 +18379,7 @@ As of: 2026-05-13T07:00:00">D1 BUY COUNTER PULLBACK · DOWN · -0.25%</td>
       <header class="symbol-header">
         <div>
           <h2>XAUUSD</h2>
-          <p>COMMODITIES · Metals Liquidity-Reversal Hybrid Engine · JRSX + pivot + liquidity reaction · 21 events · Current NO_SETUP</p>
+          <p>COMMODITIES · Metals Liquidity-Reversal Hybrid Engine · JRSX + pivot + liquidity reaction · 22 events · Current NO_SETUP</p>
         </div>
         <div class="symbol-badges">
           <span class="pill status-none">NO_SETUP</span>
@@ -18068,7 +18408,7 @@ Pivot: PV- SELL">
       <div class="mini-card">
         <span>Status</span>
         <b><span class="pill status-none">NO_SETUP</span></b>
-        <small>Latest 11:30 · Best NO_SETUP</small>
+        <small>Latest 12:00 · Best NO_SETUP</small>
       </div>
       <div class="mini-card" title="Profile: Metals Liquidity-Reversal Hybrid Engine
 Engine: LIQUIDITY_REVERSAL_HYBRID
@@ -18101,7 +18441,7 @@ Support: PIVOT, JRSX
 Conflict: NONE">
         <span>Display Side / Grade</span>
         <b><span class="pill side-sell">SELL</span> <span class="pill type-none">METALS_LIQUIDITY_WATCH</span> <span class="pill grade-x">Grade -</span></b>
-        <small>MEDIUM confidence · raw NONE · Price 4702.81</small>
+        <small>MEDIUM confidence · raw NONE · Price 4700.09</small>
       </div>
       <div class="mini-card" title="Flag: False
 Side: NONE
@@ -18113,8 +18453,8 @@ Reason: SELL_DOMINANT_HTF | D1_BUY_COUNTER_PULLBACK | NON_CLEAN_BEAR_CONTEXT">
         <b>Stable · 32/100</b>
         <small>SELL DOMINANT HTF | D1 BUY COUNTER PULLBACK | NON CLEAN BEAR CONTEXT</small>
       </div>
-      <div class="mini-card" title="M15: SELL | source=2026-05-13T10:45:00 | close=2026-05-13T11:00:00 | closed=True | age=None
-M30: SELL | source=2026-05-13T11:00:00 | close=2026-05-13T11:30:00 | closed=True | age=None
+      <div class="mini-card" title="M15: SELL | source=2026-05-13T11:15:00 | close=2026-05-13T11:30:00 | closed=True | age=None
+M30: SELL | source=2026-05-13T11:30:00 | close=2026-05-13T12:00:00 | closed=True | age=None
 H1: SELL | source=2026-05-13T10:00:00 | close=2026-05-13T11:00:00 | closed=True | age=None
 H4: SELL | source=2026-05-13T04:00:00 | close=2026-05-13T08:00:00 | closed=True | age=None
 D1: BUY | source=2026-05-12T00:00:00 | close=2026-05-13T00:00:00 | closed=True | age=None">
@@ -18125,32 +18465,32 @@ D1: BUY | source=2026-05-12T00:00:00 | close=2026-05-13T00:00:00 | closed=True |
       <div class="mini-card" title="Side status: TRUE
 Reason: SELL_JRSX_OK
 Bias side: SELL
-M15: 56.63 / SELL
-M30: 44.94 / SELL
+M15: 50.89 / SELL
+M30: 44.07 / SELL
 H1: 54.43 / SELL
 H4: 47.84 / SELL
 D1: 49.99 / BUY
 Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">
         <span>JRSX</span>
-        <b>TRUE SELL · M15 56.63 · M30 44.94 · H1 54.43</b>
+        <b>TRUE SELL · M15 50.89 · M30 44.07 · H1 54.43</b>
         <small>SELL_JRSX_OK</small>
       </div>
-      <div class="mini-card" title="Message: Daily BUY context is pulling back. Prepare for SELL pullback or later BUY continuation (-0.25%)
+      <div class="mini-card" title="Message: Daily BUY context is pulling back. Prepare for SELL pullback or later BUY continuation (-0.31%)
 State: D1_BUY_COUNTER_PULLBACK
 Direction: DOWN
-Progress: -0.2540940317596237%
-Points: -11.979999999999563
+Progress: -0.3117848302893621%
+Points: -14.699999999999818
 Day open: 4714.79
-As of: 2026-05-13T11:00:00">
+As of: 2026-05-13T11:30:00">
         <span>D1 Day</span>
-        <b>D1 BUY COUNTER PULLBACK · DOWN · -0.25%</b>
+        <b>D1 BUY COUNTER PULLBACK · DOWN · -0.31%</b>
         <small>PV 4709.04 · R1 4779.62 · S1 4644.41</small>
       </div>
     </section>
     
-      <div class="count-row"><span class="pill count-chip">NO SETUP 21</span></div>
+      <div class="count-row"><span class="pill count-chip">NO SETUP 22</span></div>
       <details class="journey" open>
-        <summary>Daily M15 journey (21 rows)</summary>
+        <summary>Daily M15 journey (22 rows)</summary>
         <div class="table-wrap">
           <table>
             <thead>
@@ -19584,6 +19924,74 @@ Progress: -0.2540940317596237%
 Points: -11.979999999999563
 Day open: 4714.79
 As of: 2026-05-13T11:00:00">D1 BUY COUNTER PULLBACK · DOWN · -0.25%</td>
+      <td>PV 4709.04 · R1 4779.62 · S1 4644.41</td>
+      <td class="num">-</td>
+      <td class="num">-</td>
+    </tr>
+    
+    <tr class="row-none">
+      <td class="time">12:00</td>
+      <td><span class="pill status-none">NO_SETUP</span></td>
+      <td class="num">4700.09</td>
+      <td title="Display side: SELL
+Type: METALS_LIQUIDITY_WATCH
+Confidence: MEDIUM
+Reason: Metals liquidity/reversal display side from JRSX + pivot agreement; wait for execution quality before trade.
+Raw side: NONE
+Execution side: NONE
+Candidate side: NONE
+Bias side: SELL
+Risk side: NONE
+Pivot side: SELL
+JRSX side: SELL
+Support: PIVOT, JRSX
+Conflict: NONE"><span class="pill side-sell">SELL</span><br><small>METALS_LIQUIDITY_WATCH · MEDIUM · raw NONE</small></td>
+      <td><span class="pill grade-x">-</span></td>
+      <td class="num">0</td>
+      <td title="Market: NO_TRADE_ZONE
+Readiness: METALS LIQUIDITY ALIGNMENT
+Severity: MEDIUM
+Action: Metals side has JRSX + pivot agreement; watch liquidity reaction and avoid late chasing."><span class="market market-none">NO TRADE ZONE</span></td>
+      <td title="Profile: Metals Liquidity-Reversal Hybrid Engine
+Engine: LIQUIDITY_REVERSAL_HYBRID
+Primary driver: JRSX + pivot + liquidity reaction
+Description: Metals prioritize JRSX pressure, pivot reclaim/reject, and liquidity/reversal behavior over strict continuation-only alignment."><b>LIQUIDITY_REVERSAL_HYBRID</b><br><small>JRSX + pivot + liquidity reaction</small></td>
+      <td title="Label: METALS LIQUIDITY ALIGNMENT
+Severity: MEDIUM
+Action: Metals side has JRSX + pivot agreement; watch liquidity reaction and avoid late chasing.
+Warnings: D1_COUNTER_MOVE
+Confirmations: ENGINE_LIQUIDITY_REVERSAL_HYBRID, MTF_SELL2, PV-, JRSX_OK_SELL
+D1: D1_BUY_COUNTER_PULLBACK
+MTF: SELL strength 2
+JRSX: TRUE SELL
+Pivot: PV- SELL"><b>METALS LIQUIDITY ALIGNMENT</b><br><small>MEDIUM</small></td>
+      <td title="M15: SELL | source=2026-05-13T11:15:00 | close=2026-05-13T11:30:00 | closed=True | age=None
+M30: SELL | source=2026-05-13T11:30:00 | close=2026-05-13T12:00:00 | closed=True | age=None
+H1: SELL | source=2026-05-13T10:00:00 | close=2026-05-13T11:00:00 | closed=True | age=None
+H4: SELL | source=2026-05-13T04:00:00 | close=2026-05-13T08:00:00 | closed=True | age=None
+D1: BUY | source=2026-05-12T00:00:00 | close=2026-05-13T00:00:00 | closed=True | age=None" class="mono">SELL/SELL/SELL/SELL/BUY</td>
+      <td title="Flag: False
+Side: NONE
+Level: NONE
+Score: 32
+Phase: LIVE_SELL_CONTROL
+Reason: SELL_DOMINANT_HTF | D1_BUY_COUNTER_PULLBACK | NON_CLEAN_BEAR_CONTEXT">Stable · 32/100</td>
+      <td title="Side status: TRUE
+Reason: SELL_JRSX_OK
+Bias side: SELL
+M15: 50.89 / SELL
+M30: 44.07 / SELL
+H1: 54.43 / SELL
+H4: 47.84 / SELL
+D1: 49.99 / BUY
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE SELL · M15 50.89 · M30 44.07 · H1 54.43</td>
+      <td title="Message: Daily BUY context is pulling back. Prepare for SELL pullback or later BUY continuation (-0.31%)
+State: D1_BUY_COUNTER_PULLBACK
+Direction: DOWN
+Progress: -0.3117848302893621%
+Points: -14.699999999999818
+Day open: 4714.79
+As of: 2026-05-13T11:30:00">D1 BUY COUNTER PULLBACK · DOWN · -0.31%</td>
       <td>PV 4709.04 · R1 4779.62 · S1 4644.41</td>
       <td class="num">-</td>
       <td class="num">-</td>
