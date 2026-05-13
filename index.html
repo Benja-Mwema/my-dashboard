@@ -104,7 +104,7 @@ td small { color:var(--muted); }
   <div class="header-top">
     <div>
       <h1>Institutional Daily Journey Dashboard</h1>
-      <p class="subtle">Trade date 2026-05-13 · Generated 2026-05-13T04:11:01.531590</p>
+      <p class="subtle">Trade date 2026-05-13 · Generated 2026-05-13T04:21:09.497858</p>
     </div>
     <div class="mode">LIVE INCREMENTAL · 15 MIN REFRESH</div>
   </div>
@@ -901,13 +901,13 @@ D1: BUY | source=2026-05-12T00:00:00 | close=2026-05-13T00:00:00 | closed=True |
 Reason: SELL_JRSX_OK
 Bias side: SELL
 M15: 42.54 / SELL
-M30: 55.58 / SELL
+M30: 53.4 / SELL
 H1: 41.67 / BUY
 H4: 39.13 / SELL
 D1: 54.91 / BUY
 Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">
         <span>JRSX</span>
-        <b>TRUE SELL · M15 42.54 · M30 55.58 · H1 41.67</b>
+        <b>TRUE SELL · M15 42.54 · M30 53.4 · H1 41.67</b>
         <small>SELL_JRSX_OK</small>
       </div>
       <div class="mini-card" title="Message: Daily BUY has paused. Wait for fresh BUY confirmation (-0.01%)
@@ -987,11 +987,11 @@ Reason: M15_COUNTER_SELL | D1_BUY_STALLING | NON_CLEAN_BULL_CONTEXT">Stable · 3
 Reason: SELL_JRSX_OK
 Bias side: SELL
 M15: 66.56 / SELL
-M30: 58.59 / BUY
+M30: 59.23 / BUY
 H1: 29.56 / BUY
 H4: 39.13 / SELL
 D1: 54.91 / BUY
-Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE SELL · M15 66.56 · M30 58.59 · H1 29.56</td>
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE SELL · M15 66.56 · M30 59.23 · H1 29.56</td>
       <td title="Message: Daily BUY has paused. Wait for fresh BUY confirmation (0.01%)
 State: D1_BUY_STALLING
 Direction: UP
@@ -1024,42 +1024,42 @@ Conflict: RISK, JRSX, PIVOT"><span class="pill side-buy">BUY</span><br><small>ML
       <td><span class="pill grade-b">B</span></td>
       <td class="num">76</td>
       <td title="Market: NO_TRADE_ZONE
-Readiness: COUNTER-MOVE ACTIVE
+Readiness: MIXED WEAKENING — WATCH SELL
 Severity: MEDIUM
-Action: Avoid late continuation; use counter-move only as watch/transition unless execution confirms."><span class="market market-none">NO TRADE ZONE</span></td>
+Action: Treat current MIXED as fragile. Monitor SELL trigger and pivot behavior."><span class="market market-none">NO TRADE ZONE</span></td>
       <td title="Profile: FX Bias-First Regime Engine
 Engine: BIAS_FIRST_REGIME
 Primary driver: D1/H1/H4 structure authority
 Description: FX prioritizes daily state, H1/H4 structure, and M30 confirmation before execution."><b>BIAS_FIRST_REGIME</b><br><small>D1/H1/H4 structure authority</small></td>
-      <td title="Label: COUNTER-MOVE ACTIVE
+      <td title="Label: MIXED WEAKENING — WATCH SELL
 Severity: MEDIUM
-Action: Avoid late continuation; use counter-move only as watch/transition unless execution confirms.
+Action: Treat current MIXED as fragile. Monitor SELL trigger and pivot behavior.
 Warnings: MTF_MIXED, D1_COUNTER_MOVE
 Confirmations: ENGINE_BIAS_FIRST_REGIME, PV-, JRSX_OK_SELL
 D1: D1_BUY_COUNTER_PULLBACK
 MTF: MIXED strength 0
 JRSX: TRUE SELL
-Pivot: PV- SELL"><b>COUNTER-MOVE ACTIVE</b><br><small>MEDIUM</small></td>
+Pivot: PV- SELL"><b>MIXED WEAKENING — WATCH SELL</b><br><small>MEDIUM</small></td>
       <td title="M15: SELL | source=2026-05-13T00:15:00 | close=2026-05-13T00:30:00 | closed=True | age=None
-M30: BUY | source=2026-05-13T00:30:00 | close=2026-05-13T01:00:00 | closed=True | age=None
+M30: SELL | source=2026-05-13T00:30:00 | close=2026-05-13T01:00:00 | closed=True | age=None
 H1: BUY | source=2026-05-12T23:00:00 | close=2026-05-13T00:00:00 | closed=True | age=None
 H4: SELL | source=2026-05-12T20:00:00 | close=2026-05-13T00:00:00 | closed=True | age=None
-D1: BUY | source=2026-05-12T00:00:00 | close=2026-05-13T00:00:00 | closed=True | age=None" class="mono">SELL/BUY/BUY/SELL/BUY</td>
+D1: BUY | source=2026-05-12T00:00:00 | close=2026-05-13T00:00:00 | closed=True | age=None" class="mono">SELL/SELL/BUY/SELL/BUY</td>
       <td title="Flag: True
 Side: SELL
-Level: LOW
-Score: 44
+Level: MEDIUM
+Score: 54
 Phase: LIVE_BUY_FRAGILE_WATCH_SELL
-Reason: M15_COUNTER_SELL | D1_BUY_COUNTER_PULLBACK | NON_CLEAN_BULL_CONTEXT">LOW · watch SELL · 44/100</td>
+Reason: M15_COUNTER_SELL | M30_COUNTER_SELL | D1_BUY_COUNTER_PULLBACK | NON_CLEAN_BULL_CONTEXT">MEDIUM · watch SELL · 54/100</td>
       <td title="Side status: TRUE
 Reason: SELL_JRSX_OK
 Bias side: SELL
 M15: 54.77 / SELL
-M30: 59.23 / BUY
+M30: 58.83 / SELL
 H1: 29.56 / BUY
 H4: 39.13 / SELL
 D1: 54.91 / BUY
-Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE SELL · M15 54.77 · M30 59.23 · H1 29.56</td>
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE SELL · M15 54.77 · M30 58.83 · H1 29.56</td>
       <td title="Message: Daily BUY context is pulling back. Prepare for SELL pullback or later BUY continuation (-0.04%)
 State: D1_BUY_COUNTER_PULLBACK
 Direction: DOWN
@@ -1123,11 +1123,11 @@ Reason: M15_COUNTER_SELL | M30_COUNTER_SELL | D1_BUY_STALLING | NON_CLEAN_BULL_C
 Reason: SELL_JRSX_OK
 Bias side: SELL
 M15: 46.72 / SELL
-M30: 58.83 / SELL
+M30: 58.69 / SELL
 H1: 34.19 / BUY
 H4: 39.13 / SELL
 D1: 54.91 / BUY
-Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE SELL · M15 46.72 · M30 58.83 · H1 34.19</td>
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE SELL · M15 46.72 · M30 58.69 · H1 34.19</td>
       <td title="Message: Daily BUY has paused. Wait for fresh BUY confirmation (-0.01%)
 State: D1_BUY_STALLING
 Direction: UP
@@ -1151,7 +1151,7 @@ Reason: No reliable side agreement across execution, candidate, bias, risk, pivo
 Raw side: NONE
 Execution side: NONE
 Candidate side: NONE
-Bias side: MIXED
+Bias side: BUY
 Risk side: NONE
 Pivot side: SELL
 JRSX side: BUY
@@ -1170,32 +1170,32 @@ Description: FX prioritizes daily state, H1/H4 structure, and M30 confirmation b
       <td title="Label: DAILY MOMENTUM WEAKENING
 Severity: MEDIUM
 Action: Reduce aggression. Require stronger M15/M30 trigger and pivot confirmation.
-Warnings: MTF_MIXED, D1_STALLING
-Confirmations: ENGINE_BIAS_FIRST_REGIME, PV-, JRSX_OK_BUY
+Warnings: PIVOT_OPPOSES_MTF, D1_STALLING
+Confirmations: ENGINE_BIAS_FIRST_REGIME, MTF_BUY1, PV-, JRSX_OK_BUY
 D1: D1_BUY_STALLING
-MTF: MIXED strength 0
+MTF: BUY strength 1
 JRSX: TRUE BUY
 Pivot: PV- SELL"><b>DAILY MOMENTUM WEAKENING</b><br><small>MEDIUM</small></td>
       <td title="M15: BUY | source=2026-05-13T01:15:00 | close=2026-05-13T01:30:00 | closed=True | age=None
-M30: SELL | source=2026-05-13T01:30:00 | close=2026-05-13T02:00:00 | closed=True | age=None
+M30: BUY | source=2026-05-13T01:30:00 | close=2026-05-13T02:00:00 | closed=True | age=None
 H1: BUY | source=2026-05-13T00:00:00 | close=2026-05-13T01:00:00 | closed=True | age=None
 H4: SELL | source=2026-05-12T20:00:00 | close=2026-05-13T00:00:00 | closed=True | age=None
-D1: BUY | source=2026-05-12T00:00:00 | close=2026-05-13T00:00:00 | closed=True | age=None" class="mono">BUY/SELL/BUY/SELL/BUY</td>
+D1: BUY | source=2026-05-12T00:00:00 | close=2026-05-13T00:00:00 | closed=True | age=None" class="mono">BUY/BUY/BUY/SELL/BUY</td>
       <td title="Flag: False
 Side: NONE
 Level: NONE
-Score: 30
+Score: 20
 Phase: LIVE_BUY_CONTROL
-Reason: M30_COUNTER_SELL | D1_BUY_STALLING | NON_CLEAN_BULL_CONTEXT">Stable · 30/100</td>
+Reason: D1_BUY_STALLING | NON_CLEAN_BULL_CONTEXT">Stable · 20/100</td>
       <td title="Side status: TRUE
 Reason: BUY_JRSX_OK
 Bias side: BUY
 M15: 46.14 / BUY
-M30: 58.69 / SELL
+M30: 58.89 / BUY
 H1: 34.19 / BUY
 H4: 39.13 / SELL
 D1: 54.91 / BUY
-Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE BUY · M15 46.14 · M30 58.69 · H1 34.19</td>
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE BUY · M15 46.14 · M30 58.89 · H1 34.19</td>
       <td title="Message: Daily BUY has paused. Wait for fresh BUY confirmation (0.01%)
 State: D1_BUY_STALLING
 Direction: UP
@@ -1259,11 +1259,11 @@ Reason: D1_BUY_STALLING | NON_CLEAN_BULL_CONTEXT">Stable · 20/100</td>
 Reason: BUY_JRSX_OK
 Bias side: BUY
 M15: 48.58 / BUY
-M30: 58.89 / BUY
+M30: 59.15 / BUY
 H1: 38.48 / BUY
 H4: 39.13 / SELL
 D1: 54.91 / BUY
-Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE BUY · M15 48.58 · M30 58.89 · H1 38.48</td>
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE BUY · M15 48.58 · M30 59.15 · H1 38.48</td>
       <td title="Message: Daily BUY has paused. Wait for fresh BUY confirmation (0.01%)
 State: D1_BUY_STALLING
 Direction: UP
@@ -1287,7 +1287,7 @@ Reason: No reliable side agreement across execution, candidate, bias, risk, pivo
 Raw side: NONE
 Execution side: NONE
 Candidate side: NONE
-Bias side: BUY
+Bias side: MIXED
 Risk side: NONE
 Pivot side: SELL
 JRSX side: BUY
@@ -1306,32 +1306,32 @@ Description: FX prioritizes daily state, H1/H4 structure, and M30 confirmation b
       <td title="Label: DAILY MOMENTUM WEAKENING
 Severity: MEDIUM
 Action: Reduce aggression. Require stronger M15/M30 trigger and pivot confirmation.
-Warnings: PIVOT_OPPOSES_MTF, D1_STALLING
-Confirmations: ENGINE_BIAS_FIRST_REGIME, MTF_BUY1, PV-, JRSX_OK_BUY
+Warnings: MTF_MIXED, D1_STALLING
+Confirmations: ENGINE_BIAS_FIRST_REGIME, PV-, JRSX_OK_BUY
 D1: D1_BUY_STALLING
-MTF: BUY strength 1
+MTF: MIXED strength 0
 JRSX: TRUE BUY
 Pivot: PV- SELL"><b>DAILY MOMENTUM WEAKENING</b><br><small>MEDIUM</small></td>
       <td title="M15: BUY | source=2026-05-13T02:15:00 | close=2026-05-13T02:30:00 | closed=True | age=None
-M30: BUY | source=2026-05-13T02:30:00 | close=2026-05-13T03:00:00 | closed=True | age=None
+M30: SELL | source=2026-05-13T02:30:00 | close=2026-05-13T03:00:00 | closed=True | age=None
 H1: BUY | source=2026-05-13T01:00:00 | close=2026-05-13T02:00:00 | closed=True | age=None
 H4: SELL | source=2026-05-12T20:00:00 | close=2026-05-13T00:00:00 | closed=True | age=None
-D1: BUY | source=2026-05-12T00:00:00 | close=2026-05-13T00:00:00 | closed=True | age=None" class="mono">BUY/BUY/BUY/SELL/BUY</td>
+D1: BUY | source=2026-05-12T00:00:00 | close=2026-05-13T00:00:00 | closed=True | age=None" class="mono">BUY/SELL/BUY/SELL/BUY</td>
       <td title="Flag: False
 Side: NONE
 Level: NONE
-Score: 20
+Score: 30
 Phase: LIVE_BUY_CONTROL
-Reason: D1_BUY_STALLING | NON_CLEAN_BULL_CONTEXT">Stable · 20/100</td>
+Reason: M30_COUNTER_SELL | D1_BUY_STALLING | NON_CLEAN_BULL_CONTEXT">Stable · 30/100</td>
       <td title="Side status: TRUE
 Reason: BUY_JRSX_OK
 Bias side: BUY
 M15: 51.32 / BUY
-M30: 59.15 / BUY
+M30: 57.94 / SELL
 H1: 38.48 / BUY
 H4: 39.13 / SELL
 D1: 54.91 / BUY
-Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE BUY · M15 51.32 · M30 59.15 · H1 38.48</td>
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE BUY · M15 51.32 · M30 57.94 · H1 38.48</td>
       <td title="Message: Daily BUY has paused. Wait for fresh BUY confirmation (0.01%)
 State: D1_BUY_STALLING
 Direction: UP
@@ -1395,11 +1395,11 @@ Reason: M15_COUNTER_SELL | M30_COUNTER_SELL | D1_BUY_STALLING | NON_CLEAN_BULL_C
 Reason: SELL_JRSX_OK
 Bias side: SELL
 M15: 49.32 / SELL
-M30: 57.94 / SELL
+M30: 55.58 / SELL
 H1: 41.67 / BUY
 H4: 39.13 / SELL
 D1: 54.91 / BUY
-Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE SELL · M15 49.32 · M30 57.94 · H1 41.67</td>
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE SELL · M15 49.32 · M30 55.58 · H1 41.67</td>
       <td title="Message: Daily BUY has paused. Wait for fresh BUY confirmation (-0.00%)
 State: D1_BUY_STALLING
 Direction: UP
@@ -1463,11 +1463,11 @@ Reason: M15_COUNTER_SELL | M30_COUNTER_SELL | D1_BUY_STALLING | NON_CLEAN_BULL_C
 Reason: SELL_JRSX_OK
 Bias side: SELL
 M15: 42.54 / SELL
-M30: 55.58 / SELL
+M30: 53.4 / SELL
 H1: 41.67 / BUY
 H4: 39.13 / SELL
 D1: 54.91 / BUY
-Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE SELL · M15 42.54 · M30 55.58 · H1 41.67</td>
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE SELL · M15 42.54 · M30 53.4 · H1 41.67</td>
       <td title="Message: Daily BUY has paused. Wait for fresh BUY confirmation (-0.01%)
 State: D1_BUY_STALLING
 Direction: UP
@@ -6576,14 +6576,14 @@ D1: BUY | source=2026-05-12T00:00:00 | close=2026-05-13T00:00:00 | closed=True |
       <div class="mini-card" title="Side status: TRUE
 Reason: SELL_JRSX_OK
 Bias side: SELL
-M15: 45.67 / SELL
+M15: 50.57 / SELL
 M30: 69.75 / SELL
 H1: 53.6 / BUY
 H4: 50.92 / SELL
 D1: 83.62 / BUY
 Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">
         <span>JRSX</span>
-        <b>TRUE SELL · M15 45.67 · M30 69.75 · H1 53.6</b>
+        <b>TRUE SELL · M15 50.57 · M30 69.75 · H1 53.6</b>
         <small>SELL_JRSX_OK</small>
       </div>
       <div class="mini-card" title="Message: Daily BUY has paused. Wait for fresh BUY confirmation (0.02%)
@@ -6662,12 +6662,12 @@ Reason: M15_COUNTER_SELL | D1_BUY_STALLING | NON_CLEAN_BULL_CONTEXT | H1_BUY_OVE
       <td title="Side status: TRUE
 Reason: SELL_JRSX_OK
 Bias side: SELL
-M15: 83.01 / SELL
+M15: 85.31 / SELL
 M30: 70.06 / BUY
 H1: 42.74 / BUY
 H4: 50.92 / SELL
 D1: 83.62 / BUY
-Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE SELL · M15 83.01 · M30 70.06 · H1 42.74</td>
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE SELL · M15 85.31 · M30 70.06 · H1 42.74</td>
       <td title="Message: Daily BUY has paused. Wait for fresh BUY confirmation (0.02%)
 State: D1_BUY_STALLING
 Direction: UP
@@ -6730,12 +6730,12 @@ Reason: M15_COUNTER_SELL | D1_BUY_FADING | NON_CLEAN_BULL_CONTEXT | BUY_NEAR_HIG
       <td title="Side status: TRUE
 Reason: SELL_JRSX_OK
 Bias side: SELL
-M15: 79.94 / SELL
+M15: 81.17 / SELL
 M30: 72.37 / BUY
 H1: 42.74 / BUY
 H4: 50.92 / SELL
 D1: 83.62 / BUY
-Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE SELL · M15 79.94 · M30 72.37 · H1 42.74</td>
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE SELL · M15 81.17 · M30 72.37 · H1 42.74</td>
       <td title="Message: Daily BUY is weakening. Be careful buying late (0.11%)
 State: D1_BUY_FADING
 Direction: UP
@@ -6798,12 +6798,12 @@ Reason: M15_COUNTER_SELL | D1_BUY_FADING | NON_CLEAN_BULL_CONTEXT | BUY_NEAR_HIG
       <td title="Side status: TRUE
 Reason: SELL_JRSX_OK
 Bias side: SELL
-M15: 77.77 / SELL
+M15: 79.14 / SELL
 M30: 73.44 / BUY
 H1: 49.33 / BUY
 H4: 50.92 / SELL
 D1: 83.62 / BUY
-Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE SELL · M15 77.77 · M30 73.44 · H1 49.33</td>
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE SELL · M15 79.14 · M30 73.44 · H1 49.33</td>
       <td title="Message: Daily BUY is weakening. Be careful buying late (0.08%)
 State: D1_BUY_FADING
 Direction: UP
@@ -6866,12 +6866,12 @@ Reason: M15_COUNTER_SELL | M30_COUNTER_SELL | D1_BUY_STALLING | NON_CLEAN_BULL_C
       <td title="Side status: TRUE
 Reason: SELL_JRSX_OK
 Bias side: SELL
-M15: 71.51 / SELL
+M15: 75.07 / SELL
 M30: 72.65 / SELL
 H1: 49.33 / BUY
 H4: 50.92 / SELL
 D1: 83.62 / BUY
-Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE SELL · M15 71.51 · M30 72.65 · H1 49.33</td>
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE SELL · M15 75.07 · M30 72.65 · H1 49.33</td>
       <td title="Message: Daily BUY has paused. Wait for fresh BUY confirmation (0.01%)
 State: D1_BUY_STALLING
 Direction: UP
@@ -6934,12 +6934,12 @@ Reason: M15_COUNTER_SELL | M30_COUNTER_SELL | D1_BUY_COUNTER_PULLBACK | NON_CLEA
       <td title="Side status: TRUE
 Reason: SELL_JRSX_OK
 Bias side: SELL
-M15: 58.03 / SELL
+M15: 65.43 / SELL
 M30: 71.2 / SELL
 H1: 53.6 / BUY
 H4: 50.92 / SELL
 D1: 83.62 / BUY
-Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE SELL · M15 58.03 · M30 71.2 · H1 53.6</td>
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE SELL · M15 65.43 · M30 71.2 · H1 53.6</td>
       <td title="Message: Daily BUY context is pulling back. Prepare for SELL pullback or later BUY continuation (-0.05%)
 State: D1_BUY_COUNTER_PULLBACK
 Direction: DOWN
@@ -7002,12 +7002,12 @@ Reason: M15_COUNTER_SELL | M30_COUNTER_SELL | D1_BUY_STALLING | NON_CLEAN_BULL_C
       <td title="Side status: TRUE
 Reason: SELL_JRSX_OK
 Bias side: SELL
-M15: 45.67 / SELL
+M15: 50.57 / SELL
 M30: 69.75 / SELL
 H1: 53.6 / BUY
 H4: 50.92 / SELL
 D1: 83.62 / BUY
-Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE SELL · M15 45.67 · M30 69.75 · H1 53.6</td>
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE SELL · M15 50.57 · M30 69.75 · H1 53.6</td>
       <td title="Message: Daily BUY has paused. Wait for fresh BUY confirmation (0.02%)
 State: D1_BUY_STALLING
 Direction: UP
