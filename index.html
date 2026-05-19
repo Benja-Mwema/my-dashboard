@@ -114,20 +114,20 @@ td small { color:var(--muted); }
   <div class="header-top">
     <div>
       <h1>Institutional Daily Journey Dashboard</h1>
-      <p class="subtle">Trade date 2026-05-19 · Generated 2026-05-19T13:02:35.386966</p>
+      <p class="subtle">Trade date 2026-05-19 · Generated 2026-05-19T13:12:02.017155</p>
     </div>
     <div class="mode">LIVE INCREMENTAL · 15 MIN REFRESH</div>
   </div>
   <div class="stats">
     <div class="stat"><span>Symbols</span><b>9</b></div>
     <div class="stat"><span>Events</span><b>400</b></div>
-    <div class="stat"><span>Entries</span><b>22</b></div>
+    <div class="stat"><span>Entries</span><b>25</b></div>
     <div class="stat"><span>Focus</span><b>9</b></div>
     <div class="stat"><span>Ready</span><b>0</b></div>
     <div class="stat"><span>ML Candidates</span><b>0</b></div>
   </div>
 </header>
-<div class="status-strip"><span class="pill count-chip">MOMENTUM SCOUT 15</span><span class="pill count-chip">REVERSAL WATCH 31</span><span class="pill count-chip">STRUCTURE FORMING 120</span><span class="pill count-chip">NO TRADE 234</span></div>
+<div class="status-strip"><span class="pill count-chip">MOMENTUM SCOUT 18</span><span class="pill count-chip">REVERSAL WATCH 31</span><span class="pill count-chip">STRUCTURE FORMING 119</span><span class="pill count-chip">NO TRADE 232</span></div>
 
     <div class="focus-strip">
       <div><span>Focus</span><b>AUDJPY, NZDUSD, USDCHF, CAC40, JPN225, NAS100, XAGUSD, XAUEUR, XAUUSD</b></div>
@@ -20915,7 +20915,7 @@ Reason: NO_VALID_SIGNAL" class="num">-</td>
         </div>
         <div class="symbol-badges">
           <span class="pill status-watch">MOMENTUM_SCOUT</span>
-          <span class="pill side-buy">BUY</span>
+          <span class="pill side-sell">SELL</span>
           <span class="pill type-none">INDEX_EXPANSION_WATCH</span>
           <span class="pill count-chip">Best MOMENTUM_SCOUT</span>
         </div>
@@ -20955,12 +20955,12 @@ Description: Indices prioritize M15/M30 acceleration, pivot breakout/reclaim, an
         <b>New York</b>
         <small>Medium confidence · avoid London</small>
       </div>
-      <div class="mini-card" title="Market: CLEAN_BULL_ALIGNMENT
+      <div class="mini-card" title="Market: NO_TRADE_ZONE
 Readiness: DAILY MOMENTUM WEAKENING
 Severity: MEDIUM
 Action: Reduce aggression. Require stronger M15/M30 trigger and pivot confirmation.">
         <span>Market</span>
-        <b class="market market-bull">CLEAN BULL ALIGNMENT</b>
+        <b class="market market-none">NO TRADE ZONE</b>
         <small>Environment context before signal interpretation</small>
       </div>
       <div class="mini-card" title="Display side: SELL
@@ -20971,24 +20971,24 @@ Raw side: NONE
 Execution side: NONE
 Candidate side: NONE
 Bias side: MIXED
-Risk side: NONE
+Risk side: SELL
 Pivot side: SELL
 JRSX side: SELL
 Support: PIVOT, JRSX
 Conflict: NONE">
         <span>Display Side / Grade</span>
-        <b><span class="pill side-buy">BUY</span> <span class="pill type-none">INDEX_EXPANSION_WATCH</span> <span class="pill grade-d">Grade D</span></b>
-        <small>MEDIUM confidence · raw BUY · Price 28745.5</small>
+        <b><span class="pill side-sell">SELL</span> <span class="pill type-none">INDEX_EXPANSION_WATCH</span> <span class="pill grade-d">Grade D</span></b>
+        <small>MEDIUM confidence · raw SELL · Price 28745.5</small>
       </div>
-      <div class="mini-card" title="Flag: False
-Side: NONE
-Level: NONE
-Score: 24
-Phase: LIVE_BUY_CONTROL
-Reason: BUY_DOMINANT_HTF | M15_COUNTER_SELL">
+      <div class="mini-card" title="Flag: True
+Side: SELL
+Level: LOW
+Score: 42
+Phase: LIVE_BUY_FRAGILE_WATCH_SELL
+Reason: BUY_DOMINANT_HTF | M15_COUNTER_SELL | M30_COUNTER_SELL | NON_CLEAN_BULL_CONTEXT">
         <span>Direction Risk</span>
-        <b>Stable · 24/100</b>
-        <small>BUY DOMINANT HTF | M15 COUNTER SELL</small>
+        <b>LOW · watch SELL · 42/100</b>
+        <small>BUY DOMINANT HTF | M15 COUNTER SELL | M30 COUNTER SELL | NON CLEAN BULL...</small>
       </div>
       <div class="mini-card" title="Campaign phase is currently calculated for metals.">
         <span>Campaign Phase</span>
@@ -21001,25 +21001,25 @@ Reason: BUY_DOMINANT_HTF | M15_COUNTER_SELL">
         <small>-</small>
       </div>
       <div class="mini-card" title="M15: SELL | source=2026-05-19T12:45:00 | close=2026-05-19T13:00:00 | closed=True | age=None
-M30: BUY | source=2026-05-19T12:30:00 | close=2026-05-19T13:00:00 | closed=True | age=None
+M30: SELL | source=2026-05-19T12:30:00 | close=2026-05-19T13:00:00 | closed=True | age=None
 H1: BUY | source=2026-05-19T12:00:00 | close=2026-05-19T13:00:00 | closed=True | age=None
 H4: BUY | source=2026-05-19T08:00:00 | close=2026-05-19T12:00:00 | closed=True | age=None
 D1: SELL | source=2026-05-18T00:00:00 | close=2026-05-19T00:00:00 | closed=True | age=None">
         <span>MTF</span>
-        <b>SELL/BUY/BUY/BUY/SELL</b>
-        <small>2 | MIXED0 | DOWN | TRUE | PV-</small>
+        <b>SELL/SELL/BUY/BUY/SELL</b>
+        <small>1 | MIXED0 | DOWN | TRUE | PV-</small>
       </div>
       <div class="mini-card" title="Side status: TRUE
 Reason: SELL_JRSX_OK
 Bias side: SELL
-M15: 51.45 / SELL
-M30: 52.89 / BUY
-H1: 42.66 / BUY
+M15: 42.74 / SELL
+M30: 51.39 / SELL
+H1: 44.25 / BUY
 H4: 34.19 / BUY
 D1: 82.89 / SELL
 Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">
         <span>JRSX</span>
-        <b>TRUE SELL · M15 51.45 · M30 52.89 · H1 42.66</b>
+        <b>TRUE SELL · M15 42.74 · M30 51.39 · H1 44.25</b>
         <small>SELL_JRSX_OK</small>
       </div>
       <div class="mini-card" title="Message: Daily SELL is weakening. Prepare for possible BUY reversal (-0.70%)
@@ -21050,7 +21050,7 @@ Reason: NO_VALID_SIGNAL">
       </div>
     </section>
     
-      <div class="count-row"><span class="pill count-chip">MOMENTUM SCOUT 1</span><span class="pill count-chip">REVERSAL WATCH 1</span><span class="pill count-chip">STRUCTURE FORMING 18</span><span class="pill count-chip">NO TRADE 27</span></div>
+      <div class="count-row"><span class="pill count-chip">MOMENTUM SCOUT 4</span><span class="pill count-chip">REVERSAL WATCH 1</span><span class="pill count-chip">STRUCTURE FORMING 17</span><span class="pill count-chip">NO TRADE 25</span></div>
       <details class="journey" open>
         <summary>Daily M15 journey (47 rows)</summary>
         <div class="table-wrap">
@@ -21063,29 +21063,29 @@ Reason: NO_VALID_SIGNAL">
               </tr>
             </thead>
             <tbody>
-    <tr class="row-none">
+    <tr class="row-forming">
       <td class="time">01:30</td>
-      <td><span class="pill status-none">NO_TRADE</span></td>
+      <td><span class="pill status-forming">STRUCTURE_FORMING</span></td>
       <td class="num">29021</td>
       <td title="Display side: BUY
 Type: INDEX_EXPANSION_WATCH
 Confidence: MEDIUM
-Reason: Index trigger-first display side from pivot/JRSX expansion evidence; HTF bias=MIXED0.
+Reason: Index trigger-first display side from pivot/JRSX expansion evidence; HTF bias=BUY2.
 Raw side: NONE
 Execution side: NONE
 Candidate side: NONE
-Bias side: MIXED
-Risk side: BUY
+Bias side: BUY
+Risk side: SELL
 Pivot side: BUY
 JRSX side: BUY
 Support: PIVOT, JRSX
 Conflict: NONE"><span class="pill side-buy">BUY</span><br><small>INDEX_EXPANSION_WATCH · MEDIUM · raw NONE</small></td>
       <td><span class="pill grade-x">-</span></td>
       <td class="num">0</td>
-      <td title="Market: NO_TRADE_ZONE
-Readiness: MIXED WEAKENING — WATCH BUY
+      <td title="Market: CLEAN_BULL_ALIGNMENT
+Readiness: COUNTER-MOVE ACTIVE
 Severity: MEDIUM
-Action: Treat current MIXED as fragile. Monitor BUY trigger and pivot behavior."><span class="market market-none">NO TRADE ZONE</span></td>
+Action: Avoid late continuation; use counter-move only as watch/transition unless execution confirms."><span class="market market-bull">CLEAN BULL ALIGNMENT</span></td>
       <td title="Profile: Indices Trigger-First Expansion Engine
 Engine: TRIGGER_FIRST_EXPANSION
 Primary driver: M15/M30 momentum expansion
@@ -21100,51 +21100,51 @@ Growth: 81.0
 Risk: 93.25
 Liquidity: 10.0
 Mode: PASSIVE_CONTEXT_ONLY">INDEX_NEUTRAL (48.95)</td>
-      <td title="Label: MIXED WEAKENING — WATCH BUY
+      <td title="Label: COUNTER-MOVE ACTIVE
 Severity: MEDIUM
-Action: Treat current MIXED as fragile. Monitor BUY trigger and pivot behavior.
-Warnings: MTF_MIXED, D1_COUNTER_MOVE
-Confirmations: ENGINE_TRIGGER_FIRST_EXPANSION, PV+, JRSX_OK_BUY
+Action: Avoid late continuation; use counter-move only as watch/transition unless execution confirms.
+Warnings: D1_COUNTER_MOVE
+Confirmations: ENGINE_TRIGGER_FIRST_EXPANSION, MTF_BUY2, PV+, JRSX_OK_BUY
 D1: D1_SELL_COUNTER_BOUNCE
-MTF: MIXED strength 0
+MTF: BUY strength 2
 JRSX: TRUE BUY
-Pivot: PV+ BUY"><b>MIXED WEAKENING — WATCH BUY</b><br><small>MEDIUM</small></td>
+Pivot: PV+ BUY"><b>COUNTER-MOVE ACTIVE</b><br><small>MEDIUM</small></td>
       <td title="Qualified: False
 Label: NO_EMAIL
-Score: 10 / min 70
+Score: 30 / min 70
 Rule: Clean/non-pullback
-Reason: Blocked: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, INDEX_M30_ACCEPTANCE_BLOCK, TP_SL_INVALID, INDEX_STATUS_NOT_MOMENTUM_SCOUT, STATUS_NO_TRADE, CORE_NOT_FULLY_ALIGNED, DIRECTION_WEAK_0, EXECUTION_THIN_0, REVERSAL_RISK_54, NO_EXPANSION_PROOF, REVERSAL_RISK_HIGH
-Blockers: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, INDEX_M30_ACCEPTANCE_BLOCK, TP_SL_INVALID, INDEX_STATUS_NOT_MOMENTUM_SCOUT, STATUS_NO_TRADE, CORE_NOT_FULLY_ALIGNED, DIRECTION_WEAK_0, EXECUTION_THIN_0, REVERSAL_RISK_54, NO_EXPANSION_PROOF, REVERSAL_RISK_HIGH
+Reason: Blocked: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, INDEX_M30_ACCEPTANCE_BLOCK, TP_SL_INVALID, INDEX_STATUS_NOT_MOMENTUM_SCOUT, STATUS_STRUCTURE_FORMING, DIRECTION_WEAK_0, EXECUTION_THIN_0, REVERSAL_RISK_46, NO_EXPANSION_PROOF
+Blockers: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, INDEX_M30_ACCEPTANCE_BLOCK, TP_SL_INVALID, INDEX_STATUS_NOT_MOMENTUM_SCOUT, STATUS_STRUCTURE_FORMING, DIRECTION_WEAK_0, EXECUTION_THIN_0, REVERSAL_RISK_46, NO_EXPANSION_PROOF
 Warnings: -
-Reasons: INDEX_ACTIVE_SET:CAC40,JPN225,NAS100, ROOM_VALID, CLEAN_NON_PULLBACK_DEFAULT, JRSX_SUPPORT
-Aligned TFs: M15, M30, H4
-Opposing TFs: H1, D1
+Reasons: INDEX_ACTIVE_SET:CAC40,JPN225,NAS100, M15_M30_H1_H4_ALIGNED, ROOM_VALID, CLEAN_NON_PULLBACK_DEFAULT, JRSX_SUPPORT
+Aligned TFs: M15, M30, H1, H4
+Opposing TFs: D1
 Expansion proof: False
 Room valid: True
 JRSX ok: True
-Scores: D=0 E=0 R=54.0 Final=0 -"><span class="email-blocked">NO_EMAIL 10</span></td>
+Scores: D=0 E=0 R=46.0 Final=0 -"><span class="email-blocked">NO_EMAIL 30</span></td>
       <td title="M15: BUY | source=2026-05-19T01:15:00 | close=2026-05-19T01:30:00 | closed=True | age=None
 M30: BUY | source=2026-05-18T23:00:00 | close=2026-05-18T23:30:00 | closed=True | age=None
-H1: SELL | source=2026-05-18T22:00:00 | close=2026-05-18T23:00:00 | closed=True | age=None
+H1: BUY | source=2026-05-18T22:00:00 | close=2026-05-18T23:00:00 | closed=True | age=None
 H4: BUY | source=2026-05-18T16:00:00 | close=2026-05-18T20:00:00 | closed=True | age=None
-D1: SELL | source=2026-05-18T00:00:00 | close=2026-05-19T00:00:00 | closed=True | age=None" class="mono">BUY/BUY/SELL/BUY/SELL</td>
+D1: SELL | source=2026-05-18T00:00:00 | close=2026-05-19T00:00:00 | closed=True | age=None" class="mono">BUY/BUY/BUY/BUY/SELL</td>
       <td title="Flag: True
-Side: BUY
-Level: MEDIUM
-Score: 54
-Phase: LIVE_SELL_FRAGILE_WATCH_BUY
-Reason: M15_COUNTER_BUY | M30_COUNTER_BUY | D1_SELL_COUNTER_BOUNCE | NON_CLEAN_BEAR_CONTEXT">MEDIUM · watch BUY · 54/100</td>
+Side: SELL
+Level: LOW
+Score: 46
+Phase: LIVE_BUY_FRAGILE_WATCH_SELL
+Reason: BUY_DOMINANT_HTF | D1_SELL_COUNTER_BOUNCE | BUY_AT_EXTREME_HIGH">LOW · watch SELL · 46/100</td>
       <td title="Campaign phase is currently calculated for metals.">Asset N/A</td>
       <td title="Raw entry quality is currently calculated for metals.">Asset N/A</td>
       <td title="Side status: TRUE
 Reason: BUY_JRSX_OK
 Bias side: BUY
-M15: 65.65 / BUY
-M30: 37.0 / BUY
-H1: 40.83 / SELL
+M15: 68.91 / BUY
+M30: 41.7 / BUY
+H1: 41.19 / BUY
 H4: 31.67 / BUY
 D1: 82.89 / SELL
-Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE BUY · M15 65.65 · M30 37 · H1 40.83</td>
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE BUY · M15 68.91 · M30 41.7 · H1 41.19</td>
       <td title="Message: Daily SELL context is bouncing upward. Prepare for BUY counter-bounce (0.14%)
 State: D1_SELL_COUNTER_BOUNCE
 Direction: UP
@@ -21164,29 +21164,29 @@ Reason: NO_VALID_SIGNAL" class="num">-</td>
       <td title="No SL-too-wide pullback watch for this row."><span class="pullback-none">-</span></td>
     </tr>
     
-    <tr class="row-none">
+    <tr class="row-forming">
       <td class="time">01:45</td>
-      <td><span class="pill status-none">NO_TRADE</span></td>
+      <td><span class="pill status-forming">STRUCTURE_FORMING</span></td>
       <td class="num">29060.5</td>
       <td title="Display side: BUY
 Type: INDEX_EXPANSION_WATCH
 Confidence: MEDIUM
-Reason: Index trigger-first display side from pivot/JRSX expansion evidence; HTF bias=MIXED0.
+Reason: Index trigger-first display side from pivot/JRSX expansion evidence; HTF bias=BUY2.
 Raw side: NONE
 Execution side: NONE
 Candidate side: NONE
-Bias side: MIXED
-Risk side: BUY
+Bias side: BUY
+Risk side: SELL
 Pivot side: BUY
 JRSX side: BUY
 Support: PIVOT, JRSX
 Conflict: NONE"><span class="pill side-buy">BUY</span><br><small>INDEX_EXPANSION_WATCH · MEDIUM · raw NONE</small></td>
       <td><span class="pill grade-x">-</span></td>
       <td class="num">0</td>
-      <td title="Market: NO_TRADE_ZONE
-Readiness: MIXED WEAKENING — WATCH BUY
+      <td title="Market: CLEAN_BULL_ALIGNMENT
+Readiness: COUNTER-MOVE ACTIVE
 Severity: MEDIUM
-Action: Treat current MIXED as fragile. Monitor BUY trigger and pivot behavior."><span class="market market-none">NO TRADE ZONE</span></td>
+Action: Avoid late continuation; use counter-move only as watch/transition unless execution confirms."><span class="market market-bull">CLEAN BULL ALIGNMENT</span></td>
       <td title="Profile: Indices Trigger-First Expansion Engine
 Engine: TRIGGER_FIRST_EXPANSION
 Primary driver: M15/M30 momentum expansion
@@ -21201,51 +21201,51 @@ Growth: 81.0
 Risk: 93.25
 Liquidity: 10.0
 Mode: PASSIVE_CONTEXT_ONLY">INDEX_NEUTRAL (48.95)</td>
-      <td title="Label: MIXED WEAKENING — WATCH BUY
+      <td title="Label: COUNTER-MOVE ACTIVE
 Severity: MEDIUM
-Action: Treat current MIXED as fragile. Monitor BUY trigger and pivot behavior.
-Warnings: MTF_MIXED, D1_COUNTER_MOVE
-Confirmations: ENGINE_TRIGGER_FIRST_EXPANSION, PV+, JRSX_OK_BUY
+Action: Avoid late continuation; use counter-move only as watch/transition unless execution confirms.
+Warnings: D1_COUNTER_MOVE
+Confirmations: ENGINE_TRIGGER_FIRST_EXPANSION, MTF_BUY2, PV+, JRSX_OK_BUY
 D1: D1_SELL_COUNTER_BOUNCE
-MTF: MIXED strength 0
+MTF: BUY strength 2
 JRSX: TRUE BUY
-Pivot: PV+ BUY"><b>MIXED WEAKENING — WATCH BUY</b><br><small>MEDIUM</small></td>
+Pivot: PV+ BUY"><b>COUNTER-MOVE ACTIVE</b><br><small>MEDIUM</small></td>
       <td title="Qualified: False
 Label: NO_EMAIL
-Score: 10 / min 70
+Score: 30 / min 70
 Rule: Clean/non-pullback
-Reason: Blocked: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, INDEX_M30_ACCEPTANCE_BLOCK, TP_SL_INVALID, INDEX_STATUS_NOT_MOMENTUM_SCOUT, STATUS_NO_TRADE, CORE_NOT_FULLY_ALIGNED, DIRECTION_WEAK_0, EXECUTION_THIN_0, REVERSAL_RISK_54, NO_EXPANSION_PROOF, REVERSAL_RISK_HIGH
-Blockers: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, INDEX_M30_ACCEPTANCE_BLOCK, TP_SL_INVALID, INDEX_STATUS_NOT_MOMENTUM_SCOUT, STATUS_NO_TRADE, CORE_NOT_FULLY_ALIGNED, DIRECTION_WEAK_0, EXECUTION_THIN_0, REVERSAL_RISK_54, NO_EXPANSION_PROOF, REVERSAL_RISK_HIGH
+Reason: Blocked: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, INDEX_M30_ACCEPTANCE_BLOCK, TP_SL_INVALID, INDEX_STATUS_NOT_MOMENTUM_SCOUT, STATUS_STRUCTURE_FORMING, DIRECTION_WEAK_0, EXECUTION_THIN_0, REVERSAL_RISK_46, NO_EXPANSION_PROOF
+Blockers: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, INDEX_M30_ACCEPTANCE_BLOCK, TP_SL_INVALID, INDEX_STATUS_NOT_MOMENTUM_SCOUT, STATUS_STRUCTURE_FORMING, DIRECTION_WEAK_0, EXECUTION_THIN_0, REVERSAL_RISK_46, NO_EXPANSION_PROOF
 Warnings: -
-Reasons: INDEX_ACTIVE_SET:CAC40,JPN225,NAS100, ROOM_VALID, CLEAN_NON_PULLBACK_DEFAULT, JRSX_SUPPORT
-Aligned TFs: M15, M30, H4
-Opposing TFs: H1, D1
+Reasons: INDEX_ACTIVE_SET:CAC40,JPN225,NAS100, M15_M30_H1_H4_ALIGNED, ROOM_VALID, CLEAN_NON_PULLBACK_DEFAULT, JRSX_SUPPORT
+Aligned TFs: M15, M30, H1, H4
+Opposing TFs: D1
 Expansion proof: False
 Room valid: True
 JRSX ok: True
-Scores: D=0 E=0 R=54.0 Final=0 -"><span class="email-blocked">NO_EMAIL 10</span></td>
+Scores: D=0 E=0 R=46.0 Final=0 -"><span class="email-blocked">NO_EMAIL 30</span></td>
       <td title="M15: BUY | source=2026-05-19T01:30:00 | close=2026-05-19T01:45:00 | closed=True | age=None
 M30: BUY | source=2026-05-18T23:00:00 | close=2026-05-18T23:30:00 | closed=True | age=None
-H1: SELL | source=2026-05-18T22:00:00 | close=2026-05-18T23:00:00 | closed=True | age=None
+H1: BUY | source=2026-05-18T22:00:00 | close=2026-05-18T23:00:00 | closed=True | age=None
 H4: BUY | source=2026-05-18T16:00:00 | close=2026-05-18T20:00:00 | closed=True | age=None
-D1: SELL | source=2026-05-18T00:00:00 | close=2026-05-19T00:00:00 | closed=True | age=None" class="mono">BUY/BUY/SELL/BUY/SELL</td>
+D1: SELL | source=2026-05-18T00:00:00 | close=2026-05-19T00:00:00 | closed=True | age=None" class="mono">BUY/BUY/BUY/BUY/SELL</td>
       <td title="Flag: True
-Side: BUY
-Level: MEDIUM
-Score: 54
-Phase: LIVE_SELL_FRAGILE_WATCH_BUY
-Reason: M15_COUNTER_BUY | M30_COUNTER_BUY | D1_SELL_COUNTER_BOUNCE | NON_CLEAN_BEAR_CONTEXT">MEDIUM · watch BUY · 54/100</td>
+Side: SELL
+Level: LOW
+Score: 46
+Phase: LIVE_BUY_FRAGILE_WATCH_SELL
+Reason: BUY_DOMINANT_HTF | D1_SELL_COUNTER_BOUNCE | BUY_AT_EXTREME_HIGH">LOW · watch SELL · 46/100</td>
       <td title="Campaign phase is currently calculated for metals.">Asset N/A</td>
       <td title="Raw entry quality is currently calculated for metals.">Asset N/A</td>
       <td title="Side status: TRUE
 Reason: BUY_JRSX_OK
 Bias side: BUY
-M15: 68.91 / BUY
-M30: 41.7 / BUY
-H1: 40.83 / SELL
+M15: 72.39 / BUY
+M30: 46.81 / BUY
+H1: 41.19 / BUY
 H4: 31.67 / BUY
 D1: 82.89 / SELL
-Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE BUY · M15 68.91 · M30 41.7 · H1 40.83</td>
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE BUY · M15 72.39 · M30 46.81 · H1 41.19</td>
       <td title="Message: Daily SELL context is bouncing upward. Prepare for BUY counter-bounce (0.13%)
 State: D1_SELL_COUNTER_BOUNCE
 Direction: UP
@@ -21265,29 +21265,29 @@ Reason: NO_VALID_SIGNAL" class="num">-</td>
       <td title="No SL-too-wide pullback watch for this row."><span class="pullback-none">-</span></td>
     </tr>
     
-    <tr class="row-none">
+    <tr class="row-forming">
       <td class="time">02:00</td>
-      <td><span class="pill status-none">NO_TRADE</span></td>
+      <td><span class="pill status-forming">STRUCTURE_FORMING</span></td>
       <td class="num">29057.6</td>
       <td title="Display side: BUY
 Type: INDEX_EXPANSION_WATCH
 Confidence: MEDIUM
-Reason: Index trigger-first display side from pivot/JRSX expansion evidence; HTF bias=MIXED0.
+Reason: Index trigger-first display side from pivot/JRSX expansion evidence; HTF bias=BUY2.
 Raw side: NONE
 Execution side: NONE
 Candidate side: NONE
-Bias side: MIXED
-Risk side: BUY
+Bias side: BUY
+Risk side: SELL
 Pivot side: BUY
 JRSX side: BUY
 Support: PIVOT, JRSX
 Conflict: NONE"><span class="pill side-buy">BUY</span><br><small>INDEX_EXPANSION_WATCH · MEDIUM · raw NONE</small></td>
       <td><span class="pill grade-x">-</span></td>
       <td class="num">0</td>
-      <td title="Market: NO_TRADE_ZONE
-Readiness: MIXED WEAKENING — WATCH BUY
+      <td title="Market: CLEAN_BULL_ALIGNMENT
+Readiness: COUNTER-MOVE ACTIVE
 Severity: MEDIUM
-Action: Treat current MIXED as fragile. Monitor BUY trigger and pivot behavior."><span class="market market-none">NO TRADE ZONE</span></td>
+Action: Avoid late continuation; use counter-move only as watch/transition unless execution confirms."><span class="market market-bull">CLEAN BULL ALIGNMENT</span></td>
       <td title="Profile: Indices Trigger-First Expansion Engine
 Engine: TRIGGER_FIRST_EXPANSION
 Primary driver: M15/M30 momentum expansion
@@ -21302,51 +21302,51 @@ Growth: 81.0
 Risk: 93.25
 Liquidity: 10.0
 Mode: PASSIVE_CONTEXT_ONLY">INDEX_NEUTRAL (48.95)</td>
-      <td title="Label: MIXED WEAKENING — WATCH BUY
+      <td title="Label: COUNTER-MOVE ACTIVE
 Severity: MEDIUM
-Action: Treat current MIXED as fragile. Monitor BUY trigger and pivot behavior.
-Warnings: MTF_MIXED, D1_COUNTER_MOVE
-Confirmations: ENGINE_TRIGGER_FIRST_EXPANSION, PV+, JRSX_OK_BUY
+Action: Avoid late continuation; use counter-move only as watch/transition unless execution confirms.
+Warnings: D1_COUNTER_MOVE
+Confirmations: ENGINE_TRIGGER_FIRST_EXPANSION, MTF_BUY2, PV+, JRSX_OK_BUY
 D1: D1_SELL_COUNTER_BOUNCE
-MTF: MIXED strength 0
+MTF: BUY strength 2
 JRSX: TRUE BUY
-Pivot: PV+ BUY"><b>MIXED WEAKENING — WATCH BUY</b><br><small>MEDIUM</small></td>
+Pivot: PV+ BUY"><b>COUNTER-MOVE ACTIVE</b><br><small>MEDIUM</small></td>
       <td title="Qualified: False
 Label: NO_EMAIL
-Score: 10 / min 70
+Score: 30 / min 70
 Rule: Clean/non-pullback
-Reason: Blocked: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, INDEX_M30_ACCEPTANCE_BLOCK, TP_SL_INVALID, INDEX_STATUS_NOT_MOMENTUM_SCOUT, STATUS_NO_TRADE, CORE_NOT_FULLY_ALIGNED, DIRECTION_WEAK_0, EXECUTION_THIN_0, REVERSAL_RISK_54, NO_EXPANSION_PROOF, REVERSAL_RISK_HIGH
-Blockers: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, INDEX_M30_ACCEPTANCE_BLOCK, TP_SL_INVALID, INDEX_STATUS_NOT_MOMENTUM_SCOUT, STATUS_NO_TRADE, CORE_NOT_FULLY_ALIGNED, DIRECTION_WEAK_0, EXECUTION_THIN_0, REVERSAL_RISK_54, NO_EXPANSION_PROOF, REVERSAL_RISK_HIGH
+Reason: Blocked: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, INDEX_M30_ACCEPTANCE_BLOCK, TP_SL_INVALID, INDEX_STATUS_NOT_MOMENTUM_SCOUT, STATUS_STRUCTURE_FORMING, DIRECTION_WEAK_0, EXECUTION_THIN_0, REVERSAL_RISK_46, NO_EXPANSION_PROOF
+Blockers: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, INDEX_M30_ACCEPTANCE_BLOCK, TP_SL_INVALID, INDEX_STATUS_NOT_MOMENTUM_SCOUT, STATUS_STRUCTURE_FORMING, DIRECTION_WEAK_0, EXECUTION_THIN_0, REVERSAL_RISK_46, NO_EXPANSION_PROOF
 Warnings: -
-Reasons: INDEX_ACTIVE_SET:CAC40,JPN225,NAS100, ROOM_VALID, CLEAN_NON_PULLBACK_DEFAULT, JRSX_SUPPORT
-Aligned TFs: M15, M30, H4
-Opposing TFs: H1, D1
+Reasons: INDEX_ACTIVE_SET:CAC40,JPN225,NAS100, M15_M30_H1_H4_ALIGNED, ROOM_VALID, CLEAN_NON_PULLBACK_DEFAULT, JRSX_SUPPORT
+Aligned TFs: M15, M30, H1, H4
+Opposing TFs: D1
 Expansion proof: False
 Room valid: True
 JRSX ok: True
-Scores: D=0 E=0 R=54.0 Final=0 -"><span class="email-blocked">NO_EMAIL 10</span></td>
+Scores: D=0 E=0 R=46.0 Final=0 -"><span class="email-blocked">NO_EMAIL 30</span></td>
       <td title="M15: BUY | source=2026-05-19T01:45:00 | close=2026-05-19T02:00:00 | closed=True | age=None
 M30: BUY | source=2026-05-19T01:30:00 | close=2026-05-19T02:00:00 | closed=True | age=None
-H1: SELL | source=2026-05-18T22:00:00 | close=2026-05-18T23:00:00 | closed=True | age=None
+H1: BUY | source=2026-05-18T22:00:00 | close=2026-05-18T23:00:00 | closed=True | age=None
 H4: BUY | source=2026-05-18T16:00:00 | close=2026-05-18T20:00:00 | closed=True | age=None
-D1: SELL | source=2026-05-18T00:00:00 | close=2026-05-19T00:00:00 | closed=True | age=None" class="mono">BUY/BUY/SELL/BUY/SELL</td>
+D1: SELL | source=2026-05-18T00:00:00 | close=2026-05-19T00:00:00 | closed=True | age=None" class="mono">BUY/BUY/BUY/BUY/SELL</td>
       <td title="Flag: True
-Side: BUY
-Level: MEDIUM
-Score: 54
-Phase: LIVE_SELL_FRAGILE_WATCH_BUY
-Reason: M15_COUNTER_BUY | M30_COUNTER_BUY | D1_SELL_COUNTER_BOUNCE | NON_CLEAN_BEAR_CONTEXT">MEDIUM · watch BUY · 54/100</td>
+Side: SELL
+Level: LOW
+Score: 46
+Phase: LIVE_BUY_FRAGILE_WATCH_SELL
+Reason: BUY_DOMINANT_HTF | D1_SELL_COUNTER_BOUNCE | BUY_AT_EXTREME_HIGH">LOW · watch SELL · 46/100</td>
       <td title="Campaign phase is currently calculated for metals.">Asset N/A</td>
       <td title="Raw entry quality is currently calculated for metals.">Asset N/A</td>
       <td title="Side status: TRUE
 Reason: BUY_JRSX_OK
 Bias side: BUY
-M15: 72.39 / BUY
-M30: 41.7 / BUY
-H1: 40.83 / SELL
+M15: 75.91 / BUY
+M30: 46.81 / BUY
+H1: 41.19 / BUY
 H4: 31.67 / BUY
 D1: 82.89 / SELL
-Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE BUY · M15 72.39 · M30 41.7 · H1 40.83</td>
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE BUY · M15 75.91 · M30 46.81 · H1 41.19</td>
       <td title="Message: Daily SELL context is bouncing upward. Prepare for BUY counter-bounce (0.14%)
 State: D1_SELL_COUNTER_BOUNCE
 Direction: UP
@@ -21442,12 +21442,12 @@ Reason: BUY_DOMINANT_HTF | D1_SELL_COUNTER_BOUNCE | BUY_AT_EXTREME_HIGH">LOW · 
       <td title="Side status: TRUE
 Reason: BUY_JRSX_OK
 Bias side: BUY
-M15: 75.91 / BUY
-M30: 46.81 / BUY
-H1: 41.19 / BUY
+M15: 78.81 / BUY
+M30: 51.91 / BUY
+H1: 43.13 / BUY
 H4: 31.67 / BUY
 D1: 82.89 / SELL
-Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE BUY · M15 75.91 · M30 46.81 · H1 41.19</td>
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE BUY · M15 78.81 · M30 51.91 · H1 43.13</td>
       <td title="Message: Daily SELL context is bouncing upward. Prepare for BUY counter-bounce (0.15%)
 State: D1_SELL_COUNTER_BOUNCE
 Direction: UP
@@ -21543,12 +21543,12 @@ Reason: BUY_DOMINANT_HTF | D1_SELL_COUNTER_BOUNCE | BUY_AT_EXTREME_HIGH">LOW · 
       <td title="Side status: TRUE
 Reason: BUY_JRSX_OK
 Bias side: BUY
-M15: 78.81 / BUY
-M30: 46.81 / BUY
-H1: 41.19 / BUY
+M15: 81.38 / BUY
+M30: 51.91 / BUY
+H1: 43.13 / BUY
 H4: 31.67 / BUY
 D1: 82.89 / SELL
-Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE BUY · M15 78.81 · M30 46.81 · H1 41.19</td>
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE BUY · M15 81.38 · M30 51.91 · H1 43.13</td>
       <td title="Message: Daily SELL context is bouncing upward. Prepare for BUY counter-bounce (0.15%)
 State: D1_SELL_COUNTER_BOUNCE
 Direction: UP
@@ -21644,12 +21644,12 @@ Reason: BUY_DOMINANT_HTF | D1_SELL_COUNTER_BOUNCE | BUY_AT_EXTREME_HIGH">LOW · 
       <td title="Side status: TRUE
 Reason: BUY_JRSX_OK
 Bias side: BUY
-M15: 81.38 / BUY
-M30: 51.91 / BUY
-H1: 41.19 / BUY
+M15: 83.32 / BUY
+M30: 56.64 / BUY
+H1: 43.13 / BUY
 H4: 31.67 / BUY
 D1: 82.89 / SELL
-Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE BUY · M15 81.38 · M30 51.91 · H1 41.19</td>
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE BUY · M15 83.32 · M30 56.64 · H1 43.13</td>
       <td title="Message: Daily SELL context is bouncing upward. Prepare for BUY counter-bounce (0.14%)
 State: D1_SELL_COUNTER_BOUNCE
 Direction: UP
@@ -21745,12 +21745,12 @@ Reason: BUY_DOMINANT_HTF | D1_SELL_COUNTER_BOUNCE | NON_CLEAN_BULL_CONTEXT | BUY
       <td title="Side status: TRUE
 Reason: BUY_JRSX_OK
 Bias side: BUY
-M15: 83.32 / BUY
-M30: 51.91 / BUY
-H1: 41.19 / BUY
+M15: 84.64 / BUY
+M30: 56.64 / BUY
+H1: 43.13 / BUY
 H4: 31.67 / BUY
 D1: 82.89 / SELL
-Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE BUY · M15 83.32 · M30 51.91 · H1 41.19</td>
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE BUY · M15 84.64 · M30 56.64 · H1 43.13</td>
       <td title="Message: Daily SELL context is bouncing upward. Prepare for BUY counter-bounce (0.06%)
 State: D1_SELL_COUNTER_BOUNCE
 Direction: UP
@@ -21770,25 +21770,25 @@ Reason: NO_VALID_SIGNAL" class="num">-</td>
       <td title="No SL-too-wide pullback watch for this row."><span class="pullback-none">-</span></td>
     </tr>
     
-    <tr class="row-watch">
+    <tr class="row-forming">
       <td class="time">03:15</td>
-      <td><span class="pill status-watch">MOMENTUM_SCOUT</span></td>
+      <td><span class="pill status-forming">STRUCTURE_FORMING</span></td>
       <td class="num">29037.3</td>
-      <td title="Display side: BUY
-Type: INDEX_EXPANSION_WATCH
-Confidence: MEDIUM
-Reason: Index trigger-first display side from pivot/JRSX expansion evidence; HTF bias=BUY2.
-Raw side: BUY
+      <td title="Display side: NONE
+Type: NONE
+Confidence: NONE
+Reason: No reliable side agreement across execution, candidate, bias, risk, pivot, and JRSX layers.
+Raw side: NONE
 Execution side: NONE
-Candidate side: BUY
-Bias side: BUY
+Candidate side: NONE
+Bias side: MIXED
 Risk side: NONE
 Pivot side: BUY
-JRSX side: BUY
-Support: PIVOT, JRSX
-Conflict: NONE"><span class="pill side-buy">BUY</span><br><small>INDEX_EXPANSION_WATCH · MEDIUM · raw BUY</small></td>
-      <td><span class="pill grade-d">D</span></td>
-      <td class="num">45</td>
+JRSX side: SELL
+Support: NONE
+Conflict: NONE"><span class="pill side-none">NONE</span><br><small>NONE · NONE · raw NONE</small></td>
+      <td><span class="pill grade-x">-</span></td>
+      <td class="num">0</td>
       <td title="Market: RANGE_OR_TRANSITION
 Readiness: DAILY MOMENTUM WEAKENING
 Severity: MEDIUM
@@ -21810,48 +21810,48 @@ Mode: PASSIVE_CONTEXT_ONLY">INDEX_NEUTRAL (48.95)</td>
       <td title="Label: DAILY MOMENTUM WEAKENING
 Severity: MEDIUM
 Action: Reduce aggression. Require stronger M15/M30 trigger and pivot confirmation.
-Warnings: D1_STALLING
-Confirmations: ENGINE_TRIGGER_FIRST_EXPANSION, MTF_BUY2, PV+, JRSX_OK_BUY
+Warnings: MTF_MIXED, D1_STALLING
+Confirmations: ENGINE_TRIGGER_FIRST_EXPANSION, PV+, JRSX_OK_SELL
 D1: D1_SELL_STALLING
-MTF: BUY strength 2
-JRSX: TRUE BUY
+MTF: MIXED strength 0
+JRSX: TRUE SELL
 Pivot: PV+ BUY"><b>DAILY MOMENTUM WEAKENING</b><br><small>MEDIUM</small></td>
       <td title="Qualified: False
 Label: NO_EMAIL
-Score: 45 / min 70
+Score: 0 / min 70
 Rule: Clean/non-pullback
-Reason: Blocked: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, INDEX_STRETCHED_TP1_NEEDS_M30_EXPANSION, INDEX_M30_ACCEPTANCE_BLOCK, INDEX_SIDE_IMPULSE_WEAK, INDEX_COUNTER_SNAP_AGAINST_SIDE, STATUS_MOMENTUM_SCOUT, DIRECTION_WEAK_45, EXECUTION_THIN_45, NO_EXPANSION_PROOF, GRADE_D
-Blockers: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, INDEX_STRETCHED_TP1_NEEDS_M30_EXPANSION, INDEX_M30_ACCEPTANCE_BLOCK, INDEX_SIDE_IMPULSE_WEAK, INDEX_COUNTER_SNAP_AGAINST_SIDE, STATUS_MOMENTUM_SCOUT, DIRECTION_WEAK_45, EXECUTION_THIN_45, NO_EXPANSION_PROOF, GRADE_D
+Reason: No BUY/SELL display side.
+Blockers: NO_DISPLAY_SIDE
 Warnings: -
-Reasons: INDEX_ACTIVE_SET:CAC40,JPN225,NAS100, INDEX_EXPANSION_STACK_OK, INDEX_BODY_OR_STRONG_IMPULSE_OK, INDEX_CORE_ALIGNMENT_OK, M15_M30_H1_H4_ALIGNED, LOW_REVERSAL_RISK_20, ROOM_VALID, CLEAN_NON_PULLBACK_DEFAULT, JRSX_SUPPORT
-Aligned TFs: M15, M30, H1, H4
-Opposing TFs: D1
-Expansion proof: False
-Room valid: True
-JRSX ok: True
-Scores: D=45.0 E=45.0 R=20.0 Final=45.0 D"><span class="email-blocked">NO_EMAIL 45</span></td>
-      <td title="M15: BUY | source=2026-05-19T03:00:00 | close=2026-05-19T03:15:00 | closed=True | age=None
+Reasons: -
+Aligned TFs: -
+Opposing TFs: -
+Expansion proof: None
+Room valid: None
+JRSX ok: None
+Scores: D=None E=None R=None Final=None "><span class="email-blocked">NO_EMAIL 0</span></td>
+      <td title="M15: SELL | source=2026-05-19T03:00:00 | close=2026-05-19T03:15:00 | closed=True | age=None
 M30: BUY | source=2026-05-19T02:30:00 | close=2026-05-19T03:00:00 | closed=True | age=None
 H1: BUY | source=2026-05-19T02:00:00 | close=2026-05-19T03:00:00 | closed=True | age=None
 H4: BUY | source=2026-05-18T16:00:00 | close=2026-05-18T20:00:00 | closed=True | age=None
-D1: SELL | source=2026-05-18T00:00:00 | close=2026-05-19T00:00:00 | closed=True | age=None" class="mono">BUY/BUY/BUY/BUY/SELL</td>
+D1: SELL | source=2026-05-18T00:00:00 | close=2026-05-19T00:00:00 | closed=True | age=None" class="mono">SELL/BUY/BUY/BUY/SELL</td>
       <td title="Flag: False
 Side: NONE
 Level: NONE
-Score: 20
+Score: 32
 Phase: LIVE_BUY_CONTROL
-Reason: BUY_DOMINANT_HTF | NON_CLEAN_BULL_CONTEXT">Stable · 20/100</td>
+Reason: BUY_DOMINANT_HTF | M15_COUNTER_SELL | NON_CLEAN_BULL_CONTEXT">Stable · 32/100</td>
       <td title="Campaign phase is currently calculated for metals.">Asset N/A</td>
       <td title="Raw entry quality is currently calculated for metals.">Asset N/A</td>
       <td title="Side status: TRUE
-Reason: BUY_JRSX_OK
-Bias side: BUY
-M15: 84.64 / BUY
-M30: 56.64 / BUY
-H1: 43.13 / BUY
+Reason: SELL_JRSX_OK
+Bias side: SELL
+M15: 84.05 / SELL
+M30: 60.27 / BUY
+H1: 45.58 / BUY
 H4: 31.67 / BUY
 D1: 82.89 / SELL
-Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE BUY · M15 84.64 · M30 56.64 · H1 43.13</td>
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE SELL · M15 84.05 · M30 60.27 · H1 45.58</td>
       <td title="Message: Daily SELL has paused. Wait for fresh SELL confirmation (0.00%)
 State: D1_SELL_STALLING
 Direction: DOWN
@@ -21861,13 +21861,13 @@ Day open: 29020.6
 As of: 2026-05-19T03:15:00">D1 SELL STALLING · DOWN · 0.00%</td>
       <td>PV 29006.5 · R1 29297.2 · S1 28689.6</td>
       <td title="Entry: 29021.5
-TP1: 29323.3 | Source: h1_swing_high_20 | RR: 0.98692
-TP2: 29625.1 | Source: FALLBACK_2R_FROM_STRUCTURE_SL | RR: 1.97384
-SL: 28715.7 | Source: h1_swing_low_20
-TP/SL valid: 1
-Reason: TP2_PRIMARY_OK" class="num">29323.3</td>
-      <td class="num">29625.1</td>
-      <td class="num">28715.7</td>
+TP1: - | Source: - | RR: -
+TP2: - | Source: - | RR: -
+SL: - | Source: -
+TP/SL valid: 0
+Reason: NO_VALID_SIGNAL" class="num">-</td>
+      <td class="num">-</td>
+      <td class="num">-</td>
       <td title="No SL-too-wide pullback watch for this row."><span class="pullback-none">-</span></td>
     </tr>
     
@@ -21947,12 +21947,12 @@ Reason: BUY_DOMINANT_HTF | M15_COUNTER_SELL | D1_SELL_COUNTER_BOUNCE | NON_CLEAN
       <td title="Side status: TRUE
 Reason: SELL_JRSX_OK
 Bias side: SELL
-M15: 84.05 / SELL
-M30: 56.64 / BUY
-H1: 43.13 / BUY
+M15: 81.03 / SELL
+M30: 60.27 / BUY
+H1: 45.58 / BUY
 H4: 31.67 / BUY
 D1: 82.89 / SELL
-Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE SELL · M15 84.05 · M30 56.64 · H1 43.13</td>
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE SELL · M15 81.03 · M30 60.27 · H1 45.58</td>
       <td title="Message: Daily SELL context is bouncing upward. Prepare for BUY counter-bounce (0.15%)
 State: D1_SELL_COUNTER_BOUNCE
 Direction: UP
@@ -22048,12 +22048,12 @@ Reason: BUY_DOMINANT_HTF | M15_COUNTER_SELL | D1_SELL_COUNTER_BOUNCE | NON_CLEAN
       <td title="Side status: TRUE
 Reason: SELL_JRSX_OK
 Bias side: SELL
-M15: 81.03 / SELL
-M30: 60.27 / BUY
-H1: 43.13 / BUY
+M15: 77.55 / SELL
+M30: 63.19 / BUY
+H1: 45.58 / BUY
 H4: 31.67 / BUY
 D1: 82.89 / SELL
-Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE SELL · M15 81.03 · M30 60.27 · H1 43.13</td>
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE SELL · M15 77.55 · M30 63.19 · H1 45.58</td>
       <td title="Message: Daily SELL context is bouncing upward. Prepare for BUY counter-bounce (0.04%)
 State: D1_SELL_COUNTER_BOUNCE
 Direction: UP
@@ -22149,12 +22149,12 @@ Reason: BUY_DOMINANT_HTF | M15_COUNTER_SELL">Stable · 24/100</td>
       <td title="Side status: TRUE
 Reason: SELL_JRSX_OK
 Bias side: SELL
-M15: 77.55 / SELL
-M30: 60.27 / BUY
-H1: 43.13 / BUY
+M15: 73.56 / SELL
+M30: 63.19 / BUY
+H1: 45.58 / BUY
 H4: 31.67 / BUY
 D1: 82.89 / SELL
-Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE SELL · M15 77.55 · M30 60.27 · H1 43.13</td>
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE SELL · M15 73.56 · M30 63.19 · H1 45.58</td>
       <td title="Message: Daily candle is moving with SELL direction. Best for SELL continuation (-0.11%)
 State: D1_SELL_CONTINUING
 Direction: DOWN
@@ -22250,12 +22250,12 @@ Reason: BUY_DOMINANT_HTF | M15_COUNTER_SELL">Stable · 24/100</td>
       <td title="Side status: TRUE
 Reason: SELL_JRSX_OK
 Bias side: SELL
-M15: 73.56 / SELL
-M30: 63.19 / BUY
-H1: 45.58 / BUY
+M15: 66.77 / SELL
+M30: 64.67 / BUY
+H1: 47.68 / BUY
 H4: 32.92 / BUY
 D1: 82.89 / SELL
-Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE SELL · M15 73.56 · M30 63.19 · H1 45.58</td>
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE SELL · M15 66.77 · M30 64.67 · H1 47.68</td>
       <td title="Message: Daily candle is moving with SELL direction. Best for SELL continuation (-0.18%)
 State: D1_SELL_CONTINUING
 Direction: DOWN
@@ -22351,12 +22351,12 @@ Reason: BUY_DOMINANT_HTF | M15_COUNTER_SELL">Stable · 24/100</td>
       <td title="Side status: TRUE
 Reason: SELL_JRSX_OK
 Bias side: SELL
-M15: 66.77 / SELL
-M30: 63.19 / BUY
-H1: 45.58 / BUY
+M15: 57.64 / SELL
+M30: 64.67 / BUY
+H1: 47.68 / BUY
 H4: 32.92 / BUY
 D1: 82.89 / SELL
-Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE SELL · M15 66.77 · M30 63.19 · H1 45.58</td>
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE SELL · M15 57.64 · M30 64.67 · H1 47.68</td>
       <td title="Message: Daily candle is moving with SELL direction. Best for SELL continuation (-0.32%)
 State: D1_SELL_CONTINUING
 Direction: DOWN
@@ -22376,9 +22376,9 @@ Reason: NO_VALID_SIGNAL" class="num">-</td>
       <td title="No SL-too-wide pullback watch for this row."><span class="pullback-none">-</span></td>
     </tr>
     
-    <tr class="row-forming">
+    <tr class="row-none">
       <td class="time">04:45</td>
-      <td><span class="pill status-forming">STRUCTURE_FORMING</span></td>
+      <td><span class="pill status-none">NO_TRADE</span></td>
       <td class="num">28926.8</td>
       <td title="Display side: SELL
 Type: INDEX_EXPANSION_WATCH
@@ -22388,17 +22388,17 @@ Raw side: NONE
 Execution side: NONE
 Candidate side: NONE
 Bias side: MIXED
-Risk side: NONE
+Risk side: SELL
 Pivot side: SELL
 JRSX side: SELL
 Support: PIVOT, JRSX
 Conflict: NONE"><span class="pill side-sell">SELL</span><br><small>INDEX_EXPANSION_WATCH · MEDIUM · raw NONE</small></td>
       <td><span class="pill grade-x">-</span></td>
       <td class="num">0</td>
-      <td title="Market: CLEAN_BULL_ALIGNMENT
+      <td title="Market: NO_TRADE_ZONE
 Readiness: DAILY MOMENTUM WEAKENING
 Severity: MEDIUM
-Action: Reduce aggression. Require stronger M15/M30 trigger and pivot confirmation."><span class="market market-bull">CLEAN BULL ALIGNMENT</span></td>
+Action: Reduce aggression. Require stronger M15/M30 trigger and pivot confirmation."><span class="market market-none">NO TRADE ZONE</span></td>
       <td title="Profile: Indices Trigger-First Expansion Engine
 Engine: TRIGGER_FIRST_EXPANSION
 Primary driver: M15/M30 momentum expansion
@@ -22424,40 +22424,40 @@ JRSX: TRUE SELL
 Pivot: PV- SELL"><b>DAILY MOMENTUM WEAKENING</b><br><small>MEDIUM</small></td>
       <td title="Qualified: False
 Label: NO_EMAIL
-Score: 25 / min 70
+Score: 18 / min 70
 Rule: Clean/non-pullback
-Reason: Blocked: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, TP_SL_INVALID, INDEX_STATUS_NOT_MOMENTUM_SCOUT, STATUS_STRUCTURE_FORMING, CORE_NOT_FULLY_ALIGNED, DIRECTION_WEAK_0, EXECUTION_THIN_0, NO_EXPANSION_PROOF
-Blockers: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, TP_SL_INVALID, INDEX_STATUS_NOT_MOMENTUM_SCOUT, STATUS_STRUCTURE_FORMING, CORE_NOT_FULLY_ALIGNED, DIRECTION_WEAK_0, EXECUTION_THIN_0, NO_EXPANSION_PROOF
+Reason: Blocked: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, TP_SL_INVALID, INDEX_STATUS_NOT_MOMENTUM_SCOUT, STATUS_NO_TRADE, CORE_NOT_FULLY_ALIGNED, DIRECTION_WEAK_0, EXECUTION_THIN_0, NO_EXPANSION_PROOF
+Blockers: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, TP_SL_INVALID, INDEX_STATUS_NOT_MOMENTUM_SCOUT, STATUS_NO_TRADE, CORE_NOT_FULLY_ALIGNED, DIRECTION_WEAK_0, EXECUTION_THIN_0, NO_EXPANSION_PROOF
 Warnings: -
-Reasons: INDEX_ACTIVE_SET:CAC40,JPN225,NAS100, INDEX_M30_SIDE_ACCEPTANCE:pos=0.31,pc1=-0.21, LOW_REVERSAL_RISK_24, ROOM_VALID, CLEAN_NON_PULLBACK_DEFAULT, JRSX_SUPPORT
-Aligned TFs: M15, D1
-Opposing TFs: M30, H1, H4
+Reasons: INDEX_ACTIVE_SET:CAC40,JPN225,NAS100, INDEX_M30_SIDE_ACCEPTANCE:pos=0.31,pc1=-0.21, MEDIUM_REVERSAL_RISK_42, ROOM_VALID, CLEAN_NON_PULLBACK_DEFAULT, JRSX_SUPPORT
+Aligned TFs: M15, M30, D1
+Opposing TFs: H1, H4
 Expansion proof: False
 Room valid: True
 JRSX ok: True
-Scores: D=0 E=0 R=24.0 Final=0 -"><span class="email-blocked">NO_EMAIL 25</span></td>
+Scores: D=0 E=0 R=42.0 Final=0 -"><span class="email-blocked">NO_EMAIL 18</span></td>
       <td title="M15: SELL | source=2026-05-19T04:30:00 | close=2026-05-19T04:45:00 | closed=True | age=None
-M30: BUY | source=2026-05-19T04:00:00 | close=2026-05-19T04:30:00 | closed=True | age=None
+M30: SELL | source=2026-05-19T04:00:00 | close=2026-05-19T04:30:00 | closed=True | age=None
 H1: BUY | source=2026-05-19T03:00:00 | close=2026-05-19T04:00:00 | closed=True | age=None
 H4: BUY | source=2026-05-18T16:00:00 | close=2026-05-18T20:00:00 | closed=True | age=None
-D1: SELL | source=2026-05-18T00:00:00 | close=2026-05-19T00:00:00 | closed=True | age=None" class="mono">SELL/BUY/BUY/BUY/SELL</td>
-      <td title="Flag: False
-Side: NONE
-Level: NONE
-Score: 24
-Phase: LIVE_BUY_CONTROL
-Reason: BUY_DOMINANT_HTF | M15_COUNTER_SELL">Stable · 24/100</td>
+D1: SELL | source=2026-05-18T00:00:00 | close=2026-05-19T00:00:00 | closed=True | age=None" class="mono">SELL/SELL/BUY/BUY/SELL</td>
+      <td title="Flag: True
+Side: SELL
+Level: LOW
+Score: 42
+Phase: LIVE_BUY_FRAGILE_WATCH_SELL
+Reason: BUY_DOMINANT_HTF | M15_COUNTER_SELL | M30_COUNTER_SELL | NON_CLEAN_BULL_CONTEXT">LOW · watch SELL · 42/100</td>
       <td title="Campaign phase is currently calculated for metals.">Asset N/A</td>
       <td title="Raw entry quality is currently calculated for metals.">Asset N/A</td>
       <td title="Side status: TRUE
 Reason: SELL_JRSX_OK
 Bias side: SELL
-M15: 57.64 / SELL
-M30: 64.67 / BUY
-H1: 45.58 / BUY
+M15: 47.14 / SELL
+M30: 63.05 / SELL
+H1: 47.68 / BUY
 H4: 32.92 / BUY
 D1: 82.89 / SELL
-Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE SELL · M15 57.64 · M30 64.67 · H1 45.58</td>
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE SELL · M15 47.14 · M30 63.05 · H1 47.68</td>
       <td title="Message: Daily SELL is weakening. Prepare for possible BUY reversal (-0.17%)
 State: D1_SELL_FADING
 Direction: DOWN
@@ -22477,9 +22477,9 @@ Reason: NO_VALID_SIGNAL" class="num">-</td>
       <td title="No SL-too-wide pullback watch for this row."><span class="pullback-none">-</span></td>
     </tr>
     
-    <tr class="row-forming">
+    <tr class="row-none">
       <td class="time">05:00</td>
-      <td><span class="pill status-forming">STRUCTURE_FORMING</span></td>
+      <td><span class="pill status-none">NO_TRADE</span></td>
       <td class="num">28970.4</td>
       <td title="Display side: SELL
 Type: INDEX_EXPANSION_WATCH
@@ -22489,17 +22489,17 @@ Raw side: NONE
 Execution side: NONE
 Candidate side: NONE
 Bias side: MIXED
-Risk side: NONE
+Risk side: SELL
 Pivot side: SELL
 JRSX side: SELL
 Support: PIVOT, JRSX
 Conflict: NONE"><span class="pill side-sell">SELL</span><br><small>INDEX_EXPANSION_WATCH · MEDIUM · raw NONE</small></td>
       <td><span class="pill grade-x">-</span></td>
       <td class="num">0</td>
-      <td title="Market: CLEAN_BULL_ALIGNMENT
-Readiness: INDEX TRIGGER WAIT
-Severity: LOW
-Action: Indices need fresh M15/M30 acceleration or pivot breakout/reclaim before side confidence improves."><span class="market market-bull">CLEAN BULL ALIGNMENT</span></td>
+      <td title="Market: NO_TRADE_ZONE
+Readiness: MIXED WEAKENING — WATCH SELL
+Severity: MEDIUM
+Action: Treat current MIXED as fragile. Monitor SELL trigger and pivot behavior."><span class="market market-none">NO TRADE ZONE</span></td>
       <td title="Profile: Indices Trigger-First Expansion Engine
 Engine: TRIGGER_FIRST_EXPANSION
 Primary driver: M15/M30 momentum expansion
@@ -22514,51 +22514,51 @@ Growth: 81.0
 Risk: 93.25
 Liquidity: 10.0
 Mode: PASSIVE_CONTEXT_ONLY">INDEX_NEUTRAL (48.95)</td>
-      <td title="Label: INDEX TRIGGER WAIT
-Severity: LOW
-Action: Indices need fresh M15/M30 acceleration or pivot breakout/reclaim before side confidence improves.
+      <td title="Label: MIXED WEAKENING — WATCH SELL
+Severity: MEDIUM
+Action: Treat current MIXED as fragile. Monitor SELL trigger and pivot behavior.
 Warnings: MTF_MIXED
 Confirmations: ENGINE_TRIGGER_FIRST_EXPANSION, PV-, JRSX_OK_SELL, D1_CONTINUING
 D1: D1_SELL_CONTINUING
 MTF: MIXED strength 0
 JRSX: TRUE SELL
-Pivot: PV- SELL"><b>INDEX TRIGGER WAIT</b><br><small>LOW</small></td>
+Pivot: PV- SELL"><b>MIXED WEAKENING — WATCH SELL</b><br><small>MEDIUM</small></td>
       <td title="Qualified: False
 Label: NO_EMAIL
-Score: 25 / min 70
+Score: 10 / min 70
 Rule: Clean/non-pullback
-Reason: Blocked: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, TP_SL_INVALID, INDEX_STATUS_NOT_MOMENTUM_SCOUT, STATUS_STRUCTURE_FORMING, CORE_NOT_FULLY_ALIGNED, DIRECTION_WEAK_0, EXECUTION_THIN_0, NO_EXPANSION_PROOF
-Blockers: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, TP_SL_INVALID, INDEX_STATUS_NOT_MOMENTUM_SCOUT, STATUS_STRUCTURE_FORMING, CORE_NOT_FULLY_ALIGNED, DIRECTION_WEAK_0, EXECUTION_THIN_0, NO_EXPANSION_PROOF
+Reason: Blocked: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, TP_SL_INVALID, INDEX_STATUS_NOT_MOMENTUM_SCOUT, STATUS_NO_TRADE, CORE_NOT_FULLY_ALIGNED, DIRECTION_WEAK_0, EXECUTION_THIN_0, REVERSAL_RISK_52, NO_EXPANSION_PROOF, REVERSAL_RISK_HIGH
+Blockers: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, TP_SL_INVALID, INDEX_STATUS_NOT_MOMENTUM_SCOUT, STATUS_NO_TRADE, CORE_NOT_FULLY_ALIGNED, DIRECTION_WEAK_0, EXECUTION_THIN_0, REVERSAL_RISK_52, NO_EXPANSION_PROOF, REVERSAL_RISK_HIGH
 Warnings: -
-Reasons: INDEX_ACTIVE_SET:CAC40,JPN225,NAS100, INDEX_M30_SIDE_ACCEPTANCE:pos=0.21,pc1=-0.03, LOW_REVERSAL_RISK_34, ROOM_VALID, CLEAN_NON_PULLBACK_DEFAULT, JRSX_SUPPORT
-Aligned TFs: M15, D1
-Opposing TFs: M30, H1, H4
+Reasons: INDEX_ACTIVE_SET:CAC40,JPN225,NAS100, INDEX_M30_SIDE_ACCEPTANCE:pos=0.21,pc1=-0.03, ROOM_VALID, CLEAN_NON_PULLBACK_DEFAULT, JRSX_SUPPORT
+Aligned TFs: M15, M30, D1
+Opposing TFs: H1, H4
 Expansion proof: False
 Room valid: True
 JRSX ok: True
-Scores: D=0 E=0 R=34.0 Final=0 -"><span class="email-blocked">NO_EMAIL 25</span></td>
+Scores: D=0 E=0 R=52.0 Final=0 -"><span class="email-blocked">NO_EMAIL 10</span></td>
       <td title="M15: SELL | source=2026-05-19T04:45:00 | close=2026-05-19T05:00:00 | closed=True | age=None
-M30: BUY | source=2026-05-19T04:30:00 | close=2026-05-19T05:00:00 | closed=True | age=None
+M30: SELL | source=2026-05-19T04:30:00 | close=2026-05-19T05:00:00 | closed=True | age=None
 H1: BUY | source=2026-05-19T04:00:00 | close=2026-05-19T05:00:00 | closed=True | age=None
 H4: BUY | source=2026-05-18T16:00:00 | close=2026-05-18T20:00:00 | closed=True | age=None
-D1: SELL | source=2026-05-18T00:00:00 | close=2026-05-19T00:00:00 | closed=True | age=None" class="mono">SELL/BUY/BUY/BUY/SELL</td>
-      <td title="Flag: False
-Side: NONE
-Level: NONE
-Score: 34
-Phase: LIVE_BUY_CONTROL
-Reason: BUY_DOMINANT_HTF | M15_COUNTER_SELL | H1_BUY_OVEREXTENDED">Stable · 34/100</td>
+D1: SELL | source=2026-05-18T00:00:00 | close=2026-05-19T00:00:00 | closed=True | age=None" class="mono">SELL/SELL/BUY/BUY/SELL</td>
+      <td title="Flag: True
+Side: SELL
+Level: MEDIUM
+Score: 52
+Phase: LIVE_BUY_FRAGILE_WATCH_SELL
+Reason: BUY_DOMINANT_HTF | M15_COUNTER_SELL | M30_COUNTER_SELL | NON_CLEAN_BULL_CONTEXT | H1_BUY_OVEREXTENDED">MEDIUM · watch SELL · 52/100</td>
       <td title="Campaign phase is currently calculated for metals.">Asset N/A</td>
       <td title="Raw entry quality is currently calculated for metals.">Asset N/A</td>
       <td title="Side status: TRUE
 Reason: SELL_JRSX_OK
 Bias side: SELL
-M15: 47.14 / SELL
-M30: 64.67 / BUY
-H1: 45.58 / BUY
+M15: 39.48 / SELL
+M30: 63.05 / SELL
+H1: 47.68 / BUY
 H4: 32.92 / BUY
 D1: 82.89 / SELL
-Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE SELL · M15 47.14 · M30 64.67 · H1 45.58</td>
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE SELL · M15 39.48 · M30 63.05 · H1 47.68</td>
       <td title="Message: Daily candle is moving with SELL direction. Best for SELL continuation (-0.35%)
 State: D1_SELL_CONTINUING
 Direction: DOWN
@@ -22654,12 +22654,12 @@ Reason: BUY_DOMINANT_HTF | M15_COUNTER_SELL | M30_COUNTER_SELL | NON_CLEAN_BULL_
       <td title="Side status: TRUE
 Reason: SELL_JRSX_OK
 Bias side: SELL
-M15: 39.48 / SELL
-M30: 63.05 / SELL
-H1: 47.68 / BUY
+M15: 33.83 / SELL
+M30: 59.82 / SELL
+H1: 48.42 / BUY
 H4: 32.92 / BUY
 D1: 82.89 / SELL
-Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE SELL · M15 39.48 · M30 63.05 · H1 47.68</td>
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE SELL · M15 33.83 · M30 59.82 · H1 48.42</td>
       <td title="Message: Daily candle is moving with SELL direction. Best for SELL continuation (-0.53%)
 State: D1_SELL_CONTINUING
 Direction: DOWN
@@ -22755,12 +22755,12 @@ Reason: BUY_DOMINANT_HTF | M15_COUNTER_SELL | M30_COUNTER_SELL | NON_CLEAN_BULL_
       <td title="Side status: TRUE
 Reason: SELL_JRSX_OK
 Bias side: SELL
-M15: 33.83 / SELL
-M30: 63.05 / SELL
-H1: 47.68 / BUY
+M15: 28.09 / SELL
+M30: 59.82 / SELL
+H1: 48.42 / BUY
 H4: 32.92 / BUY
 D1: 82.89 / SELL
-Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE SELL · M15 33.83 · M30 63.05 · H1 47.68</td>
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE SELL · M15 28.09 · M30 59.82 · H1 48.42</td>
       <td title="Message: Daily SELL is weakening. Prepare for possible BUY reversal (-0.50%)
 State: D1_SELL_FADING
 Direction: DOWN
@@ -22856,12 +22856,12 @@ Reason: BUY_DOMINANT_HTF | M15_COUNTER_SELL | M30_COUNTER_SELL | NON_CLEAN_BULL_
       <td title="Side status: TRUE
 Reason: SELL_JRSX_OK
 Bias side: SELL
-M15: 28.09 / SELL
-M30: 59.82 / SELL
-H1: 47.68 / BUY
+M15: 23.47 / SELL
+M30: 54.49 / SELL
+H1: 48.42 / BUY
 H4: 32.92 / BUY
 D1: 82.89 / SELL
-Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE SELL · M15 28.09 · M30 59.82 · H1 47.68</td>
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE SELL · M15 23.47 · M30 54.49 · H1 48.42</td>
       <td title="Message: Daily SELL is weakening. Prepare for possible BUY reversal (-0.41%)
 State: D1_SELL_FADING
 Direction: DOWN
@@ -22957,12 +22957,12 @@ Reason: BUY_DOMINANT_HTF | M15_COUNTER_SELL | M30_COUNTER_SELL | NON_CLEAN_BULL_
       <td title="Side status: TRUE
 Reason: SELL_JRSX_OK
 Bias side: SELL
-M15: 23.47 / SELL
-M30: 59.82 / SELL
-H1: 47.68 / BUY
+M15: 21.24 / SELL
+M30: 54.49 / SELL
+H1: 48.42 / BUY
 H4: 32.92 / BUY
 D1: 82.89 / SELL
-Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE SELL · M15 23.47 · M30 59.82 · H1 47.68</td>
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE SELL · M15 21.24 · M30 54.49 · H1 48.42</td>
       <td title="Message: Daily candle is moving with SELL direction. Best for SELL continuation (-0.50%)
 State: D1_SELL_CONTINUING
 Direction: DOWN
@@ -22982,29 +22982,29 @@ Reason: NO_VALID_SIGNAL" class="num">-</td>
       <td title="No SL-too-wide pullback watch for this row."><span class="pullback-none">-</span></td>
     </tr>
     
-    <tr class="row-none">
+    <tr class="row-watch">
       <td class="time">06:15</td>
-      <td><span class="pill status-none">NO_TRADE</span></td>
+      <td><span class="pill status-watch">MOMENTUM_SCOUT</span></td>
       <td class="num">28874.6</td>
       <td title="Display side: SELL
 Type: INDEX_EXPANSION_WATCH
 Confidence: MEDIUM
-Reason: Index trigger-first display side from pivot/JRSX expansion evidence; HTF bias=MIXED0.
-Raw side: NONE
+Reason: Index trigger-first display side from pivot/JRSX expansion evidence; HTF bias=SELL1.
+Raw side: SELL
 Execution side: NONE
-Candidate side: NONE
-Bias side: MIXED
-Risk side: SELL
+Candidate side: SELL
+Bias side: SELL
+Risk side: NONE
 Pivot side: SELL
 JRSX side: SELL
 Support: PIVOT, JRSX
-Conflict: NONE"><span class="pill side-sell">SELL</span><br><small>INDEX_EXPANSION_WATCH · MEDIUM · raw NONE</small></td>
-      <td><span class="pill grade-x">-</span></td>
-      <td class="num">0</td>
-      <td title="Market: NO_TRADE_ZONE
+Conflict: NONE"><span class="pill side-sell">SELL</span><br><small>INDEX_EXPANSION_WATCH · MEDIUM · raw SELL</small></td>
+      <td><span class="pill grade-d">D</span></td>
+      <td class="num">45</td>
+      <td title="Market: BEARISH_TRIGGER
 Readiness: DAILY MOMENTUM WEAKENING
 Severity: MEDIUM
-Action: Reduce aggression. Require stronger M15/M30 trigger and pivot confirmation."><span class="market market-none">NO TRADE ZONE</span></td>
+Action: Reduce aggression. Require stronger M15/M30 trigger and pivot confirmation."><span class="market market-bear">BEARISH TRIGGER</span></td>
       <td title="Profile: Indices Trigger-First Expansion Engine
 Engine: TRIGGER_FIRST_EXPANSION
 Primary driver: M15/M30 momentum expansion
@@ -23022,48 +23022,48 @@ Mode: PASSIVE_CONTEXT_ONLY">INDEX_NEUTRAL (48.95)</td>
       <td title="Label: DAILY MOMENTUM WEAKENING
 Severity: MEDIUM
 Action: Reduce aggression. Require stronger M15/M30 trigger and pivot confirmation.
-Warnings: MTF_MIXED, D1_FADING
-Confirmations: ENGINE_TRIGGER_FIRST_EXPANSION, PV-, JRSX_OK_SELL
+Warnings: D1_FADING
+Confirmations: ENGINE_TRIGGER_FIRST_EXPANSION, MTF_SELL1, PV-, JRSX_OK_SELL
 D1: D1_SELL_FADING
-MTF: MIXED strength 0
+MTF: SELL strength 1
 JRSX: TRUE SELL
 Pivot: PV- SELL"><b>DAILY MOMENTUM WEAKENING</b><br><small>MEDIUM</small></td>
       <td title="Qualified: False
 Label: NO_EMAIL
-Score: 18 / min 70
+Score: 25 / min 70
 Rule: Clean/non-pullback
-Reason: Blocked: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, TP_SL_INVALID, INDEX_STATUS_NOT_MOMENTUM_SCOUT, STATUS_NO_TRADE, CORE_NOT_FULLY_ALIGNED, DIRECTION_WEAK_0, EXECUTION_THIN_0, NO_EXPANSION_PROOF
-Blockers: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, TP_SL_INVALID, INDEX_STATUS_NOT_MOMENTUM_SCOUT, STATUS_NO_TRADE, CORE_NOT_FULLY_ALIGNED, DIRECTION_WEAK_0, EXECUTION_THIN_0, NO_EXPANSION_PROOF
+Reason: Blocked: INDEX_EMAIL_RULE_BLOCK, INDEX_STRETCHED_TP1_NEEDS_M30_EXPANSION, INDEX_SIDE_IMPULSE_WEAK, INDEX_EXPANSION_STACK_WEAK, INDEX_COUNTER_SNAP_AGAINST_SIDE, INDEX_CORE_ALIGNMENT_BLOCK, STATUS_MOMENTUM_SCOUT, CORE_NOT_FULLY_ALIGNED, DIRECTION_WEAK_45, EXECUTION_THIN_45, NO_EXPANSION_PROOF, GRADE_D
+Blockers: INDEX_EMAIL_RULE_BLOCK, INDEX_STRETCHED_TP1_NEEDS_M30_EXPANSION, INDEX_SIDE_IMPULSE_WEAK, INDEX_EXPANSION_STACK_WEAK, INDEX_COUNTER_SNAP_AGAINST_SIDE, INDEX_CORE_ALIGNMENT_BLOCK, STATUS_MOMENTUM_SCOUT, CORE_NOT_FULLY_ALIGNED, DIRECTION_WEAK_45, EXECUTION_THIN_45, NO_EXPANSION_PROOF, GRADE_D
 Warnings: -
-Reasons: INDEX_ACTIVE_SET:CAC40,JPN225,NAS100, INDEX_M30_SIDE_ACCEPTANCE:pos=0.15,pc1=-0.01, MEDIUM_REVERSAL_RISK_42, ROOM_VALID, CLEAN_NON_PULLBACK_DEFAULT, JRSX_SUPPORT
-Aligned TFs: M15, M30, D1
-Opposing TFs: H1, H4
+Reasons: INDEX_ACTIVE_SET:CAC40,JPN225,NAS100, INDEX_TP1_DISTANCE_OK:0.62%&lt;=0.65%, INDEX_M30_SIDE_ACCEPTANCE:pos=0.15,pc1=-0.01, INDEX_BODY_OR_STRONG_IMPULSE_OK, LOW_REVERSAL_RISK_24, ROOM_VALID, CLEAN_NON_PULLBACK_DEFAULT, JRSX_SUPPORT
+Aligned TFs: M15, M30, H1, D1
+Opposing TFs: H4
 Expansion proof: False
 Room valid: True
 JRSX ok: True
-Scores: D=0 E=0 R=42.0 Final=0 -"><span class="email-blocked">NO_EMAIL 18</span></td>
+Scores: D=45.0 E=45.0 R=24.0 Final=45.0 D"><span class="email-blocked">NO_EMAIL 25</span></td>
       <td title="M15: SELL | source=2026-05-19T06:00:00 | close=2026-05-19T06:15:00 | closed=True | age=None
 M30: SELL | source=2026-05-19T05:30:00 | close=2026-05-19T06:00:00 | closed=True | age=None
-H1: BUY | source=2026-05-19T05:00:00 | close=2026-05-19T06:00:00 | closed=True | age=None
+H1: SELL | source=2026-05-19T05:00:00 | close=2026-05-19T06:00:00 | closed=True | age=None
 H4: BUY | source=2026-05-18T16:00:00 | close=2026-05-18T20:00:00 | closed=True | age=None
-D1: SELL | source=2026-05-18T00:00:00 | close=2026-05-19T00:00:00 | closed=True | age=None" class="mono">SELL/SELL/BUY/BUY/SELL</td>
-      <td title="Flag: True
-Side: SELL
-Level: LOW
-Score: 42
-Phase: LIVE_BUY_FRAGILE_WATCH_SELL
-Reason: BUY_DOMINANT_HTF | M15_COUNTER_SELL | M30_COUNTER_SELL | NON_CLEAN_BULL_CONTEXT">LOW · watch SELL · 42/100</td>
+D1: SELL | source=2026-05-18T00:00:00 | close=2026-05-19T00:00:00 | closed=True | age=None" class="mono">SELL/SELL/SELL/BUY/SELL</td>
+      <td title="Flag: False
+Side: NONE
+Level: NONE
+Score: 24
+Phase: LIVE_SELL_CONTROL
+Reason: D1_SELL_FADING">Stable · 24/100</td>
       <td title="Campaign phase is currently calculated for metals.">Asset N/A</td>
       <td title="Raw entry quality is currently calculated for metals.">Asset N/A</td>
       <td title="Side status: TRUE
 Reason: SELL_JRSX_OK
 Bias side: SELL
-M15: 21.24 / SELL
-M30: 54.49 / SELL
-H1: 48.42 / BUY
+M15: 20.16 / SELL
+M30: 49.08 / SELL
+H1: 47.65 / SELL
 H4: 32.92 / BUY
 D1: 82.89 / SELL
-Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE SELL · M15 21.24 · M30 54.49 · H1 48.42</td>
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE SELL · M15 20.16 · M30 49.08 · H1 47.65</td>
       <td title="Message: Daily SELL is weakening. Prepare for possible BUY reversal (-0.43%)
 State: D1_SELL_FADING
 Direction: DOWN
@@ -23073,39 +23073,39 @@ Day open: 29020.6
 As of: 2026-05-19T06:15:00">D1 SELL FADING · DOWN · -0.43%</td>
       <td>PV 29006.5 · R1 29297.2 · S1 28689.6</td>
       <td title="Entry: 28894.8
-TP1: - | Source: - | RR: -
-TP2: - | Source: - | RR: -
-SL: - | Source: -
+TP1: 28715.7 | Source: h1_swing_low_20 | RR: 0.41797
+TP2: 28536.6 | Source: FALLBACK_2R_FROM_STRUCTURE_SL | RR: 0.83594
+SL: 29323.3 | Source: h1_swing_high_20
 TP/SL valid: 0
-Reason: NO_VALID_SIGNAL" class="num">-</td>
-      <td class="num">-</td>
-      <td class="num">-</td>
+Reason: RR_TP2_BELOW_MIN" class="num">28715.7</td>
+      <td class="num">28536.6</td>
+      <td class="num">29323.3</td>
       <td title="No SL-too-wide pullback watch for this row."><span class="pullback-none">-</span></td>
     </tr>
     
-    <tr class="row-none">
+    <tr class="row-watch">
       <td class="time">06:30</td>
-      <td><span class="pill status-none">NO_TRADE</span></td>
+      <td><span class="pill status-watch">MOMENTUM_SCOUT</span></td>
       <td class="num">28894.8</td>
       <td title="Display side: SELL
 Type: INDEX_EXPANSION_WATCH
 Confidence: MEDIUM
-Reason: Index trigger-first display side from pivot/JRSX expansion evidence; HTF bias=MIXED0.
-Raw side: NONE
+Reason: Index trigger-first display side from pivot/JRSX expansion evidence; HTF bias=SELL1.
+Raw side: SELL
 Execution side: NONE
-Candidate side: NONE
-Bias side: MIXED
-Risk side: SELL
+Candidate side: SELL
+Bias side: SELL
+Risk side: NONE
 Pivot side: SELL
 JRSX side: SELL
 Support: PIVOT, JRSX
-Conflict: NONE"><span class="pill side-sell">SELL</span><br><small>INDEX_EXPANSION_WATCH · MEDIUM · raw NONE</small></td>
-      <td><span class="pill grade-x">-</span></td>
-      <td class="num">0</td>
-      <td title="Market: NO_TRADE_ZONE
+Conflict: NONE"><span class="pill side-sell">SELL</span><br><small>INDEX_EXPANSION_WATCH · MEDIUM · raw SELL</small></td>
+      <td><span class="pill grade-d">D</span></td>
+      <td class="num">45</td>
+      <td title="Market: BEARISH_TRIGGER
 Readiness: DAILY MOMENTUM WEAKENING
 Severity: MEDIUM
-Action: Reduce aggression. Require stronger M15/M30 trigger and pivot confirmation."><span class="market market-none">NO TRADE ZONE</span></td>
+Action: Reduce aggression. Require stronger M15/M30 trigger and pivot confirmation."><span class="market market-bear">BEARISH TRIGGER</span></td>
       <td title="Profile: Indices Trigger-First Expansion Engine
 Engine: TRIGGER_FIRST_EXPANSION
 Primary driver: M15/M30 momentum expansion
@@ -23123,48 +23123,48 @@ Mode: PASSIVE_CONTEXT_ONLY">INDEX_NEUTRAL (48.95)</td>
       <td title="Label: DAILY MOMENTUM WEAKENING
 Severity: MEDIUM
 Action: Reduce aggression. Require stronger M15/M30 trigger and pivot confirmation.
-Warnings: MTF_MIXED, D1_FADING
-Confirmations: ENGINE_TRIGGER_FIRST_EXPANSION, PV-, JRSX_OK_SELL
+Warnings: D1_FADING
+Confirmations: ENGINE_TRIGGER_FIRST_EXPANSION, MTF_SELL1, PV-, JRSX_OK_SELL
 D1: D1_SELL_FADING
-MTF: MIXED strength 0
+MTF: SELL strength 1
 JRSX: TRUE SELL
 Pivot: PV- SELL"><b>DAILY MOMENTUM WEAKENING</b><br><small>MEDIUM</small></td>
       <td title="Qualified: False
 Label: NO_EMAIL
-Score: 18 / min 70
+Score: 25 / min 70
 Rule: Clean/non-pullback
-Reason: Blocked: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, INDEX_M30_ACCEPTANCE_BLOCK, TP_SL_INVALID, INDEX_STATUS_NOT_MOMENTUM_SCOUT, STATUS_NO_TRADE, CORE_NOT_FULLY_ALIGNED, DIRECTION_WEAK_0, EXECUTION_THIN_0, NO_EXPANSION_PROOF
-Blockers: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, INDEX_M30_ACCEPTANCE_BLOCK, TP_SL_INVALID, INDEX_STATUS_NOT_MOMENTUM_SCOUT, STATUS_NO_TRADE, CORE_NOT_FULLY_ALIGNED, DIRECTION_WEAK_0, EXECUTION_THIN_0, NO_EXPANSION_PROOF
+Reason: Blocked: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, INDEX_STRETCHED_TP1_NEEDS_M30_EXPANSION, INDEX_M30_ACCEPTANCE_BLOCK, INDEX_SIDE_IMPULSE_WEAK, INDEX_COUNTER_SNAP_AGAINST_SIDE, INDEX_CORE_ALIGNMENT_BLOCK, STATUS_MOMENTUM_SCOUT, CORE_NOT_FULLY_ALIGNED, DIRECTION_WEAK_45, EXECUTION_THIN_45, NO_EXPANSION_PROOF, GRADE_D
+Blockers: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, INDEX_STRETCHED_TP1_NEEDS_M30_EXPANSION, INDEX_M30_ACCEPTANCE_BLOCK, INDEX_SIDE_IMPULSE_WEAK, INDEX_COUNTER_SNAP_AGAINST_SIDE, INDEX_CORE_ALIGNMENT_BLOCK, STATUS_MOMENTUM_SCOUT, CORE_NOT_FULLY_ALIGNED, DIRECTION_WEAK_45, EXECUTION_THIN_45, NO_EXPANSION_PROOF, GRADE_D
 Warnings: -
-Reasons: INDEX_ACTIVE_SET:CAC40,JPN225,NAS100, MEDIUM_REVERSAL_RISK_42, ROOM_VALID, CLEAN_NON_PULLBACK_DEFAULT, JRSX_SUPPORT
-Aligned TFs: M15, M30, D1
-Opposing TFs: H1, H4
+Reasons: INDEX_ACTIVE_SET:CAC40,JPN225,NAS100, INDEX_EXPANSION_STACK_OK, INDEX_BODY_OR_STRONG_IMPULSE_OK, LOW_REVERSAL_RISK_24, ROOM_VALID, CLEAN_NON_PULLBACK_DEFAULT, JRSX_SUPPORT
+Aligned TFs: M15, M30, H1, D1
+Opposing TFs: H4
 Expansion proof: False
 Room valid: True
 JRSX ok: True
-Scores: D=0 E=0 R=42.0 Final=0 -"><span class="email-blocked">NO_EMAIL 18</span></td>
+Scores: D=45.0 E=45.0 R=24.0 Final=45.0 D"><span class="email-blocked">NO_EMAIL 25</span></td>
       <td title="M15: SELL | source=2026-05-19T06:15:00 | close=2026-05-19T06:30:00 | closed=True | age=None
 M30: SELL | source=2026-05-19T06:00:00 | close=2026-05-19T06:30:00 | closed=True | age=None
-H1: BUY | source=2026-05-19T05:00:00 | close=2026-05-19T06:00:00 | closed=True | age=None
+H1: SELL | source=2026-05-19T05:00:00 | close=2026-05-19T06:00:00 | closed=True | age=None
 H4: BUY | source=2026-05-18T16:00:00 | close=2026-05-18T20:00:00 | closed=True | age=None
-D1: SELL | source=2026-05-18T00:00:00 | close=2026-05-19T00:00:00 | closed=True | age=None" class="mono">SELL/SELL/BUY/BUY/SELL</td>
-      <td title="Flag: True
-Side: SELL
-Level: LOW
-Score: 42
-Phase: LIVE_BUY_FRAGILE_WATCH_SELL
-Reason: BUY_DOMINANT_HTF | M15_COUNTER_SELL | M30_COUNTER_SELL | NON_CLEAN_BULL_CONTEXT">LOW · watch SELL · 42/100</td>
+D1: SELL | source=2026-05-18T00:00:00 | close=2026-05-19T00:00:00 | closed=True | age=None" class="mono">SELL/SELL/SELL/BUY/SELL</td>
+      <td title="Flag: False
+Side: NONE
+Level: NONE
+Score: 24
+Phase: LIVE_SELL_CONTROL
+Reason: D1_SELL_FADING">Stable · 24/100</td>
       <td title="Campaign phase is currently calculated for metals.">Asset N/A</td>
       <td title="Raw entry quality is currently calculated for metals.">Asset N/A</td>
       <td title="Side status: TRUE
 Reason: SELL_JRSX_OK
 Bias side: SELL
-M15: 20.16 / SELL
-M30: 54.49 / SELL
-H1: 48.42 / BUY
+M15: 19.59 / SELL
+M30: 49.08 / SELL
+H1: 47.65 / SELL
 H4: 32.92 / BUY
 D1: 82.89 / SELL
-Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE SELL · M15 20.16 · M30 54.49 · H1 48.42</td>
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE SELL · M15 19.59 · M30 49.08 · H1 47.65</td>
       <td title="Message: Daily SELL is weakening. Prepare for possible BUY reversal (-0.37%)
 State: D1_SELL_FADING
 Direction: DOWN
@@ -23174,13 +23174,13 @@ Day open: 29020.6
 As of: 2026-05-19T06:30:00">D1 SELL FADING · DOWN · -0.37%</td>
       <td>PV 29006.5 · R1 29297.2 · S1 28689.6</td>
       <td title="Entry: 28912.3
-TP1: - | Source: - | RR: -
-TP2: - | Source: - | RR: -
-SL: - | Source: -
+TP1: 28715.7 | Source: h1_swing_low_20 | RR: 0.47835
+TP2: 28519.1 | Source: FALLBACK_2R_FROM_STRUCTURE_SL | RR: 0.95669
+SL: 29323.3 | Source: h1_swing_high_20
 TP/SL valid: 0
-Reason: NO_VALID_SIGNAL" class="num">-</td>
-      <td class="num">-</td>
-      <td class="num">-</td>
+Reason: RR_TP2_BELOW_MIN" class="num">28715.7</td>
+      <td class="num">28519.1</td>
+      <td class="num">29323.3</td>
       <td title="No SL-too-wide pullback watch for this row."><span class="pullback-none">-</span></td>
     </tr>
     
@@ -23188,120 +23188,19 @@ Reason: NO_VALID_SIGNAL" class="num">-</td>
       <td class="time">06:45</td>
       <td><span class="pill status-none">NO_TRADE</span></td>
       <td class="num">28912.3</td>
-      <td title="Display side: SELL
-Type: INDEX_EXPANSION_WATCH
-Confidence: MEDIUM
-Reason: Index trigger-first display side from pivot/JRSX expansion evidence; HTF bias=MIXED0.
+      <td title="Display side: BUY
+Type: RISK_WATCH
+Confidence: LOW
+Reason: No confirmed trade side; direction-change layer says watch BUY (LOW).
 Raw side: NONE
 Execution side: NONE
 Candidate side: NONE
 Bias side: MIXED
-Risk side: SELL
-Pivot side: SELL
-JRSX side: SELL
-Support: PIVOT, JRSX
-Conflict: NONE"><span class="pill side-sell">SELL</span><br><small>INDEX_EXPANSION_WATCH · MEDIUM · raw NONE</small></td>
-      <td><span class="pill grade-x">-</span></td>
-      <td class="num">0</td>
-      <td title="Market: NO_TRADE_ZONE
-Readiness: DAILY MOMENTUM WEAKENING
-Severity: MEDIUM
-Action: Reduce aggression. Require stronger M15/M30 trigger and pivot confirmation."><span class="market market-none">NO TRADE ZONE</span></td>
-      <td title="Profile: Indices Trigger-First Expansion Engine
-Engine: TRIGGER_FIRST_EXPANSION
-Primary driver: M15/M30 momentum expansion
-Description: Indices prioritize M15/M30 acceleration, pivot breakout/reclaim, and JRSX expansion before slow HTF structure."><b>TRIGGER_FIRST_EXPANSION</b><br><small>M15/M30 momentum expansion</small></td>
-      <td title="Date: 2026-05-19
-Regime: Neutral / Mixed Index
-Bias: INDEX_NEUTRAL
-Score: 48.95
-Pressure: -0.0699019677014864
-USD support: 92.25
-Growth: 81.0
-Risk: 93.25
-Liquidity: 10.0
-Mode: PASSIVE_CONTEXT_ONLY">INDEX_NEUTRAL (48.95)</td>
-      <td title="Label: DAILY MOMENTUM WEAKENING
-Severity: MEDIUM
-Action: Reduce aggression. Require stronger M15/M30 trigger and pivot confirmation.
-Warnings: MTF_MIXED, D1_FADING
-Confirmations: ENGINE_TRIGGER_FIRST_EXPANSION, PV-, JRSX_OK_SELL
-D1: D1_SELL_FADING
-MTF: MIXED strength 0
-JRSX: TRUE SELL
-Pivot: PV- SELL"><b>DAILY MOMENTUM WEAKENING</b><br><small>MEDIUM</small></td>
-      <td title="Qualified: False
-Label: NO_EMAIL
-Score: 18 / min 70
-Rule: Clean/non-pullback
-Reason: Blocked: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, INDEX_M30_ACCEPTANCE_BLOCK, TP_SL_INVALID, INDEX_STATUS_NOT_MOMENTUM_SCOUT, STATUS_NO_TRADE, CORE_NOT_FULLY_ALIGNED, DIRECTION_WEAK_0, EXECUTION_THIN_0, NO_EXPANSION_PROOF
-Blockers: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, INDEX_M30_ACCEPTANCE_BLOCK, TP_SL_INVALID, INDEX_STATUS_NOT_MOMENTUM_SCOUT, STATUS_NO_TRADE, CORE_NOT_FULLY_ALIGNED, DIRECTION_WEAK_0, EXECUTION_THIN_0, NO_EXPANSION_PROOF
-Warnings: -
-Reasons: INDEX_ACTIVE_SET:CAC40,JPN225,NAS100, MEDIUM_REVERSAL_RISK_42, ROOM_VALID, CLEAN_NON_PULLBACK_DEFAULT, JRSX_SUPPORT
-Aligned TFs: M15, M30, D1
-Opposing TFs: H1, H4
-Expansion proof: False
-Room valid: True
-JRSX ok: True
-Scores: D=0 E=0 R=42.0 Final=0 -"><span class="email-blocked">NO_EMAIL 18</span></td>
-      <td title="M15: SELL | source=2026-05-19T06:30:00 | close=2026-05-19T06:45:00 | closed=True | age=None
-M30: SELL | source=2026-05-19T06:00:00 | close=2026-05-19T06:30:00 | closed=True | age=None
-H1: BUY | source=2026-05-19T05:00:00 | close=2026-05-19T06:00:00 | closed=True | age=None
-H4: BUY | source=2026-05-18T16:00:00 | close=2026-05-18T20:00:00 | closed=True | age=None
-D1: SELL | source=2026-05-18T00:00:00 | close=2026-05-19T00:00:00 | closed=True | age=None" class="mono">SELL/SELL/BUY/BUY/SELL</td>
-      <td title="Flag: True
-Side: SELL
-Level: LOW
-Score: 42
-Phase: LIVE_BUY_FRAGILE_WATCH_SELL
-Reason: BUY_DOMINANT_HTF | M15_COUNTER_SELL | M30_COUNTER_SELL | NON_CLEAN_BULL_CONTEXT">LOW · watch SELL · 42/100</td>
-      <td title="Campaign phase is currently calculated for metals.">Asset N/A</td>
-      <td title="Raw entry quality is currently calculated for metals.">Asset N/A</td>
-      <td title="Side status: TRUE
-Reason: SELL_JRSX_OK
-Bias side: SELL
-M15: 19.59 / SELL
-M30: 49.08 / SELL
-H1: 48.42 / BUY
-H4: 32.92 / BUY
-D1: 82.89 / SELL
-Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE SELL · M15 19.59 · M30 49.08 · H1 48.42</td>
-      <td title="Message: Daily SELL is weakening. Prepare for possible BUY reversal (-0.34%)
-State: D1_SELL_FADING
-Direction: DOWN
-Progress: -0.3445828135875895%
-Points: -100.0
-Day open: 29020.6
-As of: 2026-05-19T06:45:00">D1 SELL FADING · DOWN · -0.34%</td>
-      <td>PV 29006.5 · R1 29297.2 · S1 28689.6</td>
-      <td title="Entry: 28920.6
-TP1: - | Source: - | RR: -
-TP2: - | Source: - | RR: -
-SL: - | Source: -
-TP/SL valid: 0
-Reason: NO_VALID_SIGNAL" class="num">-</td>
-      <td class="num">-</td>
-      <td class="num">-</td>
-      <td title="No SL-too-wide pullback watch for this row."><span class="pullback-none">-</span></td>
-    </tr>
-    
-    <tr class="row-none">
-      <td class="time">07:00</td>
-      <td><span class="pill status-none">NO_TRADE</span></td>
-      <td class="num">28920.6</td>
-      <td title="Display side: NONE
-Type: NONE
-Confidence: NONE
-Reason: No reliable side agreement across execution, candidate, bias, risk, pivot, and JRSX layers.
-Raw side: NONE
-Execution side: NONE
-Candidate side: NONE
-Bias side: MIXED
-Risk side: NONE
+Risk side: BUY
 Pivot side: SELL
 JRSX side: BUY
-Support: NONE
-Conflict: NONE"><span class="pill side-none">NONE</span><br><small>NONE · NONE · raw NONE</small></td>
+Support: RISK
+Conflict: NONE"><span class="pill side-buy">BUY</span><br><small>RISK_WATCH · LOW · raw NONE</small></td>
       <td><span class="pill grade-x">-</span></td>
       <td class="num">0</td>
       <td title="Market: NO_TRADE_ZONE
@@ -23333,40 +23232,141 @@ JRSX: TRUE BUY
 Pivot: PV- SELL"><b>DAILY MOMENTUM WEAKENING</b><br><small>MEDIUM</small></td>
       <td title="Qualified: False
 Label: NO_EMAIL
-Score: 0 / min 70
+Score: 18 / min 70
 Rule: Clean/non-pullback
-Reason: No BUY/SELL display side.
-Blockers: NO_DISPLAY_SIDE
+Reason: Blocked: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, TP_SL_INVALID, INDEX_STATUS_NOT_MOMENTUM_SCOUT, STATUS_NO_TRADE, CORE_NOT_FULLY_ALIGNED, DIRECTION_WEAK_0, EXECUTION_THIN_0, NO_EXPANSION_PROOF
+Blockers: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, TP_SL_INVALID, INDEX_STATUS_NOT_MOMENTUM_SCOUT, STATUS_NO_TRADE, CORE_NOT_FULLY_ALIGNED, DIRECTION_WEAK_0, EXECUTION_THIN_0, NO_EXPANSION_PROOF
 Warnings: -
-Reasons: -
-Aligned TFs: -
-Opposing TFs: -
-Expansion proof: None
-Room valid: None
-JRSX ok: None
-Scores: D=None E=None R=None Final=None "><span class="email-blocked">NO_EMAIL 0</span></td>
-      <td title="M15: BUY | source=2026-05-19T06:45:00 | close=2026-05-19T07:00:00 | closed=True | age=None
-M30: SELL | source=2026-05-19T06:30:00 | close=2026-05-19T07:00:00 | closed=True | age=None
-H1: BUY | source=2026-05-19T06:00:00 | close=2026-05-19T07:00:00 | closed=True | age=None
+Reasons: INDEX_ACTIVE_SET:CAC40,JPN225,NAS100, INDEX_M30_SIDE_ACCEPTANCE:pos=0.92,pc1=0.13, MEDIUM_REVERSAL_RISK_44, ROOM_VALID, CLEAN_NON_PULLBACK_DEFAULT, JRSX_SUPPORT
+Aligned TFs: M15, H4
+Opposing TFs: M30, H1, D1
+Expansion proof: False
+Room valid: True
+JRSX ok: True
+Scores: D=0 E=0 R=44.0 Final=0 -"><span class="email-blocked">NO_EMAIL 18</span></td>
+      <td title="M15: BUY | source=2026-05-19T06:30:00 | close=2026-05-19T06:45:00 | closed=True | age=None
+M30: SELL | source=2026-05-19T06:00:00 | close=2026-05-19T06:30:00 | closed=True | age=None
+H1: SELL | source=2026-05-19T05:00:00 | close=2026-05-19T06:00:00 | closed=True | age=None
 H4: BUY | source=2026-05-18T16:00:00 | close=2026-05-18T20:00:00 | closed=True | age=None
-D1: SELL | source=2026-05-18T00:00:00 | close=2026-05-19T00:00:00 | closed=True | age=None" class="mono">BUY/SELL/BUY/BUY/SELL</td>
-      <td title="Flag: False
-Side: NONE
-Level: NONE
-Score: 30
-Phase: LIVE_BUY_CONTROL
-Reason: BUY_DOMINANT_HTF | M30_COUNTER_SELL | NON_CLEAN_BULL_CONTEXT">Stable · 30/100</td>
+D1: SELL | source=2026-05-18T00:00:00 | close=2026-05-19T00:00:00 | closed=True | age=None" class="mono">BUY/SELL/SELL/BUY/SELL</td>
+      <td title="Flag: True
+Side: BUY
+Level: LOW
+Score: 44
+Phase: LIVE_SELL_FRAGILE_WATCH_BUY
+Reason: M15_COUNTER_BUY | D1_SELL_FADING | NON_CLEAN_BEAR_CONTEXT">LOW · watch BUY · 44/100</td>
       <td title="Campaign phase is currently calculated for metals.">Asset N/A</td>
       <td title="Raw entry quality is currently calculated for metals.">Asset N/A</td>
       <td title="Side status: TRUE
 Reason: BUY_JRSX_OK
 Bias side: BUY
 M15: 20.72 / BUY
-M30: 49.08 / SELL
-H1: 48.42 / BUY
+M30: 44.38 / SELL
+H1: 47.65 / SELL
 H4: 32.92 / BUY
 D1: 82.89 / SELL
-Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE BUY · M15 20.72 · M30 49.08 · H1 48.42</td>
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE BUY · M15 20.72 · M30 44.38 · H1 47.65</td>
+      <td title="Message: Daily SELL is weakening. Prepare for possible BUY reversal (-0.34%)
+State: D1_SELL_FADING
+Direction: DOWN
+Progress: -0.3445828135875895%
+Points: -100.0
+Day open: 29020.6
+As of: 2026-05-19T06:45:00">D1 SELL FADING · DOWN · -0.34%</td>
+      <td>PV 29006.5 · R1 29297.2 · S1 28689.6</td>
+      <td title="Entry: 28920.6
+TP1: - | Source: - | RR: -
+TP2: - | Source: - | RR: -
+SL: - | Source: -
+TP/SL valid: 0
+Reason: NO_VALID_SIGNAL" class="num">-</td>
+      <td class="num">-</td>
+      <td class="num">-</td>
+      <td title="No SL-too-wide pullback watch for this row."><span class="pullback-none">-</span></td>
+    </tr>
+    
+    <tr class="row-none">
+      <td class="time">07:00</td>
+      <td><span class="pill status-none">NO_TRADE</span></td>
+      <td class="num">28920.6</td>
+      <td title="Display side: BUY
+Type: RISK_WATCH
+Confidence: LOW
+Reason: No confirmed trade side; direction-change layer says watch BUY (LOW).
+Raw side: NONE
+Execution side: NONE
+Candidate side: NONE
+Bias side: MIXED
+Risk side: BUY
+Pivot side: SELL
+JRSX side: BUY
+Support: RISK
+Conflict: NONE"><span class="pill side-buy">BUY</span><br><small>RISK_WATCH · LOW · raw NONE</small></td>
+      <td><span class="pill grade-x">-</span></td>
+      <td class="num">0</td>
+      <td title="Market: NO_TRADE_ZONE
+Readiness: DAILY MOMENTUM WEAKENING
+Severity: MEDIUM
+Action: Reduce aggression. Require stronger M15/M30 trigger and pivot confirmation."><span class="market market-none">NO TRADE ZONE</span></td>
+      <td title="Profile: Indices Trigger-First Expansion Engine
+Engine: TRIGGER_FIRST_EXPANSION
+Primary driver: M15/M30 momentum expansion
+Description: Indices prioritize M15/M30 acceleration, pivot breakout/reclaim, and JRSX expansion before slow HTF structure."><b>TRIGGER_FIRST_EXPANSION</b><br><small>M15/M30 momentum expansion</small></td>
+      <td title="Date: 2026-05-19
+Regime: Neutral / Mixed Index
+Bias: INDEX_NEUTRAL
+Score: 48.95
+Pressure: -0.0699019677014864
+USD support: 92.25
+Growth: 81.0
+Risk: 93.25
+Liquidity: 10.0
+Mode: PASSIVE_CONTEXT_ONLY">INDEX_NEUTRAL (48.95)</td>
+      <td title="Label: DAILY MOMENTUM WEAKENING
+Severity: MEDIUM
+Action: Reduce aggression. Require stronger M15/M30 trigger and pivot confirmation.
+Warnings: MTF_MIXED, D1_FADING
+Confirmations: ENGINE_TRIGGER_FIRST_EXPANSION, PV-, JRSX_OK_BUY
+D1: D1_SELL_FADING
+MTF: MIXED strength 0
+JRSX: TRUE BUY
+Pivot: PV- SELL"><b>DAILY MOMENTUM WEAKENING</b><br><small>MEDIUM</small></td>
+      <td title="Qualified: False
+Label: NO_EMAIL
+Score: 18 / min 70
+Rule: Clean/non-pullback
+Reason: Blocked: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, INDEX_M30_ACCEPTANCE_BLOCK, TP_SL_INVALID, INDEX_STATUS_NOT_MOMENTUM_SCOUT, STATUS_NO_TRADE, CORE_NOT_FULLY_ALIGNED, DIRECTION_WEAK_0, EXECUTION_THIN_0, NO_EXPANSION_PROOF
+Blockers: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, INDEX_M30_ACCEPTANCE_BLOCK, TP_SL_INVALID, INDEX_STATUS_NOT_MOMENTUM_SCOUT, STATUS_NO_TRADE, CORE_NOT_FULLY_ALIGNED, DIRECTION_WEAK_0, EXECUTION_THIN_0, NO_EXPANSION_PROOF
+Warnings: -
+Reasons: INDEX_ACTIVE_SET:CAC40,JPN225,NAS100, MEDIUM_REVERSAL_RISK_44, ROOM_VALID, CLEAN_NON_PULLBACK_DEFAULT, JRSX_SUPPORT
+Aligned TFs: M15, H4
+Opposing TFs: M30, H1, D1
+Expansion proof: False
+Room valid: True
+JRSX ok: True
+Scores: D=0 E=0 R=44.0 Final=0 -"><span class="email-blocked">NO_EMAIL 18</span></td>
+      <td title="M15: BUY | source=2026-05-19T06:45:00 | close=2026-05-19T07:00:00 | closed=True | age=None
+M30: SELL | source=2026-05-19T06:30:00 | close=2026-05-19T07:00:00 | closed=True | age=None
+H1: SELL | source=2026-05-19T06:00:00 | close=2026-05-19T07:00:00 | closed=True | age=None
+H4: BUY | source=2026-05-18T16:00:00 | close=2026-05-18T20:00:00 | closed=True | age=None
+D1: SELL | source=2026-05-18T00:00:00 | close=2026-05-19T00:00:00 | closed=True | age=None" class="mono">BUY/SELL/SELL/BUY/SELL</td>
+      <td title="Flag: True
+Side: BUY
+Level: LOW
+Score: 44
+Phase: LIVE_SELL_FRAGILE_WATCH_BUY
+Reason: M15_COUNTER_BUY | D1_SELL_FADING | NON_CLEAN_BEAR_CONTEXT">LOW · watch BUY · 44/100</td>
+      <td title="Campaign phase is currently calculated for metals.">Asset N/A</td>
+      <td title="Raw entry quality is currently calculated for metals.">Asset N/A</td>
+      <td title="Side status: TRUE
+Reason: BUY_JRSX_OK
+Bias side: BUY
+M15: 23.89 / BUY
+M30: 44.38 / SELL
+H1: 47.65 / SELL
+H4: 32.92 / BUY
+D1: 82.89 / SELL
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE BUY · M15 23.89 · M30 44.38 · H1 47.65</td>
       <td title="Message: Daily SELL is weakening. Prepare for possible BUY reversal (-0.44%)
 State: D1_SELL_FADING
 Direction: DOWN
@@ -23462,12 +23462,12 @@ Reason: M15_COUNTER_BUY | D1_SELL_FADING | NON_CLEAN_BEAR_CONTEXT | SELL_NEAR_LO
       <td title="Side status: TRUE
 Reason: BUY_JRSX_OK
 Bias side: BUY
-M15: 23.89 / BUY
-M30: 44.38 / SELL
-H1: 47.65 / SELL
+M15: 27.09 / BUY
+M30: 40.9 / SELL
+H1: 46.52 / SELL
 H4: 32.92 / BUY
 D1: 82.89 / SELL
-Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE BUY · M15 23.89 · M30 44.38 · H1 47.65</td>
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE BUY · M15 27.09 · M30 40.9 · H1 46.52</td>
       <td title="Message: Daily SELL is weakening. Prepare for possible BUY reversal (-0.55%)
 State: D1_SELL_FADING
 Direction: DOWN
@@ -23563,12 +23563,12 @@ Reason: M15_COUNTER_BUY | D1_SELL_FADING | NON_CLEAN_BEAR_CONTEXT | SELL_NEAR_LO
       <td title="Side status: TRUE
 Reason: BUY_JRSX_OK
 Bias side: BUY
-M15: 27.09 / BUY
-M30: 44.38 / SELL
-H1: 47.65 / SELL
+M15: 28.95 / BUY
+M30: 40.9 / SELL
+H1: 46.52 / SELL
 H4: 32.92 / BUY
 D1: 82.89 / SELL
-Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE BUY · M15 27.09 · M30 44.38 · H1 47.65</td>
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE BUY · M15 28.95 · M30 40.9 · H1 46.52</td>
       <td title="Message: Daily SELL is weakening. Prepare for possible BUY reversal (-0.65%)
 State: D1_SELL_FADING
 Direction: DOWN
@@ -23664,12 +23664,12 @@ Reason: M15_COUNTER_BUY | D1_SELL_FADING | NON_CLEAN_BEAR_CONTEXT">LOW · watch 
       <td title="Side status: TRUE
 Reason: BUY_JRSX_OK
 Bias side: BUY
-M15: 28.95 / BUY
-M30: 40.9 / SELL
-H1: 47.65 / SELL
+M15: 29.07 / BUY
+M30: 36.9 / SELL
+H1: 46.52 / SELL
 H4: 32.92 / BUY
 D1: 82.89 / SELL
-Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE BUY · M15 28.95 · M30 40.9 · H1 47.65</td>
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE BUY · M15 29.07 · M30 36.9 · H1 46.52</td>
       <td title="Message: Daily SELL is weakening. Prepare for possible BUY reversal (-0.57%)
 State: D1_SELL_FADING
 Direction: DOWN
@@ -23765,12 +23765,12 @@ Reason: M15_COUNTER_BUY | D1_SELL_FADING | NON_CLEAN_BEAR_CONTEXT">LOW · watch 
       <td title="Side status: TRUE
 Reason: BUY_JRSX_OK
 Bias side: BUY
-M15: 29.07 / BUY
-M30: 40.9 / SELL
-H1: 47.65 / SELL
+M15: 29.65 / BUY
+M30: 36.9 / SELL
+H1: 46.52 / SELL
 H4: 32.92 / BUY
 D1: 82.89 / SELL
-Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE BUY · M15 29.07 · M30 40.9 · H1 47.65</td>
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE BUY · M15 29.65 · M30 36.9 · H1 46.52</td>
       <td title="Message: Daily SELL is weakening. Prepare for possible BUY reversal (-0.54%)
 State: D1_SELL_FADING
 Direction: DOWN
@@ -23866,12 +23866,12 @@ Reason: M15_COUNTER_BUY | D1_SELL_FADING | NON_CLEAN_BEAR_CONTEXT">LOW · watch 
       <td title="Side status: TRUE
 Reason: BUY_JRSX_OK
 Bias side: BUY
-M15: 29.65 / BUY
-M30: 36.9 / SELL
-H1: 46.52 / SELL
+M15: 30.49 / BUY
+M30: 33.61 / SELL
+H1: 44.8 / SELL
 H4: 33.62 / BUY
 D1: 82.89 / SELL
-Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE BUY · M15 29.65 · M30 36.9 · H1 46.52</td>
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE BUY · M15 30.49 · M30 33.61 · H1 44.8</td>
       <td title="Message: Daily SELL is weakening. Prepare for possible BUY reversal (-0.55%)
 State: D1_SELL_FADING
 Direction: DOWN
@@ -23967,12 +23967,12 @@ Reason: M15_COUNTER_BUY | D1_SELL_FADING | NON_CLEAN_BEAR_CONTEXT">LOW · watch 
       <td title="Side status: TRUE
 Reason: BUY_JRSX_OK
 Bias side: BUY
-M15: 30.49 / BUY
-M30: 36.9 / SELL
-H1: 46.52 / SELL
+M15: 31.42 / BUY
+M30: 33.61 / SELL
+H1: 44.8 / SELL
 H4: 33.62 / BUY
 D1: 82.89 / SELL
-Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE BUY · M15 30.49 · M30 36.9 · H1 46.52</td>
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE BUY · M15 31.42 · M30 33.61 · H1 44.8</td>
       <td title="Message: Daily SELL is weakening. Prepare for possible BUY reversal (-0.57%)
 State: D1_SELL_FADING
 Direction: DOWN
@@ -24068,12 +24068,12 @@ Reason: M15_COUNTER_BUY | D1_SELL_FADING | NON_CLEAN_BEAR_CONTEXT">LOW · watch 
       <td title="Side status: TRUE
 Reason: BUY_JRSX_OK
 Bias side: BUY
-M15: 31.42 / BUY
-M30: 33.61 / SELL
-H1: 46.52 / SELL
+M15: 31.77 / BUY
+M30: 30.75 / SELL
+H1: 44.8 / SELL
 H4: 33.62 / BUY
 D1: 82.89 / SELL
-Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE BUY · M15 31.42 · M30 33.61 · H1 46.52</td>
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE BUY · M15 31.77 · M30 30.75 · H1 44.8</td>
       <td title="Message: Daily SELL is weakening. Prepare for possible BUY reversal (-0.64%)
 State: D1_SELL_FADING
 Direction: DOWN
@@ -24169,12 +24169,12 @@ Reason: M15_COUNTER_BUY | D1_SELL_FADING | NON_CLEAN_BEAR_CONTEXT">LOW · watch 
       <td title="Side status: TRUE
 Reason: BUY_JRSX_OK
 Bias side: BUY
-M15: 31.77 / BUY
-M30: 33.61 / SELL
-H1: 46.52 / SELL
+M15: 32.1 / BUY
+M30: 30.75 / SELL
+H1: 44.8 / SELL
 H4: 33.62 / BUY
 D1: 82.89 / SELL
-Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE BUY · M15 31.77 · M30 33.61 · H1 46.52</td>
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE BUY · M15 32.1 · M30 30.75 · H1 44.8</td>
       <td title="Message: Daily SELL is weakening. Prepare for possible BUY reversal (-0.63%)
 State: D1_SELL_FADING
 Direction: DOWN
@@ -24270,12 +24270,12 @@ Reason: M15_COUNTER_BUY | D1_SELL_FADING | NON_CLEAN_BEAR_CONTEXT">LOW · watch 
       <td title="Side status: TRUE
 Reason: BUY_JRSX_OK
 Bias side: BUY
-M15: 32.1 / BUY
-M30: 30.75 / SELL
-H1: 44.8 / SELL
+M15: 32.23 / BUY
+M30: 28.43 / SELL
+H1: 42.68 / SELL
 H4: 33.62 / BUY
 D1: 82.89 / SELL
-Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE BUY · M15 32.1 · M30 30.75 · H1 44.8</td>
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE BUY · M15 32.23 · M30 28.43 · H1 42.68</td>
       <td title="Message: Daily SELL is weakening. Prepare for possible BUY reversal (-0.52%)
 State: D1_SELL_FADING
 Direction: DOWN
@@ -24371,12 +24371,12 @@ Reason: M15_COUNTER_BUY | D1_SELL_FADING | NON_CLEAN_BEAR_CONTEXT">LOW · watch 
       <td title="Side status: TRUE
 Reason: BUY_JRSX_OK
 Bias side: BUY
-M15: 32.23 / BUY
-M30: 30.75 / SELL
-H1: 44.8 / SELL
+M15: 33.05 / BUY
+M30: 28.43 / SELL
+H1: 42.68 / SELL
 H4: 33.62 / BUY
 D1: 82.89 / SELL
-Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE BUY · M15 32.23 · M30 30.75 · H1 44.8</td>
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE BUY · M15 33.05 · M30 28.43 · H1 42.68</td>
       <td title="Message: Daily SELL is weakening. Prepare for possible BUY reversal (-0.46%)
 State: D1_SELL_FADING
 Direction: DOWN
@@ -24472,12 +24472,12 @@ Reason: M15_COUNTER_BUY | D1_SELL_FADING | NON_CLEAN_BEAR_CONTEXT">LOW · watch 
       <td title="Side status: TRUE
 Reason: BUY_JRSX_OK
 Bias side: BUY
-M15: 33.05 / BUY
-M30: 28.43 / SELL
-H1: 44.8 / SELL
+M15: 36.44 / BUY
+M30: 27.65 / SELL
+H1: 42.68 / SELL
 H4: 33.62 / BUY
 D1: 82.89 / SELL
-Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE BUY · M15 33.05 · M30 28.43 · H1 44.8</td>
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE BUY · M15 36.44 · M30 27.65 · H1 42.68</td>
       <td title="Message: Daily SELL is weakening. Prepare for possible BUY reversal (-0.35%)
 State: D1_SELL_FADING
 Direction: DOWN
@@ -24573,12 +24573,12 @@ Reason: M15_COUNTER_BUY | D1_SELL_FADING | NON_CLEAN_BEAR_CONTEXT">LOW · watch 
       <td title="Side status: TRUE
 Reason: BUY_JRSX_OK
 Bias side: BUY
-M15: 36.44 / BUY
-M30: 28.43 / SELL
-H1: 44.8 / SELL
+M15: 42.51 / BUY
+M30: 27.65 / SELL
+H1: 42.68 / SELL
 H4: 33.62 / BUY
 D1: 82.89 / SELL
-Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE BUY · M15 36.44 · M30 28.43 · H1 44.8</td>
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE BUY · M15 42.51 · M30 27.65 · H1 42.68</td>
       <td title="Message: Daily SELL is weakening. Prepare for possible BUY reversal (-0.33%)
 State: D1_SELL_FADING
 Direction: DOWN
@@ -24604,8 +24604,8 @@ Reason: NO_VALID_SIGNAL" class="num">-</td>
       <td class="num">28925.1</td>
       <td title="Display side: BUY
 Type: RISK_WATCH
-Confidence: LOW
-Reason: No confirmed trade side; direction-change layer says watch BUY (LOW).
+Confidence: MEDIUM
+Reason: No confirmed trade side; direction-change layer says watch BUY (MEDIUM).
 Raw side: NONE
 Execution side: NONE
 Candidate side: NONE
@@ -24614,13 +24614,13 @@ Risk side: BUY
 Pivot side: SELL
 JRSX side: BUY
 Support: RISK
-Conflict: NONE"><span class="pill side-buy">BUY</span><br><small>RISK_WATCH · LOW · raw NONE</small></td>
+Conflict: NONE"><span class="pill side-buy">BUY</span><br><small>RISK_WATCH · MEDIUM · raw NONE</small></td>
       <td><span class="pill grade-x">-</span></td>
       <td class="num">0</td>
       <td title="Market: NO_TRADE_ZONE
-Readiness: DAILY MOMENTUM WEAKENING
+Readiness: MIXED WEAKENING — WATCH BUY
 Severity: MEDIUM
-Action: Reduce aggression. Require stronger M15/M30 trigger and pivot confirmation."><span class="market market-none">NO TRADE ZONE</span></td>
+Action: Treat current MIXED as fragile. Monitor BUY trigger and pivot behavior."><span class="market market-none">NO TRADE ZONE</span></td>
       <td title="Profile: Indices Trigger-First Expansion Engine
 Engine: TRIGGER_FIRST_EXPANSION
 Primary driver: M15/M30 momentum expansion
@@ -24635,51 +24635,51 @@ Growth: 81.0
 Risk: 93.25
 Liquidity: 10.0
 Mode: PASSIVE_CONTEXT_ONLY">INDEX_NEUTRAL (48.95)</td>
-      <td title="Label: DAILY MOMENTUM WEAKENING
+      <td title="Label: MIXED WEAKENING — WATCH BUY
 Severity: MEDIUM
-Action: Reduce aggression. Require stronger M15/M30 trigger and pivot confirmation.
+Action: Treat current MIXED as fragile. Monitor BUY trigger and pivot behavior.
 Warnings: MTF_MIXED, D1_FADING
 Confirmations: ENGINE_TRIGGER_FIRST_EXPANSION, PV-, JRSX_OK_BUY
 D1: D1_SELL_FADING
 MTF: MIXED strength 0
 JRSX: TRUE BUY
-Pivot: PV- SELL"><b>DAILY MOMENTUM WEAKENING</b><br><small>MEDIUM</small></td>
+Pivot: PV- SELL"><b>MIXED WEAKENING — WATCH BUY</b><br><small>MEDIUM</small></td>
       <td title="Qualified: False
 Label: NO_EMAIL
-Score: 18 / min 70
+Score: 10 / min 70
 Rule: Clean/non-pullback
-Reason: Blocked: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, TP_SL_INVALID, INDEX_STATUS_NOT_MOMENTUM_SCOUT, STATUS_NO_TRADE, CORE_NOT_FULLY_ALIGNED, DIRECTION_WEAK_0, EXECUTION_THIN_0, NO_EXPANSION_PROOF
-Blockers: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, TP_SL_INVALID, INDEX_STATUS_NOT_MOMENTUM_SCOUT, STATUS_NO_TRADE, CORE_NOT_FULLY_ALIGNED, DIRECTION_WEAK_0, EXECUTION_THIN_0, NO_EXPANSION_PROOF
+Reason: Blocked: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, TP_SL_INVALID, INDEX_STATUS_NOT_MOMENTUM_SCOUT, STATUS_NO_TRADE, CORE_NOT_FULLY_ALIGNED, DIRECTION_WEAK_0, EXECUTION_THIN_0, REVERSAL_RISK_54, NO_EXPANSION_PROOF, REVERSAL_RISK_HIGH
+Blockers: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, TP_SL_INVALID, INDEX_STATUS_NOT_MOMENTUM_SCOUT, STATUS_NO_TRADE, CORE_NOT_FULLY_ALIGNED, DIRECTION_WEAK_0, EXECUTION_THIN_0, REVERSAL_RISK_54, NO_EXPANSION_PROOF, REVERSAL_RISK_HIGH
 Warnings: -
-Reasons: INDEX_ACTIVE_SET:CAC40,JPN225,NAS100, INDEX_M30_SIDE_ACCEPTANCE:pos=1.00,pc1=0.13, MEDIUM_REVERSAL_RISK_44, ROOM_VALID, CLEAN_NON_PULLBACK_DEFAULT, JRSX_SUPPORT
-Aligned TFs: M15, H4
-Opposing TFs: M30, H1, D1
+Reasons: INDEX_ACTIVE_SET:CAC40,JPN225,NAS100, INDEX_M30_SIDE_ACCEPTANCE:pos=1.00,pc1=0.13, ROOM_VALID, CLEAN_NON_PULLBACK_DEFAULT, JRSX_SUPPORT
+Aligned TFs: M15, M30, H4
+Opposing TFs: H1, D1
 Expansion proof: False
 Room valid: True
 JRSX ok: True
-Scores: D=0 E=0 R=44.0 Final=0 -"><span class="email-blocked">NO_EMAIL 18</span></td>
+Scores: D=0 E=0 R=54.0 Final=0 -"><span class="email-blocked">NO_EMAIL 10</span></td>
       <td title="M15: BUY | source=2026-05-19T10:00:00 | close=2026-05-19T10:15:00 | closed=True | age=None
-M30: SELL | source=2026-05-19T09:30:00 | close=2026-05-19T10:00:00 | closed=True | age=None
+M30: BUY | source=2026-05-19T09:30:00 | close=2026-05-19T10:00:00 | closed=True | age=None
 H1: SELL | source=2026-05-19T09:00:00 | close=2026-05-19T10:00:00 | closed=True | age=None
 H4: BUY | source=2026-05-19T04:00:00 | close=2026-05-19T08:00:00 | closed=True | age=None
-D1: SELL | source=2026-05-18T00:00:00 | close=2026-05-19T00:00:00 | closed=True | age=None" class="mono">BUY/SELL/SELL/BUY/SELL</td>
+D1: SELL | source=2026-05-18T00:00:00 | close=2026-05-19T00:00:00 | closed=True | age=None" class="mono">BUY/BUY/SELL/BUY/SELL</td>
       <td title="Flag: True
 Side: BUY
-Level: LOW
-Score: 44
+Level: MEDIUM
+Score: 54
 Phase: LIVE_SELL_FRAGILE_WATCH_BUY
-Reason: M15_COUNTER_BUY | D1_SELL_FADING | NON_CLEAN_BEAR_CONTEXT">LOW · watch BUY · 44/100</td>
+Reason: M15_COUNTER_BUY | M30_COUNTER_BUY | D1_SELL_FADING | NON_CLEAN_BEAR_CONTEXT">MEDIUM · watch BUY · 54/100</td>
       <td title="Campaign phase is currently calculated for metals.">Asset N/A</td>
       <td title="Raw entry quality is currently calculated for metals.">Asset N/A</td>
       <td title="Side status: TRUE
 Reason: BUY_JRSX_OK
 Bias side: BUY
-M15: 42.51 / BUY
-M30: 27.65 / SELL
-H1: 42.68 / SELL
+M15: 49.62 / BUY
+M30: 29.97 / BUY
+H1: 41.45 / SELL
 H4: 33.62 / BUY
 D1: 82.89 / SELL
-Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE BUY · M15 42.51 · M30 27.65 · H1 42.68</td>
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE BUY · M15 49.62 · M30 29.97 · H1 41.45</td>
       <td title="Message: Daily SELL is weakening. Prepare for possible BUY reversal (-0.19%)
 State: D1_SELL_FADING
 Direction: DOWN
@@ -24705,8 +24705,8 @@ Reason: NO_VALID_SIGNAL" class="num">-</td>
       <td class="num">28964.4</td>
       <td title="Display side: BUY
 Type: RISK_WATCH
-Confidence: LOW
-Reason: No confirmed trade side; direction-change layer says watch BUY (LOW).
+Confidence: MEDIUM
+Reason: No confirmed trade side; direction-change layer says watch BUY (MEDIUM).
 Raw side: NONE
 Execution side: NONE
 Candidate side: NONE
@@ -24715,13 +24715,13 @@ Risk side: BUY
 Pivot side: SELL
 JRSX side: BUY
 Support: RISK
-Conflict: NONE"><span class="pill side-buy">BUY</span><br><small>RISK_WATCH · LOW · raw NONE</small></td>
+Conflict: NONE"><span class="pill side-buy">BUY</span><br><small>RISK_WATCH · MEDIUM · raw NONE</small></td>
       <td><span class="pill grade-x">-</span></td>
       <td class="num">0</td>
       <td title="Market: NO_TRADE_ZONE
-Readiness: DAILY MOMENTUM WEAKENING
+Readiness: MIXED WEAKENING — WATCH BUY
 Severity: MEDIUM
-Action: Reduce aggression. Require stronger M15/M30 trigger and pivot confirmation."><span class="market market-none">NO TRADE ZONE</span></td>
+Action: Treat current MIXED as fragile. Monitor BUY trigger and pivot behavior."><span class="market market-none">NO TRADE ZONE</span></td>
       <td title="Profile: Indices Trigger-First Expansion Engine
 Engine: TRIGGER_FIRST_EXPANSION
 Primary driver: M15/M30 momentum expansion
@@ -24736,51 +24736,51 @@ Growth: 81.0
 Risk: 93.25
 Liquidity: 10.0
 Mode: PASSIVE_CONTEXT_ONLY">INDEX_NEUTRAL (48.95)</td>
-      <td title="Label: DAILY MOMENTUM WEAKENING
+      <td title="Label: MIXED WEAKENING — WATCH BUY
 Severity: MEDIUM
-Action: Reduce aggression. Require stronger M15/M30 trigger and pivot confirmation.
+Action: Treat current MIXED as fragile. Monitor BUY trigger and pivot behavior.
 Warnings: MTF_MIXED, D1_FADING
 Confirmations: ENGINE_TRIGGER_FIRST_EXPANSION, PV-, JRSX_OK_BUY
 D1: D1_SELL_FADING
 MTF: MIXED strength 0
 JRSX: TRUE BUY
-Pivot: PV- SELL"><b>DAILY MOMENTUM WEAKENING</b><br><small>MEDIUM</small></td>
+Pivot: PV- SELL"><b>MIXED WEAKENING — WATCH BUY</b><br><small>MEDIUM</small></td>
       <td title="Qualified: False
 Label: NO_EMAIL
-Score: 18 / min 70
+Score: 10 / min 70
 Rule: Clean/non-pullback
-Reason: Blocked: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, TP_SL_INVALID, INDEX_STATUS_NOT_MOMENTUM_SCOUT, STATUS_NO_TRADE, CORE_NOT_FULLY_ALIGNED, DIRECTION_WEAK_0, EXECUTION_THIN_0, NO_EXPANSION_PROOF
-Blockers: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, TP_SL_INVALID, INDEX_STATUS_NOT_MOMENTUM_SCOUT, STATUS_NO_TRADE, CORE_NOT_FULLY_ALIGNED, DIRECTION_WEAK_0, EXECUTION_THIN_0, NO_EXPANSION_PROOF
+Reason: Blocked: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, TP_SL_INVALID, INDEX_STATUS_NOT_MOMENTUM_SCOUT, STATUS_NO_TRADE, CORE_NOT_FULLY_ALIGNED, DIRECTION_WEAK_0, EXECUTION_THIN_0, REVERSAL_RISK_54, NO_EXPANSION_PROOF, REVERSAL_RISK_HIGH
+Blockers: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, TP_SL_INVALID, INDEX_STATUS_NOT_MOMENTUM_SCOUT, STATUS_NO_TRADE, CORE_NOT_FULLY_ALIGNED, DIRECTION_WEAK_0, EXECUTION_THIN_0, REVERSAL_RISK_54, NO_EXPANSION_PROOF, REVERSAL_RISK_HIGH
 Warnings: -
-Reasons: INDEX_ACTIVE_SET:CAC40,JPN225,NAS100, INDEX_M30_SIDE_ACCEPTANCE:pos=0.72,pc1=0.14, MEDIUM_REVERSAL_RISK_44, ROOM_VALID, CLEAN_NON_PULLBACK_DEFAULT, JRSX_SUPPORT
-Aligned TFs: M15, H4
-Opposing TFs: M30, H1, D1
+Reasons: INDEX_ACTIVE_SET:CAC40,JPN225,NAS100, INDEX_M30_SIDE_ACCEPTANCE:pos=0.72,pc1=0.14, ROOM_VALID, CLEAN_NON_PULLBACK_DEFAULT, JRSX_SUPPORT
+Aligned TFs: M15, M30, H4
+Opposing TFs: H1, D1
 Expansion proof: False
 Room valid: True
 JRSX ok: True
-Scores: D=0 E=0 R=44.0 Final=0 -"><span class="email-blocked">NO_EMAIL 18</span></td>
+Scores: D=0 E=0 R=54.0 Final=0 -"><span class="email-blocked">NO_EMAIL 10</span></td>
       <td title="M15: BUY | source=2026-05-19T10:15:00 | close=2026-05-19T10:30:00 | closed=True | age=None
-M30: SELL | source=2026-05-19T10:00:00 | close=2026-05-19T10:30:00 | closed=True | age=None
+M30: BUY | source=2026-05-19T10:00:00 | close=2026-05-19T10:30:00 | closed=True | age=None
 H1: SELL | source=2026-05-19T09:00:00 | close=2026-05-19T10:00:00 | closed=True | age=None
 H4: BUY | source=2026-05-19T04:00:00 | close=2026-05-19T08:00:00 | closed=True | age=None
-D1: SELL | source=2026-05-18T00:00:00 | close=2026-05-19T00:00:00 | closed=True | age=None" class="mono">BUY/SELL/SELL/BUY/SELL</td>
+D1: SELL | source=2026-05-18T00:00:00 | close=2026-05-19T00:00:00 | closed=True | age=None" class="mono">BUY/BUY/SELL/BUY/SELL</td>
       <td title="Flag: True
 Side: BUY
-Level: LOW
-Score: 44
+Level: MEDIUM
+Score: 54
 Phase: LIVE_SELL_FRAGILE_WATCH_BUY
-Reason: M15_COUNTER_BUY | D1_SELL_FADING | NON_CLEAN_BEAR_CONTEXT">LOW · watch BUY · 44/100</td>
+Reason: M15_COUNTER_BUY | M30_COUNTER_BUY | D1_SELL_FADING | NON_CLEAN_BEAR_CONTEXT">MEDIUM · watch BUY · 54/100</td>
       <td title="Campaign phase is currently calculated for metals.">Asset N/A</td>
       <td title="Raw entry quality is currently calculated for metals.">Asset N/A</td>
       <td title="Side status: TRUE
 Reason: BUY_JRSX_OK
 Bias side: BUY
-M15: 49.62 / BUY
-M30: 27.65 / SELL
-H1: 42.68 / SELL
+M15: 58.38 / BUY
+M30: 29.97 / BUY
+H1: 41.45 / SELL
 H4: 33.62 / BUY
 D1: 82.89 / SELL
-Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE BUY · M15 49.62 · M30 27.65 · H1 42.68</td>
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE BUY · M15 58.38 · M30 29.97 · H1 41.45</td>
       <td title="Message: Daily SELL is weakening. Prepare for possible BUY reversal (-0.19%)
 State: D1_SELL_FADING
 Direction: DOWN
@@ -24876,12 +24876,12 @@ Reason: M15_COUNTER_BUY | M30_COUNTER_BUY | D1_SELL_FADING | NON_CLEAN_BEAR_CONT
       <td title="Side status: TRUE
 Reason: BUY_JRSX_OK
 Bias side: BUY
-M15: 58.38 / BUY
-M30: 29.97 / BUY
-H1: 42.68 / SELL
+M15: 66.59 / BUY
+M30: 36.02 / BUY
+H1: 41.45 / SELL
 H4: 33.62 / BUY
 D1: 82.89 / SELL
-Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE BUY · M15 58.38 · M30 29.97 · H1 42.68</td>
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE BUY · M15 66.59 · M30 36.02 · H1 41.45</td>
       <td title="Message: Daily SELL is weakening. Prepare for possible BUY reversal (-0.12%)
 State: D1_SELL_FADING
 Direction: DOWN
@@ -24977,12 +24977,12 @@ Reason: M15_COUNTER_BUY | M30_COUNTER_BUY | D1_SELL_FADING | NON_CLEAN_BEAR_CONT
       <td title="Side status: TRUE
 Reason: BUY_JRSX_OK
 Bias side: BUY
-M15: 66.59 / BUY
-M30: 29.97 / BUY
-H1: 42.68 / SELL
+M15: 73.77 / BUY
+M30: 36.02 / BUY
+H1: 41.45 / SELL
 H4: 33.62 / BUY
 D1: 82.89 / SELL
-Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE BUY · M15 66.59 · M30 29.97 · H1 42.68</td>
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE BUY · M15 73.77 · M30 36.02 · H1 41.45</td>
       <td title="Message: Daily SELL is weakening. Prepare for possible BUY reversal (-0.05%)
 State: D1_SELL_FADING
 Direction: DOWN
@@ -25002,29 +25002,29 @@ Reason: NO_VALID_SIGNAL" class="num">-</td>
       <td title="No SL-too-wide pullback watch for this row."><span class="pullback-none">-</span></td>
     </tr>
     
-    <tr class="row-forming">
+    <tr class="row-watch">
       <td class="time">11:15</td>
-      <td><span class="pill status-forming">STRUCTURE_FORMING</span></td>
+      <td><span class="pill status-watch">MOMENTUM_SCOUT</span></td>
       <td class="num">29005.1</td>
       <td title="Display side: BUY
-Type: RISK_WATCH
+Type: BIAS
 Confidence: MEDIUM
-Reason: No confirmed trade side; direction-change layer says watch BUY (MEDIUM).
-Raw side: NONE
+Reason: Display side derived from MTF regime BUY2; no confirmed entry side yet.
+Raw side: BUY
 Execution side: NONE
 Candidate side: NONE
-Bias side: MIXED
-Risk side: BUY
+Bias side: BUY
+Risk side: NONE
 Pivot side: SELL
 JRSX side: BUY
-Support: RISK
-Conflict: NONE"><span class="pill side-buy">BUY</span><br><small>RISK_WATCH · MEDIUM · raw NONE</small></td>
-      <td><span class="pill grade-x">-</span></td>
-      <td class="num">0</td>
+Support: MTF
+Conflict: NONE"><span class="pill side-buy">BUY</span><br><small>BIAS · MEDIUM · raw BUY</small></td>
+      <td><span class="pill grade-d">D</span></td>
+      <td class="num">45</td>
       <td title="Market: RANGE_OR_TRANSITION
-Readiness: MIXED WEAKENING — WATCH BUY
+Readiness: DAILY MOMENTUM WEAKENING
 Severity: MEDIUM
-Action: Treat current MIXED as fragile. Monitor BUY trigger and pivot behavior."><span class="market market-range">RANGE OR TRANSITION</span></td>
+Action: Reduce aggression. Require stronger M15/M30 trigger and pivot confirmation."><span class="market market-range">RANGE OR TRANSITION</span></td>
       <td title="Profile: Indices Trigger-First Expansion Engine
 Engine: TRIGGER_FIRST_EXPANSION
 Primary driver: M15/M30 momentum expansion
@@ -25039,51 +25039,51 @@ Growth: 81.0
 Risk: 93.25
 Liquidity: 10.0
 Mode: PASSIVE_CONTEXT_ONLY">INDEX_NEUTRAL (48.95)</td>
-      <td title="Label: MIXED WEAKENING — WATCH BUY
+      <td title="Label: DAILY MOMENTUM WEAKENING
 Severity: MEDIUM
-Action: Treat current MIXED as fragile. Monitor BUY trigger and pivot behavior.
-Warnings: MTF_MIXED, D1_FADING
-Confirmations: ENGINE_TRIGGER_FIRST_EXPANSION, PV-, JRSX_OK_BUY
+Action: Reduce aggression. Require stronger M15/M30 trigger and pivot confirmation.
+Warnings: PIVOT_OPPOSES_MTF, D1_FADING
+Confirmations: ENGINE_TRIGGER_FIRST_EXPANSION, MTF_BUY2, PV-, JRSX_OK_BUY
 D1: D1_SELL_FADING
-MTF: MIXED strength 0
+MTF: BUY strength 2
 JRSX: TRUE BUY
-Pivot: PV- SELL"><b>MIXED WEAKENING — WATCH BUY</b><br><small>MEDIUM</small></td>
+Pivot: PV- SELL"><b>DAILY MOMENTUM WEAKENING</b><br><small>MEDIUM</small></td>
       <td title="Qualified: False
 Label: NO_EMAIL
-Score: 10 / min 70
+Score: 45 / min 70
 Rule: Clean/non-pullback
-Reason: Blocked: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, TP_SL_INVALID, INDEX_STATUS_NOT_MOMENTUM_SCOUT, STATUS_STRUCTURE_FORMING, CORE_NOT_FULLY_ALIGNED, DIRECTION_WEAK_0, EXECUTION_THIN_0, REVERSAL_RISK_54, NO_EXPANSION_PROOF, REVERSAL_RISK_HIGH
-Blockers: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, TP_SL_INVALID, INDEX_STATUS_NOT_MOMENTUM_SCOUT, STATUS_STRUCTURE_FORMING, CORE_NOT_FULLY_ALIGNED, DIRECTION_WEAK_0, EXECUTION_THIN_0, REVERSAL_RISK_54, NO_EXPANSION_PROOF, REVERSAL_RISK_HIGH
+Reason: Blocked: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, INDEX_SIDE_IMPULSE_WEAK, INDEX_COUNTER_SNAP_AGAINST_SIDE, STATUS_MOMENTUM_SCOUT, DIRECTION_WEAK_45, EXECUTION_THIN_45, NO_EXPANSION_PROOF, GRADE_D
+Blockers: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, INDEX_SIDE_IMPULSE_WEAK, INDEX_COUNTER_SNAP_AGAINST_SIDE, STATUS_MOMENTUM_SCOUT, DIRECTION_WEAK_45, EXECUTION_THIN_45, NO_EXPANSION_PROOF, GRADE_D
 Warnings: -
-Reasons: INDEX_ACTIVE_SET:CAC40,JPN225,NAS100, INDEX_M30_SIDE_ACCEPTANCE:pos=0.71,pc1=0.13, ROOM_VALID, CLEAN_NON_PULLBACK_DEFAULT, JRSX_SUPPORT
-Aligned TFs: M15, M30, H4
-Opposing TFs: H1, D1
+Reasons: INDEX_ACTIVE_SET:CAC40,JPN225,NAS100, INDEX_STRETCHED_TP1_M30_EXPANSION_OK:1.13&gt;=1.00, INDEX_M30_SIDE_ACCEPTANCE:pos=0.71,pc1=0.13, INDEX_EXPANSION_STACK_OK, INDEX_BODY_OR_STRONG_IMPULSE_OK, INDEX_CORE_ALIGNMENT_OK, M15_M30_H1_H4_ALIGNED, LOW_REVERSAL_RISK_20, ROOM_VALID, CLEAN_NON_PULLBACK_DEFAULT, JRSX_SUPPORT
+Aligned TFs: M15, M30, H1, H4
+Opposing TFs: D1
 Expansion proof: False
 Room valid: True
 JRSX ok: True
-Scores: D=0 E=0 R=54.0 Final=0 -"><span class="email-blocked">NO_EMAIL 10</span></td>
+Scores: D=45.0 E=45.0 R=20.0 Final=45.0 D"><span class="email-blocked">NO_EMAIL 45</span></td>
       <td title="M15: BUY | source=2026-05-19T11:00:00 | close=2026-05-19T11:15:00 | closed=True | age=None
 M30: BUY | source=2026-05-19T10:30:00 | close=2026-05-19T11:00:00 | closed=True | age=None
-H1: SELL | source=2026-05-19T10:00:00 | close=2026-05-19T11:00:00 | closed=True | age=None
+H1: BUY | source=2026-05-19T10:00:00 | close=2026-05-19T11:00:00 | closed=True | age=None
 H4: BUY | source=2026-05-19T04:00:00 | close=2026-05-19T08:00:00 | closed=True | age=None
-D1: SELL | source=2026-05-18T00:00:00 | close=2026-05-19T00:00:00 | closed=True | age=None" class="mono">BUY/BUY/SELL/BUY/SELL</td>
-      <td title="Flag: True
-Side: BUY
-Level: MEDIUM
-Score: 54
-Phase: LIVE_SELL_FRAGILE_WATCH_BUY
-Reason: M15_COUNTER_BUY | M30_COUNTER_BUY | D1_SELL_FADING | NON_CLEAN_BEAR_CONTEXT">MEDIUM · watch BUY · 54/100</td>
+D1: SELL | source=2026-05-18T00:00:00 | close=2026-05-19T00:00:00 | closed=True | age=None" class="mono">BUY/BUY/BUY/BUY/SELL</td>
+      <td title="Flag: False
+Side: NONE
+Level: NONE
+Score: 20
+Phase: LIVE_BUY_CONTROL
+Reason: BUY_DOMINANT_HTF | NON_CLEAN_BULL_CONTEXT">Stable · 20/100</td>
       <td title="Campaign phase is currently calculated for metals.">Asset N/A</td>
       <td title="Raw entry quality is currently calculated for metals.">Asset N/A</td>
       <td title="Side status: TRUE
 Reason: BUY_JRSX_OK
 Bias side: BUY
-M15: 73.77 / BUY
-M30: 36.02 / BUY
-H1: 41.45 / SELL
+M15: 80.13 / BUY
+M30: 44.53 / BUY
+H1: 42.66 / BUY
 H4: 33.62 / BUY
 D1: 82.89 / SELL
-Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE BUY · M15 73.77 · M30 36.02 · H1 41.45</td>
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE BUY · M15 80.13 · M30 44.53 · H1 42.66</td>
       <td title="Message: Daily SELL is weakening. Prepare for possible BUY reversal (-0.28%)
 State: D1_SELL_FADING
 Direction: DOWN
@@ -25093,39 +25093,39 @@ Day open: 29020.6
 As of: 2026-05-19T11:15:00">D1 SELL FADING · DOWN · -0.28%</td>
       <td>PV 29006.5 · R1 29297.2 · S1 28689.6</td>
       <td title="Entry: 28940.3
-TP1: - | Source: - | RR: -
-TP2: - | Source: - | RR: -
-SL: - | Source: -
-TP/SL valid: 0
-Reason: NO_VALID_SIGNAL" class="num">-</td>
-      <td class="num">-</td>
-      <td class="num">-</td>
+TP1: 29323.3 | Source: h1_swing_high_20 | RR: 1.70525
+TP2: 29706.3 | Source: FALLBACK_2R_FROM_STRUCTURE_SL | RR: 3.41051
+SL: 28715.7 | Source: h1_swing_low_20
+TP/SL valid: 1
+Reason: TP2_STRONG_CONTINUATION_OK" class="num">29323.3</td>
+      <td class="num">29706.3</td>
+      <td class="num">28715.7</td>
       <td title="No SL-too-wide pullback watch for this row."><span class="pullback-none">-</span></td>
     </tr>
     
-    <tr class="row-forming">
+    <tr class="row-watch">
       <td class="time">11:30</td>
-      <td><span class="pill status-forming">STRUCTURE_FORMING</span></td>
+      <td><span class="pill status-watch">MOMENTUM_SCOUT</span></td>
       <td class="num">28940.3</td>
       <td title="Display side: BUY
-Type: RISK_WATCH
+Type: BIAS
 Confidence: MEDIUM
-Reason: No confirmed trade side; direction-change layer says watch BUY (MEDIUM).
-Raw side: NONE
+Reason: Display side derived from MTF regime BUY2; no confirmed entry side yet.
+Raw side: BUY
 Execution side: NONE
 Candidate side: NONE
-Bias side: MIXED
-Risk side: BUY
+Bias side: BUY
+Risk side: NONE
 Pivot side: SELL
 JRSX side: BUY
-Support: RISK
-Conflict: NONE"><span class="pill side-buy">BUY</span><br><small>RISK_WATCH · MEDIUM · raw NONE</small></td>
-      <td><span class="pill grade-x">-</span></td>
-      <td class="num">0</td>
+Support: MTF
+Conflict: NONE"><span class="pill side-buy">BUY</span><br><small>BIAS · MEDIUM · raw BUY</small></td>
+      <td><span class="pill grade-d">D</span></td>
+      <td class="num">45</td>
       <td title="Market: RANGE_OR_TRANSITION
-Readiness: MIXED WEAKENING — WATCH BUY
+Readiness: DAILY MOMENTUM WEAKENING
 Severity: MEDIUM
-Action: Treat current MIXED as fragile. Monitor BUY trigger and pivot behavior."><span class="market market-range">RANGE OR TRANSITION</span></td>
+Action: Reduce aggression. Require stronger M15/M30 trigger and pivot confirmation."><span class="market market-range">RANGE OR TRANSITION</span></td>
       <td title="Profile: Indices Trigger-First Expansion Engine
 Engine: TRIGGER_FIRST_EXPANSION
 Primary driver: M15/M30 momentum expansion
@@ -25140,51 +25140,51 @@ Growth: 81.0
 Risk: 93.25
 Liquidity: 10.0
 Mode: PASSIVE_CONTEXT_ONLY">INDEX_NEUTRAL (48.95)</td>
-      <td title="Label: MIXED WEAKENING — WATCH BUY
+      <td title="Label: DAILY MOMENTUM WEAKENING
 Severity: MEDIUM
-Action: Treat current MIXED as fragile. Monitor BUY trigger and pivot behavior.
-Warnings: MTF_MIXED, D1_FADING
-Confirmations: ENGINE_TRIGGER_FIRST_EXPANSION, PV-, JRSX_OK_BUY
+Action: Reduce aggression. Require stronger M15/M30 trigger and pivot confirmation.
+Warnings: PIVOT_OPPOSES_MTF, D1_FADING
+Confirmations: ENGINE_TRIGGER_FIRST_EXPANSION, MTF_BUY2, PV-, JRSX_OK_BUY
 D1: D1_SELL_FADING
-MTF: MIXED strength 0
+MTF: BUY strength 2
 JRSX: TRUE BUY
-Pivot: PV- SELL"><b>MIXED WEAKENING — WATCH BUY</b><br><small>MEDIUM</small></td>
+Pivot: PV- SELL"><b>DAILY MOMENTUM WEAKENING</b><br><small>MEDIUM</small></td>
       <td title="Qualified: False
 Label: NO_EMAIL
-Score: 10 / min 70
+Score: 45 / min 70
 Rule: Clean/non-pullback
-Reason: Blocked: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, INDEX_M30_ACCEPTANCE_BLOCK, TP_SL_INVALID, INDEX_STATUS_NOT_MOMENTUM_SCOUT, STATUS_STRUCTURE_FORMING, CORE_NOT_FULLY_ALIGNED, DIRECTION_WEAK_0, EXECUTION_THIN_0, REVERSAL_RISK_54, NO_EXPANSION_PROOF, REVERSAL_RISK_HIGH
-Blockers: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, INDEX_M30_ACCEPTANCE_BLOCK, TP_SL_INVALID, INDEX_STATUS_NOT_MOMENTUM_SCOUT, STATUS_STRUCTURE_FORMING, CORE_NOT_FULLY_ALIGNED, DIRECTION_WEAK_0, EXECUTION_THIN_0, REVERSAL_RISK_54, NO_EXPANSION_PROOF, REVERSAL_RISK_HIGH
+Reason: Blocked: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, INDEX_M30_ACCEPTANCE_BLOCK, INDEX_SIDE_IMPULSE_WEAK, STATUS_MOMENTUM_SCOUT, DIRECTION_WEAK_45, EXECUTION_THIN_45, NO_EXPANSION_PROOF, GRADE_D
+Blockers: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, INDEX_M30_ACCEPTANCE_BLOCK, INDEX_SIDE_IMPULSE_WEAK, STATUS_MOMENTUM_SCOUT, DIRECTION_WEAK_45, EXECUTION_THIN_45, NO_EXPANSION_PROOF, GRADE_D
 Warnings: -
-Reasons: INDEX_ACTIVE_SET:CAC40,JPN225,NAS100, ROOM_VALID, CLEAN_NON_PULLBACK_DEFAULT, JRSX_SUPPORT
-Aligned TFs: M15, M30, H4
-Opposing TFs: H1, D1
+Reasons: INDEX_ACTIVE_SET:CAC40,JPN225,NAS100, INDEX_STRETCHED_TP1_M30_EXPANSION_OK:1.87&gt;=1.00, INDEX_EXPANSION_STACK_OK, INDEX_BODY_OR_STRONG_IMPULSE_OK, INDEX_CORE_ALIGNMENT_OK, M15_M30_H1_H4_ALIGNED, LOW_REVERSAL_RISK_20, ROOM_VALID, CLEAN_NON_PULLBACK_DEFAULT, JRSX_SUPPORT
+Aligned TFs: M15, M30, H1, H4
+Opposing TFs: D1
 Expansion proof: False
 Room valid: True
 JRSX ok: True
-Scores: D=0 E=0 R=54.0 Final=0 -"><span class="email-blocked">NO_EMAIL 10</span></td>
+Scores: D=45.0 E=45.0 R=20.0 Final=45.0 D"><span class="email-blocked">NO_EMAIL 45</span></td>
       <td title="M15: BUY | source=2026-05-19T11:15:00 | close=2026-05-19T11:30:00 | closed=True | age=None
 M30: BUY | source=2026-05-19T11:00:00 | close=2026-05-19T11:30:00 | closed=True | age=None
-H1: SELL | source=2026-05-19T10:00:00 | close=2026-05-19T11:00:00 | closed=True | age=None
+H1: BUY | source=2026-05-19T10:00:00 | close=2026-05-19T11:00:00 | closed=True | age=None
 H4: BUY | source=2026-05-19T04:00:00 | close=2026-05-19T08:00:00 | closed=True | age=None
-D1: SELL | source=2026-05-18T00:00:00 | close=2026-05-19T00:00:00 | closed=True | age=None" class="mono">BUY/BUY/SELL/BUY/SELL</td>
-      <td title="Flag: True
-Side: BUY
-Level: MEDIUM
-Score: 54
-Phase: LIVE_SELL_FRAGILE_WATCH_BUY
-Reason: M15_COUNTER_BUY | M30_COUNTER_BUY | D1_SELL_FADING | NON_CLEAN_BEAR_CONTEXT">MEDIUM · watch BUY · 54/100</td>
+D1: SELL | source=2026-05-18T00:00:00 | close=2026-05-19T00:00:00 | closed=True | age=None" class="mono">BUY/BUY/BUY/BUY/SELL</td>
+      <td title="Flag: False
+Side: NONE
+Level: NONE
+Score: 20
+Phase: LIVE_BUY_CONTROL
+Reason: BUY_DOMINANT_HTF | NON_CLEAN_BULL_CONTEXT">Stable · 20/100</td>
       <td title="Campaign phase is currently calculated for metals.">Asset N/A</td>
       <td title="Raw entry quality is currently calculated for metals.">Asset N/A</td>
       <td title="Side status: TRUE
 Reason: BUY_JRSX_OK
 Bias side: BUY
-M15: 80.13 / BUY
-M30: 36.02 / BUY
-H1: 41.45 / SELL
+M15: 81.19 / BUY
+M30: 44.53 / BUY
+H1: 42.66 / BUY
 H4: 33.62 / BUY
 D1: 82.89 / SELL
-Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE BUY · M15 80.13 · M30 36.02 · H1 41.45</td>
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE BUY · M15 81.19 · M30 44.53 · H1 42.66</td>
       <td title="Message: Daily SELL is weakening. Prepare for possible BUY reversal (-0.41%)
 State: D1_SELL_FADING
 Direction: DOWN
@@ -25194,13 +25194,13 @@ Day open: 29020.6
 As of: 2026-05-19T11:30:00">D1 SELL FADING · DOWN · -0.41%</td>
       <td>PV 29006.5 · R1 29297.2 · S1 28689.6</td>
       <td title="Entry: 28902.7
-TP1: - | Source: - | RR: -
-TP2: - | Source: - | RR: -
-SL: - | Source: -
-TP/SL valid: 0
-Reason: NO_VALID_SIGNAL" class="num">-</td>
-      <td class="num">-</td>
-      <td class="num">-</td>
+TP1: 29323.3 | Source: h1_swing_high_20 | RR: 2.2492
+TP2: 29743.9 | Source: FALLBACK_2R_FROM_STRUCTURE_SL | RR: 4.4984
+SL: 28715.7 | Source: h1_swing_low_20
+TP/SL valid: 1
+Reason: TP2_STRONG_CONTINUATION_OK" class="num">29323.3</td>
+      <td class="num">29743.9</td>
+      <td class="num">28715.7</td>
       <td title="No SL-too-wide pullback watch for this row."><span class="pullback-none">-</span></td>
     </tr>
     
@@ -25208,25 +25208,25 @@ Reason: NO_VALID_SIGNAL" class="num">-</td>
       <td class="time">11:45</td>
       <td><span class="pill status-forming">STRUCTURE_FORMING</span></td>
       <td class="num">28894.5</td>
-      <td title="Display side: BUY
-Type: RISK_WATCH
+      <td title="Display side: SELL
+Type: INDEX_EXPANSION_WATCH
 Confidence: MEDIUM
-Reason: No confirmed trade side; direction-change layer says watch BUY (MEDIUM).
+Reason: Index trigger-first display side from pivot/JRSX expansion evidence; HTF bias=MIXED0.
 Raw side: NONE
 Execution side: NONE
 Candidate side: NONE
 Bias side: MIXED
-Risk side: BUY
+Risk side: NONE
 Pivot side: SELL
-JRSX side: BUY
-Support: RISK
-Conflict: NONE"><span class="pill side-buy">BUY</span><br><small>RISK_WATCH · MEDIUM · raw NONE</small></td>
+JRSX side: SELL
+Support: PIVOT, JRSX
+Conflict: NONE"><span class="pill side-sell">SELL</span><br><small>INDEX_EXPANSION_WATCH · MEDIUM · raw NONE</small></td>
       <td><span class="pill grade-x">-</span></td>
       <td class="num">0</td>
       <td title="Market: RANGE_OR_TRANSITION
-Readiness: MIXED WEAKENING — WATCH BUY
+Readiness: DAILY MOMENTUM WEAKENING
 Severity: MEDIUM
-Action: Treat current MIXED as fragile. Monitor BUY trigger and pivot behavior."><span class="market market-range">RANGE OR TRANSITION</span></td>
+Action: Reduce aggression. Require stronger M15/M30 trigger and pivot confirmation."><span class="market market-range">RANGE OR TRANSITION</span></td>
       <td title="Profile: Indices Trigger-First Expansion Engine
 Engine: TRIGGER_FIRST_EXPANSION
 Primary driver: M15/M30 momentum expansion
@@ -25241,51 +25241,51 @@ Growth: 81.0
 Risk: 93.25
 Liquidity: 10.0
 Mode: PASSIVE_CONTEXT_ONLY">INDEX_NEUTRAL (48.95)</td>
-      <td title="Label: MIXED WEAKENING — WATCH BUY
+      <td title="Label: DAILY MOMENTUM WEAKENING
 Severity: MEDIUM
-Action: Treat current MIXED as fragile. Monitor BUY trigger and pivot behavior.
+Action: Reduce aggression. Require stronger M15/M30 trigger and pivot confirmation.
 Warnings: MTF_MIXED, D1_FADING
-Confirmations: ENGINE_TRIGGER_FIRST_EXPANSION, PV-, JRSX_OK_BUY
+Confirmations: ENGINE_TRIGGER_FIRST_EXPANSION, PV-, JRSX_OK_SELL
 D1: D1_SELL_FADING
 MTF: MIXED strength 0
-JRSX: TRUE BUY
-Pivot: PV- SELL"><b>MIXED WEAKENING — WATCH BUY</b><br><small>MEDIUM</small></td>
+JRSX: TRUE SELL
+Pivot: PV- SELL"><b>DAILY MOMENTUM WEAKENING</b><br><small>MEDIUM</small></td>
       <td title="Qualified: False
 Label: NO_EMAIL
-Score: 10 / min 70
+Score: 25 / min 70
 Rule: Clean/non-pullback
-Reason: Blocked: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, INDEX_M30_ACCEPTANCE_BLOCK, TP_SL_INVALID, INDEX_STATUS_NOT_MOMENTUM_SCOUT, STATUS_STRUCTURE_FORMING, CORE_NOT_FULLY_ALIGNED, DIRECTION_WEAK_0, EXECUTION_THIN_0, REVERSAL_RISK_54, NO_EXPANSION_PROOF, REVERSAL_RISK_HIGH
-Blockers: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, INDEX_M30_ACCEPTANCE_BLOCK, TP_SL_INVALID, INDEX_STATUS_NOT_MOMENTUM_SCOUT, STATUS_STRUCTURE_FORMING, CORE_NOT_FULLY_ALIGNED, DIRECTION_WEAK_0, EXECUTION_THIN_0, REVERSAL_RISK_54, NO_EXPANSION_PROOF, REVERSAL_RISK_HIGH
+Reason: Blocked: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, TP_SL_INVALID, INDEX_STATUS_NOT_MOMENTUM_SCOUT, STATUS_STRUCTURE_FORMING, CORE_NOT_FULLY_ALIGNED, DIRECTION_WEAK_0, EXECUTION_THIN_0, NO_EXPANSION_PROOF
+Blockers: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, TP_SL_INVALID, INDEX_STATUS_NOT_MOMENTUM_SCOUT, STATUS_STRUCTURE_FORMING, CORE_NOT_FULLY_ALIGNED, DIRECTION_WEAK_0, EXECUTION_THIN_0, NO_EXPANSION_PROOF
 Warnings: -
-Reasons: INDEX_ACTIVE_SET:CAC40,JPN225,NAS100, ROOM_VALID, CLEAN_NON_PULLBACK_DEFAULT, JRSX_SUPPORT
-Aligned TFs: M15, M30, H4
-Opposing TFs: H1, D1
+Reasons: INDEX_ACTIVE_SET:CAC40,JPN225,NAS100, INDEX_M30_SIDE_ACCEPTANCE:pos=0.18,pc1=-0.35, LOW_REVERSAL_RISK_32, ROOM_VALID, CLEAN_NON_PULLBACK_DEFAULT, JRSX_SUPPORT
+Aligned TFs: M15, D1
+Opposing TFs: M30, H1, H4
 Expansion proof: False
 Room valid: True
 JRSX ok: True
-Scores: D=0 E=0 R=54.0 Final=0 -"><span class="email-blocked">NO_EMAIL 10</span></td>
-      <td title="M15: BUY | source=2026-05-19T11:30:00 | close=2026-05-19T11:45:00 | closed=True | age=None
+Scores: D=0 E=0 R=32.0 Final=0 -"><span class="email-blocked">NO_EMAIL 25</span></td>
+      <td title="M15: SELL | source=2026-05-19T11:30:00 | close=2026-05-19T11:45:00 | closed=True | age=None
 M30: BUY | source=2026-05-19T11:00:00 | close=2026-05-19T11:30:00 | closed=True | age=None
-H1: SELL | source=2026-05-19T10:00:00 | close=2026-05-19T11:00:00 | closed=True | age=None
+H1: BUY | source=2026-05-19T10:00:00 | close=2026-05-19T11:00:00 | closed=True | age=None
 H4: BUY | source=2026-05-19T04:00:00 | close=2026-05-19T08:00:00 | closed=True | age=None
-D1: SELL | source=2026-05-18T00:00:00 | close=2026-05-19T00:00:00 | closed=True | age=None" class="mono">BUY/BUY/SELL/BUY/SELL</td>
-      <td title="Flag: True
-Side: BUY
-Level: MEDIUM
-Score: 54
-Phase: LIVE_SELL_FRAGILE_WATCH_BUY
-Reason: M15_COUNTER_BUY | M30_COUNTER_BUY | D1_SELL_FADING | NON_CLEAN_BEAR_CONTEXT">MEDIUM · watch BUY · 54/100</td>
+D1: SELL | source=2026-05-18T00:00:00 | close=2026-05-19T00:00:00 | closed=True | age=None" class="mono">SELL/BUY/BUY/BUY/SELL</td>
+      <td title="Flag: False
+Side: NONE
+Level: NONE
+Score: 32
+Phase: LIVE_BUY_CONTROL
+Reason: BUY_DOMINANT_HTF | M15_COUNTER_SELL | NON_CLEAN_BULL_CONTEXT">Stable · 32/100</td>
       <td title="Campaign phase is currently calculated for metals.">Asset N/A</td>
       <td title="Raw entry quality is currently calculated for metals.">Asset N/A</td>
       <td title="Side status: TRUE
-Reason: BUY_JRSX_OK
-Bias side: BUY
-M15: 81.19 / BUY
-M30: 44.53 / BUY
-H1: 41.45 / SELL
+Reason: SELL_JRSX_OK
+Bias side: SELL
+M15: 76.06 / SELL
+M30: 50.24 / BUY
+H1: 42.66 / BUY
 H4: 33.62 / BUY
 D1: 82.89 / SELL
-Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE BUY · M15 81.19 · M30 44.53 · H1 41.45</td>
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE SELL · M15 76.06 · M30 50.24 · H1 42.66</td>
       <td title="Message: Daily SELL is weakening. Prepare for possible BUY reversal (-0.36%)
 State: D1_SELL_FADING
 Direction: DOWN
@@ -25305,9 +25305,9 @@ Reason: NO_VALID_SIGNAL" class="num">-</td>
       <td title="No SL-too-wide pullback watch for this row."><span class="pullback-none">-</span></td>
     </tr>
     
-    <tr class="row-none">
+    <tr class="row-forming">
       <td class="time">12:00</td>
-      <td><span class="pill status-none">NO_TRADE</span></td>
+      <td><span class="pill status-forming">STRUCTURE_FORMING</span></td>
       <td class="num">28914.8</td>
       <td title="Display side: SELL
 Type: INDEX_EXPANSION_WATCH
@@ -25324,10 +25324,10 @@ Support: PIVOT, JRSX
 Conflict: NONE"><span class="pill side-sell">SELL</span><br><small>INDEX_EXPANSION_WATCH · MEDIUM · raw NONE</small></td>
       <td><span class="pill grade-x">-</span></td>
       <td class="num">0</td>
-      <td title="Market: NO_TRADE_ZONE
+      <td title="Market: CLEAN_BULL_ALIGNMENT
 Readiness: INDEX TRIGGER WAIT
 Severity: LOW
-Action: Indices need fresh M15/M30 acceleration or pivot breakout/reclaim before side confidence improves."><span class="market market-none">NO TRADE ZONE</span></td>
+Action: Indices need fresh M15/M30 acceleration or pivot breakout/reclaim before side confidence improves."><span class="market market-bull">CLEAN BULL ALIGNMENT</span></td>
       <td title="Profile: Indices Trigger-First Expansion Engine
 Engine: TRIGGER_FIRST_EXPANSION
 Primary driver: M15/M30 momentum expansion
@@ -25355,38 +25355,38 @@ Pivot: PV- SELL"><b>INDEX TRIGGER WAIT</b><br><small>LOW</small></td>
 Label: NO_EMAIL
 Score: 25 / min 70
 Rule: Clean/non-pullback
-Reason: Blocked: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, INDEX_M30_ACCEPTANCE_BLOCK, TP_SL_INVALID, INDEX_STATUS_NOT_MOMENTUM_SCOUT, STATUS_NO_TRADE, CORE_NOT_FULLY_ALIGNED, DIRECTION_WEAK_0, EXECUTION_THIN_0, NO_EXPANSION_PROOF
-Blockers: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, INDEX_M30_ACCEPTANCE_BLOCK, TP_SL_INVALID, INDEX_STATUS_NOT_MOMENTUM_SCOUT, STATUS_NO_TRADE, CORE_NOT_FULLY_ALIGNED, DIRECTION_WEAK_0, EXECUTION_THIN_0, NO_EXPANSION_PROOF
+Reason: Blocked: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, INDEX_M30_ACCEPTANCE_BLOCK, TP_SL_INVALID, INDEX_STATUS_NOT_MOMENTUM_SCOUT, STATUS_STRUCTURE_FORMING, CORE_NOT_FULLY_ALIGNED, DIRECTION_WEAK_0, EXECUTION_THIN_0, NO_EXPANSION_PROOF
+Blockers: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, INDEX_M30_ACCEPTANCE_BLOCK, TP_SL_INVALID, INDEX_STATUS_NOT_MOMENTUM_SCOUT, STATUS_STRUCTURE_FORMING, CORE_NOT_FULLY_ALIGNED, DIRECTION_WEAK_0, EXECUTION_THIN_0, NO_EXPANSION_PROOF
 Warnings: -
-Reasons: INDEX_ACTIVE_SET:CAC40,JPN225,NAS100, LOW_REVERSAL_RISK_18, ROOM_VALID, CLEAN_NON_PULLBACK_DEFAULT, JRSX_SUPPORT
-Aligned TFs: M15, H1, D1
-Opposing TFs: M30, H4
+Reasons: INDEX_ACTIVE_SET:CAC40,JPN225,NAS100, LOW_REVERSAL_RISK_24, ROOM_VALID, CLEAN_NON_PULLBACK_DEFAULT, JRSX_SUPPORT
+Aligned TFs: M15, D1
+Opposing TFs: M30, H1, H4
 Expansion proof: False
 Room valid: True
 JRSX ok: True
-Scores: D=0 E=0 R=18.0 Final=0 -"><span class="email-blocked">NO_EMAIL 25</span></td>
+Scores: D=0 E=0 R=24.0 Final=0 -"><span class="email-blocked">NO_EMAIL 25</span></td>
       <td title="M15: SELL | source=2026-05-19T11:45:00 | close=2026-05-19T12:00:00 | closed=True | age=None
 M30: BUY | source=2026-05-19T11:30:00 | close=2026-05-19T12:00:00 | closed=True | age=None
-H1: SELL | source=2026-05-19T11:00:00 | close=2026-05-19T12:00:00 | closed=True | age=None
+H1: BUY | source=2026-05-19T11:00:00 | close=2026-05-19T12:00:00 | closed=True | age=None
 H4: BUY | source=2026-05-19T08:00:00 | close=2026-05-19T12:00:00 | closed=True | age=None
-D1: SELL | source=2026-05-18T00:00:00 | close=2026-05-19T00:00:00 | closed=True | age=None" class="mono">SELL/BUY/SELL/BUY/SELL</td>
+D1: SELL | source=2026-05-18T00:00:00 | close=2026-05-19T00:00:00 | closed=True | age=None" class="mono">SELL/BUY/BUY/BUY/SELL</td>
       <td title="Flag: False
 Side: NONE
 Level: NONE
-Score: 18
-Phase: LIVE_SELL_CONTROL
-Reason: M30_COUNTER_BUY | NON_CLEAN_BEAR_CONTEXT">Stable · 18/100</td>
+Score: 24
+Phase: LIVE_BUY_CONTROL
+Reason: BUY_DOMINANT_HTF | M15_COUNTER_SELL">Stable · 24/100</td>
       <td title="Campaign phase is currently calculated for metals.">Asset N/A</td>
       <td title="Raw entry quality is currently calculated for metals.">Asset N/A</td>
       <td title="Side status: TRUE
 Reason: SELL_JRSX_OK
 Bias side: SELL
-M15: 76.06 / SELL
-M30: 44.53 / BUY
-H1: 41.45 / SELL
+M15: 69.96 / SELL
+M30: 50.24 / BUY
+H1: 42.66 / BUY
 H4: 33.62 / BUY
 D1: 82.89 / SELL
-Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE SELL · M15 76.06 · M30 44.53 · H1 41.45</td>
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE SELL · M15 69.96 · M30 50.24 · H1 42.66</td>
       <td title="Message: Daily candle is moving with SELL direction. Best for SELL continuation (-0.39%)
 State: D1_SELL_CONTINUING
 Direction: DOWN
@@ -25482,12 +25482,12 @@ Reason: BUY_DOMINANT_HTF | M15_COUNTER_SELL">Stable · 24/100</td>
       <td title="Side status: TRUE
 Reason: SELL_JRSX_OK
 Bias side: SELL
-M15: 69.96 / SELL
-M30: 50.24 / BUY
-H1: 42.66 / BUY
+M15: 64.77 / SELL
+M30: 52.89 / BUY
+H1: 44.25 / BUY
 H4: 34.19 / BUY
 D1: 82.89 / SELL
-Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE SELL · M15 69.96 · M30 50.24 · H1 42.66</td>
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE SELL · M15 64.77 · M30 52.89 · H1 44.25</td>
       <td title="Message: Daily candle is moving with SELL direction. Best for SELL continuation (-0.50%)
 State: D1_SELL_CONTINUING
 Direction: DOWN
@@ -25583,12 +25583,12 @@ Reason: BUY_DOMINANT_HTF | M15_COUNTER_SELL">Stable · 24/100</td>
       <td title="Side status: TRUE
 Reason: SELL_JRSX_OK
 Bias side: SELL
-M15: 64.77 / SELL
-M30: 50.24 / BUY
-H1: 42.66 / BUY
+M15: 59.02 / SELL
+M30: 52.89 / BUY
+H1: 44.25 / BUY
 H4: 34.19 / BUY
 D1: 82.89 / SELL
-Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE SELL · M15 64.77 · M30 50.24 · H1 42.66</td>
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE SELL · M15 59.02 · M30 52.89 · H1 44.25</td>
       <td title="Message: Daily candle is moving with SELL direction. Best for SELL continuation (-0.74%)
 State: D1_SELL_CONTINUING
 Direction: DOWN
@@ -25608,9 +25608,9 @@ Reason: NO_VALID_SIGNAL" class="num">-</td>
       <td title="No SL-too-wide pullback watch for this row."><span class="pullback-none">-</span></td>
     </tr>
     
-    <tr class="row-forming">
+    <tr class="row-none">
       <td class="time">12:45</td>
-      <td><span class="pill status-forming">STRUCTURE_FORMING</span></td>
+      <td><span class="pill status-none">NO_TRADE</span></td>
       <td class="num">28806.2</td>
       <td title="Display side: SELL
 Type: INDEX_EXPANSION_WATCH
@@ -25620,17 +25620,17 @@ Raw side: NONE
 Execution side: NONE
 Candidate side: NONE
 Bias side: MIXED
-Risk side: NONE
+Risk side: SELL
 Pivot side: SELL
 JRSX side: SELL
 Support: PIVOT, JRSX
 Conflict: NONE"><span class="pill side-sell">SELL</span><br><small>INDEX_EXPANSION_WATCH · MEDIUM · raw NONE</small></td>
       <td><span class="pill grade-x">-</span></td>
       <td class="num">0</td>
-      <td title="Market: CLEAN_BULL_ALIGNMENT
+      <td title="Market: NO_TRADE_ZONE
 Readiness: INDEX TRIGGER WAIT
 Severity: LOW
-Action: Indices need fresh M15/M30 acceleration or pivot breakout/reclaim before side confidence improves."><span class="market market-bull">CLEAN BULL ALIGNMENT</span></td>
+Action: Indices need fresh M15/M30 acceleration or pivot breakout/reclaim before side confidence improves."><span class="market market-none">NO TRADE ZONE</span></td>
       <td title="Profile: Indices Trigger-First Expansion Engine
 Engine: TRIGGER_FIRST_EXPANSION
 Primary driver: M15/M30 momentum expansion
@@ -25656,40 +25656,40 @@ JRSX: TRUE SELL
 Pivot: PV- SELL"><b>INDEX TRIGGER WAIT</b><br><small>LOW</small></td>
       <td title="Qualified: False
 Label: NO_EMAIL
-Score: 25 / min 70
+Score: 18 / min 70
 Rule: Clean/non-pullback
-Reason: Blocked: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, TP_SL_INVALID, INDEX_STATUS_NOT_MOMENTUM_SCOUT, STATUS_STRUCTURE_FORMING, CORE_NOT_FULLY_ALIGNED, DIRECTION_WEAK_0, EXECUTION_THIN_0, NO_EXPANSION_PROOF
-Blockers: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, TP_SL_INVALID, INDEX_STATUS_NOT_MOMENTUM_SCOUT, STATUS_STRUCTURE_FORMING, CORE_NOT_FULLY_ALIGNED, DIRECTION_WEAK_0, EXECUTION_THIN_0, NO_EXPANSION_PROOF
+Reason: Blocked: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, TP_SL_INVALID, INDEX_STATUS_NOT_MOMENTUM_SCOUT, STATUS_NO_TRADE, CORE_NOT_FULLY_ALIGNED, DIRECTION_WEAK_0, EXECUTION_THIN_0, NO_EXPANSION_PROOF
+Blockers: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, TP_SL_INVALID, INDEX_STATUS_NOT_MOMENTUM_SCOUT, STATUS_NO_TRADE, CORE_NOT_FULLY_ALIGNED, DIRECTION_WEAK_0, EXECUTION_THIN_0, NO_EXPANSION_PROOF
 Warnings: -
-Reasons: INDEX_ACTIVE_SET:CAC40,JPN225,NAS100, INDEX_M30_SIDE_ACCEPTANCE:pos=0.07,pc1=-0.35, LOW_REVERSAL_RISK_24, ROOM_VALID, CLEAN_NON_PULLBACK_DEFAULT, JRSX_SUPPORT
-Aligned TFs: M15, D1
-Opposing TFs: M30, H1, H4
+Reasons: INDEX_ACTIVE_SET:CAC40,JPN225,NAS100, INDEX_M30_SIDE_ACCEPTANCE:pos=0.07,pc1=-0.35, MEDIUM_REVERSAL_RISK_42, ROOM_VALID, CLEAN_NON_PULLBACK_DEFAULT, JRSX_SUPPORT
+Aligned TFs: M15, M30, D1
+Opposing TFs: H1, H4
 Expansion proof: False
 Room valid: True
 JRSX ok: True
-Scores: D=0 E=0 R=24.0 Final=0 -"><span class="email-blocked">NO_EMAIL 25</span></td>
+Scores: D=0 E=0 R=42.0 Final=0 -"><span class="email-blocked">NO_EMAIL 18</span></td>
       <td title="M15: SELL | source=2026-05-19T12:30:00 | close=2026-05-19T12:45:00 | closed=True | age=None
-M30: BUY | source=2026-05-19T12:00:00 | close=2026-05-19T12:30:00 | closed=True | age=None
+M30: SELL | source=2026-05-19T12:00:00 | close=2026-05-19T12:30:00 | closed=True | age=None
 H1: BUY | source=2026-05-19T11:00:00 | close=2026-05-19T12:00:00 | closed=True | age=None
 H4: BUY | source=2026-05-19T08:00:00 | close=2026-05-19T12:00:00 | closed=True | age=None
-D1: SELL | source=2026-05-18T00:00:00 | close=2026-05-19T00:00:00 | closed=True | age=None" class="mono">SELL/BUY/BUY/BUY/SELL</td>
-      <td title="Flag: False
-Side: NONE
-Level: NONE
-Score: 24
-Phase: LIVE_BUY_CONTROL
-Reason: BUY_DOMINANT_HTF | M15_COUNTER_SELL">Stable · 24/100</td>
+D1: SELL | source=2026-05-18T00:00:00 | close=2026-05-19T00:00:00 | closed=True | age=None" class="mono">SELL/SELL/BUY/BUY/SELL</td>
+      <td title="Flag: True
+Side: SELL
+Level: LOW
+Score: 42
+Phase: LIVE_BUY_FRAGILE_WATCH_SELL
+Reason: BUY_DOMINANT_HTF | M15_COUNTER_SELL | M30_COUNTER_SELL | NON_CLEAN_BULL_CONTEXT">LOW · watch SELL · 42/100</td>
       <td title="Campaign phase is currently calculated for metals.">Asset N/A</td>
       <td title="Raw entry quality is currently calculated for metals.">Asset N/A</td>
       <td title="Side status: TRUE
 Reason: SELL_JRSX_OK
 Bias side: SELL
-M15: 59.02 / SELL
-M30: 52.89 / BUY
-H1: 42.66 / BUY
+M15: 51.45 / SELL
+M30: 51.39 / SELL
+H1: 44.25 / BUY
 H4: 34.19 / BUY
 D1: 82.89 / SELL
-Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE SELL · M15 59.02 · M30 52.89 · H1 42.66</td>
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE SELL · M15 51.45 · M30 51.39 · H1 44.25</td>
       <td title="Message: Daily candle is moving with SELL direction. Best for SELL continuation (-0.95%)
 State: D1_SELL_CONTINUING
 Direction: DOWN
@@ -25709,9 +25709,9 @@ Reason: NO_VALID_SIGNAL" class="num">-</td>
       <td title="No SL-too-wide pullback watch for this row."><span class="pullback-none">-</span></td>
     </tr>
     
-    <tr class="row-forming">
+    <tr class="row-none">
       <td class="time">13:00</td>
-      <td><span class="pill status-forming">STRUCTURE_FORMING</span></td>
+      <td><span class="pill status-none">NO_TRADE</span></td>
       <td class="num">28745.5</td>
       <td title="Display side: SELL
 Type: INDEX_EXPANSION_WATCH
@@ -25721,17 +25721,17 @@ Raw side: NONE
 Execution side: NONE
 Candidate side: NONE
 Bias side: MIXED
-Risk side: NONE
+Risk side: SELL
 Pivot side: SELL
 JRSX side: SELL
 Support: PIVOT, JRSX
 Conflict: NONE"><span class="pill side-sell">SELL</span><br><small>INDEX_EXPANSION_WATCH · MEDIUM · raw NONE</small></td>
       <td><span class="pill grade-x">-</span></td>
       <td class="num">0</td>
-      <td title="Market: CLEAN_BULL_ALIGNMENT
+      <td title="Market: NO_TRADE_ZONE
 Readiness: DAILY MOMENTUM WEAKENING
 Severity: MEDIUM
-Action: Reduce aggression. Require stronger M15/M30 trigger and pivot confirmation."><span class="market market-bull">CLEAN BULL ALIGNMENT</span></td>
+Action: Reduce aggression. Require stronger M15/M30 trigger and pivot confirmation."><span class="market market-none">NO TRADE ZONE</span></td>
       <td title="Profile: Indices Trigger-First Expansion Engine
 Engine: TRIGGER_FIRST_EXPANSION
 Primary driver: M15/M30 momentum expansion
@@ -25757,40 +25757,40 @@ JRSX: TRUE SELL
 Pivot: PV- SELL"><b>DAILY MOMENTUM WEAKENING</b><br><small>MEDIUM</small></td>
       <td title="Qualified: False
 Label: NO_EMAIL
-Score: 25 / min 70
+Score: 18 / min 70
 Rule: Clean/non-pullback
-Reason: Blocked: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, INDEX_M30_ACCEPTANCE_BLOCK, TP_SL_INVALID, INDEX_STATUS_NOT_MOMENTUM_SCOUT, STATUS_STRUCTURE_FORMING, CORE_NOT_FULLY_ALIGNED, DIRECTION_WEAK_0, EXECUTION_THIN_0, NO_EXPANSION_PROOF
-Blockers: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, INDEX_M30_ACCEPTANCE_BLOCK, TP_SL_INVALID, INDEX_STATUS_NOT_MOMENTUM_SCOUT, STATUS_STRUCTURE_FORMING, CORE_NOT_FULLY_ALIGNED, DIRECTION_WEAK_0, EXECUTION_THIN_0, NO_EXPANSION_PROOF
+Reason: Blocked: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, INDEX_M30_ACCEPTANCE_BLOCK, TP_SL_INVALID, INDEX_STATUS_NOT_MOMENTUM_SCOUT, STATUS_NO_TRADE, CORE_NOT_FULLY_ALIGNED, DIRECTION_WEAK_0, EXECUTION_THIN_0, NO_EXPANSION_PROOF
+Blockers: INDEX_EMAIL_RULE_BLOCK, INDEX_TP1_DISTANCE_BLOCK, INDEX_M30_ACCEPTANCE_BLOCK, TP_SL_INVALID, INDEX_STATUS_NOT_MOMENTUM_SCOUT, STATUS_NO_TRADE, CORE_NOT_FULLY_ALIGNED, DIRECTION_WEAK_0, EXECUTION_THIN_0, NO_EXPANSION_PROOF
 Warnings: -
-Reasons: INDEX_ACTIVE_SET:CAC40,JPN225,NAS100, LOW_REVERSAL_RISK_24, ROOM_VALID, CLEAN_NON_PULLBACK_DEFAULT, JRSX_SUPPORT
-Aligned TFs: M15, D1
-Opposing TFs: M30, H1, H4
+Reasons: INDEX_ACTIVE_SET:CAC40,JPN225,NAS100, MEDIUM_REVERSAL_RISK_42, ROOM_VALID, CLEAN_NON_PULLBACK_DEFAULT, JRSX_SUPPORT
+Aligned TFs: M15, M30, D1
+Opposing TFs: H1, H4
 Expansion proof: False
 Room valid: True
 JRSX ok: True
-Scores: D=0 E=0 R=24.0 Final=0 -"><span class="email-blocked">NO_EMAIL 25</span></td>
+Scores: D=0 E=0 R=42.0 Final=0 -"><span class="email-blocked">NO_EMAIL 18</span></td>
       <td title="M15: SELL | source=2026-05-19T12:45:00 | close=2026-05-19T13:00:00 | closed=True | age=None
-M30: BUY | source=2026-05-19T12:30:00 | close=2026-05-19T13:00:00 | closed=True | age=None
+M30: SELL | source=2026-05-19T12:30:00 | close=2026-05-19T13:00:00 | closed=True | age=None
 H1: BUY | source=2026-05-19T12:00:00 | close=2026-05-19T13:00:00 | closed=True | age=None
 H4: BUY | source=2026-05-19T08:00:00 | close=2026-05-19T12:00:00 | closed=True | age=None
-D1: SELL | source=2026-05-18T00:00:00 | close=2026-05-19T00:00:00 | closed=True | age=None" class="mono">SELL/BUY/BUY/BUY/SELL</td>
-      <td title="Flag: False
-Side: NONE
-Level: NONE
-Score: 24
-Phase: LIVE_BUY_CONTROL
-Reason: BUY_DOMINANT_HTF | M15_COUNTER_SELL">Stable · 24/100</td>
+D1: SELL | source=2026-05-18T00:00:00 | close=2026-05-19T00:00:00 | closed=True | age=None" class="mono">SELL/SELL/BUY/BUY/SELL</td>
+      <td title="Flag: True
+Side: SELL
+Level: LOW
+Score: 42
+Phase: LIVE_BUY_FRAGILE_WATCH_SELL
+Reason: BUY_DOMINANT_HTF | M15_COUNTER_SELL | M30_COUNTER_SELL | NON_CLEAN_BULL_CONTEXT">LOW · watch SELL · 42/100</td>
       <td title="Campaign phase is currently calculated for metals.">Asset N/A</td>
       <td title="Raw entry quality is currently calculated for metals.">Asset N/A</td>
       <td title="Side status: TRUE
 Reason: SELL_JRSX_OK
 Bias side: SELL
-M15: 51.45 / SELL
-M30: 52.89 / BUY
-H1: 42.66 / BUY
+M15: 42.74 / SELL
+M30: 51.39 / SELL
+H1: 44.25 / BUY
 H4: 34.19 / BUY
 D1: 82.89 / SELL
-Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE SELL · M15 51.45 · M30 52.89 · H1 42.66</td>
+Rule: BUY blocked by &gt;85; SELL blocked by &lt;15.">TRUE SELL · M15 42.74 · M30 51.39 · H1 44.25</td>
       <td title="Message: Daily SELL is weakening. Prepare for possible BUY reversal (-0.70%)
 State: D1_SELL_FADING
 Direction: DOWN
