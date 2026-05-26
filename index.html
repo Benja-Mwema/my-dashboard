@@ -109,29 +109,29 @@ td small { color:var(--muted); }
   <div class="header-top">
     <div>
       <h1>Institutional Daily Journey Dashboard</h1>
-      <p class="subtle">Trade date 2026-05-27 · Generated 2026-05-27T01:34:45.101993</p>
+      <p class="subtle">Trade date 2026-05-27 · Generated 2026-05-27T01:39:39.683482</p>
     </div>
     <div class="mode">LIVE INCREMENTAL · 15 MIN REFRESH</div>
   </div>
   <div class="stats">
-    <div class="stat"><span>Symbols</span><b>9</b></div>
-    <div class="stat"><span>Events</span><b>51</b></div>
-    <div class="stat"><span>Entries</span><b>10</b></div>
-    <div class="stat"><span>Focus</span><b>5</b></div>
+    <div class="stat"><span>Symbols</span><b>10</b></div>
+    <div class="stat"><span>Events</span><b>52</b></div>
+    <div class="stat"><span>Entries</span><b>11</b></div>
+    <div class="stat"><span>Focus</span><b>6</b></div>
     <div class="stat"><span>Ready</span><b>0</b></div>
     <div class="stat"><span>ML Candidates</span><b>0</b></div>
   </div>
 </header>
-<div class="status-strip"><span class="pill count-chip">READY CONTINUATION 1</span><span class="pill count-chip">STRUCTURE FORMING 25</span><span class="pill count-chip">NO TRADE 25</span></div>
+<div class="status-strip"><span class="pill count-chip">READY CONTINUATION 2</span><span class="pill count-chip">STRUCTURE FORMING 25</span><span class="pill count-chip">NO TRADE 25</span></div>
 
     <div class="focus-strip">
-      <div><span>Focus</span><b>AUDJPY, GBPUSD, USDCHF, XAGUSD, XAUUSD</b></div>
+      <div><span>Focus</span><b>AUDJPY, GBPUSD, USDCHF, XAGUSD, XAUEUR, XAUUSD</b></div>
       <div><span>Ready</span><b>None</b></div>
       <div><span>ML</span><b>None</b></div>
       <div><span>Active</span><b>None</b></div>
     </div>
     
-<nav class="asset-tabs"><button class="asset-tab active" onclick="showAsset('FX', this)">FX<span>7</span></button><button class="asset-tab " onclick="showAsset('INDICES', this)">INDICES<span>0</span></button><button class="asset-tab " onclick="showAsset('COMMODITIES', this)">COMMODITIES<span>2</span></button></nav>
+<nav class="asset-tabs"><button class="asset-tab active" onclick="showAsset('FX', this)">FX<span>7</span></button><button class="asset-tab " onclick="showAsset('INDICES', this)">INDICES<span>0</span></button><button class="asset-tab " onclick="showAsset('COMMODITIES', this)">COMMODITIES<span>3</span></button></nav>
 <main>
     <section id="asset-FX" class="asset-section active">
       <div class="asset-title">
@@ -5554,10 +5554,268 @@ Reason: NO_VALID_SIGNAL" class="num">-</td>
     <section id="asset-COMMODITIES" class="asset-section ">
       <div class="asset-title">
         <h2>COMMODITIES</h2>
-        <p>2 symbols · tabs are sorted by actionable status and risk severity.</p>
+        <p>3 symbols · tabs are sorted by actionable status and risk severity.</p>
       </div>
-      <div class="symbol-tabs"><button class="symbol-tab active tab-none sev-low" onclick="showSymbol('COMMODITIES', 'XAUUSD', this)">XAUUSD<span>READY_CONTINUATION</span></button><button class="symbol-tab  tab-none sev-high" onclick="showSymbol('COMMODITIES', 'XAGUSD', this)">XAGUSD<span>NO_TRADE</span></button></div>
-      <div class="symbol-panels"><div id="symbol-COMMODITIES-XAUUSD" class="symbol-panel active">
+      <div class="symbol-tabs"><button class="symbol-tab active tab-none sev-medium" onclick="showSymbol('COMMODITIES', 'XAUEUR', this)">XAUEUR<span>READY_CONTINUATION</span></button><button class="symbol-tab  tab-none sev-low" onclick="showSymbol('COMMODITIES', 'XAUUSD', this)">XAUUSD<span>READY_CONTINUATION</span></button><button class="symbol-tab  tab-none sev-high" onclick="showSymbol('COMMODITIES', 'XAGUSD', this)">XAGUSD<span>NO_TRADE</span></button></div>
+      <div class="symbol-panels"><div id="symbol-COMMODITIES-XAUEUR" class="symbol-panel active">
+    <article id="card-XAUEUR" class="symbol-card border-none">
+      <header class="symbol-header">
+        <div>
+          <h2>XAUEUR</h2>
+          <p>COMMODITIES · Metals Liquidity-Reversal Hybrid Engine · MACD + pivot + liquidity reaction · 1 events · Current READY_CONTINUATION</p>
+        </div>
+        <div class="symbol-badges">
+          <span class="pill status-none">READY_CONTINUATION</span>
+          <span class="pill side-sell">SELL</span>
+          <span class="pill type-trade">TRADE_ENGINE</span>
+          <span class="pill count-chip">Best READY_CONTINUATION</span>
+        </div>
+      </header>
+      
+    <section class="latest-grid">
+      <div class="readiness-card sev-medium" title="Label: DAILY MOMENTUM WEAKENING
+Severity: MEDIUM
+Action: Reduce aggression. Require stronger M15/M30 trigger and pivot confirmation.
+Warnings: D1_STALLING
+Confirmations: ENGINE_LIQUIDITY_REVERSAL_HYBRID, MTF_SELL3, MACD_OK_SELL
+D1: D1_SELL_STALLING
+MTF: SELL strength 3
+MACD: TRUE SELL
+Pivot: PV? UNKNOWN">
+        <div class="eyebrow">Institutional Readiness</div>
+        <h3>DAILY MOMENTUM WEAKENING</h3>
+        <p>Reduce aggression. Require stronger M15/M30 trigger and pivot confirmation.</p>
+        <div class="chip-row"><span class="pill warn-chip">D1 STALLING</span></div>
+        <div class="chip-row"><span class="pill ok-chip">ENGINE LIQUIDITY REVERSAL HYBRID</span><span class="pill ok-chip">MTF SELL3</span><span class="pill ok-chip">MACD OK SELL</span></div>
+      </div>
+      <div class="mini-card">
+        <span>Status</span>
+        <b><span class="pill status-none">READY_CONTINUATION</span></b>
+        <small>Latest 01:30 · Best READY_CONTINUATION</small>
+      </div>
+      <div class="mini-card" title="Profile: Metals Liquidity-Reversal Hybrid Engine
+Engine: LIQUIDITY_REVERSAL_HYBRID
+Primary driver: MACD + pivot + liquidity reaction
+Description: Metals prioritize MACD pressure, pivot reclaim/reject, and liquidity/reversal behavior over strict continuation-only alignment.">
+        <span>Asset Engine</span>
+        <b>Metals Liquidity-Reversal Hybrid Engine · MACD + pivot + liquidity reaction</b>
+        <small>Fields are interpreted with asset-specific weighting</small>
+      </div>
+      <div class="mini-card" title="Best zone: London | Secondary: New York | Avoid: Asia | Confidence: Medium | London was the best stable positive session.">
+        <span>Best Zone</span>
+        <b>London</b>
+        <small>Medium confidence · avoid Asia</small>
+      </div>
+      <div class="mini-card" title="Market: BEARISH_BIAS_TRIGGER
+Readiness: DAILY MOMENTUM WEAKENING
+Severity: MEDIUM
+Action: Reduce aggression. Require stronger M15/M30 trigger and pivot confirmation.">
+        <span>Market</span>
+        <b class="market market-bear">BEARISH BIAS TRIGGER</b>
+        <small>Environment context before signal interpretation</small>
+      </div>
+      <div class="mini-card" title="Display side: SELL
+Type: TRADE_ENGINE
+Confidence: HIGH
+Reason: Trade-engine side; support=MTF,MACD conflict=NONE.
+Raw side: SELL
+Execution side: NONE
+Candidate side: SELL
+Bias side: SELL
+Risk side: NONE
+Pivot side: UNKNOWN
+MACD side: SELL
+Support: MTF, MACD
+Conflict: NONE">
+        <span>Display Side / Grade</span>
+        <b><span class="pill side-sell">SELL</span> <span class="pill type-trade">TRADE_ENGINE</span> <span class="pill grade-a">Grade A</span></b>
+        <small>HIGH confidence · raw SELL · Price 3871.77</small>
+      </div>
+      <div class="mini-card" title="Flag: False
+Side: NONE
+Level: NONE
+Score: 24
+Phase: LIVE_SELL_CONTROL
+Reason: SELL_DOMINANT_HTF | D1_SELL_STALLING">
+        <span>Direction Risk</span>
+        <b>Stable · 24/100</b>
+        <small>SELL DOMINANT HTF | D1 SELL STALLING</small>
+      </div>
+      <div class="mini-card" title="Phase: SELL_DOMINANT
+Side: SELL
+Transition score: -
+Reason: SELL_DOMINANT_STABLE">
+        <span>Campaign Phase</span>
+        <b>SELL DOMINANT | SELL | 0/100</b>
+        <small>SELL DOMINANT STABLE</small>
+      </div>
+      <div class="mini-card" title="M15: SELL | main=-1.620114 | signal=-2.82913 | hist=1.209015 | hist_delta=-0.25616 | hist_state=POSITIVE | source=2026-05-27T01:15:00 | close=2026-05-27T01:30:00 | closed=True | age=None
+M30: SELL | main=-6.172136 | signal=-6.811043 | hist=0.638907 | hist_delta=0.0 | hist_state=POSITIVE | source=2026-05-26T23:00:00 | close=2026-05-26T23:30:00 | closed=True | age=None
+H1: SELL | main=-9.730068 | signal=-8.240932 | hist=-1.489136 | hist_delta=0.0 | hist_state=NEGATIVE | source=2026-05-26T22:00:00 | close=2026-05-26T23:00:00 | closed=True | age=None
+H4: SELL | main=-3.359479 | signal=-0.664809 | hist=-2.69467 | hist_delta=0.0 | hist_state=NEGATIVE | source=2026-05-26T16:00:00 | close=2026-05-26T20:00:00 | closed=True | age=None
+D1: SELL | main=-29.417664 | signal=-28.185527 | hist=-1.232137 | hist_delta=None | hist_state=NEGATIVE | source=2026-05-18T00:00:00 | close=2026-05-19T00:00:00 | closed=True | age=None">
+        <span>MTF</span>
+        <b>SELL/SELL/SELL/SELL/SELL</b>
+        <small>Hist 1.20901/0.63891/-1.48914/-2.69467/-1.23214</small>
+      </div>
+      <div class="mini-card" title="Side status: TRUE
+Reason: SELL_MACD_STACK_OK
+Bias side: SELL
+M15: main=-1.620114 / hist=1.209015 / delta=-0.25616 / SELL
+M30: main=-6.172136 / hist=0.638907 / delta=0.0 / SELL
+H1: main=-9.730068 / hist=-1.489136 / delta=0.0 / SELL
+H4: main=-3.359479 / hist=-2.69467 / delta=0.0 / SELL
+D1: main=-29.417664 / hist=-1.232137 / delta=None / SELL
+Rule: side needs M15/M30/H1/H4 MACD main stack and histogram timing.">
+        <span>MACD</span>
+        <b>TRUE SELL · M15 -1.62011 · M30 -6.17214 · H1 -9.73007</b>
+        <small>SELL_MACD_STACK_OK</small>
+      </div>
+      <div class="mini-card" title="Message: Daily SELL has paused. Wait for fresh SELL confirmation (0.01%)
+State: D1_SELL_STALLING
+Direction: DOWN
+Progress: 0.0144657613511007%
+Points: 0.5599999999999454
+Day open: 3871.21
+As of: 2026-05-27T01:30:00">
+        <span>D1 Day</span>
+        <b>D1 SELL STALLING · DOWN · 0.01%</b>
+        <small>PV - · R1 - · S1 -</small>
+      </div>
+      <div class="mini-card" title="Entry: 3871.77
+TP1: 3856.13 | Source: h1_swing_low_20 | RR: 2.11924
+TP2: 3840.49 | Source: FALLBACK_2R_FROM_STRUCTURE_SL | RR: 4.23848
+SL: 3879.15 | Source: m15_swing_high_20
+TP/SL valid: 1
+Reason: TP2_STRONG_CONTINUATION_OK">
+        <span>TP Plan</span>
+        <b>TP1 3856.13 / TP2 3840.49</b>
+        <small>RR1 2.11924 | RR2 4.23848 | SL 3879.15</small>
+      </div>
+    </section>
+    
+      <div class="count-row"><span class="pill count-chip">READY CONTINUATION 1</span></div>
+      <details class="journey" open>
+        <summary>Daily M15 journey (1 rows)</summary>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Time</th><th>Status</th><th>Price</th><th>Display Side</th><th>Grade</th><th>Score</th>
+                <th>Market</th><th>Engine</th><th>Macro</th><th>Readiness</th><th>Email</th><th>MTF</th><th>Risk</th><th>Campaign</th><th>MACD</th><th>D1 Day</th><th>Levels</th>
+                <th>TP1</th><th>TP2</th><th>SL</th>
+              </tr>
+            </thead>
+            <tbody>
+    <tr class="row-none">
+      <td class="time">01:30</td>
+      <td><span class="pill status-none">READY_CONTINUATION</span></td>
+      <td class="num">3871.77</td>
+      <td title="Display side: SELL
+Type: TRADE_ENGINE
+Confidence: HIGH
+Reason: Trade-engine side; support=MTF,MACD conflict=NONE.
+Raw side: SELL
+Execution side: NONE
+Candidate side: SELL
+Bias side: SELL
+Risk side: NONE
+Pivot side: UNKNOWN
+MACD side: SELL
+Support: MTF, MACD
+Conflict: NONE"><span class="pill side-sell">SELL</span><br><small>TRADE_ENGINE · HIGH · raw SELL</small></td>
+      <td><span class="pill grade-a">A</span></td>
+      <td class="num">84</td>
+      <td title="Market: BEARISH_BIAS_TRIGGER
+Readiness: DAILY MOMENTUM WEAKENING
+Severity: MEDIUM
+Action: Reduce aggression. Require stronger M15/M30 trigger and pivot confirmation."><span class="market market-bear">BEARISH BIAS TRIGGER</span></td>
+      <td title="Profile: Metals Liquidity-Reversal Hybrid Engine
+Engine: LIQUIDITY_REVERSAL_HYBRID
+Primary driver: MACD + pivot + liquidity reaction
+Description: Metals prioritize MACD pressure, pivot reclaim/reject, and liquidity/reversal behavior over strict continuation-only alignment."><b>LIQUIDITY_REVERSAL_HYBRID</b><br><small>MACD + pivot + liquidity reaction</small></td>
+      <td title="Date: 2026-05-27
+Regime: Bearish Gold
+Bias: GOLD_SELL_PRESSURE
+Score: 19.43
+Pressure: -2.0378558609490507
+USD support: 92.25
+Growth: 81.0
+Risk: 93.25
+Liquidity: 10.0
+Mode: PASSIVE_CONTEXT_ONLY">GOLD_SELL_PRESSURE (19.43)</td>
+      <td title="Label: DAILY MOMENTUM WEAKENING
+Severity: MEDIUM
+Action: Reduce aggression. Require stronger M15/M30 trigger and pivot confirmation.
+Warnings: D1_STALLING
+Confirmations: ENGINE_LIQUIDITY_REVERSAL_HYBRID, MTF_SELL3, MACD_OK_SELL
+D1: D1_SELL_STALLING
+MTF: SELL strength 3
+MACD: TRUE SELL
+Pivot: PV? UNKNOWN"><b>DAILY MOMENTUM WEAKENING</b><br><small>MEDIUM</small></td>
+      <td title="Qualified: False
+Label: WATCH_FORMATION
+Score: 90 / min 70
+Rule: Clean setup
+Reason: Blocked: METALS_M30_ACCEPTANCE_BLOCK, XAUEUR_M30_NOT_STRICTLY_ACCEPTING, STATUS_READY_CONTINUATION, METALS_EXPANSION_PROOF_REQUIRED
+Blockers: METALS_M30_ACCEPTANCE_BLOCK, XAUEUR_M30_NOT_STRICTLY_ACCEPTING, STATUS_READY_CONTINUATION, METALS_EXPANSION_PROOF_REQUIRED
+Warnings: -
+Reasons: XAUEUR_STRICT_M30_ACCEPTANCE:pos=0.29,pc1=-0.04, M15_M30_H1_H4_ALIGNED, DIRECTION_100, EXECUTION_95, LOW_REVERSAL_RISK_24, EXPANSION_PROOF, ROOM_VALID, CLEAN_SETUP_DEFAULT, MACD_SUPPORT, GRADE_A_84
+Aligned TFs: M15, M30, H1, H4, D1
+Opposing TFs: -
+Expansion proof: True
+Room valid: True
+MACD ok: True
+Readiness: READY
+Risk: NORMAL
+Scores: D=100.0 E=95.0 G=100.0 T=78.0 R=24.0 Final=84.0 A"><span class="email-watch">WATCH_FORMATION 90</span></td>
+      <td title="M15: SELL | main=-1.620114 | signal=-2.82913 | hist=1.209015 | hist_delta=-0.25616 | hist_state=POSITIVE | source=2026-05-27T01:15:00 | close=2026-05-27T01:30:00 | closed=True | age=None
+M30: SELL | main=-6.172136 | signal=-6.811043 | hist=0.638907 | hist_delta=0.0 | hist_state=POSITIVE | source=2026-05-26T23:00:00 | close=2026-05-26T23:30:00 | closed=True | age=None
+H1: SELL | main=-9.730068 | signal=-8.240932 | hist=-1.489136 | hist_delta=0.0 | hist_state=NEGATIVE | source=2026-05-26T22:00:00 | close=2026-05-26T23:00:00 | closed=True | age=None
+H4: SELL | main=-3.359479 | signal=-0.664809 | hist=-2.69467 | hist_delta=0.0 | hist_state=NEGATIVE | source=2026-05-26T16:00:00 | close=2026-05-26T20:00:00 | closed=True | age=None
+D1: SELL | main=-29.417664 | signal=-28.185527 | hist=-1.232137 | hist_delta=None | hist_state=NEGATIVE | source=2026-05-18T00:00:00 | close=2026-05-19T00:00:00 | closed=True | age=None" class="mono">SELL/SELL/SELL/SELL/SELL<br><small>H 1.20901/0.63891/-1.48914/-2.69467/-1.23214</small></td>
+      <td title="Flag: False
+Side: NONE
+Level: NONE
+Score: 24
+Phase: LIVE_SELL_CONTROL
+Reason: SELL_DOMINANT_HTF | D1_SELL_STALLING">Stable · 24/100</td>
+      <td title="Phase: SELL_DOMINANT
+Side: SELL
+Transition score: -
+Reason: SELL_DOMINANT_STABLE">SELL DOMINANT | SELL | 0/100</td>
+      <td title="Side status: TRUE
+Reason: SELL_MACD_STACK_OK
+Bias side: SELL
+M15: main=-1.620114 / hist=1.209015 / delta=-0.25616 / SELL
+M30: main=-6.172136 / hist=0.638907 / delta=0.0 / SELL
+H1: main=-9.730068 / hist=-1.489136 / delta=0.0 / SELL
+H4: main=-3.359479 / hist=-2.69467 / delta=0.0 / SELL
+D1: main=-29.417664 / hist=-1.232137 / delta=None / SELL
+Rule: side needs M15/M30/H1/H4 MACD main stack and histogram timing.">TRUE SELL · M15 -1.62011 · M30 -6.17214 · H1 -9.73007</td>
+      <td title="Message: Daily SELL has paused. Wait for fresh SELL confirmation (0.01%)
+State: D1_SELL_STALLING
+Direction: DOWN
+Progress: 0.0144657613511007%
+Points: 0.5599999999999454
+Day open: 3871.21
+As of: 2026-05-27T01:30:00">D1 SELL STALLING · DOWN · 0.01%</td>
+      <td>PV - · R1 - · S1 -</td>
+      <td title="Entry: 3871.77
+TP1: 3856.13 | Source: h1_swing_low_20 | RR: 2.11924
+TP2: 3840.49 | Source: FALLBACK_2R_FROM_STRUCTURE_SL | RR: 4.23848
+SL: 3879.15 | Source: m15_swing_high_20
+TP/SL valid: 1
+Reason: TP2_STRONG_CONTINUATION_OK" class="num">3856.13</td>
+      <td class="num">3840.49</td>
+      <td class="num">3879.15</td>
+    </tr>
+    </tbody>
+          </table>
+        </div>
+      </details>
+    </article>
+    </div><div id="symbol-COMMODITIES-XAUUSD" class="symbol-panel ">
     <article id="card-XAUUSD" class="symbol-card border-none">
       <header class="symbol-header">
         <div>
