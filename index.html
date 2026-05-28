@@ -109,20 +109,20 @@ td small { color:var(--muted); }
   <div class="header-top">
     <div>
       <h1>Institutional Daily Journey Dashboard</h1>
-      <p class="subtle">Trade date 2026-05-29 · Generated 2026-05-29T00:44:42.864576</p>
+      <p class="subtle">Trade date 2026-05-29 · Generated 2026-05-29T00:50:11.843585</p>
     </div>
     <div class="mode">LIVE INCREMENTAL · 15 MIN REFRESH</div>
   </div>
   <div class="stats">
     <div class="stat"><span>Symbols</span><b>9</b></div>
-    <div class="stat"><span>Events</span><b>19</b></div>
+    <div class="stat"><span>Events</span><b>26</b></div>
     <div class="stat"><span>Entries</span><b>9</b></div>
     <div class="stat"><span>Focus</span><b>6</b></div>
     <div class="stat"><span>Ready</span><b>0</b></div>
     <div class="stat"><span>ML Candidates</span><b>0</b></div>
   </div>
 </header>
-<div class="status-strip"><span class="pill count-chip">STRUCTURE FORMING 7</span><span class="pill count-chip">NO TRADE 12</span></div>
+<div class="status-strip"><span class="pill count-chip">STRUCTURE FORMING 11</span><span class="pill count-chip">NO TRADE 15</span></div>
 
     <div class="focus-strip">
       <div><span>Focus</span><b>AUDJPY, NZDUSD, USDCAD, USDCHF, XAGUSD, XAUUSD</b></div>
@@ -138,265 +138,13 @@ td small { color:var(--muted); }
         <h2>FX</h2>
         <p>7 symbols · tabs are sorted by actionable status and risk severity.</p>
       </div>
-      <div class="symbol-tabs"><button class="symbol-tab active tab-forming sev-high" onclick="showSymbol('FX', 'GBPUSD', this)">GBPUSD<span>STRUCTURE_FORMING</span></button><button class="symbol-tab  tab-forming sev-high" onclick="showSymbol('FX', 'USDJPY', this)">USDJPY<span>STRUCTURE_FORMING</span></button><button class="symbol-tab  tab-forming sev-medium" onclick="showSymbol('FX', 'EURUSD', this)">EURUSD<span>STRUCTURE_FORMING</span></button><button class="symbol-tab  tab-none sev-high" onclick="showSymbol('FX', 'USDCAD', this)">USDCAD<span>NO_TRADE</span></button><button class="symbol-tab  tab-none sev-high" onclick="showSymbol('FX', 'USDCHF', this)">USDCHF<span>NO_TRADE</span></button><button class="symbol-tab  tab-none sev-medium" onclick="showSymbol('FX', 'AUDJPY', this)">AUDJPY<span>NO_TRADE</span></button><button class="symbol-tab  tab-none sev-medium" onclick="showSymbol('FX', 'NZDUSD', this)">NZDUSD<span>NO_TRADE</span></button></div>
-      <div class="symbol-panels"><div id="symbol-FX-GBPUSD" class="symbol-panel active">
-    <article id="card-GBPUSD" class="symbol-card border-forming">
-      <header class="symbol-header">
-        <div>
-          <h2>GBPUSD</h2>
-          <p>FX · FX Bias-First Regime Engine · D1/H1/H4 structure authority · 1 events · Current STRUCTURE_FORMING</p>
-        </div>
-        <div class="symbol-badges">
-          <span class="pill status-forming">STRUCTURE_FORMING</span>
-          <span class="pill side-buy">BUY</span>
-          <span class="pill type-risk">RISK_WATCH</span>
-          <span class="pill count-chip">Best STRUCTURE_FORMING</span>
-        </div>
-      </header>
-      
-    <section class="latest-grid">
-      <div class="readiness-card sev-high" title="Label: BUY MACD BLOCKED
-Severity: HIGH
-Action: Avoid execution until MACD main stack and histogram timing support the side.
-Warnings: MACD_SIDE_BLOCK, D1_STALLING
-Confirmations: ENGINE_BIAS_FIRST_REGIME, MTF_BUY1
-D1: D1_SELL_STALLING
-MTF: BUY strength 1
-MACD: FALSE BUY
-Pivot: PV? UNKNOWN">
-        <div class="eyebrow">Institutional Readiness</div>
-        <h3>BUY MACD BLOCKED</h3>
-        <p>Avoid execution until MACD main stack and histogram timing support the side.</p>
-        <div class="chip-row"><span class="pill warn-chip">MACD SIDE BLOCK</span><span class="pill warn-chip">D1 STALLING</span></div>
-        <div class="chip-row"><span class="pill ok-chip">ENGINE BIAS FIRST REGIME</span><span class="pill ok-chip">MTF BUY1</span></div>
-      </div>
-      <div class="mini-card">
-        <span>Status</span>
-        <b><span class="pill status-forming">STRUCTURE_FORMING</span></b>
-        <small>Latest 00:00 · Best STRUCTURE_FORMING</small>
-      </div>
-      <div class="mini-card" title="Profile: FX Bias-First Regime Engine
-Engine: BIAS_FIRST_REGIME
-Primary driver: D1/H1/H4 structure authority
-Description: FX prioritizes daily state, H1/H4 structure, and M30 confirmation before execution.">
-        <span>Asset Engine</span>
-        <b>FX Bias-First Regime Engine · D1/H1/H4 structure authority</b>
-        <small>Fields are interpreted with asset-specific weighting</small>
-      </div>
-      <div class="mini-card" title="Best zone: New York | Secondary: London | Avoid: Asia | Confidence: Medium | New York produced the best continuation behavior.">
-        <span>Best Zone</span>
-        <b>New York</b>
-        <small>Medium confidence · avoid Asia</small>
-      </div>
-      <div class="mini-card" title="Market: RANGE_OR_TRANSITION
-Readiness: BUY MACD BLOCKED
-Severity: HIGH
-Action: Avoid execution until MACD main stack and histogram timing support the side.">
-        <span>Market</span>
-        <b class="market market-range">RANGE OR TRANSITION</b>
-        <small>Environment context before signal interpretation</small>
-      </div>
-      <div class="mini-card" title="Display side: BUY
-Type: RISK_WATCH
-Confidence: LOW
-Reason: No confirmed trade side; direction-change layer says watch BUY (LOW).
-Raw side: NONE
-Execution side: NONE
-Candidate side: NONE
-Bias side: BUY
-Risk side: BUY
-Pivot side: UNKNOWN
-MACD side: BUY
-Support: RISK
-Conflict: NONE">
-        <span>Display Side / Grade</span>
-        <b><span class="pill side-buy">BUY</span> <span class="pill type-risk">RISK_WATCH</span> <span class="pill grade-x">Grade -</span></b>
-        <small>LOW confidence · raw NONE · Price 1.34435</small>
-      </div>
-      <div class="mini-card" title="Flag: True
-Side: BUY
-Level: LOW
-Score: 42
-Phase: LIVE_SELL_FRAGILE_WATCH_BUY
-Reason: M15_COUNTER_BUY | M30_COUNTER_BUY | D1_SELL_STALLING | NON_CLEAN_BEAR_CONTEXT">
-        <span>Direction Risk</span>
-        <b>LOW · watch BUY · 42/100</b>
-        <small>M15 COUNTER BUY | M30 COUNTER BUY | D1 SELL STALLING | NON CLEAN BEAR CO...</small>
-      </div>
-      <div class="mini-card" title="Campaign phase is currently calculated for metals.">
-        <span>Campaign Phase</span>
-        <b>Asset N/A</b>
-        <small>-</small>
-      </div>
-      <div class="mini-card" title="M15: BUY | main=0.00039 | signal=0.000506 | hist=-0.000116 | hist_delta=2.7e-05 | hist_state=NEGATIVE | source=2026-05-28T23:45:00 | close=2026-05-29T00:00:00 | closed=True | age=None
-M30: BUY | main=0.000874 | signal=0.000858 | hist=1.6e-05 | hist_delta=-1.3e-05 | hist_state=POSITIVE | source=2026-05-28T23:30:00 | close=2026-05-29T00:00:00 | closed=True | age=None
-H1: BUY | main=0.000516 | signal=-5.2e-05 | hist=0.000568 | hist_delta=-4.7e-05 | hist_state=POSITIVE | source=2026-05-28T23:00:00 | close=2026-05-29T00:00:00 | closed=True | age=None
-H4: SELL | main=-0.000343 | signal=-8.2e-05 | hist=-0.000261 | hist_delta=0.000194 | hist_state=NEGATIVE | source=2026-05-28T20:00:00 | close=2026-05-29T00:00:00 | closed=True | age=None
-D1: SELL | main=-0.001194 | signal=0.002123 | hist=-0.003316 | hist_delta=None | hist_state=NEGATIVE | source=2026-05-18T00:00:00 | close=2026-05-19T00:00:00 | closed=True | age=None">
-        <span>MTF</span>
-        <b>BUY/BUY/BUY/SELL/SELL</b>
-        <small>Hist -0.00012/0.00002/0.00057/-0.00026/-0.00332</small>
-      </div>
-      <div class="mini-card" title="Side status: FALSE
-Reason: BUY_MACD_STACK_NOT_CONFIRMED
-Bias side: BUY
-M15: main=0.00039 / hist=-0.000116 / delta=2.7e-05 / BUY
-M30: main=0.000874 / hist=1.6e-05 / delta=-1.3e-05 / BUY
-H1: main=0.000516 / hist=0.000568 / delta=-4.7e-05 / BUY
-H4: main=-0.000343 / hist=-0.000261 / delta=0.000194 / SELL
-D1: main=-0.001194 / hist=-0.003316 / delta=None / SELL
-Rule: side needs M15/M30/H1/H4 MACD main stack and histogram timing.">
-        <span>MACD</span>
-        <b>FALSE BUY · M15 0.00039 · M30 0.00087 · H1 0.00052</b>
-        <small>BUY_MACD_STACK_NOT_CONFIRMED</small>
-      </div>
-      <div class="mini-card" title="Message: Daily SELL has paused. Wait for fresh SELL confirmation (0.02%)
-State: D1_SELL_STALLING
-Direction: DOWN
-Progress: 0.0163674644565545%
-Points: 0.0002199999999998
-Day open: 1.34413
-As of: 2026-05-29T00:00:00">
-        <span>D1 Day</span>
-        <b>D1 SELL STALLING · DOWN · 0.02%</b>
-        <small>PV - · R1 - · S1 -</small>
-      </div>
-      <div class="mini-card" title="Entry: 1.34435
-TP1: - | Source: - | RR: -
-TP2: - | Source: - | RR: -
-SL: - | Source: -
-TP/SL valid: 0
-Reason: NO_VALID_SIGNAL">
-        <span>TP Plan</span>
-        <b>TP1 - / TP2 -</b>
-        <small>RR1 - | RR2 - | SL -</small>
-      </div>
-    </section>
-    
-      <div class="count-row"><span class="pill count-chip">STRUCTURE FORMING 1</span></div>
-      <details class="journey" open>
-        <summary>Daily M15 journey (1 rows)</summary>
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Time</th><th>Status</th><th>Price</th><th>Display Side</th><th>Grade</th><th>Score</th>
-                <th>Market</th><th>Engine</th><th>Macro</th><th>Readiness</th><th>Email</th><th>MTF</th><th>Risk</th><th>Campaign</th><th>MACD</th><th>D1 Day</th><th>Levels</th>
-                <th>TP1</th><th>TP2</th><th>SL</th>
-              </tr>
-            </thead>
-            <tbody>
-    <tr class="row-forming">
-      <td class="time">00:00</td>
-      <td><span class="pill status-forming">STRUCTURE_FORMING</span></td>
-      <td class="num">1.34435</td>
-      <td title="Display side: BUY
-Type: RISK_WATCH
-Confidence: LOW
-Reason: No confirmed trade side; direction-change layer says watch BUY (LOW).
-Raw side: NONE
-Execution side: NONE
-Candidate side: NONE
-Bias side: BUY
-Risk side: BUY
-Pivot side: UNKNOWN
-MACD side: BUY
-Support: RISK
-Conflict: NONE"><span class="pill side-buy">BUY</span><br><small>RISK_WATCH · LOW · raw NONE</small></td>
-      <td><span class="pill grade-x">-</span></td>
-      <td class="num">0</td>
-      <td title="Market: RANGE_OR_TRANSITION
-Readiness: BUY MACD BLOCKED
-Severity: HIGH
-Action: Avoid execution until MACD main stack and histogram timing support the side."><span class="market market-range">RANGE OR TRANSITION</span></td>
-      <td title="Profile: FX Bias-First Regime Engine
-Engine: BIAS_FIRST_REGIME
-Primary driver: D1/H1/H4 structure authority
-Description: FX prioritizes daily state, H1/H4 structure, and M30 confirmation before execution."><b>BIAS_FIRST_REGIME</b><br><small>D1/H1/H4 structure authority</small></td>
-      <td title="Date: 2026-05-28
-Regime: Strong Growth / Stable
-Bias: -
-Score: -
-Pressure: -
-USD support: 92.25
-Growth: 81.0
-Risk: 93.25
-Liquidity: 10.0
-Mode: PASSIVE_CONTEXT_ONLY">MACRO_N/A (-)</td>
-      <td title="Label: BUY MACD BLOCKED
-Severity: HIGH
-Action: Avoid execution until MACD main stack and histogram timing support the side.
-Warnings: MACD_SIDE_BLOCK, D1_STALLING
-Confirmations: ENGINE_BIAS_FIRST_REGIME, MTF_BUY1
-D1: D1_SELL_STALLING
-MTF: BUY strength 1
-MACD: FALSE BUY
-Pivot: PV? UNKNOWN"><b>BUY MACD BLOCKED</b><br><small>HIGH</small></td>
-      <td title="Qualified: False
-Label: NO_EMAIL
-Score: 18 / min 70
-Rule: Clean setup
-Reason: Blocked: FX_EMAIL_RULE_BLOCK, FX_TP1_DISTANCE_BLOCK, TP_SL_INVALID, STATUS_STRUCTURE_FORMING, CORE_NOT_FULLY_ALIGNED, DIRECTION_WEAK_0, EXECUTION_THIN_0, NO_EXPANSION_PROOF
-Blockers: FX_EMAIL_RULE_BLOCK, FX_TP1_DISTANCE_BLOCK, TP_SL_INVALID, STATUS_STRUCTURE_FORMING, CORE_NOT_FULLY_ALIGNED, DIRECTION_WEAK_0, EXECUTION_THIN_0, NO_EXPANSION_PROOF
-Warnings: -
-Reasons: FX_ACTIVE_SET:AUDJPY,EURUSD,GBPUSD,NZDUSD,USDCAD,USDCHF,USDJPY, GBPUSD_M30_SIDE_ACCEPTANCE:pos=0.96,pc1=0.03, MEDIUM_REVERSAL_RISK_42, ROOM_VALID, CLEAN_SETUP_DEFAULT, MACD_SUPPORT
-Aligned TFs: M15, M30, H1
-Opposing TFs: H4, D1
-Expansion proof: False
-Room valid: True
-MACD ok: True
-Readiness: WATCH
-Risk: NORMAL
-Scores: D=0 E=0 G=0 T=0 R=42.0 Final=0 -"><span class="email-blocked">NO_EMAIL 18</span></td>
-      <td title="M15: BUY | main=0.00039 | signal=0.000506 | hist=-0.000116 | hist_delta=2.7e-05 | hist_state=NEGATIVE | source=2026-05-28T23:45:00 | close=2026-05-29T00:00:00 | closed=True | age=None
-M30: BUY | main=0.000874 | signal=0.000858 | hist=1.6e-05 | hist_delta=-1.3e-05 | hist_state=POSITIVE | source=2026-05-28T23:30:00 | close=2026-05-29T00:00:00 | closed=True | age=None
-H1: BUY | main=0.000516 | signal=-5.2e-05 | hist=0.000568 | hist_delta=-4.7e-05 | hist_state=POSITIVE | source=2026-05-28T23:00:00 | close=2026-05-29T00:00:00 | closed=True | age=None
-H4: SELL | main=-0.000343 | signal=-8.2e-05 | hist=-0.000261 | hist_delta=0.000194 | hist_state=NEGATIVE | source=2026-05-28T20:00:00 | close=2026-05-29T00:00:00 | closed=True | age=None
-D1: SELL | main=-0.001194 | signal=0.002123 | hist=-0.003316 | hist_delta=None | hist_state=NEGATIVE | source=2026-05-18T00:00:00 | close=2026-05-19T00:00:00 | closed=True | age=None" class="mono">BUY/BUY/BUY/SELL/SELL<br><small>H -0.00012/0.00002/0.00057/-0.00026/-0.00332</small></td>
-      <td title="Flag: True
-Side: BUY
-Level: LOW
-Score: 42
-Phase: LIVE_SELL_FRAGILE_WATCH_BUY
-Reason: M15_COUNTER_BUY | M30_COUNTER_BUY | D1_SELL_STALLING | NON_CLEAN_BEAR_CONTEXT">LOW · watch BUY · 42/100</td>
-      <td title="Campaign phase is currently calculated for metals.">Asset N/A</td>
-      <td title="Side status: FALSE
-Reason: BUY_MACD_STACK_NOT_CONFIRMED
-Bias side: BUY
-M15: main=0.00039 / hist=-0.000116 / delta=2.7e-05 / BUY
-M30: main=0.000874 / hist=1.6e-05 / delta=-1.3e-05 / BUY
-H1: main=0.000516 / hist=0.000568 / delta=-4.7e-05 / BUY
-H4: main=-0.000343 / hist=-0.000261 / delta=0.000194 / SELL
-D1: main=-0.001194 / hist=-0.003316 / delta=None / SELL
-Rule: side needs M15/M30/H1/H4 MACD main stack and histogram timing.">FALSE BUY · M15 0.00039 · M30 0.00087 · H1 0.00052</td>
-      <td title="Message: Daily SELL has paused. Wait for fresh SELL confirmation (0.02%)
-State: D1_SELL_STALLING
-Direction: DOWN
-Progress: 0.0163674644565545%
-Points: 0.0002199999999998
-Day open: 1.34413
-As of: 2026-05-29T00:00:00">D1 SELL STALLING · DOWN · 0.02%</td>
-      <td>PV - · R1 - · S1 -</td>
-      <td title="Entry: 1.34435
-TP1: - | Source: - | RR: -
-TP2: - | Source: - | RR: -
-SL: - | Source: -
-TP/SL valid: 0
-Reason: NO_VALID_SIGNAL" class="num">-</td>
-      <td class="num">-</td>
-      <td class="num">-</td>
-    </tr>
-    </tbody>
-          </table>
-        </div>
-      </details>
-    </article>
-    </div><div id="symbol-FX-USDJPY" class="symbol-panel ">
+      <div class="symbol-tabs"><button class="symbol-tab active tab-forming sev-high" onclick="showSymbol('FX', 'USDJPY', this)">USDJPY<span>STRUCTURE_FORMING</span></button><button class="symbol-tab  tab-forming sev-medium" onclick="showSymbol('FX', 'EURUSD', this)">EURUSD<span>STRUCTURE_FORMING</span></button><button class="symbol-tab  tab-forming sev-medium" onclick="showSymbol('FX', 'GBPUSD', this)">GBPUSD<span>STRUCTURE_FORMING</span></button><button class="symbol-tab  tab-none sev-high" onclick="showSymbol('FX', 'USDCAD', this)">USDCAD<span>NO_TRADE</span></button><button class="symbol-tab  tab-none sev-high" onclick="showSymbol('FX', 'USDCHF', this)">USDCHF<span>NO_TRADE</span></button><button class="symbol-tab  tab-none sev-medium" onclick="showSymbol('FX', 'AUDJPY', this)">AUDJPY<span>NO_TRADE</span></button><button class="symbol-tab  tab-none sev-medium" onclick="showSymbol('FX', 'NZDUSD', this)">NZDUSD<span>NO_TRADE</span></button></div>
+      <div class="symbol-panels"><div id="symbol-FX-USDJPY" class="symbol-panel active">
     <article id="card-USDJPY" class="symbol-card border-forming">
       <header class="symbol-header">
         <div>
           <h2>USDJPY</h2>
-          <p>FX · FX Bias-First Regime Engine · D1/H1/H4 structure authority · 3 events · Current STRUCTURE_FORMING</p>
+          <p>FX · FX Bias-First Regime Engine · D1/H1/H4 structure authority · 4 events · Current STRUCTURE_FORMING</p>
         </div>
         <div class="symbol-badges">
           <span class="pill status-forming">STRUCTURE_FORMING</span>
@@ -410,22 +158,22 @@ Reason: NO_VALID_SIGNAL" class="num">-</td>
       <div class="readiness-card sev-high" title="Label: SELL MACD BLOCKED
 Severity: HIGH
 Action: Avoid execution until MACD main stack and histogram timing support the side.
-Warnings: MACD_SIDE_BLOCK, D1_FADING
+Warnings: MACD_SIDE_BLOCK, D1_STALLING
 Confirmations: ENGINE_BIAS_FIRST_REGIME, MTF_SELL1
-D1: D1_SELL_FADING
+D1: D1_SELL_STALLING
 MTF: SELL strength 1
 MACD: FALSE SELL
 Pivot: PV? UNKNOWN">
         <div class="eyebrow">Institutional Readiness</div>
         <h3>SELL MACD BLOCKED</h3>
         <p>Avoid execution until MACD main stack and histogram timing support the side.</p>
-        <div class="chip-row"><span class="pill warn-chip">MACD SIDE BLOCK</span><span class="pill warn-chip">D1 FADING</span></div>
+        <div class="chip-row"><span class="pill warn-chip">MACD SIDE BLOCK</span><span class="pill warn-chip">D1 STALLING</span></div>
         <div class="chip-row"><span class="pill ok-chip">ENGINE BIAS FIRST REGIME</span><span class="pill ok-chip">MTF SELL1</span></div>
       </div>
       <div class="mini-card">
         <span>Status</span>
         <b><span class="pill status-forming">STRUCTURE_FORMING</span></b>
-        <small>Latest 00:30 · Best STRUCTURE_FORMING</small>
+        <small>Latest 00:45 · Best STRUCTURE_FORMING</small>
       </div>
       <div class="mini-card" title="Profile: FX Bias-First Regime Engine
 Engine: BIAS_FIRST_REGIME
@@ -463,57 +211,57 @@ Support: NONE
 Conflict: NONE">
         <span>Display Side / Grade</span>
         <b><span class="pill side-none">NONE</span> <span class="pill type-none">NONE</span> <span class="pill grade-x">Grade -</span></b>
-        <small>NONE confidence · raw NONE · Price 159.203</small>
+        <small>NONE confidence · raw NONE · Price 159.223</small>
       </div>
       <div class="mini-card" title="Flag: False
 Side: NONE
 Level: NONE
-Score: 32
+Score: 20
 Phase: LIVE_SELL_CONTROL
-Reason: D1_SELL_FADING | NON_CLEAN_BEAR_CONTEXT">
+Reason: D1_SELL_STALLING | NON_CLEAN_BEAR_CONTEXT">
         <span>Direction Risk</span>
-        <b>Stable · 32/100</b>
-        <small>D1 SELL FADING | NON CLEAN BEAR CONTEXT</small>
+        <b>Stable · 20/100</b>
+        <small>D1 SELL STALLING | NON CLEAN BEAR CONTEXT</small>
       </div>
       <div class="mini-card" title="Campaign phase is currently calculated for metals.">
         <span>Campaign Phase</span>
         <b>Asset N/A</b>
         <small>-</small>
       </div>
-      <div class="mini-card" title="M15: SELL | main=-0.018849 | signal=-0.024169 | hist=0.005319 | hist_delta=-0.003418 | hist_state=POSITIVE | source=2026-05-29T00:15:00 | close=2026-05-29T00:30:00 | closed=True | age=None
+      <div class="mini-card" title="M15: SELL | main=-0.018675 | signal=-0.02307 | hist=0.004395 | hist_delta=-0.000925 | hist_state=POSITIVE | source=2026-05-29T00:30:00 | close=2026-05-29T00:45:00 | closed=True | age=None
 M30: SELL | main=-0.055711 | signal=-0.062034 | hist=0.006322 | hist_delta=0.0 | hist_state=POSITIVE | source=2026-05-28T23:30:00 | close=2026-05-29T00:00:00 | closed=True | age=None
 H1: SELL | main=-0.058355 | signal=-0.030172 | hist=-0.028183 | hist_delta=0.0 | hist_state=NEGATIVE | source=2026-05-28T23:00:00 | close=2026-05-29T00:00:00 | closed=True | age=None
 H4: BUY | main=0.119057 | signal=0.150736 | hist=-0.031679 | hist_delta=0.0 | hist_state=NEGATIVE | source=2026-05-28T20:00:00 | close=2026-05-29T00:00:00 | closed=True | age=None
 D1: SELL | main=-0.154948 | signal=-0.282366 | hist=0.127418 | hist_delta=None | hist_state=POSITIVE | source=2026-05-18T00:00:00 | close=2026-05-19T00:00:00 | closed=True | age=None">
         <span>MTF</span>
         <b>SELL/SELL/SELL/BUY/SELL</b>
-        <small>Hist 0.00532/0.00632/-0.02818/-0.03168/0.12742</small>
+        <small>Hist 0.00439/0.00632/-0.02818/-0.03168/0.12742</small>
       </div>
       <div class="mini-card" title="Side status: FALSE
 Reason: SELL_MACD_STACK_NOT_CONFIRMED
 Bias side: SELL
-M15: main=-0.018849 / hist=0.005319 / delta=-0.003418 / SELL
+M15: main=-0.018675 / hist=0.004395 / delta=-0.000925 / SELL
 M30: main=-0.055711 / hist=0.006322 / delta=0.0 / SELL
 H1: main=-0.058355 / hist=-0.028183 / delta=0.0 / SELL
 H4: main=0.119057 / hist=-0.031679 / delta=0.0 / BUY
 D1: main=-0.154948 / hist=0.127418 / delta=None / SELL
 Rule: side needs M15/M30/H1/H4 MACD main stack and histogram timing.">
         <span>MACD</span>
-        <b>FALSE SELL · M15 -0.01885 · M30 -0.05571 · H1 -0.05835</b>
+        <b>FALSE SELL · M15 -0.01868 · M30 -0.05571 · H1 -0.05835</b>
         <small>SELL_MACD_STACK_NOT_CONFIRMED</small>
       </div>
-      <div class="mini-card" title="Message: Daily SELL is weakening. Prepare for possible BUY reversal (-0.03%)
-State: D1_SELL_FADING
+      <div class="mini-card" title="Message: Daily SELL has paused. Wait for fresh SELL confirmation (-0.02%)
+State: D1_SELL_STALLING
 Direction: DOWN
-Progress: -0.0339074577569601%
-Points: -0.054000000000002
+Progress: -0.0213491400691911%
+Points: -0.0339999999999918
 Day open: 159.257
-As of: 2026-05-29T00:30:00">
+As of: 2026-05-29T00:45:00">
         <span>D1 Day</span>
-        <b>D1 SELL FADING · DOWN · -0.03%</b>
+        <b>D1 SELL STALLING · DOWN · -0.02%</b>
         <small>PV - · R1 - · S1 -</small>
       </div>
-      <div class="mini-card" title="Entry: 159.203
+      <div class="mini-card" title="Entry: 159.223
 TP1: - | Source: - | RR: -
 TP2: - | Source: - | RR: -
 SL: - | Source: -
@@ -525,9 +273,9 @@ Reason: NO_VALID_SIGNAL">
       </div>
     </section>
     
-      <div class="count-row"><span class="pill count-chip">STRUCTURE FORMING 3</span></div>
+      <div class="count-row"><span class="pill count-chip">STRUCTURE FORMING 4</span></div>
       <details class="journey" open>
-        <summary>Daily M15 journey (3 rows)</summary>
+        <summary>Daily M15 journey (4 rows)</summary>
         <div class="table-wrap">
           <table>
             <thead>
@@ -743,7 +491,7 @@ Reason: NO_VALID_SIGNAL" class="num">-</td>
     <tr class="row-forming">
       <td class="time">00:30</td>
       <td><span class="pill status-forming">STRUCTURE_FORMING</span></td>
-      <td class="num">159.203</td>
+      <td class="num">159.223</td>
       <td title="Display side: NONE
 Type: NONE
 Confidence: NONE
@@ -753,7 +501,7 @@ Execution side: NONE
 Candidate side: NONE
 Bias side: SELL
 Risk side: NONE
-Pivot side: UNKNOWN
+Pivot side: SELL
 MACD side: SELL
 Support: NONE
 Conflict: NONE"><span class="pill side-none">NONE</span><br><small>NONE · NONE · raw NONE</small></td>
@@ -781,11 +529,11 @@ Mode: PASSIVE_CONTEXT_ONLY">MACRO_N/A (-)</td>
 Severity: HIGH
 Action: Avoid execution until MACD main stack and histogram timing support the side.
 Warnings: MACD_SIDE_BLOCK, D1_FADING
-Confirmations: ENGINE_BIAS_FIRST_REGIME, MTF_SELL1
+Confirmations: ENGINE_BIAS_FIRST_REGIME, MTF_SELL1, PV-
 D1: D1_SELL_FADING
 MTF: SELL strength 1
 MACD: FALSE SELL
-Pivot: PV? UNKNOWN"><b>SELL MACD BLOCKED</b><br><small>HIGH</small></td>
+Pivot: PV- SELL"><b>SELL MACD BLOCKED</b><br><small>HIGH</small></td>
       <td title="Qualified: False
 Label: NO_EMAIL
 Score: 0 / min 70
@@ -830,8 +578,109 @@ Progress: -0.0339074577569601%
 Points: -0.054000000000002
 Day open: 159.257
 As of: 2026-05-29T00:30:00">D1 SELL FADING · DOWN · -0.03%</td>
-      <td>PV - · R1 - · S1 -</td>
+      <td>PV 159.33667 · R1 159.56033 · S1 159.02433</td>
       <td title="Entry: 159.203
+TP1: - | Source: - | RR: -
+TP2: - | Source: - | RR: -
+SL: - | Source: -
+TP/SL valid: 0
+Reason: NO_VALID_SIGNAL" class="num">-</td>
+      <td class="num">-</td>
+      <td class="num">-</td>
+    </tr>
+    
+    <tr class="row-forming">
+      <td class="time">00:45</td>
+      <td><span class="pill status-forming">STRUCTURE_FORMING</span></td>
+      <td class="num">159.223</td>
+      <td title="Display side: NONE
+Type: NONE
+Confidence: NONE
+Reason: No reliable side agreement across execution, candidate, bias, risk, pivot, and MACD layers.
+Raw side: NONE
+Execution side: NONE
+Candidate side: NONE
+Bias side: SELL
+Risk side: NONE
+Pivot side: UNKNOWN
+MACD side: SELL
+Support: NONE
+Conflict: NONE"><span class="pill side-none">NONE</span><br><small>NONE · NONE · raw NONE</small></td>
+      <td><span class="pill grade-x">-</span></td>
+      <td class="num">0</td>
+      <td title="Market: RANGE_OR_TRANSITION
+Readiness: SELL MACD BLOCKED
+Severity: HIGH
+Action: Avoid execution until MACD main stack and histogram timing support the side."><span class="market market-range">RANGE OR TRANSITION</span></td>
+      <td title="Profile: FX Bias-First Regime Engine
+Engine: BIAS_FIRST_REGIME
+Primary driver: D1/H1/H4 structure authority
+Description: FX prioritizes daily state, H1/H4 structure, and M30 confirmation before execution."><b>BIAS_FIRST_REGIME</b><br><small>D1/H1/H4 structure authority</small></td>
+      <td title="Date: 2026-05-29
+Regime: Strong Growth / Stable
+Bias: -
+Score: -
+Pressure: -
+USD support: 92.25
+Growth: 81.0
+Risk: 93.25
+Liquidity: 10.0
+Mode: PASSIVE_CONTEXT_ONLY">MACRO_N/A (-)</td>
+      <td title="Label: SELL MACD BLOCKED
+Severity: HIGH
+Action: Avoid execution until MACD main stack and histogram timing support the side.
+Warnings: MACD_SIDE_BLOCK, D1_STALLING
+Confirmations: ENGINE_BIAS_FIRST_REGIME, MTF_SELL1
+D1: D1_SELL_STALLING
+MTF: SELL strength 1
+MACD: FALSE SELL
+Pivot: PV? UNKNOWN"><b>SELL MACD BLOCKED</b><br><small>HIGH</small></td>
+      <td title="Qualified: False
+Label: NO_EMAIL
+Score: 0 / min 70
+Rule: Clean setup
+Reason: No BUY/SELL display side.
+Blockers: NO_DISPLAY_SIDE
+Warnings: -
+Reasons: -
+Aligned TFs: -
+Opposing TFs: -
+Expansion proof: None
+Room valid: None
+MACD ok: None
+Readiness: -
+Risk: -
+Scores: D=None E=None G=None T=None R=None Final=None "><span class="email-blocked">NO_EMAIL 0</span></td>
+      <td title="M15: SELL | main=-0.018675 | signal=-0.02307 | hist=0.004395 | hist_delta=-0.000925 | hist_state=POSITIVE | source=2026-05-29T00:30:00 | close=2026-05-29T00:45:00 | closed=True | age=None
+M30: SELL | main=-0.055711 | signal=-0.062034 | hist=0.006322 | hist_delta=0.0 | hist_state=POSITIVE | source=2026-05-28T23:30:00 | close=2026-05-29T00:00:00 | closed=True | age=None
+H1: SELL | main=-0.058355 | signal=-0.030172 | hist=-0.028183 | hist_delta=0.0 | hist_state=NEGATIVE | source=2026-05-28T23:00:00 | close=2026-05-29T00:00:00 | closed=True | age=None
+H4: BUY | main=0.119057 | signal=0.150736 | hist=-0.031679 | hist_delta=0.0 | hist_state=NEGATIVE | source=2026-05-28T20:00:00 | close=2026-05-29T00:00:00 | closed=True | age=None
+D1: SELL | main=-0.154948 | signal=-0.282366 | hist=0.127418 | hist_delta=None | hist_state=POSITIVE | source=2026-05-18T00:00:00 | close=2026-05-19T00:00:00 | closed=True | age=None" class="mono">SELL/SELL/SELL/BUY/SELL<br><small>H 0.00439/0.00632/-0.02818/-0.03168/0.12742</small></td>
+      <td title="Flag: False
+Side: NONE
+Level: NONE
+Score: 20
+Phase: LIVE_SELL_CONTROL
+Reason: D1_SELL_STALLING | NON_CLEAN_BEAR_CONTEXT">Stable · 20/100</td>
+      <td title="Campaign phase is currently calculated for metals.">Asset N/A</td>
+      <td title="Side status: FALSE
+Reason: SELL_MACD_STACK_NOT_CONFIRMED
+Bias side: SELL
+M15: main=-0.018675 / hist=0.004395 / delta=-0.000925 / SELL
+M30: main=-0.055711 / hist=0.006322 / delta=0.0 / SELL
+H1: main=-0.058355 / hist=-0.028183 / delta=0.0 / SELL
+H4: main=0.119057 / hist=-0.031679 / delta=0.0 / BUY
+D1: main=-0.154948 / hist=0.127418 / delta=None / SELL
+Rule: side needs M15/M30/H1/H4 MACD main stack and histogram timing.">FALSE SELL · M15 -0.01868 · M30 -0.05571 · H1 -0.05835</td>
+      <td title="Message: Daily SELL has paused. Wait for fresh SELL confirmation (-0.02%)
+State: D1_SELL_STALLING
+Direction: DOWN
+Progress: -0.0213491400691911%
+Points: -0.0339999999999918
+Day open: 159.257
+As of: 2026-05-29T00:45:00">D1 SELL STALLING · DOWN · -0.02%</td>
+      <td>PV - · R1 - · S1 -</td>
+      <td title="Entry: 159.223
 TP1: - | Source: - | RR: -
 TP2: - | Source: - | RR: -
 SL: - | Source: -
@@ -850,7 +699,7 @@ Reason: NO_VALID_SIGNAL" class="num">-</td>
       <header class="symbol-header">
         <div>
           <h2>EURUSD</h2>
-          <p>FX · FX Bias-First Regime Engine · D1/H1/H4 structure authority · 3 events · Current STRUCTURE_FORMING</p>
+          <p>FX · FX Bias-First Regime Engine · D1/H1/H4 structure authority · 4 events · Current STRUCTURE_FORMING</p>
         </div>
         <div class="symbol-badges">
           <span class="pill status-forming">STRUCTURE_FORMING</span>
@@ -879,7 +728,7 @@ Pivot: PV? UNKNOWN">
       <div class="mini-card">
         <span>Status</span>
         <b><span class="pill status-forming">STRUCTURE_FORMING</span></b>
-        <small>Latest 00:30 · Best STRUCTURE_FORMING</small>
+        <small>Latest 00:45 · Best STRUCTURE_FORMING</small>
       </div>
       <div class="mini-card" title="Profile: FX Bias-First Regime Engine
 Engine: BIAS_FIRST_REGIME
@@ -917,7 +766,7 @@ Support: MTF
 Conflict: NONE">
         <span>Display Side / Grade</span>
         <b><span class="pill side-buy">BUY</span> <span class="pill type-bias">BIAS</span> <span class="pill grade-x">Grade -</span></b>
-        <small>MEDIUM confidence · raw NONE · Price 1.16487</small>
+        <small>MEDIUM confidence · raw NONE · Price 1.16502</small>
       </div>
       <div class="mini-card" title="Flag: False
 Side: NONE
@@ -934,40 +783,40 @@ Reason: BUY_DOMINANT_HTF">
         <b>Asset N/A</b>
         <small>-</small>
       </div>
-      <div class="mini-card" title="M15: BUY | main=0.000217 | signal=0.000338 | hist=-0.000121 | hist_delta=1.4e-05 | hist_state=NEGATIVE | source=2026-05-29T00:15:00 | close=2026-05-29T00:30:00 | closed=True | age=None
+      <div class="mini-card" title="M15: BUY | main=0.000214 | signal=0.000313 | hist=-9.9e-05 | hist_delta=2.1e-05 | hist_state=NEGATIVE | source=2026-05-29T00:30:00 | close=2026-05-29T00:45:00 | closed=True | age=None
 M30: BUY | main=0.00078 | signal=0.000854 | hist=-7.4e-05 | hist_delta=0.0 | hist_state=NEGATIVE | source=2026-05-28T23:30:00 | close=2026-05-29T00:00:00 | closed=True | age=None
 H1: BUY | main=0.000746 | signal=0.00035 | hist=0.000397 | hist_delta=0.0 | hist_state=POSITIVE | source=2026-05-28T23:00:00 | close=2026-05-29T00:00:00 | closed=True | age=None
 H4: BUY | main=0.00024 | signal=-2e-05 | hist=0.00026 | hist_delta=0.0 | hist_state=POSITIVE | source=2026-05-28T20:00:00 | close=2026-05-29T00:00:00 | closed=True | age=None
 D1: SELL | main=-0.000362 | signal=0.001185 | hist=-0.001547 | hist_delta=None | hist_state=NEGATIVE | source=2026-05-18T00:00:00 | close=2026-05-19T00:00:00 | closed=True | age=None">
         <span>MTF</span>
         <b>BUY/BUY/BUY/BUY/SELL</b>
-        <small>Hist -0.00012/-0.00007/0.0004/0.00026/-0.00155</small>
+        <small>Hist -0.0001/-0.00007/0.0004/0.00026/-0.00155</small>
       </div>
       <div class="mini-card" title="Side status: TRUE
 Reason: BUY_MACD_STACK_OK
 Bias side: BUY
-M15: main=0.000217 / hist=-0.000121 / delta=1.4e-05 / BUY
+M15: main=0.000214 / hist=-9.9e-05 / delta=2.1e-05 / BUY
 M30: main=0.00078 / hist=-7.4e-05 / delta=0.0 / BUY
 H1: main=0.000746 / hist=0.000397 / delta=0.0 / BUY
 H4: main=0.00024 / hist=0.00026 / delta=0.0 / BUY
 D1: main=-0.000362 / hist=-0.001547 / delta=None / SELL
 Rule: side needs M15/M30/H1/H4 MACD main stack and histogram timing.">
         <span>MACD</span>
-        <b>TRUE BUY · M15 0.00022 · M30 0.00078 · H1 0.00075</b>
+        <b>TRUE BUY · M15 0.00021 · M30 0.00078 · H1 0.00075</b>
         <small>BUY_MACD_STACK_OK</small>
       </div>
-      <div class="mini-card" title="Message: Daily SELL has paused. Wait for fresh SELL confirmation (0.01%)
+      <div class="mini-card" title="Message: Daily SELL has paused. Wait for fresh SELL confirmation (0.02%)
 State: D1_SELL_STALLING
 Direction: DOWN
-Progress: 0.0111612892147572%
-Points: 0.0001299999999999
+Progress: 0.0240396998471621%
+Points: 0.0002799999999998
 Day open: 1.16474
-As of: 2026-05-29T00:30:00">
+As of: 2026-05-29T00:45:00">
         <span>D1 Day</span>
-        <b>D1 SELL STALLING · DOWN · 0.01%</b>
+        <b>D1 SELL STALLING · DOWN · 0.02%</b>
         <small>PV - · R1 - · S1 -</small>
       </div>
-      <div class="mini-card" title="Entry: 1.16487
+      <div class="mini-card" title="Entry: 1.16502
 TP1: - | Source: - | RR: -
 TP2: - | Source: - | RR: -
 SL: - | Source: -
@@ -979,9 +828,9 @@ Reason: NO_VALID_SIGNAL">
       </div>
     </section>
     
-      <div class="count-row"><span class="pill count-chip">STRUCTURE FORMING 3</span></div>
+      <div class="count-row"><span class="pill count-chip">STRUCTURE FORMING 4</span></div>
       <details class="journey" open>
-        <summary>Daily M15 journey (3 rows)</summary>
+        <summary>Daily M15 journey (4 rows)</summary>
         <div class="table-wrap">
           <table>
             <thead>
@@ -1197,7 +1046,108 @@ Reason: NO_VALID_SIGNAL" class="num">-</td>
     <tr class="row-forming">
       <td class="time">00:30</td>
       <td><span class="pill status-forming">STRUCTURE_FORMING</span></td>
-      <td class="num">1.16487</td>
+      <td class="num">1.16502</td>
+      <td title="Display side: BUY
+Type: BIAS
+Confidence: MEDIUM
+Reason: Display side derived from MTF regime BUY2; no confirmed entry side yet.
+Raw side: NONE
+Execution side: NONE
+Candidate side: NONE
+Bias side: BUY
+Risk side: NONE
+Pivot side: BUY
+MACD side: BUY
+Support: MTF
+Conflict: NONE"><span class="pill side-buy">BUY</span><br><small>BIAS · MEDIUM · raw NONE</small></td>
+      <td><span class="pill grade-x">-</span></td>
+      <td class="num">0</td>
+      <td title="Market: CLEAN_BULL_ALIGNMENT
+Readiness: DAILY MOMENTUM WEAKENING
+Severity: MEDIUM
+Action: Reduce aggression. Require stronger M15/M30 trigger and pivot confirmation."><span class="market market-bull">CLEAN BULL ALIGNMENT</span></td>
+      <td title="Profile: FX Bias-First Regime Engine
+Engine: BIAS_FIRST_REGIME
+Primary driver: D1/H1/H4 structure authority
+Description: FX prioritizes daily state, H1/H4 structure, and M30 confirmation before execution."><b>BIAS_FIRST_REGIME</b><br><small>D1/H1/H4 structure authority</small></td>
+      <td title="Date: 2026-05-29
+Regime: Strong Growth / Stable
+Bias: -
+Score: -
+Pressure: -
+USD support: 92.25
+Growth: 81.0
+Risk: 93.25
+Liquidity: 10.0
+Mode: PASSIVE_CONTEXT_ONLY">MACRO_N/A (-)</td>
+      <td title="Label: DAILY MOMENTUM WEAKENING
+Severity: MEDIUM
+Action: Reduce aggression. Require stronger M15/M30 trigger and pivot confirmation.
+Warnings: D1_STALLING
+Confirmations: ENGINE_BIAS_FIRST_REGIME, MTF_BUY2, PV+, MACD_OK_BUY
+D1: D1_SELL_STALLING
+MTF: BUY strength 2
+MACD: TRUE BUY
+Pivot: PV+ BUY"><b>DAILY MOMENTUM WEAKENING</b><br><small>MEDIUM</small></td>
+      <td title="Qualified: False
+Label: NO_EMAIL
+Score: 45 / min 70
+Rule: Clean setup
+Reason: Blocked: FX_EMAIL_RULE_BLOCK, FX_TP1_DISTANCE_BLOCK, TP_SL_INVALID, STATUS_STRUCTURE_FORMING, DIRECTION_WEAK_0, EXECUTION_THIN_0, NO_EXPANSION_PROOF
+Blockers: FX_EMAIL_RULE_BLOCK, FX_TP1_DISTANCE_BLOCK, TP_SL_INVALID, STATUS_STRUCTURE_FORMING, DIRECTION_WEAK_0, EXECUTION_THIN_0, NO_EXPANSION_PROOF
+Warnings: -
+Reasons: FX_ACTIVE_SET:AUDJPY,EURUSD,GBPUSD,NZDUSD,USDCAD,USDCHF,USDJPY, EURUSD_M30_SIDE_ACCEPTANCE:pos=1.00,pc1=0.03, M15_M30_H1_H4_ALIGNED, LOW_REVERSAL_RISK_12, ROOM_VALID, CLEAN_SETUP_DEFAULT, MACD_SUPPORT
+Aligned TFs: M15, M30, H1, H4
+Opposing TFs: D1
+Expansion proof: False
+Room valid: True
+MACD ok: True
+Readiness: WATCH
+Risk: NORMAL
+Scores: D=0 E=0 G=0 T=0 R=12.0 Final=0 -"><span class="email-blocked">NO_EMAIL 45</span></td>
+      <td title="M15: BUY | main=0.000217 | signal=0.000338 | hist=-0.000121 | hist_delta=1.4e-05 | hist_state=NEGATIVE | source=2026-05-29T00:15:00 | close=2026-05-29T00:30:00 | closed=True | age=None
+M30: BUY | main=0.00078 | signal=0.000854 | hist=-7.4e-05 | hist_delta=0.0 | hist_state=NEGATIVE | source=2026-05-28T23:30:00 | close=2026-05-29T00:00:00 | closed=True | age=None
+H1: BUY | main=0.000746 | signal=0.00035 | hist=0.000397 | hist_delta=0.0 | hist_state=POSITIVE | source=2026-05-28T23:00:00 | close=2026-05-29T00:00:00 | closed=True | age=None
+H4: BUY | main=0.00024 | signal=-2e-05 | hist=0.00026 | hist_delta=0.0 | hist_state=POSITIVE | source=2026-05-28T20:00:00 | close=2026-05-29T00:00:00 | closed=True | age=None
+D1: SELL | main=-0.000362 | signal=0.001185 | hist=-0.001547 | hist_delta=None | hist_state=NEGATIVE | source=2026-05-18T00:00:00 | close=2026-05-19T00:00:00 | closed=True | age=None" class="mono">BUY/BUY/BUY/BUY/SELL<br><small>H -0.00012/-0.00007/0.0004/0.00026/-0.00155</small></td>
+      <td title="Flag: False
+Side: NONE
+Level: NONE
+Score: 12
+Phase: LIVE_BUY_CONTROL
+Reason: BUY_DOMINANT_HTF">Stable · 12/100</td>
+      <td title="Campaign phase is currently calculated for metals.">Asset N/A</td>
+      <td title="Side status: TRUE
+Reason: BUY_MACD_STACK_OK
+Bias side: BUY
+M15: main=0.000217 / hist=-0.000121 / delta=1.4e-05 / BUY
+M30: main=0.00078 / hist=-7.4e-05 / delta=0.0 / BUY
+H1: main=0.000746 / hist=0.000397 / delta=0.0 / BUY
+H4: main=0.00024 / hist=0.00026 / delta=0.0 / BUY
+D1: main=-0.000362 / hist=-0.001547 / delta=None / SELL
+Rule: side needs M15/M30/H1/H4 MACD main stack and histogram timing.">TRUE BUY · M15 0.00022 · M30 0.00078 · H1 0.00075</td>
+      <td title="Message: Daily SELL has paused. Wait for fresh SELL confirmation (0.01%)
+State: D1_SELL_STALLING
+Direction: DOWN
+Progress: 0.0111612892147572%
+Points: 0.0001299999999999
+Day open: 1.16474
+As of: 2026-05-29T00:30:00">D1 SELL STALLING · DOWN · 0.01%</td>
+      <td>PV 1.16324 · R1 1.16786 · S1 1.16034</td>
+      <td title="Entry: 1.16487
+TP1: - | Source: - | RR: -
+TP2: - | Source: - | RR: -
+SL: - | Source: -
+TP/SL valid: 0
+Reason: NO_VALID_SIGNAL" class="num">-</td>
+      <td class="num">-</td>
+      <td class="num">-</td>
+    </tr>
+    
+    <tr class="row-forming">
+      <td class="time">00:45</td>
+      <td><span class="pill status-forming">STRUCTURE_FORMING</span></td>
+      <td class="num">1.16502</td>
       <td title="Display side: BUY
 Type: BIAS
 Confidence: MEDIUM
@@ -1256,11 +1206,11 @@ MACD ok: True
 Readiness: WATCH
 Risk: NORMAL
 Scores: D=0 E=0 G=0 T=0 R=12.0 Final=0 -"><span class="email-blocked">NO_EMAIL 45</span></td>
-      <td title="M15: BUY | main=0.000217 | signal=0.000338 | hist=-0.000121 | hist_delta=1.4e-05 | hist_state=NEGATIVE | source=2026-05-29T00:15:00 | close=2026-05-29T00:30:00 | closed=True | age=None
+      <td title="M15: BUY | main=0.000214 | signal=0.000313 | hist=-9.9e-05 | hist_delta=2.1e-05 | hist_state=NEGATIVE | source=2026-05-29T00:30:00 | close=2026-05-29T00:45:00 | closed=True | age=None
 M30: BUY | main=0.00078 | signal=0.000854 | hist=-7.4e-05 | hist_delta=0.0 | hist_state=NEGATIVE | source=2026-05-28T23:30:00 | close=2026-05-29T00:00:00 | closed=True | age=None
 H1: BUY | main=0.000746 | signal=0.00035 | hist=0.000397 | hist_delta=0.0 | hist_state=POSITIVE | source=2026-05-28T23:00:00 | close=2026-05-29T00:00:00 | closed=True | age=None
 H4: BUY | main=0.00024 | signal=-2e-05 | hist=0.00026 | hist_delta=0.0 | hist_state=POSITIVE | source=2026-05-28T20:00:00 | close=2026-05-29T00:00:00 | closed=True | age=None
-D1: SELL | main=-0.000362 | signal=0.001185 | hist=-0.001547 | hist_delta=None | hist_state=NEGATIVE | source=2026-05-18T00:00:00 | close=2026-05-19T00:00:00 | closed=True | age=None" class="mono">BUY/BUY/BUY/BUY/SELL<br><small>H -0.00012/-0.00007/0.0004/0.00026/-0.00155</small></td>
+D1: SELL | main=-0.000362 | signal=0.001185 | hist=-0.001547 | hist_delta=None | hist_state=NEGATIVE | source=2026-05-18T00:00:00 | close=2026-05-19T00:00:00 | closed=True | age=None" class="mono">BUY/BUY/BUY/BUY/SELL<br><small>H -0.0001/-0.00007/0.0004/0.00026/-0.00155</small></td>
       <td title="Flag: False
 Side: NONE
 Level: NONE
@@ -1271,21 +1221,475 @@ Reason: BUY_DOMINANT_HTF">Stable · 12/100</td>
       <td title="Side status: TRUE
 Reason: BUY_MACD_STACK_OK
 Bias side: BUY
-M15: main=0.000217 / hist=-0.000121 / delta=1.4e-05 / BUY
+M15: main=0.000214 / hist=-9.9e-05 / delta=2.1e-05 / BUY
 M30: main=0.00078 / hist=-7.4e-05 / delta=0.0 / BUY
 H1: main=0.000746 / hist=0.000397 / delta=0.0 / BUY
 H4: main=0.00024 / hist=0.00026 / delta=0.0 / BUY
 D1: main=-0.000362 / hist=-0.001547 / delta=None / SELL
-Rule: side needs M15/M30/H1/H4 MACD main stack and histogram timing.">TRUE BUY · M15 0.00022 · M30 0.00078 · H1 0.00075</td>
-      <td title="Message: Daily SELL has paused. Wait for fresh SELL confirmation (0.01%)
+Rule: side needs M15/M30/H1/H4 MACD main stack and histogram timing.">TRUE BUY · M15 0.00021 · M30 0.00078 · H1 0.00075</td>
+      <td title="Message: Daily SELL has paused. Wait for fresh SELL confirmation (0.02%)
 State: D1_SELL_STALLING
 Direction: DOWN
-Progress: 0.0111612892147572%
-Points: 0.0001299999999999
+Progress: 0.0240396998471621%
+Points: 0.0002799999999998
 Day open: 1.16474
-As of: 2026-05-29T00:30:00">D1 SELL STALLING · DOWN · 0.01%</td>
+As of: 2026-05-29T00:45:00">D1 SELL STALLING · DOWN · 0.02%</td>
       <td>PV - · R1 - · S1 -</td>
-      <td title="Entry: 1.16487
+      <td title="Entry: 1.16502
+TP1: - | Source: - | RR: -
+TP2: - | Source: - | RR: -
+SL: - | Source: -
+TP/SL valid: 0
+Reason: NO_VALID_SIGNAL" class="num">-</td>
+      <td class="num">-</td>
+      <td class="num">-</td>
+    </tr>
+    </tbody>
+          </table>
+        </div>
+      </details>
+    </article>
+    </div><div id="symbol-FX-GBPUSD" class="symbol-panel ">
+    <article id="card-GBPUSD" class="symbol-card border-forming">
+      <header class="symbol-header">
+        <div>
+          <h2>GBPUSD</h2>
+          <p>FX · FX Bias-First Regime Engine · D1/H1/H4 structure authority · 3 events · Current STRUCTURE_FORMING</p>
+        </div>
+        <div class="symbol-badges">
+          <span class="pill status-forming">STRUCTURE_FORMING</span>
+          <span class="pill side-buy">BUY</span>
+          <span class="pill type-risk">RISK_WATCH</span>
+          <span class="pill count-chip">Best STRUCTURE_FORMING</span>
+        </div>
+      </header>
+      
+    <section class="latest-grid">
+      <div class="readiness-card sev-medium" title="Label: BUY WEAKENING — WATCH BUY
+Severity: MEDIUM
+Action: Treat current BUY as fragile. Monitor BUY trigger and pivot behavior.
+Warnings: MACD_SIDE_BLOCK, D1_FADING
+Confirmations: ENGINE_BIAS_FIRST_REGIME, MTF_BUY1
+D1: D1_SELL_FADING
+MTF: BUY strength 1
+MACD: FALSE BUY
+Pivot: PV? UNKNOWN">
+        <div class="eyebrow">Institutional Readiness</div>
+        <h3>BUY WEAKENING — WATCH BUY</h3>
+        <p>Treat current BUY as fragile. Monitor BUY trigger and pivot behavior.</p>
+        <div class="chip-row"><span class="pill warn-chip">MACD SIDE BLOCK</span><span class="pill warn-chip">D1 FADING</span></div>
+        <div class="chip-row"><span class="pill ok-chip">ENGINE BIAS FIRST REGIME</span><span class="pill ok-chip">MTF BUY1</span></div>
+      </div>
+      <div class="mini-card">
+        <span>Status</span>
+        <b><span class="pill status-forming">STRUCTURE_FORMING</span></b>
+        <small>Latest 00:45 · Best STRUCTURE_FORMING</small>
+      </div>
+      <div class="mini-card" title="Profile: FX Bias-First Regime Engine
+Engine: BIAS_FIRST_REGIME
+Primary driver: D1/H1/H4 structure authority
+Description: FX prioritizes daily state, H1/H4 structure, and M30 confirmation before execution.">
+        <span>Asset Engine</span>
+        <b>FX Bias-First Regime Engine · D1/H1/H4 structure authority</b>
+        <small>Fields are interpreted with asset-specific weighting</small>
+      </div>
+      <div class="mini-card" title="Best zone: New York | Secondary: London | Avoid: Asia | Confidence: Medium | New York produced the best continuation behavior.">
+        <span>Best Zone</span>
+        <b>New York</b>
+        <small>Medium confidence · avoid Asia</small>
+      </div>
+      <div class="mini-card" title="Market: RANGE_OR_TRANSITION
+Readiness: BUY WEAKENING — WATCH BUY
+Severity: MEDIUM
+Action: Treat current BUY as fragile. Monitor BUY trigger and pivot behavior.">
+        <span>Market</span>
+        <b class="market market-range">RANGE OR TRANSITION</b>
+        <small>Environment context before signal interpretation</small>
+      </div>
+      <div class="mini-card" title="Display side: BUY
+Type: RISK_WATCH
+Confidence: MEDIUM
+Reason: No confirmed trade side; direction-change layer says watch BUY (MEDIUM).
+Raw side: NONE
+Execution side: NONE
+Candidate side: NONE
+Bias side: BUY
+Risk side: BUY
+Pivot side: UNKNOWN
+MACD side: BUY
+Support: RISK
+Conflict: NONE">
+        <span>Display Side / Grade</span>
+        <b><span class="pill side-buy">BUY</span> <span class="pill type-risk">RISK_WATCH</span> <span class="pill grade-x">Grade -</span></b>
+        <small>MEDIUM confidence · raw NONE · Price 1.34365</small>
+      </div>
+      <div class="mini-card" title="Flag: True
+Side: BUY
+Level: MEDIUM
+Score: 54
+Phase: LIVE_SELL_FRAGILE_WATCH_BUY
+Reason: M15_COUNTER_BUY | M30_COUNTER_BUY | D1_SELL_FADING | NON_CLEAN_BEAR_CONTEXT">
+        <span>Direction Risk</span>
+        <b>MEDIUM · watch BUY · 54/100</b>
+        <small>M15 COUNTER BUY | M30 COUNTER BUY | D1 SELL FADING | NON CLEAN BEAR CONT...</small>
+      </div>
+      <div class="mini-card" title="Campaign phase is currently calculated for metals.">
+        <span>Campaign Phase</span>
+        <b>Asset N/A</b>
+        <small>-</small>
+      </div>
+      <div class="mini-card" title="M15: BUY | main=0.000328 | signal=0.000471 | hist=-0.000143 | hist_delta=-2.6e-05 | hist_state=NEGATIVE | source=2026-05-29T00:30:00 | close=2026-05-29T00:45:00 | closed=True | age=None
+M30: BUY | main=0.000874 | signal=0.000858 | hist=1.6e-05 | hist_delta=0.0 | hist_state=POSITIVE | source=2026-05-28T23:30:00 | close=2026-05-29T00:00:00 | closed=True | age=None
+H1: BUY | main=0.000516 | signal=-5.2e-05 | hist=0.000568 | hist_delta=0.0 | hist_state=POSITIVE | source=2026-05-28T23:00:00 | close=2026-05-29T00:00:00 | closed=True | age=None
+H4: SELL | main=-0.000343 | signal=-8.2e-05 | hist=-0.000261 | hist_delta=0.0 | hist_state=NEGATIVE | source=2026-05-28T20:00:00 | close=2026-05-29T00:00:00 | closed=True | age=None
+D1: SELL | main=-0.001194 | signal=0.002123 | hist=-0.003316 | hist_delta=None | hist_state=NEGATIVE | source=2026-05-18T00:00:00 | close=2026-05-19T00:00:00 | closed=True | age=None">
+        <span>MTF</span>
+        <b>BUY/BUY/BUY/SELL/SELL</b>
+        <small>Hist -0.00014/0.00002/0.00057/-0.00026/-0.00332</small>
+      </div>
+      <div class="mini-card" title="Side status: FALSE
+Reason: BUY_MACD_STACK_NOT_CONFIRMED
+Bias side: BUY
+M15: main=0.000328 / hist=-0.000143 / delta=-2.6e-05 / BUY
+M30: main=0.000874 / hist=1.6e-05 / delta=0.0 / BUY
+H1: main=0.000516 / hist=0.000568 / delta=0.0 / BUY
+H4: main=-0.000343 / hist=-0.000261 / delta=0.0 / SELL
+D1: main=-0.001194 / hist=-0.003316 / delta=None / SELL
+Rule: side needs M15/M30/H1/H4 MACD main stack and histogram timing.">
+        <span>MACD</span>
+        <b>FALSE BUY · M15 0.00033 · M30 0.00087 · H1 0.00052</b>
+        <small>BUY_MACD_STACK_NOT_CONFIRMED</small>
+      </div>
+      <div class="mini-card" title="Message: Daily SELL is weakening. Prepare for possible BUY reversal (-0.04%)
+State: D1_SELL_FADING
+Direction: DOWN
+Progress: -0.0357108315415946%
+Points: -0.00048
+Day open: 1.34413
+As of: 2026-05-29T00:45:00">
+        <span>D1 Day</span>
+        <b>D1 SELL FADING · DOWN · -0.04%</b>
+        <small>PV - · R1 - · S1 -</small>
+      </div>
+      <div class="mini-card" title="Entry: 1.34365
+TP1: - | Source: - | RR: -
+TP2: - | Source: - | RR: -
+SL: - | Source: -
+TP/SL valid: 0
+Reason: NO_VALID_SIGNAL">
+        <span>TP Plan</span>
+        <b>TP1 - / TP2 -</b>
+        <small>RR1 - | RR2 - | SL -</small>
+      </div>
+    </section>
+    
+      <div class="count-row"><span class="pill count-chip">STRUCTURE FORMING 3</span></div>
+      <details class="journey" open>
+        <summary>Daily M15 journey (3 rows)</summary>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Time</th><th>Status</th><th>Price</th><th>Display Side</th><th>Grade</th><th>Score</th>
+                <th>Market</th><th>Engine</th><th>Macro</th><th>Readiness</th><th>Email</th><th>MTF</th><th>Risk</th><th>Campaign</th><th>MACD</th><th>D1 Day</th><th>Levels</th>
+                <th>TP1</th><th>TP2</th><th>SL</th>
+              </tr>
+            </thead>
+            <tbody>
+    <tr class="row-forming">
+      <td class="time">00:00</td>
+      <td><span class="pill status-forming">STRUCTURE_FORMING</span></td>
+      <td class="num">1.34435</td>
+      <td title="Display side: BUY
+Type: RISK_WATCH
+Confidence: LOW
+Reason: No confirmed trade side; direction-change layer says watch BUY (LOW).
+Raw side: NONE
+Execution side: NONE
+Candidate side: NONE
+Bias side: BUY
+Risk side: BUY
+Pivot side: UNKNOWN
+MACD side: BUY
+Support: RISK
+Conflict: NONE"><span class="pill side-buy">BUY</span><br><small>RISK_WATCH · LOW · raw NONE</small></td>
+      <td><span class="pill grade-x">-</span></td>
+      <td class="num">0</td>
+      <td title="Market: RANGE_OR_TRANSITION
+Readiness: BUY MACD BLOCKED
+Severity: HIGH
+Action: Avoid execution until MACD main stack and histogram timing support the side."><span class="market market-range">RANGE OR TRANSITION</span></td>
+      <td title="Profile: FX Bias-First Regime Engine
+Engine: BIAS_FIRST_REGIME
+Primary driver: D1/H1/H4 structure authority
+Description: FX prioritizes daily state, H1/H4 structure, and M30 confirmation before execution."><b>BIAS_FIRST_REGIME</b><br><small>D1/H1/H4 structure authority</small></td>
+      <td title="Date: 2026-05-28
+Regime: Strong Growth / Stable
+Bias: -
+Score: -
+Pressure: -
+USD support: 92.25
+Growth: 81.0
+Risk: 93.25
+Liquidity: 10.0
+Mode: PASSIVE_CONTEXT_ONLY">MACRO_N/A (-)</td>
+      <td title="Label: BUY MACD BLOCKED
+Severity: HIGH
+Action: Avoid execution until MACD main stack and histogram timing support the side.
+Warnings: MACD_SIDE_BLOCK, D1_STALLING
+Confirmations: ENGINE_BIAS_FIRST_REGIME, MTF_BUY1
+D1: D1_SELL_STALLING
+MTF: BUY strength 1
+MACD: FALSE BUY
+Pivot: PV? UNKNOWN"><b>BUY MACD BLOCKED</b><br><small>HIGH</small></td>
+      <td title="Qualified: False
+Label: NO_EMAIL
+Score: 18 / min 70
+Rule: Clean setup
+Reason: Blocked: FX_EMAIL_RULE_BLOCK, FX_TP1_DISTANCE_BLOCK, TP_SL_INVALID, STATUS_STRUCTURE_FORMING, CORE_NOT_FULLY_ALIGNED, DIRECTION_WEAK_0, EXECUTION_THIN_0, NO_EXPANSION_PROOF
+Blockers: FX_EMAIL_RULE_BLOCK, FX_TP1_DISTANCE_BLOCK, TP_SL_INVALID, STATUS_STRUCTURE_FORMING, CORE_NOT_FULLY_ALIGNED, DIRECTION_WEAK_0, EXECUTION_THIN_0, NO_EXPANSION_PROOF
+Warnings: -
+Reasons: FX_ACTIVE_SET:AUDJPY,EURUSD,GBPUSD,NZDUSD,USDCAD,USDCHF,USDJPY, GBPUSD_M30_SIDE_ACCEPTANCE:pos=0.96,pc1=0.03, MEDIUM_REVERSAL_RISK_42, ROOM_VALID, CLEAN_SETUP_DEFAULT, MACD_SUPPORT
+Aligned TFs: M15, M30, H1
+Opposing TFs: H4, D1
+Expansion proof: False
+Room valid: True
+MACD ok: True
+Readiness: WATCH
+Risk: NORMAL
+Scores: D=0 E=0 G=0 T=0 R=42.0 Final=0 -"><span class="email-blocked">NO_EMAIL 18</span></td>
+      <td title="M15: BUY | main=0.00039 | signal=0.000506 | hist=-0.000116 | hist_delta=2.7e-05 | hist_state=NEGATIVE | source=2026-05-28T23:45:00 | close=2026-05-29T00:00:00 | closed=True | age=None
+M30: BUY | main=0.000874 | signal=0.000858 | hist=1.6e-05 | hist_delta=-1.3e-05 | hist_state=POSITIVE | source=2026-05-28T23:30:00 | close=2026-05-29T00:00:00 | closed=True | age=None
+H1: BUY | main=0.000516 | signal=-5.2e-05 | hist=0.000568 | hist_delta=-4.7e-05 | hist_state=POSITIVE | source=2026-05-28T23:00:00 | close=2026-05-29T00:00:00 | closed=True | age=None
+H4: SELL | main=-0.000343 | signal=-8.2e-05 | hist=-0.000261 | hist_delta=0.000194 | hist_state=NEGATIVE | source=2026-05-28T20:00:00 | close=2026-05-29T00:00:00 | closed=True | age=None
+D1: SELL | main=-0.001194 | signal=0.002123 | hist=-0.003316 | hist_delta=None | hist_state=NEGATIVE | source=2026-05-18T00:00:00 | close=2026-05-19T00:00:00 | closed=True | age=None" class="mono">BUY/BUY/BUY/SELL/SELL<br><small>H -0.00012/0.00002/0.00057/-0.00026/-0.00332</small></td>
+      <td title="Flag: True
+Side: BUY
+Level: LOW
+Score: 42
+Phase: LIVE_SELL_FRAGILE_WATCH_BUY
+Reason: M15_COUNTER_BUY | M30_COUNTER_BUY | D1_SELL_STALLING | NON_CLEAN_BEAR_CONTEXT">LOW · watch BUY · 42/100</td>
+      <td title="Campaign phase is currently calculated for metals.">Asset N/A</td>
+      <td title="Side status: FALSE
+Reason: BUY_MACD_STACK_NOT_CONFIRMED
+Bias side: BUY
+M15: main=0.00039 / hist=-0.000116 / delta=2.7e-05 / BUY
+M30: main=0.000874 / hist=1.6e-05 / delta=-1.3e-05 / BUY
+H1: main=0.000516 / hist=0.000568 / delta=-4.7e-05 / BUY
+H4: main=-0.000343 / hist=-0.000261 / delta=0.000194 / SELL
+D1: main=-0.001194 / hist=-0.003316 / delta=None / SELL
+Rule: side needs M15/M30/H1/H4 MACD main stack and histogram timing.">FALSE BUY · M15 0.00039 · M30 0.00087 · H1 0.00052</td>
+      <td title="Message: Daily SELL has paused. Wait for fresh SELL confirmation (0.02%)
+State: D1_SELL_STALLING
+Direction: DOWN
+Progress: 0.0163674644565545%
+Points: 0.0002199999999998
+Day open: 1.34413
+As of: 2026-05-29T00:00:00">D1 SELL STALLING · DOWN · 0.02%</td>
+      <td>PV - · R1 - · S1 -</td>
+      <td title="Entry: 1.34435
+TP1: - | Source: - | RR: -
+TP2: - | Source: - | RR: -
+SL: - | Source: -
+TP/SL valid: 0
+Reason: NO_VALID_SIGNAL" class="num">-</td>
+      <td class="num">-</td>
+      <td class="num">-</td>
+    </tr>
+    
+    <tr class="row-forming">
+      <td class="time">00:00</td>
+      <td><span class="pill status-forming">STRUCTURE_FORMING</span></td>
+      <td class="num">1.34365</td>
+      <td title="Display side: BUY
+Type: RISK_WATCH
+Confidence: LOW
+Reason: No confirmed trade side; direction-change layer says watch BUY (LOW).
+Raw side: NONE
+Execution side: NONE
+Candidate side: NONE
+Bias side: BUY
+Risk side: BUY
+Pivot side: BUY
+MACD side: BUY
+Support: RISK
+Conflict: NONE"><span class="pill side-buy">BUY</span><br><small>RISK_WATCH · LOW · raw NONE</small></td>
+      <td><span class="pill grade-x">-</span></td>
+      <td class="num">0</td>
+      <td title="Market: RANGE_OR_TRANSITION
+Readiness: BUY MACD BLOCKED
+Severity: HIGH
+Action: Avoid execution until MACD main stack and histogram timing support the side."><span class="market market-range">RANGE OR TRANSITION</span></td>
+      <td title="Profile: FX Bias-First Regime Engine
+Engine: BIAS_FIRST_REGIME
+Primary driver: D1/H1/H4 structure authority
+Description: FX prioritizes daily state, H1/H4 structure, and M30 confirmation before execution."><b>BIAS_FIRST_REGIME</b><br><small>D1/H1/H4 structure authority</small></td>
+      <td title="Date: 2026-05-29
+Regime: Strong Growth / Stable
+Bias: -
+Score: -
+Pressure: -
+USD support: 92.25
+Growth: 81.0
+Risk: 93.25
+Liquidity: 10.0
+Mode: PASSIVE_CONTEXT_ONLY">MACRO_N/A (-)</td>
+      <td title="Label: BUY MACD BLOCKED
+Severity: HIGH
+Action: Avoid execution until MACD main stack and histogram timing support the side.
+Warnings: MACD_SIDE_BLOCK, D1_STALLING
+Confirmations: ENGINE_BIAS_FIRST_REGIME, MTF_BUY1, PV+
+D1: D1_SELL_STALLING
+MTF: BUY strength 1
+MACD: FALSE BUY
+Pivot: PV+ BUY"><b>BUY MACD BLOCKED</b><br><small>HIGH</small></td>
+      <td title="Qualified: False
+Label: NO_EMAIL
+Score: 18 / min 70
+Rule: Clean setup
+Reason: Blocked: FX_EMAIL_RULE_BLOCK, FX_TP1_DISTANCE_BLOCK, TP_SL_INVALID, STATUS_STRUCTURE_FORMING, CORE_NOT_FULLY_ALIGNED, DIRECTION_WEAK_0, EXECUTION_THIN_0, NO_EXPANSION_PROOF
+Blockers: FX_EMAIL_RULE_BLOCK, FX_TP1_DISTANCE_BLOCK, TP_SL_INVALID, STATUS_STRUCTURE_FORMING, CORE_NOT_FULLY_ALIGNED, DIRECTION_WEAK_0, EXECUTION_THIN_0, NO_EXPANSION_PROOF
+Warnings: -
+Reasons: FX_ACTIVE_SET:AUDJPY,EURUSD,GBPUSD,NZDUSD,USDCAD,USDCHF,USDJPY, GBPUSD_M30_SIDE_ACCEPTANCE:pos=0.96,pc1=0.03, MEDIUM_REVERSAL_RISK_42, ROOM_VALID, CLEAN_SETUP_DEFAULT, MACD_SUPPORT
+Aligned TFs: M15, M30, H1
+Opposing TFs: H4, D1
+Expansion proof: False
+Room valid: True
+MACD ok: True
+Readiness: WATCH
+Risk: NORMAL
+Scores: D=0 E=0 G=0 T=0 R=42.0 Final=0 -"><span class="email-blocked">NO_EMAIL 18</span></td>
+      <td title="M15: BUY | main=0.00039 | signal=0.000506 | hist=-0.000116 | hist_delta=0.0 | hist_state=NEGATIVE | source=2026-05-28T23:45:00 | close=2026-05-29T00:00:00 | closed=True | age=None
+M30: BUY | main=0.000874 | signal=0.000858 | hist=1.6e-05 | hist_delta=0.0 | hist_state=POSITIVE | source=2026-05-28T23:30:00 | close=2026-05-29T00:00:00 | closed=True | age=None
+H1: BUY | main=0.000516 | signal=-5.2e-05 | hist=0.000568 | hist_delta=0.0 | hist_state=POSITIVE | source=2026-05-28T23:00:00 | close=2026-05-29T00:00:00 | closed=True | age=None
+H4: SELL | main=-0.000343 | signal=-8.2e-05 | hist=-0.000261 | hist_delta=0.0 | hist_state=NEGATIVE | source=2026-05-28T20:00:00 | close=2026-05-29T00:00:00 | closed=True | age=None
+D1: SELL | main=-0.001194 | signal=0.002123 | hist=-0.003316 | hist_delta=None | hist_state=NEGATIVE | source=2026-05-18T00:00:00 | close=2026-05-19T00:00:00 | closed=True | age=None" class="mono">BUY/BUY/BUY/SELL/SELL<br><small>H -0.00012/0.00002/0.00057/-0.00026/-0.00332</small></td>
+      <td title="Flag: True
+Side: BUY
+Level: LOW
+Score: 42
+Phase: LIVE_SELL_FRAGILE_WATCH_BUY
+Reason: M15_COUNTER_BUY | M30_COUNTER_BUY | D1_SELL_STALLING | NON_CLEAN_BEAR_CONTEXT">LOW · watch BUY · 42/100</td>
+      <td title="Campaign phase is currently calculated for metals.">Asset N/A</td>
+      <td title="Side status: FALSE
+Reason: BUY_MACD_STACK_NOT_CONFIRMED
+Bias side: BUY
+M15: main=0.00039 / hist=-0.000116 / delta=0.0 / BUY
+M30: main=0.000874 / hist=1.6e-05 / delta=0.0 / BUY
+H1: main=0.000516 / hist=0.000568 / delta=0.0 / BUY
+H4: main=-0.000343 / hist=-0.000261 / delta=0.0 / SELL
+D1: main=-0.001194 / hist=-0.003316 / delta=None / SELL
+Rule: side needs M15/M30/H1/H4 MACD main stack and histogram timing.">FALSE BUY · M15 0.00039 · M30 0.00087 · H1 0.00052</td>
+      <td title="Message: Daily SELL has paused. Wait for fresh SELL confirmation (0.02%)
+State: D1_SELL_STALLING
+Direction: DOWN
+Progress: 0.0163674644565545%
+Points: 0.0002199999999998
+Day open: 1.34413
+As of: 2026-05-29T00:00:00">D1 SELL STALLING · DOWN · 0.02%</td>
+      <td>PV 1.34201 · R1 1.34733 · S1 1.33899</td>
+      <td title="Entry: 1.34435
+TP1: - | Source: - | RR: -
+TP2: - | Source: - | RR: -
+SL: - | Source: -
+TP/SL valid: 0
+Reason: NO_VALID_SIGNAL" class="num">-</td>
+      <td class="num">-</td>
+      <td class="num">-</td>
+    </tr>
+    
+    <tr class="row-forming">
+      <td class="time">00:45</td>
+      <td><span class="pill status-forming">STRUCTURE_FORMING</span></td>
+      <td class="num">1.34365</td>
+      <td title="Display side: BUY
+Type: RISK_WATCH
+Confidence: MEDIUM
+Reason: No confirmed trade side; direction-change layer says watch BUY (MEDIUM).
+Raw side: NONE
+Execution side: NONE
+Candidate side: NONE
+Bias side: BUY
+Risk side: BUY
+Pivot side: UNKNOWN
+MACD side: BUY
+Support: RISK
+Conflict: NONE"><span class="pill side-buy">BUY</span><br><small>RISK_WATCH · MEDIUM · raw NONE</small></td>
+      <td><span class="pill grade-x">-</span></td>
+      <td class="num">0</td>
+      <td title="Market: RANGE_OR_TRANSITION
+Readiness: BUY WEAKENING — WATCH BUY
+Severity: MEDIUM
+Action: Treat current BUY as fragile. Monitor BUY trigger and pivot behavior."><span class="market market-range">RANGE OR TRANSITION</span></td>
+      <td title="Profile: FX Bias-First Regime Engine
+Engine: BIAS_FIRST_REGIME
+Primary driver: D1/H1/H4 structure authority
+Description: FX prioritizes daily state, H1/H4 structure, and M30 confirmation before execution."><b>BIAS_FIRST_REGIME</b><br><small>D1/H1/H4 structure authority</small></td>
+      <td title="Date: 2026-05-29
+Regime: Strong Growth / Stable
+Bias: -
+Score: -
+Pressure: -
+USD support: 92.25
+Growth: 81.0
+Risk: 93.25
+Liquidity: 10.0
+Mode: PASSIVE_CONTEXT_ONLY">MACRO_N/A (-)</td>
+      <td title="Label: BUY WEAKENING — WATCH BUY
+Severity: MEDIUM
+Action: Treat current BUY as fragile. Monitor BUY trigger and pivot behavior.
+Warnings: MACD_SIDE_BLOCK, D1_FADING
+Confirmations: ENGINE_BIAS_FIRST_REGIME, MTF_BUY1
+D1: D1_SELL_FADING
+MTF: BUY strength 1
+MACD: FALSE BUY
+Pivot: PV? UNKNOWN"><b>BUY WEAKENING — WATCH BUY</b><br><small>MEDIUM</small></td>
+      <td title="Qualified: False
+Label: NO_EMAIL
+Score: 10 / min 70
+Rule: Clean setup
+Reason: Blocked: FX_EMAIL_RULE_BLOCK, FX_TP1_DISTANCE_BLOCK, TP_SL_INVALID, STATUS_STRUCTURE_FORMING, CORE_NOT_FULLY_ALIGNED, DIRECTION_WEAK_0, EXECUTION_THIN_0, REVERSAL_RISK_54, NO_EXPANSION_PROOF, REVERSAL_RISK_HIGH
+Blockers: FX_EMAIL_RULE_BLOCK, FX_TP1_DISTANCE_BLOCK, TP_SL_INVALID, STATUS_STRUCTURE_FORMING, CORE_NOT_FULLY_ALIGNED, DIRECTION_WEAK_0, EXECUTION_THIN_0, REVERSAL_RISK_54, NO_EXPANSION_PROOF, REVERSAL_RISK_HIGH
+Warnings: -
+Reasons: FX_ACTIVE_SET:AUDJPY,EURUSD,GBPUSD,NZDUSD,USDCAD,USDCHF,USDJPY, GBPUSD_M30_SIDE_ACCEPTANCE:pos=0.96,pc1=0.03, ROOM_VALID, CLEAN_SETUP_DEFAULT, MACD_SUPPORT
+Aligned TFs: M15, M30, H1
+Opposing TFs: H4, D1
+Expansion proof: False
+Room valid: True
+MACD ok: True
+Readiness: WATCH
+Risk: NORMAL
+Scores: D=0 E=0 G=0 T=0 R=54.0 Final=0 -"><span class="email-blocked">NO_EMAIL 10</span></td>
+      <td title="M15: BUY | main=0.000328 | signal=0.000471 | hist=-0.000143 | hist_delta=-2.6e-05 | hist_state=NEGATIVE | source=2026-05-29T00:30:00 | close=2026-05-29T00:45:00 | closed=True | age=None
+M30: BUY | main=0.000874 | signal=0.000858 | hist=1.6e-05 | hist_delta=0.0 | hist_state=POSITIVE | source=2026-05-28T23:30:00 | close=2026-05-29T00:00:00 | closed=True | age=None
+H1: BUY | main=0.000516 | signal=-5.2e-05 | hist=0.000568 | hist_delta=0.0 | hist_state=POSITIVE | source=2026-05-28T23:00:00 | close=2026-05-29T00:00:00 | closed=True | age=None
+H4: SELL | main=-0.000343 | signal=-8.2e-05 | hist=-0.000261 | hist_delta=0.0 | hist_state=NEGATIVE | source=2026-05-28T20:00:00 | close=2026-05-29T00:00:00 | closed=True | age=None
+D1: SELL | main=-0.001194 | signal=0.002123 | hist=-0.003316 | hist_delta=None | hist_state=NEGATIVE | source=2026-05-18T00:00:00 | close=2026-05-19T00:00:00 | closed=True | age=None" class="mono">BUY/BUY/BUY/SELL/SELL<br><small>H -0.00014/0.00002/0.00057/-0.00026/-0.00332</small></td>
+      <td title="Flag: True
+Side: BUY
+Level: MEDIUM
+Score: 54
+Phase: LIVE_SELL_FRAGILE_WATCH_BUY
+Reason: M15_COUNTER_BUY | M30_COUNTER_BUY | D1_SELL_FADING | NON_CLEAN_BEAR_CONTEXT">MEDIUM · watch BUY · 54/100</td>
+      <td title="Campaign phase is currently calculated for metals.">Asset N/A</td>
+      <td title="Side status: FALSE
+Reason: BUY_MACD_STACK_NOT_CONFIRMED
+Bias side: BUY
+M15: main=0.000328 / hist=-0.000143 / delta=-2.6e-05 / BUY
+M30: main=0.000874 / hist=1.6e-05 / delta=0.0 / BUY
+H1: main=0.000516 / hist=0.000568 / delta=0.0 / BUY
+H4: main=-0.000343 / hist=-0.000261 / delta=0.0 / SELL
+D1: main=-0.001194 / hist=-0.003316 / delta=None / SELL
+Rule: side needs M15/M30/H1/H4 MACD main stack and histogram timing.">FALSE BUY · M15 0.00033 · M30 0.00087 · H1 0.00052</td>
+      <td title="Message: Daily SELL is weakening. Prepare for possible BUY reversal (-0.04%)
+State: D1_SELL_FADING
+Direction: DOWN
+Progress: -0.0357108315415946%
+Points: -0.00048
+Day open: 1.34413
+As of: 2026-05-29T00:45:00">D1 SELL FADING · DOWN · -0.04%</td>
+      <td>PV - · R1 - · S1 -</td>
+      <td title="Entry: 1.34365
 TP1: - | Source: - | RR: -
 TP2: - | Source: - | RR: -
 SL: - | Source: -
@@ -1304,7 +1708,7 @@ Reason: NO_VALID_SIGNAL" class="num">-</td>
       <header class="symbol-header">
         <div>
           <h2>USDCAD</h2>
-          <p>FX · FX Bias-First Regime Engine · D1/H1/H4 structure authority · 3 events · Current NO_TRADE</p>
+          <p>FX · FX Bias-First Regime Engine · D1/H1/H4 structure authority · 4 events · Current NO_TRADE</p>
         </div>
         <div class="symbol-badges">
           <span class="pill status-none">NO_TRADE</span>
@@ -1318,22 +1722,22 @@ Reason: NO_VALID_SIGNAL" class="num">-</td>
       <div class="readiness-card sev-high" title="Label: SELL MACD BLOCKED
 Severity: HIGH
 Action: Avoid execution until MACD main stack and histogram timing support the side.
-Warnings: MACD_SIDE_BLOCK, D1_FADING
-Confirmations: ENGINE_BIAS_FIRST_REGIME, MTF_SELL1
-D1: D1_SELL_FADING
+Warnings: MACD_SIDE_BLOCK
+Confirmations: ENGINE_BIAS_FIRST_REGIME, MTF_SELL1, D1_CONTINUING
+D1: D1_SELL_CONTINUING
 MTF: SELL strength 1
 MACD: FALSE SELL
 Pivot: PV? UNKNOWN">
         <div class="eyebrow">Institutional Readiness</div>
         <h3>SELL MACD BLOCKED</h3>
         <p>Avoid execution until MACD main stack and histogram timing support the side.</p>
-        <div class="chip-row"><span class="pill warn-chip">MACD SIDE BLOCK</span><span class="pill warn-chip">D1 FADING</span></div>
-        <div class="chip-row"><span class="pill ok-chip">ENGINE BIAS FIRST REGIME</span><span class="pill ok-chip">MTF SELL1</span></div>
+        <div class="chip-row"><span class="pill warn-chip">MACD SIDE BLOCK</span></div>
+        <div class="chip-row"><span class="pill ok-chip">ENGINE BIAS FIRST REGIME</span><span class="pill ok-chip">MTF SELL1</span><span class="pill ok-chip">D1 CONTINUING</span></div>
       </div>
       <div class="mini-card">
         <span>Status</span>
         <b><span class="pill status-none">NO_TRADE</span></b>
-        <small>Latest 00:30 · Best NO_TRADE</small>
+        <small>Latest 00:45 · Best NO_TRADE</small>
       </div>
       <div class="mini-card" title="Profile: FX Bias-First Regime Engine
 Engine: BIAS_FIRST_REGIME
@@ -1371,57 +1775,57 @@ Support: NONE
 Conflict: NONE">
         <span>Display Side / Grade</span>
         <b><span class="pill side-none">NONE</span> <span class="pill type-none">NONE</span> <span class="pill grade-x">Grade -</span></b>
-        <small>NONE confidence · raw NONE · Price 1.37777</small>
+        <small>NONE confidence · raw NONE · Price 1.37727</small>
       </div>
       <div class="mini-card" title="Flag: False
 Side: NONE
 Level: NONE
-Score: 32
+Score: 22
 Phase: LIVE_SELL_CONTROL
-Reason: D1_SELL_FADING | NON_CLEAN_BEAR_CONTEXT">
+Reason: NON_CLEAN_BEAR_CONTEXT | SELL_NEAR_LOW">
         <span>Direction Risk</span>
-        <b>Stable · 32/100</b>
-        <small>D1 SELL FADING | NON CLEAN BEAR CONTEXT</small>
+        <b>Stable · 22/100</b>
+        <small>NON CLEAN BEAR CONTEXT | SELL NEAR LOW</small>
       </div>
       <div class="mini-card" title="Campaign phase is currently calculated for metals.">
         <span>Campaign Phase</span>
         <b>Asset N/A</b>
         <small>-</small>
       </div>
-      <div class="mini-card" title="M15: SELL | main=-0.001014 | signal=-0.001204 | hist=0.000189 | hist_delta=-2.4e-05 | hist_state=POSITIVE | source=2026-05-29T00:15:00 | close=2026-05-29T00:30:00 | closed=True | age=None
+      <div class="mini-card" title="M15: SELL | main=-0.001025 | signal=-0.001168 | hist=0.000143 | hist_delta=-4.6e-05 | hist_state=POSITIVE | source=2026-05-29T00:30:00 | close=2026-05-29T00:45:00 | closed=True | age=None
 M30: SELL | main=-0.00178 | signal=-0.001583 | hist=-0.000198 | hist_delta=0.0 | hist_state=NEGATIVE | source=2026-05-28T23:30:00 | close=2026-05-29T00:00:00 | closed=True | age=None
 H1: SELL | main=-0.001419 | signal=-0.000544 | hist=-0.000876 | hist_delta=0.0 | hist_state=NEGATIVE | source=2026-05-28T23:00:00 | close=2026-05-29T00:00:00 | closed=True | age=None
 H4: BUY | main=0.001089 | signal=0.001649 | hist=-0.00056 | hist_delta=0.0 | hist_state=NEGATIVE | source=2026-05-28T20:00:00 | close=2026-05-29T00:00:00 | closed=True | age=None
 D1: SELL | main=-2.4e-05 | signal=-0.00166 | hist=0.001636 | hist_delta=None | hist_state=POSITIVE | source=2026-05-18T00:00:00 | close=2026-05-19T00:00:00 | closed=True | age=None">
         <span>MTF</span>
         <b>SELL/SELL/SELL/BUY/SELL</b>
-        <small>Hist 0.00019/-0.0002/-0.00088/-0.00056/0.00164</small>
+        <small>Hist 0.00014/-0.0002/-0.00088/-0.00056/0.00164</small>
       </div>
       <div class="mini-card" title="Side status: FALSE
 Reason: SELL_MACD_STACK_NOT_CONFIRMED
 Bias side: SELL
-M15: main=-0.001014 / hist=0.000189 / delta=-2.4e-05 / SELL
+M15: main=-0.001025 / hist=0.000143 / delta=-4.6e-05 / SELL
 M30: main=-0.00178 / hist=-0.000198 / delta=0.0 / SELL
 H1: main=-0.001419 / hist=-0.000876 / delta=0.0 / SELL
 H4: main=0.001089 / hist=-0.00056 / delta=0.0 / BUY
 D1: main=-2.4e-05 / hist=0.001636 / delta=None / SELL
 Rule: side needs M15/M30/H1/H4 MACD main stack and histogram timing.">
         <span>MACD</span>
-        <b>FALSE SELL · M15 -0.00101 · M30 -0.00178 · H1 -0.00142</b>
+        <b>FALSE SELL · M15 -0.00103 · M30 -0.00178 · H1 -0.00142</b>
         <small>SELL_MACD_STACK_NOT_CONFIRMED</small>
       </div>
-      <div class="mini-card" title="Message: Daily SELL is weakening. Prepare for possible BUY reversal (-0.04%)
-State: D1_SELL_FADING
+      <div class="mini-card" title="Message: Daily candle is moving with SELL direction. Best for SELL continuation (-0.08%)
+State: D1_SELL_CONTINUING
 Direction: DOWN
-Progress: -0.0442548498962549%
-Points: -0.0006099999999999
+Progress: -0.0805293170243288%
+Points: -0.0011099999999999
 Day open: 1.37838
-As of: 2026-05-29T00:30:00">
+As of: 2026-05-29T00:45:00">
         <span>D1 Day</span>
-        <b>D1 SELL FADING · DOWN · -0.04%</b>
+        <b>D1 SELL CONTINUING · DOWN · -0.08%</b>
         <small>PV - · R1 - · S1 -</small>
       </div>
-      <div class="mini-card" title="Entry: 1.37777
+      <div class="mini-card" title="Entry: 1.37727
 TP1: - | Source: - | RR: -
 TP2: - | Source: - | RR: -
 SL: - | Source: -
@@ -1433,9 +1837,9 @@ Reason: NO_VALID_SIGNAL">
       </div>
     </section>
     
-      <div class="count-row"><span class="pill count-chip">NO TRADE 3</span></div>
+      <div class="count-row"><span class="pill count-chip">NO TRADE 4</span></div>
       <details class="journey" open>
-        <summary>Daily M15 journey (3 rows)</summary>
+        <summary>Daily M15 journey (4 rows)</summary>
         <div class="table-wrap">
           <table>
             <thead>
@@ -1651,7 +2055,7 @@ Reason: NO_VALID_SIGNAL" class="num">-</td>
     <tr class="row-none">
       <td class="time">00:30</td>
       <td><span class="pill status-none">NO_TRADE</span></td>
-      <td class="num">1.37777</td>
+      <td class="num">1.37727</td>
       <td title="Display side: NONE
 Type: NONE
 Confidence: NONE
@@ -1661,7 +2065,7 @@ Execution side: NONE
 Candidate side: NONE
 Bias side: SELL
 Risk side: NONE
-Pivot side: UNKNOWN
+Pivot side: SELL
 MACD side: SELL
 Support: NONE
 Conflict: NONE"><span class="pill side-none">NONE</span><br><small>NONE · NONE · raw NONE</small></td>
@@ -1689,11 +2093,11 @@ Mode: PASSIVE_CONTEXT_ONLY">MACRO_N/A (-)</td>
 Severity: HIGH
 Action: Avoid execution until MACD main stack and histogram timing support the side.
 Warnings: MACD_SIDE_BLOCK, D1_FADING
-Confirmations: ENGINE_BIAS_FIRST_REGIME, MTF_SELL1
+Confirmations: ENGINE_BIAS_FIRST_REGIME, MTF_SELL1, PV-
 D1: D1_SELL_FADING
 MTF: SELL strength 1
 MACD: FALSE SELL
-Pivot: PV? UNKNOWN"><b>SELL MACD BLOCKED</b><br><small>HIGH</small></td>
+Pivot: PV- SELL"><b>SELL MACD BLOCKED</b><br><small>HIGH</small></td>
       <td title="Qualified: False
 Label: NO_EMAIL
 Score: 0 / min 70
@@ -1738,8 +2142,109 @@ Progress: -0.0442548498962549%
 Points: -0.0006099999999999
 Day open: 1.37838
 As of: 2026-05-29T00:30:00">D1 SELL FADING · DOWN · -0.04%</td>
-      <td>PV - · R1 - · S1 -</td>
+      <td>PV 1.38092 · R1 1.38445 · S1 1.37488</td>
       <td title="Entry: 1.37777
+TP1: - | Source: - | RR: -
+TP2: - | Source: - | RR: -
+SL: - | Source: -
+TP/SL valid: 0
+Reason: NO_VALID_SIGNAL" class="num">-</td>
+      <td class="num">-</td>
+      <td class="num">-</td>
+    </tr>
+    
+    <tr class="row-none">
+      <td class="time">00:45</td>
+      <td><span class="pill status-none">NO_TRADE</span></td>
+      <td class="num">1.37727</td>
+      <td title="Display side: NONE
+Type: NONE
+Confidence: NONE
+Reason: No reliable side agreement across execution, candidate, bias, risk, pivot, and MACD layers.
+Raw side: NONE
+Execution side: NONE
+Candidate side: NONE
+Bias side: SELL
+Risk side: NONE
+Pivot side: UNKNOWN
+MACD side: SELL
+Support: NONE
+Conflict: NONE"><span class="pill side-none">NONE</span><br><small>NONE · NONE · raw NONE</small></td>
+      <td><span class="pill grade-x">-</span></td>
+      <td class="num">0</td>
+      <td title="Market: NO_TRADE_ZONE
+Readiness: SELL MACD BLOCKED
+Severity: HIGH
+Action: Avoid execution until MACD main stack and histogram timing support the side."><span class="market market-none">NO TRADE ZONE</span></td>
+      <td title="Profile: FX Bias-First Regime Engine
+Engine: BIAS_FIRST_REGIME
+Primary driver: D1/H1/H4 structure authority
+Description: FX prioritizes daily state, H1/H4 structure, and M30 confirmation before execution."><b>BIAS_FIRST_REGIME</b><br><small>D1/H1/H4 structure authority</small></td>
+      <td title="Date: 2026-05-29
+Regime: Strong Growth / Stable
+Bias: -
+Score: -
+Pressure: -
+USD support: 92.25
+Growth: 81.0
+Risk: 93.25
+Liquidity: 10.0
+Mode: PASSIVE_CONTEXT_ONLY">MACRO_N/A (-)</td>
+      <td title="Label: SELL MACD BLOCKED
+Severity: HIGH
+Action: Avoid execution until MACD main stack and histogram timing support the side.
+Warnings: MACD_SIDE_BLOCK
+Confirmations: ENGINE_BIAS_FIRST_REGIME, MTF_SELL1, D1_CONTINUING
+D1: D1_SELL_CONTINUING
+MTF: SELL strength 1
+MACD: FALSE SELL
+Pivot: PV? UNKNOWN"><b>SELL MACD BLOCKED</b><br><small>HIGH</small></td>
+      <td title="Qualified: False
+Label: NO_EMAIL
+Score: 0 / min 70
+Rule: Clean setup
+Reason: No BUY/SELL display side.
+Blockers: NO_DISPLAY_SIDE
+Warnings: -
+Reasons: -
+Aligned TFs: -
+Opposing TFs: -
+Expansion proof: None
+Room valid: None
+MACD ok: None
+Readiness: -
+Risk: -
+Scores: D=None E=None G=None T=None R=None Final=None "><span class="email-blocked">NO_EMAIL 0</span></td>
+      <td title="M15: SELL | main=-0.001025 | signal=-0.001168 | hist=0.000143 | hist_delta=-4.6e-05 | hist_state=POSITIVE | source=2026-05-29T00:30:00 | close=2026-05-29T00:45:00 | closed=True | age=None
+M30: SELL | main=-0.00178 | signal=-0.001583 | hist=-0.000198 | hist_delta=0.0 | hist_state=NEGATIVE | source=2026-05-28T23:30:00 | close=2026-05-29T00:00:00 | closed=True | age=None
+H1: SELL | main=-0.001419 | signal=-0.000544 | hist=-0.000876 | hist_delta=0.0 | hist_state=NEGATIVE | source=2026-05-28T23:00:00 | close=2026-05-29T00:00:00 | closed=True | age=None
+H4: BUY | main=0.001089 | signal=0.001649 | hist=-0.00056 | hist_delta=0.0 | hist_state=NEGATIVE | source=2026-05-28T20:00:00 | close=2026-05-29T00:00:00 | closed=True | age=None
+D1: SELL | main=-2.4e-05 | signal=-0.00166 | hist=0.001636 | hist_delta=None | hist_state=POSITIVE | source=2026-05-18T00:00:00 | close=2026-05-19T00:00:00 | closed=True | age=None" class="mono">SELL/SELL/SELL/BUY/SELL<br><small>H 0.00014/-0.0002/-0.00088/-0.00056/0.00164</small></td>
+      <td title="Flag: False
+Side: NONE
+Level: NONE
+Score: 22
+Phase: LIVE_SELL_CONTROL
+Reason: NON_CLEAN_BEAR_CONTEXT | SELL_NEAR_LOW">Stable · 22/100</td>
+      <td title="Campaign phase is currently calculated for metals.">Asset N/A</td>
+      <td title="Side status: FALSE
+Reason: SELL_MACD_STACK_NOT_CONFIRMED
+Bias side: SELL
+M15: main=-0.001025 / hist=0.000143 / delta=-4.6e-05 / SELL
+M30: main=-0.00178 / hist=-0.000198 / delta=0.0 / SELL
+H1: main=-0.001419 / hist=-0.000876 / delta=0.0 / SELL
+H4: main=0.001089 / hist=-0.00056 / delta=0.0 / BUY
+D1: main=-2.4e-05 / hist=0.001636 / delta=None / SELL
+Rule: side needs M15/M30/H1/H4 MACD main stack and histogram timing.">FALSE SELL · M15 -0.00103 · M30 -0.00178 · H1 -0.00142</td>
+      <td title="Message: Daily candle is moving with SELL direction. Best for SELL continuation (-0.08%)
+State: D1_SELL_CONTINUING
+Direction: DOWN
+Progress: -0.0805293170243288%
+Points: -0.0011099999999999
+Day open: 1.37838
+As of: 2026-05-29T00:45:00">D1 SELL CONTINUING · DOWN · -0.08%</td>
+      <td>PV - · R1 - · S1 -</td>
+      <td title="Entry: 1.37727
 TP1: - | Source: - | RR: -
 TP2: - | Source: - | RR: -
 SL: - | Source: -
@@ -1758,7 +2263,7 @@ Reason: NO_VALID_SIGNAL" class="num">-</td>
       <header class="symbol-header">
         <div>
           <h2>USDCHF</h2>
-          <p>FX · FX Bias-First Regime Engine · D1/H1/H4 structure authority · 3 events · Current NO_TRADE</p>
+          <p>FX · FX Bias-First Regime Engine · D1/H1/H4 structure authority · 4 events · Current NO_TRADE</p>
         </div>
         <div class="symbol-badges">
           <span class="pill status-none">NO_TRADE</span>
@@ -1772,22 +2277,22 @@ Reason: NO_VALID_SIGNAL" class="num">-</td>
       <div class="readiness-card sev-high" title="Label: SELL MACD BLOCKED
 Severity: HIGH
 Action: Avoid execution until MACD main stack and histogram timing support the side.
-Warnings: MACD_SIDE_BLOCK, D1_FADING
-Confirmations: ENGINE_BIAS_FIRST_REGIME, MTF_SELL1
-D1: D1_SELL_FADING
+Warnings: MACD_SIDE_BLOCK
+Confirmations: ENGINE_BIAS_FIRST_REGIME, MTF_SELL1, D1_CONTINUING
+D1: D1_SELL_CONTINUING
 MTF: SELL strength 1
 MACD: FALSE SELL
 Pivot: PV? UNKNOWN">
         <div class="eyebrow">Institutional Readiness</div>
         <h3>SELL MACD BLOCKED</h3>
         <p>Avoid execution until MACD main stack and histogram timing support the side.</p>
-        <div class="chip-row"><span class="pill warn-chip">MACD SIDE BLOCK</span><span class="pill warn-chip">D1 FADING</span></div>
-        <div class="chip-row"><span class="pill ok-chip">ENGINE BIAS FIRST REGIME</span><span class="pill ok-chip">MTF SELL1</span></div>
+        <div class="chip-row"><span class="pill warn-chip">MACD SIDE BLOCK</span></div>
+        <div class="chip-row"><span class="pill ok-chip">ENGINE BIAS FIRST REGIME</span><span class="pill ok-chip">MTF SELL1</span><span class="pill ok-chip">D1 CONTINUING</span></div>
       </div>
       <div class="mini-card">
         <span>Status</span>
         <b><span class="pill status-none">NO_TRADE</span></b>
-        <small>Latest 00:30 · Best NO_TRADE</small>
+        <small>Latest 00:45 · Best NO_TRADE</small>
       </div>
       <div class="mini-card" title="Profile: FX Bias-First Regime Engine
 Engine: BIAS_FIRST_REGIME
@@ -1825,57 +2330,57 @@ Support: NONE
 Conflict: NONE">
         <span>Display Side / Grade</span>
         <b><span class="pill side-none">NONE</span> <span class="pill type-none">NONE</span> <span class="pill grade-x">Grade -</span></b>
-        <small>NONE confidence · raw NONE · Price 0.78328</small>
+        <small>NONE confidence · raw NONE · Price 0.78318</small>
       </div>
       <div class="mini-card" title="Flag: False
 Side: NONE
 Level: NONE
-Score: 32
+Score: 8
 Phase: LIVE_SELL_CONTROL
-Reason: D1_SELL_FADING | NON_CLEAN_BEAR_CONTEXT">
+Reason: NON_CLEAN_BEAR_CONTEXT">
         <span>Direction Risk</span>
-        <b>Stable · 32/100</b>
-        <small>D1 SELL FADING | NON CLEAN BEAR CONTEXT</small>
+        <b>Stable · 8/100</b>
+        <small>NON CLEAN BEAR CONTEXT</small>
       </div>
       <div class="mini-card" title="Campaign phase is currently calculated for metals.">
         <span>Campaign Phase</span>
         <b>Asset N/A</b>
         <small>-</small>
       </div>
-      <div class="mini-card" title="M15: SELL | main=-0.000529 | signal=-0.000646 | hist=0.000116 | hist_delta=-4.2e-05 | hist_state=POSITIVE | source=2026-05-29T00:15:00 | close=2026-05-29T00:30:00 | closed=True | age=None
+      <div class="mini-card" title="M15: SELL | main=-0.000541 | signal=-0.000625 | hist=8.4e-05 | hist_delta=-3.3e-05 | hist_state=POSITIVE | source=2026-05-29T00:30:00 | close=2026-05-29T00:45:00 | closed=True | age=None
 M30: SELL | main=-0.001081 | signal=-0.001046 | hist=-3.5e-05 | hist_delta=0.0 | hist_state=NEGATIVE | source=2026-05-28T23:30:00 | close=2026-05-29T00:00:00 | closed=True | age=None
 H1: SELL | main=-0.000876 | signal=-0.000319 | hist=-0.000557 | hist_delta=0.0 | hist_state=NEGATIVE | source=2026-05-28T23:00:00 | close=2026-05-29T00:00:00 | closed=True | age=None
 H4: BUY | main=0.000112 | signal=0.000182 | hist=-7e-05 | hist_delta=0.0 | hist_state=NEGATIVE | source=2026-05-28T20:00:00 | close=2026-05-29T00:00:00 | closed=True | age=None
 D1: SELL | main=-0.000737 | signal=-0.00139 | hist=0.000653 | hist_delta=None | hist_state=POSITIVE | source=2026-05-18T00:00:00 | close=2026-05-19T00:00:00 | closed=True | age=None">
         <span>MTF</span>
         <b>SELL/SELL/SELL/BUY/SELL</b>
-        <small>Hist 0.00012/-0.00003/-0.00056/-0.00007/0.00065</small>
+        <small>Hist 0.00008/-0.00003/-0.00056/-0.00007/0.00065</small>
       </div>
       <div class="mini-card" title="Side status: FALSE
 Reason: SELL_MACD_STACK_NOT_CONFIRMED
 Bias side: SELL
-M15: main=-0.000529 / hist=0.000116 / delta=-4.2e-05 / SELL
+M15: main=-0.000541 / hist=8.4e-05 / delta=-3.3e-05 / SELL
 M30: main=-0.001081 / hist=-3.5e-05 / delta=0.0 / SELL
 H1: main=-0.000876 / hist=-0.000557 / delta=0.0 / SELL
 H4: main=0.000112 / hist=-7e-05 / delta=0.0 / BUY
 D1: main=-0.000737 / hist=0.000653 / delta=None / SELL
 Rule: side needs M15/M30/H1/H4 MACD main stack and histogram timing.">
         <span>MACD</span>
-        <b>FALSE SELL · M15 -0.00053 · M30 -0.00108 · H1 -0.00088</b>
+        <b>FALSE SELL · M15 -0.00054 · M30 -0.00108 · H1 -0.00088</b>
         <small>SELL_MACD_STACK_NOT_CONFIRMED</small>
       </div>
-      <div class="mini-card" title="Message: Daily SELL is weakening. Prepare for possible BUY reversal (-0.08%)
-State: D1_SELL_FADING
+      <div class="mini-card" title="Message: Daily candle is moving with SELL direction. Best for SELL continuation (-0.10%)
+State: D1_SELL_CONTINUING
 Direction: DOWN
-Progress: -0.0841901165905546%
-Points: -0.0006599999999999
+Progress: -0.0969461948618495%
+Points: -0.0007599999999999
 Day open: 0.78394
-As of: 2026-05-29T00:30:00">
+As of: 2026-05-29T00:45:00">
         <span>D1 Day</span>
-        <b>D1 SELL FADING · DOWN · -0.08%</b>
+        <b>D1 SELL CONTINUING · DOWN · -0.10%</b>
         <small>PV - · R1 - · S1 -</small>
       </div>
-      <div class="mini-card" title="Entry: 0.78328
+      <div class="mini-card" title="Entry: 0.78318
 TP1: - | Source: - | RR: -
 TP2: - | Source: - | RR: -
 SL: - | Source: -
@@ -1887,9 +2392,9 @@ Reason: NO_VALID_SIGNAL">
       </div>
     </section>
     
-      <div class="count-row"><span class="pill count-chip">NO TRADE 3</span></div>
+      <div class="count-row"><span class="pill count-chip">NO TRADE 4</span></div>
       <details class="journey" open>
-        <summary>Daily M15 journey (3 rows)</summary>
+        <summary>Daily M15 journey (4 rows)</summary>
         <div class="table-wrap">
           <table>
             <thead>
@@ -2105,7 +2610,7 @@ Reason: NO_VALID_SIGNAL" class="num">-</td>
     <tr class="row-none">
       <td class="time">00:30</td>
       <td><span class="pill status-none">NO_TRADE</span></td>
-      <td class="num">0.78328</td>
+      <td class="num">0.78318</td>
       <td title="Display side: NONE
 Type: NONE
 Confidence: NONE
@@ -2115,7 +2620,7 @@ Execution side: NONE
 Candidate side: NONE
 Bias side: SELL
 Risk side: NONE
-Pivot side: UNKNOWN
+Pivot side: SELL
 MACD side: SELL
 Support: NONE
 Conflict: NONE"><span class="pill side-none">NONE</span><br><small>NONE · NONE · raw NONE</small></td>
@@ -2143,11 +2648,11 @@ Mode: PASSIVE_CONTEXT_ONLY">USDCHF_BUY_SUPPORT (-)</td>
 Severity: HIGH
 Action: Avoid execution until MACD main stack and histogram timing support the side.
 Warnings: MACD_SIDE_BLOCK, D1_FADING
-Confirmations: ENGINE_BIAS_FIRST_REGIME, MTF_SELL1
+Confirmations: ENGINE_BIAS_FIRST_REGIME, MTF_SELL1, PV-
 D1: D1_SELL_FADING
 MTF: SELL strength 1
 MACD: FALSE SELL
-Pivot: PV? UNKNOWN"><b>SELL MACD BLOCKED</b><br><small>HIGH</small></td>
+Pivot: PV- SELL"><b>SELL MACD BLOCKED</b><br><small>HIGH</small></td>
       <td title="Qualified: False
 Label: NO_EMAIL
 Score: 0 / min 70
@@ -2192,8 +2697,109 @@ Progress: -0.0841901165905546%
 Points: -0.0006599999999999
 Day open: 0.78394
 As of: 2026-05-29T00:30:00">D1 SELL FADING · DOWN · -0.08%</td>
-      <td>PV - · R1 - · S1 -</td>
+      <td>PV 0.78569 · R1 0.78806 · S1 0.78147</td>
       <td title="Entry: 0.78328
+TP1: - | Source: - | RR: -
+TP2: - | Source: - | RR: -
+SL: - | Source: -
+TP/SL valid: 0
+Reason: NO_VALID_SIGNAL" class="num">-</td>
+      <td class="num">-</td>
+      <td class="num">-</td>
+    </tr>
+    
+    <tr class="row-none">
+      <td class="time">00:45</td>
+      <td><span class="pill status-none">NO_TRADE</span></td>
+      <td class="num">0.78318</td>
+      <td title="Display side: NONE
+Type: NONE
+Confidence: NONE
+Reason: No reliable side agreement across execution, candidate, bias, risk, pivot, and MACD layers.
+Raw side: NONE
+Execution side: NONE
+Candidate side: NONE
+Bias side: SELL
+Risk side: NONE
+Pivot side: UNKNOWN
+MACD side: SELL
+Support: NONE
+Conflict: NONE"><span class="pill side-none">NONE</span><br><small>NONE · NONE · raw NONE</small></td>
+      <td><span class="pill grade-x">-</span></td>
+      <td class="num">0</td>
+      <td title="Market: NO_TRADE_ZONE
+Readiness: SELL MACD BLOCKED
+Severity: HIGH
+Action: Avoid execution until MACD main stack and histogram timing support the side."><span class="market market-none">NO TRADE ZONE</span></td>
+      <td title="Profile: FX Bias-First Regime Engine
+Engine: BIAS_FIRST_REGIME
+Primary driver: D1/H1/H4 structure authority
+Description: FX prioritizes daily state, H1/H4 structure, and M30 confirmation before execution."><b>BIAS_FIRST_REGIME</b><br><small>D1/H1/H4 structure authority</small></td>
+      <td title="Date: 2026-05-29
+Regime: Strong Bullish USDCHF
+Bias: USDCHF_BUY_SUPPORT
+Score: -
+Pressure: 2.912971052376425
+USD support: 92.25
+Growth: 81.0
+Risk: 93.25
+Liquidity: 10.0
+Mode: PASSIVE_CONTEXT_ONLY">USDCHF_BUY_SUPPORT (-)</td>
+      <td title="Label: SELL MACD BLOCKED
+Severity: HIGH
+Action: Avoid execution until MACD main stack and histogram timing support the side.
+Warnings: MACD_SIDE_BLOCK
+Confirmations: ENGINE_BIAS_FIRST_REGIME, MTF_SELL1, D1_CONTINUING
+D1: D1_SELL_CONTINUING
+MTF: SELL strength 1
+MACD: FALSE SELL
+Pivot: PV? UNKNOWN"><b>SELL MACD BLOCKED</b><br><small>HIGH</small></td>
+      <td title="Qualified: False
+Label: NO_EMAIL
+Score: 0 / min 70
+Rule: Clean setup
+Reason: No BUY/SELL display side.
+Blockers: NO_DISPLAY_SIDE
+Warnings: -
+Reasons: -
+Aligned TFs: -
+Opposing TFs: -
+Expansion proof: None
+Room valid: None
+MACD ok: None
+Readiness: -
+Risk: -
+Scores: D=None E=None G=None T=None R=None Final=None "><span class="email-blocked">NO_EMAIL 0</span></td>
+      <td title="M15: SELL | main=-0.000541 | signal=-0.000625 | hist=8.4e-05 | hist_delta=-3.3e-05 | hist_state=POSITIVE | source=2026-05-29T00:30:00 | close=2026-05-29T00:45:00 | closed=True | age=None
+M30: SELL | main=-0.001081 | signal=-0.001046 | hist=-3.5e-05 | hist_delta=0.0 | hist_state=NEGATIVE | source=2026-05-28T23:30:00 | close=2026-05-29T00:00:00 | closed=True | age=None
+H1: SELL | main=-0.000876 | signal=-0.000319 | hist=-0.000557 | hist_delta=0.0 | hist_state=NEGATIVE | source=2026-05-28T23:00:00 | close=2026-05-29T00:00:00 | closed=True | age=None
+H4: BUY | main=0.000112 | signal=0.000182 | hist=-7e-05 | hist_delta=0.0 | hist_state=NEGATIVE | source=2026-05-28T20:00:00 | close=2026-05-29T00:00:00 | closed=True | age=None
+D1: SELL | main=-0.000737 | signal=-0.00139 | hist=0.000653 | hist_delta=None | hist_state=POSITIVE | source=2026-05-18T00:00:00 | close=2026-05-19T00:00:00 | closed=True | age=None" class="mono">SELL/SELL/SELL/BUY/SELL<br><small>H 0.00008/-0.00003/-0.00056/-0.00007/0.00065</small></td>
+      <td title="Flag: False
+Side: NONE
+Level: NONE
+Score: 8
+Phase: LIVE_SELL_CONTROL
+Reason: NON_CLEAN_BEAR_CONTEXT">Stable · 8/100</td>
+      <td title="Campaign phase is currently calculated for metals.">Asset N/A</td>
+      <td title="Side status: FALSE
+Reason: SELL_MACD_STACK_NOT_CONFIRMED
+Bias side: SELL
+M15: main=-0.000541 / hist=8.4e-05 / delta=-3.3e-05 / SELL
+M30: main=-0.001081 / hist=-3.5e-05 / delta=0.0 / SELL
+H1: main=-0.000876 / hist=-0.000557 / delta=0.0 / SELL
+H4: main=0.000112 / hist=-7e-05 / delta=0.0 / BUY
+D1: main=-0.000737 / hist=0.000653 / delta=None / SELL
+Rule: side needs M15/M30/H1/H4 MACD main stack and histogram timing.">FALSE SELL · M15 -0.00054 · M30 -0.00108 · H1 -0.00088</td>
+      <td title="Message: Daily candle is moving with SELL direction. Best for SELL continuation (-0.10%)
+State: D1_SELL_CONTINUING
+Direction: DOWN
+Progress: -0.0969461948618495%
+Points: -0.0007599999999999
+Day open: 0.78394
+As of: 2026-05-29T00:45:00">D1 SELL CONTINUING · DOWN · -0.10%</td>
+      <td>PV - · R1 - · S1 -</td>
+      <td title="Entry: 0.78318
 TP1: - | Source: - | RR: -
 TP2: - | Source: - | RR: -
 SL: - | Source: -
@@ -2464,7 +3070,7 @@ Reason: NO_VALID_SIGNAL" class="num">-</td>
       <header class="symbol-header">
         <div>
           <h2>NZDUSD</h2>
-          <p>FX · FX Bias-First Regime Engine · D1/H1/H4 structure authority · 3 events · Current NO_TRADE</p>
+          <p>FX · FX Bias-First Regime Engine · D1/H1/H4 structure authority · 4 events · Current NO_TRADE</p>
         </div>
         <div class="symbol-badges">
           <span class="pill status-none">NO_TRADE</span>
@@ -2493,7 +3099,7 @@ Pivot: PV? UNKNOWN">
       <div class="mini-card">
         <span>Status</span>
         <b><span class="pill status-none">NO_TRADE</span></b>
-        <small>Latest 00:30 · Best NO_TRADE</small>
+        <small>Latest 00:45 · Best NO_TRADE</small>
       </div>
       <div class="mini-card" title="Profile: FX Bias-First Regime Engine
 Engine: BIAS_FIRST_REGIME
@@ -2531,7 +3137,7 @@ Support: MTF
 Conflict: NONE">
         <span>Display Side / Grade</span>
         <b><span class="pill side-buy">BUY</span> <span class="pill type-bias">BIAS</span> <span class="pill grade-x">Grade -</span></b>
-        <small>HIGH confidence · raw NONE · Price 0.59207</small>
+        <small>HIGH confidence · raw NONE · Price 0.59224</small>
       </div>
       <div class="mini-card" title="Flag: True
 Side: SELL
@@ -2548,40 +3154,40 @@ Reason: BUY_DOMINANT_HTF | D1_BUY_COUNTER_MOVE">
         <b>Asset N/A</b>
         <small>-</small>
       </div>
-      <div class="mini-card" title="M15: BUY | main=0.000348 | signal=0.000518 | hist=-0.000171 | hist_delta=-7.1e-05 | hist_state=NEGATIVE | source=2026-05-29T00:15:00 | close=2026-05-29T00:30:00 | closed=True | age=None
+      <div class="mini-card" title="M15: BUY | main=0.000269 | signal=0.000468 | hist=-0.0002 | hist_delta=-2.9e-05 | hist_state=NEGATIVE | source=2026-05-29T00:30:00 | close=2026-05-29T00:45:00 | closed=True | age=None
 M30: BUY | main=0.001026 | signal=0.001018 | hist=9e-06 | hist_delta=0.0 | hist_state=POSITIVE | source=2026-05-28T23:30:00 | close=2026-05-29T00:00:00 | closed=True | age=None
 H1: BUY | main=0.001341 | signal=0.00102 | hist=0.000321 | hist_delta=0.0 | hist_state=POSITIVE | source=2026-05-28T23:00:00 | close=2026-05-29T00:00:00 | closed=True | age=None
 H4: BUY | main=0.001365 | signal=0.00061 | hist=0.000754 | hist_delta=0.0 | hist_state=POSITIVE | source=2026-05-28T20:00:00 | close=2026-05-29T00:00:00 | closed=True | age=None
 D1: BUY | main=0.000873 | signal=0.001823 | hist=-0.00095 | hist_delta=None | hist_state=NEGATIVE | source=2026-05-18T00:00:00 | close=2026-05-19T00:00:00 | closed=True | age=None">
         <span>MTF</span>
         <b>BUY/BUY/BUY/BUY/BUY</b>
-        <small>Hist -0.00017/0.00001/0.00032/0.00075/-0.00095</small>
+        <small>Hist -0.0002/0.00001/0.00032/0.00075/-0.00095</small>
       </div>
       <div class="mini-card" title="Side status: TRUE
 Reason: BUY_MACD_STACK_OK
 Bias side: BUY
-M15: main=0.000348 / hist=-0.000171 / delta=-7.1e-05 / BUY
+M15: main=0.000269 / hist=-0.0002 / delta=-2.9e-05 / BUY
 M30: main=0.001026 / hist=9e-06 / delta=0.0 / BUY
 H1: main=0.001341 / hist=0.000321 / delta=0.0 / BUY
 H4: main=0.001365 / hist=0.000754 / delta=0.0 / BUY
 D1: main=0.000873 / hist=-0.00095 / delta=None / BUY
 Rule: side needs M15/M30/H1/H4 MACD main stack and histogram timing.">
         <span>MACD</span>
-        <b>TRUE BUY · M15 0.00035 · M30 0.00103 · H1 0.00134</b>
+        <b>TRUE BUY · M15 0.00027 · M30 0.00103 · H1 0.00134</b>
         <small>BUY_MACD_STACK_OK</small>
       </div>
-      <div class="mini-card" title="Message: Daily BUY context is counter-moving. Prepare for SELL counter move or later BUY continuation (-0.19%)
+      <div class="mini-card" title="Message: Daily BUY context is counter-moving. Prepare for SELL counter move or later BUY continuation (-0.16%)
 State: D1_BUY_COUNTER_MOVE
 Direction: DOWN
-Progress: -0.1871270103509989%
-Points: -0.00111
+Progress: -0.1584679186756215%
+Points: -0.00094
 Day open: 0.59318
-As of: 2026-05-29T00:30:00">
+As of: 2026-05-29T00:45:00">
         <span>D1 Day</span>
-        <b>D1 BUY COUNTER MOVE · DOWN · -0.19%</b>
+        <b>D1 BUY COUNTER MOVE · DOWN · -0.16%</b>
         <small>PV - · R1 - · S1 -</small>
       </div>
-      <div class="mini-card" title="Entry: 0.59207
+      <div class="mini-card" title="Entry: 0.59224
 TP1: - | Source: - | RR: -
 TP2: - | Source: - | RR: -
 SL: - | Source: -
@@ -2593,9 +3199,9 @@ Reason: NO_VALID_SIGNAL">
       </div>
     </section>
     
-      <div class="count-row"><span class="pill count-chip">NO TRADE 3</span></div>
+      <div class="count-row"><span class="pill count-chip">NO TRADE 4</span></div>
       <details class="journey" open>
-        <summary>Daily M15 journey (3 rows)</summary>
+        <summary>Daily M15 journey (4 rows)</summary>
         <div class="table-wrap">
           <table>
             <thead>
@@ -2811,7 +3417,108 @@ Reason: NO_VALID_SIGNAL" class="num">-</td>
     <tr class="row-none">
       <td class="time">00:30</td>
       <td><span class="pill status-none">NO_TRADE</span></td>
-      <td class="num">0.59207</td>
+      <td class="num">0.59224</td>
+      <td title="Display side: BUY
+Type: BIAS
+Confidence: HIGH
+Reason: Display side derived from MTF regime BUY3; no confirmed entry side yet.
+Raw side: NONE
+Execution side: NONE
+Candidate side: NONE
+Bias side: BUY
+Risk side: SELL
+Pivot side: BUY
+MACD side: BUY
+Support: MTF
+Conflict: NONE"><span class="pill side-buy">BUY</span><br><small>BIAS · HIGH · raw NONE</small></td>
+      <td><span class="pill grade-x">-</span></td>
+      <td class="num">0</td>
+      <td title="Market: STRONG_BULL_TREND
+Readiness: COUNTER-MOVE ACTIVE
+Severity: MEDIUM
+Action: Avoid late continuation; use counter-move only as watch/transition unless execution confirms."><span class="market market-strong-bull">STRONG BULL TREND</span></td>
+      <td title="Profile: FX Bias-First Regime Engine
+Engine: BIAS_FIRST_REGIME
+Primary driver: D1/H1/H4 structure authority
+Description: FX prioritizes daily state, H1/H4 structure, and M30 confirmation before execution."><b>BIAS_FIRST_REGIME</b><br><small>D1/H1/H4 structure authority</small></td>
+      <td title="Date: 2026-05-29
+Regime: Bearish NZDUSD
+Bias: NZDUSD_SELL_PRESSURE
+Score: -
+Pressure: -1.5688275034834471
+USD support: 92.25
+Growth: 81.0
+Risk: 93.25
+Liquidity: 10.0
+Mode: PASSIVE_CONTEXT_ONLY">NZDUSD_SELL_PRESSURE (-)</td>
+      <td title="Label: COUNTER-MOVE ACTIVE
+Severity: MEDIUM
+Action: Avoid late continuation; use counter-move only as watch/transition unless execution confirms.
+Warnings: D1_COUNTER_MOVE
+Confirmations: ENGINE_BIAS_FIRST_REGIME, MTF_BUY3, PV+, MACD_OK_BUY
+D1: D1_BUY_COUNTER_MOVE
+MTF: BUY strength 3
+MACD: TRUE BUY
+Pivot: PV+ BUY"><b>COUNTER-MOVE ACTIVE</b><br><small>MEDIUM</small></td>
+      <td title="Qualified: False
+Label: NO_EMAIL
+Score: 38 / min 70
+Rule: Clean setup
+Reason: Blocked: FX_EMAIL_RULE_BLOCK, FX_TP1_DISTANCE_BLOCK, FX_SCORE_BLOCK, TP_SL_INVALID, STATUS_NO_TRADE, DIRECTION_WEAK_0, EXECUTION_THIN_0, NO_EXPANSION_PROOF
+Blockers: FX_EMAIL_RULE_BLOCK, FX_TP1_DISTANCE_BLOCK, FX_SCORE_BLOCK, TP_SL_INVALID, STATUS_NO_TRADE, DIRECTION_WEAK_0, EXECUTION_THIN_0, NO_EXPANSION_PROOF
+Warnings: -
+Reasons: FX_ACTIVE_SET:AUDJPY,EURUSD,GBPUSD,NZDUSD,USDCAD,USDCHF,USDJPY, NZDUSD_M30_SIDE_ACCEPTANCE:pos=0.95,pc1=0.07, M15_M30_H1_H4_ALIGNED, MEDIUM_REVERSAL_RISK_36, ROOM_VALID, CLEAN_SETUP_DEFAULT, MACD_SUPPORT
+Aligned TFs: M15, M30, H1, H4, D1
+Opposing TFs: -
+Expansion proof: False
+Room valid: True
+MACD ok: True
+Readiness: NOT_READY
+Risk: NORMAL
+Scores: D=0 E=0 G=0 T=0 R=36.0 Final=0 -"><span class="email-blocked">NO_EMAIL 38</span></td>
+      <td title="M15: BUY | main=0.000348 | signal=0.000518 | hist=-0.000171 | hist_delta=-7.1e-05 | hist_state=NEGATIVE | source=2026-05-29T00:15:00 | close=2026-05-29T00:30:00 | closed=True | age=None
+M30: BUY | main=0.001026 | signal=0.001018 | hist=9e-06 | hist_delta=0.0 | hist_state=POSITIVE | source=2026-05-28T23:30:00 | close=2026-05-29T00:00:00 | closed=True | age=None
+H1: BUY | main=0.001341 | signal=0.00102 | hist=0.000321 | hist_delta=0.0 | hist_state=POSITIVE | source=2026-05-28T23:00:00 | close=2026-05-29T00:00:00 | closed=True | age=None
+H4: BUY | main=0.001365 | signal=0.00061 | hist=0.000754 | hist_delta=0.0 | hist_state=POSITIVE | source=2026-05-28T20:00:00 | close=2026-05-29T00:00:00 | closed=True | age=None
+D1: BUY | main=0.000873 | signal=0.001823 | hist=-0.00095 | hist_delta=None | hist_state=NEGATIVE | source=2026-05-18T00:00:00 | close=2026-05-19T00:00:00 | closed=True | age=None" class="mono">BUY/BUY/BUY/BUY/BUY<br><small>H -0.00017/0.00001/0.00032/0.00075/-0.00095</small></td>
+      <td title="Flag: True
+Side: SELL
+Level: LOW
+Score: 36
+Phase: LIVE_BUY_FRAGILE_WATCH_SELL
+Reason: BUY_DOMINANT_HTF | D1_BUY_COUNTER_MOVE">LOW · watch SELL · 36/100</td>
+      <td title="Campaign phase is currently calculated for metals.">Asset N/A</td>
+      <td title="Side status: TRUE
+Reason: BUY_MACD_STACK_OK
+Bias side: BUY
+M15: main=0.000348 / hist=-0.000171 / delta=-7.1e-05 / BUY
+M30: main=0.001026 / hist=9e-06 / delta=0.0 / BUY
+H1: main=0.001341 / hist=0.000321 / delta=0.0 / BUY
+H4: main=0.001365 / hist=0.000754 / delta=0.0 / BUY
+D1: main=0.000873 / hist=-0.00095 / delta=None / BUY
+Rule: side needs M15/M30/H1/H4 MACD main stack and histogram timing.">TRUE BUY · M15 0.00035 · M30 0.00103 · H1 0.00134</td>
+      <td title="Message: Daily BUY context is counter-moving. Prepare for SELL counter move or later BUY continuation (-0.19%)
+State: D1_BUY_COUNTER_MOVE
+Direction: DOWN
+Progress: -0.1871270103509989%
+Points: -0.00111
+Day open: 0.59318
+As of: 2026-05-29T00:30:00">D1 BUY COUNTER MOVE · DOWN · -0.19%</td>
+      <td>PV 0.59109 · R1 0.59583 · S1 0.58867</td>
+      <td title="Entry: 0.59207
+TP1: - | Source: - | RR: -
+TP2: - | Source: - | RR: -
+SL: - | Source: -
+TP/SL valid: 0
+Reason: NO_VALID_SIGNAL" class="num">-</td>
+      <td class="num">-</td>
+      <td class="num">-</td>
+    </tr>
+    
+    <tr class="row-none">
+      <td class="time">00:45</td>
+      <td><span class="pill status-none">NO_TRADE</span></td>
+      <td class="num">0.59224</td>
       <td title="Display side: BUY
 Type: BIAS
 Confidence: HIGH
@@ -2870,11 +3577,11 @@ MACD ok: True
 Readiness: NOT_READY
 Risk: NORMAL
 Scores: D=0 E=0 G=0 T=0 R=36.0 Final=0 -"><span class="email-blocked">NO_EMAIL 38</span></td>
-      <td title="M15: BUY | main=0.000348 | signal=0.000518 | hist=-0.000171 | hist_delta=-7.1e-05 | hist_state=NEGATIVE | source=2026-05-29T00:15:00 | close=2026-05-29T00:30:00 | closed=True | age=None
+      <td title="M15: BUY | main=0.000269 | signal=0.000468 | hist=-0.0002 | hist_delta=-2.9e-05 | hist_state=NEGATIVE | source=2026-05-29T00:30:00 | close=2026-05-29T00:45:00 | closed=True | age=None
 M30: BUY | main=0.001026 | signal=0.001018 | hist=9e-06 | hist_delta=0.0 | hist_state=POSITIVE | source=2026-05-28T23:30:00 | close=2026-05-29T00:00:00 | closed=True | age=None
 H1: BUY | main=0.001341 | signal=0.00102 | hist=0.000321 | hist_delta=0.0 | hist_state=POSITIVE | source=2026-05-28T23:00:00 | close=2026-05-29T00:00:00 | closed=True | age=None
 H4: BUY | main=0.001365 | signal=0.00061 | hist=0.000754 | hist_delta=0.0 | hist_state=POSITIVE | source=2026-05-28T20:00:00 | close=2026-05-29T00:00:00 | closed=True | age=None
-D1: BUY | main=0.000873 | signal=0.001823 | hist=-0.00095 | hist_delta=None | hist_state=NEGATIVE | source=2026-05-18T00:00:00 | close=2026-05-19T00:00:00 | closed=True | age=None" class="mono">BUY/BUY/BUY/BUY/BUY<br><small>H -0.00017/0.00001/0.00032/0.00075/-0.00095</small></td>
+D1: BUY | main=0.000873 | signal=0.001823 | hist=-0.00095 | hist_delta=None | hist_state=NEGATIVE | source=2026-05-18T00:00:00 | close=2026-05-19T00:00:00 | closed=True | age=None" class="mono">BUY/BUY/BUY/BUY/BUY<br><small>H -0.0002/0.00001/0.00032/0.00075/-0.00095</small></td>
       <td title="Flag: True
 Side: SELL
 Level: LOW
@@ -2885,21 +3592,21 @@ Reason: BUY_DOMINANT_HTF | D1_BUY_COUNTER_MOVE">LOW · watch SELL · 36/100</td>
       <td title="Side status: TRUE
 Reason: BUY_MACD_STACK_OK
 Bias side: BUY
-M15: main=0.000348 / hist=-0.000171 / delta=-7.1e-05 / BUY
+M15: main=0.000269 / hist=-0.0002 / delta=-2.9e-05 / BUY
 M30: main=0.001026 / hist=9e-06 / delta=0.0 / BUY
 H1: main=0.001341 / hist=0.000321 / delta=0.0 / BUY
 H4: main=0.001365 / hist=0.000754 / delta=0.0 / BUY
 D1: main=0.000873 / hist=-0.00095 / delta=None / BUY
-Rule: side needs M15/M30/H1/H4 MACD main stack and histogram timing.">TRUE BUY · M15 0.00035 · M30 0.00103 · H1 0.00134</td>
-      <td title="Message: Daily BUY context is counter-moving. Prepare for SELL counter move or later BUY continuation (-0.19%)
+Rule: side needs M15/M30/H1/H4 MACD main stack and histogram timing.">TRUE BUY · M15 0.00027 · M30 0.00103 · H1 0.00134</td>
+      <td title="Message: Daily BUY context is counter-moving. Prepare for SELL counter move or later BUY continuation (-0.16%)
 State: D1_BUY_COUNTER_MOVE
 Direction: DOWN
-Progress: -0.1871270103509989%
-Points: -0.00111
+Progress: -0.1584679186756215%
+Points: -0.00094
 Day open: 0.59318
-As of: 2026-05-29T00:30:00">D1 BUY COUNTER MOVE · DOWN · -0.19%</td>
+As of: 2026-05-29T00:45:00">D1 BUY COUNTER MOVE · DOWN · -0.16%</td>
       <td>PV - · R1 - · S1 -</td>
-      <td title="Entry: 0.59207
+      <td title="Entry: 0.59224
 TP1: - | Source: - | RR: -
 TP2: - | Source: - | RR: -
 SL: - | Source: -
