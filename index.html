@@ -199,12 +199,12 @@
     <div class="hero">
       <div>
         <h1>Live Safe Dashboard</h1>
-        <div class="sub">Generated 2026-06-01 01:08:27+0300 | Closed bars | M15+2m</div>
+        <div class="sub">Generated 2026-06-01 01:22:52+0300 | Closed bars | M15+2m</div>
       </div>
       <div class="summary-strip">
         <div class="metric"><span>Symbols</span><strong>37</strong></div>
-        <div class="metric"><span>Qualified</span><strong>2</strong></div>
-        <div class="metric"><span>Waiting</span><strong>34</strong></div>
+        <div class="metric"><span>Qualified</span><strong>1</strong></div>
+        <div class="metric"><span>Waiting</span><strong>36</strong></div>
         <div class="metric"><span>Assets</span><strong>COMMODITIES 1 / FX 22 / INDICES 11 / METALS 3</strong></div>
       </div>
     </div>
@@ -721,18 +721,18 @@
         </div>
       </a>
 
-      <a class="status-card qualified" href="#tab-XAGUSD" data-symbol-jump="XAGUSD">
+      <a class="status-card wait" href="#tab-XAGUSD" data-symbol-jump="XAGUSD">
         <div class="card-top">
           <span class="symbol">XAGUSD</span>
           <span class="asset">METALS</span>
         </div>
-        <div class="status-line">QUALIFIED</div>
-        <div class="phase-line">BUY &middot; BULLISH_CONTINUATION</div>
+        <div class="status-line">WAIT</div>
+        <div class="phase-line">RANGE &middot; LIVE_SAFE_WAIT</div>
         <div class="micro-grid">
-          <span>Entry</span><strong>75.992</strong>
-          <span>TP1</span><strong>76.75192</strong>
-          <span>SL</span><strong>75.23208</strong>
-          <span>Model</span><strong>ORIGINAL</strong>
+          <span>Entry</span><strong></strong>
+          <span>TP1</span><strong></strong>
+          <span>SL</span><strong></strong>
+          <span>Model</span><strong></strong>
         </div>
       </a>
 
@@ -751,22 +751,22 @@
         </div>
       </a>
 
-      <a class="status-card blocked" href="#tab-XAUUSD" data-symbol-jump="XAUUSD">
+      <a class="status-card wait" href="#tab-XAUUSD" data-symbol-jump="XAUUSD">
         <div class="card-top">
           <span class="symbol">XAUUSD</span>
           <span class="asset">METALS</span>
         </div>
-        <div class="status-line">BLOCKED_REFINED_FILTER</div>
-        <div class="phase-line">BUY &middot; BULLISH_CONTINUATION</div>
+        <div class="status-line">WAIT</div>
+        <div class="phase-line">RANGE &middot; LIVE_SAFE_WAIT</div>
         <div class="micro-grid">
-          <span>Entry</span><strong>4589.92</strong>
-          <span>TP1</span><strong>4635.8192</strong>
-          <span>SL</span><strong>4544.0208</strong>
-          <span>Model</span><strong>ORIGINAL</strong>
+          <span>Entry</span><strong></strong>
+          <span>TP1</span><strong></strong>
+          <span>SL</span><strong></strong>
+          <span>Model</span><strong></strong>
         </div>
       </a></section>
     <section class="section">
-      <div class="section-head"><h2>Current Status</h2><span>2 qualified / 1 blocked / 34 waiting</span></div>
+      <div class="section-head"><h2>Current Status</h2><span>1 qualified / 0 blocked / 36 waiting</span></div>
       <table>
         <thead>
           <tr>
@@ -1148,15 +1148,15 @@
             <td></td>
           </tr>
 
-          <tr class="qualified">
+          <tr class="wait">
             <td><strong>XAGUSD</strong><span>METALS</span></td>
-            <td>QUALIFIED</td>
-            <td>BUY</td>
-            <td>BULLISH_CONTINUATION</td>
-            <td>2026-05-29 03:15:00+0300</td>
-            <td>ORIGINAL</td>
-            <td>76.75192</td>
-            <td>75.23208</td>
+            <td>WAIT</td>
+            <td>RANGE</td>
+            <td>LIVE_SAFE_WAIT</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
           </tr>
 
           <tr class="wait">
@@ -1170,15 +1170,15 @@
             <td></td>
           </tr>
 
-          <tr class="blocked">
+          <tr class="wait">
             <td><strong>XAUUSD</strong><span>METALS</span></td>
-            <td>BLOCKED_REFINED_FILTER</td>
-            <td>BUY</td>
-            <td>BULLISH_CONTINUATION</td>
-            <td>2026-05-29 18:15:00+0300</td>
-            <td>ORIGINAL</td>
-            <td>4635.8192</td>
-            <td>4544.0208</td>
+            <td>WAIT</td>
+            <td>RANGE</td>
+            <td>LIVE_SAFE_WAIT</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
           </tr></tbody>
       </table>
     </section>
@@ -1217,9 +1217,9 @@
 <button class="tab-button  wait" type="button" data-tab="SP500">SP500</button>
 <button class="tab-button  wait" type="button" data-tab="WS30">WS30</button>
 <button class="tab-button  wait" type="button" data-tab="USOIL">USOIL</button>
-<button class="tab-button  qualified" type="button" data-tab="XAGUSD">XAGUSD</button>
+<button class="tab-button  wait" type="button" data-tab="XAGUSD">XAGUSD</button>
 <button class="tab-button  wait" type="button" data-tab="XAUEUR">XAUEUR</button>
-<button class="tab-button  blocked" type="button" data-tab="XAUUSD">XAUUSD</button></div>
+<button class="tab-button  wait" type="button" data-tab="XAUUSD">XAUUSD</button></div>
       
         <section class="tab-panel active" id="tab-AUDCAD" data-panel="AUDCAD">
           <div class="panel-grid">
@@ -2676,7 +2676,7 @@
               <div class="context-grid">
                 <div><span>Entry Time</span><strong></strong></div>
                 <div><span>Model</span><strong></strong></div>
-                <div><span>Prev D1</span><strong>WEAK_BUY</strong></div>
+                <div><span>Prev D1</span><strong>WEAK_SELL</strong></div>
                 <div><span>H4 Read</span><strong>NO_BAR</strong></div>
                 <div><span>Room</span><strong></strong></div>
               </div>
@@ -2960,7 +2960,7 @@
               <div class="context-grid">
                 <div><span>Entry Time</span><strong></strong></div>
                 <div><span>Model</span><strong></strong></div>
-                <div><span>Prev D1</span><strong>STRONG_BUY</strong></div>
+                <div><span>Prev D1</span><strong>WEAK_BUY</strong></div>
                 <div><span>H4 Read</span><strong>NO_BAR</strong></div>
                 <div><span>Room</span><strong></strong></div>
               </div>
@@ -3102,7 +3102,7 @@
               <div class="context-grid">
                 <div><span>Entry Time</span><strong></strong></div>
                 <div><span>Model</span><strong></strong></div>
-                <div><span>Prev D1</span><strong>STRONG_BUY</strong></div>
+                <div><span>Prev D1</span><strong>WEAK_SELL</strong></div>
                 <div><span>H4 Read</span><strong>NO_BAR</strong></div>
                 <div><span>Room</span><strong></strong></div>
               </div>
@@ -3204,7 +3204,7 @@
               <div class="context-grid">
                 <div><span>Entry Time</span><strong></strong></div>
                 <div><span>Model</span><strong></strong></div>
-                <div><span>Prev D1</span><strong>STRONG_SELL</strong></div>
+                <div><span>Prev D1</span><strong>WEAK_BUY</strong></div>
                 <div><span>H4 Read</span><strong>NO_BAR</strong></div>
                 <div><span>Room</span><strong></strong></div>
               </div>
@@ -3257,27 +3257,27 @@
 
         <section class="tab-panel " id="tab-XAGUSD" data-panel="XAGUSD">
           <div class="panel-grid">
-            <div class="current-panel qualified">
+            <div class="current-panel wait">
               <div class="panel-title">
                 <div>
                   <span class="asset-label">METALS</span>
                   <h2>XAGUSD</h2>
                 </div>
-                <span class="status-pill qualified">QUALIFIED</span>
+                <span class="status-pill wait">WAIT</span>
               </div>
-              <div class="trade-line">BUY &middot; BULLISH_CONTINUATION</div>
+              <div class="trade-line">RANGE &middot; LIVE_SAFE_WAIT</div>
               <div class="level-grid">
-                <div><span>Entry</span><strong>75.992</strong></div>
-                <div><span>TP1</span><strong>76.75192</strong></div>
-                <div><span>TP2</span><strong>77.51184</strong></div>
-                <div><span>SL</span><strong>75.23208</strong></div>
+                <div><span>Entry</span><strong></strong></div>
+                <div><span>TP1</span><strong></strong></div>
+                <div><span>TP2</span><strong></strong></div>
+                <div><span>SL</span><strong></strong></div>
               </div>
               <div class="context-grid">
-                <div><span>Entry Time</span><strong>2026-05-29 03:15:00+0300</strong></div>
-                <div><span>Model</span><strong>ORIGINAL</strong></div>
-                <div><span>Prev D1</span><strong>WEAK_BUY</strong></div>
+                <div><span>Entry Time</span><strong></strong></div>
+                <div><span>Model</span><strong></strong></div>
+                <div><span>Prev D1</span><strong>STRONG_SELL</strong></div>
                 <div><span>H4 Read</span><strong>NO_BAR</strong></div>
-                <div><span>Room</span><strong>1.576%</strong></div>
+                <div><span>Room</span><strong></strong></div>
               </div>
               <div class="blocker-text ok">No refined blocker</div>
             </div>
@@ -3346,7 +3346,7 @@
               <div class="context-grid">
                 <div><span>Entry Time</span><strong></strong></div>
                 <div><span>Model</span><strong></strong></div>
-                <div><span>Prev D1</span><strong>WEAK_BUY</strong></div>
+                <div><span>Prev D1</span><strong>WEAK_SELL</strong></div>
                 <div><span>H4 Read</span><strong>NO_BAR</strong></div>
                 <div><span>Room</span><strong></strong></div>
               </div>
@@ -3399,29 +3399,29 @@
 
         <section class="tab-panel " id="tab-XAUUSD" data-panel="XAUUSD">
           <div class="panel-grid">
-            <div class="current-panel blocked">
+            <div class="current-panel wait">
               <div class="panel-title">
                 <div>
                   <span class="asset-label">METALS</span>
                   <h2>XAUUSD</h2>
                 </div>
-                <span class="status-pill blocked">BLOCKED_REFINED_FILTER</span>
+                <span class="status-pill wait">WAIT</span>
               </div>
-              <div class="trade-line">BUY &middot; BULLISH_CONTINUATION</div>
+              <div class="trade-line">RANGE &middot; LIVE_SAFE_WAIT</div>
               <div class="level-grid">
-                <div><span>Entry</span><strong>4589.92</strong></div>
-                <div><span>TP1</span><strong>4635.8192</strong></div>
-                <div><span>TP2</span><strong>4681.7184</strong></div>
-                <div><span>SL</span><strong>4544.0208</strong></div>
+                <div><span>Entry</span><strong></strong></div>
+                <div><span>TP1</span><strong></strong></div>
+                <div><span>TP2</span><strong></strong></div>
+                <div><span>SL</span><strong></strong></div>
               </div>
               <div class="context-grid">
-                <div><span>Entry Time</span><strong>2026-05-29 18:15:00+0300</strong></div>
-                <div><span>Model</span><strong>ORIGINAL</strong></div>
-                <div><span>Prev D1</span><strong>WEAK_BUY</strong></div>
-                <div><span>H4 Read</span><strong>ABOVE_PIVOT</strong></div>
-                <div><span>Room</span><strong>-0.801%</strong></div>
+                <div><span>Entry Time</span><strong></strong></div>
+                <div><span>Model</span><strong></strong></div>
+                <div><span>Prev D1</span><strong>WEAK_SELL</strong></div>
+                <div><span>H4 Read</span><strong>NO_BAR</strong></div>
+                <div><span>Room</span><strong></strong></div>
               </div>
-              <div class="blocker-text">BULLISH_CONTINUATION: open_pivot_dist_pct&gt;=1.5 actual=0.8055415923403392; prev_d1_body_pct&gt;=2.0 actual=0.7655012899208272 | BULLISH_CONTINUATION: open_pivot_dist_pct&gt;=1.0 actual=0.8055415923403392; selected_entry_distance_pct&gt;=3.0 actual=2.836578124818444</div>
+              <div class="blocker-text ok">No refined blocker</div>
             </div>
             <div class="confirm-panel">
               <div class="section-head">
