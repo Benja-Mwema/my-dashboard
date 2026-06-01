@@ -256,12 +256,12 @@
     <div class="hero">
       <div>
         <h1>Live Safe Dashboard</h1>
-        <div class="sub">Generated 2026-06-02 02:37:11+0300 | Closed bars | M15+2m</div>
+        <div class="sub">Generated 2026-06-02 02:52:30+0300 | Closed bars | M15+2m</div>
       </div>
       <div class="summary-strip">
         <div class="metric"><span>Symbols</span><strong>37</strong></div>
         <div class="metric"><span>Qualified</span><strong>0</strong></div>
-        <div class="metric"><span>Waiting</span><strong>36</strong></div>
+        <div class="metric"><span>Waiting</span><strong>35</strong></div>
         <div class="metric asset-metric"><span>Assets</span><strong><span class="asset-chip"><b>COMMODITIES</b><em>1</em></span><span class="asset-chip"><b>FX</b><em>22</em></span><span class="asset-chip"><b>INDICES</b><em>11</em></span><span class="asset-chip"><b>METALS</b><em>3</em></span></strong></div>
       </div>
     </div>
@@ -1024,28 +1024,28 @@
         </div>
       </a>
 
-      <a class="status-card wait" href="#tab-XAUUSD" data-symbol-jump="XAUUSD">
+      <a class="status-card blocked" href="#tab-XAUUSD" data-symbol-jump="XAUUSD">
         <div class="card-top">
           <span class="symbol">XAUUSD</span>
           <span class="asset">METALS</span>
         </div>
-        <div class="status-line">WAIT</div>
+        <div class="status-line">BLOCKED_REFINED_FILTER</div>
         
         <div class="journey-grid">
-          <span>Current Setup</span><strong>OPEN BELOW PIVOT - Prev STRONG SELL</strong>
-          <span>Journey Position</span><strong>BEARISH CARRYOVER -&gt; SELL WATCH</strong>
-          <span>Meaning</span><strong>Sell continuation watch; needs pivot failure/S1 acceptance.</strong>
+          <span>Current Setup</span><strong>SELL - BEARISH CONTINUATION</strong>
+          <span>Journey Position</span><strong>BEARISH CARRYOVER -&gt; BEARISH CONTINUATION</strong>
+          <span>Meaning</span><strong>Confirmed closed-bar entry; manage TP, SL, and BE.</strong>
         </div>
         <div class="micro-grid">
           
-          <span>Pivot</span><strong>4492.57333</strong>
-          <span>R1</span><strong>4537.39667</strong>
-          <span>S1</span><strong>4439.17667</strong>
-          <span>H4</span><strong>NO BAR</strong>
+          <span>Entry</span><strong>4483.37</strong>
+          <span>TP1</span><strong>4438.5363</strong>
+          <span>SL</span><strong>4528.2037</strong>
+          <span>Model</span><strong>EMA50 M15</strong>
         </div>
       </a></section>
     <section class="section">
-      <div class="section-head"><h2>Current Status</h2><span>0 qualified / 1 blocked / 36 waiting</span></div>
+      <div class="section-head"><h2>Current Status</h2><span>0 qualified / 2 blocked / 35 waiting</span></div>
       <table>
         <thead>
           <tr>
@@ -1449,15 +1449,15 @@
             <td></td>
           </tr>
 
-          <tr class="wait">
+          <tr class="blocked">
             <td><strong>XAUUSD</strong><span>METALS</span></td>
-            <td>WAIT</td>
-            <td>RANGE</td>
-            <td>OPEN BELOW PIVOT - Prev STRONG SELL</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>BLOCKED_REFINED_FILTER</td>
+            <td>SELL</td>
+            <td>SELL - BEARISH CONTINUATION</td>
+            <td>2026-06-02 02:45:00+0300</td>
+            <td>EMA50 M15</td>
+            <td>4438.5363</td>
+            <td>4528.2037</td>
           </tr></tbody>
       </table>
     </section>
@@ -1498,7 +1498,7 @@
 <button class="tab-button  wait" type="button" data-tab="USOIL">USOIL</button>
 <button class="tab-button  wait" type="button" data-tab="XAGUSD">XAGUSD</button>
 <button class="tab-button  wait" type="button" data-tab="XAUEUR">XAUEUR</button>
-<button class="tab-button  wait" type="button" data-tab="XAUUSD">XAUUSD</button></div>
+<button class="tab-button  blocked" type="button" data-tab="XAUUSD">XAUUSD</button></div>
       
         <section class="tab-panel active" id="tab-AUDCAD" data-panel="AUDCAD">
           <div class="panel-grid">
@@ -2024,7 +2024,7 @@
                 <div><span>Dist</span><strong></strong></div>
                 <div><span>Room</span><strong></strong></div>
               </div>
-              <div class="blocker-text">OPEN BELOW PIVOT BUY REVERSAL</div>
+              <div class="blocker-text">OPEN BELOW PIVOT BUY REVERSAL;EMA50 ENTRY TOO CLOSE TO PIVOT</div>
             </div>
             <div class="confirm-panel">
               <div class="section-head">
@@ -3759,7 +3759,7 @@
                 <div><span>Dist</span><strong></strong></div>
                 <div><span>Room</span><strong></strong></div>
               </div>
-              <div class="blocker-text wait-note">prev=WEAK BUY; OPEN ABOVE PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
+              <div class="blocker-text">EMA50 ENTRY TOO CLOSE TO PIVOT</div>
             </div>
             <div class="confirm-panel">
               <div class="section-head">
@@ -3917,7 +3917,7 @@
                 <div><span>Dist</span><strong></strong></div>
                 <div><span>Room</span><strong></strong></div>
               </div>
-              <div class="blocker-text">METAL LIVE SAFE NO BALANCED SETUP</div>
+              <div class="blocker-text">METAL LIVE SAFE NO BALANCED SETUP;EMA50 TARGET ROOM TOO SMALL</div>
             </div>
             <div class="confirm-panel">
               <div class="section-head">
@@ -3966,26 +3966,26 @@
 
         <section class="tab-panel " id="tab-XAUUSD" data-panel="XAUUSD">
           <div class="panel-grid">
-            <div class="current-panel wait">
+            <div class="current-panel blocked">
               <div class="panel-title">
                 <div>
                   <span class="asset-label">METALS</span>
                   <h2>XAUUSD</h2>
                 </div>
-                <span class="status-pill wait">WAIT</span>
+                <span class="status-pill blocked">BLOCKED_REFINED_FILTER</span>
               </div>
-              <div class="trade-line">OPEN BELOW PIVOT - Prev STRONG SELL</div>
-              <div class="setup-summary">prev=STRONG SELL; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
+              <div class="trade-line">SELL - BEARISH CONTINUATION</div>
+              <div class="setup-summary">BEARISH CARRYOVER -&gt; BEARISH CONTINUATION - EMA50 M15</div>
               <div class="level-grid">
                 
-                <div><span>Pivot</span><strong>4492.57333</strong></div>
-                <div><span>R1</span><strong>4537.39667</strong></div>
-                <div><span>S1</span><strong>4439.17667</strong></div>
-                <div><span>Open</span><strong>OPEN BELOW PIVOT</strong></div>
+                <div><span>Entry</span><strong>4483.37</strong></div>
+                <div><span>TP1</span><strong>4438.5363</strong></div>
+                <div><span>TP2</span><strong>4393.7026</strong></div>
+                <div><span>SL</span><strong>4528.2037</strong></div>
               </div>
               <div class="context-grid">
-                <div><span>Entry Time</span><strong></strong></div>
-                <div><span>Model</span><strong></strong></div>
+                <div><span>Entry Time</span><strong>2026-06-02 02:45:00+0300</strong></div>
+                <div><span>Model</span><strong>EMA50 M15</strong></div>
                 <div><span>Open State</span><strong>OPEN BELOW PIVOT</strong></div>
                 <div><span>Prev D1</span><strong>STRONG SELL</strong></div>
                 <div><span>H4 Read</span><strong>NO BAR</strong></div>
@@ -3993,10 +3993,10 @@
                 <div><span>Pivot</span><strong>4492.57333</strong></div>
                 <div><span>R1</span><strong>4537.39667</strong></div>
                 <div><span>S1</span><strong>4439.17667</strong></div>
-                <div><span>Dist</span><strong></strong></div>
-                <div><span>Room</span><strong></strong></div>
+                <div><span>Dist</span><strong>0.205%</strong></div>
+                <div><span>Room</span><strong>0.986%</strong></div>
               </div>
-              <div class="blocker-text">METAL LIVE SAFE NO BALANCED SETUP</div>
+              <div class="blocker-text">BULLISH_CONTINUATION: campaign_phase==BULLISH_CONTINUATION actual=BEARISH_CONTINUATION; open_pivot_dist_pct&gt;=1.5 actual=0.13536907017349206; prev_d1_body_pct&gt;=2.0 actual=0.8516949152542284 | BULLISH_CONTINUATION: campaign_phase==BULLISH_CONTINUATION actual=BEARISH_CONTINUATION; open_pivot_dist_pct&gt;=1.0 actual=0.13536907017349206; selected_entry_distance_pct&gt;=3.0 actual=0.20527713156250388</div>
             </div>
             <div class="confirm-panel">
               <div class="section-head">
@@ -4008,6 +4008,16 @@
                   <tr><th>Date</th><th>Side</th><th>Phase</th><th>Time</th><th>Entry</th><th>Model</th><th>Dist %</th><th>Prev D1</th></tr>
                 </thead>
                 <tbody>
+                  <tr>
+                    <td>2026-06-02</td>
+                    <td>SELL</td>
+                    <td>BEARISH_CONTINUATION</td>
+                    <td>2026-06-02 02:45:00+0300</td>
+                    <td>4483.37</td>
+                    <td>EMA50 M15</td>
+                    <td>0.205</td>
+                    <td>STRONG SELL</td>
+                  </tr>
                   <tr>
                     <td>2026-05-29</td>
                     <td>BUY</td>
@@ -4027,16 +4037,6 @@
                     <td>EMA50 M15</td>
                     <td>0.265</td>
                     <td>WEAK SELL</td>
-                  </tr>
-                  <tr>
-                    <td>2026-05-27</td>
-                    <td>SELL</td>
-                    <td>FAILED_RECOVERY_SELL</td>
-                    <td>2026-05-27 01:15:00+0300</td>
-                    <td>4504.67</td>
-                    <td>EMA50 M15</td>
-                    <td>0.415</td>
-                    <td>STRONG SELL</td>
                   </tr></tbody>
               </table>
             </div>
