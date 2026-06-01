@@ -256,12 +256,12 @@
     <div class="hero">
       <div>
         <h1>Live Safe Dashboard</h1>
-        <div class="sub">Generated 2026-06-02 01:37:50+0300 | Closed bars | M15+2m</div>
+        <div class="sub">Generated 2026-06-02 01:52:08+0300 | Closed bars | M15+2m</div>
       </div>
       <div class="summary-strip">
         <div class="metric"><span>Symbols</span><strong>37</strong></div>
         <div class="metric"><span>Qualified</span><strong>0</strong></div>
-        <div class="metric"><span>Waiting</span><strong>37</strong></div>
+        <div class="metric"><span>Waiting</span><strong>36</strong></div>
         <div class="metric asset-metric"><span>Assets</span><strong><span class="asset-chip"><b>COMMODITIES</b><em>1</em></span><span class="asset-chip"><b>FX</b><em>22</em></span><span class="asset-chip"><b>INDICES</b><em>11</em></span><span class="asset-chip"><b>METALS</b><em>3</em></span></strong></div>
       </div>
     </div>
@@ -520,24 +520,24 @@
         </div>
       </a>
 
-      <a class="status-card wait" href="#tab-EURJPY" data-symbol-jump="EURJPY">
+      <a class="status-card blocked" href="#tab-EURJPY" data-symbol-jump="EURJPY">
         <div class="card-top">
           <span class="symbol">EURJPY</span>
           <span class="asset">FX</span>
         </div>
-        <div class="status-line">WAIT</div>
+        <div class="status-line">BLOCKED_REFINED_FILTER</div>
         
         <div class="journey-grid">
-          <span>Current Setup</span><strong>OPEN BELOW PIVOT - Prev WEAK BUY</strong>
-          <span>Journey Position</span><strong>WEAK BUY INVALIDATION -&gt; SELL WATCH</strong>
-          <span>Meaning</span><strong>Buy blocked; wait pivot-failure sell confirmation.</strong>
+          <span>Current Setup</span><strong>BUY - FAILED BREAKDOWN BUY</strong>
+          <span>Journey Position</span><strong>BULLISH CARRYOVER -&gt; WEAK BREAKDOWN -&gt; PIVOT RECLAIM BUY</strong>
+          <span>Meaning</span><strong>Confirmed closed-bar entry; manage TP, SL, and BE.</strong>
         </div>
         <div class="micro-grid">
           
-          <span>Pivot</span><strong>185.69733</strong>
-          <span>R1</span><strong>186.00867</strong>
-          <span>S1</span><strong>185.41267</strong>
-          <span>H4</span><strong>NO BAR</strong>
+          <span>Entry</span><strong>185.721</strong>
+          <span>TP1</span><strong>186.46388</strong>
+          <span>SL</span><strong>184.97812</strong>
+          <span>Model</span><strong>ORIGINAL</strong>
         </div>
       </a>
 
@@ -1045,7 +1045,7 @@
         </div>
       </a></section>
     <section class="section">
-      <div class="section-head"><h2>Current Status</h2><span>0 qualified / 0 blocked / 37 waiting</span></div>
+      <div class="section-head"><h2>Current Status</h2><span>0 qualified / 1 blocked / 36 waiting</span></div>
       <table>
         <thead>
           <tr>
@@ -1185,15 +1185,15 @@
             <td></td>
           </tr>
 
-          <tr class="wait">
+          <tr class="blocked">
             <td><strong>EURJPY</strong><span>FX</span></td>
-            <td>WAIT</td>
-            <td>RANGE</td>
-            <td>OPEN BELOW PIVOT - Prev WEAK BUY</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>BLOCKED_REFINED_FILTER</td>
+            <td>BUY</td>
+            <td>BUY - FAILED BREAKDOWN BUY</td>
+            <td>2026-06-02 01:30:00+0300</td>
+            <td>ORIGINAL</td>
+            <td>186.46388</td>
+            <td>184.97812</td>
           </tr>
 
           <tr class="wait">
@@ -1474,7 +1474,7 @@
 <button class="tab-button  wait" type="button" data-tab="EURCAD">EURCAD</button>
 <button class="tab-button  wait" type="button" data-tab="EURCHF">EURCHF</button>
 <button class="tab-button  wait" type="button" data-tab="EURGBP">EURGBP</button>
-<button class="tab-button  wait" type="button" data-tab="EURJPY">EURJPY</button>
+<button class="tab-button  blocked" type="button" data-tab="EURJPY">EURJPY</button>
 <button class="tab-button  wait" type="button" data-tab="EURUSD">EURUSD</button>
 <button class="tab-button  wait" type="button" data-tab="GBPAUD">GBPAUD</button>
 <button class="tab-button  wait" type="button" data-tab="GBPCAD">GBPCAD</button>
@@ -2220,26 +2220,26 @@
 
         <section class="tab-panel " id="tab-EURJPY" data-panel="EURJPY">
           <div class="panel-grid">
-            <div class="current-panel wait">
+            <div class="current-panel blocked">
               <div class="panel-title">
                 <div>
                   <span class="asset-label">FX</span>
                   <h2>EURJPY</h2>
                 </div>
-                <span class="status-pill wait">WAIT</span>
+                <span class="status-pill blocked">BLOCKED_REFINED_FILTER</span>
               </div>
-              <div class="trade-line">OPEN BELOW PIVOT - Prev WEAK BUY</div>
-              <div class="setup-summary">prev=WEAK BUY; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
+              <div class="trade-line">BUY - FAILED BREAKDOWN BUY</div>
+              <div class="setup-summary">BULLISH CARRYOVER -&gt; WEAK BREAKDOWN -&gt; PIVOT RECLAIM BUY - ORIGINAL</div>
               <div class="level-grid">
                 
-                <div><span>Pivot</span><strong>185.69733</strong></div>
-                <div><span>R1</span><strong>186.00867</strong></div>
-                <div><span>S1</span><strong>185.41267</strong></div>
-                <div><span>Open</span><strong>OPEN BELOW PIVOT</strong></div>
+                <div><span>Entry</span><strong>185.721</strong></div>
+                <div><span>TP1</span><strong>186.46388</strong></div>
+                <div><span>TP2</span><strong>187.20677</strong></div>
+                <div><span>SL</span><strong>184.97812</strong></div>
               </div>
               <div class="context-grid">
-                <div><span>Entry Time</span><strong></strong></div>
-                <div><span>Model</span><strong></strong></div>
+                <div><span>Entry Time</span><strong>2026-06-02 01:30:00+0300</strong></div>
+                <div><span>Model</span><strong>ORIGINAL</strong></div>
                 <div><span>Open State</span><strong>OPEN BELOW PIVOT</strong></div>
                 <div><span>Prev D1</span><strong>WEAK BUY</strong></div>
                 <div><span>H4 Read</span><strong>NO BAR</strong></div>
@@ -2247,10 +2247,10 @@
                 <div><span>Pivot</span><strong>185.69733</strong></div>
                 <div><span>R1</span><strong>186.00867</strong></div>
                 <div><span>S1</span><strong>185.41267</strong></div>
-                <div><span>Dist</span><strong></strong></div>
-                <div><span>Room</span><strong></strong></div>
+                <div><span>Dist</span><strong>0.013%</strong></div>
+                <div><span>Room</span><strong>0.155%</strong></div>
               </div>
-              <div class="blocker-text">OPEN BELOW PIVOT BUY REVERSAL;FX LIVE SAFE NO SYMBOL SETUP</div>
+              <div class="blocker-text">selected_entry_distance_pct&gt;=0.05 actual=0.012743129030488395</div>
             </div>
             <div class="confirm-panel">
               <div class="section-head">
@@ -2262,6 +2262,16 @@
                   <tr><th>Date</th><th>Side</th><th>Phase</th><th>Time</th><th>Entry</th><th>Model</th><th>Dist %</th><th>Prev D1</th></tr>
                 </thead>
                 <tbody>
+                  <tr>
+                    <td>2026-06-02</td>
+                    <td>BUY</td>
+                    <td>FAILED_BREAKDOWN_BUY</td>
+                    <td>2026-06-02 01:30:00+0300</td>
+                    <td>185.721</td>
+                    <td>ORIGINAL</td>
+                    <td>0.013</td>
+                    <td>WEAK BUY</td>
+                  </tr>
                   <tr>
                     <td>2026-06-01</td>
                     <td>BUY</td>
@@ -2281,16 +2291,6 @@
                     <td>ORIGINAL</td>
                     <td>0.056</td>
                     <td>STRONG BUY</td>
-                  </tr>
-                  <tr>
-                    <td>2026-05-28</td>
-                    <td>BUY</td>
-                    <td>FAILED_BREAKDOWN_BUY</td>
-                    <td>2026-05-28 02:15:00+0300</td>
-                    <td>185.469</td>
-                    <td>ORIGINAL</td>
-                    <td>0.015</td>
-                    <td>WEAK BUY</td>
                   </tr></tbody>
               </table>
             </div>
@@ -3917,7 +3917,7 @@
                 <div><span>Dist</span><strong></strong></div>
                 <div><span>Room</span><strong></strong></div>
               </div>
-              <div class="blocker-text wait-note">prev=STRONG SELL; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
+              <div class="blocker-text">METAL LIVE SAFE NO BALANCED SETUP</div>
             </div>
             <div class="confirm-panel">
               <div class="section-head">
@@ -3996,7 +3996,7 @@
                 <div><span>Dist</span><strong></strong></div>
                 <div><span>Room</span><strong></strong></div>
               </div>
-              <div class="blocker-text wait-note">prev=STRONG SELL; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
+              <div class="blocker-text">METAL LIVE SAFE NO BALANCED SETUP</div>
             </div>
             <div class="confirm-panel">
               <div class="section-head">
