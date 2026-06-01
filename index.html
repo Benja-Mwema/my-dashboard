@@ -199,12 +199,12 @@
     <div class="hero">
       <div>
         <h1>Live Safe Dashboard</h1>
-        <div class="sub">Generated 2026-06-01 09:08:00+0300 | Closed bars | M15+2m</div>
+        <div class="sub">Generated 2026-06-01 09:23:07+0300 | Closed bars | M15+2m</div>
       </div>
       <div class="summary-strip">
         <div class="metric"><span>Symbols</span><strong>37</strong></div>
-        <div class="metric"><span>Qualified</span><strong>1</strong></div>
-        <div class="metric"><span>Waiting</span><strong>36</strong></div>
+        <div class="metric"><span>Qualified</span><strong>0</strong></div>
+        <div class="metric"><span>Waiting</span><strong>37</strong></div>
         <div class="metric"><span>Assets</span><strong>COMMODITIES 1 / FX 22 / INDICES 11 / METALS 3</strong></div>
       </div>
     </div>
@@ -541,18 +541,18 @@
         </div>
       </a>
 
-      <a class="status-card qualified" href="#tab-AEX25" data-symbol-jump="AEX25">
+      <a class="status-card wait" href="#tab-AEX25" data-symbol-jump="AEX25">
         <div class="card-top">
           <span class="symbol">AEX25</span>
           <span class="asset">INDICES</span>
         </div>
-        <div class="status-line">QUALIFIED</div>
-        <div class="phase-line">BUY &middot; PIVOT_FAILURE_BUY</div>
+        <div class="status-line">WAIT</div>
+        <div class="phase-line">RANGE &middot; LIVE_SAFE_WAIT</div>
         <div class="micro-grid">
-          <span>Entry</span><strong>1042.03</strong>
-          <span>TP1</span><strong>1052.4503</strong>
-          <span>SL</span><strong>1031.6097</strong>
-          <span>Model</span><strong>ORIGINAL</strong>
+          <span>Entry</span><strong></strong>
+          <span>TP1</span><strong></strong>
+          <span>SL</span><strong></strong>
+          <span>Model</span><strong></strong>
         </div>
       </a>
 
@@ -766,7 +766,7 @@
         </div>
       </a></section>
     <section class="section">
-      <div class="section-head"><h2>Current Status</h2><span>1 qualified / 0 blocked / 36 waiting</span></div>
+      <div class="section-head"><h2>Current Status</h2><span>0 qualified / 0 blocked / 37 waiting</span></div>
       <table>
         <thead>
           <tr>
@@ -1016,15 +1016,15 @@
             <td></td>
           </tr>
 
-          <tr class="qualified">
+          <tr class="wait">
             <td><strong>AEX25</strong><span>INDICES</span></td>
-            <td>QUALIFIED</td>
-            <td>BUY</td>
-            <td>PIVOT_FAILURE_BUY</td>
-            <td>2026-05-29 13:30:00+0300</td>
-            <td>ORIGINAL</td>
-            <td>1052.4503</td>
-            <td>1031.6097</td>
+            <td>WAIT</td>
+            <td>RANGE</td>
+            <td>LIVE_SAFE_WAIT</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
           </tr>
 
           <tr class="wait">
@@ -1205,7 +1205,7 @@
 <button class="tab-button  wait" type="button" data-tab="USDCAD">USDCAD</button>
 <button class="tab-button  wait" type="button" data-tab="USDCHF">USDCHF</button>
 <button class="tab-button  wait" type="button" data-tab="USDJPY">USDJPY</button>
-<button class="tab-button  qualified" type="button" data-tab="AEX25">AEX25</button>
+<button class="tab-button  wait" type="button" data-tab="AEX25">AEX25</button>
 <button class="tab-button  wait" type="button" data-tab="AUS200">AUS200</button>
 <button class="tab-button  wait" type="button" data-tab="CAC40">CAC40</button>
 <button class="tab-button  wait" type="button" data-tab="DAX40">DAX40</button>
@@ -2445,27 +2445,27 @@
 
         <section class="tab-panel " id="tab-AEX25" data-panel="AEX25">
           <div class="panel-grid">
-            <div class="current-panel qualified">
+            <div class="current-panel wait">
               <div class="panel-title">
                 <div>
                   <span class="asset-label">INDICES</span>
                   <h2>AEX25</h2>
                 </div>
-                <span class="status-pill qualified">QUALIFIED</span>
+                <span class="status-pill wait">WAIT</span>
               </div>
-              <div class="trade-line">BUY &middot; PIVOT_FAILURE_BUY</div>
+              <div class="trade-line">RANGE &middot; LIVE_SAFE_WAIT</div>
               <div class="level-grid">
-                <div><span>Entry</span><strong>1042.03</strong></div>
-                <div><span>TP1</span><strong>1052.4503</strong></div>
-                <div><span>TP2</span><strong>1062.8706</strong></div>
-                <div><span>SL</span><strong>1031.6097</strong></div>
+                <div><span>Entry</span><strong></strong></div>
+                <div><span>TP1</span><strong></strong></div>
+                <div><span>TP2</span><strong></strong></div>
+                <div><span>SL</span><strong></strong></div>
               </div>
               <div class="context-grid">
-                <div><span>Entry Time</span><strong>2026-05-29 13:30:00+0300</strong></div>
-                <div><span>Model</span><strong>ORIGINAL</strong></div>
+                <div><span>Entry Time</span><strong></strong></div>
+                <div><span>Model</span><strong></strong></div>
                 <div><span>Prev D1</span><strong>WEAK_SELL</strong></div>
-                <div><span>H4 Read</span><strong>ABOVE_PIVOT</strong></div>
-                <div><span>Room</span><strong>-0.385%</strong></div>
+                <div><span>H4 Read</span><strong>NO_BAR</strong></div>
+                <div><span>Room</span><strong></strong></div>
               </div>
               <div class="blocker-text ok">No refined blocker</div>
             </div>
@@ -2605,7 +2605,7 @@
               <div class="context-grid">
                 <div><span>Entry Time</span><strong></strong></div>
                 <div><span>Model</span><strong></strong></div>
-                <div><span>Prev D1</span><strong>RANGE</strong></div>
+                <div><span>Prev D1</span><strong>WEAK_SELL</strong></div>
                 <div><span>H4 Read</span><strong>NO_BAR</strong></div>
                 <div><span>Room</span><strong></strong></div>
               </div>
@@ -2747,7 +2747,7 @@
               <div class="context-grid">
                 <div><span>Entry Time</span><strong></strong></div>
                 <div><span>Model</span><strong></strong></div>
-                <div><span>Prev D1</span><strong>STRONG_BUY</strong></div>
+                <div><span>Prev D1</span><strong>WEAK_SELL</strong></div>
                 <div><span>H4 Read</span><strong>NO_BAR</strong></div>
                 <div><span>Room</span><strong></strong></div>
               </div>
@@ -3031,7 +3031,7 @@
               <div class="context-grid">
                 <div><span>Entry Time</span><strong></strong></div>
                 <div><span>Model</span><strong></strong></div>
-                <div><span>Prev D1</span><strong>STRONG_BUY</strong></div>
+                <div><span>Prev D1</span><strong>WEAK_SELL</strong></div>
                 <div><span>H4 Read</span><strong>NO_BAR</strong></div>
                 <div><span>Room</span><strong></strong></div>
               </div>
