@@ -54,6 +54,21 @@
     }
     .metric span { color: var(--muted); display: block; font-size: 10px; text-transform: uppercase; font-weight: 700; }
     .metric strong { display: block; margin-top: 6px; font-size: 22px; line-height: 1.1; overflow-wrap: anywhere; }
+    .metric.asset-metric strong { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; font-size: 12px; line-height: 1; }
+    .asset-chip {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      min-width: 112px;
+      padding: 5px 9px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--soft);
+      background: rgba(255,255,255,.035);
+    }
+    .asset-chip b { font-size: 10px; letter-spacing: 0; }
+    .asset-chip em { color: var(--ink); font-style: normal; font-size: 12px; margin-left: auto; padding-left: 7px; border-left: 1px solid var(--line); }
     main { max-width: 1480px; margin: 0 auto; padding: 22px 24px 36px; }
     .status-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(235px, 1fr)); gap: 12px; }
     .status-card {
@@ -93,7 +108,16 @@
     .status-line::before { content: ""; width: 8px; height: 8px; border-radius: 999px; background: var(--amber); box-shadow: 0 0 16px rgba(242,184,75,.45); }
     .qualified .status-line::before { background: var(--green); box-shadow: 0 0 16px rgba(35,195,107,.48); }
     .blocked .status-line::before { background: var(--red); box-shadow: 0 0 16px rgba(239,90,90,.48); }
-    .phase-line { color: var(--soft); font-size: 12px; line-height: 1.35; min-height: 34px; }
+    .phase-line { color: var(--soft); font-size: 12px; line-height: 1.35; min-height: 18px; font-weight: 800; overflow-wrap: anywhere; }
+    .setup-detail {
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.35;
+      min-height: 44px;
+      max-height: 48px;
+      overflow: hidden;
+      overflow-wrap: anywhere;
+    }
     .micro-grid {
       display: grid;
       grid-template-columns: auto 1fr;
@@ -167,13 +191,21 @@
     .status-pill.qualified { border-color: rgba(34,197,94,.55); color: #bbf7d0; }
     .status-pill.wait { border-color: rgba(245,158,11,.55); color: #fde68a; }
     .status-pill.blocked { border-color: rgba(239,68,68,.55); color: #fecaca; }
-    .trade-line { margin-top: 12px; color: var(--muted); font-weight: 600; }
+    .trade-line { margin-top: 12px; color: var(--soft); font-weight: 800; overflow-wrap: anywhere; }
+    .setup-summary {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+      overflow-wrap: anywhere;
+    }
     .level-grid, .context-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin-top: 14px; }
     .level-grid div, .context-grid div { background: rgba(255,255,255,.03); border: 1px solid var(--line); border-radius: 8px; padding: 11px; min-height: 66px; }
     .level-grid span, .context-grid span { display: block; color: var(--muted); font-size: 11px; text-transform: uppercase; }
     .level-grid strong, .context-grid strong { display: block; margin-top: 6px; font-size: 15px; overflow-wrap: anywhere; }
     .blocker-text { margin-top: 14px; color: #fecaca; background: rgba(239,68,68,.09); border: 1px solid rgba(239,68,68,.25); border-radius: 8px; padding: 10px; font-size: 13px; }
     .blocker-text.ok { color: #bbf7d0; background: rgba(34,197,94,.08); border-color: rgba(34,197,94,.22); }
+    .blocker-text.wait-note { color: #fde68a; background: rgba(245,158,11,.08); border-color: rgba(245,158,11,.22); }
     .confirm-panel { padding: 0; overflow: hidden; }
     .confirm-table { min-width: 820px; }
     .confirm-table th, .confirm-table td { font-size: 12px; }
@@ -199,13 +231,13 @@
     <div class="hero">
       <div>
         <h1>Live Safe Dashboard</h1>
-        <div class="sub">Generated 2026-06-01 18:50:29+0300 | Closed bars | M15+2m</div>
+        <div class="sub">Generated 2026-06-01 21:14:03+0300 | Closed bars | M15+2m</div>
       </div>
       <div class="summary-strip">
         <div class="metric"><span>Symbols</span><strong>37</strong></div>
         <div class="metric"><span>Qualified</span><strong>0</strong></div>
         <div class="metric"><span>Waiting</span><strong>37</strong></div>
-        <div class="metric"><span>Assets</span><strong>COMMODITIES 1 / FX 22 / INDICES 11 / METALS 3</strong></div>
+        <div class="metric asset-metric"><span>Assets</span><strong><span class="asset-chip"><b>COMMODITIES</b><em>1</em></span><span class="asset-chip"><b>FX</b><em>22</em></span><span class="asset-chip"><b>INDICES</b><em>11</em></span><span class="asset-chip"><b>METALS</b><em>3</em></span></strong></div>
       </div>
     </div>
   </header>
@@ -217,12 +249,14 @@
           <span class="asset">FX</span>
         </div>
         <div class="status-line">WAIT</div>
-        <div class="phase-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+        <div class="phase-line">OPEN BELOW PIVOT - Prev STRONG BUY</div>
+        <div class="setup-detail">prev=STRONG BUY; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
         <div class="micro-grid">
-          <span>Entry</span><strong></strong>
-          <span>TP1</span><strong></strong>
-          <span>SL</span><strong></strong>
-          <span>Model</span><strong></strong>
+          
+          <span>Pivot</span><strong>0.98998</strong>
+          <span>R1</span><strong>0.99415</strong>
+          <span>S1</span><strong>0.98675</strong>
+          <span>H4</span><strong>NO BAR</strong>
         </div>
       </a>
 
@@ -232,12 +266,14 @@
           <span class="asset">FX</span>
         </div>
         <div class="status-line">WAIT</div>
-        <div class="phase-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+        <div class="phase-line">OPEN BELOW PIVOT - Prev STRONG SELL</div>
+        <div class="setup-detail">prev=STRONG SELL; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
         <div class="micro-grid">
-          <span>Entry</span><strong></strong>
-          <span>TP1</span><strong></strong>
-          <span>SL</span><strong></strong>
-          <span>Model</span><strong></strong>
+          
+          <span>Pivot</span><strong>0.56131</strong>
+          <span>R1</span><strong>0.56253</strong>
+          <span>S1</span><strong>0.55977</strong>
+          <span>H4</span><strong>NO BAR</strong>
         </div>
       </a>
 
@@ -247,12 +283,14 @@
           <span class="asset">FX</span>
         </div>
         <div class="status-line">WAIT</div>
-        <div class="phase-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+        <div class="phase-line">OPEN BELOW PIVOT - Prev STRONG BUY</div>
+        <div class="setup-detail">prev=STRONG BUY; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
         <div class="micro-grid">
-          <span>Entry</span><strong></strong>
-          <span>TP1</span><strong></strong>
-          <span>SL</span><strong></strong>
-          <span>Model</span><strong></strong>
+          
+          <span>Pivot</span><strong>114.28467</strong>
+          <span>R1</span><strong>114.68933</strong>
+          <span>S1</span><strong>113.98633</strong>
+          <span>H4</span><strong>NO BAR</strong>
         </div>
       </a>
 
@@ -262,12 +300,14 @@
           <span class="asset">FX</span>
         </div>
         <div class="status-line">WAIT</div>
-        <div class="phase-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+        <div class="phase-line">OPEN BELOW PIVOT - Prev STRONG SELL</div>
+        <div class="setup-detail">prev=STRONG SELL; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
         <div class="micro-grid">
-          <span>Entry</span><strong></strong>
-          <span>TP1</span><strong></strong>
-          <span>SL</span><strong></strong>
-          <span>Model</span><strong></strong>
+          
+          <span>Pivot</span><strong>1.20187</strong>
+          <span>R1</span><strong>1.20484</strong>
+          <span>S1</span><strong>1.1962</strong>
+          <span>H4</span><strong>NO BAR</strong>
         </div>
       </a>
 
@@ -277,12 +317,14 @@
           <span class="asset">FX</span>
         </div>
         <div class="status-line">WAIT</div>
-        <div class="phase-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+        <div class="phase-line">OPEN BELOW PIVOT - Prev WEAK BUY</div>
+        <div class="setup-detail">prev=WEAK BUY; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
         <div class="micro-grid">
-          <span>Entry</span><strong></strong>
-          <span>TP1</span><strong></strong>
-          <span>SL</span><strong></strong>
-          <span>Model</span><strong></strong>
+          
+          <span>Pivot</span><strong>0.71774</strong>
+          <span>R1</span><strong>0.72058</strong>
+          <span>S1</span><strong>0.71544</strong>
+          <span>H4</span><strong>NO BAR</strong>
         </div>
       </a>
 
@@ -292,12 +334,14 @@
           <span class="asset">FX</span>
         </div>
         <div class="status-line">WAIT</div>
-        <div class="phase-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+        <div class="phase-line">OPEN BELOW PIVOT - Prev STRONG SELL</div>
+        <div class="setup-detail">prev=STRONG SELL; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
         <div class="micro-grid">
-          <span>Entry</span><strong></strong>
-          <span>TP1</span><strong></strong>
-          <span>SL</span><strong></strong>
-          <span>Model</span><strong></strong>
+          
+          <span>Pivot</span><strong>0.56676</strong>
+          <span>R1</span><strong>0.56817</strong>
+          <span>S1</span><strong>0.56455</strong>
+          <span>H4</span><strong>NO BAR</strong>
         </div>
       </a>
 
@@ -307,12 +351,14 @@
           <span class="asset">FX</span>
         </div>
         <div class="status-line">WAIT</div>
-        <div class="phase-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+        <div class="phase-line">OPEN ABOVE PIVOT - Prev WEAK BUY</div>
+        <div class="setup-detail">prev=WEAK BUY; OPEN ABOVE PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
         <div class="micro-grid">
-          <span>Entry</span><strong></strong>
-          <span>TP1</span><strong></strong>
-          <span>SL</span><strong></strong>
-          <span>Model</span><strong></strong>
+          
+          <span>Pivot</span><strong>115.39533</strong>
+          <span>R1</span><strong>115.61567</strong>
+          <span>S1</span><strong>115.18567</strong>
+          <span>H4</span><strong>NO BAR</strong>
         </div>
       </a>
 
@@ -322,12 +368,14 @@
           <span class="asset">FX</span>
         </div>
         <div class="status-line">WAIT</div>
-        <div class="phase-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+        <div class="phase-line">OPEN ABOVE PIVOT - Prev STRONG BUY</div>
+        <div class="setup-detail">prev=STRONG BUY; OPEN ABOVE PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
         <div class="micro-grid">
-          <span>Entry</span><strong></strong>
-          <span>TP1</span><strong></strong>
-          <span>SL</span><strong></strong>
-          <span>Model</span><strong></strong>
+          
+          <span>Pivot</span><strong>203.60933</strong>
+          <span>R1</span><strong>204.43567</strong>
+          <span>S1</span><strong>203.03367</strong>
+          <span>H4</span><strong>NO BAR</strong>
         </div>
       </a>
 
@@ -337,12 +385,14 @@
           <span class="asset">FX</span>
         </div>
         <div class="status-line">WAIT</div>
-        <div class="phase-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+        <div class="phase-line">OPEN ABOVE PIVOT - Prev STRONG SELL</div>
+        <div class="setup-detail">prev=STRONG SELL; OPEN ABOVE PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
         <div class="micro-grid">
-          <span>Entry</span><strong></strong>
-          <span>TP1</span><strong></strong>
-          <span>SL</span><strong></strong>
-          <span>Model</span><strong></strong>
+          
+          <span>Pivot</span><strong>1.62352</strong>
+          <span>R1</span><strong>1.62697</strong>
+          <span>S1</span><strong>1.61943</strong>
+          <span>H4</span><strong>NO BAR</strong>
         </div>
       </a>
 
@@ -352,12 +402,14 @@
           <span class="asset">FX</span>
         </div>
         <div class="status-line">WAIT</div>
-        <div class="phase-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+        <div class="phase-line">OPEN BELOW PIVOT - Prev STRONG BUY</div>
+        <div class="setup-detail">prev=STRONG BUY; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
         <div class="micro-grid">
-          <span>Entry</span><strong></strong>
-          <span>TP1</span><strong></strong>
-          <span>SL</span><strong></strong>
-          <span>Model</span><strong></strong>
+          
+          <span>Pivot</span><strong>1.60768</strong>
+          <span>R1</span><strong>1.61156</strong>
+          <span>S1</span><strong>1.60465</strong>
+          <span>H4</span><strong>NO BAR</strong>
         </div>
       </a>
 
@@ -367,12 +419,14 @@
           <span class="asset">FX</span>
         </div>
         <div class="status-line">WAIT</div>
-        <div class="phase-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+        <div class="phase-line">OPEN BELOW PIVOT - Prev STRONG SELL</div>
+        <div class="setup-detail">prev=STRONG SELL; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
         <div class="micro-grid">
-          <span>Entry</span><strong></strong>
-          <span>TP1</span><strong></strong>
-          <span>SL</span><strong></strong>
-          <span>Model</span><strong></strong>
+          
+          <span>Pivot</span><strong>0.91123</strong>
+          <span>R1</span><strong>0.91277</strong>
+          <span>S1</span><strong>0.90906</strong>
+          <span>H4</span><strong>NO BAR</strong>
         </div>
       </a>
 
@@ -382,12 +436,14 @@
           <span class="asset">FX</span>
         </div>
         <div class="status-line">WAIT</div>
-        <div class="phase-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+        <div class="phase-line">OPEN BELOW PIVOT - Prev STRONG SELL</div>
+        <div class="setup-detail">prev=STRONG SELL; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
         <div class="micro-grid">
-          <span>Entry</span><strong></strong>
-          <span>TP1</span><strong></strong>
-          <span>SL</span><strong></strong>
-          <span>Model</span><strong></strong>
+          
+          <span>Pivot</span><strong>0.86669</strong>
+          <span>R1</span><strong>0.86788</strong>
+          <span>S1</span><strong>0.86522</strong>
+          <span>H4</span><strong>NO BAR</strong>
         </div>
       </a>
 
@@ -397,12 +453,14 @@
           <span class="asset">FX</span>
         </div>
         <div class="status-line">WAIT</div>
-        <div class="phase-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+        <div class="phase-line">OPEN ABOVE PIVOT - Prev STRONG BUY</div>
+        <div class="setup-detail">prev=STRONG BUY; OPEN ABOVE PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
         <div class="micro-grid">
-          <span>Entry</span><strong></strong>
-          <span>TP1</span><strong></strong>
-          <span>SL</span><strong></strong>
-          <span>Model</span><strong></strong>
+          
+          <span>Pivot</span><strong>185.61867</strong>
+          <span>R1</span><strong>186.05533</strong>
+          <span>S1</span><strong>185.25233</strong>
+          <span>H4</span><strong>NO BAR</strong>
         </div>
       </a>
 
@@ -412,12 +470,14 @@
           <span class="asset">FX</span>
         </div>
         <div class="status-line">WAIT</div>
-        <div class="phase-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+        <div class="phase-line">OPEN BELOW PIVOT - Prev WEAK BUY</div>
+        <div class="setup-detail">prev=WEAK BUY; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
         <div class="micro-grid">
-          <span>Entry</span><strong></strong>
-          <span>TP1</span><strong></strong>
-          <span>SL</span><strong></strong>
-          <span>Model</span><strong></strong>
+          
+          <span>Pivot</span><strong>1.1657</strong>
+          <span>R1</span><strong>1.16891</strong>
+          <span>S1</span><strong>1.16279</strong>
+          <span>H4</span><strong>NO BAR</strong>
         </div>
       </a>
 
@@ -427,12 +487,14 @@
           <span class="asset">FX</span>
         </div>
         <div class="status-line">WAIT</div>
-        <div class="phase-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+        <div class="phase-line">OPEN ABOVE PIVOT - Prev STRONG SELL</div>
+        <div class="setup-detail">prev=STRONG SELL; OPEN ABOVE PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
         <div class="micro-grid">
-          <span>Entry</span><strong></strong>
-          <span>TP1</span><strong></strong>
-          <span>SL</span><strong></strong>
-          <span>Model</span><strong></strong>
+          
+          <span>Pivot</span><strong>1.87328</strong>
+          <span>R1</span><strong>1.87737</strong>
+          <span>S1</span><strong>1.86839</strong>
+          <span>H4</span><strong>NO BAR</strong>
         </div>
       </a>
 
@@ -442,12 +504,14 @@
           <span class="asset">FX</span>
         </div>
         <div class="status-line">WAIT</div>
-        <div class="phase-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+        <div class="phase-line">OPEN ABOVE PIVOT - Prev STRONG BUY</div>
+        <div class="setup-detail">prev=STRONG BUY; OPEN ABOVE PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
         <div class="micro-grid">
-          <span>Entry</span><strong></strong>
-          <span>TP1</span><strong></strong>
-          <span>SL</span><strong></strong>
-          <span>Model</span><strong></strong>
+          
+          <span>Pivot</span><strong>1.85491</strong>
+          <span>R1</span><strong>1.85982</strong>
+          <span>S1</span><strong>1.85107</strong>
+          <span>H4</span><strong>NO BAR</strong>
         </div>
       </a>
 
@@ -457,12 +521,14 @@
           <span class="asset">FX</span>
         </div>
         <div class="status-line">WAIT</div>
-        <div class="phase-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+        <div class="phase-line">OPEN ABOVE PIVOT - Prev STRONG BUY</div>
+        <div class="setup-detail">prev=STRONG BUY; OPEN ABOVE PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
         <div class="micro-grid">
-          <span>Entry</span><strong></strong>
-          <span>TP1</span><strong></strong>
-          <span>SL</span><strong></strong>
-          <span>Model</span><strong></strong>
+          
+          <span>Pivot</span><strong>214.157</strong>
+          <span>R1</span><strong>214.733</strong>
+          <span>S1</span><strong>213.68</strong>
+          <span>H4</span><strong>NO BAR</strong>
         </div>
       </a>
 
@@ -472,12 +538,14 @@
           <span class="asset">FX</span>
         </div>
         <div class="status-line">WAIT</div>
-        <div class="phase-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+        <div class="phase-line">OPEN BELOW PIVOT - Prev WEAK BUY</div>
+        <div class="setup-detail">prev=WEAK BUY; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
         <div class="micro-grid">
-          <span>Entry</span><strong></strong>
-          <span>TP1</span><strong></strong>
-          <span>SL</span><strong></strong>
-          <span>Model</span><strong></strong>
+          
+          <span>Pivot</span><strong>1.34489</strong>
+          <span>R1</span><strong>1.34898</strong>
+          <span>S1</span><strong>1.34124</strong>
+          <span>H4</span><strong>NO BAR</strong>
         </div>
       </a>
 
@@ -487,12 +555,14 @@
           <span class="asset">FX</span>
         </div>
         <div class="status-line">WAIT</div>
-        <div class="phase-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+        <div class="phase-line">OPEN BELOW PIVOT - Prev STRONG BUY</div>
+        <div class="setup-detail">prev=STRONG BUY; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
         <div class="micro-grid">
-          <span>Entry</span><strong></strong>
-          <span>TP1</span><strong></strong>
-          <span>SL</span><strong></strong>
-          <span>Model</span><strong></strong>
+          
+          <span>Pivot</span><strong>0.59657</strong>
+          <span>R1</span><strong>0.60142</strong>
+          <span>S1</span><strong>0.59376</strong>
+          <span>H4</span><strong>NO BAR</strong>
         </div>
       </a>
 
@@ -502,12 +572,14 @@
           <span class="asset">FX</span>
         </div>
         <div class="status-line">WAIT</div>
-        <div class="phase-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+        <div class="phase-line">OPEN BELOW PIVOT - Prev WEAK SELL</div>
+        <div class="setup-detail">prev=WEAK SELL; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
         <div class="micro-grid">
-          <span>Entry</span><strong></strong>
-          <span>TP1</span><strong></strong>
-          <span>SL</span><strong></strong>
-          <span>Model</span><strong></strong>
+          
+          <span>Pivot</span><strong>1.37979</strong>
+          <span>R1</span><strong>1.38263</strong>
+          <span>S1</span><strong>1.37668</strong>
+          <span>H4</span><strong>NO BAR</strong>
         </div>
       </a>
 
@@ -517,12 +589,14 @@
           <span class="asset">FX</span>
         </div>
         <div class="status-line">WAIT</div>
-        <div class="phase-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+        <div class="phase-line">OPEN BELOW PIVOT - Prev STRONG SELL</div>
+        <div class="setup-detail">prev=STRONG SELL; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
         <div class="micro-grid">
-          <span>Entry</span><strong></strong>
-          <span>TP1</span><strong></strong>
-          <span>SL</span><strong></strong>
-          <span>Model</span><strong></strong>
+          
+          <span>Pivot</span><strong>0.78171</strong>
+          <span>R1</span><strong>0.78391</strong>
+          <span>S1</span><strong>0.77875</strong>
+          <span>H4</span><strong>NO BAR</strong>
         </div>
       </a>
 
@@ -532,12 +606,14 @@
           <span class="asset">FX</span>
         </div>
         <div class="status-line">WAIT</div>
-        <div class="phase-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+        <div class="phase-line">OPEN ABOVE PIVOT - Prev WEAK BUY</div>
+        <div class="setup-detail">prev=WEAK BUY; OPEN ABOVE PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
         <div class="micro-grid">
-          <span>Entry</span><strong></strong>
-          <span>TP1</span><strong></strong>
-          <span>SL</span><strong></strong>
-          <span>Model</span><strong></strong>
+          
+          <span>Pivot</span><strong>159.241</strong>
+          <span>R1</span><strong>159.389</strong>
+          <span>S1</span><strong>159.103</strong>
+          <span>H4</span><strong>NO BAR</strong>
         </div>
       </a>
 
@@ -547,12 +623,14 @@
           <span class="asset">INDICES</span>
         </div>
         <div class="status-line">WAIT</div>
-        <div class="phase-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+        <div class="phase-line">OPEN BELOW PIVOT - Prev WEAK SELL</div>
+        <div class="setup-detail">prev=WEAK SELL; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
         <div class="micro-grid">
-          <span>Entry</span><strong></strong>
-          <span>TP1</span><strong></strong>
-          <span>SL</span><strong></strong>
-          <span>Model</span><strong></strong>
+          
+          <span>Pivot</span><strong>1035.97667</strong>
+          <span>R1</span><strong>1040.47333</strong>
+          <span>S1</span><strong>1027.67333</strong>
+          <span>H4</span><strong>NO BAR</strong>
         </div>
       </a>
 
@@ -562,12 +640,14 @@
           <span class="asset">INDICES</span>
         </div>
         <div class="status-line">WAIT</div>
-        <div class="phase-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+        <div class="phase-line">OPEN ABOVE PIVOT - Prev WEAK BUY</div>
+        <div class="setup-detail">prev=WEAK BUY; OPEN ABOVE PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
         <div class="micro-grid">
-          <span>Entry</span><strong></strong>
-          <span>TP1</span><strong></strong>
-          <span>SL</span><strong></strong>
-          <span>Model</span><strong></strong>
+          
+          <span>Pivot</span><strong>8708.83333</strong>
+          <span>R1</span><strong>8772.36667</strong>
+          <span>S1</span><strong>8654.26667</strong>
+          <span>H4</span><strong>NO BAR</strong>
         </div>
       </a>
 
@@ -577,12 +657,14 @@
           <span class="asset">INDICES</span>
         </div>
         <div class="status-line">WAIT</div>
-        <div class="phase-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+        <div class="phase-line">OPEN BELOW PIVOT - Prev WEAK SELL</div>
+        <div class="setup-detail">prev=WEAK SELL; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
         <div class="micro-grid">
-          <span>Entry</span><strong></strong>
-          <span>TP1</span><strong></strong>
-          <span>SL</span><strong></strong>
-          <span>Model</span><strong></strong>
+          
+          <span>Pivot</span><strong>8201.46667</strong>
+          <span>R1</span><strong>8245.53333</strong>
+          <span>S1</span><strong>8117.83333</strong>
+          <span>H4</span><strong>NO BAR</strong>
         </div>
       </a>
 
@@ -592,12 +674,14 @@
           <span class="asset">INDICES</span>
         </div>
         <div class="status-line">WAIT</div>
-        <div class="phase-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+        <div class="phase-line">OPEN BELOW PIVOT - Prev WEAK SELL</div>
+        <div class="setup-detail">prev=WEAK SELL; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
         <div class="micro-grid">
-          <span>Entry</span><strong></strong>
-          <span>TP1</span><strong></strong>
-          <span>SL</span><strong></strong>
-          <span>Model</span><strong></strong>
+          
+          <span>Pivot</span><strong>25095.9</strong>
+          <span>R1</span><strong>25164.2</strong>
+          <span>S1</span><strong>24984.4</strong>
+          <span>H4</span><strong>NO BAR</strong>
         </div>
       </a>
 
@@ -607,12 +691,14 @@
           <span class="asset">INDICES</span>
         </div>
         <div class="status-line">WAIT</div>
-        <div class="phase-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+        <div class="phase-line">OPEN BELOW PIVOT - Prev WEAK SELL</div>
+        <div class="setup-detail">prev=WEAK SELL; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
         <div class="micro-grid">
-          <span>Entry</span><strong></strong>
-          <span>TP1</span><strong></strong>
-          <span>SL</span><strong></strong>
-          <span>Model</span><strong></strong>
+          
+          <span>Pivot</span><strong>18373.5</strong>
+          <span>R1</span><strong>18435.1</strong>
+          <span>S1</span><strong>18258.3</strong>
+          <span>H4</span><strong>NO BAR</strong>
         </div>
       </a>
 
@@ -622,12 +708,14 @@
           <span class="asset">INDICES</span>
         </div>
         <div class="status-line">WAIT</div>
-        <div class="phase-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+        <div class="phase-line">OPEN BELOW PIVOT - Prev WEAK SELL</div>
+        <div class="setup-detail">prev=WEAK SELL; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
         <div class="micro-grid">
-          <span>Entry</span><strong></strong>
-          <span>TP1</span><strong></strong>
-          <span>SL</span><strong></strong>
-          <span>Model</span><strong></strong>
+          
+          <span>Pivot</span><strong>6050.73333</strong>
+          <span>R1</span><strong>6079.06667</strong>
+          <span>S1</span><strong>5998.06667</strong>
+          <span>H4</span><strong>NO BAR</strong>
         </div>
       </a>
 
@@ -637,12 +725,14 @@
           <span class="asset">INDICES</span>
         </div>
         <div class="status-line">WAIT</div>
-        <div class="phase-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+        <div class="phase-line">OPEN ABOVE PIVOT - Prev STRONG BUY</div>
+        <div class="setup-detail">prev=STRONG BUY; OPEN ABOVE PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
         <div class="micro-grid">
-          <span>Entry</span><strong></strong>
-          <span>TP1</span><strong></strong>
-          <span>SL</span><strong></strong>
-          <span>Model</span><strong></strong>
+          
+          <span>Pivot</span><strong>66129.7</strong>
+          <span>R1</span><strong>66726.1</strong>
+          <span>S1</span><strong>65622</strong>
+          <span>H4</span><strong>NO BAR</strong>
         </div>
       </a>
 
@@ -652,12 +742,14 @@
           <span class="asset">INDICES</span>
         </div>
         <div class="status-line">WAIT</div>
-        <div class="phase-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+        <div class="phase-line">OPEN ABOVE PIVOT - Prev WEAK BUY</div>
+        <div class="setup-detail">prev=WEAK BUY; OPEN ABOVE PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
         <div class="micro-grid">
-          <span>Entry</span><strong></strong>
-          <span>TP1</span><strong></strong>
-          <span>SL</span><strong></strong>
-          <span>Model</span><strong></strong>
+          
+          <span>Pivot</span><strong>30309.43333</strong>
+          <span>R1</span><strong>30476.26667</strong>
+          <span>S1</span><strong>30151.66667</strong>
+          <span>H4</span><strong>NO BAR</strong>
         </div>
       </a>
 
@@ -667,12 +759,14 @@
           <span class="asset">INDICES</span>
         </div>
         <div class="status-line">WAIT</div>
-        <div class="phase-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+        <div class="phase-line">OPEN BELOW PIVOT - Prev WEAK SELL</div>
+        <div class="setup-detail">prev=WEAK SELL; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
         <div class="micro-grid">
-          <span>Entry</span><strong></strong>
-          <span>TP1</span><strong></strong>
-          <span>SL</span><strong></strong>
-          <span>Model</span><strong></strong>
+          
+          <span>Pivot</span><strong>13528.5</strong>
+          <span>R1</span><strong>13575.4</strong>
+          <span>S1</span><strong>13440.7</strong>
+          <span>H4</span><strong>NO BAR</strong>
         </div>
       </a>
 
@@ -682,12 +776,14 @@
           <span class="asset">INDICES</span>
         </div>
         <div class="status-line">WAIT</div>
-        <div class="phase-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+        <div class="phase-line">OPEN ABOVE PIVOT - Prev WEAK SELL</div>
+        <div class="setup-detail">prev=WEAK SELL; OPEN ABOVE PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
         <div class="micro-grid">
-          <span>Entry</span><strong></strong>
-          <span>TP1</span><strong></strong>
-          <span>SL</span><strong></strong>
-          <span>Model</span><strong></strong>
+          
+          <span>Pivot</span><strong>7577.13333</strong>
+          <span>R1</span><strong>7597.16667</strong>
+          <span>S1</span><strong>7556.56667</strong>
+          <span>H4</span><strong>NO BAR</strong>
         </div>
       </a>
 
@@ -697,12 +793,14 @@
           <span class="asset">INDICES</span>
         </div>
         <div class="status-line">WAIT</div>
-        <div class="phase-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+        <div class="phase-line">OPEN ABOVE PIVOT - Prev STRONG BUY</div>
+        <div class="setup-detail">prev=STRONG BUY; OPEN ABOVE PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
         <div class="micro-grid">
-          <span>Entry</span><strong></strong>
-          <span>TP1</span><strong></strong>
-          <span>SL</span><strong></strong>
-          <span>Model</span><strong></strong>
+          
+          <span>Pivot</span><strong>50910.7</strong>
+          <span>R1</span><strong>51178.2</strong>
+          <span>S1</span><strong>50729.1</strong>
+          <span>H4</span><strong>NO BAR</strong>
         </div>
       </a>
 
@@ -712,12 +810,14 @@
           <span class="asset">COMMODITIES</span>
         </div>
         <div class="status-line">WAIT</div>
-        <div class="phase-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+        <div class="phase-line">OPEN ABOVE PIVOT - Prev WEAK BUY</div>
+        <div class="setup-detail">prev=WEAK BUY; OPEN ABOVE PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
         <div class="micro-grid">
-          <span>Entry</span><strong></strong>
-          <span>TP1</span><strong></strong>
-          <span>SL</span><strong></strong>
-          <span>Model</span><strong></strong>
+          
+          <span>Pivot</span><strong>90.12033</strong>
+          <span>R1</span><strong>91.54267</strong>
+          <span>S1</span><strong>88.80067</strong>
+          <span>H4</span><strong>NO BAR</strong>
         </div>
       </a>
 
@@ -727,12 +827,14 @@
           <span class="asset">METALS</span>
         </div>
         <div class="status-line">WAIT</div>
-        <div class="phase-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+        <div class="phase-line">OPEN BELOW PIVOT - Prev STRONG SELL</div>
+        <div class="setup-detail">prev=STRONG SELL; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
         <div class="micro-grid">
-          <span>Entry</span><strong></strong>
-          <span>TP1</span><strong></strong>
-          <span>SL</span><strong></strong>
-          <span>Model</span><strong></strong>
+          
+          <span>Pivot</span><strong>75.502</strong>
+          <span>R1</span><strong>76.419</strong>
+          <span>S1</span><strong>74.345</strong>
+          <span>H4</span><strong>NO BAR</strong>
         </div>
       </a>
 
@@ -742,12 +844,14 @@
           <span class="asset">METALS</span>
         </div>
         <div class="status-line">WAIT</div>
-        <div class="phase-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+        <div class="phase-line">OPEN BELOW PIVOT - Prev WEAK SELL</div>
+        <div class="setup-detail">prev=WEAK SELL; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
         <div class="micro-grid">
-          <span>Entry</span><strong></strong>
-          <span>TP1</span><strong></strong>
-          <span>SL</span><strong></strong>
-          <span>Model</span><strong></strong>
+          
+          <span>Pivot</span><strong>3893.50667</strong>
+          <span>R1</span><strong>3934.68333</strong>
+          <span>S1</span><strong>3852.25333</strong>
+          <span>H4</span><strong>NO BAR</strong>
         </div>
       </a>
 
@@ -757,12 +861,14 @@
           <span class="asset">METALS</span>
         </div>
         <div class="status-line">WAIT</div>
-        <div class="phase-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+        <div class="phase-line">OPEN BELOW PIVOT - Prev WEAK SELL</div>
+        <div class="setup-detail">prev=WEAK SELL; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
         <div class="micro-grid">
-          <span>Entry</span><strong></strong>
-          <span>TP1</span><strong></strong>
-          <span>SL</span><strong></strong>
-          <span>Model</span><strong></strong>
+          
+          <span>Pivot</span><strong>4541.5</strong>
+          <span>R1</span><strong>4594.15</strong>
+          <span>S1</span><strong>4487.79</strong>
+          <span>H4</span><strong>NO BAR</strong>
         </div>
       </a></section>
     <section class="section">
@@ -778,7 +884,7 @@
             <td><strong>AUDCAD</strong><span>FX</span></td>
             <td>WAIT</td>
             <td>RANGE</td>
-            <td>LIVE_SAFE_WAIT</td>
+            <td>OPEN BELOW PIVOT - Prev STRONG BUY</td>
             <td></td>
             <td></td>
             <td></td>
@@ -789,7 +895,7 @@
             <td><strong>AUDCHF</strong><span>FX</span></td>
             <td>WAIT</td>
             <td>RANGE</td>
-            <td>LIVE_SAFE_WAIT</td>
+            <td>OPEN BELOW PIVOT - Prev STRONG SELL</td>
             <td></td>
             <td></td>
             <td></td>
@@ -800,7 +906,7 @@
             <td><strong>AUDJPY</strong><span>FX</span></td>
             <td>WAIT</td>
             <td>RANGE</td>
-            <td>LIVE_SAFE_WAIT</td>
+            <td>OPEN BELOW PIVOT - Prev STRONG BUY</td>
             <td></td>
             <td></td>
             <td></td>
@@ -811,7 +917,7 @@
             <td><strong>AUDNZD</strong><span>FX</span></td>
             <td>WAIT</td>
             <td>RANGE</td>
-            <td>LIVE_SAFE_WAIT</td>
+            <td>OPEN BELOW PIVOT - Prev STRONG SELL</td>
             <td></td>
             <td></td>
             <td></td>
@@ -822,7 +928,7 @@
             <td><strong>AUDUSD</strong><span>FX</span></td>
             <td>WAIT</td>
             <td>RANGE</td>
-            <td>LIVE_SAFE_WAIT</td>
+            <td>OPEN BELOW PIVOT - Prev WEAK BUY</td>
             <td></td>
             <td></td>
             <td></td>
@@ -833,7 +939,7 @@
             <td><strong>CADCHF</strong><span>FX</span></td>
             <td>WAIT</td>
             <td>RANGE</td>
-            <td>LIVE_SAFE_WAIT</td>
+            <td>OPEN BELOW PIVOT - Prev STRONG SELL</td>
             <td></td>
             <td></td>
             <td></td>
@@ -844,7 +950,7 @@
             <td><strong>CADJPY</strong><span>FX</span></td>
             <td>WAIT</td>
             <td>RANGE</td>
-            <td>LIVE_SAFE_WAIT</td>
+            <td>OPEN ABOVE PIVOT - Prev WEAK BUY</td>
             <td></td>
             <td></td>
             <td></td>
@@ -855,7 +961,7 @@
             <td><strong>CHFJPY</strong><span>FX</span></td>
             <td>WAIT</td>
             <td>RANGE</td>
-            <td>LIVE_SAFE_WAIT</td>
+            <td>OPEN ABOVE PIVOT - Prev STRONG BUY</td>
             <td></td>
             <td></td>
             <td></td>
@@ -866,7 +972,7 @@
             <td><strong>EURAUD</strong><span>FX</span></td>
             <td>WAIT</td>
             <td>RANGE</td>
-            <td>LIVE_SAFE_WAIT</td>
+            <td>OPEN ABOVE PIVOT - Prev STRONG SELL</td>
             <td></td>
             <td></td>
             <td></td>
@@ -877,7 +983,7 @@
             <td><strong>EURCAD</strong><span>FX</span></td>
             <td>WAIT</td>
             <td>RANGE</td>
-            <td>LIVE_SAFE_WAIT</td>
+            <td>OPEN BELOW PIVOT - Prev STRONG BUY</td>
             <td></td>
             <td></td>
             <td></td>
@@ -888,7 +994,7 @@
             <td><strong>EURCHF</strong><span>FX</span></td>
             <td>WAIT</td>
             <td>RANGE</td>
-            <td>LIVE_SAFE_WAIT</td>
+            <td>OPEN BELOW PIVOT - Prev STRONG SELL</td>
             <td></td>
             <td></td>
             <td></td>
@@ -899,7 +1005,7 @@
             <td><strong>EURGBP</strong><span>FX</span></td>
             <td>WAIT</td>
             <td>RANGE</td>
-            <td>LIVE_SAFE_WAIT</td>
+            <td>OPEN BELOW PIVOT - Prev STRONG SELL</td>
             <td></td>
             <td></td>
             <td></td>
@@ -910,7 +1016,7 @@
             <td><strong>EURJPY</strong><span>FX</span></td>
             <td>WAIT</td>
             <td>RANGE</td>
-            <td>LIVE_SAFE_WAIT</td>
+            <td>OPEN ABOVE PIVOT - Prev STRONG BUY</td>
             <td></td>
             <td></td>
             <td></td>
@@ -921,7 +1027,7 @@
             <td><strong>EURUSD</strong><span>FX</span></td>
             <td>WAIT</td>
             <td>RANGE</td>
-            <td>LIVE_SAFE_WAIT</td>
+            <td>OPEN BELOW PIVOT - Prev WEAK BUY</td>
             <td></td>
             <td></td>
             <td></td>
@@ -932,7 +1038,7 @@
             <td><strong>GBPAUD</strong><span>FX</span></td>
             <td>WAIT</td>
             <td>RANGE</td>
-            <td>LIVE_SAFE_WAIT</td>
+            <td>OPEN ABOVE PIVOT - Prev STRONG SELL</td>
             <td></td>
             <td></td>
             <td></td>
@@ -943,7 +1049,7 @@
             <td><strong>GBPCAD</strong><span>FX</span></td>
             <td>WAIT</td>
             <td>RANGE</td>
-            <td>LIVE_SAFE_WAIT</td>
+            <td>OPEN ABOVE PIVOT - Prev STRONG BUY</td>
             <td></td>
             <td></td>
             <td></td>
@@ -954,7 +1060,7 @@
             <td><strong>GBPJPY</strong><span>FX</span></td>
             <td>WAIT</td>
             <td>RANGE</td>
-            <td>LIVE_SAFE_WAIT</td>
+            <td>OPEN ABOVE PIVOT - Prev STRONG BUY</td>
             <td></td>
             <td></td>
             <td></td>
@@ -965,7 +1071,7 @@
             <td><strong>GBPUSD</strong><span>FX</span></td>
             <td>WAIT</td>
             <td>RANGE</td>
-            <td>LIVE_SAFE_WAIT</td>
+            <td>OPEN BELOW PIVOT - Prev WEAK BUY</td>
             <td></td>
             <td></td>
             <td></td>
@@ -976,7 +1082,7 @@
             <td><strong>NZDUSD</strong><span>FX</span></td>
             <td>WAIT</td>
             <td>RANGE</td>
-            <td>LIVE_SAFE_WAIT</td>
+            <td>OPEN BELOW PIVOT - Prev STRONG BUY</td>
             <td></td>
             <td></td>
             <td></td>
@@ -987,7 +1093,7 @@
             <td><strong>USDCAD</strong><span>FX</span></td>
             <td>WAIT</td>
             <td>RANGE</td>
-            <td>LIVE_SAFE_WAIT</td>
+            <td>OPEN BELOW PIVOT - Prev WEAK SELL</td>
             <td></td>
             <td></td>
             <td></td>
@@ -998,7 +1104,7 @@
             <td><strong>USDCHF</strong><span>FX</span></td>
             <td>WAIT</td>
             <td>RANGE</td>
-            <td>LIVE_SAFE_WAIT</td>
+            <td>OPEN BELOW PIVOT - Prev STRONG SELL</td>
             <td></td>
             <td></td>
             <td></td>
@@ -1009,7 +1115,7 @@
             <td><strong>USDJPY</strong><span>FX</span></td>
             <td>WAIT</td>
             <td>RANGE</td>
-            <td>LIVE_SAFE_WAIT</td>
+            <td>OPEN ABOVE PIVOT - Prev WEAK BUY</td>
             <td></td>
             <td></td>
             <td></td>
@@ -1020,7 +1126,7 @@
             <td><strong>AEX25</strong><span>INDICES</span></td>
             <td>WAIT</td>
             <td>RANGE</td>
-            <td>LIVE_SAFE_WAIT</td>
+            <td>OPEN BELOW PIVOT - Prev WEAK SELL</td>
             <td></td>
             <td></td>
             <td></td>
@@ -1031,7 +1137,7 @@
             <td><strong>AUS200</strong><span>INDICES</span></td>
             <td>WAIT</td>
             <td>RANGE</td>
-            <td>LIVE_SAFE_WAIT</td>
+            <td>OPEN ABOVE PIVOT - Prev WEAK BUY</td>
             <td></td>
             <td></td>
             <td></td>
@@ -1042,7 +1148,7 @@
             <td><strong>CAC40</strong><span>INDICES</span></td>
             <td>WAIT</td>
             <td>RANGE</td>
-            <td>LIVE_SAFE_WAIT</td>
+            <td>OPEN BELOW PIVOT - Prev WEAK SELL</td>
             <td></td>
             <td></td>
             <td></td>
@@ -1053,7 +1159,7 @@
             <td><strong>DAX40</strong><span>INDICES</span></td>
             <td>WAIT</td>
             <td>RANGE</td>
-            <td>LIVE_SAFE_WAIT</td>
+            <td>OPEN BELOW PIVOT - Prev WEAK SELL</td>
             <td></td>
             <td></td>
             <td></td>
@@ -1064,7 +1170,7 @@
             <td><strong>ESP35</strong><span>INDICES</span></td>
             <td>WAIT</td>
             <td>RANGE</td>
-            <td>LIVE_SAFE_WAIT</td>
+            <td>OPEN BELOW PIVOT - Prev WEAK SELL</td>
             <td></td>
             <td></td>
             <td></td>
@@ -1075,7 +1181,7 @@
             <td><strong>ESX50</strong><span>INDICES</span></td>
             <td>WAIT</td>
             <td>RANGE</td>
-            <td>LIVE_SAFE_WAIT</td>
+            <td>OPEN BELOW PIVOT - Prev WEAK SELL</td>
             <td></td>
             <td></td>
             <td></td>
@@ -1086,7 +1192,7 @@
             <td><strong>JPN225</strong><span>INDICES</span></td>
             <td>WAIT</td>
             <td>RANGE</td>
-            <td>LIVE_SAFE_WAIT</td>
+            <td>OPEN ABOVE PIVOT - Prev STRONG BUY</td>
             <td></td>
             <td></td>
             <td></td>
@@ -1097,7 +1203,7 @@
             <td><strong>NAS100</strong><span>INDICES</span></td>
             <td>WAIT</td>
             <td>RANGE</td>
-            <td>LIVE_SAFE_WAIT</td>
+            <td>OPEN ABOVE PIVOT - Prev WEAK BUY</td>
             <td></td>
             <td></td>
             <td></td>
@@ -1108,7 +1214,7 @@
             <td><strong>SMI20</strong><span>INDICES</span></td>
             <td>WAIT</td>
             <td>RANGE</td>
-            <td>LIVE_SAFE_WAIT</td>
+            <td>OPEN BELOW PIVOT - Prev WEAK SELL</td>
             <td></td>
             <td></td>
             <td></td>
@@ -1119,7 +1225,7 @@
             <td><strong>SP500</strong><span>INDICES</span></td>
             <td>WAIT</td>
             <td>RANGE</td>
-            <td>LIVE_SAFE_WAIT</td>
+            <td>OPEN ABOVE PIVOT - Prev WEAK SELL</td>
             <td></td>
             <td></td>
             <td></td>
@@ -1130,7 +1236,7 @@
             <td><strong>WS30</strong><span>INDICES</span></td>
             <td>WAIT</td>
             <td>RANGE</td>
-            <td>LIVE_SAFE_WAIT</td>
+            <td>OPEN ABOVE PIVOT - Prev STRONG BUY</td>
             <td></td>
             <td></td>
             <td></td>
@@ -1141,7 +1247,7 @@
             <td><strong>USOIL</strong><span>COMMODITIES</span></td>
             <td>WAIT</td>
             <td>RANGE</td>
-            <td>LIVE_SAFE_WAIT</td>
+            <td>OPEN ABOVE PIVOT - Prev WEAK BUY</td>
             <td></td>
             <td></td>
             <td></td>
@@ -1152,7 +1258,7 @@
             <td><strong>XAGUSD</strong><span>METALS</span></td>
             <td>WAIT</td>
             <td>RANGE</td>
-            <td>LIVE_SAFE_WAIT</td>
+            <td>OPEN BELOW PIVOT - Prev STRONG SELL</td>
             <td></td>
             <td></td>
             <td></td>
@@ -1163,7 +1269,7 @@
             <td><strong>XAUEUR</strong><span>METALS</span></td>
             <td>WAIT</td>
             <td>RANGE</td>
-            <td>LIVE_SAFE_WAIT</td>
+            <td>OPEN BELOW PIVOT - Prev WEAK SELL</td>
             <td></td>
             <td></td>
             <td></td>
@@ -1174,7 +1280,7 @@
             <td><strong>XAUUSD</strong><span>METALS</span></td>
             <td>WAIT</td>
             <td>RANGE</td>
-            <td>LIVE_SAFE_WAIT</td>
+            <td>OPEN BELOW PIVOT - Prev WEAK SELL</td>
             <td></td>
             <td></td>
             <td></td>
@@ -1231,21 +1337,29 @@
                 </div>
                 <span class="status-pill wait">WAIT</span>
               </div>
-              <div class="trade-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+              <div class="trade-line">OPEN BELOW PIVOT - Prev STRONG BUY</div>
+              <div class="setup-summary">prev=STRONG BUY; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
               <div class="level-grid">
-                <div><span>Entry</span><strong></strong></div>
-                <div><span>TP1</span><strong></strong></div>
-                <div><span>TP2</span><strong></strong></div>
-                <div><span>SL</span><strong></strong></div>
+                
+                <div><span>Pivot</span><strong>0.98998</strong></div>
+                <div><span>R1</span><strong>0.99415</strong></div>
+                <div><span>S1</span><strong>0.98675</strong></div>
+                <div><span>Open</span><strong>OPEN BELOW PIVOT</strong></div>
               </div>
               <div class="context-grid">
                 <div><span>Entry Time</span><strong></strong></div>
                 <div><span>Model</span><strong></strong></div>
-                <div><span>Prev D1</span><strong>STRONG_BUY</strong></div>
-                <div><span>H4 Read</span><strong>NO_BAR</strong></div>
+                <div><span>Open State</span><strong>OPEN BELOW PIVOT</strong></div>
+                <div><span>Prev D1</span><strong>STRONG BUY</strong></div>
+                <div><span>H4 Read</span><strong>NO BAR</strong></div>
+                <div><span>H4 Next</span><strong>NO BAR</strong></div>
+                <div><span>Pivot</span><strong>0.98998</strong></div>
+                <div><span>R1</span><strong>0.99415</strong></div>
+                <div><span>S1</span><strong>0.98675</strong></div>
+                <div><span>Dist</span><strong></strong></div>
                 <div><span>Room</span><strong></strong></div>
               </div>
-              <div class="blocker-text ok">No refined blocker</div>
+              <div class="blocker-text wait-note">prev=STRONG BUY; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
             </div>
             <div class="confirm-panel">
               <div class="section-head">
@@ -1272,21 +1386,29 @@
                 </div>
                 <span class="status-pill wait">WAIT</span>
               </div>
-              <div class="trade-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+              <div class="trade-line">OPEN BELOW PIVOT - Prev STRONG SELL</div>
+              <div class="setup-summary">prev=STRONG SELL; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
               <div class="level-grid">
-                <div><span>Entry</span><strong></strong></div>
-                <div><span>TP1</span><strong></strong></div>
-                <div><span>TP2</span><strong></strong></div>
-                <div><span>SL</span><strong></strong></div>
+                
+                <div><span>Pivot</span><strong>0.56131</strong></div>
+                <div><span>R1</span><strong>0.56253</strong></div>
+                <div><span>S1</span><strong>0.55977</strong></div>
+                <div><span>Open</span><strong>OPEN BELOW PIVOT</strong></div>
               </div>
               <div class="context-grid">
                 <div><span>Entry Time</span><strong></strong></div>
                 <div><span>Model</span><strong></strong></div>
-                <div><span>Prev D1</span><strong>STRONG_SELL</strong></div>
-                <div><span>H4 Read</span><strong>NO_BAR</strong></div>
+                <div><span>Open State</span><strong>OPEN BELOW PIVOT</strong></div>
+                <div><span>Prev D1</span><strong>STRONG SELL</strong></div>
+                <div><span>H4 Read</span><strong>NO BAR</strong></div>
+                <div><span>H4 Next</span><strong>NO BAR</strong></div>
+                <div><span>Pivot</span><strong>0.56131</strong></div>
+                <div><span>R1</span><strong>0.56253</strong></div>
+                <div><span>S1</span><strong>0.55977</strong></div>
+                <div><span>Dist</span><strong></strong></div>
                 <div><span>Room</span><strong></strong></div>
               </div>
-              <div class="blocker-text ok">No refined blocker</div>
+              <div class="blocker-text wait-note">prev=STRONG SELL; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
             </div>
             <div class="confirm-panel">
               <div class="section-head">
@@ -1313,21 +1435,29 @@
                 </div>
                 <span class="status-pill wait">WAIT</span>
               </div>
-              <div class="trade-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+              <div class="trade-line">OPEN BELOW PIVOT - Prev STRONG BUY</div>
+              <div class="setup-summary">prev=STRONG BUY; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
               <div class="level-grid">
-                <div><span>Entry</span><strong></strong></div>
-                <div><span>TP1</span><strong></strong></div>
-                <div><span>TP2</span><strong></strong></div>
-                <div><span>SL</span><strong></strong></div>
+                
+                <div><span>Pivot</span><strong>114.28467</strong></div>
+                <div><span>R1</span><strong>114.68933</strong></div>
+                <div><span>S1</span><strong>113.98633</strong></div>
+                <div><span>Open</span><strong>OPEN BELOW PIVOT</strong></div>
               </div>
               <div class="context-grid">
                 <div><span>Entry Time</span><strong></strong></div>
                 <div><span>Model</span><strong></strong></div>
-                <div><span>Prev D1</span><strong>STRONG_BUY</strong></div>
-                <div><span>H4 Read</span><strong>NO_BAR</strong></div>
+                <div><span>Open State</span><strong>OPEN BELOW PIVOT</strong></div>
+                <div><span>Prev D1</span><strong>STRONG BUY</strong></div>
+                <div><span>H4 Read</span><strong>NO BAR</strong></div>
+                <div><span>H4 Next</span><strong>NO BAR</strong></div>
+                <div><span>Pivot</span><strong>114.28467</strong></div>
+                <div><span>R1</span><strong>114.68933</strong></div>
+                <div><span>S1</span><strong>113.98633</strong></div>
+                <div><span>Dist</span><strong></strong></div>
                 <div><span>Room</span><strong></strong></div>
               </div>
-              <div class="blocker-text ok">No refined blocker</div>
+              <div class="blocker-text wait-note">prev=STRONG BUY; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
             </div>
             <div class="confirm-panel">
               <div class="section-head">
@@ -1347,7 +1477,7 @@
                     <td>113.716</td>
                     <td>ORIGINAL</td>
                     <td>0.202</td>
-                    <td>WEAK_SELL</td>
+                    <td>WEAK SELL</td>
                   </tr></tbody>
               </table>
             </div>
@@ -1364,21 +1494,29 @@
                 </div>
                 <span class="status-pill wait">WAIT</span>
               </div>
-              <div class="trade-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+              <div class="trade-line">OPEN BELOW PIVOT - Prev STRONG SELL</div>
+              <div class="setup-summary">prev=STRONG SELL; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
               <div class="level-grid">
-                <div><span>Entry</span><strong></strong></div>
-                <div><span>TP1</span><strong></strong></div>
-                <div><span>TP2</span><strong></strong></div>
-                <div><span>SL</span><strong></strong></div>
+                
+                <div><span>Pivot</span><strong>1.20187</strong></div>
+                <div><span>R1</span><strong>1.20484</strong></div>
+                <div><span>S1</span><strong>1.1962</strong></div>
+                <div><span>Open</span><strong>OPEN BELOW PIVOT</strong></div>
               </div>
               <div class="context-grid">
                 <div><span>Entry Time</span><strong></strong></div>
                 <div><span>Model</span><strong></strong></div>
-                <div><span>Prev D1</span><strong>STRONG_SELL</strong></div>
-                <div><span>H4 Read</span><strong>NO_BAR</strong></div>
+                <div><span>Open State</span><strong>OPEN BELOW PIVOT</strong></div>
+                <div><span>Prev D1</span><strong>STRONG SELL</strong></div>
+                <div><span>H4 Read</span><strong>NO BAR</strong></div>
+                <div><span>H4 Next</span><strong>NO BAR</strong></div>
+                <div><span>Pivot</span><strong>1.20187</strong></div>
+                <div><span>R1</span><strong>1.20484</strong></div>
+                <div><span>S1</span><strong>1.1962</strong></div>
+                <div><span>Dist</span><strong></strong></div>
                 <div><span>Room</span><strong></strong></div>
               </div>
-              <div class="blocker-text ok">No refined blocker</div>
+              <div class="blocker-text wait-note">prev=STRONG SELL; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
             </div>
             <div class="confirm-panel">
               <div class="section-head">
@@ -1405,21 +1543,29 @@
                 </div>
                 <span class="status-pill wait">WAIT</span>
               </div>
-              <div class="trade-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+              <div class="trade-line">OPEN BELOW PIVOT - Prev WEAK BUY</div>
+              <div class="setup-summary">prev=WEAK BUY; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
               <div class="level-grid">
-                <div><span>Entry</span><strong></strong></div>
-                <div><span>TP1</span><strong></strong></div>
-                <div><span>TP2</span><strong></strong></div>
-                <div><span>SL</span><strong></strong></div>
+                
+                <div><span>Pivot</span><strong>0.71774</strong></div>
+                <div><span>R1</span><strong>0.72058</strong></div>
+                <div><span>S1</span><strong>0.71544</strong></div>
+                <div><span>Open</span><strong>OPEN BELOW PIVOT</strong></div>
               </div>
               <div class="context-grid">
                 <div><span>Entry Time</span><strong></strong></div>
                 <div><span>Model</span><strong></strong></div>
-                <div><span>Prev D1</span><strong>WEAK_BUY</strong></div>
-                <div><span>H4 Read</span><strong>NO_BAR</strong></div>
+                <div><span>Open State</span><strong>OPEN BELOW PIVOT</strong></div>
+                <div><span>Prev D1</span><strong>WEAK BUY</strong></div>
+                <div><span>H4 Read</span><strong>NO BAR</strong></div>
+                <div><span>H4 Next</span><strong>NO BAR</strong></div>
+                <div><span>Pivot</span><strong>0.71774</strong></div>
+                <div><span>R1</span><strong>0.72058</strong></div>
+                <div><span>S1</span><strong>0.71544</strong></div>
+                <div><span>Dist</span><strong></strong></div>
                 <div><span>Room</span><strong></strong></div>
               </div>
-              <div class="blocker-text ok">No refined blocker</div>
+              <div class="blocker-text wait-note">prev=WEAK BUY; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
             </div>
             <div class="confirm-panel">
               <div class="section-head">
@@ -1439,7 +1585,7 @@
                     <td>0.71556</td>
                     <td>ORIGINAL</td>
                     <td>0.326</td>
-                    <td>STRONG_SELL</td>
+                    <td>STRONG SELL</td>
                   </tr>
                   <tr>
                     <td>2026-05-04</td>
@@ -1449,7 +1595,7 @@
                     <td>0.72176</td>
                     <td>ORIGINAL</td>
                     <td>0.206</td>
-                    <td>WEAK_SELL</td>
+                    <td>WEAK SELL</td>
                   </tr></tbody>
               </table>
             </div>
@@ -1466,21 +1612,29 @@
                 </div>
                 <span class="status-pill wait">WAIT</span>
               </div>
-              <div class="trade-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+              <div class="trade-line">OPEN BELOW PIVOT - Prev STRONG SELL</div>
+              <div class="setup-summary">prev=STRONG SELL; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
               <div class="level-grid">
-                <div><span>Entry</span><strong></strong></div>
-                <div><span>TP1</span><strong></strong></div>
-                <div><span>TP2</span><strong></strong></div>
-                <div><span>SL</span><strong></strong></div>
+                
+                <div><span>Pivot</span><strong>0.56676</strong></div>
+                <div><span>R1</span><strong>0.56817</strong></div>
+                <div><span>S1</span><strong>0.56455</strong></div>
+                <div><span>Open</span><strong>OPEN BELOW PIVOT</strong></div>
               </div>
               <div class="context-grid">
                 <div><span>Entry Time</span><strong></strong></div>
                 <div><span>Model</span><strong></strong></div>
-                <div><span>Prev D1</span><strong>STRONG_SELL</strong></div>
-                <div><span>H4 Read</span><strong>NO_BAR</strong></div>
+                <div><span>Open State</span><strong>OPEN BELOW PIVOT</strong></div>
+                <div><span>Prev D1</span><strong>STRONG SELL</strong></div>
+                <div><span>H4 Read</span><strong>NO BAR</strong></div>
+                <div><span>H4 Next</span><strong>NO BAR</strong></div>
+                <div><span>Pivot</span><strong>0.56676</strong></div>
+                <div><span>R1</span><strong>0.56817</strong></div>
+                <div><span>S1</span><strong>0.56455</strong></div>
+                <div><span>Dist</span><strong></strong></div>
                 <div><span>Room</span><strong></strong></div>
               </div>
-              <div class="blocker-text ok">No refined blocker</div>
+              <div class="blocker-text wait-note">prev=STRONG SELL; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
             </div>
             <div class="confirm-panel">
               <div class="section-head">
@@ -1500,7 +1654,7 @@
                     <td>0.57163</td>
                     <td>ORIGINAL</td>
                     <td>0.202</td>
-                    <td>WEAK_BUY</td>
+                    <td>WEAK BUY</td>
                   </tr>
                   <tr>
                     <td>2026-05-13</td>
@@ -1510,7 +1664,7 @@
                     <td>0.57026</td>
                     <td>ORIGINAL</td>
                     <td>0.205</td>
-                    <td>WEAK_BUY</td>
+                    <td>WEAK BUY</td>
                   </tr>
                   <tr>
                     <td>2026-04-23</td>
@@ -1520,7 +1674,7 @@
                     <td>0.57412</td>
                     <td>ORIGINAL</td>
                     <td>0.28</td>
-                    <td>WEAK_BUY</td>
+                    <td>WEAK BUY</td>
                   </tr></tbody>
               </table>
             </div>
@@ -1537,21 +1691,29 @@
                 </div>
                 <span class="status-pill wait">WAIT</span>
               </div>
-              <div class="trade-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+              <div class="trade-line">OPEN ABOVE PIVOT - Prev WEAK BUY</div>
+              <div class="setup-summary">prev=WEAK BUY; OPEN ABOVE PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
               <div class="level-grid">
-                <div><span>Entry</span><strong></strong></div>
-                <div><span>TP1</span><strong></strong></div>
-                <div><span>TP2</span><strong></strong></div>
-                <div><span>SL</span><strong></strong></div>
+                
+                <div><span>Pivot</span><strong>115.39533</strong></div>
+                <div><span>R1</span><strong>115.61567</strong></div>
+                <div><span>S1</span><strong>115.18567</strong></div>
+                <div><span>Open</span><strong>OPEN ABOVE PIVOT</strong></div>
               </div>
               <div class="context-grid">
                 <div><span>Entry Time</span><strong></strong></div>
                 <div><span>Model</span><strong></strong></div>
-                <div><span>Prev D1</span><strong>WEAK_BUY</strong></div>
-                <div><span>H4 Read</span><strong>NO_BAR</strong></div>
+                <div><span>Open State</span><strong>OPEN ABOVE PIVOT</strong></div>
+                <div><span>Prev D1</span><strong>WEAK BUY</strong></div>
+                <div><span>H4 Read</span><strong>NO BAR</strong></div>
+                <div><span>H4 Next</span><strong>NO BAR</strong></div>
+                <div><span>Pivot</span><strong>115.39533</strong></div>
+                <div><span>R1</span><strong>115.61567</strong></div>
+                <div><span>S1</span><strong>115.18567</strong></div>
+                <div><span>Dist</span><strong></strong></div>
                 <div><span>Room</span><strong></strong></div>
               </div>
-              <div class="blocker-text ok">No refined blocker</div>
+              <div class="blocker-text wait-note">prev=WEAK BUY; OPEN ABOVE PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
             </div>
             <div class="confirm-panel">
               <div class="section-head">
@@ -1571,7 +1733,7 @@
                     <td>115.013</td>
                     <td>ORIGINAL</td>
                     <td>0.21</td>
-                    <td>WEAK_BUY</td>
+                    <td>WEAK BUY</td>
                   </tr>
                   <tr>
                     <td>2026-04-20</td>
@@ -1581,7 +1743,7 @@
                     <td>116.156</td>
                     <td>ORIGINAL</td>
                     <td>0.209</td>
-                    <td>WEAK_SELL</td>
+                    <td>WEAK SELL</td>
                   </tr></tbody>
               </table>
             </div>
@@ -1598,21 +1760,29 @@
                 </div>
                 <span class="status-pill wait">WAIT</span>
               </div>
-              <div class="trade-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+              <div class="trade-line">OPEN ABOVE PIVOT - Prev STRONG BUY</div>
+              <div class="setup-summary">prev=STRONG BUY; OPEN ABOVE PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
               <div class="level-grid">
-                <div><span>Entry</span><strong></strong></div>
-                <div><span>TP1</span><strong></strong></div>
-                <div><span>TP2</span><strong></strong></div>
-                <div><span>SL</span><strong></strong></div>
+                
+                <div><span>Pivot</span><strong>203.60933</strong></div>
+                <div><span>R1</span><strong>204.43567</strong></div>
+                <div><span>S1</span><strong>203.03367</strong></div>
+                <div><span>Open</span><strong>OPEN ABOVE PIVOT</strong></div>
               </div>
               <div class="context-grid">
                 <div><span>Entry Time</span><strong></strong></div>
                 <div><span>Model</span><strong></strong></div>
-                <div><span>Prev D1</span><strong>STRONG_BUY</strong></div>
-                <div><span>H4 Read</span><strong>NO_BAR</strong></div>
+                <div><span>Open State</span><strong>OPEN ABOVE PIVOT</strong></div>
+                <div><span>Prev D1</span><strong>STRONG BUY</strong></div>
+                <div><span>H4 Read</span><strong>NO BAR</strong></div>
+                <div><span>H4 Next</span><strong>NO BAR</strong></div>
+                <div><span>Pivot</span><strong>203.60933</strong></div>
+                <div><span>R1</span><strong>204.43567</strong></div>
+                <div><span>S1</span><strong>203.03367</strong></div>
+                <div><span>Dist</span><strong></strong></div>
                 <div><span>Room</span><strong></strong></div>
               </div>
-              <div class="blocker-text ok">No refined blocker</div>
+              <div class="blocker-text wait-note">prev=STRONG BUY; OPEN ABOVE PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
             </div>
             <div class="confirm-panel">
               <div class="section-head">
@@ -1630,9 +1800,9 @@
                     <td>FAILED_BREAKDOWN_BUY</td>
                     <td>2026-05-07 10:45:00+0300</td>
                     <td>200.859</td>
-                    <td>EMA50_M15</td>
+                    <td>EMA50 M15</td>
                     <td>0.133</td>
-                    <td>WEAK_BUY</td>
+                    <td>WEAK BUY</td>
                   </tr>
                   <tr>
                     <td>2026-05-04</td>
@@ -1642,7 +1812,7 @@
                     <td>200.948</td>
                     <td>ORIGINAL</td>
                     <td>0.216</td>
-                    <td>WEAK_BUY</td>
+                    <td>WEAK BUY</td>
                   </tr></tbody>
               </table>
             </div>
@@ -1659,21 +1829,29 @@
                 </div>
                 <span class="status-pill wait">WAIT</span>
               </div>
-              <div class="trade-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+              <div class="trade-line">OPEN ABOVE PIVOT - Prev STRONG SELL</div>
+              <div class="setup-summary">prev=STRONG SELL; OPEN ABOVE PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
               <div class="level-grid">
-                <div><span>Entry</span><strong></strong></div>
-                <div><span>TP1</span><strong></strong></div>
-                <div><span>TP2</span><strong></strong></div>
-                <div><span>SL</span><strong></strong></div>
+                
+                <div><span>Pivot</span><strong>1.62352</strong></div>
+                <div><span>R1</span><strong>1.62697</strong></div>
+                <div><span>S1</span><strong>1.61943</strong></div>
+                <div><span>Open</span><strong>OPEN ABOVE PIVOT</strong></div>
               </div>
               <div class="context-grid">
                 <div><span>Entry Time</span><strong></strong></div>
                 <div><span>Model</span><strong></strong></div>
-                <div><span>Prev D1</span><strong>STRONG_SELL</strong></div>
-                <div><span>H4 Read</span><strong>NO_BAR</strong></div>
+                <div><span>Open State</span><strong>OPEN ABOVE PIVOT</strong></div>
+                <div><span>Prev D1</span><strong>STRONG SELL</strong></div>
+                <div><span>H4 Read</span><strong>NO BAR</strong></div>
+                <div><span>H4 Next</span><strong>NO BAR</strong></div>
+                <div><span>Pivot</span><strong>1.62352</strong></div>
+                <div><span>R1</span><strong>1.62697</strong></div>
+                <div><span>S1</span><strong>1.61943</strong></div>
+                <div><span>Dist</span><strong></strong></div>
                 <div><span>Room</span><strong></strong></div>
               </div>
-              <div class="blocker-text ok">No refined blocker</div>
+              <div class="blocker-text wait-note">prev=STRONG SELL; OPEN ABOVE PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
             </div>
             <div class="confirm-panel">
               <div class="section-head">
@@ -1693,7 +1871,7 @@
                     <td>1.62695</td>
                     <td>ORIGINAL</td>
                     <td>0.262</td>
-                    <td>WEAK_BUY</td>
+                    <td>WEAK BUY</td>
                   </tr>
                   <tr>
                     <td>2026-04-20</td>
@@ -1703,7 +1881,7 @@
                     <td>1.64613</td>
                     <td>ORIGINAL</td>
                     <td>0.248</td>
-                    <td>STRONG_SELL</td>
+                    <td>STRONG SELL</td>
                   </tr></tbody>
               </table>
             </div>
@@ -1720,21 +1898,29 @@
                 </div>
                 <span class="status-pill wait">WAIT</span>
               </div>
-              <div class="trade-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+              <div class="trade-line">OPEN BELOW PIVOT - Prev STRONG BUY</div>
+              <div class="setup-summary">prev=STRONG BUY; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
               <div class="level-grid">
-                <div><span>Entry</span><strong></strong></div>
-                <div><span>TP1</span><strong></strong></div>
-                <div><span>TP2</span><strong></strong></div>
-                <div><span>SL</span><strong></strong></div>
+                
+                <div><span>Pivot</span><strong>1.60768</strong></div>
+                <div><span>R1</span><strong>1.61156</strong></div>
+                <div><span>S1</span><strong>1.60465</strong></div>
+                <div><span>Open</span><strong>OPEN BELOW PIVOT</strong></div>
               </div>
               <div class="context-grid">
                 <div><span>Entry Time</span><strong></strong></div>
                 <div><span>Model</span><strong></strong></div>
-                <div><span>Prev D1</span><strong>STRONG_BUY</strong></div>
-                <div><span>H4 Read</span><strong>NO_BAR</strong></div>
+                <div><span>Open State</span><strong>OPEN BELOW PIVOT</strong></div>
+                <div><span>Prev D1</span><strong>STRONG BUY</strong></div>
+                <div><span>H4 Read</span><strong>NO BAR</strong></div>
+                <div><span>H4 Next</span><strong>NO BAR</strong></div>
+                <div><span>Pivot</span><strong>1.60768</strong></div>
+                <div><span>R1</span><strong>1.61156</strong></div>
+                <div><span>S1</span><strong>1.60465</strong></div>
+                <div><span>Dist</span><strong></strong></div>
                 <div><span>Room</span><strong></strong></div>
               </div>
-              <div class="blocker-text ok">No refined blocker</div>
+              <div class="blocker-text wait-note">prev=STRONG BUY; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
             </div>
             <div class="confirm-panel">
               <div class="section-head">
@@ -1761,21 +1947,29 @@
                 </div>
                 <span class="status-pill wait">WAIT</span>
               </div>
-              <div class="trade-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+              <div class="trade-line">OPEN BELOW PIVOT - Prev STRONG SELL</div>
+              <div class="setup-summary">prev=STRONG SELL; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
               <div class="level-grid">
-                <div><span>Entry</span><strong></strong></div>
-                <div><span>TP1</span><strong></strong></div>
-                <div><span>TP2</span><strong></strong></div>
-                <div><span>SL</span><strong></strong></div>
+                
+                <div><span>Pivot</span><strong>0.91123</strong></div>
+                <div><span>R1</span><strong>0.91277</strong></div>
+                <div><span>S1</span><strong>0.90906</strong></div>
+                <div><span>Open</span><strong>OPEN BELOW PIVOT</strong></div>
               </div>
               <div class="context-grid">
                 <div><span>Entry Time</span><strong></strong></div>
                 <div><span>Model</span><strong></strong></div>
-                <div><span>Prev D1</span><strong>STRONG_SELL</strong></div>
-                <div><span>H4 Read</span><strong>NO_BAR</strong></div>
+                <div><span>Open State</span><strong>OPEN BELOW PIVOT</strong></div>
+                <div><span>Prev D1</span><strong>STRONG SELL</strong></div>
+                <div><span>H4 Read</span><strong>NO BAR</strong></div>
+                <div><span>H4 Next</span><strong>NO BAR</strong></div>
+                <div><span>Pivot</span><strong>0.91123</strong></div>
+                <div><span>R1</span><strong>0.91277</strong></div>
+                <div><span>S1</span><strong>0.90906</strong></div>
+                <div><span>Dist</span><strong></strong></div>
                 <div><span>Room</span><strong></strong></div>
               </div>
-              <div class="blocker-text ok">No refined blocker</div>
+              <div class="blocker-text wait-note">prev=STRONG SELL; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
             </div>
             <div class="confirm-panel">
               <div class="section-head">
@@ -1802,21 +1996,29 @@
                 </div>
                 <span class="status-pill wait">WAIT</span>
               </div>
-              <div class="trade-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+              <div class="trade-line">OPEN BELOW PIVOT - Prev STRONG SELL</div>
+              <div class="setup-summary">prev=STRONG SELL; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
               <div class="level-grid">
-                <div><span>Entry</span><strong></strong></div>
-                <div><span>TP1</span><strong></strong></div>
-                <div><span>TP2</span><strong></strong></div>
-                <div><span>SL</span><strong></strong></div>
+                
+                <div><span>Pivot</span><strong>0.86669</strong></div>
+                <div><span>R1</span><strong>0.86788</strong></div>
+                <div><span>S1</span><strong>0.86522</strong></div>
+                <div><span>Open</span><strong>OPEN BELOW PIVOT</strong></div>
               </div>
               <div class="context-grid">
                 <div><span>Entry Time</span><strong></strong></div>
                 <div><span>Model</span><strong></strong></div>
-                <div><span>Prev D1</span><strong>STRONG_SELL</strong></div>
-                <div><span>H4 Read</span><strong>NO_BAR</strong></div>
+                <div><span>Open State</span><strong>OPEN BELOW PIVOT</strong></div>
+                <div><span>Prev D1</span><strong>STRONG SELL</strong></div>
+                <div><span>H4 Read</span><strong>NO BAR</strong></div>
+                <div><span>H4 Next</span><strong>NO BAR</strong></div>
+                <div><span>Pivot</span><strong>0.86669</strong></div>
+                <div><span>R1</span><strong>0.86788</strong></div>
+                <div><span>S1</span><strong>0.86522</strong></div>
+                <div><span>Dist</span><strong></strong></div>
                 <div><span>Room</span><strong></strong></div>
               </div>
-              <div class="blocker-text ok">No refined blocker</div>
+              <div class="blocker-text wait-note">prev=STRONG SELL; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
             </div>
             <div class="confirm-panel">
               <div class="section-head">
@@ -1836,7 +2038,7 @@
                     <td>0.86654</td>
                     <td>ORIGINAL</td>
                     <td>0.218</td>
-                    <td>STRONG_SELL</td>
+                    <td>STRONG SELL</td>
                   </tr></tbody>
               </table>
             </div>
@@ -1853,21 +2055,29 @@
                 </div>
                 <span class="status-pill wait">WAIT</span>
               </div>
-              <div class="trade-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+              <div class="trade-line">OPEN ABOVE PIVOT - Prev STRONG BUY</div>
+              <div class="setup-summary">prev=STRONG BUY; OPEN ABOVE PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
               <div class="level-grid">
-                <div><span>Entry</span><strong></strong></div>
-                <div><span>TP1</span><strong></strong></div>
-                <div><span>TP2</span><strong></strong></div>
-                <div><span>SL</span><strong></strong></div>
+                
+                <div><span>Pivot</span><strong>185.61867</strong></div>
+                <div><span>R1</span><strong>186.05533</strong></div>
+                <div><span>S1</span><strong>185.25233</strong></div>
+                <div><span>Open</span><strong>OPEN ABOVE PIVOT</strong></div>
               </div>
               <div class="context-grid">
                 <div><span>Entry Time</span><strong></strong></div>
                 <div><span>Model</span><strong></strong></div>
-                <div><span>Prev D1</span><strong>STRONG_BUY</strong></div>
-                <div><span>H4 Read</span><strong>NO_BAR</strong></div>
+                <div><span>Open State</span><strong>OPEN ABOVE PIVOT</strong></div>
+                <div><span>Prev D1</span><strong>STRONG BUY</strong></div>
+                <div><span>H4 Read</span><strong>NO BAR</strong></div>
+                <div><span>H4 Next</span><strong>NO BAR</strong></div>
+                <div><span>Pivot</span><strong>185.61867</strong></div>
+                <div><span>R1</span><strong>186.05533</strong></div>
+                <div><span>S1</span><strong>185.25233</strong></div>
+                <div><span>Dist</span><strong></strong></div>
                 <div><span>Room</span><strong></strong></div>
               </div>
-              <div class="blocker-text ok">No refined blocker</div>
+              <div class="blocker-text wait-note">prev=STRONG BUY; OPEN ABOVE PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
             </div>
             <div class="confirm-panel">
               <div class="section-head">
@@ -1887,7 +2097,7 @@
                     <td>185.46</td>
                     <td>ORIGINAL</td>
                     <td>0.056</td>
-                    <td>STRONG_BUY</td>
+                    <td>STRONG BUY</td>
                   </tr>
                   <tr>
                     <td>2026-05-28</td>
@@ -1897,7 +2107,7 @@
                     <td>185.469</td>
                     <td>ORIGINAL</td>
                     <td>0.015</td>
-                    <td>WEAK_BUY</td>
+                    <td>WEAK BUY</td>
                   </tr>
                   <tr>
                     <td>2026-05-27</td>
@@ -1907,7 +2117,7 @@
                     <td>185.295</td>
                     <td>ORIGINAL</td>
                     <td>0.081</td>
-                    <td>WEAK_BUY</td>
+                    <td>WEAK BUY</td>
                   </tr></tbody>
               </table>
             </div>
@@ -1924,21 +2134,29 @@
                 </div>
                 <span class="status-pill wait">WAIT</span>
               </div>
-              <div class="trade-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+              <div class="trade-line">OPEN BELOW PIVOT - Prev WEAK BUY</div>
+              <div class="setup-summary">prev=WEAK BUY; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
               <div class="level-grid">
-                <div><span>Entry</span><strong></strong></div>
-                <div><span>TP1</span><strong></strong></div>
-                <div><span>TP2</span><strong></strong></div>
-                <div><span>SL</span><strong></strong></div>
+                
+                <div><span>Pivot</span><strong>1.1657</strong></div>
+                <div><span>R1</span><strong>1.16891</strong></div>
+                <div><span>S1</span><strong>1.16279</strong></div>
+                <div><span>Open</span><strong>OPEN BELOW PIVOT</strong></div>
               </div>
               <div class="context-grid">
                 <div><span>Entry Time</span><strong></strong></div>
                 <div><span>Model</span><strong></strong></div>
-                <div><span>Prev D1</span><strong>WEAK_BUY</strong></div>
-                <div><span>H4 Read</span><strong>NO_BAR</strong></div>
+                <div><span>Open State</span><strong>OPEN BELOW PIVOT</strong></div>
+                <div><span>Prev D1</span><strong>WEAK BUY</strong></div>
+                <div><span>H4 Read</span><strong>NO BAR</strong></div>
+                <div><span>H4 Next</span><strong>NO BAR</strong></div>
+                <div><span>Pivot</span><strong>1.1657</strong></div>
+                <div><span>R1</span><strong>1.16891</strong></div>
+                <div><span>S1</span><strong>1.16279</strong></div>
+                <div><span>Dist</span><strong></strong></div>
                 <div><span>Room</span><strong></strong></div>
               </div>
-              <div class="blocker-text ok">No refined blocker</div>
+              <div class="blocker-text wait-note">prev=WEAK BUY; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
             </div>
             <div class="confirm-panel">
               <div class="section-head">
@@ -1958,7 +2176,7 @@
                     <td>1.16352</td>
                     <td>ORIGINAL</td>
                     <td>0.264</td>
-                    <td>STRONG_SELL</td>
+                    <td>STRONG SELL</td>
                   </tr></tbody>
               </table>
             </div>
@@ -1975,21 +2193,29 @@
                 </div>
                 <span class="status-pill wait">WAIT</span>
               </div>
-              <div class="trade-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+              <div class="trade-line">OPEN ABOVE PIVOT - Prev STRONG SELL</div>
+              <div class="setup-summary">prev=STRONG SELL; OPEN ABOVE PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
               <div class="level-grid">
-                <div><span>Entry</span><strong></strong></div>
-                <div><span>TP1</span><strong></strong></div>
-                <div><span>TP2</span><strong></strong></div>
-                <div><span>SL</span><strong></strong></div>
+                
+                <div><span>Pivot</span><strong>1.87328</strong></div>
+                <div><span>R1</span><strong>1.87737</strong></div>
+                <div><span>S1</span><strong>1.86839</strong></div>
+                <div><span>Open</span><strong>OPEN ABOVE PIVOT</strong></div>
               </div>
               <div class="context-grid">
                 <div><span>Entry Time</span><strong></strong></div>
                 <div><span>Model</span><strong></strong></div>
-                <div><span>Prev D1</span><strong>STRONG_SELL</strong></div>
-                <div><span>H4 Read</span><strong>NO_BAR</strong></div>
+                <div><span>Open State</span><strong>OPEN ABOVE PIVOT</strong></div>
+                <div><span>Prev D1</span><strong>STRONG SELL</strong></div>
+                <div><span>H4 Read</span><strong>NO BAR</strong></div>
+                <div><span>H4 Next</span><strong>NO BAR</strong></div>
+                <div><span>Pivot</span><strong>1.87328</strong></div>
+                <div><span>R1</span><strong>1.87737</strong></div>
+                <div><span>S1</span><strong>1.86839</strong></div>
+                <div><span>Dist</span><strong></strong></div>
                 <div><span>Room</span><strong></strong></div>
               </div>
-              <div class="blocker-text ok">No refined blocker</div>
+              <div class="blocker-text wait-note">prev=STRONG SELL; OPEN ABOVE PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
             </div>
             <div class="confirm-panel">
               <div class="section-head">
@@ -2009,7 +2235,7 @@
                     <td>1.88689</td>
                     <td>ORIGINAL</td>
                     <td>0.254</td>
-                    <td>WEAK_BUY</td>
+                    <td>WEAK BUY</td>
                   </tr>
                   <tr>
                     <td>2026-05-18</td>
@@ -2019,7 +2245,7 @@
                     <td>1.86672</td>
                     <td>ORIGINAL</td>
                     <td>0.263</td>
-                    <td>WEAK_BUY</td>
+                    <td>WEAK BUY</td>
                   </tr>
                   <tr>
                     <td>2026-04-20</td>
@@ -2029,7 +2255,7 @@
                     <td>1.89093</td>
                     <td>ORIGINAL</td>
                     <td>0.308</td>
-                    <td>WEAK_SELL</td>
+                    <td>WEAK SELL</td>
                   </tr></tbody>
               </table>
             </div>
@@ -2046,21 +2272,29 @@
                 </div>
                 <span class="status-pill wait">WAIT</span>
               </div>
-              <div class="trade-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+              <div class="trade-line">OPEN ABOVE PIVOT - Prev STRONG BUY</div>
+              <div class="setup-summary">prev=STRONG BUY; OPEN ABOVE PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
               <div class="level-grid">
-                <div><span>Entry</span><strong></strong></div>
-                <div><span>TP1</span><strong></strong></div>
-                <div><span>TP2</span><strong></strong></div>
-                <div><span>SL</span><strong></strong></div>
+                
+                <div><span>Pivot</span><strong>1.85491</strong></div>
+                <div><span>R1</span><strong>1.85982</strong></div>
+                <div><span>S1</span><strong>1.85107</strong></div>
+                <div><span>Open</span><strong>OPEN ABOVE PIVOT</strong></div>
               </div>
               <div class="context-grid">
                 <div><span>Entry Time</span><strong></strong></div>
                 <div><span>Model</span><strong></strong></div>
-                <div><span>Prev D1</span><strong>STRONG_BUY</strong></div>
-                <div><span>H4 Read</span><strong>NO_BAR</strong></div>
+                <div><span>Open State</span><strong>OPEN ABOVE PIVOT</strong></div>
+                <div><span>Prev D1</span><strong>STRONG BUY</strong></div>
+                <div><span>H4 Read</span><strong>NO BAR</strong></div>
+                <div><span>H4 Next</span><strong>NO BAR</strong></div>
+                <div><span>Pivot</span><strong>1.85491</strong></div>
+                <div><span>R1</span><strong>1.85982</strong></div>
+                <div><span>S1</span><strong>1.85107</strong></div>
+                <div><span>Dist</span><strong></strong></div>
                 <div><span>Room</span><strong></strong></div>
               </div>
-              <div class="blocker-text ok">No refined blocker</div>
+              <div class="blocker-text wait-note">prev=STRONG BUY; OPEN ABOVE PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
             </div>
             <div class="confirm-panel">
               <div class="section-head">
@@ -2087,21 +2321,29 @@
                 </div>
                 <span class="status-pill wait">WAIT</span>
               </div>
-              <div class="trade-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+              <div class="trade-line">OPEN ABOVE PIVOT - Prev STRONG BUY</div>
+              <div class="setup-summary">prev=STRONG BUY; OPEN ABOVE PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
               <div class="level-grid">
-                <div><span>Entry</span><strong></strong></div>
-                <div><span>TP1</span><strong></strong></div>
-                <div><span>TP2</span><strong></strong></div>
-                <div><span>SL</span><strong></strong></div>
+                
+                <div><span>Pivot</span><strong>214.157</strong></div>
+                <div><span>R1</span><strong>214.733</strong></div>
+                <div><span>S1</span><strong>213.68</strong></div>
+                <div><span>Open</span><strong>OPEN ABOVE PIVOT</strong></div>
               </div>
               <div class="context-grid">
                 <div><span>Entry Time</span><strong></strong></div>
                 <div><span>Model</span><strong></strong></div>
-                <div><span>Prev D1</span><strong>STRONG_BUY</strong></div>
-                <div><span>H4 Read</span><strong>NO_BAR</strong></div>
+                <div><span>Open State</span><strong>OPEN ABOVE PIVOT</strong></div>
+                <div><span>Prev D1</span><strong>STRONG BUY</strong></div>
+                <div><span>H4 Read</span><strong>NO BAR</strong></div>
+                <div><span>H4 Next</span><strong>NO BAR</strong></div>
+                <div><span>Pivot</span><strong>214.157</strong></div>
+                <div><span>R1</span><strong>214.733</strong></div>
+                <div><span>S1</span><strong>213.68</strong></div>
+                <div><span>Dist</span><strong></strong></div>
                 <div><span>Room</span><strong></strong></div>
               </div>
-              <div class="blocker-text ok">No refined blocker</div>
+              <div class="blocker-text wait-note">prev=STRONG BUY; OPEN ABOVE PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
             </div>
             <div class="confirm-panel">
               <div class="section-head">
@@ -2121,7 +2363,7 @@
                     <td>213.291</td>
                     <td>ORIGINAL</td>
                     <td>0.267</td>
-                    <td>WEAK_BUY</td>
+                    <td>WEAK BUY</td>
                   </tr>
                   <tr>
                     <td>2026-05-04</td>
@@ -2131,7 +2373,7 @@
                     <td>212.964</td>
                     <td>ORIGINAL</td>
                     <td>0.019</td>
-                    <td>WEAK_BUY</td>
+                    <td>WEAK BUY</td>
                   </tr>
                   <tr>
                     <td>2026-04-30</td>
@@ -2141,7 +2383,7 @@
                     <td>213.098</td>
                     <td>ORIGINAL</td>
                     <td>1.345</td>
-                    <td>STRONG_BUY</td>
+                    <td>STRONG BUY</td>
                   </tr></tbody>
               </table>
             </div>
@@ -2158,21 +2400,29 @@
                 </div>
                 <span class="status-pill wait">WAIT</span>
               </div>
-              <div class="trade-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+              <div class="trade-line">OPEN BELOW PIVOT - Prev WEAK BUY</div>
+              <div class="setup-summary">prev=WEAK BUY; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
               <div class="level-grid">
-                <div><span>Entry</span><strong></strong></div>
-                <div><span>TP1</span><strong></strong></div>
-                <div><span>TP2</span><strong></strong></div>
-                <div><span>SL</span><strong></strong></div>
+                
+                <div><span>Pivot</span><strong>1.34489</strong></div>
+                <div><span>R1</span><strong>1.34898</strong></div>
+                <div><span>S1</span><strong>1.34124</strong></div>
+                <div><span>Open</span><strong>OPEN BELOW PIVOT</strong></div>
               </div>
               <div class="context-grid">
                 <div><span>Entry Time</span><strong></strong></div>
                 <div><span>Model</span><strong></strong></div>
-                <div><span>Prev D1</span><strong>WEAK_BUY</strong></div>
-                <div><span>H4 Read</span><strong>NO_BAR</strong></div>
+                <div><span>Open State</span><strong>OPEN BELOW PIVOT</strong></div>
+                <div><span>Prev D1</span><strong>WEAK BUY</strong></div>
+                <div><span>H4 Read</span><strong>NO BAR</strong></div>
+                <div><span>H4 Next</span><strong>NO BAR</strong></div>
+                <div><span>Pivot</span><strong>1.34489</strong></div>
+                <div><span>R1</span><strong>1.34898</strong></div>
+                <div><span>S1</span><strong>1.34124</strong></div>
+                <div><span>Dist</span><strong></strong></div>
                 <div><span>Room</span><strong></strong></div>
               </div>
-              <div class="blocker-text ok">No refined blocker</div>
+              <div class="blocker-text wait-note">prev=WEAK BUY; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
             </div>
             <div class="confirm-panel">
               <div class="section-head">
@@ -2192,7 +2442,7 @@
                     <td>1.34763</td>
                     <td>ORIGINAL</td>
                     <td>0.309</td>
-                    <td>STRONG_SELL</td>
+                    <td>STRONG SELL</td>
                   </tr></tbody>
               </table>
             </div>
@@ -2209,21 +2459,29 @@
                 </div>
                 <span class="status-pill wait">WAIT</span>
               </div>
-              <div class="trade-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+              <div class="trade-line">OPEN BELOW PIVOT - Prev STRONG BUY</div>
+              <div class="setup-summary">prev=STRONG BUY; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
               <div class="level-grid">
-                <div><span>Entry</span><strong></strong></div>
-                <div><span>TP1</span><strong></strong></div>
-                <div><span>TP2</span><strong></strong></div>
-                <div><span>SL</span><strong></strong></div>
+                
+                <div><span>Pivot</span><strong>0.59657</strong></div>
+                <div><span>R1</span><strong>0.60142</strong></div>
+                <div><span>S1</span><strong>0.59376</strong></div>
+                <div><span>Open</span><strong>OPEN BELOW PIVOT</strong></div>
               </div>
               <div class="context-grid">
                 <div><span>Entry Time</span><strong></strong></div>
                 <div><span>Model</span><strong></strong></div>
-                <div><span>Prev D1</span><strong>STRONG_BUY</strong></div>
-                <div><span>H4 Read</span><strong>NO_BAR</strong></div>
+                <div><span>Open State</span><strong>OPEN BELOW PIVOT</strong></div>
+                <div><span>Prev D1</span><strong>STRONG BUY</strong></div>
+                <div><span>H4 Read</span><strong>NO BAR</strong></div>
+                <div><span>H4 Next</span><strong>NO BAR</strong></div>
+                <div><span>Pivot</span><strong>0.59657</strong></div>
+                <div><span>R1</span><strong>0.60142</strong></div>
+                <div><span>S1</span><strong>0.59376</strong></div>
+                <div><span>Dist</span><strong></strong></div>
                 <div><span>Room</span><strong></strong></div>
               </div>
-              <div class="blocker-text ok">No refined blocker</div>
+              <div class="blocker-text wait-note">prev=STRONG BUY; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
             </div>
             <div class="confirm-panel">
               <div class="section-head">
@@ -2241,9 +2499,9 @@
                     <td>FAILED_BREAKDOWN_BUY</td>
                     <td>2026-05-28 09:45:00+0300</td>
                     <td>0.58862</td>
-                    <td>EMA50_M15</td>
+                    <td>EMA50 M15</td>
                     <td>0.112</td>
-                    <td>WEAK_BUY</td>
+                    <td>WEAK BUY</td>
                   </tr>
                   <tr>
                     <td>2026-05-25</td>
@@ -2253,7 +2511,7 @@
                     <td>0.58732</td>
                     <td>ORIGINAL</td>
                     <td>0.272</td>
-                    <td>STRONG_SELL</td>
+                    <td>STRONG SELL</td>
                   </tr>
                   <tr>
                     <td>2026-05-21</td>
@@ -2263,7 +2521,7 @@
                     <td>0.58707</td>
                     <td>ORIGINAL</td>
                     <td>0.232</td>
-                    <td>WEAK_BUY</td>
+                    <td>WEAK BUY</td>
                   </tr></tbody>
               </table>
             </div>
@@ -2280,21 +2538,29 @@
                 </div>
                 <span class="status-pill wait">WAIT</span>
               </div>
-              <div class="trade-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+              <div class="trade-line">OPEN BELOW PIVOT - Prev WEAK SELL</div>
+              <div class="setup-summary">prev=WEAK SELL; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
               <div class="level-grid">
-                <div><span>Entry</span><strong></strong></div>
-                <div><span>TP1</span><strong></strong></div>
-                <div><span>TP2</span><strong></strong></div>
-                <div><span>SL</span><strong></strong></div>
+                
+                <div><span>Pivot</span><strong>1.37979</strong></div>
+                <div><span>R1</span><strong>1.38263</strong></div>
+                <div><span>S1</span><strong>1.37668</strong></div>
+                <div><span>Open</span><strong>OPEN BELOW PIVOT</strong></div>
               </div>
               <div class="context-grid">
                 <div><span>Entry Time</span><strong></strong></div>
                 <div><span>Model</span><strong></strong></div>
-                <div><span>Prev D1</span><strong>WEAK_SELL</strong></div>
-                <div><span>H4 Read</span><strong>NO_BAR</strong></div>
+                <div><span>Open State</span><strong>OPEN BELOW PIVOT</strong></div>
+                <div><span>Prev D1</span><strong>WEAK SELL</strong></div>
+                <div><span>H4 Read</span><strong>NO BAR</strong></div>
+                <div><span>H4 Next</span><strong>NO BAR</strong></div>
+                <div><span>Pivot</span><strong>1.37979</strong></div>
+                <div><span>R1</span><strong>1.38263</strong></div>
+                <div><span>S1</span><strong>1.37668</strong></div>
+                <div><span>Dist</span><strong></strong></div>
                 <div><span>Room</span><strong></strong></div>
               </div>
-              <div class="blocker-text ok">No refined blocker</div>
+              <div class="blocker-text wait-note">prev=WEAK SELL; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
             </div>
             <div class="confirm-panel">
               <div class="section-head">
@@ -2321,21 +2587,29 @@
                 </div>
                 <span class="status-pill wait">WAIT</span>
               </div>
-              <div class="trade-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+              <div class="trade-line">OPEN BELOW PIVOT - Prev STRONG SELL</div>
+              <div class="setup-summary">prev=STRONG SELL; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
               <div class="level-grid">
-                <div><span>Entry</span><strong></strong></div>
-                <div><span>TP1</span><strong></strong></div>
-                <div><span>TP2</span><strong></strong></div>
-                <div><span>SL</span><strong></strong></div>
+                
+                <div><span>Pivot</span><strong>0.78171</strong></div>
+                <div><span>R1</span><strong>0.78391</strong></div>
+                <div><span>S1</span><strong>0.77875</strong></div>
+                <div><span>Open</span><strong>OPEN BELOW PIVOT</strong></div>
               </div>
               <div class="context-grid">
                 <div><span>Entry Time</span><strong></strong></div>
                 <div><span>Model</span><strong></strong></div>
-                <div><span>Prev D1</span><strong>STRONG_SELL</strong></div>
-                <div><span>H4 Read</span><strong>NO_BAR</strong></div>
+                <div><span>Open State</span><strong>OPEN BELOW PIVOT</strong></div>
+                <div><span>Prev D1</span><strong>STRONG SELL</strong></div>
+                <div><span>H4 Read</span><strong>NO BAR</strong></div>
+                <div><span>H4 Next</span><strong>NO BAR</strong></div>
+                <div><span>Pivot</span><strong>0.78171</strong></div>
+                <div><span>R1</span><strong>0.78391</strong></div>
+                <div><span>S1</span><strong>0.77875</strong></div>
+                <div><span>Dist</span><strong></strong></div>
                 <div><span>Room</span><strong></strong></div>
               </div>
-              <div class="blocker-text ok">No refined blocker</div>
+              <div class="blocker-text wait-note">prev=STRONG SELL; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
             </div>
             <div class="confirm-panel">
               <div class="section-head">
@@ -2355,7 +2629,7 @@
                     <td>0.78425</td>
                     <td>ORIGINAL</td>
                     <td>0.203</td>
-                    <td>WEAK_BUY</td>
+                    <td>WEAK BUY</td>
                   </tr>
                   <tr>
                     <td>2026-05-05</td>
@@ -2365,7 +2639,7 @@
                     <td>0.78427</td>
                     <td>ORIGINAL</td>
                     <td>0.234</td>
-                    <td>WEAK_BUY</td>
+                    <td>WEAK BUY</td>
                   </tr></tbody>
               </table>
             </div>
@@ -2382,21 +2656,29 @@
                 </div>
                 <span class="status-pill wait">WAIT</span>
               </div>
-              <div class="trade-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+              <div class="trade-line">OPEN ABOVE PIVOT - Prev WEAK BUY</div>
+              <div class="setup-summary">prev=WEAK BUY; OPEN ABOVE PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
               <div class="level-grid">
-                <div><span>Entry</span><strong></strong></div>
-                <div><span>TP1</span><strong></strong></div>
-                <div><span>TP2</span><strong></strong></div>
-                <div><span>SL</span><strong></strong></div>
+                
+                <div><span>Pivot</span><strong>159.241</strong></div>
+                <div><span>R1</span><strong>159.389</strong></div>
+                <div><span>S1</span><strong>159.103</strong></div>
+                <div><span>Open</span><strong>OPEN ABOVE PIVOT</strong></div>
               </div>
               <div class="context-grid">
                 <div><span>Entry Time</span><strong></strong></div>
                 <div><span>Model</span><strong></strong></div>
-                <div><span>Prev D1</span><strong>WEAK_BUY</strong></div>
-                <div><span>H4 Read</span><strong>NO_BAR</strong></div>
+                <div><span>Open State</span><strong>OPEN ABOVE PIVOT</strong></div>
+                <div><span>Prev D1</span><strong>WEAK BUY</strong></div>
+                <div><span>H4 Read</span><strong>NO BAR</strong></div>
+                <div><span>H4 Next</span><strong>NO BAR</strong></div>
+                <div><span>Pivot</span><strong>159.241</strong></div>
+                <div><span>R1</span><strong>159.389</strong></div>
+                <div><span>S1</span><strong>159.103</strong></div>
+                <div><span>Dist</span><strong></strong></div>
                 <div><span>Room</span><strong></strong></div>
               </div>
-              <div class="blocker-text ok">No refined blocker</div>
+              <div class="blocker-text wait-note">prev=WEAK BUY; OPEN ABOVE PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
             </div>
             <div class="confirm-panel">
               <div class="section-head">
@@ -2416,7 +2698,7 @@
                     <td>157.91</td>
                     <td>ORIGINAL</td>
                     <td>0.083</td>
-                    <td>WEAK_BUY</td>
+                    <td>WEAK BUY</td>
                   </tr>
                   <tr>
                     <td>2026-05-07</td>
@@ -2424,9 +2706,9 @@
                     <td>FAILED_RECOVERY_SELL</td>
                     <td>2026-05-07 03:15:00+0300</td>
                     <td>156.232</td>
-                    <td>EMA50_M15</td>
+                    <td>EMA50 M15</td>
                     <td>0.137</td>
-                    <td>WEAK_SELL</td>
+                    <td>WEAK SELL</td>
                   </tr>
                   <tr>
                     <td>2026-05-01</td>
@@ -2436,7 +2718,7 @@
                     <td>157.165</td>
                     <td>ORIGINAL</td>
                     <td>0.297</td>
-                    <td>STRONG_SELL</td>
+                    <td>STRONG SELL</td>
                   </tr></tbody>
               </table>
             </div>
@@ -2453,21 +2735,29 @@
                 </div>
                 <span class="status-pill wait">WAIT</span>
               </div>
-              <div class="trade-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+              <div class="trade-line">OPEN BELOW PIVOT - Prev WEAK SELL</div>
+              <div class="setup-summary">prev=WEAK SELL; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
               <div class="level-grid">
-                <div><span>Entry</span><strong></strong></div>
-                <div><span>TP1</span><strong></strong></div>
-                <div><span>TP2</span><strong></strong></div>
-                <div><span>SL</span><strong></strong></div>
+                
+                <div><span>Pivot</span><strong>1035.97667</strong></div>
+                <div><span>R1</span><strong>1040.47333</strong></div>
+                <div><span>S1</span><strong>1027.67333</strong></div>
+                <div><span>Open</span><strong>OPEN BELOW PIVOT</strong></div>
               </div>
               <div class="context-grid">
                 <div><span>Entry Time</span><strong></strong></div>
                 <div><span>Model</span><strong></strong></div>
-                <div><span>Prev D1</span><strong>WEAK_SELL</strong></div>
-                <div><span>H4 Read</span><strong>NO_BAR</strong></div>
+                <div><span>Open State</span><strong>OPEN BELOW PIVOT</strong></div>
+                <div><span>Prev D1</span><strong>WEAK SELL</strong></div>
+                <div><span>H4 Read</span><strong>NO BAR</strong></div>
+                <div><span>H4 Next</span><strong>NO BAR</strong></div>
+                <div><span>Pivot</span><strong>1035.97667</strong></div>
+                <div><span>R1</span><strong>1040.47333</strong></div>
+                <div><span>S1</span><strong>1027.67333</strong></div>
+                <div><span>Dist</span><strong></strong></div>
                 <div><span>Room</span><strong></strong></div>
               </div>
-              <div class="blocker-text ok">No refined blocker</div>
+              <div class="blocker-text wait-note">prev=WEAK SELL; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
             </div>
             <div class="confirm-panel">
               <div class="section-head">
@@ -2487,7 +2777,7 @@
                     <td>1042.03</td>
                     <td>ORIGINAL</td>
                     <td>0.722</td>
-                    <td>WEAK_SELL</td>
+                    <td>WEAK SELL</td>
                   </tr>
                   <tr>
                     <td>2026-05-25</td>
@@ -2497,7 +2787,7 @@
                     <td>1051.99</td>
                     <td>ORIGINAL</td>
                     <td>0.778</td>
-                    <td>WEAK_SELL</td>
+                    <td>WEAK SELL</td>
                   </tr>
                   <tr>
                     <td>2026-05-08</td>
@@ -2505,9 +2795,9 @@
                     <td>BEARISH_CONTINUATION</td>
                     <td>2026-05-08 16:00:00+0300</td>
                     <td>1015.44</td>
-                    <td>EMA50_M15</td>
+                    <td>EMA50 M15</td>
                     <td>0.34</td>
-                    <td>WEAK_SELL</td>
+                    <td>WEAK SELL</td>
                   </tr></tbody>
               </table>
             </div>
@@ -2524,21 +2814,29 @@
                 </div>
                 <span class="status-pill wait">WAIT</span>
               </div>
-              <div class="trade-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+              <div class="trade-line">OPEN ABOVE PIVOT - Prev WEAK BUY</div>
+              <div class="setup-summary">prev=WEAK BUY; OPEN ABOVE PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
               <div class="level-grid">
-                <div><span>Entry</span><strong></strong></div>
-                <div><span>TP1</span><strong></strong></div>
-                <div><span>TP2</span><strong></strong></div>
-                <div><span>SL</span><strong></strong></div>
+                
+                <div><span>Pivot</span><strong>8708.83333</strong></div>
+                <div><span>R1</span><strong>8772.36667</strong></div>
+                <div><span>S1</span><strong>8654.26667</strong></div>
+                <div><span>Open</span><strong>OPEN ABOVE PIVOT</strong></div>
               </div>
               <div class="context-grid">
                 <div><span>Entry Time</span><strong></strong></div>
                 <div><span>Model</span><strong></strong></div>
-                <div><span>Prev D1</span><strong>WEAK_BUY</strong></div>
-                <div><span>H4 Read</span><strong>NO_BAR</strong></div>
+                <div><span>Open State</span><strong>OPEN ABOVE PIVOT</strong></div>
+                <div><span>Prev D1</span><strong>WEAK BUY</strong></div>
+                <div><span>H4 Read</span><strong>NO BAR</strong></div>
+                <div><span>H4 Next</span><strong>NO BAR</strong></div>
+                <div><span>Pivot</span><strong>8708.83333</strong></div>
+                <div><span>R1</span><strong>8772.36667</strong></div>
+                <div><span>S1</span><strong>8654.26667</strong></div>
+                <div><span>Dist</span><strong></strong></div>
                 <div><span>Room</span><strong></strong></div>
               </div>
-              <div class="blocker-text ok">No refined blocker</div>
+              <div class="blocker-text wait-note">prev=WEAK BUY; OPEN ABOVE PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
             </div>
             <div class="confirm-panel">
               <div class="section-head">
@@ -2558,7 +2856,7 @@
                     <td>8699.7</td>
                     <td>ORIGINAL</td>
                     <td>1.082</td>
-                    <td>WEAK_SELL</td>
+                    <td>WEAK SELL</td>
                   </tr>
                   <tr>
                     <td>2026-05-08</td>
@@ -2566,9 +2864,9 @@
                     <td>FAILED_RECOVERY_SELL</td>
                     <td>2026-05-08 16:00:00+0300</td>
                     <td>8734.6</td>
-                    <td>EMA50_M15</td>
+                    <td>EMA50 M15</td>
                     <td>0.554</td>
-                    <td>STRONG_SELL</td>
+                    <td>STRONG SELL</td>
                   </tr>
                   <tr>
                     <td>2026-05-07</td>
@@ -2576,9 +2874,9 @@
                     <td>BULLISH_CONTINUATION</td>
                     <td>2026-05-07 03:15:00+0300</td>
                     <td>8884</td>
-                    <td>EMA50_M15</td>
+                    <td>EMA50 M15</td>
                     <td>0.537</td>
-                    <td>WEAK_BUY</td>
+                    <td>WEAK BUY</td>
                   </tr></tbody>
               </table>
             </div>
@@ -2595,21 +2893,29 @@
                 </div>
                 <span class="status-pill wait">WAIT</span>
               </div>
-              <div class="trade-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+              <div class="trade-line">OPEN BELOW PIVOT - Prev WEAK SELL</div>
+              <div class="setup-summary">prev=WEAK SELL; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
               <div class="level-grid">
-                <div><span>Entry</span><strong></strong></div>
-                <div><span>TP1</span><strong></strong></div>
-                <div><span>TP2</span><strong></strong></div>
-                <div><span>SL</span><strong></strong></div>
+                
+                <div><span>Pivot</span><strong>8201.46667</strong></div>
+                <div><span>R1</span><strong>8245.53333</strong></div>
+                <div><span>S1</span><strong>8117.83333</strong></div>
+                <div><span>Open</span><strong>OPEN BELOW PIVOT</strong></div>
               </div>
               <div class="context-grid">
                 <div><span>Entry Time</span><strong></strong></div>
                 <div><span>Model</span><strong></strong></div>
-                <div><span>Prev D1</span><strong>WEAK_SELL</strong></div>
-                <div><span>H4 Read</span><strong>NO_BAR</strong></div>
+                <div><span>Open State</span><strong>OPEN BELOW PIVOT</strong></div>
+                <div><span>Prev D1</span><strong>WEAK SELL</strong></div>
+                <div><span>H4 Read</span><strong>NO BAR</strong></div>
+                <div><span>H4 Next</span><strong>NO BAR</strong></div>
+                <div><span>Pivot</span><strong>8201.46667</strong></div>
+                <div><span>R1</span><strong>8245.53333</strong></div>
+                <div><span>S1</span><strong>8117.83333</strong></div>
+                <div><span>Dist</span><strong></strong></div>
                 <div><span>Room</span><strong></strong></div>
               </div>
-              <div class="blocker-text ok">No refined blocker</div>
+              <div class="blocker-text wait-note">prev=WEAK SELL; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
             </div>
             <div class="confirm-panel">
               <div class="section-head">
@@ -2627,9 +2933,9 @@
                     <td>FAILED_BREAKDOWN_BUY</td>
                     <td>2026-05-21 17:00:00+0300</td>
                     <td>8117.4</td>
-                    <td>EMA50_M15</td>
+                    <td>EMA50 M15</td>
                     <td>0.373</td>
-                    <td>WEAK_BUY</td>
+                    <td>WEAK BUY</td>
                   </tr>
                   <tr>
                     <td>2026-05-19</td>
@@ -2639,7 +2945,7 @@
                     <td>8065.5</td>
                     <td>ORIGINAL</td>
                     <td>1.421</td>
-                    <td>WEAK_BUY</td>
+                    <td>WEAK BUY</td>
                   </tr>
                   <tr>
                     <td>2026-05-18</td>
@@ -2647,9 +2953,9 @@
                     <td>FAILED_RECOVERY_SELL</td>
                     <td>2026-05-18 22:00:00+0300</td>
                     <td>7948.2</td>
-                    <td>EMA50_M15</td>
+                    <td>EMA50 M15</td>
                     <td>0.148</td>
-                    <td>STRONG_SELL</td>
+                    <td>STRONG SELL</td>
                   </tr></tbody>
               </table>
             </div>
@@ -2666,21 +2972,29 @@
                 </div>
                 <span class="status-pill wait">WAIT</span>
               </div>
-              <div class="trade-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+              <div class="trade-line">OPEN BELOW PIVOT - Prev WEAK SELL</div>
+              <div class="setup-summary">prev=WEAK SELL; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
               <div class="level-grid">
-                <div><span>Entry</span><strong></strong></div>
-                <div><span>TP1</span><strong></strong></div>
-                <div><span>TP2</span><strong></strong></div>
-                <div><span>SL</span><strong></strong></div>
+                
+                <div><span>Pivot</span><strong>25095.9</strong></div>
+                <div><span>R1</span><strong>25164.2</strong></div>
+                <div><span>S1</span><strong>24984.4</strong></div>
+                <div><span>Open</span><strong>OPEN BELOW PIVOT</strong></div>
               </div>
               <div class="context-grid">
                 <div><span>Entry Time</span><strong></strong></div>
                 <div><span>Model</span><strong></strong></div>
-                <div><span>Prev D1</span><strong>WEAK_SELL</strong></div>
-                <div><span>H4 Read</span><strong>NO_BAR</strong></div>
+                <div><span>Open State</span><strong>OPEN BELOW PIVOT</strong></div>
+                <div><span>Prev D1</span><strong>WEAK SELL</strong></div>
+                <div><span>H4 Read</span><strong>NO BAR</strong></div>
+                <div><span>H4 Next</span><strong>NO BAR</strong></div>
+                <div><span>Pivot</span><strong>25095.9</strong></div>
+                <div><span>R1</span><strong>25164.2</strong></div>
+                <div><span>S1</span><strong>24984.4</strong></div>
+                <div><span>Dist</span><strong></strong></div>
                 <div><span>Room</span><strong></strong></div>
               </div>
-              <div class="blocker-text ok">No refined blocker</div>
+              <div class="blocker-text wait-note">prev=WEAK SELL; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
             </div>
             <div class="confirm-panel">
               <div class="section-head">
@@ -2700,7 +3014,7 @@
                     <td>25269.4</td>
                     <td>ORIGINAL</td>
                     <td>0.022</td>
-                    <td>STRONG_BUY</td>
+                    <td>STRONG BUY</td>
                   </tr>
                   <tr>
                     <td>2026-05-21</td>
@@ -2708,9 +3022,9 @@
                     <td>BULLISH_CONTINUATION</td>
                     <td>2026-05-21 11:00:00+0300</td>
                     <td>24716.4</td>
-                    <td>EMA50_M15</td>
+                    <td>EMA50 M15</td>
                     <td>0.48</td>
-                    <td>STRONG_BUY</td>
+                    <td>STRONG BUY</td>
                   </tr>
                   <tr>
                     <td>2026-05-20</td>
@@ -2718,9 +3032,9 @@
                     <td>FAILED_RECOVERY_SELL</td>
                     <td>2026-05-20 11:00:00+0300</td>
                     <td>24314.1</td>
-                    <td>EMA50_M15</td>
+                    <td>EMA50 M15</td>
                     <td>0.342</td>
-                    <td>WEAK_SELL</td>
+                    <td>WEAK SELL</td>
                   </tr></tbody>
               </table>
             </div>
@@ -2737,21 +3051,29 @@
                 </div>
                 <span class="status-pill wait">WAIT</span>
               </div>
-              <div class="trade-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+              <div class="trade-line">OPEN BELOW PIVOT - Prev WEAK SELL</div>
+              <div class="setup-summary">prev=WEAK SELL; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
               <div class="level-grid">
-                <div><span>Entry</span><strong></strong></div>
-                <div><span>TP1</span><strong></strong></div>
-                <div><span>TP2</span><strong></strong></div>
-                <div><span>SL</span><strong></strong></div>
+                
+                <div><span>Pivot</span><strong>18373.5</strong></div>
+                <div><span>R1</span><strong>18435.1</strong></div>
+                <div><span>S1</span><strong>18258.3</strong></div>
+                <div><span>Open</span><strong>OPEN BELOW PIVOT</strong></div>
               </div>
               <div class="context-grid">
                 <div><span>Entry Time</span><strong></strong></div>
                 <div><span>Model</span><strong></strong></div>
-                <div><span>Prev D1</span><strong>WEAK_SELL</strong></div>
-                <div><span>H4 Read</span><strong>NO_BAR</strong></div>
+                <div><span>Open State</span><strong>OPEN BELOW PIVOT</strong></div>
+                <div><span>Prev D1</span><strong>WEAK SELL</strong></div>
+                <div><span>H4 Read</span><strong>NO BAR</strong></div>
+                <div><span>H4 Next</span><strong>NO BAR</strong></div>
+                <div><span>Pivot</span><strong>18373.5</strong></div>
+                <div><span>R1</span><strong>18435.1</strong></div>
+                <div><span>S1</span><strong>18258.3</strong></div>
+                <div><span>Dist</span><strong></strong></div>
                 <div><span>Room</span><strong></strong></div>
               </div>
-              <div class="blocker-text ok">No refined blocker</div>
+              <div class="blocker-text wait-note">prev=WEAK SELL; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
             </div>
             <div class="confirm-panel">
               <div class="section-head">
@@ -2771,7 +3093,7 @@
                     <td>18177.9</td>
                     <td>ORIGINAL</td>
                     <td>1.397</td>
-                    <td>STRONG_BUY</td>
+                    <td>STRONG BUY</td>
                   </tr>
                   <tr>
                     <td>2026-05-08</td>
@@ -2779,9 +3101,9 @@
                     <td>FAILED_RECOVERY_SELL</td>
                     <td>2026-05-08 17:15:00+0300</td>
                     <td>17933.1</td>
-                    <td>EMA50_M15</td>
+                    <td>EMA50 M15</td>
                     <td>0.263</td>
-                    <td>WEAK_SELL</td>
+                    <td>WEAK SELL</td>
                   </tr>
                   <tr>
                     <td>2026-05-06</td>
@@ -2791,7 +3113,7 @@
                     <td>17843.2</td>
                     <td>ORIGINAL</td>
                     <td>1.644</td>
-                    <td>WEAK_BUY</td>
+                    <td>WEAK BUY</td>
                   </tr></tbody>
               </table>
             </div>
@@ -2808,21 +3130,29 @@
                 </div>
                 <span class="status-pill wait">WAIT</span>
               </div>
-              <div class="trade-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+              <div class="trade-line">OPEN BELOW PIVOT - Prev WEAK SELL</div>
+              <div class="setup-summary">prev=WEAK SELL; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
               <div class="level-grid">
-                <div><span>Entry</span><strong></strong></div>
-                <div><span>TP1</span><strong></strong></div>
-                <div><span>TP2</span><strong></strong></div>
-                <div><span>SL</span><strong></strong></div>
+                
+                <div><span>Pivot</span><strong>6050.73333</strong></div>
+                <div><span>R1</span><strong>6079.06667</strong></div>
+                <div><span>S1</span><strong>5998.06667</strong></div>
+                <div><span>Open</span><strong>OPEN BELOW PIVOT</strong></div>
               </div>
               <div class="context-grid">
                 <div><span>Entry Time</span><strong></strong></div>
                 <div><span>Model</span><strong></strong></div>
-                <div><span>Prev D1</span><strong>WEAK_SELL</strong></div>
-                <div><span>H4 Read</span><strong>NO_BAR</strong></div>
+                <div><span>Open State</span><strong>OPEN BELOW PIVOT</strong></div>
+                <div><span>Prev D1</span><strong>WEAK SELL</strong></div>
+                <div><span>H4 Read</span><strong>NO BAR</strong></div>
+                <div><span>H4 Next</span><strong>NO BAR</strong></div>
+                <div><span>Pivot</span><strong>6050.73333</strong></div>
+                <div><span>R1</span><strong>6079.06667</strong></div>
+                <div><span>S1</span><strong>5998.06667</strong></div>
+                <div><span>Dist</span><strong></strong></div>
                 <div><span>Room</span><strong></strong></div>
               </div>
-              <div class="blocker-text ok">No refined blocker</div>
+              <div class="blocker-text wait-note">prev=WEAK SELL; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
             </div>
             <div class="confirm-panel">
               <div class="section-head">
@@ -2842,7 +3172,7 @@
                     <td>6008.6</td>
                     <td>ORIGINAL</td>
                     <td>0.217</td>
-                    <td>STRONG_BUY</td>
+                    <td>STRONG BUY</td>
                   </tr>
                   <tr>
                     <td>2026-05-21</td>
@@ -2850,9 +3180,9 @@
                     <td>FAILED_BREAKDOWN_BUY</td>
                     <td>2026-05-21 17:00:00+0300</td>
                     <td>5983.6</td>
-                    <td>EMA50_M15</td>
+                    <td>EMA50 M15</td>
                     <td>0.724</td>
-                    <td>STRONG_BUY</td>
+                    <td>STRONG BUY</td>
                   </tr>
                   <tr>
                     <td>2026-05-19</td>
@@ -2860,9 +3190,9 @@
                     <td>BULLISH_CONTINUATION</td>
                     <td>2026-05-19 20:00:00+0300</td>
                     <td>5857.3</td>
-                    <td>EMA50_H1</td>
+                    <td>EMA50 H1</td>
                     <td>0.558</td>
-                    <td>STRONG_BUY</td>
+                    <td>STRONG BUY</td>
                   </tr></tbody>
               </table>
             </div>
@@ -2879,21 +3209,29 @@
                 </div>
                 <span class="status-pill wait">WAIT</span>
               </div>
-              <div class="trade-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+              <div class="trade-line">OPEN ABOVE PIVOT - Prev STRONG BUY</div>
+              <div class="setup-summary">prev=STRONG BUY; OPEN ABOVE PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
               <div class="level-grid">
-                <div><span>Entry</span><strong></strong></div>
-                <div><span>TP1</span><strong></strong></div>
-                <div><span>TP2</span><strong></strong></div>
-                <div><span>SL</span><strong></strong></div>
+                
+                <div><span>Pivot</span><strong>66129.7</strong></div>
+                <div><span>R1</span><strong>66726.1</strong></div>
+                <div><span>S1</span><strong>65622</strong></div>
+                <div><span>Open</span><strong>OPEN ABOVE PIVOT</strong></div>
               </div>
               <div class="context-grid">
                 <div><span>Entry Time</span><strong></strong></div>
                 <div><span>Model</span><strong></strong></div>
-                <div><span>Prev D1</span><strong>STRONG_BUY</strong></div>
-                <div><span>H4 Read</span><strong>NO_BAR</strong></div>
+                <div><span>Open State</span><strong>OPEN ABOVE PIVOT</strong></div>
+                <div><span>Prev D1</span><strong>STRONG BUY</strong></div>
+                <div><span>H4 Read</span><strong>NO BAR</strong></div>
+                <div><span>H4 Next</span><strong>NO BAR</strong></div>
+                <div><span>Pivot</span><strong>66129.7</strong></div>
+                <div><span>R1</span><strong>66726.1</strong></div>
+                <div><span>S1</span><strong>65622</strong></div>
+                <div><span>Dist</span><strong></strong></div>
                 <div><span>Room</span><strong></strong></div>
               </div>
-              <div class="blocker-text ok">No refined blocker</div>
+              <div class="blocker-text wait-note">prev=STRONG BUY; OPEN ABOVE PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
             </div>
             <div class="confirm-panel">
               <div class="section-head">
@@ -2911,9 +3249,9 @@
                     <td>BEARISH_CONTINUATION</td>
                     <td>2026-05-28 01:30:00+0300</td>
                     <td>65137.5</td>
-                    <td>EMA50_M15</td>
+                    <td>EMA50 M15</td>
                     <td>0.507</td>
-                    <td>WEAK_SELL</td>
+                    <td>WEAK SELL</td>
                   </tr>
                   <tr>
                     <td>2026-05-27</td>
@@ -2923,7 +3261,7 @@
                     <td>66230.2</td>
                     <td>ORIGINAL</td>
                     <td>1.48</td>
-                    <td>STRONG_BUY</td>
+                    <td>STRONG BUY</td>
                   </tr>
                   <tr>
                     <td>2026-05-26</td>
@@ -2931,9 +3269,9 @@
                     <td>BULLISH_CONTINUATION</td>
                     <td>2026-05-26 03:00:00+0300</td>
                     <td>65330.6</td>
-                    <td>EMA50_M15</td>
+                    <td>EMA50 M15</td>
                     <td>0.573</td>
-                    <td>STRONG_BUY</td>
+                    <td>STRONG BUY</td>
                   </tr></tbody>
               </table>
             </div>
@@ -2950,21 +3288,29 @@
                 </div>
                 <span class="status-pill wait">WAIT</span>
               </div>
-              <div class="trade-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+              <div class="trade-line">OPEN ABOVE PIVOT - Prev WEAK BUY</div>
+              <div class="setup-summary">prev=WEAK BUY; OPEN ABOVE PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
               <div class="level-grid">
-                <div><span>Entry</span><strong></strong></div>
-                <div><span>TP1</span><strong></strong></div>
-                <div><span>TP2</span><strong></strong></div>
-                <div><span>SL</span><strong></strong></div>
+                
+                <div><span>Pivot</span><strong>30309.43333</strong></div>
+                <div><span>R1</span><strong>30476.26667</strong></div>
+                <div><span>S1</span><strong>30151.66667</strong></div>
+                <div><span>Open</span><strong>OPEN ABOVE PIVOT</strong></div>
               </div>
               <div class="context-grid">
                 <div><span>Entry Time</span><strong></strong></div>
                 <div><span>Model</span><strong></strong></div>
-                <div><span>Prev D1</span><strong>WEAK_BUY</strong></div>
-                <div><span>H4 Read</span><strong>NO_BAR</strong></div>
+                <div><span>Open State</span><strong>OPEN ABOVE PIVOT</strong></div>
+                <div><span>Prev D1</span><strong>WEAK BUY</strong></div>
+                <div><span>H4 Read</span><strong>NO BAR</strong></div>
+                <div><span>H4 Next</span><strong>NO BAR</strong></div>
+                <div><span>Pivot</span><strong>30309.43333</strong></div>
+                <div><span>R1</span><strong>30476.26667</strong></div>
+                <div><span>S1</span><strong>30151.66667</strong></div>
+                <div><span>Dist</span><strong></strong></div>
                 <div><span>Room</span><strong></strong></div>
               </div>
-              <div class="blocker-text ok">No refined blocker</div>
+              <div class="blocker-text wait-note">prev=WEAK BUY; OPEN ABOVE PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
             </div>
             <div class="confirm-panel">
               <div class="section-head">
@@ -2984,7 +3330,7 @@
                     <td>29730.6</td>
                     <td>ORIGINAL</td>
                     <td>0.797</td>
-                    <td>WEAK_SELL</td>
+                    <td>WEAK SELL</td>
                   </tr>
                   <tr>
                     <td>2026-05-21</td>
@@ -2992,9 +3338,9 @@
                     <td>FAILED_BREAKDOWN_BUY</td>
                     <td>2026-05-21 17:00:00+0300</td>
                     <td>29195.6</td>
-                    <td>EMA50_H1</td>
+                    <td>EMA50 H1</td>
                     <td>0.429</td>
-                    <td>STRONG_BUY</td>
+                    <td>STRONG BUY</td>
                   </tr>
                   <tr>
                     <td>2026-05-13</td>
@@ -3002,9 +3348,9 @@
                     <td>FAILED_BREAKDOWN_BUY</td>
                     <td>2026-05-13 04:00:00+0300</td>
                     <td>29040.5</td>
-                    <td>EMA50_H1</td>
+                    <td>EMA50 H1</td>
                     <td>0.125</td>
-                    <td>WEAK_BUY</td>
+                    <td>WEAK BUY</td>
                   </tr></tbody>
               </table>
             </div>
@@ -3021,21 +3367,29 @@
                 </div>
                 <span class="status-pill wait">WAIT</span>
               </div>
-              <div class="trade-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+              <div class="trade-line">OPEN BELOW PIVOT - Prev WEAK SELL</div>
+              <div class="setup-summary">prev=WEAK SELL; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
               <div class="level-grid">
-                <div><span>Entry</span><strong></strong></div>
-                <div><span>TP1</span><strong></strong></div>
-                <div><span>TP2</span><strong></strong></div>
-                <div><span>SL</span><strong></strong></div>
+                
+                <div><span>Pivot</span><strong>13528.5</strong></div>
+                <div><span>R1</span><strong>13575.4</strong></div>
+                <div><span>S1</span><strong>13440.7</strong></div>
+                <div><span>Open</span><strong>OPEN BELOW PIVOT</strong></div>
               </div>
               <div class="context-grid">
                 <div><span>Entry Time</span><strong></strong></div>
                 <div><span>Model</span><strong></strong></div>
-                <div><span>Prev D1</span><strong>WEAK_SELL</strong></div>
-                <div><span>H4 Read</span><strong>NO_BAR</strong></div>
+                <div><span>Open State</span><strong>OPEN BELOW PIVOT</strong></div>
+                <div><span>Prev D1</span><strong>WEAK SELL</strong></div>
+                <div><span>H4 Read</span><strong>NO BAR</strong></div>
+                <div><span>H4 Next</span><strong>NO BAR</strong></div>
+                <div><span>Pivot</span><strong>13528.5</strong></div>
+                <div><span>R1</span><strong>13575.4</strong></div>
+                <div><span>S1</span><strong>13440.7</strong></div>
+                <div><span>Dist</span><strong></strong></div>
                 <div><span>Room</span><strong></strong></div>
               </div>
-              <div class="blocker-text ok">No refined blocker</div>
+              <div class="blocker-text wait-note">prev=WEAK SELL; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
             </div>
             <div class="confirm-panel">
               <div class="section-head">
@@ -3055,7 +3409,7 @@
                     <td>13535.1</td>
                     <td>ORIGINAL</td>
                     <td>0.274</td>
-                    <td>WEAK_SELL</td>
+                    <td>WEAK SELL</td>
                   </tr>
                   <tr>
                     <td>2026-05-22</td>
@@ -3065,7 +3419,7 @@
                     <td>13492.4</td>
                     <td>ORIGINAL</td>
                     <td>0.018</td>
-                    <td>STRONG_BUY</td>
+                    <td>STRONG BUY</td>
                   </tr>
                   <tr>
                     <td>2026-05-21</td>
@@ -3075,7 +3429,7 @@
                     <td>13397.2</td>
                     <td>ORIGINAL</td>
                     <td>0.018</td>
-                    <td>STRONG_BUY</td>
+                    <td>STRONG BUY</td>
                   </tr></tbody>
               </table>
             </div>
@@ -3092,21 +3446,29 @@
                 </div>
                 <span class="status-pill wait">WAIT</span>
               </div>
-              <div class="trade-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+              <div class="trade-line">OPEN ABOVE PIVOT - Prev WEAK SELL</div>
+              <div class="setup-summary">prev=WEAK SELL; OPEN ABOVE PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
               <div class="level-grid">
-                <div><span>Entry</span><strong></strong></div>
-                <div><span>TP1</span><strong></strong></div>
-                <div><span>TP2</span><strong></strong></div>
-                <div><span>SL</span><strong></strong></div>
+                
+                <div><span>Pivot</span><strong>7577.13333</strong></div>
+                <div><span>R1</span><strong>7597.16667</strong></div>
+                <div><span>S1</span><strong>7556.56667</strong></div>
+                <div><span>Open</span><strong>OPEN ABOVE PIVOT</strong></div>
               </div>
               <div class="context-grid">
                 <div><span>Entry Time</span><strong></strong></div>
                 <div><span>Model</span><strong></strong></div>
-                <div><span>Prev D1</span><strong>WEAK_SELL</strong></div>
-                <div><span>H4 Read</span><strong>NO_BAR</strong></div>
+                <div><span>Open State</span><strong>OPEN ABOVE PIVOT</strong></div>
+                <div><span>Prev D1</span><strong>WEAK SELL</strong></div>
+                <div><span>H4 Read</span><strong>NO BAR</strong></div>
+                <div><span>H4 Next</span><strong>NO BAR</strong></div>
+                <div><span>Pivot</span><strong>7577.13333</strong></div>
+                <div><span>R1</span><strong>7597.16667</strong></div>
+                <div><span>S1</span><strong>7556.56667</strong></div>
+                <div><span>Dist</span><strong></strong></div>
                 <div><span>Room</span><strong></strong></div>
               </div>
-              <div class="blocker-text ok">No refined blocker</div>
+              <div class="blocker-text wait-note">prev=WEAK SELL; OPEN ABOVE PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
             </div>
             <div class="confirm-panel">
               <div class="section-head">
@@ -3133,21 +3495,29 @@
                 </div>
                 <span class="status-pill wait">WAIT</span>
               </div>
-              <div class="trade-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+              <div class="trade-line">OPEN ABOVE PIVOT - Prev STRONG BUY</div>
+              <div class="setup-summary">prev=STRONG BUY; OPEN ABOVE PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
               <div class="level-grid">
-                <div><span>Entry</span><strong></strong></div>
-                <div><span>TP1</span><strong></strong></div>
-                <div><span>TP2</span><strong></strong></div>
-                <div><span>SL</span><strong></strong></div>
+                
+                <div><span>Pivot</span><strong>50910.7</strong></div>
+                <div><span>R1</span><strong>51178.2</strong></div>
+                <div><span>S1</span><strong>50729.1</strong></div>
+                <div><span>Open</span><strong>OPEN ABOVE PIVOT</strong></div>
               </div>
               <div class="context-grid">
                 <div><span>Entry Time</span><strong></strong></div>
                 <div><span>Model</span><strong></strong></div>
-                <div><span>Prev D1</span><strong>STRONG_BUY</strong></div>
-                <div><span>H4 Read</span><strong>NO_BAR</strong></div>
+                <div><span>Open State</span><strong>OPEN ABOVE PIVOT</strong></div>
+                <div><span>Prev D1</span><strong>STRONG BUY</strong></div>
+                <div><span>H4 Read</span><strong>NO BAR</strong></div>
+                <div><span>H4 Next</span><strong>NO BAR</strong></div>
+                <div><span>Pivot</span><strong>50910.7</strong></div>
+                <div><span>R1</span><strong>51178.2</strong></div>
+                <div><span>S1</span><strong>50729.1</strong></div>
+                <div><span>Dist</span><strong></strong></div>
                 <div><span>Room</span><strong></strong></div>
               </div>
-              <div class="blocker-text ok">No refined blocker</div>
+              <div class="blocker-text wait-note">prev=STRONG BUY; OPEN ABOVE PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
             </div>
             <div class="confirm-panel">
               <div class="section-head">
@@ -3167,7 +3537,7 @@
                     <td>49221.3</td>
                     <td>ORIGINAL</td>
                     <td>-0.005</td>
-                    <td>WEAK_SELL</td>
+                    <td>WEAK SELL</td>
                   </tr>
                   <tr>
                     <td>2026-04-20</td>
@@ -3177,7 +3547,7 @@
                     <td>49396</td>
                     <td>ORIGINAL</td>
                     <td>0.263</td>
-                    <td>STRONG_BUY</td>
+                    <td>STRONG BUY</td>
                   </tr></tbody>
               </table>
             </div>
@@ -3194,21 +3564,29 @@
                 </div>
                 <span class="status-pill wait">WAIT</span>
               </div>
-              <div class="trade-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+              <div class="trade-line">OPEN ABOVE PIVOT - Prev WEAK BUY</div>
+              <div class="setup-summary">prev=WEAK BUY; OPEN ABOVE PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
               <div class="level-grid">
-                <div><span>Entry</span><strong></strong></div>
-                <div><span>TP1</span><strong></strong></div>
-                <div><span>TP2</span><strong></strong></div>
-                <div><span>SL</span><strong></strong></div>
+                
+                <div><span>Pivot</span><strong>90.12033</strong></div>
+                <div><span>R1</span><strong>91.54267</strong></div>
+                <div><span>S1</span><strong>88.80067</strong></div>
+                <div><span>Open</span><strong>OPEN ABOVE PIVOT</strong></div>
               </div>
               <div class="context-grid">
                 <div><span>Entry Time</span><strong></strong></div>
                 <div><span>Model</span><strong></strong></div>
-                <div><span>Prev D1</span><strong>WEAK_BUY</strong></div>
-                <div><span>H4 Read</span><strong>NO_BAR</strong></div>
+                <div><span>Open State</span><strong>OPEN ABOVE PIVOT</strong></div>
+                <div><span>Prev D1</span><strong>WEAK BUY</strong></div>
+                <div><span>H4 Read</span><strong>NO BAR</strong></div>
+                <div><span>H4 Next</span><strong>NO BAR</strong></div>
+                <div><span>Pivot</span><strong>90.12033</strong></div>
+                <div><span>R1</span><strong>91.54267</strong></div>
+                <div><span>S1</span><strong>88.80067</strong></div>
+                <div><span>Dist</span><strong></strong></div>
                 <div><span>Room</span><strong></strong></div>
               </div>
-              <div class="blocker-text ok">No refined blocker</div>
+              <div class="blocker-text wait-note">prev=WEAK BUY; OPEN ABOVE PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
             </div>
             <div class="confirm-panel">
               <div class="section-head">
@@ -3226,9 +3604,9 @@
                     <td>FAILED_RECOVERY_SELL</td>
                     <td>2026-05-28 04:30:00+0300</td>
                     <td>92.639</td>
-                    <td>EMA50_M15</td>
+                    <td>EMA50 M15</td>
                     <td>0.31</td>
-                    <td>STRONG_SELL</td>
+                    <td>STRONG SELL</td>
                   </tr>
                   <tr>
                     <td>2026-05-27</td>
@@ -3238,7 +3616,7 @@
                     <td>95.461</td>
                     <td>ORIGINAL</td>
                     <td>0.234</td>
-                    <td>WEAK_BUY</td>
+                    <td>WEAK BUY</td>
                   </tr>
                   <tr>
                     <td>2026-05-22</td>
@@ -3246,9 +3624,9 @@
                     <td>FAILED_RECOVERY_SELL</td>
                     <td>2026-05-22 14:45:00+0300</td>
                     <td>101.103</td>
-                    <td>EMA50_M15</td>
+                    <td>EMA50 M15</td>
                     <td>1.234</td>
-                    <td>WEAK_SELL</td>
+                    <td>WEAK SELL</td>
                   </tr></tbody>
               </table>
             </div>
@@ -3265,21 +3643,29 @@
                 </div>
                 <span class="status-pill wait">WAIT</span>
               </div>
-              <div class="trade-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+              <div class="trade-line">OPEN BELOW PIVOT - Prev STRONG SELL</div>
+              <div class="setup-summary">prev=STRONG SELL; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
               <div class="level-grid">
-                <div><span>Entry</span><strong></strong></div>
-                <div><span>TP1</span><strong></strong></div>
-                <div><span>TP2</span><strong></strong></div>
-                <div><span>SL</span><strong></strong></div>
+                
+                <div><span>Pivot</span><strong>75.502</strong></div>
+                <div><span>R1</span><strong>76.419</strong></div>
+                <div><span>S1</span><strong>74.345</strong></div>
+                <div><span>Open</span><strong>OPEN BELOW PIVOT</strong></div>
               </div>
               <div class="context-grid">
                 <div><span>Entry Time</span><strong></strong></div>
                 <div><span>Model</span><strong></strong></div>
-                <div><span>Prev D1</span><strong>STRONG_SELL</strong></div>
-                <div><span>H4 Read</span><strong>NO_BAR</strong></div>
+                <div><span>Open State</span><strong>OPEN BELOW PIVOT</strong></div>
+                <div><span>Prev D1</span><strong>STRONG SELL</strong></div>
+                <div><span>H4 Read</span><strong>NO BAR</strong></div>
+                <div><span>H4 Next</span><strong>NO BAR</strong></div>
+                <div><span>Pivot</span><strong>75.502</strong></div>
+                <div><span>R1</span><strong>76.419</strong></div>
+                <div><span>S1</span><strong>74.345</strong></div>
+                <div><span>Dist</span><strong></strong></div>
                 <div><span>Room</span><strong></strong></div>
               </div>
-              <div class="blocker-text ok">No refined blocker</div>
+              <div class="blocker-text wait-note">prev=STRONG SELL; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
             </div>
             <div class="confirm-panel">
               <div class="section-head">
@@ -3299,7 +3685,7 @@
                     <td>75.992</td>
                     <td>ORIGINAL</td>
                     <td>1.995</td>
-                    <td>WEAK_BUY</td>
+                    <td>WEAK BUY</td>
                   </tr>
                   <tr>
                     <td>2026-05-26</td>
@@ -3307,9 +3693,9 @@
                     <td>FAILED_BREAKDOWN_BUY</td>
                     <td>2026-05-26 01:15:00+0300</td>
                     <td>78.255</td>
-                    <td>EMA50_M15</td>
+                    <td>EMA50 M15</td>
                     <td>0.661</td>
-                    <td>WEAK_BUY</td>
+                    <td>WEAK BUY</td>
                   </tr>
                   <tr>
                     <td>2026-05-22</td>
@@ -3317,9 +3703,9 @@
                     <td>FAILED_BREAKDOWN_BUY</td>
                     <td>2026-05-22 06:00:00+0300</td>
                     <td>76.29</td>
-                    <td>EMA50_M15</td>
+                    <td>EMA50 M15</td>
                     <td>0.302</td>
-                    <td>STRONG_BUY</td>
+                    <td>STRONG BUY</td>
                   </tr></tbody>
               </table>
             </div>
@@ -3336,21 +3722,29 @@
                 </div>
                 <span class="status-pill wait">WAIT</span>
               </div>
-              <div class="trade-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+              <div class="trade-line">OPEN BELOW PIVOT - Prev WEAK SELL</div>
+              <div class="setup-summary">prev=WEAK SELL; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
               <div class="level-grid">
-                <div><span>Entry</span><strong></strong></div>
-                <div><span>TP1</span><strong></strong></div>
-                <div><span>TP2</span><strong></strong></div>
-                <div><span>SL</span><strong></strong></div>
+                
+                <div><span>Pivot</span><strong>3893.50667</strong></div>
+                <div><span>R1</span><strong>3934.68333</strong></div>
+                <div><span>S1</span><strong>3852.25333</strong></div>
+                <div><span>Open</span><strong>OPEN BELOW PIVOT</strong></div>
               </div>
               <div class="context-grid">
                 <div><span>Entry Time</span><strong></strong></div>
                 <div><span>Model</span><strong></strong></div>
-                <div><span>Prev D1</span><strong>WEAK_SELL</strong></div>
-                <div><span>H4 Read</span><strong>NO_BAR</strong></div>
+                <div><span>Open State</span><strong>OPEN BELOW PIVOT</strong></div>
+                <div><span>Prev D1</span><strong>WEAK SELL</strong></div>
+                <div><span>H4 Read</span><strong>NO BAR</strong></div>
+                <div><span>H4 Next</span><strong>NO BAR</strong></div>
+                <div><span>Pivot</span><strong>3893.50667</strong></div>
+                <div><span>R1</span><strong>3934.68333</strong></div>
+                <div><span>S1</span><strong>3852.25333</strong></div>
+                <div><span>Dist</span><strong></strong></div>
                 <div><span>Room</span><strong></strong></div>
               </div>
-              <div class="blocker-text ok">No refined blocker</div>
+              <div class="blocker-text wait-note">prev=WEAK SELL; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
             </div>
             <div class="confirm-panel">
               <div class="section-head">
@@ -3368,9 +3762,9 @@
                     <td>FAILED_RECOVERY_SELL</td>
                     <td>2026-05-28 03:15:00+0300</td>
                     <td>3824.42</td>
-                    <td>EMA50_M15</td>
+                    <td>EMA50 M15</td>
                     <td>0.255</td>
-                    <td>WEAK_SELL</td>
+                    <td>WEAK SELL</td>
                   </tr>
                   <tr>
                     <td>2026-05-27</td>
@@ -3378,9 +3772,9 @@
                     <td>FAILED_RECOVERY_SELL</td>
                     <td>2026-05-27 04:00:00+0300</td>
                     <td>3879.16</td>
-                    <td>EMA50_M15</td>
+                    <td>EMA50 M15</td>
                     <td>0.229</td>
-                    <td>STRONG_SELL</td>
+                    <td>STRONG SELL</td>
                   </tr>
                   <tr>
                     <td>2026-05-25</td>
@@ -3390,7 +3784,7 @@
                     <td>3914.27</td>
                     <td>ORIGINAL</td>
                     <td>0.615</td>
-                    <td>STRONG_SELL</td>
+                    <td>STRONG SELL</td>
                   </tr></tbody>
               </table>
             </div>
@@ -3407,21 +3801,29 @@
                 </div>
                 <span class="status-pill wait">WAIT</span>
               </div>
-              <div class="trade-line">RANGE &middot; LIVE_SAFE_WAIT</div>
+              <div class="trade-line">OPEN BELOW PIVOT - Prev WEAK SELL</div>
+              <div class="setup-summary">prev=WEAK SELL; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
               <div class="level-grid">
-                <div><span>Entry</span><strong></strong></div>
-                <div><span>TP1</span><strong></strong></div>
-                <div><span>TP2</span><strong></strong></div>
-                <div><span>SL</span><strong></strong></div>
+                
+                <div><span>Pivot</span><strong>4541.5</strong></div>
+                <div><span>R1</span><strong>4594.15</strong></div>
+                <div><span>S1</span><strong>4487.79</strong></div>
+                <div><span>Open</span><strong>OPEN BELOW PIVOT</strong></div>
               </div>
               <div class="context-grid">
                 <div><span>Entry Time</span><strong></strong></div>
                 <div><span>Model</span><strong></strong></div>
-                <div><span>Prev D1</span><strong>WEAK_SELL</strong></div>
-                <div><span>H4 Read</span><strong>NO_BAR</strong></div>
+                <div><span>Open State</span><strong>OPEN BELOW PIVOT</strong></div>
+                <div><span>Prev D1</span><strong>WEAK SELL</strong></div>
+                <div><span>H4 Read</span><strong>NO BAR</strong></div>
+                <div><span>H4 Next</span><strong>NO BAR</strong></div>
+                <div><span>Pivot</span><strong>4541.5</strong></div>
+                <div><span>R1</span><strong>4594.15</strong></div>
+                <div><span>S1</span><strong>4487.79</strong></div>
+                <div><span>Dist</span><strong></strong></div>
                 <div><span>Room</span><strong></strong></div>
               </div>
-              <div class="blocker-text ok">No refined blocker</div>
+              <div class="blocker-text wait-note">prev=WEAK SELL; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
             </div>
             <div class="confirm-panel">
               <div class="section-head">
@@ -3441,7 +3843,7 @@
                     <td>4589.92</td>
                     <td>ORIGINAL</td>
                     <td>2.837</td>
-                    <td>WEAK_BUY</td>
+                    <td>WEAK BUY</td>
                   </tr>
                   <tr>
                     <td>2026-05-28</td>
@@ -3449,9 +3851,9 @@
                     <td>FAILED_RECOVERY_SELL</td>
                     <td>2026-05-28 02:15:00+0300</td>
                     <td>4453.6</td>
-                    <td>EMA50_M15</td>
+                    <td>EMA50 M15</td>
                     <td>0.265</td>
-                    <td>WEAK_SELL</td>
+                    <td>WEAK SELL</td>
                   </tr>
                   <tr>
                     <td>2026-05-27</td>
@@ -3459,9 +3861,9 @@
                     <td>FAILED_RECOVERY_SELL</td>
                     <td>2026-05-27 01:15:00+0300</td>
                     <td>4504.67</td>
-                    <td>EMA50_M15</td>
+                    <td>EMA50 M15</td>
                     <td>0.415</td>
-                    <td>STRONG_SELL</td>
+                    <td>STRONG SELL</td>
                   </tr></tbody>
               </table>
             </div>
