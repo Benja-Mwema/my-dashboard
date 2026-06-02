@@ -256,12 +256,12 @@
     <div class="hero">
       <div>
         <h1>Live Safe Dashboard</h1>
-        <div class="sub">Generated 2026-06-02 08:53:40+0300 | Closed bars | M15+2m</div>
+        <div class="sub">Generated 2026-06-02 09:09:13+0300 | Closed bars | M15+2m</div>
       </div>
       <div class="summary-strip">
         <div class="metric"><span>Symbols</span><strong>37</strong></div>
-        <div class="metric"><span>Qualified</span><strong>2</strong></div>
-        <div class="metric"><span>Waiting</span><strong>33</strong></div>
+        <div class="metric"><span>Qualified</span><strong>3</strong></div>
+        <div class="metric"><span>Waiting</span><strong>32</strong></div>
         <div class="metric asset-metric"><span>Assets</span><strong><span class="asset-chip"><b>COMMODITIES</b><em>1</em></span><span class="asset-chip"><b>FX</b><em>22</em></span><span class="asset-chip"><b>INDICES</b><em>11</em></span><span class="asset-chip"><b>METALS</b><em>3</em></span></strong></div>
       </div>
     </div>
@@ -772,24 +772,24 @@
         </div>
       </a>
 
-      <a class="status-card wait" href="#tab-CAC40" data-symbol-jump="CAC40">
+      <a class="status-card qualified" href="#tab-CAC40" data-symbol-jump="CAC40">
         <div class="card-top">
           <span class="symbol">CAC40</span>
           <span class="asset">INDICES</span>
         </div>
-        <div class="status-line">WAIT</div>
+        <div class="status-line">QUALIFIED</div>
         
         <div class="journey-grid">
-          <span>Current Setup</span><strong>OPEN BELOW PIVOT - Prev WEAK SELL</strong>
-          <span>Journey Position</span><strong>WEAK SELL CARRYOVER -&gt; SELL WATCH</strong>
-          <span>Meaning</span><strong>Sell lean active; needs closed-bar confirmation.</strong>
+          <span>Current Setup</span><strong>SELL - FAILED RECOVERY SELL</strong>
+          <span>Journey Position</span><strong>BEARISH CARRYOVER -&gt; WEAK RECOVERY -&gt; PIVOT FAILURE SELL -&gt; SELL CONTINUATION</strong>
+          <span>Meaning</span><strong>Confirmed closed-bar entry; manage TP, SL, and BE.</strong>
         </div>
         <div class="micro-grid">
           
-          <span>Pivot</span><strong>8201.46667</strong>
-          <span>R1</span><strong>8245.53333</strong>
-          <span>S1</span><strong>8117.83333</strong>
-          <span>H4</span><strong>NO BAR</strong>
+          <span>Entry</span><strong>8188.9</strong>
+          <span>TP1</span><strong>8107.011</strong>
+          <span>SL</span><strong>8270.789</strong>
+          <span>Model</span><strong>EMA50 M15</strong>
         </div>
       </a>
 
@@ -1045,7 +1045,7 @@
         </div>
       </a></section>
     <section class="section">
-      <div class="section-head"><h2>Current Status</h2><span>2 qualified / 2 blocked / 33 waiting</span></div>
+      <div class="section-head"><h2>Current Status</h2><span>3 qualified / 2 blocked / 32 waiting</span></div>
       <table>
         <thead>
           <tr>
@@ -1317,15 +1317,15 @@
             <td></td>
           </tr>
 
-          <tr class="wait">
+          <tr class="qualified">
             <td><strong>CAC40</strong><span>INDICES</span></td>
-            <td>WAIT</td>
-            <td>RANGE</td>
-            <td>OPEN BELOW PIVOT - Prev WEAK SELL</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>QUALIFIED</td>
+            <td>SELL</td>
+            <td>SELL - FAILED RECOVERY SELL</td>
+            <td>2026-06-01 12:45:00+0300</td>
+            <td>EMA50 M15</td>
+            <td>8107.011</td>
+            <td>8270.789</td>
           </tr>
 
           <tr class="wait">
@@ -1486,7 +1486,7 @@
 <button class="tab-button  wait" type="button" data-tab="USDJPY">USDJPY</button>
 <button class="tab-button  wait" type="button" data-tab="AEX25">AEX25</button>
 <button class="tab-button  wait" type="button" data-tab="AUS200">AUS200</button>
-<button class="tab-button  wait" type="button" data-tab="CAC40">CAC40</button>
+<button class="tab-button  qualified" type="button" data-tab="CAC40">CAC40</button>
 <button class="tab-button  wait" type="button" data-tab="DAX40">DAX40</button>
 <button class="tab-button  wait" type="button" data-tab="ESP35">ESP35</button>
 <button class="tab-button  wait" type="button" data-tab="ESX50">ESX50</button>
@@ -1886,7 +1886,7 @@
                 <div><span>Dist</span><strong></strong></div>
                 <div><span>Room</span><strong></strong></div>
               </div>
-              <div class="blocker-text">LIVE SAFE CONTINUATION DISABLED</div>
+              <div class="blocker-text">LIVE SAFE CONTINUATION DISABLED;EMA50 ENTRY TOO CLOSE TO PIVOT;EMA50 SELL PHASE NOT ALLOWED</div>
             </div>
             <div class="confirm-panel">
               <div class="section-head">
@@ -2930,7 +2930,7 @@
                 <div><span>Dist</span><strong></strong></div>
                 <div><span>Room</span><strong></strong></div>
               </div>
-              <div class="blocker-text wait-note">prev=WEAK SELL; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
+              <div class="blocker-text">EMA50 TARGET ROOM TOO SMALL;INDEX LIVE SAFE NO SYMBOL SETUP;EMA50 ENTRY TOO CLOSE TO PIVOT</div>
             </div>
             <div class="confirm-panel">
               <div class="section-head">
@@ -3058,37 +3058,37 @@
 
         <section class="tab-panel " id="tab-CAC40" data-panel="CAC40">
           <div class="panel-grid">
-            <div class="current-panel wait">
+            <div class="current-panel qualified">
               <div class="panel-title">
                 <div>
                   <span class="asset-label">INDICES</span>
                   <h2>CAC40</h2>
                 </div>
-                <span class="status-pill wait">WAIT</span>
+                <span class="status-pill qualified">QUALIFIED</span>
               </div>
-              <div class="trade-line">OPEN BELOW PIVOT - Prev WEAK SELL</div>
-              <div class="setup-summary">prev=WEAK SELL; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
+              <div class="trade-line">SELL - FAILED RECOVERY SELL</div>
+              <div class="setup-summary">BEARISH CARRYOVER -&gt; WEAK RECOVERY -&gt; PIVOT FAILURE SELL -&gt; SELL CONTINUATION - EMA50 M15</div>
               <div class="level-grid">
                 
-                <div><span>Pivot</span><strong>8201.46667</strong></div>
-                <div><span>R1</span><strong>8245.53333</strong></div>
-                <div><span>S1</span><strong>8117.83333</strong></div>
-                <div><span>Open</span><strong>OPEN BELOW PIVOT</strong></div>
+                <div><span>Entry</span><strong>8188.9</strong></div>
+                <div><span>TP1</span><strong>8107.011</strong></div>
+                <div><span>TP2</span><strong>8025.122</strong></div>
+                <div><span>SL</span><strong>8270.789</strong></div>
               </div>
               <div class="context-grid">
-                <div><span>Entry Time</span><strong></strong></div>
-                <div><span>Model</span><strong></strong></div>
+                <div><span>Entry Time</span><strong>2026-06-01 12:45:00+0300</strong></div>
+                <div><span>Model</span><strong>EMA50 M15</strong></div>
                 <div><span>Open State</span><strong>OPEN BELOW PIVOT</strong></div>
                 <div><span>Prev D1</span><strong>WEAK SELL</strong></div>
-                <div><span>H4 Read</span><strong>NO BAR</strong></div>
+                <div><span>H4 Read</span><strong>BELOW PIVOT</strong></div>
                 <div><span>H4 Next</span><strong>NO BAR</strong></div>
                 <div><span>Pivot</span><strong>8201.46667</strong></div>
                 <div><span>R1</span><strong>8245.53333</strong></div>
                 <div><span>S1</span><strong>8117.83333</strong></div>
-                <div><span>Dist</span><strong></strong></div>
-                <div><span>Room</span><strong></strong></div>
+                <div><span>Dist</span><strong>0.153%</strong></div>
+                <div><span>Room</span><strong>0.868%</strong></div>
               </div>
-              <div class="blocker-text wait-note">prev=WEAK SELL; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
+              <div class="blocker-text ok">No refined blocker</div>
             </div>
             <div class="confirm-panel">
               <div class="section-head">
@@ -3100,6 +3100,16 @@
                   <tr><th>Date</th><th>Side</th><th>Phase</th><th>Time</th><th>Entry</th><th>Model</th><th>Dist %</th><th>Prev D1</th></tr>
                 </thead>
                 <tbody>
+                  <tr>
+                    <td>2026-06-01</td>
+                    <td>SELL</td>
+                    <td>FAILED_RECOVERY_SELL</td>
+                    <td>2026-06-01 12:45:00+0300</td>
+                    <td>8188.9</td>
+                    <td>EMA50 M15</td>
+                    <td>0.153</td>
+                    <td>WEAK SELL</td>
+                  </tr>
                   <tr>
                     <td>2026-05-21</td>
                     <td>BUY</td>
@@ -3119,16 +3129,6 @@
                     <td>ORIGINAL</td>
                     <td>1.421</td>
                     <td>WEAK BUY</td>
-                  </tr>
-                  <tr>
-                    <td>2026-05-18</td>
-                    <td>SELL</td>
-                    <td>FAILED_RECOVERY_SELL</td>
-                    <td>2026-05-18 22:00:00+0300</td>
-                    <td>7948.2</td>
-                    <td>EMA50 M15</td>
-                    <td>0.148</td>
-                    <td>STRONG SELL</td>
                   </tr></tbody>
               </table>
             </div>
@@ -3246,7 +3246,7 @@
                 <div><span>Dist</span><strong></strong></div>
                 <div><span>Room</span><strong></strong></div>
               </div>
-              <div class="blocker-text wait-note">prev=WEAK SELL; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
+              <div class="blocker-text">INDEX LIVE SAFE NO SYMBOL SETUP;EMA50 TARGET ROOM TOO SMALL;EMA50 ENTRY EXTENDED FROM PIVOT</div>
             </div>
             <div class="confirm-panel">
               <div class="section-head">
@@ -3325,7 +3325,7 @@
                 <div><span>Dist</span><strong></strong></div>
                 <div><span>Room</span><strong></strong></div>
               </div>
-              <div class="blocker-text wait-note">prev=WEAK SELL; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
+              <div class="blocker-text">EMA50 SELL H4 BUY ACCEPTANCE;INDEX LIVE SAFE NO SYMBOL SETUP</div>
             </div>
             <div class="confirm-panel">
               <div class="section-head">
@@ -3562,7 +3562,7 @@
                 <div><span>Dist</span><strong></strong></div>
                 <div><span>Room</span><strong></strong></div>
               </div>
-              <div class="blocker-text wait-note">prev=WEAK SELL; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
+              <div class="blocker-text">INDEX LIVE SAFE NO SYMBOL SETUP</div>
             </div>
             <div class="confirm-panel">
               <div class="section-head">
