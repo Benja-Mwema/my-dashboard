@@ -256,12 +256,12 @@
     <div class="hero">
       <div>
         <h1>Live Safe Dashboard</h1>
-        <div class="sub">Generated 2026-06-02 03:22:57+0300 | Closed bars | M15+2m</div>
+        <div class="sub">Generated 2026-06-02 03:37:59+0300 | Closed bars | M15+2m</div>
       </div>
       <div class="summary-strip">
         <div class="metric"><span>Symbols</span><strong>37</strong></div>
-        <div class="metric"><span>Qualified</span><strong>0</strong></div>
-        <div class="metric"><span>Waiting</span><strong>35</strong></div>
+        <div class="metric"><span>Qualified</span><strong>1</strong></div>
+        <div class="metric"><span>Waiting</span><strong>34</strong></div>
         <div class="metric asset-metric"><span>Assets</span><strong><span class="asset-chip"><b>COMMODITIES</b><em>1</em></span><span class="asset-chip"><b>FX</b><em>22</em></span><span class="asset-chip"><b>INDICES</b><em>11</em></span><span class="asset-chip"><b>METALS</b><em>3</em></span></strong></div>
       </div>
     </div>
@@ -961,24 +961,24 @@
         </div>
       </a>
 
-      <a class="status-card wait" href="#tab-USOIL" data-symbol-jump="USOIL">
+      <a class="status-card qualified" href="#tab-USOIL" data-symbol-jump="USOIL">
         <div class="card-top">
           <span class="symbol">USOIL</span>
           <span class="asset">COMMODITIES</span>
         </div>
-        <div class="status-line">WAIT</div>
+        <div class="status-line">QUALIFIED</div>
         
         <div class="journey-grid">
-          <span>Current Setup</span><strong>OPEN ABOVE PIVOT - Prev WEAK BUY</strong>
-          <span>Journey Position</span><strong>WEAK BUY LEAN -&gt; BUY WATCH</strong>
-          <span>Meaning</span><strong>Weak buy watch; buy only after clean acceptance.</strong>
+          <span>Current Setup</span><strong>SELL - PIVOT FAILURE SELL</strong>
+          <span>Journey Position</span><strong>BULLISH CARRYOVER -&gt; BUY INVALIDATION -&gt; SELL WATCH -&gt; PIVOT FAILURE SELL</strong>
+          <span>Meaning</span><strong>Confirmed closed-bar entry; manage TP, SL, and BE.</strong>
         </div>
         <div class="micro-grid">
           
-          <span>Pivot</span><strong>94.16633</strong>
-          <span>R1</span><strong>97.45767</strong>
-          <span>S1</span><strong>91.33067</strong>
-          <span>H4</span><strong>NO BAR</strong>
+          <span>Entry</span><strong>93.978</strong>
+          <span>TP1</span><strong>93.03822</strong>
+          <span>SL</span><strong>94.91778</strong>
+          <span>Model</span><strong>ORIGINAL</strong>
         </div>
       </a>
 
@@ -1045,7 +1045,7 @@
         </div>
       </a></section>
     <section class="section">
-      <div class="section-head"><h2>Current Status</h2><span>0 qualified / 2 blocked / 35 waiting</span></div>
+      <div class="section-head"><h2>Current Status</h2><span>1 qualified / 2 blocked / 34 waiting</span></div>
       <table>
         <thead>
           <tr>
@@ -1416,15 +1416,15 @@
             <td></td>
           </tr>
 
-          <tr class="wait">
+          <tr class="qualified">
             <td><strong>USOIL</strong><span>COMMODITIES</span></td>
-            <td>WAIT</td>
-            <td>RANGE</td>
-            <td>OPEN ABOVE PIVOT - Prev WEAK BUY</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>QUALIFIED</td>
+            <td>SELL</td>
+            <td>SELL - PIVOT FAILURE SELL</td>
+            <td>2026-06-02 03:15:00+0300</td>
+            <td>ORIGINAL</td>
+            <td>93.03822</td>
+            <td>94.91778</td>
           </tr>
 
           <tr class="wait">
@@ -1495,7 +1495,7 @@
 <button class="tab-button  wait" type="button" data-tab="SMI20">SMI20</button>
 <button class="tab-button  wait" type="button" data-tab="SP500">SP500</button>
 <button class="tab-button  wait" type="button" data-tab="WS30">WS30</button>
-<button class="tab-button  wait" type="button" data-tab="USOIL">USOIL</button>
+<button class="tab-button  qualified" type="button" data-tab="USOIL">USOIL</button>
 <button class="tab-button  wait" type="button" data-tab="XAGUSD">XAGUSD</button>
 <button class="tab-button  wait" type="button" data-tab="XAUEUR">XAUEUR</button>
 <button class="tab-button  blocked" type="button" data-tab="XAUUSD">XAUUSD</button></div>
@@ -2329,7 +2329,7 @@
                 <div><span>Dist</span><strong></strong></div>
                 <div><span>Room</span><strong></strong></div>
               </div>
-              <div class="blocker-text">LIVE SAFE CONTINUATION DISABLED;EMA50 ENTRY TOO CLOSE TO PIVOT;EMA50 SELL PHASE NOT ALLOWED</div>
+              <div class="blocker-text">LIVE SAFE CONTINUATION DISABLED;EMA50 ENTRY TOO CLOSE TO PIVOT;LIVE SAFE ENTRY TOO CLOSE TO PIVOT;EMA50 SELL PHASE NOT ALLOWED</div>
             </div>
             <div class="confirm-panel">
               <div class="section-head">
@@ -2654,7 +2654,7 @@
                 <div><span>Dist</span><strong></strong></div>
                 <div><span>Room</span><strong></strong></div>
               </div>
-              <div class="blocker-text wait-note">prev=WEAK SELL; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
+              <div class="blocker-text">LIVE SAFE CONTINUATION DISABLED</div>
             </div>
             <div class="confirm-panel">
               <div class="section-head">
@@ -3009,7 +3009,7 @@
                 <div><span>Dist</span><strong></strong></div>
                 <div><span>Room</span><strong></strong></div>
               </div>
-              <div class="blocker-text wait-note">prev=STRONG SELL; OPEN BELOW PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
+              <div class="blocker-text">INDEX LIVE SAFE NO SYMBOL SETUP</div>
             </div>
             <div class="confirm-panel">
               <div class="section-head">
@@ -3404,7 +3404,7 @@
                 <div><span>Dist</span><strong></strong></div>
                 <div><span>Room</span><strong></strong></div>
               </div>
-              <div class="blocker-text">EMA50 SELL AGAINST STRONG BUY</div>
+              <div class="blocker-text">EMA50 SELL AGAINST STRONG BUY;INDEX LIVE SAFE NO SYMBOL SETUP</div>
             </div>
             <div class="confirm-panel">
               <div class="section-head">
@@ -3729,26 +3729,26 @@
 
         <section class="tab-panel " id="tab-USOIL" data-panel="USOIL">
           <div class="panel-grid">
-            <div class="current-panel wait">
+            <div class="current-panel qualified">
               <div class="panel-title">
                 <div>
                   <span class="asset-label">COMMODITIES</span>
                   <h2>USOIL</h2>
                 </div>
-                <span class="status-pill wait">WAIT</span>
+                <span class="status-pill qualified">QUALIFIED</span>
               </div>
-              <div class="trade-line">OPEN ABOVE PIVOT - Prev WEAK BUY</div>
-              <div class="setup-summary">prev=WEAK BUY; OPEN ABOVE PIVOT; live safe wait - H4 NO BAR / NO BAR</div>
+              <div class="trade-line">SELL - PIVOT FAILURE SELL</div>
+              <div class="setup-summary">BULLISH CARRYOVER -&gt; BUY INVALIDATION -&gt; SELL WATCH -&gt; PIVOT FAILURE SELL - ORIGINAL</div>
               <div class="level-grid">
                 
-                <div><span>Pivot</span><strong>94.16633</strong></div>
-                <div><span>R1</span><strong>97.45767</strong></div>
-                <div><span>S1</span><strong>91.33067</strong></div>
-                <div><span>Open</span><strong>OPEN ABOVE PIVOT</strong></div>
+                <div><span>Entry</span><strong>93.978</strong></div>
+                <div><span>TP1</span><strong>93.03822</strong></div>
+                <div><span>TP2</span><strong>92.09844</strong></div>
+                <div><span>SL</span><strong>94.91778</strong></div>
               </div>
               <div class="context-grid">
-                <div><span>Entry Time</span><strong></strong></div>
-                <div><span>Model</span><strong></strong></div>
+                <div><span>Entry Time</span><strong>2026-06-02 03:15:00+0300</strong></div>
+                <div><span>Model</span><strong>ORIGINAL</strong></div>
                 <div><span>Open State</span><strong>OPEN ABOVE PIVOT</strong></div>
                 <div><span>Prev D1</span><strong>WEAK BUY</strong></div>
                 <div><span>H4 Read</span><strong>NO BAR</strong></div>
@@ -3756,10 +3756,10 @@
                 <div><span>Pivot</span><strong>94.16633</strong></div>
                 <div><span>R1</span><strong>97.45767</strong></div>
                 <div><span>S1</span><strong>91.33067</strong></div>
-                <div><span>Dist</span><strong></strong></div>
-                <div><span>Room</span><strong></strong></div>
+                <div><span>Dist</span><strong>0.2%</strong></div>
+                <div><span>Room</span><strong>2.817%</strong></div>
               </div>
-              <div class="blocker-text">EMA50 ENTRY TOO CLOSE TO PIVOT;LIVE SAFE ENTRY TOO CLOSE TO PIVOT</div>
+              <div class="blocker-text ok">No refined blocker</div>
             </div>
             <div class="confirm-panel">
               <div class="section-head">
@@ -3771,6 +3771,16 @@
                   <tr><th>Date</th><th>Side</th><th>Phase</th><th>Time</th><th>Entry</th><th>Model</th><th>Dist %</th><th>Prev D1</th></tr>
                 </thead>
                 <tbody>
+                  <tr>
+                    <td>2026-06-02</td>
+                    <td>SELL</td>
+                    <td>PIVOT_FAILURE_SELL</td>
+                    <td>2026-06-02 03:15:00+0300</td>
+                    <td>93.978</td>
+                    <td>ORIGINAL</td>
+                    <td>0.2</td>
+                    <td>WEAK BUY</td>
+                  </tr>
                   <tr>
                     <td>2026-05-28</td>
                     <td>SELL</td>
@@ -3790,16 +3800,6 @@
                     <td>ORIGINAL</td>
                     <td>0.234</td>
                     <td>WEAK BUY</td>
-                  </tr>
-                  <tr>
-                    <td>2026-05-22</td>
-                    <td>SELL</td>
-                    <td>FAILED_RECOVERY_SELL</td>
-                    <td>2026-05-22 14:45:00+0300</td>
-                    <td>101.103</td>
-                    <td>EMA50 M15</td>
-                    <td>1.234</td>
-                    <td>WEAK SELL</td>
                   </tr></tbody>
               </table>
             </div>
