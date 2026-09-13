@@ -1,7 +1,51 @@
 const $ = (id) => document.getElementById(id);
 const state = { meta:null, overview:null, health:null, weekly:[], outcomes:[] };
 
+const LIVE_API_HOSTS = new Set(['127.0.0.1','localhost']);
+const USE_STATIC_SNAPSHOT = !LIVE_API_HOSTS.has(location.hostname);
+let snapshotPromise = null;
+
+async function dashboardSnapshot(){
+  if(!snapshotPromise){
+    snapshotPromise = fetch('/data/dashboard_snapshot.json',{cache:'no-store'}).then(async r=>{
+      if(!r.ok) throw new Error(`Static dashboard snapshot unavailable: HTTP ${r.status}`);
+      return r.json();
+    });
+  }
+  return snapshotPromise;
+}
+function staticApiRoute(snapshot,path){
+  const u = new URL(path,location.origin), q=u.searchParams, route=u.pathname;
+  const view=(q.get('view')||'current').toLowerCase(), cutoff=q.get('cutoff_date')||q.get('week')||snapshot.default_week;
+  if(route==='/api/meta') return snapshot.meta||{};
+  if(route==='/api/system-health') return snapshot.system_health||{};
+  if(route==='/api/overview') return (snapshot.overview_by_week||{})[cutoff]||{};
+  if(route==='/api/week-analysis') return (snapshot.week_analysis_by_week||{})[cutoff]||{};
+  if(route==='/api/engine-entries') return (((snapshot.engine_entries_by_week||{})[view]||{})[cutoff])||[];
+  if(route==='/api/blocked-setups') return ((snapshot.blocked_by_week||{})[cutoff])||[];
+  if(route==='/api/weekly'){
+    const data=snapshot.weekly_all||[];
+    if(q.get('cutoff_date')) return data.filter(r=>String(r.cutoff_date)===String(q.get('cutoff_date')));
+    return data.slice(0,Number(q.get('limit')||52));
+  }
+  if(route==='/api/journey'){
+    let data=((((snapshot.journey_by_date||{})[view]||{})[q.get('date')||''])||[]).slice();
+    const grade=(q.get('grade')||'').toUpperCase();
+    if(grade) data=data.filter(r=>String(r.grade||'').toUpperCase()===grade);
+    return data.slice(0,Number(q.get('limit')||2000));
+  }
+  if(route==='/api/outcomes') return ((snapshot.outcomes||{})[view])||[];
+  if(route==='/api/optimizer') return ((snapshot.optimizer||{})[view])||{};
+  if(route==='/api/forensics'){
+    const id=q.get('evaluation_id')||'';
+    const outcomes=((snapshot.outcomes||{})[view])||[];
+    const fallback=outcomes[0]||{};
+    return {evaluation_id:id||fallback.outcome_id||'',evaluation_time:fallback.entry_time||'',direction:fallback.side||'',grade:fallback.grade||'',verdict:fallback.status==='OBJECTIVE_HIT'?'ENTRY_ALLOWED':'WAIT',sqs:null,objective_price:fallback.objective_price,objective_type:fallback.objective_type,objective_timeframe:fallback.objective_timeframe,rule_source:fallback.rule_source||'ORIGINAL',engine_view:view==='current'?'CURRENT_ENGINE':'ORIGINAL_HISTORICAL'};
+  }
+  throw new Error(`Static snapshot route not available: ${route}`);
+}
 async function api(path){
+  if(USE_STATIC_SNAPSHOT) return staticApiRoute(await dashboardSnapshot(),path);
   const r = await fetch(path,{cache:'no-store'});
   if(!r.ok){ const e=await r.json().catch(()=>({})); throw new Error(e.message||`HTTP ${r.status}`); }
   return r.json();
