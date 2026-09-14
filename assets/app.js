@@ -291,8 +291,10 @@ async function loadMeta(){
   const defaultWeek=weeks.find(w=>latest && String(w.forecast_week_start||'')<=latest)||weeks[0];
   if(defaultWeek){ $('overviewWeek').value=defaultWeek.cutoff_date; $('weeklyWeek').value=defaultWeek.cutoff_date; $('blockedWeek').value=defaultWeek.cutoff_date; }
   const sel=$('journeyDate');
-  sel.innerHTML=(state.meta.journey_dates||[]).map(d=>`<option value="${esc(d)}">${esc(d)}</option>`).join('');
-  if(state.meta.latest_daily_date && [...sel.options].some(o=>o.value===state.meta.latest_daily_date)) sel.value=state.meta.latest_daily_date;
+  const journeyDates=[...new Set([...(state.meta.journey_dates||[]),...(state.meta.forecast_dates||[])])].sort().reverse();
+  sel.innerHTML=journeyDates.map(d=>`<option value="${esc(d)}">${esc(d)}</option>`).join('');
+  const preferredJourneyDate=(state.meta.forecast_dates||[])[0]||state.meta.latest_daily_date||'';
+  if(preferredJourneyDate && [...sel.options].some(o=>o.value===preferredJourneyDate)) sel.value=preferredJourneyDate;
 }
 
 function forecastStatusKind(v){
