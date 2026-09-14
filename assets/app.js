@@ -105,20 +105,26 @@ function stateBar(label,value,max){
 }
 async function loadHealth(){
   const h=await api('/api/system-health'); state.health=h;
-  const f=h.source_freshness||{}, d=h.database||{}, s=h.scheduler||{}, g=h.safety_guard||{};
+  const f=h.source_freshness||{}, d=h.database||{}, s=h.scheduler||{}, g=h.safety_guard||{}, p=h.processing||{};
   const stale=f.status==='SOURCE_STALE';
-  $('staleBanner').classList.toggle('hidden',!stale);
+  const processingLag=Number(p.lag_minutes||0);
+  const processing=!stale && processingLag>0;
+  const banner=$('staleBanner');
+  banner.classList.toggle('hidden',!(stale||processing));
+  banner.classList.toggle('processing',processing);
+  if(stale) banner.textContent='SOURCE STALE — DO NOT USE CURRENT SIGNALS';
+  else if(processing) banner.textContent=`ENGINE PROCESSING — JOURNEY LAGS SOURCE BY ${n(processingLag,0)} MIN`;
   $('sourceStatus').textContent=f.status||'—'; $('sourceStatus').className=stale?'negative':'positive';
   $('dataAsOf').textContent=t(f.actual_latest_m15_close);
   $('dbAsOf').textContent=t(d.phase3_as_of||d.db_m15_as_of);
-  $('schedulerStatus').textContent=s.status==='OK'?`${s.State} / ${s.LastTaskResult}`:'UNAVAILABLE';
+  $('schedulerStatus').textContent=s.display_status||(s.status==='OK'?`${s.State} / ${s.LastTaskResult}`:'UNAVAILABLE');
   $('healthCards').innerHTML=[
     metric('Source Freshness',f.status||'—',f.reason||'',stale?'bad':'good'),
-    metric('Expected M15',shortT(f.expected_latest_completed_m15_close),`Lag ${n(f.wallclock_lag_minutes,0)} min`,stale?'bad':'info'),
-    metric('DB M15',shortT(d.db_m15_as_of),'Closed bars only','info'),
+    metric('Engine Processing',p.status||'—',processing?`Journey lag ${n(processingLag,0)} min`:'Source and engine aligned',processing?'warn':'good'),
+    metric('Expected M15',shortT(f.expected_latest_completed_m15_close),`Source lag ${n(f.wallclock_lag_minutes,0)} min`,stale?'bad':'info'),
+    metric('DB M15',shortT(d.db_m15_as_of),'Closed bars ingested','info'),
     metric('Schema',g.schema_version??'—','Dashboard views '+(g.dashboard_views_valid?'valid':'invalid'),g.dashboard_views_valid?'good':'bad'),
-    metric('Executions',d.execution_count??0,`${d.resolved_outcome_count??0} resolved`,'info'),
-    metric('Unresolved',d.unresolved_outcome_count??0,'Phase 6 outcomes',(d.unresolved_outcome_count??0)>0?'warn':'good')
+    metric('Executions',d.execution_count??0,`${d.resolved_outcome_count??0} resolved`,'info')
   ].join('');
   $('checkpointGrid').innerHTML=[
     detail('Phase 3',esc(t(d.phase3_as_of))), detail('Phase 4',esc(t(d.phase4_as_of))),
