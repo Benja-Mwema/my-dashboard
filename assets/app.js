@@ -219,9 +219,13 @@ async function loadWeekly(){
     metric('Actual Low',n(completed.actual_low,2),t(completed.actual_low_time),'info'),
     metric('Actual Close',n(completed.actual_close,2),`Side aligned: ${aligned}`,aligned==='YES'?'good':aligned==='NO'?'bad':'warn')
   ].join('');
-  const wa=weeklyAnalytics||{}, comp=wa.components||{}, acc=wa.accuracy||{}, fc=wa.forecast||{};
+  const wa=weeklyAnalytics||{}, finalComp=wa.components||{}, liveComp=wa.provisional_components||{}, acc=wa.accuracy||{}, fc=wa.forecast||{};
+  const comp=wa.completed?finalComp:liveComp;
+  const displayScore=wa.completed?wa.total_score:wa.provisional_total_score;
+  const scoreLabel=wa.completed?'Report-Style Score':'LIVE Provisional Score';
+  const scoreSub=wa.completed?(wa.score_type||'Final'):'Partial week · final score freezes after Friday close';
   $('weeklyAnalyticsCards').innerHTML=[
-    metric('Report-Style Score',wa.total_score===null||wa.total_score===undefined?'Pending':`${n(wa.total_score,1)}/10`,wa.score_type||'','info'),
+    metric(scoreLabel,displayScore===null||displayScore===undefined?'Pending':`${n(displayScore,1)}/10`,scoreSub,wa.completed?'info':'warn'),
     metric('Upper Zone',`${n((fc.upper_zone||[])[0],2)} – ${n((fc.upper_zone||[])[1],2)}`,'Resistance / turning map','info'),
     metric('Lower Zone',`${n((fc.lower_zone||[])[0],2)} – ${n((fc.lower_zone||[])[1],2)}`,'Support / target map','info'),
     metric('H4 ATR',n(fc.h4_atr,2),'Normalization basis','info'),
@@ -231,7 +235,7 @@ async function loadWeekly(){
   $('weeklyScoreGrid').innerHTML=[
     detail('Directional Thesis',`${n(comp.direction,1)} / 2`), detail('High / Resistance Zone',`${n(comp.upper_zone,1)} / 2`),
     detail('Low / Support Zone',`${n(comp.lower_zone,1)} / 2`), detail('Movement Sequence',`${n(comp.sequence,1)} / 2`),
-    detail('Calibration Proxy',`${n(comp.calibration,1)} / 2`), detail('Total',wa.total_score===null||wa.total_score===undefined?'Pending':`${n(wa.total_score,1)} / 10`)
+    detail('Calibration Proxy',`${n(comp.calibration,1)} / 2${wa.completed?'':' · LIVE'}`), detail(wa.completed?'Total':'Live Provisional Total',displayScore===null||displayScore===undefined?'Pending':`${n(displayScore,1)} / 10${wa.completed?'':' · NOT FROZEN'}`)
   ].join('');
   $('weeklyAccuracyGrid').innerHTML=[
     detail('High-Zone Miss',`${n(acc.upper_zone_miss_points,2)} pts · ${n(acc.upper_zone_miss_h4_atr,2)} H4 ATR`),
