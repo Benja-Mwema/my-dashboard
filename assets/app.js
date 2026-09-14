@@ -23,6 +23,9 @@ function staticApiRoute(snapshot,path){
   if(route==='/api/week-analysis') return (snapshot.week_analysis_by_week||{})[cutoff]||{};
   if(route==='/api/engine-entries') return (((snapshot.engine_entries_by_week||{})[view]||{})[cutoff])||[];
   if(route==='/api/blocked-setups') return ((snapshot.blocked_by_week||{})[cutoff])||[];
+  if(route==='/api/analytics-summary') return snapshot.analytics_summary||{};
+  if(route==='/api/weekly-analytics') return ((snapshot.weekly_analytics_by_week||{})[cutoff])||{};
+  if(route==='/api/weekly-report-map') return ((snapshot.weekly_report_map_by_week||{})[cutoff])||{};
   if(route==='/api/weekly'){
     const data=snapshot.weekly_all||[];
     if(q.get('cutoff_date')) return data.filter(r=>String(r.cutoff_date)===String(q.get('cutoff_date')));
@@ -38,9 +41,9 @@ function staticApiRoute(snapshot,path){
   if(route==='/api/optimizer') return ((snapshot.optimizer||{})[view])||{};
   if(route==='/api/forensics'){
     const id=q.get('evaluation_id')||'';
-    const outcomes=((snapshot.outcomes||{})[view])||[];
-    const fallback=outcomes[0]||{};
-    return {evaluation_id:id||fallback.outcome_id||'',evaluation_time:fallback.entry_time||'',direction:fallback.side||'',grade:fallback.grade||'',verdict:fallback.status==='OBJECTIVE_HIT'?'ENTRY_ALLOWED':'WAIT',sqs:null,objective_price:fallback.objective_price,objective_type:fallback.objective_type,objective_timeframe:fallback.objective_timeframe,rule_source:fallback.rule_source||'ORIGINAL',engine_view:view==='current'?'CURRENT_ENGINE':'ORIGINAL_HISTORICAL'};
+    const store=((snapshot.forensics||{})[view])||{};
+    if(id) return ((store.by_id||{})[id])||store.latest||{};
+    return store.latest||{};
   }
   throw new Error(`Static snapshot route not available: ${route}`);
 }
@@ -131,11 +134,33 @@ async function loadHealth(){
 
 async function loadOverview(){
   const week=$('overviewWeek')?.value||'', view=$('overviewView')?.value||'current';
-  const [o,analysis,entries]=await Promise.all([
+  const [o,analysis,entries,aggregate]=await Promise.all([
     api(`/api/overview${week?`?cutoff_date=${encodeURIComponent(week)}`:''}`),
     week?api(`/api/week-analysis?cutoff_date=${encodeURIComponent(week)}`):Promise.resolve({}),
-    api(`/api/engine-entries?cutoff_date=${encodeURIComponent(week)}&view=${encodeURIComponent(view)}`)
+    api(`/api/engine-entries?cutoff_date=${encodeURIComponent(week)}&view=${encodeURIComponent(view)}`),
+    api('/api/analytics-summary')
   ]); state.overview=o;
+  const ref=aggregate.report_reference||{};
+  $('aggregateAnalyticsCards').innerHTML=[
+    metric('Completed Weeks',aggregate.completed_weeks??0,'SQLite analytical coverage','info'),
+    metric('Machine Avg',aggregate.machine_average_score==null?'—':`${n(aggregate.machine_average_score,2)}/10`,'Deterministic report-style score','info'),
+    metric('Machine Median',aggregate.machine_median_score==null?'—':`${n(aggregate.machine_median_score,2)}/10`,'Completed DB weeks','info'),
+    metric('Upper-Zone Hit',aggregate.upper_zone_hit_rate==null?'—':pct(aggregate.upper_zone_hit_rate),'Completed DB weeks',Number(aggregate.upper_zone_hit_rate)>=50?'good':'warn'),
+    metric('Lower-Zone Hit',aggregate.lower_zone_hit_rate==null?'—':pct(aggregate.lower_zone_hit_rate),'Completed DB weeks',Number(aggregate.lower_zone_hit_rate)>=50?'good':'warn'),
+    metric('Sequence Match',aggregate.sequence_match_rate==null?'—':pct(aggregate.sequence_match_rate),'Expected extreme order',Number(aggregate.sequence_match_rate)>=50?'good':'warn')
+  ].join('');
+  $('reportBenchmarkGrid').innerHTML=[
+    detail('Completed Weeks',esc(ref.completed_weeks??'—')), detail('Average Score',esc(ref.average_score==null?'—':`${n(ref.average_score,2)} / 10`)),
+    detail('Median Score',esc(ref.median_score==null?'—':`${n(ref.median_score,2)} / 10`)), detail('Best / Lowest',esc(`${n(ref.best_score,1)} / ${n(ref.lowest_score,1)}`)),
+    detail('Prospective Weeks',esc(ref.completed_prospective_weeks??'—')), detail('Prospective Average',esc(ref.prospective_average==null?'—':`${n(ref.prospective_average,1)} / 10`))
+  ].join('');
+  renderTable($('aggregateHistoryTable'),aggregate.weekly_history||[],[
+    {key:'forecast_week_start',label:'Week'}, {key:'side',label:'Side',fmt:v=>badge(v)},
+    {key:'score',label:'Score',fmt:v=>`${n(v,1)}/10`,className:'num'},
+    {key:'upper_zone_hit',label:'Upper',fmt:v=>badge(v?'HIT':'MISS',v?'good':'bad')},
+    {key:'lower_zone_hit',label:'Lower',fmt:v=>badge(v?'HIT':'MISS',v?'good':'bad')},
+    {key:'sequence_match',label:'Sequence',fmt:v=>badge(v?'MATCH':'MISS',v?'good':'bad')}
+  ]);
   const sm=analysis.summary||{};
   $('engineSummaryCards').innerHTML=[
     metric('Current Engine',sm.current_engine_entries??0,'Selected week','good'),

@@ -34,6 +34,11 @@
     <section id="tab-overview" class="tab-page active">
       <div class="section-title"><div><small>WEEKLY CONTEXT</small><h2>Overview</h2></div><div class="section-actions"><label>Week <select id="overviewWeek"></select></label><label>View <select id="overviewView"><option value="current">Current Engine</option><option value="original">Original Historical</option></select></label><button id="overviewLoad" class="primary">Load Week</button><button class="ghost" data-refresh="overview">Refresh</button></div></div>
       <div id="overviewCards" class="metric-grid six"></div>
+      <div class="panel"><div class="panel-head"><h3>Forecast Analytics Record</h3><span class="muted">Machine-derived dashboard history · report benchmark kept separate</span></div><div id="aggregateAnalyticsCards" class="metric-grid six"></div></div>
+      <div class="two-col">
+        <div class="panel table-panel"><div class="panel-head"><h3>Completed-Week Analytics</h3><span class="muted">Direction · zones · sequence</span></div><div class="table-wrap"><table id="aggregateHistoryTable"></table></div></div>
+        <div class="panel"><div class="panel-head"><h3>Report Benchmark</h3><span class="muted">Weekly Level Watch 3 · 30 Aug 2026</span></div><div id="reportBenchmarkGrid" class="detail-grid"></div></div>
+      </div>
       <div id="engineSummaryCards" class="metric-grid six"></div>
       <div class="panel table-panel"><div class="panel-head"><h3>Selected Week Entries</h3><span id="overviewEntryLabel" class="muted"></span></div><div class="table-wrap"><table id="overviewEntryTable"></table></div></div>
       <div class="two-col">
