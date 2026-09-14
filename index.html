@@ -49,6 +49,15 @@
     <section id="tab-weekly" class="tab-page">
       <div class="section-title"><div><small>FROZEN WEEKEND FORECAST</small><h2>Weekly Forecast & Actual</h2></div><div class="section-actions"><label>Week <select id="weeklyWeek"></select></label><label>View <select id="weeklyView"><option value="current">Current Engine</option><option value="original">Original Historical</option></select></label><button id="weeklyLoad" class="primary">Load Week</button></div></div>
       <div id="weeklyHero" class="metric-grid four"></div>
+      <div id="weeklyAnalyticsCards" class="metric-grid six"></div>
+      <div class="two-col">
+        <div class="panel"><div class="panel-head"><h3>Report-Style 10-Point Score</h3><span class="muted">Machine-derived · deterministic</span></div><div id="weeklyScoreGrid" class="detail-grid"></div></div>
+        <div class="panel"><div class="panel-head"><h3>Forecast vs Actual Accuracy</h3><span class="muted">Point, ATR and sequence diagnostics</span></div><div id="weeklyAccuracyGrid" class="detail-grid"></div></div>
+      </div>
+      <div class="two-col">
+        <div class="panel"><div class="panel-head"><h3>Scenario Map</h3><span class="muted">Primary · continuation · failure</span></div><div id="weeklyScenarioMap" class="scenario-stack"></div></div>
+        <div class="panel table-panel"><div class="panel-head"><h3>Role-Labelled Levels</h3><span class="muted">TURN · TARGET · CONTROL/BREAKOUT</span></div><div class="table-wrap"><table id="weeklyLevelTable"></table></div></div>
+      </div>
       <div id="weeklyEngineCards" class="metric-grid six"></div>
       <div class="panel table-panel"><div class="panel-head"><h3>Entry Decisions for Selected Week</h3><span class="muted">Rule provenance included</span></div><div class="table-wrap"><table id="weeklyEntryTable"></table></div></div>
       <div class="panel table-panel"><div class="panel-head"><h3>Forecast History</h3><span class="muted">Forecast remains immutable; actual is derived from later M15 bars</span></div><div class="table-wrap"><table id="weeklyTable"></table></div></div>
@@ -79,6 +88,7 @@
         <button id="forensicsLoad" class="primary">Inspect</button>
       </div>
       <div id="forensicsHeadline" class="metric-grid six"></div>
+      <div class="panel"><div class="panel-head"><h3>Execution Qualification Chain</h3><span class="muted">H4 → H1 → M30 → M15 → Stage 6</span></div><div id="executionChain" class="chain-grid"></div></div>
       <div class="two-col">
         <div class="panel"><div class="panel-head"><h3>Stage Scores</h3></div><div id="stageScores" class="detail-grid"></div></div>
         <div class="panel"><div class="panel-head"><h3>Objective & Daily Context</h3></div><div id="objectiveContext" class="detail-grid"></div></div>
