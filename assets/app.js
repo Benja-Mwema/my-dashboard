@@ -31,6 +31,7 @@ function staticApiRoute(snapshot,path){
     if(q.get('cutoff_date')) return data.filter(r=>String(r.cutoff_date)===String(q.get('cutoff_date')));
     return data.slice(0,Number(q.get('limit')||52));
   }
+  if(route==='/api/daily-forecast') return (snapshot.daily_forecast_by_date||{})[q.get('date')||'']||{};
   if(route==='/api/journey'){
     let data=((((snapshot.journey_by_date||{})[view]||{})[q.get('date')||''])||[]).slice();
     const grade=(q.get('grade')||'').toUpperCase();
@@ -294,13 +295,72 @@ async function loadMeta(){
   if(state.meta.latest_daily_date && [...sel.options].some(o=>o.value===state.meta.latest_daily_date)) sel.value=state.meta.latest_daily_date;
 }
 
+function forecastStatusKind(v){
+  const x=String(v||'');
+  if(x==='CONFIRMED'||x==='CONFIRMING') return 'good';
+  if(x.includes('FAILED')||x.includes('CONTRADICTED')) return 'bad';
+  return 'warn';
+}
+function renderJourneyForecast(payload){
+  const f=payload.forecast||{}, a=payload.actual||{}, v=payload.validation||{}, b=payload.daily_bias||{}, hits=payload.rule_hits||[];
+  if(!f.forecast_date){
+    $('journeyForecastState').innerHTML='<span class="muted">No frozen daily prediction is available for this date.</span>';
+    $('journeyForecastCards').innerHTML=''; $('journeyForecastGrid').innerHTML=''; $('journeyValidationGrid').innerHTML='';
+    renderTable($('journeyForecastRuleTable'),[],[]); $('journeyRuleCount').textContent='0 rules'; return;
+  }
+  const status=v.forecast_state||'FROZEN_UNTESTED', kind=forecastStatusKind(status);
+  $('journeyForecastState').className=`forecast-state ${kind}`;
+  $('journeyForecastState').innerHTML=`<strong>${esc(f.statistical_direction||'—')} ${esc(f.direction_grade||'')}</strong><span>${esc(f.route_prediction||'—')} → ${esc(f.path_prediction||'—')} · ${esc(f.forecast_relationship||'—')} · ${esc(status)}</span>`;
+  $('journeyForecastCards').innerHTML=[
+    metric('Frozen Direction',f.statistical_direction||'—',`${f.direction_grade||'—'} · ${f.buy_votes??0}/${f.sell_votes??0} BUY/SELL`,f.statistical_direction==='BUY'?'good':f.statistical_direction==='SELL'?'bad':'warn'),
+    metric('Frozen Route',f.route_prediction||'—',f.path_prediction||'—','info'),
+    metric('Weekly Bias',f.weekly_side||'—',f.forecast_relationship||'—',f.weekly_side==='SELL'?'bad':'good'),
+    metric('Preferred Turn',`${n(f.preferred_turn_low,2)} – ${n(f.preferred_turn_high,2)}`,'Frozen zone','info'),
+    metric('Recovery Target 1',`${n(f.recovery_target1_low,2)} – ${n(f.recovery_target1_high,2)}`,'Frozen objective','info'),
+    metric('Forecast State',status,v.direction_result||'—',kind)
+  ].join('');
+  $('journeyForecastGrid').innerHTML=[
+    detail('Forecast Date',esc(f.forecast_date)),detail('Freeze Time',esc(t(f.freeze_time))),
+    detail('Source Completed Day',esc(f.source_completed_date)),detail('Freeze Mode',esc(f.freeze_mode)),
+    detail('Rule Version',esc(f.rule_version)),detail('Daily Pivot',esc(n(f.daily_pivot,2))),
+    detail('S1 / S2',esc(`${n(f.s1,2)} / ${n(f.s2,2)}`)),detail('Extension Zone',esc(`${n(f.extension_low,2)} – ${n(f.extension_high,2)}`)),
+    detail('Recovery Target 2',esc(n(f.recovery_target2,2))),detail('Stretch Recovery',esc(`${n(f.stretch_target_low,2)} – ${n(f.stretch_target_high,2)}`)),
+    detail('Invalidation 1',esc(n(f.invalidation_level1,2))),detail('Invalidation 2',esc(n(f.invalidation_level2,2)))
+  ].join('');
+  $('journeyValidationGrid').innerHTML=[
+    detail('Forecast State',badge(status,kind)),detail('Direction Result',esc(v.direction_result||'—')),
+    detail('Route State',esc(v.route_state||'—')),detail('Route Result',esc(v.route_result||'—')),
+    detail('Path Result',esc(v.path_result||'—')),detail('Weekly Result',esc(v.weekly_direction_result||'—')),
+    detail('Actual / Current Direction',badge(a.direction||'—')),detail('Actual / Current Route',esc(a.route||'—')),
+    detail('Open / Close',esc(`${n(a.open,2)} / ${n(a.close,2)}`)),detail('High / Low',esc(`${n(a.high,2)} / ${n(a.low,2)}`)),
+    detail('Daily Bias',badge(b.current_daily_direction||'—')),detail('Daily State / DBS',esc(`${b.current_daily_state||'—'} / ${n(b.dbs,1)}`))
+  ].join('');
+  $('journeyRuleCount').textContent=`${hits.length} activated rules`;
+  renderTable($('journeyForecastRuleTable'),hits,[
+    {key:'rule_category',label:'Category',fmt:v=>badge(v,'info')},{key:'rule_id',label:'Rule'},
+    {key:'formation',label:'Frozen Formation'},{key:'prediction',label:'Prediction',fmt:v=>badge(v,v==='BUY'?'good':v==='SELL'?'bad':'info')},
+    {key:'historical_accuracy',label:'3M %',fmt:v=>pct(v),className:'num'},{key:'historical_support',label:'N',fmt:v=>n(v,0),className:'num'},
+    {key:'holdout_accuracy',label:'Holdout %',fmt:v=>pct(v),className:'num'}
+  ]);
+}
+
 async function loadJourney(){
   const date=$('journeyDate').value, grade=$('journeyGrade').value, view=$('journeyView')?.value||'current';
-  const data=await api(`/api/journey?date=${encodeURIComponent(date)}&grade=${encodeURIComponent(grade)}&view=${encodeURIComponent(view)}&limit=1000`);
-  $('journeyCount').textContent=`${data.length} evaluations`;
+  const [data,forecastPayload]=await Promise.all([
+    api(`/api/journey?date=${encodeURIComponent(date)}&grade=${encodeURIComponent(grade)}&view=${encodeURIComponent(view)}&limit=1000`),
+    api(`/api/daily-forecast?date=${encodeURIComponent(date)}`)
+  ]);
+  renderJourneyForecast(forecastPayload);
+  const f=forecastPayload.forecast||{}, v=forecastPayload.validation||{};
+  const annotated=data.map(r=>({...r,
+    forecast_relation:(f.statistical_direction==='BUY'||f.statistical_direction==='SELL')?(r.side===f.statistical_direction?'WITH_FORECAST':'COUNTER_FORECAST'):'NO_FORECAST',
+    forecast_route_state:v.route_state||'UNRESOLVED'}));
+  $('journeyCount').textContent=`${annotated.length} evaluations`;
   const cols=[
     {key:'time',label:'Time',fmt:v=>shortT(v)}, {key:'status',label:'Status',fmt:v=>badge(v,'info')},
     {key:'price',label:'Price',fmt:v=>n(v,2),className:'num'}, {key:'side',label:'Side',fmt:v=>badge(v)},
+    {key:'forecast_relation',label:'Forecast Relation',fmt:v=>badge(v,v==='WITH_FORECAST'?'good':v==='COUNTER_FORECAST'?'bad':'info')},
+    {key:'forecast_route_state',label:'Route State',fmt:v=>badge(v,String(v).includes('HIGH')?'warn':'info')},
     {key:'grade',label:'Grade',fmt:v=>badge(v,v==='A_PLUS'||v==='A'?'good':'wait')},
     {key:'objective_distance_price',label:'Obj Dist',fmt:v=>n(v,2),className:'num'},
     {key:'objective_distance_m15_atr',label:'Obj ATR',fmt:v=>n(v,2),className:'num'},
@@ -311,7 +371,7 @@ async function loadJourney(){
     {key:'verdict',label:'Verdict',fmt:v=>badge(v,v==='ENTRY_ALLOWED'?'good':v==='HARD_BLOCK'?'bad':'wait')},
     {key:'rule_source',label:'Rule Source',fmt:v=>v?badge(v,'info'):'—'}
   ];
-  renderTable($('journeyTable'),data,cols,{click:r=>{ $('forensicsId').value=r.evaluation_id; showTab('forensics'); loadForensics(); }});
+  renderTable($('journeyTable'),annotated,cols,{click:r=>{ $('forensicsId').value=r.evaluation_id; showTab('forensics'); loadForensics(); }});
 }
 
 async function loadBlocked(){
