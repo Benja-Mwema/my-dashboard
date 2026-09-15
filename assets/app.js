@@ -32,6 +32,8 @@ function staticApiRoute(snapshot,path){
     return data.slice(0,Number(q.get('limit')||52));
   }
   if(route==='/api/daily-forecast') return (snapshot.daily_forecast_by_date||{})[q.get('date')||'']||{};
+  if(route==='/api/research-rc1'){ const d=q.get('date')||''; return d?((snapshot.research_rc1_by_date||{})[d]||{}):(snapshot.research_rc1_latest||{}); }
+  if(route==='/api/research-regimes') return (snapshot.research_regimes||[]).slice(0,Number(q.get('limit')||120));
   if(route==='/api/journey'){
     let data=((((snapshot.journey_by_date||{})[view]||{})[q.get('date')||''])||[]).slice();
     const grade=(q.get('grade')||'').toUpperCase();
@@ -54,19 +56,19 @@ async function api(path){
   if(!r.ok){ const e=await r.json().catch(()=>({})); throw new Error(e.message||`HTTP ${r.status}`); }
   return r.json();
 }
-function n(v,d=2){ if(v===null||v===undefined||v==='') return '—'; const x=Number(v); return Number.isFinite(x)?x.toLocaleString(undefined,{maximumFractionDigits:d}):String(v); }
-function t(v){ if(!v) return '—'; return String(v).replace('T',' ').replace('+03:00',' EAT').replace('.000',''); }
-function shortT(v){ if(!v) return '—'; const s=t(v); return s.length>16?s.slice(5,16):s; }
-function esc(v){ return String(v??'—').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+function n(v,d=2){ if(v===null||v===undefined||v==='') return 'â€”'; const x=Number(v); return Number.isFinite(x)?x.toLocaleString(undefined,{maximumFractionDigits:d}):String(v); }
+function t(v){ if(!v) return 'â€”'; return String(v).replace('T',' ').replace('+03:00',' EAT').replace('.000',''); }
+function shortT(v){ if(!v) return 'â€”'; const s=t(v); return s.length>16?s.slice(5,16):s; }
+function esc(v){ return String(v??'â€”').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
 function clsSide(v){ return v==='BUY'?'buy':v==='SELL'?'sell':v==='WAIT'?'wait':'info'; }
 function badge(v,kind){ return `<span class="badge ${kind||clsSide(v)}">${esc(v)}</span>`; }
 function metric(label,value,sub='',kind=''){ return `<div class="metric ${kind}"><small>${esc(label)}</small><strong>${esc(value)}</strong>${sub?`<span>${esc(sub)}</span>`:''}</div>`; }
-function detail(label,value){ return `<div class="detail"><small>${esc(label)}</small><strong>${value??'—'}</strong></div>`; }
-function pct(v){ return v===null||v===undefined?'—':`${n(v,1)}%`; }
+function detail(label,value){ return `<div class="detail"><small>${esc(label)}</small><strong>${value??'â€”'}</strong></div>`; }
+function pct(v){ return v===null||v===undefined?'â€”':`${n(v,1)}%`; }
 function bool(v){ return Number(v)===1?'YES':'NO'; }
 function weekLabel(w){
-  if(!w) return '—';
-  return `${w.forecast_week_start||'?'} → ${w.forecast_week_end||'?'} · freeze ${w.cutoff_date||'?'}`;
+  if(!w) return 'â€”';
+  return `${w.forecast_week_start||'?'} â†’ ${w.forecast_week_end||'?'} Â· freeze ${w.cutoff_date||'?'}`;
 }
 function entryTime(r){ return r.evaluation_time||r.entry_allowed_time||''; }
 function entrySide(r){ return r.side||r.direction||''; }
@@ -83,7 +85,7 @@ function entryCols(){ return [
   {key:'room_m15_atr',label:'Room ATR',fmt:v=>n(v,2),className:'num'},
   {key:'leg_consumed_pct',label:'Consumed',fmt:v=>pct(v),className:'num'},
   {key:'rule_source',label:'Rule Source',fmt:(v,r)=>badge(entryRule(r),'info')},
-  {key:'outcome',label:'Outcome',fmt:v=>v?badge(v,v==='TARGET_FIRST'?'good':'wait'):'—'}
+  {key:'outcome',label:'Outcome',fmt:v=>v?badge(v,v==='TARGET_FIRST'?'good':'wait'):'â€”'}
 ]; }
 function renderTable(el,rows,cols,{click}={}){
   if(!rows?.length){ el.innerHTML='<tbody><tr><td class="muted">No records</td></tr></tbody>'; return; }
@@ -112,18 +114,18 @@ async function loadHealth(){
   const banner=$('staleBanner');
   banner.classList.toggle('hidden',!(stale||processing));
   banner.classList.toggle('processing',processing);
-  if(stale) banner.textContent='SOURCE STALE — DO NOT USE CURRENT SIGNALS';
-  else if(processing) banner.textContent=`ENGINE PROCESSING — JOURNEY LAGS SOURCE BY ${n(processingLag,0)} MIN`;
-  $('sourceStatus').textContent=f.status||'—'; $('sourceStatus').className=stale?'negative':'positive';
+  if(stale) banner.textContent='SOURCE STALE â€” DO NOT USE CURRENT SIGNALS';
+  else if(processing) banner.textContent=`ENGINE PROCESSING â€” JOURNEY LAGS SOURCE BY ${n(processingLag,0)} MIN`;
+  $('sourceStatus').textContent=f.status||'â€”'; $('sourceStatus').className=stale?'negative':'positive';
   $('dataAsOf').textContent=t(f.actual_latest_m15_close);
   $('dbAsOf').textContent=t(d.phase3_as_of||d.db_m15_as_of);
   $('schedulerStatus').textContent=s.display_status||(s.status==='OK'?`${s.State} / ${s.LastTaskResult}`:'UNAVAILABLE');
   $('healthCards').innerHTML=[
-    metric('Source Freshness',f.status||'—',f.reason||'',stale?'bad':'good'),
-    metric('Engine Processing',p.status||'—',processing?`Journey lag ${n(processingLag,0)} min`:'Source and engine aligned',processing?'warn':'good'),
+    metric('Source Freshness',f.status||'â€”',f.reason||'',stale?'bad':'good'),
+    metric('Engine Processing',p.status||'â€”',processing?`Journey lag ${n(processingLag,0)} min`:'Source and engine aligned',processing?'warn':'good'),
     metric('Expected M15',shortT(f.expected_latest_completed_m15_close),`Source lag ${n(f.wallclock_lag_minutes,0)} min`,stale?'bad':'info'),
     metric('DB M15',shortT(d.db_m15_as_of),'Closed bars ingested','info'),
-    metric('Schema',g.schema_version??'—','Dashboard views '+(g.dashboard_views_valid?'valid':'invalid'),g.dashboard_views_valid?'good':'bad'),
+    metric('Schema',g.schema_version??'â€”','Dashboard views '+(g.dashboard_views_valid?'valid':'invalid'),g.dashboard_views_valid?'good':'bad'),
     metric('Executions',d.execution_count??0,`${d.resolved_outcome_count??0} resolved`,'info')
   ].join('');
   $('checkpointGrid').innerHTML=[
@@ -132,9 +134,9 @@ async function loadHealth(){
     detail('Phase 6 Lineage',esc(t(d.phase6_lineage_as_of))), detail('Failed Engine Runs',esc(d.failed_engine_run_count??0))
   ].join('');
   $('schedulerGrid').innerHTML=[
-    detail('State',esc(s.State||s.status||'—')), detail('Enabled',esc(s.Enabled===true?'YES':s.Enabled===false?'NO':'—')),
-    detail('Last Run',esc(t(s.LastRunTime))), detail('Last Result',esc(s.LastTaskResult??'—')),
-    detail('Next Run',esc(t(s.NextRunTime))), detail('Missed Runs',esc(s.MissedRuns??'—'))
+    detail('State',esc(s.State||s.status||'â€”')), detail('Enabled',esc(s.Enabled===true?'YES':s.Enabled===false?'NO':'â€”')),
+    detail('Last Run',esc(t(s.LastRunTime))), detail('Last Result',esc(s.LastTaskResult??'â€”')),
+    detail('Next Run',esc(t(s.NextRunTime))), detail('Missed Runs',esc(s.MissedRuns??'â€”'))
   ].join('');
   $('schedulerLog').textContent=(h.scheduler_log_tail||[]).join('\n');
 }
@@ -150,16 +152,16 @@ async function loadOverview(){
   const ref=aggregate.report_reference||{};
   $('aggregateAnalyticsCards').innerHTML=[
     metric('Completed Weeks',aggregate.completed_weeks??0,'SQLite analytical coverage','info'),
-    metric('Machine Avg',aggregate.machine_average_score==null?'—':`${n(aggregate.machine_average_score,2)}/10`,'Deterministic report-style score','info'),
-    metric('Machine Median',aggregate.machine_median_score==null?'—':`${n(aggregate.machine_median_score,2)}/10`,'Completed DB weeks','info'),
-    metric('Upper-Zone Hit',aggregate.upper_zone_hit_rate==null?'—':pct(aggregate.upper_zone_hit_rate),'Completed DB weeks',Number(aggregate.upper_zone_hit_rate)>=50?'good':'warn'),
-    metric('Lower-Zone Hit',aggregate.lower_zone_hit_rate==null?'—':pct(aggregate.lower_zone_hit_rate),'Completed DB weeks',Number(aggregate.lower_zone_hit_rate)>=50?'good':'warn'),
-    metric('Sequence Match',aggregate.sequence_match_rate==null?'—':pct(aggregate.sequence_match_rate),'Expected extreme order',Number(aggregate.sequence_match_rate)>=50?'good':'warn')
+    metric('Machine Avg',aggregate.machine_average_score==null?'â€”':`${n(aggregate.machine_average_score,2)}/10`,'Deterministic report-style score','info'),
+    metric('Machine Median',aggregate.machine_median_score==null?'â€”':`${n(aggregate.machine_median_score,2)}/10`,'Completed DB weeks','info'),
+    metric('Upper-Zone Hit',aggregate.upper_zone_hit_rate==null?'â€”':pct(aggregate.upper_zone_hit_rate),'Completed DB weeks',Number(aggregate.upper_zone_hit_rate)>=50?'good':'warn'),
+    metric('Lower-Zone Hit',aggregate.lower_zone_hit_rate==null?'â€”':pct(aggregate.lower_zone_hit_rate),'Completed DB weeks',Number(aggregate.lower_zone_hit_rate)>=50?'good':'warn'),
+    metric('Sequence Match',aggregate.sequence_match_rate==null?'â€”':pct(aggregate.sequence_match_rate),'Expected extreme order',Number(aggregate.sequence_match_rate)>=50?'good':'warn')
   ].join('');
   $('reportBenchmarkGrid').innerHTML=[
-    detail('Completed Weeks',esc(ref.completed_weeks??'—')), detail('Average Score',esc(ref.average_score==null?'—':`${n(ref.average_score,2)} / 10`)),
-    detail('Median Score',esc(ref.median_score==null?'—':`${n(ref.median_score,2)} / 10`)), detail('Best / Lowest',esc(`${n(ref.best_score,1)} / ${n(ref.lowest_score,1)}`)),
-    detail('Prospective Weeks',esc(ref.completed_prospective_weeks??'—')), detail('Prospective Average',esc(ref.prospective_average==null?'—':`${n(ref.prospective_average,1)} / 10`))
+    detail('Completed Weeks',esc(ref.completed_weeks??'â€”')), detail('Average Score',esc(ref.average_score==null?'â€”':`${n(ref.average_score,2)} / 10`)),
+    detail('Median Score',esc(ref.median_score==null?'â€”':`${n(ref.median_score,2)} / 10`)), detail('Best / Lowest',esc(`${n(ref.best_score,1)} / ${n(ref.lowest_score,1)}`)),
+    detail('Prospective Weeks',esc(ref.completed_prospective_weeks??'â€”')), detail('Prospective Average',esc(ref.prospective_average==null?'â€”':`${n(ref.prospective_average,1)} / 10`))
   ].join('');
   renderTable($('aggregateHistoryTable'),aggregate.weekly_history||[],[
     {key:'forecast_week_start',label:'Week'}, {key:'side',label:'Side',fmt:v=>badge(v)},
@@ -180,18 +182,18 @@ async function loadOverview(){
   $('overviewEntryLabel').textContent=view==='current'?'Current Engine Replay':'Original Historical';
   renderTable($('overviewEntryTable'),entries,entryCols());
   $('overviewCards').innerHTML=[
-    metric('Weekly Bias',o.final_weekly_side||'—',`Freeze ${o.weekly_cutoff_date||'—'}`,o.final_weekly_side==='SELL'?'bad':'good'),
-    metric('Structural State',o.structural_state||'—',`Confidence ${n(o.structural_confidence,0)}`,'info'),
-    metric('Monday Branch',o.active_branch||'—',`${o.monday_week_start_date||'—'} · ${o.activation_method||'—'}`,'info'),
-    metric('Daily Bias',o.current_daily_direction||'—',`DBS ${n(o.dbs,2)}`,o.current_daily_direction==='SELL'?'bad':o.current_daily_direction==='BUY'?'good':'warn'),
-    metric('Route Confidence',n(o.route_confidence,0),o.route_class||'—',o.route_confidence>=65?'good':o.route_confidence>=50?'warn':'bad'),
+    metric('Weekly Bias',o.final_weekly_side||'â€”',`Freeze ${o.weekly_cutoff_date||'â€”'}`,o.final_weekly_side==='SELL'?'bad':'good'),
+    metric('Structural State',o.structural_state||'â€”',`Confidence ${n(o.structural_confidence,0)}`,'info'),
+    metric('Monday Branch',o.active_branch||'â€”',`${o.monday_week_start_date||'â€”'} Â· ${o.activation_method||'â€”'}`,'info'),
+    metric('Daily Bias',o.current_daily_direction||'â€”',`DBS ${n(o.dbs,2)}`,o.current_daily_direction==='SELL'?'bad':o.current_daily_direction==='BUY'?'good':'warn'),
+    metric('Route Confidence',n(o.route_confidence,0),o.route_class||'â€”',o.route_confidence>=65?'good':o.route_confidence>=50?'warn':'bad'),
     metric('Market Price',n(o.market_price,2),t(o.market_as_of),'info')
   ].join('');
-  $('weeklyRangeLabel').textContent=`${o.forecast_week_start||'—'} → ${o.forecast_week_end||'—'}`;
+  $('weeklyRangeLabel').textContent=`${o.forecast_week_start||'â€”'} â†’ ${o.forecast_week_end||'â€”'}`;
   $('controlGrid').innerHTML=[
-    detail('Resistance Control',esc(n(o.resistance_control,2))), detail('Resistance Zone',esc(`${n(o.resistance_lower,2)} – ${n(o.resistance_upper,2)}`)),
-    detail('Support Control',esc(n(o.support_control,2))), detail('Support Zone',esc(`${n(o.support_lower,2)} – ${n(o.support_upper,2)}`)),
-    detail('Daily Pivot',esc(n(o.daily_pivot,2))), detail('Weekly Route',esc(o.final_weekly_side||'—'))
+    detail('Resistance Control',esc(n(o.resistance_control,2))), detail('Resistance Zone',esc(`${n(o.resistance_lower,2)} â€“ ${n(o.resistance_upper,2)}`)),
+    detail('Support Control',esc(n(o.support_control,2))), detail('Support Zone',esc(`${n(o.support_lower,2)} â€“ ${n(o.support_upper,2)}`)),
+    detail('Daily Pivot',esc(n(o.daily_pivot,2))), detail('Weekly Route',esc(o.final_weekly_side||'â€”'))
   ].join('');
   const counts={ACTIVE:o.active_entry_legs||0,REACTION_ACTIVE:o.reaction_active_entry_legs||0,ENTRY_TRIGGERED:o.entry_triggered_entry_legs||0,MISSED:o.missed_entry_legs||0,INVALIDATED:o.invalidated_entry_legs||0};
   const max=Math.max(...Object.values(counts),1); $('entryStateBars').innerHTML=Object.entries(counts).map(([k,v])=>stateBar(k,v,max)).join('');
@@ -219,9 +221,12 @@ async function loadWeekly(){
   ]);
   state.weekly=data;
   const completed=selectedRows[0]||data[0]||{};
+  const researchWeek=week?await api(`/api/research-rc1?date=${encodeURIComponent(week)}`):{};
+  const rr=researchWeek.regime||{}, rm=researchWeek.meta||{};
+  $('weeklyResearchCards').innerHTML=[metric('RC1 Master Regime',rr.regime||'â€”',`freeze ${week||'â€”'}`,'info'),metric('Regime Phase',rr.phase||'â€”',rr.last_struct_type?`${rr.last_struct_type} ${rr.last_struct_dir||''}`:'','info'),metric('Weekly Side',completed.final_weekly_side||'â€”','Bias only Â· not execution authority',completed.final_weekly_side==='SELL'?'bad':'good'),metric('Execution Authority',rr.regime==='TREND_CONTINUATION'?'NO_SIGNAL':'RC1 TRIGGER REQUIRED','Validated intraday only',rr.regime==='TREND_CONTINUATION'?'warn':'good'),metric('Research Version',rm.research_version||'â€”',rm.research_status||'â€”','info'),metric('Legacy Route Confidence',n(completed.route_confidence,0),'Context only Â· not probability','warn')].join('');
   const aligned=completed.side_aligned===null||completed.side_aligned===undefined?'PENDING':bool(completed.side_aligned);
   $('weeklyHero').innerHTML=[
-    metric('Forecast Side',completed.final_weekly_side||'—',`${completed.forecast_week_start||'—'} → ${completed.forecast_week_end||'—'}`,completed.final_weekly_side==='SELL'?'bad':'good'),
+    metric('Forecast Side',completed.final_weekly_side||'â€”',`${completed.forecast_week_start||'â€”'} â†’ ${completed.forecast_week_end||'â€”'}`,completed.final_weekly_side==='SELL'?'bad':'good'),
     metric('Actual High',n(completed.actual_high,2),t(completed.actual_high_time),'info'),
     metric('Actual Low',n(completed.actual_low,2),t(completed.actual_low_time),'info'),
     metric('Actual Close',n(completed.actual_close,2),`Side aligned: ${aligned}`,aligned==='YES'?'good':aligned==='NO'?'bad':'warn')
@@ -230,31 +235,31 @@ async function loadWeekly(){
   const comp=wa.completed?finalComp:liveComp;
   const displayScore=wa.completed?wa.total_score:wa.provisional_total_score;
   const scoreLabel=wa.completed?'Report-Style Score':'LIVE Provisional Score';
-  const scoreSub=wa.completed?(wa.score_type||'Final'):'Partial week · final score freezes after Friday close';
+  const scoreSub=wa.completed?(wa.score_type||'Final'):'Partial week Â· final score freezes after Friday close';
   $('weeklyAnalyticsCards').innerHTML=[
     metric(scoreLabel,displayScore===null||displayScore===undefined?'Pending':`${n(displayScore,1)}/10`,scoreSub,wa.completed?'info':'warn'),
-    metric('Upper Zone',`${n((fc.upper_zone||[])[0],2)} – ${n((fc.upper_zone||[])[1],2)}`,'Resistance / turning map','info'),
-    metric('Lower Zone',`${n((fc.lower_zone||[])[0],2)} – ${n((fc.lower_zone||[])[1],2)}`,'Support / target map','info'),
+    metric('Upper Zone',`${n((fc.upper_zone||[])[0],2)} â€“ ${n((fc.upper_zone||[])[1],2)}`,'Resistance / turning map','info'),
+    metric('Lower Zone',`${n((fc.lower_zone||[])[0],2)} â€“ ${n((fc.lower_zone||[])[1],2)}`,'Support / target map','info'),
     metric('H4 ATR',n(fc.h4_atr,2),'Normalization basis','info'),
-    metric('Expected First',acc.expected_extreme_first||'—','Forecast sequence','warn'),
-    metric('Actual First',acc.actual_extreme_first||'—',acc.sequence_match===true?'Sequence matched':acc.sequence_match===false?'Sequence missed':'Pending',acc.sequence_match===true?'good':acc.sequence_match===false?'bad':'warn')
+    metric('Expected First',acc.expected_extreme_first||'â€”','Forecast sequence','warn'),
+    metric('Actual First',acc.actual_extreme_first||'â€”',acc.sequence_match===true?'Sequence matched':acc.sequence_match===false?'Sequence missed':'Pending',acc.sequence_match===true?'good':acc.sequence_match===false?'bad':'warn')
   ].join('');
   $('weeklyScoreGrid').innerHTML=[
     detail('Directional Thesis',`${n(comp.direction,1)} / 2`), detail('High / Resistance Zone',`${n(comp.upper_zone,1)} / 2`),
     detail('Low / Support Zone',`${n(comp.lower_zone,1)} / 2`), detail('Movement Sequence',`${n(comp.sequence,1)} / 2`),
-    detail('Calibration Proxy',`${n(comp.calibration,1)} / 2${wa.completed?'':' · LIVE'}`), detail(wa.completed?'Total':'Live Provisional Total',displayScore===null||displayScore===undefined?'Pending':`${n(displayScore,1)} / 10${wa.completed?'':' · NOT FROZEN'}`)
+    detail('Calibration Proxy',`${n(comp.calibration,1)} / 2${wa.completed?'':' Â· LIVE'}`), detail(wa.completed?'Total':'Live Provisional Total',displayScore===null||displayScore===undefined?'Pending':`${n(displayScore,1)} / 10${wa.completed?'':' Â· NOT FROZEN'}`)
   ].join('');
   $('weeklyAccuracyGrid').innerHTML=[
-    detail('High-Zone Miss',`${n(acc.upper_zone_miss_points,2)} pts · ${n(acc.upper_zone_miss_h4_atr,2)} H4 ATR`),
-    detail('Low-Zone Miss',`${n(acc.lower_zone_miss_points,2)} pts · ${n(acc.lower_zone_miss_h4_atr,2)} H4 ATR`),
-    detail('High Miss / Weekly Range',acc.upper_zone_miss_weekly_range_pct===null||acc.upper_zone_miss_weekly_range_pct===undefined?'—':pct(acc.upper_zone_miss_weekly_range_pct)),
-    detail('Low Miss / Weekly Range',acc.lower_zone_miss_weekly_range_pct===null||acc.lower_zone_miss_weekly_range_pct===undefined?'—':pct(acc.lower_zone_miss_weekly_range_pct)),
+    detail('High-Zone Miss',`${n(acc.upper_zone_miss_points,2)} pts Â· ${n(acc.upper_zone_miss_h4_atr,2)} H4 ATR`),
+    detail('Low-Zone Miss',`${n(acc.lower_zone_miss_points,2)} pts Â· ${n(acc.lower_zone_miss_h4_atr,2)} H4 ATR`),
+    detail('High Miss / Weekly Range',acc.upper_zone_miss_weekly_range_pct===null||acc.upper_zone_miss_weekly_range_pct===undefined?'â€”':pct(acc.upper_zone_miss_weekly_range_pct)),
+    detail('Low Miss / Weekly Range',acc.lower_zone_miss_weekly_range_pct===null||acc.lower_zone_miss_weekly_range_pct===undefined?'â€”':pct(acc.lower_zone_miss_weekly_range_pct)),
     detail('Upper Zone Hit',acc.upper_zone_hit===null||acc.upper_zone_hit===undefined?'Pending':badge(acc.upper_zone_hit?'YES':'NO',acc.upper_zone_hit?'good':'bad')),
     detail('Lower Zone Hit',acc.lower_zone_hit===null||acc.lower_zone_hit===undefined?'Pending':badge(acc.lower_zone_hit?'YES':'NO',acc.lower_zone_hit?'good':'bad'))
   ].join('');
   const smap=reportMap.scenario_map||{};
   const scenarios=[smap.primary,smap.direct_continuation,smap.failure_route].filter(Boolean);
-  $('weeklyScenarioMap').innerHTML=scenarios.map((s,i)=>`<div class="scenario-card ${i===0?'primary-scenario':''}"><strong>${esc(s.name||'SCENARIO')}</strong><span>${(s.steps||[]).map(esc).join(' → ')}</span></div>`).join('')||'<span class="muted">No scenario map</span>';
+  $('weeklyScenarioMap').innerHTML=scenarios.map((s,i)=>`<div class="scenario-card ${i===0?'primary-scenario':''}"><strong>${esc(s.name||'SCENARIO')}</strong><span>${(s.steps||[]).map(esc).join(' â†’ ')}</span></div>`).join('')||'<span class="muted">No scenario map</span>';
   const levelRows=(reportMap.level_roles||[]).slice().sort((a,b)=>(a.distance_from_cutoff??999999)-(b.distance_from_cutoff??999999)).slice(0,12);
   renderTable($('weeklyLevelTable'),levelRows,[
     {key:'center',label:'Level',fmt:v=>n(v,2),className:'num'},
@@ -262,7 +267,7 @@ async function loadWeekly(){
     {key:'original_role',label:'Market Role'},
     {key:'lower',label:'Lower',fmt:v=>n(v,2),className:'num'},
     {key:'upper',label:'Upper',fmt:v=>n(v,2),className:'num'},
-    {key:'is_regime_control',label:'Control',fmt:v=>Number(v)===1?badge('YES','warn'):'—'}
+    {key:'is_regime_control',label:'Control',fmt:v=>Number(v)===1?badge('YES','warn'):'â€”'}
   ]);
   const sm=analysis.summary||{};
   $('weeklyEngineCards').innerHTML=[
@@ -282,7 +287,7 @@ async function loadWeekly(){
     {key:'actual_low',label:'Actual Low',fmt:v=>n(v,2),className:'num'},
     {key:'actual_low_time',label:'Low Time',fmt:v=>shortT(v)},
     {key:'actual_close',label:'Close',fmt:v=>n(v,2),className:'num'},
-    {key:'side_aligned',label:'Aligned',fmt:v=>v===null||v===undefined?'—':badge(bool(v),v?'good':'bad')}
+    {key:'side_aligned',label:'Aligned',fmt:v=>v===null||v===undefined?'â€”':badge(bool(v),v?'good':'bad')}
   ];
   renderTable($('weeklyTable'),data,cols);
 }
@@ -301,6 +306,7 @@ async function loadMeta(){
   sel.innerHTML=journeyDates.map(d=>`<option value="${esc(d)}">${esc(d)}</option>`).join('');
   const preferredJourneyDate=(state.meta.forecast_dates||[])[0]||state.meta.latest_daily_date||'';
   if(preferredJourneyDate && [...sel.options].some(o=>o.value===preferredJourneyDate)) sel.value=preferredJourneyDate;
+  if($('researchDate')){ $('researchDate').innerHTML=journeyDates.map(d=>`<option value="${esc(d)}">${esc(d)}</option>`).join(''); if(preferredJourneyDate) $('researchDate').value=preferredJourneyDate; }
 }
 
 function forecastStatusKind(v){
@@ -309,6 +315,40 @@ function forecastStatusKind(v){
   if(x.includes('FAILED')||x.includes('CONTRADICTED')) return 'bad';
   return 'warn';
 }
+function regimeScenario(regime,phase=''){
+  if(regime==='SWEEP_REJECT_BALANCE') return ['Upper sweep + rejection â†’ SELL toward equilibrium','Lower sweep + reclaim â†’ BUY toward equilibrium','Accepted edge break â†’ TRANSITION / expansion ignition'];
+  if(regime==='ACCEPTANCE_EXPANSION') return ['Accepted break holds â†’ continuation / retest','Failed acceptance â†’ TRANSITION','Execute only when an RC1 validated trigger qualifies'];
+  if(regime==='TRANSITION') return [phase==='BALANCE_FORMING'?'Balance forming â†’ WAIT for edge evidence':'Old regime losing authority â†’ no unconditional direction','Validated transition trigger â†’ shadow execution','Acceptance/rejection decides next master regime'];
+  if(regime==='TREND_CONTINUATION') return ['Inherited trend remains intact','RC1 has no >90% validated execution rule for this regime','Execution authority = NO_SIGNAL'];
+  return ['No research regime available'];
+}
+function scenarioHtml(regime,phase=''){
+  return regimeScenario(regime,phase).map((x,i)=>`<div class="scenario-card ${i===0?'primary-scenario':''}"><strong>${i===0?'PRIMARY':'BRANCH '+(i+1)}</strong><span>${esc(x)}</span></div>`).join('');
+}
+async function loadResearch(){
+  const date=$('researchDate')?.value||'';
+  const [p,history]=await Promise.all([api(`/api/research-rc1${date?`?date=${encodeURIComponent(date)}`:''}`),api('/api/research-regimes?limit=120')]);
+  const r=p.regime||{}, m=p.meta||{}, f=p.forward||{}, mon=p.monitor||[], bt=p.backtest||[], sh=p.shadow_signals||[];
+  $('researchState').className='forecast-state '+(r.regime==='TRANSITION'?'warn':'good');
+  $('researchState').innerHTML=`<strong>${esc(r.regime||'â€”')}</strong><span>${esc(r.phase||'')} Â· ${esc(m.research_status||'â€”')} Â· ${esc(m.execution_mode||'SHADOW')}</span>`;
+  $('researchHero').innerHTML=[metric('Master Regime',r.regime||'â€”',`as of ${r.trading_date||'â€”'}`,'info'),metric('Structural Event',r.last_struct_type||'â€”',`${r.last_struct_dir||'â€”'} Â· age ${n(r.days_since_struct,0)}`,'info'),metric('RC1 Version',m.research_version||'â€”',m.research_status||'â€”','good'),metric('Forward Trades',f.resolved??0,`${f.wins??0}W / ${f.losses??0}L of ${f.target??100}`,'info'),metric('Forward WR',f.win_rate==null?'Pending':pct(100*f.win_rate),'Fresh trades only',f.win_rate==null?'warn':f.win_rate>=.90?'good':'bad'),metric('Rule Changes',f.rules_changed??0,'Must remain zero','good')].join('');
+  $('researchScenario').innerHTML=scenarioHtml(r.regime,r.phase);
+  $('researchForward').innerHTML=[detail('Forward Start',esc(m.forward_start||'â€”')),detail('Execution Mode',badge(m.execution_mode||'SHADOW','warn')),detail('Target Trades',esc(f.target??100)),detail('Resolved',esc(f.resolved??0)),detail('Wins / Losses',esc(`${f.wins??0} / ${f.losses??0}`)),detail('Trend Continuation',esc(m.trend_continuation_policy||'NO_VALIDATED_SIGNAL'))].join('');
+  renderTable($('researchMonitorTable'),mon,[{key:'grade',label:'Grade',fmt:v=>badge(v,v==='A'?'good':'warn')},{key:'rule_id',label:'Rule'},{key:'required_regime',label:'Required Regime'},{key:'side',label:'Side',fmt:v=>badge(v)},{key:'status',label:'State',fmt:v=>badge(v,v==='QUALIFIED'?'good':v==='CONTEXT_BLOCKED'?'bad':'info')},{key:'validation_rate',label:'Val WR',fmt:v=>pct(100*v),className:'num'},{key:'validation_support',label:'Val N',fmt:v=>n(v,0),className:'num'},{key:'config',label:'TP/SL/Hold'},{key:'stability_margin',label:'Stability',fmt:v=>pct(100*v),className:'num'}]);
+  renderTable($('researchBacktestTable'),bt,[{key:'period',label:'Period'},{key:'trades',label:'Trades',fmt:v=>n(v,0),className:'num'},{key:'win_rate',label:'WR',fmt:v=>pct(100*v),className:'num'},{key:'trades_per_week',label:'Trades/Wk',fmt:v=>n(v,2),className:'num'},{key:'net_r',label:'Net R',fmt:v=>n(v,2),className:'num'}]);
+  renderTable($('researchShadowTable'),sh,[{key:'signal_time',label:'Signal',fmt:v=>shortT(v)},{key:'grade',label:'Grade',fmt:v=>badge(v,v==='A'?'good':'warn')},{key:'rule_id',label:'Rule'},{key:'side',label:'Side',fmt:v=>badge(v)},{key:'status',label:'Status',fmt:v=>badge(v,v==='CLOSED_WIN'?'good':v==='CLOSED_LOSS'||v==='EXPIRED_LOSS'?'bad':'wait')},{key:'entry_price',label:'Entry',fmt:v=>n(v,2),className:'num'},{key:'tp_price',label:'TP',fmt:v=>n(v,2),className:'num'},{key:'sl_price',label:'SL',fmt:v=>n(v,2),className:'num'},{key:'result',label:'Result',fmt:v=>v?badge(v,v==='WIN'?'good':'bad'):'â€”'}]);
+  renderTable($('researchRegimeTable'),history,[{key:'trading_date',label:'Date'},{key:'regime',label:'Regime',fmt:v=>badge(v,'info')},{key:'phase',label:'Phase'},{key:'last_struct_type',label:'Last Event'},{key:'last_struct_dir',label:'Dir'},{key:'days_since_struct',label:'Age',fmt:v=>n(v,0),className:'num'},{key:'d1_eff10',label:'D1 Eff10',fmt:v=>n(v,3),className:'num'}]);
+}
+
+function renderJourneyResearch(p){
+  const r=p.regime||{}, m=p.meta||{}, mon=p.monitor||[]; const qualified=mon.filter(x=>x.status==='QUALIFIED');
+  $('journeyResearchState').className='forecast-state '+(qualified.length?'good':r.regime==='TRANSITION'?'warn':'info');
+  $('journeyResearchState').innerHTML=`<strong>${esc(r.regime||'â€”')}</strong><span>${qualified.length?qualified.length+' RC1 setup(s) QUALIFIED':'Validated execution: WAIT / NO SIGNAL'} Â· ${esc(m.research_version||'RC1')}</span>`;
+  $('journeyResearchCards').innerHTML=[metric('Master Regime',r.regime||'â€”',r.phase||'','info'),metric('Last Structural Event',r.last_struct_type||'â€”',`${r.last_struct_dir||'â€”'} Â· age ${n(r.days_since_struct,0)}`,'info'),metric('Validated Setups',qualified.length,qualified.length?'Execution authority active':'Wait for trigger',qualified.length?'good':'warn'),metric('Execution Mode',m.execution_mode||'SHADOW','Forward validation only','warn'),metric('Legacy Forecast','COMPARISON ONLY','No execution authority','info'),metric('Trend Continuation',r.regime==='TREND_CONTINUATION'?'NO_SIGNAL':'N/A','No >90% validated rule','warn')].join('');
+  $('journeyResearchScenario').innerHTML=scenarioHtml(r.regime,r.phase);
+  $('journeyResearchExecution').innerHTML=[detail('Research Version',esc(m.research_version||'â€”')),detail('Status',esc(m.research_status||'â€”')),detail('Qualified Rules',esc(qualified.map(x=>x.rule_id).join(', ')||'NONE')),detail('Execution Authority',qualified.length?badge('RC1 QUALIFIED','good'):badge('WAIT','warn')),detail('Forward Start',esc(m.forward_start||'â€”')),detail('Rule Changes',esc((p.forward||{}).rules_changed??0))].join('');
+}
+
 function renderJourneyForecast(payload){
   const f=payload.forecast||{}, a=payload.actual||{}, v=payload.validation||{}, b=payload.daily_bias||{}, hits=payload.rule_hits||[];
   if(!f.forecast_date){
@@ -318,30 +358,30 @@ function renderJourneyForecast(payload){
   }
   const status=v.forecast_state||'FROZEN_UNTESTED', kind=forecastStatusKind(status);
   $('journeyForecastState').className=`forecast-state ${kind}`;
-  $('journeyForecastState').innerHTML=`<strong>${esc(f.statistical_direction||'—')} ${esc(f.direction_grade||'')}</strong><span>${esc(f.route_prediction||'—')} → ${esc(f.path_prediction||'—')} · ${esc(f.forecast_relationship||'—')} · ${esc(status)}</span>`;
+  $('journeyForecastState').innerHTML=`<strong>${esc(f.statistical_direction||'â€”')} ${esc(f.direction_grade||'')}</strong><span>${esc(f.route_prediction||'â€”')} â†’ ${esc(f.path_prediction||'â€”')} Â· ${esc(f.forecast_relationship||'â€”')} Â· ${esc(status)}</span>`;
   $('journeyForecastCards').innerHTML=[
-    metric('Frozen Direction',f.statistical_direction||'—',`${f.direction_grade||'—'} · ${f.buy_votes??0}/${f.sell_votes??0} BUY/SELL`,f.statistical_direction==='BUY'?'good':f.statistical_direction==='SELL'?'bad':'warn'),
-    metric('Frozen Route',f.route_prediction||'—',f.path_prediction||'—','info'),
-    metric('Weekly Bias',f.weekly_side||'—',f.forecast_relationship||'—',f.weekly_side==='SELL'?'bad':'good'),
-    metric('Preferred Turn',`${n(f.preferred_turn_low,2)} – ${n(f.preferred_turn_high,2)}`,'Frozen zone','info'),
-    metric('Recovery Target 1',`${n(f.recovery_target1_low,2)} – ${n(f.recovery_target1_high,2)}`,'Frozen objective','info'),
-    metric('Forecast State',status,v.direction_result||'—',kind)
+    metric('Frozen Direction',f.statistical_direction||'â€”',`${f.direction_grade||'â€”'} Â· ${f.buy_votes??0}/${f.sell_votes??0} BUY/SELL`,f.statistical_direction==='BUY'?'good':f.statistical_direction==='SELL'?'bad':'warn'),
+    metric('Frozen Route',f.route_prediction||'â€”',f.path_prediction||'â€”','info'),
+    metric('Weekly Bias',f.weekly_side||'â€”',f.forecast_relationship||'â€”',f.weekly_side==='SELL'?'bad':'good'),
+    metric('Preferred Turn',`${n(f.preferred_turn_low,2)} â€“ ${n(f.preferred_turn_high,2)}`,'Frozen zone','info'),
+    metric('Recovery Target 1',`${n(f.recovery_target1_low,2)} â€“ ${n(f.recovery_target1_high,2)}`,'Frozen objective','info'),
+    metric('Forecast State',status,v.direction_result||'â€”',kind)
   ].join('');
   $('journeyForecastGrid').innerHTML=[
     detail('Forecast Date',esc(f.forecast_date)),detail('Freeze Time',esc(t(f.freeze_time))),
     detail('Source Completed Day',esc(f.source_completed_date)),detail('Freeze Mode',esc(f.freeze_mode)),
     detail('Rule Version',esc(f.rule_version)),detail('Daily Pivot',esc(n(f.daily_pivot,2))),
-    detail('S1 / S2',esc(`${n(f.s1,2)} / ${n(f.s2,2)}`)),detail('Extension Zone',esc(`${n(f.extension_low,2)} – ${n(f.extension_high,2)}`)),
-    detail('Recovery Target 2',esc(n(f.recovery_target2,2))),detail('Stretch Recovery',esc(`${n(f.stretch_target_low,2)} – ${n(f.stretch_target_high,2)}`)),
+    detail('S1 / S2',esc(`${n(f.s1,2)} / ${n(f.s2,2)}`)),detail('Extension Zone',esc(`${n(f.extension_low,2)} â€“ ${n(f.extension_high,2)}`)),
+    detail('Recovery Target 2',esc(n(f.recovery_target2,2))),detail('Stretch Recovery',esc(`${n(f.stretch_target_low,2)} â€“ ${n(f.stretch_target_high,2)}`)),
     detail('Invalidation 1',esc(n(f.invalidation_level1,2))),detail('Invalidation 2',esc(n(f.invalidation_level2,2)))
   ].join('');
   $('journeyValidationGrid').innerHTML=[
-    detail('Forecast State',badge(status,kind)),detail('Direction Result',esc(v.direction_result||'—')),
-    detail('Route State',esc(v.route_state||'—')),detail('Route Result',esc(v.route_result||'—')),
-    detail('Path Result',esc(v.path_result||'—')),detail('Weekly Result',esc(v.weekly_direction_result||'—')),
-    detail('Actual / Current Direction',badge(a.direction||'—')),detail('Actual / Current Route',esc(a.route||'—')),
+    detail('Forecast State',badge(status,kind)),detail('Direction Result',esc(v.direction_result||'â€”')),
+    detail('Route State',esc(v.route_state||'â€”')),detail('Route Result',esc(v.route_result||'â€”')),
+    detail('Path Result',esc(v.path_result||'â€”')),detail('Weekly Result',esc(v.weekly_direction_result||'â€”')),
+    detail('Actual / Current Direction',badge(a.direction||'â€”')),detail('Actual / Current Route',esc(a.route||'â€”')),
     detail('Open / Close',esc(`${n(a.open,2)} / ${n(a.close,2)}`)),detail('High / Low',esc(`${n(a.high,2)} / ${n(a.low,2)}`)),
-    detail('Daily Bias',badge(b.current_daily_direction||'—')),detail('Daily State / DBS',esc(`${b.current_daily_state||'—'} / ${n(b.dbs,1)}`))
+    detail('Daily Bias',badge(b.current_daily_direction||'â€”')),detail('Daily State / DBS',esc(`${b.current_daily_state||'â€”'} / ${n(b.dbs,1)}`))
   ].join('');
   $('journeyRuleCount').textContent=`${hits.length} activated rules`;
   renderTable($('journeyForecastRuleTable'),hits,[
@@ -354,10 +394,12 @@ function renderJourneyForecast(payload){
 
 async function loadJourney(){
   const date=$('journeyDate').value, grade=$('journeyGrade').value, view=$('journeyView')?.value||'current';
-  const [data,forecastPayload]=await Promise.all([
+  const [data,forecastPayload,researchPayload]=await Promise.all([
     api(`/api/journey?date=${encodeURIComponent(date)}&grade=${encodeURIComponent(grade)}&view=${encodeURIComponent(view)}&limit=1000`),
-    api(`/api/daily-forecast?date=${encodeURIComponent(date)}`)
+    api(`/api/daily-forecast?date=${encodeURIComponent(date)}`),
+    api(`/api/research-rc1?date=${encodeURIComponent(date)}`)
   ]);
+  renderJourneyResearch(researchPayload);
   renderJourneyForecast(forecastPayload);
   const f=forecastPayload.forecast||{}, v=forecastPayload.validation||{};
   const annotated=data.map(r=>({...r,
@@ -377,7 +419,7 @@ async function loadJourney(){
     {key:'h1_score',label:'H1',fmt:v=>n(v,1),className:'num'}, {key:'h4_score',label:'H4',fmt:v=>n(v,1),className:'num'},
     {key:'current_daily_direction',label:'Daily',fmt:v=>badge(v)}, {key:'dbs',label:'DBS',fmt:v=>n(v,1),className:'num'},
     {key:'verdict',label:'Verdict',fmt:v=>badge(v,v==='ENTRY_ALLOWED'?'good':v==='HARD_BLOCK'?'bad':'wait')},
-    {key:'rule_source',label:'Rule Source',fmt:v=>v?badge(v,'info'):'—'}
+    {key:'rule_source',label:'Rule Source',fmt:v=>v?badge(v,'info'):'â€”'}
   ];
   renderTable($('journeyTable'),annotated,cols,{click:r=>{ $('forensicsId').value=r.evaluation_id; showTab('forensics'); loadForensics(); }});
 }
@@ -404,25 +446,25 @@ async function loadForensics(){
   $('forensicsId').value=r.evaluation_id;
   $('forensicsHeadline').innerHTML=[
     metric('Evaluation',shortT(r.evaluation_time),r.evaluation_id,'info'),
-    metric('Direction',r.direction||'—',r.logical_entry_leg_id||'',r.direction==='SELL'?'bad':'good'),
-    metric('Grade',r.grade||'—',`SQS ${n(r.sqs,1)}`,r.grade==='A'||r.grade==='A_PLUS'?'good':'warn'),
-    metric('Verdict',r.verdict||'—','',r.verdict==='ENTRY_ALLOWED'?'good':r.verdict==='HARD_BLOCK'?'bad':'warn'),
+    metric('Direction',r.direction||'â€”',r.logical_entry_leg_id||'',r.direction==='SELL'?'bad':'good'),
+    metric('Grade',r.grade||'â€”',`SQS ${n(r.sqs,1)}`,r.grade==='A'||r.grade==='A_PLUS'?'good':'warn'),
+    metric('Verdict',r.verdict||'â€”','',r.verdict==='ENTRY_ALLOWED'?'good':r.verdict==='HARD_BLOCK'?'bad':'warn'),
     metric('Rule Source',r.rule_source||'ORIGINAL',r.engine_view||view,'info'),
     metric('Room',`${n(r.room_m15_atr,2)} ATR`,'M15 room remaining','info'),
     metric('Leg Consumed',pct(r.leg_consumed_pct),'No-chase context',Number(r.leg_consumed_pct)<65?'good':'warn')
   ].join('');
   const chain=r.execution_chain||[];
-  $('executionChain').innerHTML=chain.map((step,i)=>`<div class="chain-step"><small>${esc(step.stage||'STAGE')}</small><strong>${esc(step.status||'—')}</strong><span>${step.score===null||step.score===undefined?'':`Score ${n(step.score,1)}`}${step.room_m15_atr===null||step.room_m15_atr===undefined?'':` · Room ${n(step.room_m15_atr,2)} ATR`}${step.leg_consumed_pct===null||step.leg_consumed_pct===undefined?'':` · Consumed ${pct(step.leg_consumed_pct)}`}</span></div>${i<chain.length-1?'<div class="chain-arrow">→</div>':''}`).join('')||'<span class="muted">No execution chain available</span>';
+  $('executionChain').innerHTML=chain.map((step,i)=>`<div class="chain-step"><small>${esc(step.stage||'STAGE')}</small><strong>${esc(step.status||'â€”')}</strong><span>${step.score===null||step.score===undefined?'':`Score ${n(step.score,1)}`}${step.room_m15_atr===null||step.room_m15_atr===undefined?'':` Â· Room ${n(step.room_m15_atr,2)} ATR`}${step.leg_consumed_pct===null||step.leg_consumed_pct===undefined?'':` Â· Consumed ${pct(step.leg_consumed_pct)}`}</span></div>${i<chain.length-1?'<div class="chain-arrow">â†’</div>':''}`).join('')||'<span class="muted">No execution chain available</span>';
   $('stageScores').innerHTML=[
     detail('Stage 1 First Contact',esc(n(r.stage1_first_contact_score,1))),detail('Stage 1 Current',esc(n(r.stage1_current_score,1))),
-    detail('Stage 2',esc(n(r.stage2_score,1))),detail('H4 / Stage 3',esc(`${n(r.h4_score,1)} · ${r.h4_pass?'PASS':'WAIT'}`)),
-    detail('H1 / Stage 4',esc(`${n(r.h1_score,1)} · ${r.h1_pass?'PASS':'WAIT'}`)),detail('M30',esc(n(r.m30_score,1))),
+    detail('Stage 2',esc(n(r.stage2_score,1))),detail('H4 / Stage 3',esc(`${n(r.h4_score,1)} Â· ${r.h4_pass?'PASS':'WAIT'}`)),
+    detail('H1 / Stage 4',esc(`${n(r.h1_score,1)} Â· ${r.h1_pass?'PASS':'WAIT'}`)),detail('M30',esc(n(r.m30_score,1))),
     detail('M15',esc(n(r.m15_score,1))),detail('Stage 5',esc(n(r.stage5_score,1))),
     detail('Stage 6',esc(n(r.stage6_score,1))),detail('SQS',esc(n(r.sqs,1)))
   ].join('');
   $('objectiveContext').innerHTML=[
-    detail('Objective Price',esc(n(r.objective_price,2))),detail('Objective Type',esc(r.objective_type||'—')),
-    detail('Objective TF',esc(r.objective_timeframe||'—')),detail('Objective Distance',esc(n(r.objective_distance_price,2))),
+    detail('Objective Price',esc(n(r.objective_price,2))),detail('Objective Type',esc(r.objective_type||'â€”')),
+    detail('Objective TF',esc(r.objective_timeframe||'â€”')),detail('Objective Distance',esc(n(r.objective_distance_price,2))),
     detail('Objective ATR',esc(n(r.objective_distance_m15_atr,2))),detail('Daily Direction',badge(r.current_daily_direction)),
     detail('Daily State',badge(r.current_daily_state)),detail('DBS',esc(n(r.dbs,2))),
     detail('Pivot',esc(n(r.daily_pivot,2))),detail('R1 / S1',esc(`${n(r.r1,2)} / ${n(r.s1,2)}`))
@@ -458,7 +500,7 @@ async function loadOutcomes(){
     {key:'generation',label:'Gen',fmt:v=>n(v,0),className:'num'}, {key:'entry_family',label:'Entry Family'},
     {key:'status',label:'Outcome',fmt:v=>badge(v,v==='OBJECTIVE_HIT'?'good':v==='UNRESOLVED'?'wait':'bad')},
     {key:'objective_event_time',label:'Objective Time',fmt:v=>shortT(v)}, {key:'observation_cutoff',label:'Observed To',fmt:v=>shortT(v)},
-    {key:'rule_source',label:'Rule Source',fmt:v=>v?badge(v,'info'):'—'},
+    {key:'rule_source',label:'Rule Source',fmt:v=>v?badge(v,'info'):'â€”'},
     {key:'logical_thesis_id',label:'Thesis'}, {key:'logical_entry_leg_id',label:'EntryLeg'}
   ]);
 }
@@ -469,7 +511,7 @@ async function loadOptimizer(){
   $('optimizerCards').innerHTML=[
     metric('Executions',o.execution_count??0,'Current observation set','info'), metric('Resolved',o.resolved_count??0,'Terminal','good'),
     metric('Unresolved',o.unresolved_count??0,'Pending','warn'), metric('Objective Hit',o.objective_hit_count??0,'Observed outcomes','good'),
-    metric('Distinct Theses',o.distinct_theses??0,'Sample diversity','info'), metric('Recommendation',o.recommendation_status||'—','Advisory only','warn')
+    metric('Distinct Theses',o.distinct_theses??0,'Sample diversity','info'), metric('Recommendation',o.recommendation_status||'â€”','Advisory only','warn')
   ].join('');
   $('optimizerNote').textContent=o.recommendation_note||'No optimizer recommendation is persisted.';
 }
@@ -487,9 +529,10 @@ async function boot(){
   $('outcomesLoad')?.addEventListener('click',()=>safe('outcomes',loadOutcomes));
   $('optimizerLoad')?.addEventListener('click',()=>safe('optimizer',loadOptimizer));
   $('blockedLoad').addEventListener('click',()=>safe('blocked',loadBlocked));
+  $('researchLoad')?.addEventListener('click',()=>safe('research',loadResearch));
   $('overviewWeek').addEventListener('change',()=>{ if($('weeklyWeek')) $('weeklyWeek').value=$('overviewWeek').value; if($('blockedWeek')) $('blockedWeek').value=$('overviewWeek').value; });
   $('weeklyWeek').addEventListener('change',()=>{ if($('overviewWeek')) $('overviewWeek').value=$('weeklyWeek').value; if($('blockedWeek')) $('blockedWeek').value=$('weeklyWeek').value; });
-  $('journeyLoad').addEventListener('click',()=>safe('journey',loadJourney));
+  $('journeyLoad').addEventListener('click',()=>{ if($('researchDate')) $('researchDate').value=$('journeyDate').value; safe('journey',loadJourney); });
   $('journeyView')?.addEventListener('change',()=>safe('journey',loadJourney));
   $('forensicsLoad').addEventListener('click',()=>safe('forensics',loadForensics));
   $('forensicsView')?.addEventListener('change',()=>safe('forensics',loadForensics));
@@ -500,7 +543,7 @@ async function boot(){
 
   await safe('meta',loadMeta);
   await Promise.all([
-    safe('health',loadHealth), safe('overview',loadOverview), safe('weekly',loadWeekly), safe('blocked',loadBlocked),
+    safe('health',loadHealth), safe('overview',loadOverview), safe('weekly',loadWeekly), safe('blocked',loadBlocked), safe('research',loadResearch),
     safe('outcomes',loadOutcomes), safe('optimizer',loadOptimizer)
   ]);
   await safe('journey',loadJourney);

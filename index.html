@@ -24,6 +24,7 @@
     <button class="active" data-tab="overview">Overview</button>
     <button data-tab="weekly">Weekly Forecast & Actual</button>
     <button data-tab="journey">Daily Journey</button>
+    <button data-tab="research">Regime & RC1</button>
     <button data-tab="blocked">Blocked Setups</button>
     <button data-tab="forensics">Bar Analysis / Forensics</button>
     <button data-tab="outcomes">Observations & Outcomes</button>
@@ -54,6 +55,7 @@
     <section id="tab-weekly" class="tab-page">
       <div class="section-title"><div><small>FROZEN WEEKEND FORECAST</small><h2>Weekly Forecast & Actual</h2></div><div class="section-actions"><label>Week <select id="weeklyWeek"></select></label><label>View <select id="weeklyView"><option value="current">Current Engine</option><option value="original">Original Historical</option></select></label><button id="weeklyLoad" class="primary">Load Week</button></div></div>
       <div id="weeklyHero" class="metric-grid four"></div>
+      <div id="weeklyResearchCards" class="metric-grid six"></div>
       <div id="weeklyAnalyticsCards" class="metric-grid six"></div>
       <div class="two-col">
         <div class="panel"><div class="panel-head"><h3>Report-Style 10-Point Score</h3><span class="muted">Machine-derived · deterministic</span></div><div id="weeklyScoreGrid" class="detail-grid"></div></div>
@@ -68,6 +70,22 @@
       <div class="panel table-panel"><div class="panel-head"><h3>Forecast History</h3><span class="muted">Forecast remains immutable; actual is derived from later M15 bars</span></div><div class="table-wrap"><table id="weeklyTable"></table></div></div>
     </section>
 
+    <section id="tab-research" class="tab-page">
+      <div class="section-title"><div><small>2020–2026 RESEARCH AUTHORITY</small><h2>Regime & RC1 Validated Execution</h2></div><div class="section-actions"><label>Date <select id="researchDate"></select></label><button id="researchLoad" class="primary">Load State</button></div></div>
+      <div id="researchState" class="forecast-state"></div>
+      <div id="researchHero" class="metric-grid six"></div>
+      <div class="two-col">
+        <div class="panel"><div class="panel-head"><h3>Regime Scenario Map</h3><span class="muted">Forecast map · not an unconditional direction claim</span></div><div id="researchScenario" class="scenario-stack"></div></div>
+        <div class="panel"><div class="panel-head"><h3>Forward Validation</h3><span class="muted">Locked RC1 · zero rule changes</span></div><div id="researchForward" class="detail-grid"></div></div>
+      </div>
+      <div class="panel table-panel"><div class="panel-head"><h3>Validated Setup Monitor</h3><span class="muted">Regime → trigger → robust context → shadow execution</span></div><div class="table-wrap"><table id="researchMonitorTable"></table></div></div>
+      <div class="two-col">
+        <div class="panel table-panel"><div class="panel-head"><h3>2020–2026 Backtest</h3><span class="muted">Hybrid stability-envelope library</span></div><div class="table-wrap"><table id="researchBacktestTable"></table></div></div>
+        <div class="panel table-panel"><div class="panel-head"><h3>Forward Shadow Signals</h3><span class="muted">Forward start 16-Sep-2026</span></div><div class="table-wrap"><table id="researchShadowTable"></table></div></div>
+      </div>
+      <div class="panel table-panel"><div class="panel-head"><h3>Regime Journey</h3><span class="muted">Four master regimes only</span></div><div class="table-wrap"><table id="researchRegimeTable"></table></div></div>
+    </section>
+
     <section id="tab-journey" class="tab-page">
       <div class="section-title"><div><small>CAUSAL EVALUATION STREAM</small><h2>Daily Journey</h2></div></div>
       <div class="filters">
@@ -76,13 +94,18 @@
         <label>View <select id="journeyView"><option value="current">Current Engine</option><option value="original">Original Historical</option></select></label>
         <button id="journeyLoad" class="primary">Load Journey</button>
       </div>
-      <div id="journeyForecastState" class="forecast-state"></div>
-      <div id="journeyForecastCards" class="metric-grid six"></div>
+      <div id="journeyResearchState" class="forecast-state"></div>
+      <div id="journeyResearchCards" class="metric-grid six"></div>
       <div class="two-col">
-        <div class="panel"><div class="panel-head"><h3>Frozen Daily Prediction</h3><span class="muted">Immutable · previous completed day only</span></div><div id="journeyForecastGrid" class="detail-grid"></div></div>
-        <div class="panel"><div class="panel-head"><h3>Prediction vs Actual</h3><span class="muted">Intraday status updates; freeze never changes</span></div><div id="journeyValidationGrid" class="detail-grid"></div></div>
+        <div class="panel"><div class="panel-head"><h3>RC1 Daily Scenario Map</h3><span class="muted">Authoritative regime context</span></div><div id="journeyResearchScenario" class="scenario-stack"></div></div>
+        <div class="panel"><div class="panel-head"><h3>Validated Execution State</h3><span class="muted">Only qualified RC1 setups have execution authority</span></div><div id="journeyResearchExecution" class="detail-grid"></div></div>
       </div>
-      <div class="panel table-panel"><div class="panel-head"><h3>Activated Frozen Rules</h3><span id="journeyRuleCount" class="muted"></span></div><div class="table-wrap forecast-rule-wrap"><table id="journeyForecastRuleTable"></table></div></div>
+      <div class="panel"><div class="panel-head"><h3>Legacy Daily Statistical Forecast</h3><span class="muted">Comparison only · no execution authority</span></div><div id="journeyForecastState" class="forecast-state"></div><div id="journeyForecastCards" class="metric-grid six"></div></div>
+      <div class="two-col">
+        <div class="panel"><div class="panel-head"><h3>Legacy Frozen Prediction</h3><span class="muted">Jun–Sep V1 research only</span></div><div id="journeyForecastGrid" class="detail-grid"></div></div>
+        <div class="panel"><div class="panel-head"><h3>Legacy Prediction vs Actual</h3><span class="muted">Retained for comparison</span></div><div id="journeyValidationGrid" class="detail-grid"></div></div>
+      </div>
+      <div class="panel table-panel"><div class="panel-head"><h3>Legacy Activated Rules</h3><span id="journeyRuleCount" class="muted"></span></div><div class="table-wrap forecast-rule-wrap"><table id="journeyForecastRuleTable"></table></div></div>
       <div class="panel table-panel"><div class="panel-head"><h3>Journey Evaluations</h3><span id="journeyCount" class="muted"></span></div><div class="table-wrap"><table id="journeyTable"></table></div></div>
     </section>
 
@@ -134,7 +157,7 @@
       <div class="panel"><div class="callout" id="optimizerNote"></div></div>
     </section>
   </main>
-  <footer>WLW Dashboard V1 · Read-only serving layer · SQLite schema 16</footer>
+  <footer>WLW Dashboard · RC1 regime research authority · Read-only serving layer · SQLite schema 16</footer>
   <script src="/assets/app.js"></script>
 </body>
 </html>
