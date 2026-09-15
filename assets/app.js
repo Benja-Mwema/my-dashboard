@@ -149,6 +149,8 @@ async function loadOverview(){
     api(`/api/engine-entries?cutoff_date=${encodeURIComponent(week)}&view=${encodeURIComponent(view)}`),
     api('/api/analytics-summary')
   ]); state.overview=o;
+  const research=o.forecast_week_start?await api(`/api/research-rc1?date=${encodeURIComponent(o.forecast_week_start)}`):{};
+  const rr=research.regime||{}, rf=research.forward||{}, rm=research.meta||{};
   const ref=aggregate.report_reference||{};
   $('aggregateAnalyticsCards').innerHTML=[
     metric('Completed Weeks',aggregate.completed_weeks??0,'SQLite analytical coverage','info'),
@@ -182,11 +184,11 @@ async function loadOverview(){
   $('overviewEntryLabel').textContent=view==='current'?'Current Engine Replay':'Original Historical';
   renderTable($('overviewEntryTable'),entries,entryCols());
   $('overviewCards').innerHTML=[
-    metric('Weekly Bias',o.final_weekly_side||'â€”',`Freeze ${o.weekly_cutoff_date||'â€”'}`,o.final_weekly_side==='SELL'?'bad':'good'),
-    metric('Structural State',o.structural_state||'â€”',`Confidence ${n(o.structural_confidence,0)}`,'info'),
-    metric('Monday Branch',o.active_branch||'â€”',`${o.monday_week_start_date||'â€”'} Â· ${o.activation_method||'â€”'}`,'info'),
-    metric('Daily Bias',o.current_daily_direction||'â€”',`DBS ${n(o.dbs,2)}`,o.current_daily_direction==='SELL'?'bad':o.current_daily_direction==='BUY'?'good':'warn'),
-    metric('Route Confidence',n(o.route_confidence,0),o.route_class||'â€”',o.route_confidence>=65?'good':o.route_confidence>=50?'warn':'bad'),
+    metric('RC1 Master Regime',rr.regime||'â€”',rr.phase||`Week start ${o.forecast_week_start||'â€”'}`,'info'),
+    metric('Weekly Map Bias',o.final_weekly_side||'â€”',`Context only · freeze ${o.weekly_cutoff_date||'â€”'}`,o.final_weekly_side==='SELL'?'bad':'good'),
+    metric('RC1 Execution',rr.regime==='TREND_CONTINUATION'?'NO_SIGNAL':'VALIDATED TRIGGER REQUIRED',rm.execution_mode||'SHADOW',rr.regime==='TREND_CONTINUATION'?'warn':'good'),
+    metric('Legacy Daily Bias',o.current_daily_direction||'â€”',`Context only · DBS ${n(o.dbs,2)}`,'warn'),
+    metric('Forward RC1',rf.resolved??0,rf.win_rate==null?'0/100 fresh trades':`${pct(100*rf.win_rate)} · ${rf.resolved}/100`,'info'),
     metric('Market Price',n(o.market_price,2),t(o.market_as_of),'info')
   ].join('');
   $('weeklyRangeLabel').textContent=`${o.forecast_week_start||'â€”'} â†’ ${o.forecast_week_end||'â€”'}`;
@@ -205,7 +207,7 @@ async function loadOverview(){
   ].join('');
   $('dailySummary').innerHTML=[
     detail('Trading Date',esc(o.daily_trading_date)),detail('Evaluation',esc(t(o.daily_evaluation_time))),
-    detail('Direction',badge(o.current_daily_direction)),detail('State',badge(o.current_daily_state)),
+    detail('Legacy Direction',badge(o.current_daily_direction)),detail('Legacy State',badge(o.current_daily_state)),
     detail('DBS',esc(n(o.dbs,2))),detail('Pivot',esc(n(o.daily_pivot,2)))
   ].join('');
 }
@@ -221,9 +223,10 @@ async function loadWeekly(){
   ]);
   state.weekly=data;
   const completed=selectedRows[0]||data[0]||{};
-  const researchWeek=week?await api(`/api/research-rc1?date=${encodeURIComponent(week)}`):{};
+  const researchDate=completed.forecast_week_start||week;
+  const researchWeek=researchDate?await api(`/api/research-rc1?date=${encodeURIComponent(researchDate)}`):{};
   const rr=researchWeek.regime||{}, rm=researchWeek.meta||{};
-  $('weeklyResearchCards').innerHTML=[metric('RC1 Master Regime',rr.regime||'â€”',`freeze ${week||'â€”'}`,'info'),metric('Regime Phase',rr.phase||'â€”',rr.last_struct_type?`${rr.last_struct_type} ${rr.last_struct_dir||''}`:'','info'),metric('Weekly Side',completed.final_weekly_side||'â€”','Bias only Â· not execution authority',completed.final_weekly_side==='SELL'?'bad':'good'),metric('Execution Authority',rr.regime==='TREND_CONTINUATION'?'NO_SIGNAL':'RC1 TRIGGER REQUIRED','Validated intraday only',rr.regime==='TREND_CONTINUATION'?'warn':'good'),metric('Research Version',rm.research_version||'â€”',rm.research_status||'â€”','info'),metric('Legacy Route Confidence',n(completed.route_confidence,0),'Context only Â· not probability','warn')].join('');
+  $('weeklyResearchCards').innerHTML=[metric('RC1 Master Regime',rr.regime||'â€”',`week-start freeze ${researchDate||'â€”'}`,'info'),metric('Regime Phase',rr.phase||'â€”',rr.last_struct_type?`${rr.last_struct_type} ${rr.last_struct_dir||''}`:'','info'),metric('Weekly Side',completed.final_weekly_side||'â€”','Bias only Â· not execution authority',completed.final_weekly_side==='SELL'?'bad':'good'),metric('Execution Authority',rr.regime==='TREND_CONTINUATION'?'NO_SIGNAL':'RC1 TRIGGER REQUIRED','Validated intraday only',rr.regime==='TREND_CONTINUATION'?'warn':'good'),metric('Research Version',rm.research_version||'â€”',rm.research_status||'â€”','info'),metric('Legacy Route Confidence',n(completed.route_confidence,0),'Context only Â· not probability','warn')].join('');
   const aligned=completed.side_aligned===null||completed.side_aligned===undefined?'PENDING':bool(completed.side_aligned);
   $('weeklyHero').innerHTML=[
     metric('Forecast Side',completed.final_weekly_side||'â€”',`${completed.forecast_week_start||'â€”'} â†’ ${completed.forecast_week_end||'â€”'}`,completed.final_weekly_side==='SELL'?'bad':'good'),
@@ -331,10 +334,10 @@ async function loadResearch(){
   const r=p.regime||{}, m=p.meta||{}, f=p.forward||{}, mon=p.monitor||[], bt=p.backtest||[], sh=p.shadow_signals||[];
   $('researchState').className='forecast-state '+(r.regime==='TRANSITION'?'warn':'good');
   $('researchState').innerHTML=`<strong>${esc(r.regime||'â€”')}</strong><span>${esc(r.phase||'')} Â· ${esc(m.research_status||'â€”')} Â· ${esc(m.execution_mode||'SHADOW')}</span>`;
-  $('researchHero').innerHTML=[metric('Master Regime',r.regime||'â€”',`as of ${r.trading_date||'â€”'}`,'info'),metric('Structural Event',r.last_struct_type||'â€”',`${r.last_struct_dir||'â€”'} Â· age ${n(r.days_since_struct,0)}`,'info'),metric('RC1 Version',m.research_version||'â€”',m.research_status||'â€”','good'),metric('Forward Trades',f.resolved??0,`${f.wins??0}W / ${f.losses??0}L of ${f.target??100}`,'info'),metric('Forward WR',f.win_rate==null?'Pending':pct(100*f.win_rate),'Fresh trades only',f.win_rate==null?'warn':f.win_rate>=.90?'good':'bad'),metric('Rule Changes',f.rules_changed??0,'Must remain zero','good')].join('');
+  $('researchHero').innerHTML=[metric('Master Regime',r.regime||'â€”',`as of ${r.trading_date||'â€”'}`,'info'),metric('Structural Event',r.last_struct_type||'â€”',`${r.last_struct_dir||'â€”'} Â· age ${n(r.days_since_struct,0)}`,'info'),metric('RC1 Version',m.research_version||'â€”',m.research_status||'â€”','good'),metric('Forward Trades',f.resolved??0,`${f.wins??0}W / ${f.losses??0}L of ${f.target??100}`,'info'),metric('Forward WR',f.win_rate==null?'Pending':pct(100*f.win_rate),'Fresh trades only',f.win_rate==null?'warn':f.win_rate>=.90?'good':'bad'),metric('Parity',m.parity_status||'—',`${m.parity_trades||'—'} trades · ${m.parity_regime_days||'—'} regimes`,m.parity_status==='PASS'?'good':'bad')].join('');
   $('researchScenario').innerHTML=scenarioHtml(r.regime,r.phase);
   $('researchForward').innerHTML=[detail('Forward Start',esc(m.forward_start||'â€”')),detail('Execution Mode',badge(m.execution_mode||'SHADOW','warn')),detail('Target Trades',esc(f.target??100)),detail('Resolved',esc(f.resolved??0)),detail('Wins / Losses',esc(`${f.wins??0} / ${f.losses??0}`)),detail('Trend Continuation',esc(m.trend_continuation_policy||'NO_VALIDATED_SIGNAL'))].join('');
-  renderTable($('researchMonitorTable'),mon,[{key:'grade',label:'Grade',fmt:v=>badge(v,v==='A'?'good':'warn')},{key:'rule_id',label:'Rule'},{key:'required_regime',label:'Required Regime'},{key:'side',label:'Side',fmt:v=>badge(v)},{key:'status',label:'State',fmt:v=>badge(v,v==='QUALIFIED'?'good':v==='CONTEXT_BLOCKED'?'bad':'info')},{key:'validation_rate',label:'Val WR',fmt:v=>pct(100*v),className:'num'},{key:'validation_support',label:'Val N',fmt:v=>n(v,0),className:'num'},{key:'config',label:'TP/SL/Hold'},{key:'stability_margin',label:'Stability',fmt:v=>pct(100*v),className:'num'}]);
+  renderTable($('researchMonitorTable'),mon,[{key:'grade',label:'Grade',fmt:v=>badge(v,v==='A'?'good':'warn')},{key:'risk',label:'Risk',fmt:(v,r)=>r.grade==='B'?'0.5x':'1.0x'},{key:'rule_id',label:'Rule'},{key:'required_regime',label:'Required Regime'},{key:'side',label:'Side',fmt:v=>badge(v)},{key:'status',label:'State',fmt:v=>badge(v,v==='QUALIFIED'?'good':v==='CONTEXT_BLOCKED'?'bad':'info')},{key:'validation_rate',label:'Val WR',fmt:v=>pct(100*v),className:'num'},{key:'validation_support',label:'Val N',fmt:v=>n(v,0),className:'num'},{key:'config',label:'TP/SL/Hold'},{key:'stability_margin',label:'Stability',fmt:v=>pct(100*v),className:'num'}]);
   renderTable($('researchBacktestTable'),bt,[{key:'period',label:'Period'},{key:'trades',label:'Trades',fmt:v=>n(v,0),className:'num'},{key:'win_rate',label:'WR',fmt:v=>pct(100*v),className:'num'},{key:'trades_per_week',label:'Trades/Wk',fmt:v=>n(v,2),className:'num'},{key:'net_r',label:'Net R',fmt:v=>n(v,2),className:'num'}]);
   renderTable($('researchShadowTable'),sh,[{key:'signal_time',label:'Signal',fmt:v=>shortT(v)},{key:'grade',label:'Grade',fmt:v=>badge(v,v==='A'?'good':'warn')},{key:'rule_id',label:'Rule'},{key:'side',label:'Side',fmt:v=>badge(v)},{key:'status',label:'Status',fmt:v=>badge(v,v==='CLOSED_WIN'?'good':v==='CLOSED_LOSS'||v==='EXPIRED_LOSS'?'bad':'wait')},{key:'entry_price',label:'Entry',fmt:v=>n(v,2),className:'num'},{key:'tp_price',label:'TP',fmt:v=>n(v,2),className:'num'},{key:'sl_price',label:'SL',fmt:v=>n(v,2),className:'num'},{key:'result',label:'Result',fmt:v=>v?badge(v,v==='WIN'?'good':'bad'):'â€”'}]);
   renderTable($('researchRegimeTable'),history,[{key:'trading_date',label:'Date'},{key:'regime',label:'Regime',fmt:v=>badge(v,'info')},{key:'phase',label:'Phase'},{key:'last_struct_type',label:'Last Event'},{key:'last_struct_dir',label:'Dir'},{key:'days_since_struct',label:'Age',fmt:v=>n(v,0),className:'num'},{key:'d1_eff10',label:'D1 Eff10',fmt:v=>n(v,3),className:'num'}]);
@@ -346,7 +349,7 @@ function renderJourneyResearch(p){
   $('journeyResearchState').innerHTML=`<strong>${esc(r.regime||'â€”')}</strong><span>${qualified.length?qualified.length+' RC1 setup(s) QUALIFIED':'Validated execution: WAIT / NO SIGNAL'} Â· ${esc(m.research_version||'RC1')}</span>`;
   $('journeyResearchCards').innerHTML=[metric('Master Regime',r.regime||'â€”',r.phase||'','info'),metric('Last Structural Event',r.last_struct_type||'â€”',`${r.last_struct_dir||'â€”'} Â· age ${n(r.days_since_struct,0)}`,'info'),metric('Validated Setups',qualified.length,qualified.length?'Execution authority active':'Wait for trigger',qualified.length?'good':'warn'),metric('Execution Mode',m.execution_mode||'SHADOW','Forward validation only','warn'),metric('Legacy Forecast','COMPARISON ONLY','No execution authority','info'),metric('Trend Continuation',r.regime==='TREND_CONTINUATION'?'NO_SIGNAL':'N/A','No >90% validated rule','warn')].join('');
   $('journeyResearchScenario').innerHTML=scenarioHtml(r.regime,r.phase);
-  $('journeyResearchExecution').innerHTML=[detail('Research Version',esc(m.research_version||'â€”')),detail('Status',esc(m.research_status||'â€”')),detail('Qualified Rules',esc(qualified.map(x=>x.rule_id).join(', ')||'NONE')),detail('Execution Authority',qualified.length?badge('RC1 QUALIFIED','good'):badge('WAIT','warn')),detail('Forward Start',esc(m.forward_start||'â€”')),detail('Rule Changes',esc((p.forward||{}).rules_changed??0))].join('');
+  $('journeyResearchExecution').innerHTML=[detail('Research Version',esc(m.research_version||'â€”')),detail('Status',esc(m.research_status||'â€”')),detail('Qualified Rules',esc(qualified.map(x=>x.rule_id).join(', ')||'NONE')),detail('Execution Authority',qualified.length?badge('RC1 QUALIFIED','good'):badge('WAIT','warn')),detail('Forward Start',esc(m.forward_start||'â€”')),detail('Rule Changes',esc((p.forward||{}).rules_changed??0)),detail('Parity',badge(m.parity_status||'—',m.parity_status==='PASS'?'good':'bad')),detail('Grade B Risk',esc(m.grade_b_risk||'0.5x_research_unit'))].join('');
 }
 
 function renderJourneyForecast(payload){
