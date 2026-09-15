@@ -229,7 +229,7 @@ async function loadWeekly(){
   $('weeklyResearchCards').innerHTML=[metric('RC1 Master Regime',rr.regime||'â€”',`week-start freeze ${researchDate||'â€”'}`,'info'),metric('Regime Phase',rr.phase||'â€”',rr.last_struct_type?`${rr.last_struct_type} ${rr.last_struct_dir||''}`:'','info'),metric('Weekly Side',completed.final_weekly_side||'â€”','Bias only Â· not execution authority',completed.final_weekly_side==='SELL'?'bad':'good'),metric('Execution Authority',rr.regime==='TREND_CONTINUATION'?'NO_SIGNAL':'RC1 TRIGGER REQUIRED','Validated intraday only',rr.regime==='TREND_CONTINUATION'?'warn':'good'),metric('Research Version',rm.research_version||'â€”',rm.research_status||'â€”','info'),metric('Legacy Route Confidence',n(completed.route_confidence,0),'Context only Â· not probability','warn')].join('');
   const aligned=completed.side_aligned===null||completed.side_aligned===undefined?'PENDING':bool(completed.side_aligned);
   $('weeklyHero').innerHTML=[
-    metric('Forecast Side',completed.final_weekly_side||'â€”',`${completed.forecast_week_start||'â€”'} â†’ ${completed.forecast_week_end||'â€”'}`,completed.final_weekly_side==='SELL'?'bad':'good'),
+    metric('Weekly Map Bias',completed.final_weekly_side||'â€”',`${completed.forecast_week_start||'â€”'} â†’ ${completed.forecast_week_end||'â€”'}`,completed.final_weekly_side==='SELL'?'bad':'good'),
     metric('Actual High',n(completed.actual_high,2),t(completed.actual_high_time),'info'),
     metric('Actual Low',n(completed.actual_low,2),t(completed.actual_low_time),'info'),
     metric('Actual Close',n(completed.actual_close,2),`Side aligned: ${aligned}`,aligned==='YES'?'good':aligned==='NO'?'bad':'warn')
@@ -281,7 +281,7 @@ async function loadWeekly(){
   renderTable($('weeklyEntryTable'),entries,entryCols());
   const cols=[
     {key:'cutoff_date',label:'Freeze'}, {key:'forecast_week_start',label:'Week Start'},
-    {key:'final_weekly_side',label:'Side',fmt:v=>badge(v)}, {key:'structural_state',label:'State'},
+    {key:'final_weekly_side',label:'Map Bias',fmt:v=>badge(v)}, {key:'structural_state',label:'State'},
     {key:'route_confidence',label:'Route',fmt:v=>n(v,0),className:'num'},
     {key:'resistance_control',label:'Resistance',fmt:v=>n(v,2),className:'num'},
     {key:'support_control',label:'Support',fmt:v=>n(v,2),className:'num'},
