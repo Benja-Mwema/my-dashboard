@@ -48,7 +48,7 @@ function stateKind(v){ const x=String(v||''); if(x==='QUALIFIED'||x==='PASS'||x=
 function badge(v,kind){ return `<span class="badge ${kind||sideKind(v)}">${esc(v||'—')}</span>`; }
 function metric(label,value,sub='',kind='info'){ return `<div class="metric ${kind}"><small>${esc(label)}</small><strong>${esc(value)}</strong>${sub?`<span>${esc(sub)}</span>`:''}</div>`; }
 function detail(label,value){ return `<div class="detail"><small>${esc(label)}</small><strong>${value??'—'}</strong></div>`; }
-function showTab(name){ document.querySelectorAll('.tab-page').forEach(x=>x.classList.toggle('active',x.id===`tab-${name}`)); document.querySelectorAll('#tabs button').forEach(x=>x.classList.toggle('active',x.dataset.tab===name)); }
+function showTab(name){ document.querySelectorAll('.tab-page').forEach(x=>x.classList.toggle('active',x.id===`tab-${name}`)); document.querySelectorAll('#tabs button').forEach(x=>x.classList.toggle('active',x.dataset.tab===name)); if(location.hash!==`#${name}`) history.replaceState(null,'',`#${name}`); }
 
 function renderTable(el,rows,cols,{click}={}){
   if(!el) return;
@@ -226,6 +226,7 @@ async function safe(name,fn){
 
 async function boot(){
   document.querySelectorAll('#tabs button').forEach(b=>b.addEventListener('click',()=>showTab(b.dataset.tab)));
+  const requested=location.hash.replace('#',''); if(['overview','weekly','journey','research','health'].includes(requested)) showTab(requested);
   $('overviewLoad').addEventListener('click',()=>safe('overview',loadOverview));
   $('weeklyLoad').addEventListener('click',()=>safe('weekly',loadWeekly));
   $('journeyLoad').addEventListener('click',()=>safe('journey',loadJourney));
