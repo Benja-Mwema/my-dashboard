@@ -48,6 +48,9 @@
       <div class="panel table-panel"><div class="panel-head"><h3>EXIT-only V3</h3><span class="muted">M30/H1 FROZEN · M15 RESEARCH ONLY</span></div><div class="page-intro accent">M30/H1 V3 matches are official Frozen V3 qualifications. M15 V3 matching remains diagnostic only because M15 operates through the precursor-watch layer.</div><div class="table-wrap"><table id="v3ResearchTable"></table></div></div>
       <div class="section-separator"><span>ML exit research</span></div>
       <div class="panel table-panel"><div class="panel-head"><h3>ML Meeting-Point Research</h3><span class="muted">RESEARCH ONLY · NEVER CREATES OR BLOCKS V3</span></div><div class="page-intro accent">Frozen V3 remains the deterministic EXIT candidate generator. ML is applied only after V3 qualification to estimate P(TRUE) from the multidimensional meeting-point state learned from historical TRUE and FAILED EXITs.</div><div class="table-wrap"><table id="mlExitTable"></table></div></div>
+      <div class="section-separator"><span>V4 ML-assisted overlay</span></div>
+      <div class="panel table-panel"><div class="panel-head"><h3>V4 Assisted Signals</h3><span class="muted">PARALLEL ONLY · DOES NOT ALTER V3</span></div><div class="page-intro accent">V4 preserves every Frozen V3 qualification and adds an ML-assisted tier: HIGH, ELEVATED or BASE. V3 remains the official qualification source.</div><div class="table-wrap"><table id="v4LiveTable"></table></div></div>
+      <div class="panel table-panel"><div class="panel-head"><h3>V4 Assisted Opportunities</h3><span class="muted">Strongest member tier shown at opportunity level</span></div><div class="table-wrap"><table id="v4LiveOppTable"></table></div></div>
       <div class="section-separator"><span>Research shadow</span></div>
       <div class="panel table-panel"><div class="panel-head"><h3>M15 → M30 Handover Candidates</h3><span class="muted">SHADOW ONLY · does not create an official BEN opportunity</span></div><div class="page-intro accent">These rows preserve same-direction M15 EXIT → M30 EXIT sequences for research. They are separate from Frozen V3, ML research scoring and official opportunities.</div><div class="table-wrap"><table id="shadowHandoverTable"></table></div></div>
     </section>
@@ -96,6 +99,10 @@
       <div class="panel table-panel"><div class="panel-head"><h3>Qualification Rules</h3><span class="muted">M30/H1 Frozen V3 · M15 precursor-only</span></div><div class="table-wrap"><table id="rulePerformanceTable"></table></div></div>
       <div class="section-separator"><span>Monthly distribution</span></div>
       <div class="panel table-panel"><div class="table-wrap"><table id="monthlyTable"></table></div></div>
+      <div class="section-separator"><span>V4 historical overlay</span></div>
+      <div id="v4ValidationMetrics" class="metric-grid four"></div>
+      <div class="panel table-panel"><div class="panel-head"><h3>V4 Historical Signals</h3><span class="muted">OOF scores separated from retrospective in-sample scores</span></div><div class="table-wrap tall"><table id="v4HistoricalSignalTable"></table></div></div>
+      <div class="panel table-panel"><div class="panel-head"><h3>V4 Historical Opportunities</h3><span class="muted">Parallel assisted overlay on the 45 Frozen V3 opportunities</span></div><div class="table-wrap tall"><table id="v4HistoricalOppTable"></table></div></div>
       <div class="section-separator"><span>Opportunity validation</span></div>
       <div class="panel table-panel"><div class="panel-head"><h3>All Historical Opportunities</h3><span class="muted">Active retroactive Frozen V3 history</span></div><div class="table-wrap tall"><table id="validationOppTable"></table></div></div>
       <div class="section-separator"><span>Failure / exception analysis</span></div>

@@ -125,6 +125,26 @@ async function loadOverview(){
     {key:'model_version',label:'Model'},
     {key:'research_status',label:'Authority',fmt:v=>badge(v||'RESEARCH_ONLY','warn')}
   ]);
+  renderTable($('v4LiveTable'),p.v4_signals||[],[
+    {key:'signal_time',label:'EXIT Time',fmt:v=>shortT(v)},
+    {key:'timeframe',label:'TF',fmt:v=>badge(v,'info')},
+    {key:'side',label:'Side',fmt:v=>sideBadge(v)},
+    {key:'v3_rule_ids',label:'V3 Family',fmt:v=>v||'—'},
+    {key:'true_probability',label:'P(TRUE)',fmt:v=>(n(Number(v)*100,1)+'%'),cls:'num'},
+    {key:'v4_tier',label:'V4 Tier',fmt:v=>badge(v,v==='V4_HIGH'?'good':v==='V4_ELEVATED'?'warn':'info')},
+    {key:'validation_mode',label:'Score Mode',fmt:v=>badge(v,'info')},
+    {key:'outcome_status',label:'Outcome',fmt:v=>badge(v||'PENDING',kind(v||'PENDING'))}
+  ]);
+  renderTable($('v4LiveOppTable'),p.v4_opportunities||[],[
+    {key:'start_time',label:'Start',fmt:v=>shortT(v)},
+    {key:'side',label:'Side',fmt:v=>sideBadge(v)},
+    {key:'signal_count',label:'Signals',fmt:v=>n(v,0),cls:'num'},
+    {key:'v4_tier',label:'V4 Tier',fmt:v=>badge(v,v==='V4_HIGH'?'good':v==='V4_ELEVATED'?'warn':'info')},
+    {key:'max_probability',label:'Max P(TRUE)',fmt:v=>(n(Number(v)*100,1)+'%'),cls:'num'},
+    {key:'avg_probability',label:'Avg P(TRUE)',fmt:v=>(n(Number(v)*100,1)+'%'),cls:'num'},
+    {key:'outcome_status',label:'Outcome',fmt:v=>badge(v||'PENDING',kind(v||'PENDING'))},
+    {key:'validation_mode',label:'Mode'}
+  ]);
   renderTable($('shadowHandoverTable'),p.shadow_handovers||[],[
     {key:'m15_signal_time',label:'M15 EXIT',fmt:v=>shortT(v)},
     {key:'m30_signal_time',label:'M30 EXIT',fmt:v=>shortT(v)},
@@ -157,6 +177,8 @@ async function loadJourney(){
     {key:'rule_ids',label:'Original Rule'},{key:'qualification_latched_at',label:'Qualified At',fmt:v=>t(v)},
     {key:'ml_true_probability',label:'ML P(TRUE)',fmt:v=>v===null||v===undefined?'—':(n(Number(v)*100,1)+'%'),cls:'num'},
     {key:'ml_confidence_band',label:'ML Band',fmt:v=>v?badge(v,v==='HIGH'?'good':v==='ELEVATED'?'warn':'info'):'—'},
+    {key:'v4_tier',label:'V4 Tier',fmt:v=>v?badge(v,v==='V4_HIGH'?'good':v==='V4_ELEVATED'?'warn':'info'):'—'},
+    {key:'v4_validation_mode',label:'V4 Score Mode',fmt:v=>v?badge(v,'info'):'—'},
     {key:'latest_recheck_qualified',label:'Latest Recheck',fmt:(v,r)=>r.latest_rechecked_at?badge(v===1?'PASS':'WOULD FAIL',v===1?'good':'warn'):'—'},
     {key:'price',label:'Price',fmt:v=>n(v,2),cls:'num'}
   ]);
@@ -203,6 +225,28 @@ async function loadValidation(){
     {key:'month',label:'Month'},{key:'qualified_signals',label:'Signals',fmt:v=>n(v,0),cls:'num'},{key:'unique_opportunities',label:'Opportunities',fmt:v=>n(v,0),cls:'num'},
     {key:'major_opportunities',label:'Major',fmt:v=>n(v,0),cls:'num'},{key:'nonmajor_opportunities',label:'Non-major',fmt:v=>n(v,0),cls:'num'},{key:'first_signal_major',label:'First Signal Major',fmt:v=>n(v,0),cls:'num'},
     {key:'m15_first',label:'M15 First',fmt:v=>n(v,0),cls:'num'},{key:'m30_first',label:'M30 First',fmt:v=>n(v,0),cls:'num'},{key:'h1_first',label:'H1 First',fmt:v=>n(v,0),cls:'num'},{key:'multi_tf',label:'Multi-TF',fmt:v=>n(v,0),cls:'num'}
+  ]);
+  const v4=p.v4_summary||{};
+  $('v4ValidationMetrics').innerHTML=[
+    metric('V4 Historical Signals',v4.signals??0,'All Frozen V3 signals overlaid by V4'),
+    metric('V4 HIGH',v4.high??0,'ML-assisted HIGH tier','good'),
+    metric('Walk-forward OOF',v4.oof??0,'Out-of-sample historical scores','info'),
+    metric('Retrospective',v4.retrospective??0,'Earlier rows scored in-sample','warn')
+  ].join('');
+  renderTable($('v4HistoricalSignalTable'),p.v4_signals||[],[
+    {key:'signal_time',label:'Time',fmt:v=>t(v)},{key:'timeframe',label:'TF',fmt:v=>badge(v,'info')},{key:'side',label:'Side',fmt:v=>sideBadge(v)},
+    {key:'v3_rule_ids',label:'V3 Family'},{key:'true_probability',label:'P(TRUE)',fmt:v=>(n(Number(v)*100,1)+'%'),cls:'num'},
+    {key:'v4_tier',label:'V4 Tier',fmt:v=>badge(v,v==='V4_HIGH'?'good':v==='V4_ELEVATED'?'warn':'info')},
+    {key:'validation_mode',label:'Score Provenance',fmt:v=>badge(v,v==='WALK_FORWARD_OOF'?'good':'warn')},
+    {key:'outcome_status',label:'V3 Outcome',fmt:v=>badge(v,kind(v))},{key:'is_major',label:'Major',fmt:v=>badge(v?'YES':'NO',v?'good':'info')}
+  ]);
+  renderTable($('v4HistoricalOppTable'),p.v4_opportunities||[],[
+    {key:'start_time',label:'Start',fmt:v=>t(v)},{key:'side',label:'Side',fmt:v=>sideBadge(v)},
+    {key:'signal_count',label:'Signals',fmt:v=>n(v,0),cls:'num'},{key:'v4_tier',label:'V4 Tier',fmt:v=>badge(v,v==='V4_HIGH'?'good':v==='V4_ELEVATED'?'warn':'info')},
+    {key:'max_probability',label:'Max P(TRUE)',fmt:v=>(n(Number(v)*100,1)+'%'),cls:'num'},
+    {key:'avg_probability',label:'Avg P(TRUE)',fmt:v=>(n(Number(v)*100,1)+'%'),cls:'num'},
+    {key:'validation_mode',label:'Validation Mode',fmt:v=>badge(v,v==='ALL_WALK_FORWARD_OOF'?'good':'warn')},
+    {key:'outcome_status',label:'V3 Outcome',fmt:v=>badge(v,kind(v))},{key:'any_major',label:'Major',fmt:v=>badge(v?'YES':'NO',v?'good':'info')}
   ]);
   renderTable($('validationOppTable'),p.opportunities||[],[
     {key:'start_time',label:'Start',fmt:v=>t(v)},{key:'side',label:'Side',fmt:v=>sideBadge(v)},{key:'first_tf',label:'First TF',fmt:v=>badge(v,'info')},{key:'timeframes',label:'TFs'},
