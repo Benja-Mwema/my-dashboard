@@ -89,6 +89,18 @@ async function loadOverview(){
     {key:'qualification_status',label:'Qualification',fmt:v=>badge(v||'QUALIFIED_ONCE','good')},{key:'outcome_status',label:'Outcome',fmt:v=>badge(v||'PENDING',kind(v||'PENDING'))},
     {key:'timeframes',label:'TFs'},{key:'signal_count',label:'Signals',fmt:v=>n(v,0),cls:'num'},{key:'status',label:'Journey',fmt:v=>badge(v,kind(v))},{key:'close_reason',label:'Close Reason'}
   ]);
+  renderTable($('shadowHandoverTable'),p.shadow_handovers||[],[
+    {key:'m15_signal_time',label:'M15 EXIT',fmt:v=>shortT(v)},
+    {key:'m30_signal_time',label:'M30 EXIT',fmt:v=>shortT(v)},
+    {key:'side',label:'Side',fmt:v=>sideBadge(v)},
+    {key:'gap_minutes',label:'Gap',fmt:v=>`${n(v,0)}m`,cls:'num'},
+    {key:'m15_qualified',label:'M15 V1',fmt:v=>badge(Number(v)===1?'QUALIFIED':'NO','info')},
+    {key:'m30_qualified',label:'M30 V1',fmt:v=>badge(Number(v)===1?'QUALIFIED':'NO','info')},
+    {key:'m15_progress_at_m30_atr',label:'Progress @ M30',fmt:v=>`${n(v,2)} ATR`,cls:'num'},
+    {key:'m15_m30_eff10',label:'M30 Eff @ M15',fmt:v=>n(v,3),cls:'num'},
+    {key:'research_flags',label:'Research Flags'},
+    {key:'shadow_status',label:'Status',fmt:v=>badge(v||'SHADOW_ONLY','warn')}
+  ]);
 }
 function movementExplanation(h){
   const state=String(h.movement_state||h.status||'QUALIFIED');
