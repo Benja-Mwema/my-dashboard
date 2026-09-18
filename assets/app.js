@@ -56,6 +56,11 @@ async function loadMeta(){
   const live=state.meta.live_opportunities||[], hist=state.meta.historical_opportunities||[];
   const opts=[...live.map(o=>({...o,scope:'LIVE'})),...hist.map(o=>({...o,scope:'HIST'}))];
   $('opportunitySelect').innerHTML=opts.map(o=>`<option value="${esc(o.opportunity_id)}">${esc(`${o.start_time} · ${o.side} · ${o.first_tf} · ${o.timeframes} · ${o.qualification_status||'QUALIFIED_ONCE'} · ${o.outcome_status||'PENDING'}`)}</option>`).join('');
+  const jc=state.meta.journey_coverage||{},days=jc.recent_days||[];
+  const gap=days.filter(x=>Number(x.qualified||0)===0).slice(0,4);
+  const gapText=gap.length?gap.map(x=>`${x.date}: ${x.evaluated} evaluated / 0 qualified`).join(' · '):'No recent qualification gaps.';
+  $('journeyCoverage').className='status-band info';
+  $('journeyCoverage').innerHTML=`<div><small>LAST QUALIFIED</small><strong>${esc(t(jc.latest_qualified_signal))}</strong></div><div><small>EVALUATED THROUGH</small><strong>${esc(t(jc.latest_evaluated_signal))}</strong></div><p>${esc(gapText)}. The selector lists qualified opportunities only; evaluated-but-unqualified days are not removed data.</p>`;
 }
 function currentOppHtml(o){
   if(!o?.opportunity_id)return'<div class="opportunity-hero"><div class="big"><small>Current state</small><strong>No active BEN opportunity</strong></div><div class="note">BEN events continue to be monitored on newly closed bars. An opportunity appears here only after a tested M15, M30 or H1 rule qualifies and the signal is attached to the live opportunity engine.</div></div>';
