@@ -89,6 +89,15 @@ async function loadOverview(){
     {key:'qualification_status',label:'Qualification',fmt:v=>badge(v||'QUALIFIED_ONCE','good')},{key:'outcome_status',label:'Outcome',fmt:v=>badge(v||'PENDING',kind(v||'PENDING'))},
     {key:'timeframes',label:'TFs'},{key:'signal_count',label:'Signals',fmt:v=>n(v,0),cls:'num'},{key:'status',label:'Journey',fmt:v=>badge(v,kind(v))},{key:'close_reason',label:'Close Reason'}
   ]);
+  renderTable($('v3ResearchTable'),p.v3_evaluations||[],[
+    {key:'signal_time',label:'EXIT Time',fmt:v=>shortT(v)},
+    {key:'timeframe',label:'TF',fmt:v=>badge(v,'info')},
+    {key:'side',label:'Side',fmt:v=>sideBadge(v)},
+    {key:'candidate_pass',label:'V3',fmt:v=>badge(Number(v)===1?'MATCH':'NO MATCH',Number(v)===1?'good':'info')},
+    {key:'rule_ids',label:'Matched Family',fmt:v=>v||'—'},
+    {key:'research_status',label:'Status',fmt:v=>badge(v||'RESEARCH_ONLY','warn')},
+    {key:'engine_version',label:'Candidate Version'}
+  ]);
   renderTable($('shadowHandoverTable'),p.shadow_handovers||[],[
     {key:'m15_signal_time',label:'M15 EXIT',fmt:v=>shortT(v)},
     {key:'m30_signal_time',label:'M30 EXIT',fmt:v=>shortT(v)},
