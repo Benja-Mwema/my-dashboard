@@ -30,7 +30,7 @@
   <main>
     <section id="tab-overview" class="tab-page active">
       <div class="section-title"><div><small>LIVE OPERATING VIEW</small><h2>Overview</h2></div><button id="overviewRefresh" class="primary">Refresh</button></div>
-      <div class="page-intro">Signal universe: Samuel EXIT only. All M15, M30 and H1 EXIT rules are temporarily research-only while the complete raw EXIT universe is being re-hardened. No official live opportunity is created during this review.</div>
+      <div class="page-intro">Signal universe: Samuel EXIT only. Frozen V3 is active for M30 and H1 and is applied retroactively to the historical record. M15 remains precursor-watch only and cannot independently qualify an opportunity.</div>
       <div id="overviewStatus" class="status-band"></div>
       <div id="overviewMetrics" class="metric-grid four"></div>
       <div class="section-separator"><span>Current BEN opportunity</span></div>
@@ -44,8 +44,8 @@
       <div class="panel table-panel"><div class="panel-head"><h3>Today's Opportunities</h3><span class="muted">One row per unique BEN opportunity, not one row per signal</span></div><div class="table-wrap"><table id="todayTable"></table></div></div>
       <div class="section-separator"><span>M15 precursor watch</span></div>
       <div class="panel table-panel"><div class="panel-head"><h3>M15 EXIT Precursor Episodes</h3><span class="muted">RESEARCH ONLY · 6-hour confirmation window</span></div><div class="page-intro accent">An M15 EXIT watch does not qualify a trade. It stays open for up to six hours, confirms only on a same-side M30/H1 V3 match, invalidates on an opposite EXIT, and otherwise expires.</div><div class="table-wrap"><table id="m15WatchTable"></table></div></div>
-      <div class="section-separator"><span>Candidate V3 forward diagnostics</span></div>
-      <div class="panel table-panel"><div class="panel-head"><h3>EXIT-only Candidate V3</h3><span class="muted">RESEARCH ONLY · no official opportunity creation</span></div><div class="page-intro accent">Each live Samuel EXIT is evaluated against the current M15/M30/H1 V3 candidate families. A V3 match is forward research evidence only.</div><div class="table-wrap"><table id="v3ResearchTable"></table></div></div>
+      <div class="section-separator"><span>Frozen V3 diagnostics</span></div>
+      <div class="panel table-panel"><div class="panel-head"><h3>EXIT-only V3</h3><span class="muted">M30/H1 FROZEN · M15 RESEARCH ONLY</span></div><div class="page-intro accent">M30/H1 V3 matches are official Frozen V3 qualifications. M15 V3 matching remains diagnostic only because M15 operates through the precursor-watch layer.</div><div class="table-wrap"><table id="v3ResearchTable"></table></div></div>
       <div class="section-separator"><span>Research shadow</span></div>
       <div class="panel table-panel"><div class="panel-head"><h3>M15 → M30 Handover Candidates</h3><span class="muted">SHADOW ONLY · does not create an official BEN opportunity</span></div><div class="page-intro accent">These rows preserve same-direction M15 EXIT → M30 EXIT sequences for research. They are separate from Candidate V3 matching and official opportunities.</div><div class="table-wrap"><table id="shadowHandoverTable"></table></div></div>
     </section>
@@ -88,14 +88,14 @@
     </section>
     <section id="tab-validation" class="tab-page">
       <div class="section-title"><div><small>2026 BEN RESEARCH</small><h2>Historical Validation</h2></div><button id="validationRefresh" class="primary">Refresh</button></div>
-      <div class="page-intro">This page measures how the 2026 BEN qualification rules behaved historically and highlights where forward validation is still required. Historical results describe the research sample; they do not guarantee future performance.</div>
+      <div class="page-intro">Active 2026 history is rebuilt retroactively under Frozen V3 using the complete Samuel EXIT universe. The former V1 historical tables remain archived for audit and comparison. Historical results do not guarantee future performance.</div>
       <div id="validationMetrics" class="metric-grid four"></div>
       <div class="section-separator"><span>Rule performance by timeframe</span></div>
-      <div class="panel table-panel"><div class="panel-head"><h3>Qualification Rules</h3><span class="muted">H1/M30 frozen · M15 candidate</span></div><div class="table-wrap"><table id="rulePerformanceTable"></table></div></div>
+      <div class="panel table-panel"><div class="panel-head"><h3>Qualification Rules</h3><span class="muted">M30/H1 Frozen V3 · M15 precursor-only</span></div><div class="table-wrap"><table id="rulePerformanceTable"></table></div></div>
       <div class="section-separator"><span>Monthly distribution</span></div>
       <div class="panel table-panel"><div class="table-wrap"><table id="monthlyTable"></table></div></div>
       <div class="section-separator"><span>Opportunity validation</span></div>
-      <div class="panel table-panel"><div class="panel-head"><h3>All Historical Opportunities</h3><span class="muted">65 unique opportunities merged from 93 qualified signals</span></div><div class="table-wrap tall"><table id="validationOppTable"></table></div></div>
+      <div class="panel table-panel"><div class="panel-head"><h3>All Historical Opportunities</h3><span class="muted">Active retroactive Frozen V3 history</span></div><div class="table-wrap tall"><table id="validationOppTable"></table></div></div>
       <div class="section-separator"><span>Failure / exception analysis</span></div>
       <div class="page-intro warn">The small non-major set is where future research should concentrate. The goal is to understand the exceptions without constantly retuning rules that already performed strongly in the 2026 sample.</div>
       <div class="panel table-panel"><div class="table-wrap"><table id="failureTable"></table></div></div>

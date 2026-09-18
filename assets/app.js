@@ -63,7 +63,7 @@ async function loadMeta(){
   $('journeyCoverage').innerHTML=`<div><small>LAST QUALIFIED</small><strong>${esc(t(jc.latest_qualified_signal))}</strong></div><div><small>EVALUATED THROUGH</small><strong>${esc(t(jc.latest_evaluated_signal))}</strong></div><p>${esc(gapText)}. The selector lists qualified opportunities only; evaluated-but-unqualified days are not removed data.</p>`;
 }
 function currentOppHtml(o){
-  if(!o?.opportunity_id)return'<div class="opportunity-hero"><div class="big"><small>Current state</small><strong>EXIT-only research mode</strong></div><div class="note">Only Samuel EXIT events are monitored. M15, M30 and H1 are currently research-only while their rules are re-hardened on the complete raw EXIT universe. No official live opportunity is created in this mode.</div></div>';
+  if(!o?.opportunity_id)return'<div class="opportunity-hero"><div class="big"><small>Current state</small><strong>Frozen V3 active</strong></div><div class="note">Only Samuel EXIT events are monitored. M30/H1 Frozen V3 can qualify an opportunity; M15 remains precursor-watch only.</div></div>';
   const prog=n(o.progress_atr,2),mfe=n(o.mfe_atr,2),mae=n(o.mae_atr,2);
   return`<div class="opportunity-hero"><div class="big"><small>${esc(o.side)} opportunity · ${esc(o.movement_state||o.status)}</small><strong>${n(o.current_price,2)}</strong></div>${detail('Qualification',badge(o.qualification_status||'QUALIFIED_ONCE','good'))}${detail('Outcome',badge(o.outcome_status||'PENDING',kind(o.outcome_status||'PENDING')))}${detail('Started',esc(t(o.start_time)))}${detail('First timeframe',badge(o.first_tf,'info'))}${detail('Participating TFs',esc(o.timeframes))}${detail('Signals',esc(o.signal_count))}${detail('Progress',esc(`${prog} H1 ATR`))}${detail('MFE / MAE',esc(`${mfe} / ${mae} ATR`))}<div class="note">Qualification is latched permanently once achieved. Later bars can change only the journey/outcome state, never erase the original qualification.</div></div>`;
 }
@@ -71,8 +71,8 @@ async function loadOverview(){
   const p=await api('/api/overview'),s=p.status||{},o=p.focus||{};
   const st=s.source_lag_status||'UNKNOWN';
   $('overviewStatus').className=`status-band ${kind(st)}`;
-  $('overviewStatus').innerHTML=`<div><small>LIVE SOURCE</small><strong>${esc(st)}</strong></div><div><small>MODE</small><strong>EXIT RESEARCH</strong></div><p>Official live qualification is suspended while M15/M30/H1 EXIT rules are re-hardened on the complete raw EXIT universe.</p>`;
-  $('overviewMetrics').innerHTML=[metric('EXIT Events Today',p.ben_events_today??0,'Samuel EXIT buffer hits only'),metric('Qualified Signals Today',p.qualified_signals_today??0,'EXITs that passed an active forward rule',p.qualified_signals_today?'good':'info'),metric('Open Opportunities',s.open_opportunities??0,'Unique live opportunities',s.open_opportunities?'good':'info'),metric('Source Lag',`${n(s.source_lag_bars??0,0)} bars`,`${n(s.source_lag_minutes??0,0)} minutes`,s.source_lag_bars?'bad':'good')].join('');
+  $('overviewStatus').innerHTML=`<div><small>LIVE SOURCE</small><strong>${esc(st)}</strong></div><div><small>MODE</small><strong>FROZEN V3</strong></div><p>${o.opportunity_id?'A Frozen V3 opportunity is active. M30/H1 qualifications are official and latched; M15 remains precursor-only.':'Frozen V3 is active for M30/H1 and retroactive across active historical records. M15 remains precursor-only.'}</p>`;
+  $('overviewMetrics').innerHTML=[metric('EXIT Events Today',p.ben_events_today??0,'Samuel EXIT buffer hits only'),metric('Frozen V3 Qualifiers Today',p.qualified_signals_today??0,'Official M30/H1 Frozen V3 qualifiers',p.qualified_signals_today?'good':'info'),metric('Open Opportunities',s.open_opportunities??0,'Unique live Frozen V3 opportunities',s.open_opportunities?'good':'info'),metric('Source Lag',`${n(s.source_lag_bars??0,0)} bars`,`${n(s.source_lag_minutes??0,0)} minutes`,s.source_lag_bars?'bad':'good')].join('');
   $('currentOpportunity').innerHTML=currentOppHtml(o);
   renderTable($('mtfTable'),p.mtf||[],[
     {key:'timeframe',label:'TF',fmt:v=>badge(v,'info')},{key:'close_time',label:'Closed',fmt:v=>shortT(v)},{key:'close',label:'Close',fmt:v=>n(v,2),cls:'num'},
@@ -109,7 +109,7 @@ async function loadOverview(){
     {key:'side',label:'Side',fmt:v=>sideBadge(v)},
     {key:'candidate_pass',label:'V3',fmt:v=>badge(Number(v)===1?'MATCH':'NO MATCH',Number(v)===1?'good':'info')},
     {key:'rule_ids',label:'Matched Family',fmt:v=>v||'—'},
-    {key:'research_status',label:'Status',fmt:v=>badge(v||'RESEARCH_ONLY','warn')},
+    {key:'research_status',label:'Status',fmt:v=>badge(v||'RESEARCH_ONLY',kind(v||'RESEARCH_ONLY'))},
     {key:'engine_version',label:'Candidate Version'}
   ]);
   renderTable($('shadowHandoverTable'),p.shadow_handovers||[],[
