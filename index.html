@@ -3,124 +3,117 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>WLW RC1 Dashboard</title>
+  <title>BEN Institutional Opportunity Monitor</title>
   <link rel="stylesheet" href="/assets/styles.css">
 </head>
 <body>
-  <div id="staleBanner" class="stale-banner hidden">SOURCE STALE — DO NOT USE CURRENT SIGNALS</div>
+  <div id="alertBanner" class="alert-banner hidden"></div>
   <header class="topbar">
-    <div>
-      <div class="eyebrow">XAUUSD · 2020–2026 VALIDATED RESEARCH</div>
-      <h1>WLW Dashboard <span>RC1</span></h1>
-      <p class="header-sub">Regime first · validated trigger second · forward validation locked</p>
+    <div class="brand-block">
+      <div class="eyebrow">XAUUSD · BEN RESEARCH & LIVE MONITORING</div>
+      <h1>BEN <span>Institutional Opportunity Monitor</span></h1>
+      <p>Qualification first · opportunity second · journey tracked on closed bars</p>
     </div>
     <div class="asof-strip">
-      <div><small>SOURCE</small><strong id="sourceStatus">—</strong></div>
+      <div><small>STATUS</small><strong id="globalStatus">—</strong></div>
       <div><small>DATA AS OF</small><strong id="dataAsOf">—</strong></div>
-      <div><small>DB AS OF</small><strong id="dbAsOf">—</strong></div>
-      <div><small>SCHEDULER</small><strong id="schedulerStatus">—</strong></div>
+      <div><small>LAST COMPUTE</small><strong id="lastCompute">—</strong></div>
     </div>
   </header>
   <nav class="tabs" id="tabs">
     <button class="active" data-tab="overview">Overview</button>
-    <button data-tab="weekly">Weekly Map</button>
-    <button data-tab="journey">Daily Journey</button>
-    <button data-tab="research">RC1 Research & Forward</button>
+    <button data-tab="journey">Opportunity Journey</button>
+    <button data-tab="weekly">Weekly Context</button>
+    <button data-tab="validation">Historical Validation</button>
     <button data-tab="health">System Health</button>
   </nav>
   <main>
     <section id="tab-overview" class="tab-page active">
-      <div class="section-title">
-        <div><small>OPERATING VIEW</small><h2>RC1 Overview</h2></div>
-        <div class="section-actions">
-          <label>Date <select id="overviewDate"></select></label>
-          <label>Week <select id="overviewWeek"></select></label>
-          <button id="overviewLoad" class="primary">Load</button>
-        </div>
+      <div class="section-title"><div><small>LIVE OPERATING VIEW</small><h2>Overview</h2></div><button id="overviewRefresh" class="primary">Refresh</button></div>
+      <div class="page-intro">This page shows whether a BEN opportunity is currently active, how it was formed, and how far the move has developed since qualification. BEN qualification comes only from the tested M15, M30 and H1 rule engines.</div>
+      <div id="overviewStatus" class="status-band"></div>
+      <div id="overviewMetrics" class="metric-grid four"></div>
+      <div class="section-separator"><span>Current BEN opportunity</span></div>
+      <div class="two-col wide-left">
+        <div class="panel emphasis"><div class="panel-head"><h3>Opportunity State</h3><span class="muted">What is happening now</span></div><div id="currentOpportunity"></div></div>
+        <div class="panel"><div class="panel-head"><h3>MTF BEN / JRSX State</h3><span class="muted">Latest closed bars</span></div><div class="table-wrap compact"><table id="mtfTable"></table></div></div>
       </div>
-      <div id="overviewState" class="status-band"></div>
-      <div id="overviewHero" class="metric-grid six"></div>
-      <div class="section-separator"><span>Decision framework</span></div>
-      <div class="two-col">
-        <div class="panel emphasis"><div class="panel-head"><h3>What RC1 Means Now</h3><span class="muted">Authoritative execution interpretation</span></div><div id="overviewExplanation" class="explain-block"></div></div>
-        <div class="panel"><div class="panel-head"><h3>Decision Map</h3><span class="muted">RC1 structural references</span></div><div id="overviewLevels" class="detail-grid"></div></div>
-      </div>
-      <div class="section-separator"><span>Validated rules with authority</span></div>
-      <div class="panel table-panel"><div class="panel-head"><h3>Current-Regime Rule Monitor</h3><span class="muted">Only rules belonging to the active master regime</span></div><div class="table-wrap"><table id="overviewRulesTable"></table></div></div>
-      <div class="two-col">
-        <div class="panel"><div class="panel-head"><h3>Weekly Context Map</h3><span class="muted">Context only · cannot authorize execution</span></div><div id="overviewWeeklyGrid" class="detail-grid"></div></div>
-        <div class="panel"><div class="panel-head"><h3>Forward Validation</h3><span class="muted">Locked from 16-Sep-2026</span></div><div id="overviewForward" class="detail-grid"></div></div>
-      </div>
-      <div class="panel table-panel"><div class="panel-head"><h3>Recent RC1 Shadow Trades</h3><span class="muted">Forward sample only</span></div><div class="table-wrap compact"><table id="overviewShadowTable"></table></div></div>
-    </section>
-    <section id="tab-weekly" class="tab-page">
-      <div class="section-title"><div><small>CONTEXT MAP</small><h2>Weekly Map</h2></div><div class="section-actions"><label>Week <select id="weeklyWeek"></select></label><button id="weeklyLoad" class="primary">Load Week</button></div></div>
-      <div class="context-note">Weekly direction, zones and route are scenario context only. RC1 remains the only execution authority.</div>
-      <div id="weeklyHero" class="metric-grid five"></div>
-      <div class="section-separator"><span>Scenario and levels</span></div>
-      <div class="two-col">
-        <div class="panel"><div class="panel-head"><h3>Scenario Map</h3><span class="muted">Primary · continuation · failure</span></div><div id="weeklyScenarioMap" class="scenario-stack"></div></div>
-        <div class="panel table-panel"><div class="panel-head"><h3>Role-Labelled Levels</h3><span class="muted">TURN · TARGET · CONTROL</span></div><div class="table-wrap compact"><table id="weeklyLevelTable"></table></div></div>
-      </div>
-      <div class="two-col">
-        <div class="panel"><div class="panel-head"><h3>Forecast vs Actual</h3><span class="muted">Completed-week diagnostics</span></div><div id="weeklyAccuracyGrid" class="detail-grid"></div></div>
-        <div class="panel"><div class="panel-head"><h3>RC1 Regime at Week Start</h3><span class="muted">Execution context, not weekly direction</span></div><div id="weeklyRc1Grid" class="detail-grid"></div></div>
-      </div>
-      <div class="section-separator"><span>History</span></div>
-      <div class="panel table-panel"><div class="panel-head"><h3>Weekly Forecast History</h3><span class="muted">Frozen forecast with later actuals</span></div><div class="table-wrap"><table id="weeklyTable"></table></div></div>
+      <div class="section-separator"><span>How the opportunity was built</span></div>
+      <div class="panel table-panel"><div class="panel-head"><h3>Qualification Construction</h3><span class="muted">Each timeframe qualification attached to the current opportunity</span></div><div class="table-wrap"><table id="constructionTable"></table></div></div>
+      <div class="section-separator"><span>Today</span></div>
+      <div class="panel table-panel"><div class="panel-head"><h3>Today's Opportunities</h3><span class="muted">One row per unique BEN opportunity, not one row per signal</span></div><div class="table-wrap"><table id="todayTable"></table></div></div>
     </section>
 
     <section id="tab-journey" class="tab-page">
-      <div class="section-title"><div><small>RC1 DAY REPLAY</small><h2>Daily Journey</h2></div><div class="section-actions"><label>Date <select id="journeyDate"></select></label><button id="journeyLoad" class="primary">Load Day</button></div></div>
-      <div id="journeyState" class="status-band"></div>
-      <div id="journeyHero" class="metric-grid six"></div>
-      <div class="section-separator"><span>Why RC1 is waiting or acting</span></div>
+      <div class="section-title"><div><small>OPPORTUNITY DEVELOPMENT</small><h2>Opportunity Journey</h2></div><div class="section-actions"><label>Opportunity<select id="opportunitySelect"></select></label><button id="journeyLoad" class="primary">Load</button></div></div>
+      <div class="page-intro">Follow one BEN opportunity from its first qualified signal through additional timeframe confirmations and subsequent price development. ATR1_REACHED is a movement milestone, not a declaration that the opportunity is historically major.</div>
+      <div id="journeyHeader" class="status-band"></div>
+      <div id="journeyMetrics" class="metric-grid four"></div>
       <div class="two-col">
-        <div class="panel emphasis"><div class="panel-head"><h3>RC1 Explanation</h3><span class="muted">Plain-language decision state</span></div><div id="journeyExplanation" class="explain-block"></div></div>
-        <div class="panel"><div class="panel-head"><h3>Day Market Map</h3><span class="muted">Frozen references plus actual path</span></div><div id="journeyMarketGrid" class="detail-grid"></div></div>
+        <div class="panel emphasis"><div class="panel-head"><h3>How to Read This Journey</h3></div><div id="journeyExplanation" class="explain-block"></div></div>
+        <div class="panel"><div class="panel-head"><h3>Opportunity Header</h3></div><div id="journeyDetails" class="detail-grid"></div></div>
       </div>
-      <div class="section-separator"><span>Current-regime rules</span></div>
-      <div class="panel table-panel"><div class="panel-head"><h3>Validated Rule Monitor</h3><span class="muted">Click a rule to inspect its robust conditions</span></div><div class="table-wrap"><table id="journeyRulesTable"></table></div></div>
-      <div class="two-col">
-        <div class="panel"><div class="panel-head"><h3 id="ruleInspectorTitle">Rule Inspector</h3><span class="muted" id="ruleInspectorMeta"></span></div><div id="ruleInspectorText" class="explain-block"></div></div>
-        <div class="panel table-panel"><div class="panel-head"><h3>Stable-Envelope Conditions</h3><span class="muted">All must pass at the trigger bar</span></div><div class="table-wrap compact"><table id="ruleConditionTable"></table></div></div>
-      </div>
-      <div class="section-separator"><span>Intraday RC1 events</span></div>
-      <div class="panel table-panel"><div class="panel-head"><h3>Raw Trigger & Qualification Timeline</h3><span class="muted">Raw trigger ≠ trade; only QUALIFIED authorizes execution</span></div><div class="table-wrap"><table id="journeyTimelineTable"></table></div></div>
+      <div class="section-separator"><span>Signal build-up</span></div>
+      <div class="panel table-panel"><div class="table-wrap"><table id="signalTimeline"></table></div></div>
+      <div class="section-separator"><span>Bar-by-bar journey</span></div>
+      <div class="panel table-panel"><div class="panel-head"><h3>Price Development</h3><span class="muted">Progress, favorable excursion, adverse excursion and movement state</span></div><div class="table-wrap tall"><table id="journeyTable"></table></div></div>
+      <div class="section-separator"><span>MTF context journey</span></div>
+      <div class="panel table-panel"><div class="panel-head"><h3>JRSX / Direction Context</h3><span class="muted">How M15, M30, H1 and H4 looked while the opportunity developed</span></div><div class="table-wrap tall"><table id="contextJourneyTable"></table></div></div>
     </section>
 
-    <section id="tab-research" class="tab-page">
-      <div class="section-title"><div><small>LOCKED RESEARCH AUTHORITY</small><h2>RC1 Research & Forward Validation</h2></div><button id="researchLoad" class="primary">Refresh</button></div>
-      <div class="context-note strong">Four master regimes. Nine validated execution rules. No retuning until the forward block reaches the agreed milestone.</div>
-      <div id="researchHero" class="metric-grid six"></div>
+    <section id="tab-weekly" class="tab-page">
+      <div class="section-title"><div><small>DESCRIPTIVE CONTEXT ONLY</small><h2>Weekly Context</h2></div><div class="section-actions"><label>Week<select id="weekSelect"></select></label><button id="weeklyLoad" class="primary">Load Week</button></div></div>
+      <div class="page-intro accent">Weekly levels provide location and market context around BEN opportunities. They do not create, block or override a BEN qualification.</div>
+      <div id="weeklyMetrics" class="metric-grid four"></div>
       <div class="two-col">
-        <div class="panel emphasis"><div class="panel-head"><h3>Research Authority</h3><span class="muted">What the 2020–2026 study retained</span></div><div id="researchExplanation" class="explain-block"></div></div>
-        <div class="panel"><div class="panel-head"><h3>Forward Protocol</h3><span class="muted">Locked thresholds · shadow execution</span></div><div id="researchForward" class="detail-grid"></div></div>
+        <div class="panel emphasis"><div class="panel-head"><h3>Weekly Forecast</h3><span class="muted">Frozen before the week</span></div><div id="weeklyForecast" class="explain-block"></div></div>
+        <div class="panel"><div class="panel-head"><h3>Current Position in the Map</h3><span class="muted">Where price sits relative to the frozen zones</span></div><div id="weeklyPosition" class="detail-grid"></div></div>
       </div>
-      <div class="section-separator"><span>Validated library</span></div>
-      <div class="panel table-panel"><div class="panel-head"><h3>RC1 Rule Library</h3><span class="muted">Grade, risk, regime, trigger and validation support</span></div><div class="table-wrap"><table id="researchRuleTable"></table></div></div>
       <div class="two-col">
-        <div class="panel table-panel"><div class="panel-head"><h3>2020–2026 Backtest</h3><span class="muted">Discovery · validation · confirmation</span></div><div class="table-wrap compact"><table id="researchBacktestTable"></table></div></div>
-        <div class="panel table-panel"><div class="panel-head"><h3>Calendar-Year Stability</h3><span class="muted">Observed win rate by year</span></div><div class="table-wrap compact"><table id="researchYearTable"></table></div></div>
+        <div class="panel"><div class="panel-head"><h3>Scenario Map</h3></div><div id="scenarioMap" class="scenario-stack"></div></div>
+        <div class="panel table-panel"><div class="panel-head"><h3>Weekly Level Map</h3><span class="muted">TURN · TARGET · CONTROL</span></div><div class="table-wrap compact"><table id="weeklyLevelTable"></table></div></div>
       </div>
-      <div class="section-separator"><span>Forward sample</span></div>
-      <div class="panel table-panel"><div class="panel-head"><h3>RC1 Shadow Trades</h3><span class="muted">16-Sep-2026 onward</span></div><div class="table-wrap"><table id="researchShadowTable"></table></div></div>
-      <div class="section-separator"><span>Regime history</span></div>
-      <div class="panel table-panel"><div class="panel-head"><h3>Master Regime Journey</h3><span class="muted">Four master regimes only</span></div><div class="table-wrap"><table id="researchRegimeTable"></table></div></div>
+      <div class="section-separator"><span>Forecast vs actual</span></div>
+      <div id="weeklyActual" class="metric-grid four"></div>
+      <div class="panel table-panel"><div class="panel-head"><h3>BEN Opportunities Within This Week</h3><span class="muted">Observed independently of weekly context</span></div><div class="table-wrap"><table id="weeklyOppTable"></table></div></div>
+      <div class="section-separator"><span>Weekly history</span></div>
+      <div class="panel table-panel"><div class="table-wrap"><table id="weeklyHistoryTable"></table></div></div>
+    </section>
+    <section id="tab-validation" class="tab-page">
+      <div class="section-title"><div><small>2026 BEN RESEARCH</small><h2>Historical Validation</h2></div><button id="validationRefresh" class="primary">Refresh</button></div>
+      <div class="page-intro">This page measures how the 2026 BEN qualification rules behaved historically and highlights where forward validation is still required. Historical results describe the research sample; they do not guarantee future performance.</div>
+      <div id="validationMetrics" class="metric-grid four"></div>
+      <div class="section-separator"><span>Rule performance by timeframe</span></div>
+      <div class="panel table-panel"><div class="panel-head"><h3>Qualification Rules</h3><span class="muted">H1/M30 frozen · M15 candidate</span></div><div class="table-wrap"><table id="rulePerformanceTable"></table></div></div>
+      <div class="section-separator"><span>Monthly distribution</span></div>
+      <div class="panel table-panel"><div class="table-wrap"><table id="monthlyTable"></table></div></div>
+      <div class="section-separator"><span>Opportunity validation</span></div>
+      <div class="panel table-panel"><div class="panel-head"><h3>All Historical Opportunities</h3><span class="muted">65 unique opportunities merged from 93 qualified signals</span></div><div class="table-wrap tall"><table id="validationOppTable"></table></div></div>
+      <div class="section-separator"><span>Failure / exception analysis</span></div>
+      <div class="page-intro warn">The small non-major set is where future research should concentrate. The goal is to understand the exceptions without constantly retuning rules that already performed strongly in the 2026 sample.</div>
+      <div class="panel table-panel"><div class="table-wrap"><table id="failureTable"></table></div></div>
     </section>
 
     <section id="tab-health" class="tab-page">
-      <div class="section-title"><div><small>DATA & PROCESSING</small><h2>System Health</h2></div><button id="healthLoad" class="primary">Refresh</button></div>
-      <div id="healthCards" class="metric-grid six"></div>
-      <div class="section-separator"><span>Pipeline checkpoints</span></div>
+      <div class="section-title"><div><small>TRUST & SYNCHRONIZATION</small><h2>System Health</h2></div><button id="healthRefresh" class="primary">Refresh</button></div>
+      <div class="page-intro">This page verifies that market data, BEN events, rule computation and opportunity tracking are synchronized before live information is presented as current.</div>
+      <div id="healthStatus" class="status-band"></div>
+      <div id="healthMetrics" class="metric-grid four"></div>
+      <div class="section-separator"><span>Timeframe freshness</span></div>
+      <div class="panel table-panel"><div class="table-wrap"><table id="freshnessTable"></table></div></div>
+      <div class="section-separator"><span>Research reproduction</span></div>
+      <div class="panel table-panel"><div class="panel-head"><h3>Frozen / Candidate Rule Audit</h3><span class="muted">Reproduced from historical BEN EXIT events</span></div><div class="table-wrap"><table id="reproductionTable"></table></div></div>
       <div class="two-col">
-        <div class="panel"><div class="panel-head"><h3>Engine Checkpoints</h3></div><div id="checkpointGrid" class="detail-grid"></div></div>
-        <div class="panel"><div class="panel-head"><h3>Scheduler</h3></div><div id="schedulerGrid" class="detail-grid"></div></div>
+        <div class="panel"><div class="panel-head"><h3>Watcher & Ingestion</h3><span class="muted">5-minute closed-bar pipeline</span></div><div id="watcherGrid" class="detail-grid"></div></div>
+        <div class="panel"><div class="panel-head"><h3>Weekly Context Scheduler</h3><span class="muted">Context only</span></div><div id="schedulerGrid" class="detail-grid"></div></div>
       </div>
-      <div class="panel"><div class="panel-head"><h3>Scheduler Log Tail</h3><span class="muted">Latest completed-cycle diagnostics</span></div><pre id="schedulerLog" class="log-block"></pre></div>
+      <div class="two-col">
+        <div class="panel"><div class="panel-head"><h3>Database Integrity</h3></div><div id="integrityGrid" class="detail-grid"></div></div>
+        <div class="panel table-panel"><div class="panel-head"><h3>Recent Ingest Cycles</h3></div><div class="table-wrap compact"><table id="ingestRunsTable"></table></div></div>
+      </div>
     </section>
   </main>
-  <footer>WLW Dashboard · RC1 is the sole execution authority · Weekly maps are context only</footer>
+  <footer>BEN Institutional Opportunity Monitor · closed-bar data · weekly context never overrides BEN qualification</footer>
   <script src="/assets/app.js"></script>
 </body>
 </html>
