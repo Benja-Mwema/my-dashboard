@@ -75,11 +75,14 @@ async function loadOverview(){
   ]);
   renderTable($('constructionTable'),p.construction||[],[
     {key:'sequence_no',label:'#',fmt:v=>n(v,0),cls:'num'},{key:'signal_time',label:'Time',fmt:v=>shortT(v)},{key:'timeframe',label:'TF',fmt:v=>badge(v,'info')},
-    {key:'side',label:'Side',fmt:v=>sideBadge(v)},{key:'rule_ids',label:'Rule'},{key:'engine_version',label:'Version'},{key:'rule_status',label:'Research Status',fmt:v=>badge(v,kind(v))}
+    {key:'side',label:'Side',fmt:v=>sideBadge(v)},{key:'qualification_status',label:'Qualification',fmt:v=>badge(v||'QUALIFIED_ONCE','good')},
+    {key:'outcome_status',label:'Outcome',fmt:v=>badge(v||'PENDING',kind(v||'PENDING'))},{key:'rule_ids',label:'Rule'},{key:'engine_version',label:'Version'},
+    {key:'latest_recheck_qualified',label:'Latest Recheck',fmt:(v,r)=>r.latest_rechecked_at?badge(v===1?'PASS':'WOULD FAIL',v===1?'good':'warn'):'—'}
   ]);
   renderTable($('todayTable'),p.today_opportunities||[],[
     {key:'start_time',label:'Start',fmt:v=>shortT(v)},{key:'side',label:'Side',fmt:v=>sideBadge(v)},{key:'first_tf',label:'First TF'},
-    {key:'timeframes',label:'TFs'},{key:'signal_count',label:'Signals',fmt:v=>n(v,0),cls:'num'},{key:'status',label:'Status',fmt:v=>badge(v,kind(v))},{key:'close_reason',label:'Close Reason'}
+    {key:'qualification_status',label:'Qualification',fmt:v=>badge(v||'QUALIFIED_ONCE','good')},{key:'outcome_status',label:'Outcome',fmt:v=>badge(v||'PENDING',kind(v||'PENDING'))},
+    {key:'timeframes',label:'TFs'},{key:'signal_count',label:'Signals',fmt:v=>n(v,0),cls:'num'},{key:'status',label:'Journey',fmt:v=>badge(v,kind(v))},{key:'close_reason',label:'Close Reason'}
   ]);
 }
 function movementExplanation(h){
@@ -91,13 +94,16 @@ async function loadJourney(){
   const id=$('opportunitySelect').value;if(!id)return;
   const p=await api(`/api/opportunity?id=${encodeURIComponent(id)}`),h=p.header||{},j=p.journey||[],last=j[j.length-1]||h;
   $('journeyHeader').className=`status-band ${kind(last.movement_state||h.status)}`;
-  $('journeyHeader').innerHTML=`<div><small>SIDE</small><strong>${h.side||'—'}</strong></div><div><small>MOVEMENT STATE</small><strong>${esc(last.movement_state||h.status||'—')}</strong></div><p>${esc(movementExplanation({...h,...last}))}</p>`;
+  $('journeyHeader').innerHTML=`<div><small>QUALIFICATION</small><strong>${esc(h.qualification_status||'QUALIFIED_ONCE')}</strong></div><div><small>OUTCOME</small><strong>${esc(h.outcome_status||'PENDING')}</strong></div><p>Once qualified, the signal remains qualified permanently. Journey state and final outcome are tracked separately.</p>`;
   $('journeyMetrics').innerHTML=[metric('Progress ATR',n(last.progress_atr,2),'Distance from start in qualified direction'),metric('MFE ATR',n(last.mfe_atr,2),'Best favorable excursion','good'),metric('MAE ATR',n(last.mae_atr,2),'Largest adverse excursion',Number(last.mae_atr||0)>1?'bad':'warn'),metric('Signals',h.signal_count??0,`${h.timeframes||'—'} · first ${h.first_tf||'—'}`)].join('');
   $('journeyExplanation').innerHTML=`<p>${esc(movementExplanation({...h,...last}))}</p><p><strong>Progress ATR</strong> shows movement from the opportunity start in the qualified direction. <strong>MFE</strong> is the maximum favorable excursion reached so far; <strong>MAE</strong> is the maximum adverse excursion.</p><p><strong>Historical MAJOR</strong> is evaluated only after the research window completes. Live states therefore never rename ATR1_REACHED as MAJOR.</p>`;
   $('journeyDetails').innerHTML=[detail('Opportunity ID',esc(h.opportunity_id)),detail('Scope',badge(p.scope,'info')),detail('Qualification',badge(h.qualification_status||'QUALIFIED_ONCE','good')),detail('Outcome',badge(h.outcome_status||'PENDING',kind(h.outcome_status||'PENDING'))),detail('Start',esc(t(h.start_time))),detail('End / Last Signal',esc(t(h.end_time||h.last_signal_time))),detail('First TF',badge(h.first_tf,'info')),detail('Timeframes',esc(h.timeframes)),detail('Start Price',esc(n(h.first_price||h.start_price,2))),detail('Close Reason',esc(h.outcome_reason||h.close_reason||'Open / outcome pending'))].join('');
   renderTable($('signalTimeline'),p.signals||[],[
     {key:'sequence_no',label:'#',fmt:v=>n(v,0),cls:'num'},{key:'signal_time',label:'Time',fmt:v=>t(v)},{key:'timeframe',label:'TF',fmt:v=>badge(v,'info')},{key:'side',label:'Side',fmt:v=>sideBadge(v)},
-    {key:'rule_ids',label:'Rule'},{key:'engine_version',label:'Version'},{key:'rule_status',label:'Status',fmt:v=>badge(v,kind(v))},{key:'price',label:'Price',fmt:v=>n(v,2),cls:'num'}
+    {key:'qualification_status',label:'Qualification',fmt:v=>badge(v||'QUALIFIED_ONCE','good')},{key:'outcome_status',label:'Outcome',fmt:v=>badge(v||'PENDING',kind(v||'PENDING'))},
+    {key:'rule_ids',label:'Original Rule'},{key:'qualification_latched_at',label:'Qualified At',fmt:v=>t(v)},
+    {key:'latest_recheck_qualified',label:'Latest Recheck',fmt:(v,r)=>r.latest_rechecked_at?badge(v===1?'PASS':'WOULD FAIL',v===1?'good':'warn'):'—'},
+    {key:'price',label:'Price',fmt:v=>n(v,2),cls:'num'}
   ]);
   renderTable($('journeyTable'),j,[
     {key:'snapshot_time',label:'Time',fmt:v=>t(v)},{key:'current_price',label:'Price',fmt:v=>n(v,2),cls:'num'},{key:'progress_atr',label:'Progress ATR',fmt:v=>n(v,2),cls:'num'},
@@ -145,11 +151,13 @@ async function loadValidation(){
   ]);
   renderTable($('validationOppTable'),p.opportunities||[],[
     {key:'start_time',label:'Start',fmt:v=>t(v)},{key:'side',label:'Side',fmt:v=>sideBadge(v)},{key:'first_tf',label:'First TF',fmt:v=>badge(v,'info')},{key:'timeframes',label:'TFs'},
+    {key:'qualification_status',label:'Qualification',fmt:v=>badge(v||'QUALIFIED_ONCE','good')},{key:'outcome_status',label:'Outcome',fmt:v=>badge(v,kind(v))},
     {key:'signal_count',label:'Signals',fmt:v=>n(v,0),cls:'num'},{key:'any_major',label:'Major',fmt:v=>badge(v?'YES':'NO',v?'good':'bad')},{key:'major_signals',label:'Major Signals',fmt:v=>n(v,0),cls:'num'},
     {key:'first_persistent10',label:'Persistent10',fmt:v=>badge(v?'YES':'NO',v?'good':'bad')},{key:'first_mfe10_atr',label:'First MFE10 ATR',fmt:v=>n(v,2),cls:'num'},{key:'close_reason',label:'Journey Close'}
   ]);
   renderTable($('failureTable'),p.failures||[],[
     {key:'start_time',label:'Start',fmt:v=>t(v)},{key:'side',label:'Side',fmt:v=>sideBadge(v)},{key:'first_tf',label:'First TF'},{key:'timeframes',label:'TFs'},
+    {key:'qualification_status',label:'Qualification',fmt:v=>badge(v||'QUALIFIED_ONCE','good')},{key:'outcome_status',label:'Outcome',fmt:v=>badge(v||'FAILED','bad')},
     {key:'signal_count',label:'Signals',fmt:v=>n(v,0),cls:'num'},{key:'false_signals',label:'False Signals',fmt:v=>n(v,0),cls:'num'},{key:'first_persistent10',label:'Persistent10',fmt:v=>badge(v?'YES':'NO',v?'good':'bad')},
     {key:'first_mfe10_atr',label:'First MFE10 ATR',fmt:v=>n(v,2),cls:'num'},{key:'members',label:'Signal Sequence'}
   ]);
