@@ -42,7 +42,7 @@ function n(v,d=2){if(v===null||v===undefined||v==='')return'—';const x=Number(
 function pct(v){return v===null||v===undefined?'—':`${n(v,1)}%`}
 function t(v){if(!v)return'—';return String(v).replace('T',' ').replace('+03:00',' EAT').replace('.000','')}
 function shortT(v){const s=t(v);return s==='—'?s:(s.length>16?s.slice(5,16):s)}
-function kind(v){const s=String(v||'').toUpperCase();if(['CURRENT','PASS','FROZEN','ATR1_REACHED','EXPANDING','QUALIFIED','QUALIFIED_ONCE','SUCCESS','CLOSED_WIN'].includes(s))return'good';if(['ERROR','FAIL','FAILED','STALE','CLOSED_LOSS'].includes(s))return'bad';if(['LAGGING','PROCESSING','DEVELOPING','CANDIDATE','WATCHING','PENDING'].includes(s))return'warn';return'info'}
+function kind(v){const s=String(v||'').toUpperCase();if(['CURRENT','PASS','FROZEN','ATR1_REACHED','EXPANDING','QUALIFIED','QUALIFIED_ONCE','SUCCESS','CLOSED_WIN','CONFIRMED'].includes(s))return'good';if(['ERROR','FAIL','FAILED','STALE','CLOSED_LOSS','INVALIDATED'].includes(s))return'bad';if(['LAGGING','PROCESSING','DEVELOPING','CANDIDATE','WATCHING','PENDING','OPEN'].includes(s))return'warn';return'info'}
 function badge(v,k){return`<span class="badge ${k||kind(v)}">${esc(v||'—')}</span>`}
 function sideBadge(v){return badge(v,v==='BUY'?'good':v==='SELL'?'bad':'info')}
 function metric(label,value,sub='',k='info'){return`<div class="metric ${k}"><small>${esc(label)}</small><strong>${esc(value)}</strong>${sub?`<span>${esc(sub)}</span>`:''}</div>`}
@@ -88,6 +88,20 @@ async function loadOverview(){
     {key:'start_time',label:'Start',fmt:v=>shortT(v)},{key:'side',label:'Side',fmt:v=>sideBadge(v)},{key:'first_tf',label:'First TF'},
     {key:'qualification_status',label:'Qualification',fmt:v=>badge(v||'QUALIFIED_ONCE','good')},{key:'outcome_status',label:'Outcome',fmt:v=>badge(v||'PENDING',kind(v||'PENDING'))},
     {key:'timeframes',label:'TFs'},{key:'signal_count',label:'Signals',fmt:v=>n(v,0),cls:'num'},{key:'status',label:'Journey',fmt:v=>badge(v,kind(v))},{key:'close_reason',label:'Close Reason'}
+  ]);
+  renderTable($('m15WatchTable'),p.precursor_watch||[],[
+    {key:'start_time',label:'Start',fmt:v=>shortT(v)},
+    {key:'last_watch_time',label:'Last M15 EXIT',fmt:v=>shortT(v)},
+    {key:'side',label:'Side',fmt:v=>sideBadge(v)},
+    {key:'max_strength',label:'Tier',fmt:v=>badge('T'+n(v,0),Number(v)>=2?'warn':'info')},
+    {key:'trigger_count',label:'M15 EXITs',fmt:v=>n(v,0),cls:'num'},
+    {key:'watch_rules',label:'Watch Families'},
+    {key:'status',label:'Status',fmt:v=>badge(v,kind(v))},
+    {key:'expires_at',label:'Expires',fmt:v=>shortT(v)},
+    {key:'confirmed_at',label:'Confirmed',fmt:v=>shortT(v)},
+    {key:'confirm_tf',label:'Confirm TF',fmt:v=>v?badge(v,'good'):'—'},
+    {key:'confirm_rules',label:'V3 Family',fmt:v=>v||'—'},
+    {key:'research_status',label:'Mode',fmt:v=>badge(v||'RESEARCH_ONLY','warn')}
   ]);
   renderTable($('v3ResearchTable'),p.v3_evaluations||[],[
     {key:'signal_time',label:'EXIT Time',fmt:v=>shortT(v)},
