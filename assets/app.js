@@ -82,6 +82,8 @@ async function loadOverview(){
     {key:'sequence_no',label:'#',fmt:v=>n(v,0),cls:'num'},{key:'signal_time',label:'Time',fmt:v=>shortT(v)},{key:'timeframe',label:'TF',fmt:v=>badge(v,'info')},
     {key:'side',label:'Side',fmt:v=>sideBadge(v)},{key:'qualification_status',label:'Qualification',fmt:v=>badge(v||'QUALIFIED_ONCE','good')},
     {key:'outcome_status',label:'Outcome',fmt:v=>badge(v||'PENDING',kind(v||'PENDING'))},{key:'rule_ids',label:'Rule'},{key:'engine_version',label:'Version'},
+    {key:'ml_true_probability',label:'ML P(TRUE)',fmt:v=>v===null||v===undefined?'—':(n(Number(v)*100,1)+'%'),cls:'num'},
+    {key:'ml_confidence_band',label:'ML Band',fmt:v=>v?badge(v,v==='HIGH'?'good':v==='ELEVATED'?'warn':'info'):'—'},
     {key:'latest_recheck_qualified',label:'Latest Recheck',fmt:(v,r)=>r.latest_rechecked_at?badge(v===1?'PASS':'WOULD FAIL',v===1?'good':'warn'):'—'}
   ]);
   renderTable($('todayTable'),p.today_opportunities||[],[
@@ -111,6 +113,17 @@ async function loadOverview(){
     {key:'rule_ids',label:'Matched Family',fmt:v=>v||'—'},
     {key:'research_status',label:'Status',fmt:v=>badge(v||'RESEARCH_ONLY',kind(v||'RESEARCH_ONLY'))},
     {key:'engine_version',label:'Candidate Version'}
+  ]);
+  renderTable($('mlExitTable'),p.ml_exit_scores||[],[
+    {key:'signal_time',label:'EXIT Time',fmt:v=>shortT(v)},
+    {key:'timeframe',label:'TF',fmt:v=>badge(v,'info')},
+    {key:'side',label:'Side',fmt:v=>sideBadge(v)},
+    {key:'v3_rule_ids',label:'V3 Family',fmt:v=>v||'—'},
+    {key:'true_probability',label:'P(TRUE)',fmt:v=>(n(Number(v)*100,1)+'%'),cls:'num'},
+    {key:'confidence_band',label:'ML Band',fmt:v=>badge(v,v==='HIGH'?'good':v==='ELEVATED'?'warn':'info')},
+    {key:'meeting_point_pass',label:'Meeting Point',fmt:v=>badge(Number(v)===1?'INSIDE':'BELOW',Number(v)===1?'good':'info')},
+    {key:'model_version',label:'Model'},
+    {key:'research_status',label:'Authority',fmt:v=>badge(v||'RESEARCH_ONLY','warn')}
   ]);
   renderTable($('shadowHandoverTable'),p.shadow_handovers||[],[
     {key:'m15_signal_time',label:'M15 EXIT',fmt:v=>shortT(v)},
@@ -142,6 +155,8 @@ async function loadJourney(){
     {key:'sequence_no',label:'#',fmt:v=>n(v,0),cls:'num'},{key:'signal_time',label:'Time',fmt:v=>t(v)},{key:'timeframe',label:'TF',fmt:v=>badge(v,'info')},{key:'side',label:'Side',fmt:v=>sideBadge(v)},
     {key:'qualification_status',label:'Qualification',fmt:v=>badge(v||'QUALIFIED_ONCE','good')},{key:'outcome_status',label:'Outcome',fmt:v=>badge(v||'PENDING',kind(v||'PENDING'))},
     {key:'rule_ids',label:'Original Rule'},{key:'qualification_latched_at',label:'Qualified At',fmt:v=>t(v)},
+    {key:'ml_true_probability',label:'ML P(TRUE)',fmt:v=>v===null||v===undefined?'—':(n(Number(v)*100,1)+'%'),cls:'num'},
+    {key:'ml_confidence_band',label:'ML Band',fmt:v=>v?badge(v,v==='HIGH'?'good':v==='ELEVATED'?'warn':'info'):'—'},
     {key:'latest_recheck_qualified',label:'Latest Recheck',fmt:(v,r)=>r.latest_rechecked_at?badge(v===1?'PASS':'WOULD FAIL',v===1?'good':'warn'):'—'},
     {key:'price',label:'Price',fmt:v=>n(v,2),cls:'num'}
   ]);
