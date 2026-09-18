@@ -42,7 +42,7 @@ function n(v,d=2){if(v===null||v===undefined||v==='')return'—';const x=Number(
 function pct(v){return v===null||v===undefined?'—':`${n(v,1)}%`}
 function t(v){if(!v)return'—';return String(v).replace('T',' ').replace('+03:00',' EAT').replace('.000','')}
 function shortT(v){const s=t(v);return s==='—'?s:(s.length>16?s.slice(5,16):s)}
-function kind(v){const s=String(v||'').toUpperCase();if(['CURRENT','PASS','FROZEN','ATR1_REACHED','EXPANDING','QUALIFIED','CLOSED_WIN'].includes(s))return'good';if(['ERROR','FAIL','STALE','CLOSED_LOSS'].includes(s))return'bad';if(['LAGGING','PROCESSING','DEVELOPING','CANDIDATE','WATCHING'].includes(s))return'warn';return'info'}
+function kind(v){const s=String(v||'').toUpperCase();if(['CURRENT','PASS','FROZEN','ATR1_REACHED','EXPANDING','QUALIFIED','QUALIFIED_ONCE','SUCCESS','CLOSED_WIN'].includes(s))return'good';if(['ERROR','FAIL','FAILED','STALE','CLOSED_LOSS'].includes(s))return'bad';if(['LAGGING','PROCESSING','DEVELOPING','CANDIDATE','WATCHING','PENDING'].includes(s))return'warn';return'info'}
 function badge(v,k){return`<span class="badge ${k||kind(v)}">${esc(v||'—')}</span>`}
 function sideBadge(v){return badge(v,v==='BUY'?'good':v==='SELL'?'bad':'info')}
 function metric(label,value,sub='',k='info'){return`<div class="metric ${k}"><small>${esc(label)}</small><strong>${esc(value)}</strong>${sub?`<span>${esc(sub)}</span>`:''}</div>`}
@@ -55,12 +55,12 @@ async function loadMeta(){
   $('weekSelect').innerHTML=weeks.map(w=>`<option value="${esc(w.cutoff_date)}">${esc(`${w.forecast_week_start} → ${w.forecast_week_end}`)}</option>`).join('');
   const live=state.meta.live_opportunities||[], hist=state.meta.historical_opportunities||[];
   const opts=[...live.map(o=>({...o,scope:'LIVE'})),...hist.map(o=>({...o,scope:'HIST'}))];
-  $('opportunitySelect').innerHTML=opts.map(o=>`<option value="${esc(o.opportunity_id)}">${esc(`${o.start_time} · ${o.side} · ${o.first_tf} · ${o.timeframes}`)}</option>`).join('');
+  $('opportunitySelect').innerHTML=opts.map(o=>`<option value="${esc(o.opportunity_id)}">${esc(`${o.start_time} · ${o.side} · ${o.first_tf} · ${o.timeframes} · ${o.qualification_status||'QUALIFIED_ONCE'} · ${o.outcome_status||'PENDING'}`)}</option>`).join('');
 }
 function currentOppHtml(o){
   if(!o?.opportunity_id)return'<div class="opportunity-hero"><div class="big"><small>Current state</small><strong>No active BEN opportunity</strong></div><div class="note">BEN events continue to be monitored on newly closed bars. An opportunity appears here only after a tested M15, M30 or H1 rule qualifies and the signal is attached to the live opportunity engine.</div></div>';
   const prog=n(o.progress_atr,2),mfe=n(o.mfe_atr,2),mae=n(o.mae_atr,2);
-  return`<div class="opportunity-hero"><div class="big"><small>${esc(o.side)} opportunity · ${esc(o.movement_state||o.status)}</small><strong>${n(o.current_price,2)}</strong></div>${detail('Started',esc(t(o.start_time)))}${detail('First timeframe',badge(o.first_tf,'info'))}${detail('Participating TFs',esc(o.timeframes))}${detail('Signals',esc(o.signal_count))}${detail('Progress',esc(`${prog} H1 ATR`))}${detail('MFE / MAE',esc(`${mfe} / ${mae} ATR`))}<div class="note">This opportunity began at ${esc(t(o.start_time))}. Progress measures movement from the starting price in the qualified direction; MFE is the best favorable excursion reached so far, while MAE is the largest adverse excursion.</div></div>`;
+  return`<div class="opportunity-hero"><div class="big"><small>${esc(o.side)} opportunity · ${esc(o.movement_state||o.status)}</small><strong>${n(o.current_price,2)}</strong></div>${detail('Qualification',badge(o.qualification_status||'QUALIFIED_ONCE','good'))}${detail('Outcome',badge(o.outcome_status||'PENDING',kind(o.outcome_status||'PENDING')))}${detail('Started',esc(t(o.start_time)))}${detail('First timeframe',badge(o.first_tf,'info'))}${detail('Participating TFs',esc(o.timeframes))}${detail('Signals',esc(o.signal_count))}${detail('Progress',esc(`${prog} H1 ATR`))}${detail('MFE / MAE',esc(`${mfe} / ${mae} ATR`))}<div class="note">Qualification is latched permanently once achieved. Later bars can change only the journey/outcome state, never erase the original qualification.</div></div>`;
 }
 async function loadOverview(){
   const p=await api('/api/overview'),s=p.status||{},o=p.focus||{};
