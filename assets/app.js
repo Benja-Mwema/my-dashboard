@@ -91,6 +91,39 @@ async function loadOverview(){
     {key:'qualification_status',label:'Qualification',fmt:v=>badge(v||'QUALIFIED_ONCE','good')},{key:'outcome_status',label:'Outcome',fmt:v=>badge(v||'PENDING',kind(v||'PENDING'))},
     {key:'timeframes',label:'TFs'},{key:'signal_count',label:'Signals',fmt:v=>n(v,0),cls:'num'},{key:'status',label:'Journey',fmt:v=>badge(v,kind(v))},{key:'close_reason',label:'Close Reason'}
   ]);
+  renderTable($('rawExitAuditTable'),p.raw_exit_audit||[],[
+    {key:'signal_time',label:'EXIT Time',fmt:v=>shortT(v)},
+    {key:'timeframe',label:'TF',fmt:v=>badge(v,'info')},
+    {key:'side',label:'Side',fmt:v=>sideBadge(v)},
+    {key:'close',label:'Price',fmt:v=>n(v,2),cls:'num'},
+    {key:'v3_qualified',label:'Frozen V3',fmt:v=>badge(Number(v)===1?'QUALIFIED':'REJECT',Number(v)===1?'good':'warn')},
+    {key:'v3_rules',label:'V3 Family',fmt:v=>v||'—'},
+    {key:'expansion_score',label:'Expansion',fmt:v=>v===null||v===undefined?'—':badge(`${n(v,0)}/6`,Number(v)>=5?'warn':'info')},
+    {key:'expansion_signature',label:'Expansion Signature',fmt:v=>v||'—'},
+    {key:'expansion_success',label:'Expansion Outcome',fmt:(v,r)=>r.expansion_status!=='FINAL'?badge('PENDING','warn'):badge(Number(v)===1?'SUCCESS':'FAILED',Number(v)===1?'good':'bad')}
+  ]);
+  renderTable($('expansionWatchTable'),p.expansion_watch||[],[
+    {key:'signal_time',label:'M30 EXIT',fmt:v=>shortT(v)},
+    {key:'side',label:'Side',fmt:v=>sideBadge(v)},
+    {key:'score',label:'Score',fmt:v=>badge(`${n(v,0)}/6`,Number(v)>=5?'warn':'info')},
+    {key:'signature',label:'Signature'},
+    {key:'v3_qualified',label:'Frozen V3',fmt:v=>badge(Number(v)===1?'QUALIFIED':'REJECT',Number(v)===1?'good':'warn')},
+    {key:'v3_rules',label:'V3 Family',fmt:v=>v||'—'},
+    {key:'expansion_status',label:'Outcome State',fmt:v=>badge(v,kind(v))},
+    {key:'expansion_success',label:'Expansion Outcome',fmt:(v,r)=>r.expansion_status!=='FINAL'?badge('PENDING','warn'):badge(Number(v)===1?'SUCCESS':'FAILED',Number(v)===1?'good':'bad')},
+    {key:'mfe10_atr',label:'MFE10',fmt:v=>v===null||v===undefined?'—':`${n(v,2)} ATR`,cls:'num'},
+    {key:'mae10_atr',label:'MAE10',fmt:v=>v===null||v===undefined?'—':`${n(v,2)} ATR`,cls:'num'}
+  ]);
+  renderTable($('boundaryJournalTable'),p.boundary_journal||[],[
+    {key:'snapshot_time',label:'Snapshot',fmt:v=>shortT(v)},
+    {key:'timeframe',label:'TF',fmt:v=>badge(v,'info')},
+    {key:'nominal_close_time',label:'Nominal Close',fmt:v=>shortT(v)},
+    {key:'phase',label:'Capture Phase'},
+    {key:'age_seconds',label:'Age',fmt:v=>`${n(v,0)}s`,cls:'num'},
+    {key:'boundary_exit_flag',label:'Boundary EXIT',fmt:v=>badge(Number(v)===1?'EXIT':'NONE',Number(v)===1?'warn':'info')},
+    {key:'final_exit_flag',label:'Safe Closed EXIT',fmt:v=>v===null||v===undefined?badge('WAITING','warn'):badge(Number(v)===1?'EXIT':'NONE',Number(v)===1?'good':'info')},
+    {key:'discrepancy',label:'Compare',fmt:v=>v===null||v===undefined?badge('PENDING','warn'):badge(Number(v)===1?'DISCREPANCY':'MATCH',Number(v)===1?'bad':'good')}
+  ]);
   renderTable($('m15WatchTable'),p.precursor_watch||[],[
     {key:'start_time',label:'Start',fmt:v=>shortT(v)},
     {key:'last_watch_time',label:'Last M15 EXIT',fmt:v=>shortT(v)},
