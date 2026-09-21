@@ -316,11 +316,15 @@ async function loadHealth(){
   ]);
 }
 async function safe(name,fn){try{await fn()}catch(e){console.error(name,e);const b=$('alertBanner');b.className='alert-banner';b.textContent=`ERROR — ${name}: ${e.message}`}}
+async function refreshAll(){
+  snapshotPromise=null;
+  await Promise.all([loadHealth(),loadOverview(),loadWeekly(),loadValidation(),loadJourney()]);
+}
 async function boot(){
   document.querySelectorAll('#tabs button').forEach(b=>b.addEventListener('click',()=>showTab(b.dataset.tab)));
   const h=location.hash.replace('#','');if(['overview','journey','weekly','validation','health'].includes(h))showTab(h);
-  $('overviewRefresh').onclick=()=>safe('overview',loadOverview);$('journeyLoad').onclick=()=>safe('journey',loadJourney);$('weeklyLoad').onclick=()=>safe('weekly',loadWeekly);$('validationRefresh').onclick=()=>safe('validation',loadValidation);$('healthRefresh').onclick=()=>safe('health',loadHealth);
+  $('overviewRefresh').onclick=()=>safe('refresh',refreshAll);$('journeyLoad').onclick=()=>safe('journey',async()=>{snapshotPromise=null;await loadJourney()});$('weeklyLoad').onclick=()=>safe('weekly',async()=>{snapshotPromise=null;await loadWeekly()});$('validationRefresh').onclick=()=>safe('validation',async()=>{snapshotPromise=null;await loadValidation()});$('healthRefresh').onclick=()=>safe('health',async()=>{snapshotPromise=null;await loadHealth()});
   await safe('meta',loadMeta);await Promise.all([safe('health',loadHealth),safe('overview',loadOverview),safe('weekly',loadWeekly),safe('validation',loadValidation)]);await safe('journey',loadJourney);
-  setInterval(()=>{safe('health',loadHealth);safe('overview',loadOverview)},60000);
+  setInterval(()=>{safe('refresh',refreshAll)},60000);
 }
 document.addEventListener('DOMContentLoaded',boot);
