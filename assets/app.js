@@ -1,13 +1,12 @@
-const $=id=>document.getElementById(id);
-const state={meta:null};
-const FORCE_STATIC=new URLSearchParams(location.search).get('static')==='1';
-const LIVE_API_HOSTS=new Set(['127.0.0.1','localhost']);
-const USE_STATIC_SNAPSHOT=FORCE_STATIC||!LIVE_API_HOSTS.has(location.hostname);
-let snapshotPromise=null;
+const $ = id => document.getElementById(id);
+const state = { meta:null, latestDate:'', selectedRule:null };
+const LIVE_API_HOSTS = new Set(['127.0.0.1','localhost']);
+const USE_STATIC_SNAPSHOT = !LIVE_API_HOSTS.has(location.hostname);
+let snapshotPromise = null;
 
 async function dashboardSnapshot(){
   if(!snapshotPromise){
-    snapshotPromise=fetch('/data/dashboard_snapshot.json',{cache:'no-store'}).then(async r=>{
+    snapshotPromise = fetch('/data/dashboard_snapshot.json',{cache:'no-store'}).then(async r=>{
       if(!r.ok) throw new Error(`Static snapshot unavailable: HTTP ${r.status}`);
       return r.json();
     });
@@ -16,315 +15,231 @@ async function dashboardSnapshot(){
 }
 
 function staticApiRoute(s,path){
-  const u=new URL(path,location.origin),q=u.searchParams,route=u.pathname;
+  const u=new URL(path,location.origin), q=u.searchParams, route=u.pathname;
+  const cutoff=q.get('cutoff_date')||q.get('week')||s.default_week;
   if(route==='/api/meta') return s.meta||{};
-  if(route==='/api/overview') return s.overview||{};
-  if(route==='/api/opportunities') return s.opportunities||{};
-  if(route==='/api/opportunity') return (s.opportunity||{})[q.get('id')||'']||{};
+  if(route==='/api/system-health') return s.system_health||{};
+  if(route==='/api/research-rc1') return s.research_rc1_latest||{};
+  if(route==='/api/research-regimes') return (s.research_regimes||[]).slice(0,Number(q.get('limit')||500));
+  if(route==='/api/rc1-day') return (s.rc1_day_by_date||{})[q.get('date')||'']||{};
+  if(route==='/api/weekly-analytics') return (s.weekly_analytics_by_week||{})[cutoff]||{};
+  if(route==='/api/weekly-report-map') return (s.weekly_report_map_by_week||{})[cutoff]||{};
   if(route==='/api/weekly'){
-    let cutoff=q.get('cutoff_date')||'';
-    if(!cutoff){const weeks=(s.meta||{}).weeks||[]; cutoff=weeks[0]?.cutoff_date||'';}
-    return (s.weekly||{})[cutoff]||{};
+    const rows=s.weekly_all||[];
+    if(q.get('cutoff_date')) return rows.filter(r=>String(r.cutoff_date)===String(q.get('cutoff_date')));
+    return rows.slice(0,Number(q.get('limit')||52));
   }
-  if(route==='/api/validation') return s.validation||{};
-  if(route==='/api/health') return s.health||{};
   throw new Error(`Static route unavailable: ${route}`);
 }
 
 async function api(path){
   if(USE_STATIC_SNAPSHOT) return staticApiRoute(await dashboardSnapshot(),path);
   const r=await fetch(path,{cache:'no-store'});
-  if(!r.ok){const e=await r.json().catch(()=>({}));throw new Error(e.message||`HTTP ${r.status}`)}
+  if(!r.ok){ const e=await r.json().catch(()=>({})); throw new Error(e.message||`HTTP ${r.status}`); }
   return r.json();
 }
-function esc(v){return String(v??'—').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
-function n(v,d=2){if(v===null||v===undefined||v==='')return'—';const x=Number(v);return Number.isFinite(x)?x.toLocaleString(undefined,{maximumFractionDigits:d}):String(v)}
-function pct(v){return v===null||v===undefined?'—':`${n(v,1)}%`}
-function t(v){if(!v)return'—';return String(v).replace('T',' ').replace('+03:00',' EAT').replace('.000','')}
-function shortT(v){const s=t(v);return s==='—'?s:(s.length>16?s.slice(5,16):s)}
-function kind(v){const s=String(v||'').toUpperCase();if(['CURRENT','PASS','FROZEN','ATR1_REACHED','EXPANDING','QUALIFIED','QUALIFIED_ONCE','SUCCESS','CLOSED_WIN','CONFIRMED'].includes(s))return'good';if(['ERROR','FAIL','FAILED','STALE','CLOSED_LOSS','INVALIDATED'].includes(s))return'bad';if(['LAGGING','PROCESSING','DEVELOPING','CANDIDATE','WATCHING','PENDING','OPEN'].includes(s))return'warn';return'info'}
-function badge(v,k){return`<span class="badge ${k||kind(v)}">${esc(v||'—')}</span>`}
-function sideBadge(v){return badge(v,v==='BUY'?'good':v==='SELL'?'bad':'info')}
-function metric(label,value,sub='',k='info'){return`<div class="metric ${k}"><small>${esc(label)}</small><strong>${esc(value)}</strong>${sub?`<span>${esc(sub)}</span>`:''}</div>`}
-function detail(label,value){return`<div class="detail"><small>${esc(label)}</small><strong>${value??'—'}</strong></div>`}
-function renderTable(el,rows,cols){if(!el)return;if(!rows?.length){el.innerHTML='<tbody><tr><td class="muted">No records for this selection.</td></tr></tbody>';return}const h=cols.map(c=>`<th>${esc(c.label)}</th>`).join('');const b=rows.map(r=>'<tr>'+cols.map(c=>`<td class="${c.cls||''}">${c.fmt?c.fmt(r[c.key],r):esc(r[c.key])}</td>`).join('')+'</tr>').join('');el.innerHTML=`<thead><tr>${h}</tr></thead><tbody>${b}</tbody>`}
-function showTab(name){document.querySelectorAll('.tab-page').forEach(x=>x.classList.toggle('active',x.id===`tab-${name}`));document.querySelectorAll('#tabs button').forEach(x=>x.classList.toggle('active',x.dataset.tab===name));history.replaceState(null,'',`#${name}`)}
+function n(v,d=2){ if(v===null||v===undefined||v==='') return '—'; const x=Number(v); return Number.isFinite(x)?x.toLocaleString(undefined,{maximumFractionDigits:d}):String(v); }
+function pct(v){ return v===null||v===undefined?'—':`${n(v,1)}%`; }
+function t(v){ if(!v) return '—'; return String(v).replace('T',' ').replace('+03:00',' EAT').replace('.000',''); }
+function shortT(v){ if(!v) return '—'; const s=t(v); return s.length>16?s.slice(5,16):s; }
+function esc(v){ return String(v??'—').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+function sideKind(v){ return v==='BUY'?'buy':v==='SELL'?'sell':'info'; }
+function stateKind(v){ const x=String(v||''); if(x==='QUALIFIED'||x==='PASS'||x==='CLOSED_WIN') return 'good'; if(x==='CONTEXT_BLOCKED'||x==='FAILED'||x==='CLOSED_LOSS'||x==='EXPIRED_LOSS') return 'bad'; if(x==='WAIT'||x==='WATCHING') return 'wait'; return 'info'; }
+function badge(v,kind){ return `<span class="badge ${kind||sideKind(v)}">${esc(v||'—')}</span>`; }
+function metric(label,value,sub='',kind='info'){ return `<div class="metric ${kind}"><small>${esc(label)}</small><strong>${esc(value)}</strong>${sub?`<span>${esc(sub)}</span>`:''}</div>`; }
+function detail(label,value){ return `<div class="detail"><small>${esc(label)}</small><strong>${value??'—'}</strong></div>`; }
+function showTab(name){ document.querySelectorAll('.tab-page').forEach(x=>x.classList.toggle('active',x.id===`tab-${name}`)); document.querySelectorAll('#tabs button').forEach(x=>x.classList.toggle('active',x.dataset.tab===name)); if(location.hash!==`#${name}`) history.replaceState(null,'',`#${name}`); }
+
+function renderTable(el,rows,cols,{click}={}){
+  if(!el) return;
+  if(!rows?.length){ el.innerHTML='<tbody><tr><td class="muted">No records</td></tr></tbody>'; return; }
+  const head=cols.map(c=>`<th>${esc(c.label)}</th>`).join('');
+  const body=rows.map((r,i)=>`<tr class="${click?'clickable':''}" data-row="${i}">`+cols.map(c=>{
+    const val=c.fmt?c.fmt(r[c.key],r):esc(r[c.key]); return `<td class="${c.className||''}">${val}</td>`;
+  }).join('')+'</tr>').join('');
+  el.innerHTML=`<thead><tr>${head}</tr></thead><tbody>${body}</tbody>`;
+  if(click) el.querySelectorAll('tbody tr').forEach(tr=>tr.addEventListener('click',()=>click(rows[Number(tr.dataset.row)])));
+}
+
+function regimeMeaning(regime,phase=''){
+  if(regime==='SWEEP_REJECT_BALANCE') return 'Liquidity sweeps and rejection dominate. RC1 waits for validated edge or breakdown formations; direction is not assumed.';
+  if(regime==='ACCEPTANCE_EXPANSION') return 'A structural break has been accepted. Only the selective RC1 expansion rules are allowed; there is no blanket continuation permission.';
+  if(regime==='TRANSITION') return phase==='BALANCE_FORMING'?'Old directional authority has weakened and balance is forming. Only the validated transition break can trade.':'The previous regime has lost authority. RC1 waits for the validated transition setup or a new structural regime.';
+  if(regime==='TREND_CONTINUATION') return 'Inherited trend structure remains intact, but RC1 has no independently validated >90% execution rule here. Execution state is NO_SIGNAL.';
+  return 'No RC1 regime is available for this date.';
+}
 async function loadMeta(){
   state.meta=await api('/api/meta');
   const weeks=state.meta.weeks||[];
-  $('weekSelect').innerHTML=weeks.map(w=>`<option value="${esc(w.cutoff_date)}">${esc(`${w.forecast_week_start} → ${w.forecast_week_end}`)}</option>`).join('');
-  const live=state.meta.live_opportunities||[], hist=state.meta.historical_opportunities||[];
-  const opts=[...live.map(o=>({...o,scope:'LIVE'})),...hist.map(o=>({...o,scope:'HIST'}))];
-  $('opportunitySelect').innerHTML=opts.map(o=>`<option value="${esc(o.opportunity_id)}">${esc(`${o.start_time} · ${o.side} · ${o.first_tf} · ${o.timeframes} · ${o.qualification_status||'QUALIFIED_ONCE'} · ${o.outcome_status||'PENDING'}`)}</option>`).join('');
-  const jc=state.meta.journey_coverage||{},days=jc.recent_days||[];
-  const gap=days.filter(x=>Number(x.qualified||0)===0).slice(0,4);
-  const gapText=gap.length?gap.map(x=>`${x.date}: ${x.evaluated} evaluated / 0 qualified`).join(' · '):'No recent qualification gaps.';
-  $('journeyCoverage').className='status-band info';
-  $('journeyCoverage').innerHTML=`<div><small>LAST QUALIFIED</small><strong>${esc(t(jc.latest_qualified_signal))}</strong></div><div><small>EVALUATED THROUGH</small><strong>${esc(t(jc.latest_evaluated_signal))}</strong></div><p>${esc(gapText)}. The selector lists qualified opportunities only; evaluated-but-unqualified days are not removed data.</p>`;
+  const weekOptions=weeks.map(w=>`<option value="${esc(w.cutoff_date)}">${esc(`${w.forecast_week_start} → ${w.forecast_week_end}`)}</option>`).join('');
+  $('overviewWeek').innerHTML=weekOptions; $('weeklyWeek').innerHTML=weekOptions;
+  const dates=[...new Set([...(state.meta.forecast_dates||[]),...(state.meta.journey_dates||[])])].sort().reverse();
+  state.latestDate=dates[0]||state.meta.latest_daily_date||'';
+  const dateOptions=dates.map(d=>`<option value="${esc(d)}">${esc(d)}</option>`).join('');
+  $('overviewDate').innerHTML=dateOptions; $('journeyDate').innerHTML=dateOptions;
+  if(state.latestDate){ $('overviewDate').value=state.latestDate; $('journeyDate').value=state.latestDate; }
+  const latest=state.latestDate;
+  const wk=weeks.find(w=>latest && String(w.forecast_week_start)<=latest && String(w.forecast_week_end)>=latest) || weeks[0];
+  if(wk){ $('overviewWeek').value=wk.cutoff_date; $('weeklyWeek').value=wk.cutoff_date; }
 }
-function currentOppHtml(o){
-  if(!o?.opportunity_id)return'<div class="opportunity-hero"><div class="big"><small>Current state</small><strong>Frozen V3 active</strong></div><div class="note">Only Samuel EXIT events are monitored. M30/H1 Frozen V3 can qualify an opportunity; M15 remains precursor-watch only.</div></div>';
-  const prog=n(o.progress_atr,2),mfe=n(o.mfe_atr,2),mae=n(o.mae_atr,2);
-  return`<div class="opportunity-hero"><div class="big"><small>${esc(o.side)} opportunity · ${esc(o.movement_state||o.status)}</small><strong>${n(o.current_price,2)}</strong></div>${detail('Qualification',badge(o.qualification_status||'QUALIFIED_ONCE','good'))}${detail('Outcome',badge(o.outcome_status||'PENDING',kind(o.outcome_status||'PENDING')))}${detail('Started',esc(t(o.start_time)))}${detail('First timeframe',badge(o.first_tf,'info'))}${detail('Participating TFs',esc(o.timeframes))}${detail('Signals',esc(o.signal_count))}${detail('Progress',esc(`${prog} H1 ATR`))}${detail('MFE / MAE',esc(`${mfe} / ${mae} ATR`))}<div class="note">Qualification is latched permanently once achieved. Later bars can change only the journey/outcome state, never erase the original qualification.</div></div>`;
+
+async function loadHealth(){
+  const h=await api('/api/system-health');
+  const f=h.source_freshness||{}, d=h.database||{}, s=h.scheduler||{}, g=h.safety_guard||{}, p=h.processing||{};
+  const stale=f.status==='SOURCE_STALE', lag=Number(p.lag_minutes||0), processing=!stale&&lag>0;
+  const banner=$('staleBanner'); banner.classList.toggle('hidden',!(stale||processing)); banner.classList.toggle('processing',processing);
+  banner.textContent=stale?'SOURCE STALE — DO NOT USE CURRENT SIGNALS':`ENGINE PROCESSING — JOURNEY LAGS SOURCE BY ${n(lag,0)} MIN`;
+  $('sourceStatus').textContent=f.status||'—'; $('sourceStatus').className=stale?'negative':'positive';
+  $('dataAsOf').textContent=t(f.actual_latest_m15_close); $('dbAsOf').textContent=t(d.phase3_as_of||d.db_m15_as_of);
+  $('schedulerStatus').textContent=s.display_status||(s.status==='OK'?`${s.State} / ${s.LastTaskResult}`:'UNAVAILABLE');
+  $('healthCards').innerHTML=[metric('Source',f.status||'—',f.reason||'',stale?'bad':'good'),metric('Processing',p.status||'—',lag?`${n(lag,0)} min lag`:'Aligned',processing?'warn':'good'),metric('Expected M15',shortT(f.expected_latest_completed_m15_close),`Wall-clock lag ${n(f.wallclock_lag_minutes,0)} min`),metric('DB M15',shortT(d.db_m15_as_of),'Closed bars ingested'),metric('Schema',g.schema_version??'—',g.dashboard_views_valid?'Views valid':'Views invalid',g.dashboard_views_valid?'good':'bad'),metric('Executions',d.execution_count??0,`${d.resolved_outcome_count??0} resolved`)].join('');
+  $('checkpointGrid').innerHTML=[detail('Phase 3',esc(t(d.phase3_as_of))),detail('Phase 4',esc(t(d.phase4_as_of))),detail('Phase 5',esc(t(d.phase5_as_of))),detail('Phase 6 Observation',esc(t(d.phase6_observation_as_of))),detail('Phase 6 Lineage',esc(t(d.phase6_lineage_as_of))),detail('Failed Runs',esc(d.failed_engine_run_count??0))].join('');
+  $('schedulerGrid').innerHTML=[detail('State',esc(s.State||s.status||'—')),detail('Enabled',esc(s.Enabled===true?'YES':s.Enabled===false?'NO':'—')),detail('Last Run',esc(t(s.LastRunTime))),detail('Last Result',esc(s.LastTaskResult??'—')),detail('Next Run',esc(t(s.NextRunTime))),detail('Missed Runs',esc(s.MissedRuns??'—'))].join('');
+  $('schedulerLog').textContent=(h.scheduler_log_tail||[]).join('\n');
 }
+function ruleCols(){ return [
+  {key:'grade',label:'Grade',fmt:v=>badge(v,v==='A'?'good':'wait')},
+  {key:'side',label:'Side',fmt:v=>badge(v)},
+  {key:'rule_id',label:'Rule'},
+  {key:'trigger_label',label:'Trigger'},
+  {key:'status',label:'State',fmt:v=>badge(v,stateKind(v))},
+  {key:'conditions_passed',label:'Stable Conditions',fmt:(v,r)=>`${v}/${r.conditions_total}`,className:'num'},
+  {key:'raw_trigger_count',label:'Raw',fmt:v=>n(v,0),className:'num'},
+  {key:'qualified_count',label:'Qualified',fmt:v=>n(v,0),className:'num'},
+  {key:'validation_rate',label:'Val WR',fmt:v=>pct(100*v),className:'num'},
+  {key:'risk',label:'Risk'},
+  {key:'what_to_wait_for',label:'Waiting For'}
+]; }
+function shadowCols(){ return [
+  {key:'signal_time',label:'Signal',fmt:v=>shortT(v)}, {key:'grade',label:'Grade',fmt:v=>badge(v,v==='A'?'good':'wait')},
+  {key:'rule_id',label:'Rule'}, {key:'side',label:'Side',fmt:v=>badge(v)},
+  {key:'entry_price',label:'Entry',fmt:v=>n(v,2),className:'num'}, {key:'tp_price',label:'TP',fmt:v=>n(v,2),className:'num'},
+  {key:'sl_price',label:'SL',fmt:v=>n(v,2),className:'num'}, {key:'status',label:'Status',fmt:v=>badge(v,stateKind(v))},
+  {key:'result',label:'Result',fmt:v=>v?badge(v,v==='WIN'?'good':'bad'):'—'}
+]; }
+
 async function loadOverview(){
-  const p=await api('/api/overview'),s=p.status||{},o=p.focus||{};
-  const st=s.source_lag_status||'UNKNOWN';
-  $('overviewStatus').className=`status-band ${kind(st)}`;
-  $('overviewStatus').innerHTML=`<div><small>LIVE SOURCE</small><strong>${esc(st)}</strong></div><div><small>MODE</small><strong>FROZEN V3</strong></div><p>${o.opportunity_id?'A Frozen V3 opportunity is active. M30/H1 qualifications are official and latched; M15 remains precursor-only.':'Frozen V3 is active for M30/H1 and retroactive across active historical records. M15 remains precursor-only.'}</p>`;
-  $('overviewMetrics').innerHTML=[metric('EXIT Events Today',p.ben_events_today??0,'Samuel EXIT buffer hits only'),metric('Frozen V3 Qualifiers Today',p.qualified_signals_today??0,'Official M30/H1 Frozen V3 qualifiers',p.qualified_signals_today?'good':'info'),metric('Open Opportunities',s.open_opportunities??0,'Unique live Frozen V3 opportunities',s.open_opportunities?'good':'info'),metric('Source Lag',`${n(s.source_lag_bars??0,0)} bars`,`${n(s.source_lag_minutes??0,0)} minutes`,s.source_lag_bars?'bad':'good')].join('');
-  $('currentOpportunity').innerHTML=currentOppHtml(o);
-  renderTable($('mtfTable'),p.mtf||[],[
-    {key:'timeframe',label:'TF',fmt:v=>badge(v,'info')},{key:'close_time',label:'Closed',fmt:v=>shortT(v)},{key:'close',label:'Close',fmt:v=>n(v,2),cls:'num'},
-    {key:'jrsx_main',label:'JRSX',fmt:v=>n(v,1),cls:'num'},{key:'jrsx_direction',label:'Direction',fmt:v=>sideBadge(v)},{key:'ben_signal',label:'BEN Signal',fmt:v=>badge(v,v==='NONE'?'info':kind(v))}
+  const date=$('overviewDate').value, week=$('overviewWeek').value;
+  const [day,research,weeklyRows]=await Promise.all([
+    api(`/api/rc1-day?date=${encodeURIComponent(date)}`), api('/api/research-rc1'),
+    api(`/api/weekly?cutoff_date=${encodeURIComponent(week)}`)
   ]);
-  renderTable($('constructionTable'),p.construction||[],[
-    {key:'sequence_no',label:'#',fmt:v=>n(v,0),cls:'num'},{key:'signal_time',label:'Time',fmt:v=>shortT(v)},{key:'timeframe',label:'TF',fmt:v=>badge(v,'info')},
-    {key:'side',label:'Side',fmt:v=>sideBadge(v)},{key:'qualification_status',label:'Qualification',fmt:v=>badge(v||'QUALIFIED_ONCE','good')},
-    {key:'outcome_status',label:'Outcome',fmt:v=>badge(v||'PENDING',kind(v||'PENDING'))},{key:'rule_ids',label:'Rule'},{key:'engine_version',label:'Version'},
-    {key:'ml_true_probability',label:'ML P(TRUE)',fmt:v=>v===null||v===undefined?'—':(n(Number(v)*100,1)+'%'),cls:'num'},
-    {key:'ml_confidence_band',label:'ML Band',fmt:v=>v?badge(v,v==='HIGH'?'good':v==='ELEVATED'?'warn':'info'):'—'},
-    {key:'latest_recheck_qualified',label:'Latest Recheck',fmt:(v,r)=>r.latest_rechecked_at?badge(v===1?'PASS':'WOULD FAIL',v===1?'good':'warn'):'—'}
+  const r=day.regime||{}, s=day.summary||{}, m=day.market||{}, l=day.levels||{}, f=research.forward||{}, meta=research.meta||{};
+  $('overviewState').className=`status-band ${stateKind(s.execution_state)}`;
+  $('overviewState').innerHTML=`<div><small>RC1 EXECUTION STATE</small><strong>${esc(s.execution_state||'—')}</strong></div><div><small>MASTER REGIME</small><strong>${esc(r.regime||'—')}</strong></div><p>${esc(s.explanation||'')}</p>`;
+  $('overviewHero').innerHTML=[metric('Master Regime',r.regime||'—',r.phase||'Four-regime authority'),metric('Execution',s.execution_state||'—',s.qualified_rule_count?`${s.qualified_rule_count} qualified`:'No trade authorized',s.execution_state==='QUALIFIED'?'good':'warn'),metric('Active Rules',s.active_rule_count??0,'Current regime only'),metric('Raw Triggers',s.raw_trigger_count??0,'Raw event ≠ trade',s.raw_trigger_count?'warn':'info'),metric('Qualified',s.qualified_rule_count??0,'Complete stable envelope',s.qualified_rule_count?'good':'info'),metric('Market',m.last==null?'Pre-session':n(m.last,2),m.as_of?`as of ${shortT(m.as_of)}`:`${m.bars??0} bars`)].join('');
+  $('overviewExplanation').innerHTML=`<p>${esc(regimeMeaning(r.regime,r.phase))}</p><p><strong>Decision:</strong> ${esc(s.explanation||'')}</p><p><strong>Structural event:</strong> ${esc(r.last_struct_type||'—')} ${esc(r.last_struct_dir||'')} · age ${n(r.days_since_struct,0)} day(s).</p>`;
+  $('overviewLevels').innerHTML=[detail('R2',esc(n(l.r2,2))),detail('R1',esc(n(l.r1,2))),detail('Pivot',esc(n(l.pivot,2))),detail('S1',esc(n(l.s1,2))),detail('S2',esc(n(l.s2,2))),detail('Previous High / Low',esc(`${n(l.previous_high,2)} / ${n(l.previous_low,2)}`))].join('');
+  renderTable($('overviewRulesTable'),day.active_rules||[],ruleCols());
+  const w=(weeklyRows||[])[0]||{};
+  $('overviewWeeklyGrid').innerHTML=[detail('Weekly Bias',badge(w.final_weekly_side||'—')),detail('Structural State',esc(w.structural_state||'—')),detail('Resistance Zone',esc(`${n(w.resistance_lower,2)} – ${n(w.resistance_upper,2)}`)),detail('Resistance Control',esc(n(w.resistance_control,2))),detail('Support Zone',esc(`${n(w.support_lower,2)} – ${n(w.support_upper,2)}`)),detail('Support Control',esc(n(w.support_control,2)))].join('');
+  $('overviewForward').innerHTML=[detail('Forward Start',esc(meta.forward_start||'—')),detail('Target',esc(f.target??100)),detail('Resolved',esc(f.resolved??0)),detail('Wins / Losses',esc(`${f.wins??0} / ${f.losses??0}`)),detail('Forward WR',esc(f.win_rate==null?'Pending':pct(100*f.win_rate))),detail('Rules Changed',esc(f.rules_changed??0))].join('');
+  renderTable($('overviewShadowTable'),(research.shadow_signals||[]).slice(0,20),shadowCols());
+}
+
+function scenarioCards(map){
+  const rows=[map.primary,map.direct_continuation,map.failure_route].filter(Boolean);
+  return rows.map((x,i)=>`<div class="scenario-card ${i===0?'primary-scenario':''}"><strong>${esc(x.name||'SCENARIO')}</strong><span>${(x.steps||[]).map(esc).join(' → ')}</span></div>`).join('')||'<span class="muted">No scenario map</span>';
+}
+
+async function loadWeekly(){
+  const week=$('weeklyWeek').value;
+  const [rows,all,analytics,report]=await Promise.all([
+    api(`/api/weekly?cutoff_date=${encodeURIComponent(week)}`), api('/api/weekly?limit=52'),
+    api(`/api/weekly-analytics?cutoff_date=${encodeURIComponent(week)}`), api(`/api/weekly-report-map?cutoff_date=${encodeURIComponent(week)}`)
   ]);
-  renderTable($('todayTable'),p.today_opportunities||[],[
-    {key:'start_time',label:'Start',fmt:v=>shortT(v)},{key:'side',label:'Side',fmt:v=>sideBadge(v)},{key:'first_tf',label:'First TF'},
-    {key:'qualification_status',label:'Qualification',fmt:v=>badge(v||'QUALIFIED_ONCE','good')},{key:'outcome_status',label:'Outcome',fmt:v=>badge(v||'PENDING',kind(v||'PENDING'))},
-    {key:'timeframes',label:'TFs'},{key:'signal_count',label:'Signals',fmt:v=>n(v,0),cls:'num'},{key:'status',label:'Journey',fmt:v=>badge(v,kind(v))},{key:'close_reason',label:'Close Reason'}
-  ]);
-  renderTable($('rawExitAuditTable'),p.raw_exit_audit||[],[
-    {key:'signal_time',label:'EXIT Time',fmt:v=>shortT(v)},
-    {key:'timeframe',label:'TF',fmt:v=>badge(v,'info')},
-    {key:'side',label:'Side',fmt:v=>sideBadge(v)},
-    {key:'close',label:'Price',fmt:v=>n(v,2),cls:'num'},
-    {key:'v3_qualified',label:'Frozen V3',fmt:v=>badge(Number(v)===1?'QUALIFIED':'REJECT',Number(v)===1?'good':'warn')},
-    {key:'v3_rules',label:'V3 Family',fmt:v=>v||'—'},
-    {key:'expansion_score',label:'Expansion',fmt:v=>v===null||v===undefined?'—':badge(`${n(v,0)}/6`,Number(v)>=5?'warn':'info')},
-    {key:'expansion_signature',label:'Expansion Signature',fmt:v=>v||'—'},
-    {key:'expansion_success',label:'Expansion Outcome',fmt:(v,r)=>r.expansion_status!=='FINAL'?badge('PENDING','warn'):badge(Number(v)===1?'SUCCESS':'FAILED',Number(v)===1?'good':'bad')}
-  ]);
-  renderTable($('expansionWatchTable'),p.expansion_watch||[],[
-    {key:'signal_time',label:'M30 EXIT',fmt:v=>shortT(v)},
-    {key:'side',label:'Side',fmt:v=>sideBadge(v)},
-    {key:'score',label:'Score',fmt:v=>badge(`${n(v,0)}/6`,Number(v)>=5?'warn':'info')},
-    {key:'signature',label:'Signature'},
-    {key:'v3_qualified',label:'Frozen V3',fmt:v=>badge(Number(v)===1?'QUALIFIED':'REJECT',Number(v)===1?'good':'warn')},
-    {key:'v3_rules',label:'V3 Family',fmt:v=>v||'—'},
-    {key:'expansion_status',label:'Outcome State',fmt:v=>badge(v,kind(v))},
-    {key:'expansion_success',label:'Expansion Outcome',fmt:(v,r)=>r.expansion_status!=='FINAL'?badge('PENDING','warn'):badge(Number(v)===1?'SUCCESS':'FAILED',Number(v)===1?'good':'bad')},
-    {key:'mfe10_atr',label:'MFE10',fmt:v=>v===null||v===undefined?'—':`${n(v,2)} ATR`,cls:'num'},
-    {key:'mae10_atr',label:'MAE10',fmt:v=>v===null||v===undefined?'—':`${n(v,2)} ATR`,cls:'num'}
-  ]);
-  renderTable($('boundaryJournalTable'),p.boundary_journal||[],[
-    {key:'snapshot_time',label:'Snapshot',fmt:v=>shortT(v)},
-    {key:'timeframe',label:'TF',fmt:v=>badge(v,'info')},
-    {key:'nominal_close_time',label:'Nominal Close',fmt:v=>shortT(v)},
-    {key:'phase',label:'Capture Phase'},
-    {key:'age_seconds',label:'Age',fmt:v=>`${n(v,0)}s`,cls:'num'},
-    {key:'boundary_exit_flag',label:'Boundary EXIT',fmt:v=>badge(Number(v)===1?'EXIT':'NONE',Number(v)===1?'warn':'info')},
-    {key:'final_exit_flag',label:'Safe Closed EXIT',fmt:v=>v===null||v===undefined?badge('WAITING','warn'):badge(Number(v)===1?'EXIT':'NONE',Number(v)===1?'good':'info')},
-    {key:'discrepancy',label:'Compare',fmt:v=>v===null||v===undefined?badge('PENDING','warn'):badge(Number(v)===1?'DISCREPANCY':'MATCH',Number(v)===1?'bad':'good')}
-  ]);
-  renderTable($('m15WatchTable'),p.precursor_watch||[],[
-    {key:'start_time',label:'Start',fmt:v=>shortT(v)},
-    {key:'last_watch_time',label:'Last M15 EXIT',fmt:v=>shortT(v)},
-    {key:'side',label:'Side',fmt:v=>sideBadge(v)},
-    {key:'max_strength',label:'Tier',fmt:v=>badge('T'+n(v,0),Number(v)>=2?'warn':'info')},
-    {key:'trigger_count',label:'M15 EXITs',fmt:v=>n(v,0),cls:'num'},
-    {key:'watch_rules',label:'Watch Families'},
-    {key:'status',label:'Status',fmt:v=>badge(v,kind(v))},
-    {key:'expires_at',label:'Expires',fmt:v=>shortT(v)},
-    {key:'confirmed_at',label:'Confirmed',fmt:v=>shortT(v)},
-    {key:'confirm_tf',label:'Confirm TF',fmt:v=>v?badge(v,'good'):'—'},
-    {key:'confirm_rules',label:'V3 Family',fmt:v=>v||'—'},
-    {key:'research_status',label:'Mode',fmt:v=>badge(v||'RESEARCH_ONLY','warn')}
-  ]);
-  renderTable($('v3ResearchTable'),p.v3_evaluations||[],[
-    {key:'signal_time',label:'EXIT Time',fmt:v=>shortT(v)},
-    {key:'timeframe',label:'TF',fmt:v=>badge(v,'info')},
-    {key:'side',label:'Side',fmt:v=>sideBadge(v)},
-    {key:'candidate_pass',label:'V3',fmt:v=>badge(Number(v)===1?'MATCH':'NO MATCH',Number(v)===1?'good':'info')},
-    {key:'rule_ids',label:'Matched Family',fmt:v=>v||'—'},
-    {key:'research_status',label:'Status',fmt:v=>badge(v||'RESEARCH_ONLY',kind(v||'RESEARCH_ONLY'))},
-    {key:'engine_version',label:'Candidate Version'}
-  ]);
-  renderTable($('mlExitTable'),p.ml_exit_scores||[],[
-    {key:'signal_time',label:'EXIT Time',fmt:v=>shortT(v)},
-    {key:'timeframe',label:'TF',fmt:v=>badge(v,'info')},
-    {key:'side',label:'Side',fmt:v=>sideBadge(v)},
-    {key:'v3_rule_ids',label:'V3 Family',fmt:v=>v||'—'},
-    {key:'true_probability',label:'P(TRUE)',fmt:v=>(n(Number(v)*100,1)+'%'),cls:'num'},
-    {key:'confidence_band',label:'ML Band',fmt:v=>badge(v,v==='HIGH'?'good':v==='ELEVATED'?'warn':'info')},
-    {key:'meeting_point_pass',label:'Meeting Point',fmt:v=>badge(Number(v)===1?'INSIDE':'BELOW',Number(v)===1?'good':'info')},
-    {key:'model_version',label:'Model'},
-    {key:'research_status',label:'Authority',fmt:v=>badge(v||'RESEARCH_ONLY','warn')}
-  ]);
-  renderTable($('v4LiveTable'),p.v4_signals||[],[
-    {key:'signal_time',label:'EXIT Time',fmt:v=>shortT(v)},
-    {key:'timeframe',label:'TF',fmt:v=>badge(v,'info')},
-    {key:'side',label:'Side',fmt:v=>sideBadge(v)},
-    {key:'v3_rule_ids',label:'V3 Family',fmt:v=>v||'—'},
-    {key:'true_probability',label:'P(TRUE)',fmt:v=>(n(Number(v)*100,1)+'%'),cls:'num'},
-    {key:'v4_tier',label:'V4 Tier',fmt:v=>badge(v,v==='V4_HIGH'?'good':v==='V4_ELEVATED'?'warn':'info')},
-    {key:'validation_mode',label:'Score Mode',fmt:v=>badge(v,'info')},
-    {key:'outcome_status',label:'Outcome',fmt:v=>badge(v||'PENDING',kind(v||'PENDING'))}
-  ]);
-  renderTable($('v4LiveOppTable'),p.v4_opportunities||[],[
-    {key:'start_time',label:'Start',fmt:v=>shortT(v)},
-    {key:'side',label:'Side',fmt:v=>sideBadge(v)},
-    {key:'signal_count',label:'Signals',fmt:v=>n(v,0),cls:'num'},
-    {key:'v4_tier',label:'V4 Tier',fmt:v=>badge(v,v==='V4_HIGH'?'good':v==='V4_ELEVATED'?'warn':'info')},
-    {key:'max_probability',label:'Max P(TRUE)',fmt:v=>(n(Number(v)*100,1)+'%'),cls:'num'},
-    {key:'avg_probability',label:'Avg P(TRUE)',fmt:v=>(n(Number(v)*100,1)+'%'),cls:'num'},
-    {key:'outcome_status',label:'Outcome',fmt:v=>badge(v||'PENDING',kind(v||'PENDING'))},
-    {key:'validation_mode',label:'Mode'}
-  ]);
-  renderTable($('shadowHandoverTable'),p.shadow_handovers||[],[
-    {key:'m15_signal_time',label:'M15 EXIT',fmt:v=>shortT(v)},
-    {key:'m30_signal_time',label:'M30 EXIT',fmt:v=>shortT(v)},
-    {key:'side',label:'Side',fmt:v=>sideBadge(v)},
-    {key:'gap_minutes',label:'Gap',fmt:v=>`${n(v,0)}m`,cls:'num'},
-    {key:'m15_qualified',label:'M15 V1',fmt:v=>badge(Number(v)===1?'QUALIFIED':'NO','info')},
-    {key:'m30_qualified',label:'M30 V1',fmt:v=>badge(Number(v)===1?'QUALIFIED':'NO','info')},
-    {key:'m15_progress_at_m30_atr',label:'Progress @ M30',fmt:v=>`${n(v,2)} ATR`,cls:'num'},
-    {key:'m15_m30_eff10',label:'M30 Eff @ M15',fmt:v=>n(v,3),cls:'num'},
-    {key:'research_flags',label:'Research Flags'},
-    {key:'shadow_status',label:'Status',fmt:v=>badge(v||'SHADOW_ONLY','warn')}
+  const w=(rows||[])[0]||{}, fc=analytics.forecast||{}, acc=analytics.accuracy||{};
+  const rc1day=w.forecast_week_start?await api(`/api/rc1-day?date=${encodeURIComponent(w.forecast_week_start)}`):{};
+  const rr=rc1day.regime||{};
+  $('weeklyHero').innerHTML=[metric('Weekly Bias',w.final_weekly_side||'—',`${w.forecast_week_start||'—'} → ${w.forecast_week_end||'—'}`,w.final_weekly_side==='SELL'?'bad':'good'),metric('Upper Zone',`${n(w.resistance_lower,2)} – ${n(w.resistance_upper,2)}`,'Context only'),metric('Lower Zone',`${n(w.support_lower,2)} – ${n(w.support_upper,2)}`,'Context only'),metric('Actual High',n(w.actual_high,2),shortT(w.actual_high_time)),metric('Actual Low',n(w.actual_low,2),shortT(w.actual_low_time))].join('');
+  $('weeklyScenarioMap').innerHTML=scenarioCards(report.scenario_map||{});
+  const levels=(report.level_roles||[]).slice().sort((a,b)=>(a.distance_from_cutoff??999999)-(b.distance_from_cutoff??999999)).slice(0,14);
+  renderTable($('weeklyLevelTable'),levels,[{key:'center',label:'Level',fmt:v=>n(v,2),className:'num'},{key:'report_role',label:'Role',fmt:v=>badge(v,'info')},{key:'original_role',label:'Market Role'},{key:'lower',label:'Lower',fmt:v=>n(v,2),className:'num'},{key:'upper',label:'Upper',fmt:v=>n(v,2),className:'num'}]);
+  $('weeklyAccuracyGrid').innerHTML=[detail('Completed',esc(analytics.completed?'YES':'NO')),detail('Expected Extreme First',esc(acc.expected_extreme_first||'—')),detail('Actual Extreme First',esc(acc.actual_extreme_first||'—')),detail('Sequence Match',esc(acc.sequence_match===true?'YES':acc.sequence_match===false?'NO':'Pending')),detail('Upper-Zone Miss',esc(`${n(acc.upper_zone_miss_points,2)} pts · ${n(acc.upper_zone_miss_h4_atr,2)} H4 ATR`)),detail('Lower-Zone Miss',esc(`${n(acc.lower_zone_miss_points,2)} pts · ${n(acc.lower_zone_miss_h4_atr,2)} H4 ATR`))].join('');
+  $('weeklyRc1Grid').innerHTML=[detail('Master Regime',badge(rr.regime||'—','info')),detail('Phase',esc(rr.phase||'—')),detail('Last Structural Event',esc(`${rr.last_struct_type||'—'} ${rr.last_struct_dir||''}`)),detail('Structural Age',esc(`${n(rr.days_since_struct,0)} day(s)`)),detail('D1 Eff10',esc(n(rr.d1_eff10,3))),detail('Execution Authority',esc((rc1day.summary||{}).execution_state||'WAIT'))].join('');
+  renderTable($('weeklyTable'),all||[],[
+    {key:'cutoff_date',label:'Freeze'}, {key:'forecast_week_start',label:'Week Start'}, {key:'forecast_week_end',label:'Week End'},
+    {key:'final_weekly_side',label:'Bias',fmt:v=>badge(v)}, {key:'structural_state',label:'State'},
+    {key:'resistance_control',label:'Resistance',fmt:v=>n(v,2),className:'num'}, {key:'support_control',label:'Support',fmt:v=>n(v,2),className:'num'},
+    {key:'actual_high',label:'Actual High',fmt:v=>n(v,2),className:'num'}, {key:'actual_low',label:'Actual Low',fmt:v=>n(v,2),className:'num'},
+    {key:'actual_close',label:'Close',fmt:v=>n(v,2),className:'num'}
   ]);
 }
-function movementExplanation(h){
-  const state=String(h.movement_state||h.status||'QUALIFIED');
-  const map={QUALIFIED:'The tested qualification rule has been satisfied and journey tracking begins. This is the start of the opportunity, not a profit target.',DEVELOPING:'Price is moving constructively in the qualified direction, but the move has not yet shown strong expansion.',EXPANDING:'The opportunity is showing stronger directional expansion. Continue to read MFE and MAE as journey measurements rather than entry instructions.',ATR1_REACHED:'Price has travelled at least one starting H1 ATR favorably. This is a live movement milestone; it is not the historical MAJOR label.',CLOSED:'Tracking has ended. Review the close reason together with the full journey and signal sequence.'};
-  return map[state]||'The opportunity is being tracked from its first qualified BEN signal through subsequent price development.';
+
+function renderRuleInspector(rule){
+  if(!rule){ $('ruleInspectorTitle').textContent='Rule Inspector'; $('ruleInspectorMeta').textContent=''; $('ruleInspectorText').innerHTML='<span class="muted">Select a rule.</span>'; renderTable($('ruleConditionTable'),[],[]); return; }
+  state.selectedRule=rule;
+  $('ruleInspectorTitle').textContent=rule.rule_id;
+  $('ruleInspectorMeta').textContent=`${rule.grade} · ${rule.side} · ${rule.config} · risk ${rule.risk}`;
+  $('ruleInspectorText').innerHTML=`<p>${esc(rule.description||'')}</p><p><strong>Trigger:</strong> ${esc(rule.trigger_label||rule.trigger)}</p><p><strong>State:</strong> ${badge(rule.status,stateKind(rule.status))}</p><p><strong>What RC1 is waiting for:</strong> ${esc(rule.what_to_wait_for||'—')}</p>`;
+  renderTable($('ruleConditionTable'),rule.conditions||[],[
+    {key:'feature',label:'Feature'}, {key:'operator',label:'Gate'},
+    {key:'stable_threshold',label:'Stable Threshold',fmt:v=>n(v,4),className:'num'},
+    {key:'actual',label:'Actual',fmt:v=>n(v,4),className:'num'},
+    {key:'passed',label:'Result',fmt:v=>badge(v?'PASS':'FAIL',v?'good':'bad')}
+  ]);
 }
 async function loadJourney(){
-  const id=$('opportunitySelect').value;if(!id)return;
-  const p=await api(`/api/opportunity?id=${encodeURIComponent(id)}`),h=p.header||{},j=p.journey||[],last=j[j.length-1]||h;
-  $('journeyHeader').className=`status-band ${kind(last.movement_state||h.status)}`;
-  $('journeyHeader').innerHTML=`<div><small>QUALIFICATION</small><strong>${esc(h.qualification_status||'QUALIFIED_ONCE')}</strong></div><div><small>OUTCOME</small><strong>${esc(h.outcome_status||'PENDING')}</strong></div><p>Once qualified, the signal remains qualified permanently. Journey state and final outcome are tracked separately.</p>`;
-  $('journeyMetrics').innerHTML=[metric('Progress ATR',n(last.progress_atr,2),'Distance from start in qualified direction'),metric('MFE ATR',n(last.mfe_atr,2),'Best favorable excursion','good'),metric('MAE ATR',n(last.mae_atr,2),'Largest adverse excursion',Number(last.mae_atr||0)>1?'bad':'warn'),metric('Signals',h.signal_count??0,`${h.timeframes||'—'} · first ${h.first_tf||'—'}`)].join('');
-  $('journeyExplanation').innerHTML=`<p>${esc(movementExplanation({...h,...last}))}</p><p><strong>Progress ATR</strong> shows movement from the opportunity start in the qualified direction. <strong>MFE</strong> is the maximum favorable excursion reached so far; <strong>MAE</strong> is the maximum adverse excursion.</p><p><strong>Historical MAJOR</strong> is evaluated only after the research window completes. Live states therefore never rename ATR1_REACHED as MAJOR.</p>`;
-  $('journeyDetails').innerHTML=[detail('Opportunity ID',esc(h.opportunity_id)),detail('Scope',badge(p.scope,'info')),detail('Qualification',badge(h.qualification_status||'QUALIFIED_ONCE','good')),detail('Outcome',badge(h.outcome_status||'PENDING',kind(h.outcome_status||'PENDING'))),detail('Start',esc(t(h.start_time))),detail('End / Last Signal',esc(t(h.end_time||h.last_signal_time))),detail('First TF',badge(h.first_tf,'info')),detail('Timeframes',esc(h.timeframes)),detail('Start Price',esc(n(h.first_price||h.start_price,2))),detail('Close Reason',esc(h.outcome_reason||h.close_reason||'Open / outcome pending'))].join('');
-  renderTable($('signalTimeline'),p.signals||[],[
-    {key:'sequence_no',label:'#',fmt:v=>n(v,0),cls:'num'},{key:'signal_time',label:'Time',fmt:v=>t(v)},{key:'timeframe',label:'TF',fmt:v=>badge(v,'info')},{key:'side',label:'Side',fmt:v=>sideBadge(v)},
-    {key:'qualification_status',label:'Qualification',fmt:v=>badge(v||'QUALIFIED_ONCE','good')},{key:'outcome_status',label:'Outcome',fmt:v=>badge(v||'PENDING',kind(v||'PENDING'))},
-    {key:'rule_ids',label:'Original Rule'},{key:'qualification_latched_at',label:'Qualified At',fmt:v=>t(v)},
-    {key:'ml_true_probability',label:'ML P(TRUE)',fmt:v=>v===null||v===undefined?'—':(n(Number(v)*100,1)+'%'),cls:'num'},
-    {key:'ml_confidence_band',label:'ML Band',fmt:v=>v?badge(v,v==='HIGH'?'good':v==='ELEVATED'?'warn':'info'):'—'},
-    {key:'v4_tier',label:'V4 Tier',fmt:v=>v?badge(v,v==='V4_HIGH'?'good':v==='V4_ELEVATED'?'warn':'info'):'—'},
-    {key:'v4_validation_mode',label:'V4 Score Mode',fmt:v=>v?badge(v,'info'):'—'},
-    {key:'latest_recheck_qualified',label:'Latest Recheck',fmt:(v,r)=>r.latest_rechecked_at?badge(v===1?'PASS':'WOULD FAIL',v===1?'good':'warn'):'—'},
-    {key:'price',label:'Price',fmt:v=>n(v,2),cls:'num'}
-  ]);
-  renderTable($('journeyTable'),j,[
-    {key:'snapshot_time',label:'Time',fmt:v=>t(v)},{key:'current_price',label:'Price',fmt:v=>n(v,2),cls:'num'},{key:'progress_atr',label:'Progress ATR',fmt:v=>n(v,2),cls:'num'},
-    {key:'mfe_atr',label:'MFE ATR',fmt:v=>n(v,2),cls:'num'},{key:'mae_atr',label:'MAE ATR',fmt:v=>n(v,2),cls:'num'},{key:'movement_state',label:'State',fmt:v=>badge(v,kind(v))},{key:'close_reason',label:'Close Reason'}
-  ]);
-  renderTable($('contextJourneyTable'),j,[
-    {key:'snapshot_time',label:'Time',fmt:v=>t(v)},{key:'m15_jrsx',label:'M15 JRSX',fmt:v=>n(v,1),cls:'num'},{key:'m15_dir',label:'M15',fmt:v=>sideBadge(v)},
-    {key:'m30_jrsx',label:'M30 JRSX',fmt:v=>n(v,1),cls:'num'},{key:'m30_dir',label:'M30',fmt:v=>sideBadge(v)},{key:'h1_jrsx',label:'H1 JRSX',fmt:v=>n(v,1),cls:'num'},
-    {key:'h1_dir',label:'H1',fmt:v=>sideBadge(v)},{key:'h4_jrsx',label:'H4 JRSX',fmt:v=>n(v,1),cls:'num'},{key:'h4_dir',label:'H4',fmt:v=>sideBadge(v)}
+  const date=$('journeyDate').value;
+  const day=await api(`/api/rc1-day?date=${encodeURIComponent(date)}`);
+  const r=day.regime||{}, s=day.summary||{}, m=day.market||{}, l=day.levels||{};
+  $('journeyState').className=`status-band ${stateKind(s.execution_state)}`;
+  $('journeyState').innerHTML=`<div><small>EXECUTION</small><strong>${esc(s.execution_state||'—')}</strong></div><div><small>REGIME</small><strong>${esc(r.regime||'—')}</strong></div><p>${esc(s.explanation||'')}</p>`;
+  $('journeyHero').innerHTML=[metric('Master Regime',r.regime||'—',r.phase||'Frozen at day start'),metric('Execution',s.execution_state||'—',s.qualified_rule_count?`${s.qualified_rule_count} qualified`:'No trade authorized',s.execution_state==='QUALIFIED'?'good':'warn'),metric('Raw Triggers',s.raw_trigger_count??0,'Raw event ≠ trade',s.raw_trigger_count?'warn':'info'),metric('Context Blocks',s.blocked_rule_count??0,'Triggered but envelope failed',s.blocked_rule_count?'bad':'info'),metric('Qualified',s.qualified_rule_count??0,'Full RC1 permission',s.qualified_rule_count?'good':'info'),metric('Day Range',m.range==null?'Pre-session':n(m.range,2),`${m.bars??0} M15 bars`)].join('');
+  $('journeyExplanation').innerHTML=`<p>${esc(regimeMeaning(r.regime,r.phase))}</p><p><strong>Current decision:</strong> ${esc(s.explanation||'')}</p><p><strong>Last structure:</strong> ${esc(r.last_struct_type||'—')} ${esc(r.last_struct_dir||'')} · age ${n(r.days_since_struct,0)} · days since acceptance ${n(r.days_since_accept,0)}.</p>`;
+  $('journeyMarketGrid').innerHTML=[detail('R2',esc(n(l.r2,2))),detail('R1',esc(n(l.r1,2))),detail('Pivot',esc(n(l.pivot,2))),detail('S1',esc(n(l.s1,2))),detail('S2',esc(n(l.s2,2))),detail('Previous High / Low',esc(`${n(l.previous_high,2)} / ${n(l.previous_low,2)}`)),detail('Actual Open / Last',esc(`${n(m.open,2)} / ${n(m.last,2)}`)),detail('Actual High / Low',esc(`${n(m.high,2)} / ${n(m.low,2)}`)),detail('High Time',esc(shortT(m.high_time))),detail('Low Time',esc(shortT(m.low_time)))].join('');
+  const rules=(day.active_rules||[]).slice().sort((a,b)=>({QUALIFIED:0,CONTEXT_BLOCKED:1,WATCHING:2}[a.status]??3)-({QUALIFIED:0,CONTEXT_BLOCKED:1,WATCHING:2}[b.status]??3));
+  renderTable($('journeyRulesTable'),rules,ruleCols(),{click:renderRuleInspector});
+  renderRuleInspector(rules[0]||null);
+  renderTable($('journeyTimelineTable'),day.timeline||[],[
+    {key:'time',label:'Time',fmt:v=>shortT(v)}, {key:'price',label:'Price',fmt:v=>n(v,2),className:'num'},
+    {key:'grade',label:'Grade',fmt:v=>badge(v,v==='A'?'good':'wait')}, {key:'side',label:'Side',fmt:v=>badge(v)},
+    {key:'rule_id',label:'Rule'}, {key:'trigger',label:'Raw Event'},
+    {key:'state',label:'RC1 State',fmt:v=>badge(v,stateKind(v))},
+    {key:'conditions_passed',label:'Stable Conditions',fmt:(v,row)=>`${v}/${row.conditions_total}`,className:'num'},
+    {key:'failed_conditions',label:'Failed Conditions'}
   ]);
 }
-function pretty(v){return String(v??'—').replaceAll('_',' ').replace(/\b\w/g,c=>c.toUpperCase())}
-function scenarioCards(map){const xs=[map.primary,map.direct_continuation,map.failure_route].filter(Boolean);return xs.map((x,i)=>`<div class="scenario-card ${i===0?'primary-scenario':''}"><strong>${esc(pretty(x.name||'Scenario'))}</strong><span>${(x.steps||[]).map(v=>esc(pretty(v))).join(' → ')}</span></div>`).join('')||'<span class="muted">No scenario map available.</span>'}
-async function loadWeekly(){
-  const cutoff=$('weekSelect').value,p=await api(`/api/weekly?cutoff_date=${encodeURIComponent(cutoff)}`),w=p.forecast||{},a=p.analytics||{},acc=a.accuracy||{},pos=p.position||{};
-  $('weeklyMetrics').innerHTML=[metric('Weekly Bias',w.final_weekly_side||'—',`${w.forecast_week_start||'—'} → ${w.forecast_week_end||'—'}`,w.final_weekly_side==='BUY'?'good':w.final_weekly_side==='SELL'?'bad':'info'),metric('Upper Zone',`${n(w.resistance_lower,2)} – ${n(w.resistance_upper,2)}`,'Turning / resistance context'),metric('Lower Zone',`${n(w.support_lower,2)} – ${n(w.support_upper,2)}`,'Support / target context'),metric('Current Position',pos.relation||'—',pos.as_of?`as of ${shortT(pos.as_of)}`:'Latest BEN M15 close')].join('');
-  $('weeklyForecast').innerHTML=`<p><strong>Frozen side:</strong> ${esc(w.final_weekly_side||'—')} with structural state ${esc(w.structural_state||'—')}.</p><p>The upper context zone is <strong>${n(w.resistance_lower,2)}–${n(w.resistance_upper,2)}</strong> with control ${n(w.resistance_control,2)}. The lower context zone is <strong>${n(w.support_lower,2)}–${n(w.support_upper,2)}</strong> with control ${n(w.support_control,2)}.</p><p>These levels describe location only. A BEN opportunity still requires an independent M15, M30 or H1 qualification.</p>`;
-  $('weeklyPosition').innerHTML=[detail('Current Price',esc(n(pos.current_price,2))),detail('Map Relation',badge(pos.relation||'—','info')),detail('Upper Control Distance',esc(pos.distance_upper_control==null?'—':`${n(Math.abs(pos.distance_upper_control),2)} pts ${pos.distance_upper_control<0?'below':'above'}`)),detail('Lower Control Distance',esc(pos.distance_lower_control==null?'—':`${n(Math.abs(pos.distance_lower_control),2)} pts ${pos.distance_lower_control<0?'below':'above'}`))].join('');
-  $('scenarioMap').innerHTML=scenarioCards((p.report||{}).scenario_map||{});
-  const levels=((p.report||{}).level_roles||[]).slice().sort((x,y)=>(x.distance_from_cutoff??999999)-(y.distance_from_cutoff??999999)).slice(0,16);
-  renderTable($('weeklyLevelTable'),levels,[{key:'center',label:'Level',fmt:v=>n(v,2),cls:'num'},{key:'report_role',label:'Role',fmt:v=>badge(v,'info')},{key:'original_role',label:'Market Role'},{key:'lower',label:'Lower',fmt:v=>n(v,2),cls:'num'},{key:'upper',label:'Upper',fmt:v=>n(v,2),cls:'num'}]);
-  $('weeklyActual').innerHTML=[metric('Actual High',n(w.actual_high,2),shortT(w.actual_high_time)),metric('Actual Low',n(w.actual_low,2),shortT(w.actual_low_time)),metric('Extreme Sequence',acc.actual_extreme_first||'Pending',`Expected ${acc.expected_extreme_first||'—'}`,acc.sequence_match===true?'good':'info'),metric('Current / Final Close',n(w.actual_close,2),w.actual_last_close_time?shortT(w.actual_last_close_time):'Week still developing')].join('');
-  renderTable($('weeklyOppTable'),p.ben_opportunities||[],[
-    {key:'start_time',label:'Start',fmt:v=>t(v)},{key:'side',label:'Side',fmt:v=>sideBadge(v)},{key:'first_tf',label:'First TF',fmt:v=>badge(v,'info')},{key:'timeframes',label:'TFs'},
-    {key:'signal_count',label:'Signals',fmt:v=>n(v,0),cls:'num'},{key:'any_major',label:'Historical Major',fmt:v=>badge(v?'YES':'NO',v?'good':'bad')},{key:'first_mfe10_atr',label:'First MFE10 ATR',fmt:v=>n(v,2),cls:'num'}
+async function loadResearch(){
+  const [p,history,day]=await Promise.all([
+    api('/api/research-rc1'), api('/api/research-regimes?limit=500'),
+    api(`/api/rc1-day?date=${encodeURIComponent(state.latestDate)}`)
   ]);
-  renderTable($('weeklyHistoryTable'),p.history||[],[
-    {key:'cutoff_date',label:'Freeze'},{key:'forecast_week_start',label:'Week Start'},{key:'forecast_week_end',label:'Week End'},{key:'final_weekly_side',label:'Bias',fmt:v=>sideBadge(v)},
-    {key:'structural_state',label:'Structure'},{key:'resistance_control',label:'Upper Control',fmt:v=>n(v,2),cls:'num'},{key:'support_control',label:'Lower Control',fmt:v=>n(v,2),cls:'num'},
-    {key:'actual_high',label:'Actual High',fmt:v=>n(v,2),cls:'num'},{key:'actual_low',label:'Actual Low',fmt:v=>n(v,2),cls:'num'}
-  ]);
+  const m=p.meta||{}, f=p.forward||{}, bt=p.backtest||[], rules=day.all_rules||[], sh=p.shadow_signals||[];
+  const all=bt.find(x=>x.period==='ALL_2020_2026')||{}, val=bt.find(x=>x.period==='VALIDATION_2024_2025')||{};
+  $('researchHero').innerHTML=[metric('Research Version',m.research_version||'—',m.research_status||'—','good'),metric('Validated Rules',m.rule_count||rules.length,'8 Grade A · 1 Grade B'),metric('2020–2026',`${n(all.trades,0)} trades`,`${pct(100*(all.win_rate||0))} · ${n(all.net_r,2)}R`,'good'),metric('Independent Validation',`${pct(100*(val.win_rate||0))}`,`${n(val.trades,0)} trades · 2024–2025`,'good'),metric('Forward Sample',`${f.resolved??0}/${f.target??100}`,`${f.wins??0}W / ${f.losses??0}L`,'info'),metric('Parity',m.parity_status||'—',`${m.parity_trades||'—'} trades · ${m.parity_regime_days||'—'} regimes`,m.parity_status==='PASS'?'good':'bad')].join('');
+  $('researchExplanation').innerHTML='<p><strong>Execution authority:</strong> the four-regime RC1 model plus the nine locked validated rules.</p><p><strong>Not execution authority:</strong> A–D/T2, MR1–MR4, legacy daily direction, weekly direction and the old optimizer.</p><p><strong>TREND_CONTINUATION:</strong> NO_SIGNAL until an independently validated >90% rule exists.</p><p><strong>Forward discipline:</strong> thresholds remain unchanged through the agreed 100+ trade milestone.</p>';
+  $('researchForward').innerHTML=[detail('Forward Start',esc(m.forward_start||'—')),detail('Execution Mode',badge(m.execution_mode||'SHADOW','wait')),detail('Target Trades',esc(f.target??100)),detail('Resolved',esc(f.resolved??0)),detail('Wins / Losses',esc(`${f.wins??0} / ${f.losses??0}`)),detail('Rules Changed',esc(f.rules_changed??0)),detail('Grade A Risk',esc(m.grade_a_risk||'1.0x')),detail('Grade B Risk',esc(m.grade_b_risk||'0.5x'))].join('');
+  renderTable($('researchRuleTable'),rules,[{key:'grade',label:'Grade',fmt:v=>badge(v,v==='A'?'good':'wait')},{key:'risk',label:'Risk'},{key:'rule_id',label:'Rule'},{key:'required_regime',label:'Regime'},{key:'side',label:'Side',fmt:v=>badge(v)},{key:'trigger_label',label:'Trigger'},{key:'validation_rate',label:'Validation WR',fmt:v=>pct(100*v),className:'num'},{key:'validation_support',label:'N',fmt:v=>n(v,0),className:'num'},{key:'config',label:'TP / SL / Hold'},{key:'stability_margin',label:'Envelope',fmt:v=>`±${pct(100*v)}`,className:'num'},{key:'description',label:'Purpose'}]);
+  renderTable($('researchBacktestTable'),bt,[{key:'period',label:'Period'},{key:'trades',label:'Trades',fmt:v=>n(v,0),className:'num'},{key:'wins',label:'Wins',fmt:v=>n(v,0),className:'num'},{key:'win_rate',label:'WR',fmt:v=>pct(100*v),className:'num'},{key:'trades_per_week',label:'Trades/Wk',fmt:v=>n(v,2),className:'num'},{key:'net_r',label:'Net R',fmt:v=>n(v,2),className:'num'}]);
+  let years={}; try{ years=JSON.parse(m.year_stats_json||'{}'); }catch(_e){}
+  const yearRows=Object.entries(years).map(([year,v])=>({year,trades:v[0],wins:v[1],win_rate:v[2]}));
+  renderTable($('researchYearTable'),yearRows,[{key:'year',label:'Year'},{key:'trades',label:'Trades',fmt:v=>n(v,0),className:'num'},{key:'wins',label:'Wins',fmt:v=>n(v,0),className:'num'},{key:'win_rate',label:'WR',fmt:v=>pct(100*v),className:'num'}]);
+  renderTable($('researchShadowTable'),sh,shadowCols());
+  renderTable($('researchRegimeTable'),history,[{key:'trading_date',label:'Date'},{key:'regime',label:'Regime',fmt:v=>badge(v,'info')},{key:'phase',label:'Phase'},{key:'last_struct_type',label:'Last Event'},{key:'last_struct_dir',label:'Direction'},{key:'days_since_struct',label:'Age',fmt:v=>n(v,0),className:'num'},{key:'d1_eff10',label:'D1 Eff10',fmt:v=>n(v,3),className:'num'},{key:'d1_rsi14',label:'D1 RSI',fmt:v=>n(v,1),className:'num'}]);
 }
-async function loadValidation(){
-  const p=await api('/api/validation'),s=p.summary||{};
-  $('validationMetrics').innerHTML=[metric('Unique Opportunities',s.unique_opportunities??0,'Merged from qualified BEN signals'),metric('Major Opportunities',s.major_opportunities??0,`${pct(s.major_rate)} of unique opportunities`,'good'),metric('Non-major',s.nonmajor_opportunities??0,'Exception set for further study',s.nonmajor_opportunities?'warn':'good'),metric('Qualified Signals',s.qualified_signals??0,`${s.multi_signal??0} multi-signal · ${s.multi_tf??0} multi-TF`)].join('');
-  renderTable($('rulePerformanceTable'),p.rules||[],[
-    {key:'timeframe',label:'TF',fmt:v=>badge(v,'info')},{key:'status',label:'Research Status',fmt:v=>badge(v,kind(v))},{key:'engine_version',label:'Version'},
-    {key:'qualified',label:'Qualified',fmt:v=>n(v,0),cls:'num'},{key:'true_count',label:'True',fmt:v=>n(v,0),cls:'num'},{key:'false_count',label:'False',fmt:v=>n(v,0),cls:'num'},{key:'major_count',label:'Major Signals',fmt:v=>n(v,0),cls:'num'},
-    {key:'description',label:'Meaning',fmt:(v,r)=>esc((r.status==='CANDIDATE'?'Candidate rule: strong in-sample result; forward evidence is still required. ':'Frozen rule definition: thresholds are locked for this research version. ')+(v||''))}
-  ]);
-  renderTable($('monthlyTable'),p.monthly||[],[
-    {key:'month',label:'Month'},{key:'qualified_signals',label:'Signals',fmt:v=>n(v,0),cls:'num'},{key:'unique_opportunities',label:'Opportunities',fmt:v=>n(v,0),cls:'num'},
-    {key:'major_opportunities',label:'Major',fmt:v=>n(v,0),cls:'num'},{key:'nonmajor_opportunities',label:'Non-major',fmt:v=>n(v,0),cls:'num'},{key:'first_signal_major',label:'First Signal Major',fmt:v=>n(v,0),cls:'num'},
-    {key:'m15_first',label:'M15 First',fmt:v=>n(v,0),cls:'num'},{key:'m30_first',label:'M30 First',fmt:v=>n(v,0),cls:'num'},{key:'h1_first',label:'H1 First',fmt:v=>n(v,0),cls:'num'},{key:'multi_tf',label:'Multi-TF',fmt:v=>n(v,0),cls:'num'}
-  ]);
-  const v4=p.v4_summary||{};
-  $('v4ValidationMetrics').innerHTML=[
-    metric('V4 Historical Signals',v4.signals??0,'All Frozen V3 signals overlaid by V4'),
-    metric('V4 HIGH',v4.high??0,'ML-assisted HIGH tier','good'),
-    metric('Walk-forward OOF',v4.oof??0,'Out-of-sample historical scores','info'),
-    metric('Retrospective',v4.retrospective??0,'Earlier rows scored in-sample','warn')
-  ].join('');
-  renderTable($('v4HistoricalSignalTable'),p.v4_signals||[],[
-    {key:'signal_time',label:'Time',fmt:v=>t(v)},{key:'timeframe',label:'TF',fmt:v=>badge(v,'info')},{key:'side',label:'Side',fmt:v=>sideBadge(v)},
-    {key:'v3_rule_ids',label:'V3 Family'},{key:'true_probability',label:'P(TRUE)',fmt:v=>(n(Number(v)*100,1)+'%'),cls:'num'},
-    {key:'v4_tier',label:'V4 Tier',fmt:v=>badge(v,v==='V4_HIGH'?'good':v==='V4_ELEVATED'?'warn':'info')},
-    {key:'validation_mode',label:'Score Provenance',fmt:v=>badge(v,v==='WALK_FORWARD_OOF'?'good':'warn')},
-    {key:'outcome_status',label:'V3 Outcome',fmt:v=>badge(v,kind(v))},{key:'is_major',label:'Major',fmt:v=>badge(v?'YES':'NO',v?'good':'info')}
-  ]);
-  renderTable($('v4HistoricalOppTable'),p.v4_opportunities||[],[
-    {key:'start_time',label:'Start',fmt:v=>t(v)},{key:'side',label:'Side',fmt:v=>sideBadge(v)},
-    {key:'signal_count',label:'Signals',fmt:v=>n(v,0),cls:'num'},{key:'v4_tier',label:'V4 Tier',fmt:v=>badge(v,v==='V4_HIGH'?'good':v==='V4_ELEVATED'?'warn':'info')},
-    {key:'max_probability',label:'Max P(TRUE)',fmt:v=>(n(Number(v)*100,1)+'%'),cls:'num'},
-    {key:'avg_probability',label:'Avg P(TRUE)',fmt:v=>(n(Number(v)*100,1)+'%'),cls:'num'},
-    {key:'validation_mode',label:'Validation Mode',fmt:v=>badge(v,v==='ALL_WALK_FORWARD_OOF'?'good':'warn')},
-    {key:'outcome_status',label:'V3 Outcome',fmt:v=>badge(v,kind(v))},{key:'any_major',label:'Major',fmt:v=>badge(v?'YES':'NO',v?'good':'info')}
-  ]);
-  renderTable($('validationOppTable'),p.opportunities||[],[
-    {key:'start_time',label:'Start',fmt:v=>t(v)},{key:'side',label:'Side',fmt:v=>sideBadge(v)},{key:'first_tf',label:'First TF',fmt:v=>badge(v,'info')},{key:'timeframes',label:'TFs'},
-    {key:'qualification_status',label:'Qualification',fmt:v=>badge(v||'QUALIFIED_ONCE','good')},{key:'outcome_status',label:'Outcome',fmt:v=>badge(v,kind(v))},
-    {key:'signal_count',label:'Signals',fmt:v=>n(v,0),cls:'num'},{key:'any_major',label:'Major',fmt:v=>badge(v?'YES':'NO',v?'good':'bad')},{key:'major_signals',label:'Major Signals',fmt:v=>n(v,0),cls:'num'},
-    {key:'first_persistent10',label:'Persistent10',fmt:v=>badge(v?'YES':'NO',v?'good':'bad')},{key:'first_mfe10_atr',label:'First MFE10 ATR',fmt:v=>n(v,2),cls:'num'},{key:'close_reason',label:'Journey Close'}
-  ]);
-  renderTable($('failureTable'),p.failures||[],[
-    {key:'start_time',label:'Start',fmt:v=>t(v)},{key:'side',label:'Side',fmt:v=>sideBadge(v)},{key:'first_tf',label:'First TF'},{key:'timeframes',label:'TFs'},
-    {key:'qualification_status',label:'Qualification',fmt:v=>badge(v||'QUALIFIED_ONCE','good')},{key:'outcome_status',label:'Outcome',fmt:v=>badge(v||'FAILED','bad')},
-    {key:'signal_count',label:'Signals',fmt:v=>n(v,0),cls:'num'},{key:'false_signals',label:'False Signals',fmt:v=>n(v,0),cls:'num'},{key:'first_persistent10',label:'Persistent10',fmt:v=>badge(v?'YES':'NO',v?'good':'bad')},
-    {key:'first_mfe10_atr',label:'First MFE10 ATR',fmt:v=>n(v,2),cls:'num'},{key:'members',label:'Signal Sequence'}
-  ]);
+
+async function safe(name,fn){
+  try{ await fn(); }
+  catch(err){ console.error(name,err); if(name==='health'){ $('sourceStatus').textContent='ERROR'; $('sourceStatus').className='negative'; } }
 }
-function healthMessage(s){if(s==='CURRENT')return'Live source, ingestion and BEN computation are aligned. Current opportunity information can be read as synchronized.';if(s==='PROCESSING')return'New closed-bar source data exists and the BEN compute layer is catching up. Live opportunity state should be treated as temporarily behind.';if(s==='LAGGING')return'One or more required timeframe series is behind the source clock. The dashboard must not imply that live opportunity state is current.';if(s==='STALE')return'No sufficiently recent closed-bar source data is available. Current BEN signals should not be used.';return'One or more pipeline integrity checks failed. Review the diagnostics below before trusting live state.'}
-async function loadHealth(){
-  const p=await api('/api/health'),s=p.overall||'ERROR',l=p.live||{},i=p.ingest||{},c=p.compute||{},w=p.watcher||{},task=p.weekly_scheduler||{},wc=p.weekly_context_status||{};
-  $('globalStatus').textContent=s;$('globalStatus').className=s==='CURRENT'?'positive':'negative';$('dataAsOf').textContent=t(l.live_data_as_of||l.expected_data_as_of);$('lastCompute').textContent=t(c.last_computed_at);
-  const banner=$('alertBanner');banner.classList.toggle('hidden',s==='CURRENT');banner.className=`alert-banner ${s==='PROCESSING'?'processing':''} ${s==='CURRENT'?'current':''}`;banner.textContent=s==='CURRENT'?'':`${s} — ${healthMessage(s)}`;
-  $('healthStatus').className=`status-band ${kind(s)}`;$('healthStatus').innerHTML=`<div><small>OVERALL STATUS</small><strong>${esc(s)}</strong></div><div><small>DATA AS OF</small><strong>${esc(t(l.live_data_as_of))}</strong></div><p>${esc(healthMessage(s))}</p>`;
-  $('healthMetrics').innerHTML=[metric('Source Lag',`${n(l.source_lag_bars??0,0)} bars`,`${n(l.source_lag_minutes??0,0)} minutes`,l.source_lag_bars?'bad':'good'),metric('Watcher',w.running?'RUNNING':'STOPPED',w.running?`PID ${w.pid}`:'5-minute ingest unavailable',w.running?'good':'bad'),metric('Last Ingest',shortT(i.last_checked_at),`${i.last_inserted_bars??0} bars · ${i.last_inserted_events??0} BEN events`),metric('Last Compute',shortT(c.last_computed_at),c.status||'—',c.status==='OK'?'good':'bad')].join('');
-  renderTable($('freshnessTable'),p.timeframes||[],[
-    {key:'timeframe',label:'TF',fmt:v=>badge(v,'info')},{key:'bar_time',label:'Latest Bar'},{key:'bar_close_time',label:'Latest Closed'},{key:'expected_closed_bar_time',label:'Expected Closed'},
-    {key:'lag_bars',label:'Lag Bars',fmt:v=>n(v,0),cls:'num'},{key:'lag_minutes',label:'Lag Min',fmt:v=>n(v,0),cls:'num'},{key:'status',label:'Status',fmt:v=>badge(v,kind(v))}
-  ]);
-  renderTable($('reproductionTable'),p.reproduction||[],[
-    {key:'timeframe',label:'TF',fmt:v=>badge(v,'info')},{key:'expected',label:'Expected',fmt:v=>n(v,0),cls:'num'},{key:'reproduced',label:'Reproduced',fmt:v=>n(v,0),cls:'num'},{key:'status',label:'Audit',fmt:v=>badge(v,kind(v))}
-  ]);
-  $('watcherGrid').innerHTML=[detail('Watcher',badge(w.running?'RUNNING':'STOPPED',w.running?'good':'bad')),detail('PID',esc(w.pid??'—')),detail('Started',esc(t(w.start))),detail('Startup Launcher',badge(p.startup_ingest_present?'PRESENT':'MISSING',p.startup_ingest_present?'good':'bad')),detail('Last Ingest Status',badge(i.last_status||'—',kind(i.last_status))),detail('Last Error',esc(i.last_error||'None'))].join('');
-  $('schedulerGrid').innerHTML=[detail('Task',esc('BEN Weekly Context · every 15 min')),detail('Task State',badge(task.state||'—',task.last_result===0?'good':'warn')),detail('Cycle Status',badge(wc.status||'—',kind(wc.status))),detail('Context Cutoff',esc(t(wc.master_after||wc.requested_cutoff))),detail('Last Run',esc(t(task.last_run))),detail('Next Run',esc(t(task.next_run)))].join('');
-  $('integrityGrid').innerHTML=[detail('SQLite Integrity',badge(p.integrity==='ok'?'PASS':'FAIL',p.integrity==='ok'?'good':'bad')),detail('Foreign Keys',badge((p.foreign_key_errors||[]).length?'FAIL':'PASS',(p.foreign_key_errors||[]).length?'bad':'good')),detail('Market Bars',esc(n((p.counts||{}).market_bars,0))),detail('BEN Events',esc(n((p.counts||{}).ben_events,0))),detail('Rule Evaluations',esc(n((p.counts||{}).rule_evaluations,0))),detail('Journey Rows',esc(n((p.counts||{}).historical_journey,0)))].join('');
-  renderTable($('ingestRunsTable'),p.latest_runs||[],[
-    {key:'checked_at',label:'Checked',fmt:v=>t(v)},{key:'inserted_bars',label:'Bars',fmt:v=>n(v,0),cls:'num'},{key:'inserted_events',label:'BEN Events',fmt:v=>n(v,0),cls:'num'},{key:'status',label:'Status',fmt:v=>badge(v,kind(v))},{key:'message',label:'Message'}
-  ]);
-}
-async function safe(name,fn){try{await fn()}catch(e){console.error(name,e);const b=$('alertBanner');b.className='alert-banner';b.textContent=`ERROR — ${name}: ${e.message}`}}
-async function refreshAll(){
-  snapshotPromise=null;
-  await Promise.all([loadHealth(),loadOverview(),loadWeekly(),loadValidation(),loadJourney()]);
-}
+
 async function boot(){
   document.querySelectorAll('#tabs button').forEach(b=>b.addEventListener('click',()=>showTab(b.dataset.tab)));
-  const h=location.hash.replace('#','');if(['overview','journey','weekly','validation','health'].includes(h))showTab(h);
-  $('overviewRefresh').onclick=()=>safe('refresh',refreshAll);$('journeyLoad').onclick=()=>safe('journey',async()=>{snapshotPromise=null;await loadJourney()});$('weeklyLoad').onclick=()=>safe('weekly',async()=>{snapshotPromise=null;await loadWeekly()});$('validationRefresh').onclick=()=>safe('validation',async()=>{snapshotPromise=null;await loadValidation()});$('healthRefresh').onclick=()=>safe('health',async()=>{snapshotPromise=null;await loadHealth()});
-  await safe('meta',loadMeta);await Promise.all([safe('health',loadHealth),safe('overview',loadOverview),safe('weekly',loadWeekly),safe('validation',loadValidation)]);await safe('journey',loadJourney);
-  setInterval(()=>{safe('refresh',refreshAll)},60000);
+  const requested=location.hash.replace('#',''); if(['overview','weekly','journey','research','health'].includes(requested)) showTab(requested);
+  $('overviewLoad').addEventListener('click',()=>safe('overview',loadOverview));
+  $('weeklyLoad').addEventListener('click',()=>safe('weekly',loadWeekly));
+  $('journeyLoad').addEventListener('click',()=>safe('journey',loadJourney));
+  $('researchLoad').addEventListener('click',()=>safe('research',loadResearch));
+  $('healthLoad').addEventListener('click',()=>safe('health',loadHealth));
+  $('overviewDate').addEventListener('change',()=>{ $('journeyDate').value=$('overviewDate').value; });
+  $('journeyDate').addEventListener('change',()=>{ if([...$('overviewDate').options].some(o=>o.value===$('journeyDate').value)) $('overviewDate').value=$('journeyDate').value; });
+  $('overviewWeek').addEventListener('change',()=>{ $('weeklyWeek').value=$('overviewWeek').value; });
+  $('weeklyWeek').addEventListener('change',()=>{ $('overviewWeek').value=$('weeklyWeek').value; });
+  await safe('meta',loadMeta);
+  await Promise.all([safe('health',loadHealth),safe('overview',loadOverview),safe('weekly',loadWeekly),safe('research',loadResearch)]);
+  await safe('journey',loadJourney);
+  setInterval(()=>{ safe('health',loadHealth); safe('overview',loadOverview); },60000);
 }
+
 document.addEventListener('DOMContentLoaded',boot);
