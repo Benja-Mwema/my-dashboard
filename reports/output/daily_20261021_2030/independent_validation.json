@@ -1,0 +1,49 @@
+{
+  "cutoff": "2026-10-21 20:30:00",
+  "timeframes": {
+    "H4": {
+      "expected_latest_completed": "2026-10-21 20:00:00",
+      "actual_latest_completed": "2026-10-21 20:00:00",
+      "causal_only": true,
+      "source_sha256": "fcd1bb99c7eddf8da8968739559c8243723218bc4288c1a8688d22d291e6c788",
+      "export_rows": 90,
+      "tick_verified_intervals": 1,
+      "current_session_gaps": 0
+    },
+    "H1": {
+      "expected_latest_completed": "2026-10-21 20:00:00",
+      "actual_latest_completed": "2026-10-21 20:00:00",
+      "causal_only": true,
+      "source_sha256": "8910f3ee52ea96685202ecd7ce360bbaf484b0072d7f582a611afd91af63a4a3",
+      "export_rows": 96,
+      "tick_verified_intervals": 1,
+      "current_session_gaps": 0
+    },
+    "M30": {
+      "expected_latest_completed": "2026-10-21 20:30:00",
+      "actual_latest_completed": "2026-10-21 20:30:00",
+      "causal_only": true,
+      "source_sha256": "22c1b7110c8492f221f69a92f3a42558ac0a305165b7b6cf9a0d5e93718369c9",
+      "export_rows": 120,
+      "tick_verified_intervals": 2,
+      "current_session_gaps": 0
+    },
+    "M15": {
+      "expected_latest_completed": "2026-10-21 20:30:00",
+      "actual_latest_completed": "2026-10-21 20:30:00",
+      "causal_only": true,
+      "source_sha256": "716384adf74530d1eec3bda001c7298a950bfd1eb87090d01112e384aa84479f",
+      "export_rows": 160,
+      "tick_verified_intervals": 3,
+      "current_session_gaps": 0
+    }
+  },
+  "current_source_complete": true,
+  "all_boundaries_match": true,
+  "all_export_rows_causal": true,
+  "active_map_unchanged": true,
+  "raw_source_metadata": "Preserved separately in live_memory/manifests/xauusd_extraction_manifest.json and the tick receipt.",
+  "age_flag_note": "Original manifest flags H4/H1 age gaps; 20:00 is their correct latest completed boundary at 20:30. No material staleness.",
+  "tick_interval_checks": 7,
+  "scope": "Factual evidence validation only. Codex authors all analysis."
+}

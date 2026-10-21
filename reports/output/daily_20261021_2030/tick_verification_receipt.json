@@ -1,0 +1,382 @@
+{
+  "requested_cutoff": "2026-10-21 20:30:00",
+  "snapshot_at_eat": "2026-10-21T20:44:24.980036+03:00",
+  "forecast_id": "XAUUSD_WEEK_20261019_V1",
+  "frozen_levels_sha256": "b9080f189c29071fce0e1c94abe87c3c3061e03da2b15223da0ea6d717358007",
+  "method": "Accepted extractor unchanged. Supplemental copies use existing accepted tick-fallback, raw merge, enrichment and trimming functions. All tick intervals exclude their end time. Python produces factual evidence only.",
+  "timeframes": {
+    "M15": {
+      "raw_source_latest_close_before_causal_filter": "2026-10-21 20:30:00",
+      "cached_rows_excluded_as_future_or_forming": 0,
+      "latest_expected_close": "2026-10-21 20:30:00",
+      "actual_latest_close": "2026-10-21 20:30:00",
+      "official_rate_tail": [
+        {
+          "bar_time": "2026-10-21 19:30:00",
+          "open": 4133.02,
+          "high": 4139.57,
+          "low": 4127.41,
+          "close": 4134.43,
+          "tick_volume": 4147
+        },
+        {
+          "bar_time": "2026-10-21 19:45:00",
+          "open": 4134.43,
+          "high": 4135.75,
+          "low": 4131.17,
+          "close": 4131.55,
+          "tick_volume": 3495
+        },
+        {
+          "bar_time": "2026-10-21 20:00:00",
+          "open": 4131.51,
+          "high": 4132.7,
+          "low": 4128.87,
+          "close": 4131.81,
+          "tick_volume": 3224
+        },
+        {
+          "bar_time": "2026-10-21 20:15:00",
+          "open": 4131.8,
+          "high": 4134.33,
+          "low": 4130.95,
+          "close": 4132.29,
+          "tick_volume": 3049
+        },
+        {
+          "bar_time": "2026-10-21 20:30:00",
+          "open": 4132.27,
+          "high": 4134.07,
+          "low": 4131.93,
+          "close": 4133.8,
+          "tick_volume": 1005
+        }
+      ],
+      "tick_verified_bars": [
+        {
+          "bar_time": "2026-10-21 19:45:00",
+          "close_time": "2026-10-21 20:00:00",
+          "original_cached_ohlc": {
+            "open": 4134.43,
+            "high": 4135.75,
+            "low": 4131.17,
+            "close": 4131.55
+          },
+          "tick_verification": {
+            "raw_ticks_file": "output\\daily_20261021_2030\\verified_ticks\\20261021_1945_2000.csv.gz",
+            "raw_ticks_sha256": "2ea02505400f6580f09cb7efc683e4dfd790e6945e34eacc2ce9d513b317af84",
+            "first_tick": "2026-10-21 19:45:00.099000",
+            "last_tick": "2026-10-21 19:59:59.974000",
+            "tick_count": 3568,
+            "open": 4134.43,
+            "high": 4135.75,
+            "low": 4131.17,
+            "close": 4131.55,
+            "all_ticks_inside_interval": true,
+            "interval_start_covered_within_60_seconds": true,
+            "interval_end_covered_within_60_seconds": true
+          }
+        },
+        {
+          "bar_time": "2026-10-21 20:00:00",
+          "close_time": "2026-10-21 20:15:00",
+          "original_cached_ohlc": {
+            "open": 4131.51,
+            "high": 4132.7,
+            "low": 4128.87,
+            "close": 4131.81
+          },
+          "tick_verification": {
+            "raw_ticks_file": "output\\daily_20261021_2030\\verified_ticks\\20261021_2000_2015.csv.gz",
+            "raw_ticks_sha256": "211961f07b32d8e16bc742b9154a7e51b38e8f11db9c618436993f590dbdec27",
+            "first_tick": "2026-10-21 20:00:00.193000",
+            "last_tick": "2026-10-21 20:14:58.940000",
+            "tick_count": 3288,
+            "open": 4131.51,
+            "high": 4132.7,
+            "low": 4128.87,
+            "close": 4131.81,
+            "all_ticks_inside_interval": true,
+            "interval_start_covered_within_60_seconds": true,
+            "interval_end_covered_within_60_seconds": true
+          }
+        },
+        {
+          "bar_time": "2026-10-21 20:15:00",
+          "close_time": "2026-10-21 20:30:00",
+          "original_cached_ohlc": {
+            "open": 4131.8,
+            "high": 4134.33,
+            "low": 4130.95,
+            "close": 4132.29
+          },
+          "tick_verification": {
+            "raw_ticks_file": "output\\daily_20261021_2030\\verified_ticks\\20261021_2015_2030.csv.gz",
+            "raw_ticks_sha256": "5b2eadb7dc28e6def6a045fbe149e817640cc309e0e63c49a6fd0fade0e4b33b",
+            "first_tick": "2026-10-21 20:15:00.055000",
+            "last_tick": "2026-10-21 20:29:59.820000",
+            "tick_count": 3114,
+            "open": 4131.8,
+            "high": 4134.33,
+            "low": 4130.95,
+            "close": 4132.29,
+            "all_ticks_inside_interval": true,
+            "interval_start_covered_within_60_seconds": true,
+            "interval_end_covered_within_60_seconds": true
+          }
+        }
+      ],
+      "source_file": "output\\daily_20261021_2030\\tick_verified_memory\\xauusd_m15_memory.csv",
+      "source_sha256": "716384adf74530d1eec3bda001c7298a950bfd1eb87090d01112e384aa84479f"
+    },
+    "M30": {
+      "raw_source_latest_close_before_causal_filter": "2026-10-21 20:30:00",
+      "cached_rows_excluded_as_future_or_forming": 0,
+      "latest_expected_close": "2026-10-21 20:30:00",
+      "actual_latest_close": "2026-10-21 20:30:00",
+      "official_rate_tail": [
+        {
+          "bar_time": "2026-10-21 18:30:00",
+          "open": 4138.8,
+          "high": 4141.13,
+          "low": 4131.09,
+          "close": 4131.56,
+          "tick_volume": 7705
+        },
+        {
+          "bar_time": "2026-10-21 19:00:00",
+          "open": 4131.54,
+          "high": 4134.08,
+          "low": 4128.93,
+          "close": 4132.93,
+          "tick_volume": 5902
+        },
+        {
+          "bar_time": "2026-10-21 19:30:00",
+          "open": 4133.02,
+          "high": 4139.57,
+          "low": 4127.41,
+          "close": 4131.55,
+          "tick_volume": 7642
+        },
+        {
+          "bar_time": "2026-10-21 20:00:00",
+          "open": 4131.51,
+          "high": 4134.33,
+          "low": 4128.87,
+          "close": 4132.29,
+          "tick_volume": 6273
+        },
+        {
+          "bar_time": "2026-10-21 20:30:00",
+          "open": 4132.27,
+          "high": 4134.07,
+          "low": 4131.93,
+          "close": 4133.81,
+          "tick_volume": 1010
+        }
+      ],
+      "tick_verified_bars": [
+        {
+          "bar_time": "2026-10-21 19:30:00",
+          "close_time": "2026-10-21 20:00:00",
+          "original_cached_ohlc": {
+            "open": 4133.02,
+            "high": 4139.57,
+            "low": 4127.41,
+            "close": 4131.55
+          },
+          "tick_verification": {
+            "raw_ticks_file": "output\\daily_20261021_2030\\verified_ticks\\20261021_1930_2000.csv.gz",
+            "raw_ticks_sha256": "35d868e7b1656b94f0765653711ffe9fb27a8386068f356daa2f166077968980",
+            "first_tick": "2026-10-21 19:30:00.067000",
+            "last_tick": "2026-10-21 19:59:59.974000",
+            "tick_count": 7777,
+            "open": 4133.02,
+            "high": 4139.57,
+            "low": 4127.41,
+            "close": 4131.55,
+            "all_ticks_inside_interval": true,
+            "interval_start_covered_within_60_seconds": true,
+            "interval_end_covered_within_60_seconds": true
+          }
+        },
+        {
+          "bar_time": "2026-10-21 20:00:00",
+          "close_time": "2026-10-21 20:30:00",
+          "original_cached_ohlc": {
+            "open": 4131.51,
+            "high": 4134.33,
+            "low": 4128.87,
+            "close": 4132.29
+          },
+          "tick_verification": {
+            "raw_ticks_file": "output\\daily_20261021_2030\\verified_ticks\\20261021_2000_2030.csv.gz",
+            "raw_ticks_sha256": "09c0d7cfd76f1589eea5253f995f1e102c534a6797c1ccc73511aef5e9c8ebb2",
+            "first_tick": "2026-10-21 20:00:00.193000",
+            "last_tick": "2026-10-21 20:29:59.820000",
+            "tick_count": 6402,
+            "open": 4131.51,
+            "high": 4134.33,
+            "low": 4128.87,
+            "close": 4132.29,
+            "all_ticks_inside_interval": true,
+            "interval_start_covered_within_60_seconds": true,
+            "interval_end_covered_within_60_seconds": true
+          }
+        }
+      ],
+      "source_file": "output\\daily_20261021_2030\\tick_verified_memory\\xauusd_m30_memory.csv",
+      "source_sha256": "22c1b7110c8492f221f69a92f3a42558ac0a305165b7b6cf9a0d5e93718369c9"
+    },
+    "H1": {
+      "raw_source_latest_close_before_causal_filter": "2026-10-21 20:00:00",
+      "cached_rows_excluded_as_future_or_forming": 0,
+      "latest_expected_close": "2026-10-21 20:00:00",
+      "actual_latest_close": "2026-10-21 20:00:00",
+      "official_rate_tail": [
+        {
+          "bar_time": "2026-10-21 16:00:00",
+          "open": 4129.55,
+          "high": 4140.75,
+          "low": 4128.91,
+          "close": 4129.36,
+          "tick_volume": 19286
+        },
+        {
+          "bar_time": "2026-10-21 17:00:00",
+          "open": 4129.21,
+          "high": 4135.28,
+          "low": 4121.55,
+          "close": 4130.11,
+          "tick_volume": 18868
+        },
+        {
+          "bar_time": "2026-10-21 18:00:00",
+          "open": 4130.13,
+          "high": 4141.33,
+          "low": 4126.33,
+          "close": 4131.56,
+          "tick_volume": 16333
+        },
+        {
+          "bar_time": "2026-10-21 19:00:00",
+          "open": 4131.54,
+          "high": 4139.57,
+          "low": 4127.41,
+          "close": 4131.55,
+          "tick_volume": 13544
+        },
+        {
+          "bar_time": "2026-10-21 20:00:00",
+          "open": 4131.51,
+          "high": 4134.33,
+          "low": 4128.87,
+          "close": 4133.61,
+          "tick_volume": 7286
+        }
+      ],
+      "tick_verified_bars": [
+        {
+          "bar_time": "2026-10-21 19:00:00",
+          "close_time": "2026-10-21 20:00:00",
+          "original_cached_ohlc": {
+            "open": 4131.54,
+            "high": 4139.57,
+            "low": 4127.41,
+            "close": 4131.55
+          },
+          "tick_verification": {
+            "raw_ticks_file": "output\\daily_20261021_2030\\verified_ticks\\20261021_1900_2000.csv.gz",
+            "raw_ticks_sha256": "2e0bdc6d67a45a44f6dd05cfaec7bb7215352e7f94b21c7435337aedbbdf7bcf",
+            "first_tick": "2026-10-21 19:00:00.047000",
+            "last_tick": "2026-10-21 19:59:59.974000",
+            "tick_count": 13770,
+            "open": 4131.54,
+            "high": 4139.57,
+            "low": 4127.41,
+            "close": 4131.55,
+            "all_ticks_inside_interval": true,
+            "interval_start_covered_within_60_seconds": true,
+            "interval_end_covered_within_60_seconds": true
+          }
+        }
+      ],
+      "source_file": "output\\daily_20261021_2030\\tick_verified_memory\\xauusd_h1_memory.csv",
+      "source_sha256": "8910f3ee52ea96685202ecd7ce360bbaf484b0072d7f582a611afd91af63a4a3"
+    },
+    "H4": {
+      "raw_source_latest_close_before_causal_filter": "2026-10-21 20:00:00",
+      "cached_rows_excluded_as_future_or_forming": 0,
+      "latest_expected_close": "2026-10-21 20:00:00",
+      "actual_latest_close": "2026-10-21 20:00:00",
+      "official_rate_tail": [
+        {
+          "bar_time": "2026-10-21 04:00:00",
+          "open": 4117.1,
+          "high": 4126.06,
+          "low": 4106.14,
+          "close": 4114.78,
+          "tick_volume": 60348
+        },
+        {
+          "bar_time": "2026-10-21 08:00:00",
+          "open": 4114.72,
+          "high": 4129.39,
+          "low": 4110.68,
+          "close": 4119.61,
+          "tick_volume": 54240
+        },
+        {
+          "bar_time": "2026-10-21 12:00:00",
+          "open": 4119.65,
+          "high": 4142.01,
+          "low": 4111.65,
+          "close": 4129.59,
+          "tick_volume": 57074
+        },
+        {
+          "bar_time": "2026-10-21 16:00:00",
+          "open": 4129.55,
+          "high": 4141.33,
+          "low": 4121.55,
+          "close": 4131.55,
+          "tick_volume": 68031
+        },
+        {
+          "bar_time": "2026-10-21 20:00:00",
+          "open": 4131.51,
+          "high": 4134.33,
+          "low": 4128.87,
+          "close": 4133.51,
+          "tick_volume": 7287
+        }
+      ],
+      "tick_verified_bars": [
+        {
+          "bar_time": "2026-10-21 16:00:00",
+          "close_time": "2026-10-21 20:00:00",
+          "official_matches_ticks": true,
+          "tick_verification": {
+            "raw_ticks_file": "output\\daily_20261021_2030\\verified_ticks\\20261021_1600_2000.csv.gz",
+            "raw_ticks_sha256": "563effb1b157357719863a535c066c2d8e40112b36b336de9c26e2751823f111",
+            "first_tick": "2026-10-21 16:00:00.094000",
+            "last_tick": "2026-10-21 19:59:59.974000",
+            "tick_count": 69193,
+            "open": 4129.55,
+            "high": 4141.33,
+            "low": 4121.55,
+            "close": 4131.55,
+            "all_ticks_inside_interval": true,
+            "interval_start_covered_within_60_seconds": true,
+            "interval_end_covered_within_60_seconds": true
+          }
+        }
+      ],
+      "source_file": "output\\daily_20261021_2030\\tick_verified_memory\\xauusd_h4_memory.csv",
+      "source_sha256": "fcd1bb99c7eddf8da8968739559c8243723218bc4288c1a8688d22d291e6c788"
+    }
+  },
+  "terminal_connected": true,
+  "last_tick_broker_wall": "2026-10-21 20:44:23"
+}

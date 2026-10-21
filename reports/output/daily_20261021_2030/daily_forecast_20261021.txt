@@ -1,0 +1,74 @@
+XAUUSD.pro DAILY FORECAST — 21 OCTOBER 2026
+Evidence cutoff: 2026-10-21 20:30:00 EAT.
+Actually issued: 2026-10-21T20:48:29+03:00.
+Applies to the remaining day after issuance; later-than-cutoff candles excluded.
+Frozen map: XAUUSD_WEEK_20261019_V1; unchanged.
+Codex authors analysis. Python supplies evidence, numerical inputs and serialization.
+
+DAILY PREDICTION
+Base case for the remaining 21 October session: consolidation or a retest of WMID 4123.18-4131.50, followed by another attempt toward the observed 4139.57-4142.01 reaction ceiling if completed H1/M30 evidence holds the recovery. At 4132.29, price is only 0.79 above the zone's upper edge, so a clean one-way advance is a weaker expectation than a two-sided retest.
+
+Upside continuation requires completed acceptance through 4139.57-4142.01 and a held retest. Only then does frozen WCONTROL 4146.87-4162.20 become the next recovery objective. No WCONTROL contact has occurred today through the cutoff. WRES and WUPPER are not the base case for the remaining hours.
+
+Downside alternate: if a subsequent completed H1 loses WMID low 4123.18 and M30 accepts below it, watch the observed 4121.55 reaction low, then 4111.65 and the near edge of frozen WSUPPORT at 4110.88. A deeper move toward 4106.14 and 4099.94 requires renewed structural acceptance into support; it is not inferred from a brief wick. A new assessment is required rather than reviving the failed overnight WMID SELL setup.
+
+Confidence is moderate in the mapped boundaries and lower in the exact remaining-day order. This is a conditional daily watch forecast, not a fresh BUY or SELL permission. It applies prospectively after actual issuance, using the locked 20:30 evidence; no move between the cutoff and publication is claimed as a forecast success.
+
+EVIDENCE COMPLETENESS
+H4: expected 2026-10-21 20:00:00; actual 2026-10-21 20:00:00; causal rows; matching endpoint.
+H1: expected 2026-10-21 20:00:00; actual 2026-10-21 20:00:00; causal rows; matching endpoint.
+M30: expected 2026-10-21 20:30:00; actual 2026-10-21 20:30:00; causal rows; matching endpoint.
+M15: expected 2026-10-21 20:30:00; actual 2026-10-21 20:30:00; causal rows; matching endpoint.
+Missing/stale evidence: none materially missing at cutoff. Intraday evidence is suitable for a separately requested EVALUATE.
+Original manifest flags H4/H1 age gaps; 20:00 is their correct latest completed boundary at 20:30. No material staleness.
+
+WEEKLY BIAS STATUS
+Original WCONTROL support-hold primary failed earlier in the week. The broader control-breakdown branch remains valid below its completed-H4 failure threshold of 4162.20. The old local WMID rejection SELL was invalidated by H1 acceptance above 4131.50 at 15:00 and is not reinstated. Frozen WSUPPORT BUY failure remains a completed H4 close below 4099.94; that has not occurred.
+
+H4 CONTEXT
+Improving correction within the bearish backdrop
+The 16:00-open bar completed at 20:00 with O 4129.55, H 4141.33, L 4121.55, C 4131.55. Higher recent lows and closes show recovery; close is above EMA10 4128.31 but below EMA20 4135.83, EMA50 4147.79 and EMA200 4219.28. MACD main -9.03 remains negative while histogram improves to -1.08 from -2.23. This is easing downside pressure, not bearish acceleration or proof of a broad bullish regime turn. The 20:00-open H4 is forming at the cutoff and excluded.
+
+H1 CONTEXT
+Recovery context, fragile acceptance above WMID
+The 19:00-open bar completed at 20:00 at 4131.55, above EMA10 4128.19 and EMA20 4126.35, but just below EMA50 4131.84 and far below EMA200 4149.79. MACD main is positive at 0.73; positive histogram 2.10 is fading from 2.75 at 15:00. The 19:00 and 20:00 closes sit only 0.06 and 0.05 above WMID high, so acceptance is narrow and vulnerable to retesting. Existing recovery context is not a new entry confirmation.
+
+M30 CONTEXT
+Recovery structure is holding, momentum nearly flat
+The 20:00-open bar completed at 20:30 at 4132.29, above EMA10 4131.91, EMA20 4129.60 and EMA50 4127.75, but below EMA200 4140.79. MACD main 2.90 is easing; histogram has faded to 0.055 from 0.216 at 20:00. Price has not accepted through the repeated 4140-4142 ceiling. Sustained acceptance below WMID would weaken the recovery.
+
+M15 CONTEXT
+A small reclaim, without directional acceleration
+The 20:15-open bar completed at 20:30 with O 4131.80, H 4134.33, L 4130.95, C 4132.29. It retested WMID high and closed above it, just above EMA10 4132.12 and EMA20 4131.42 but slightly below EMA200 4132.40. MACD main is positive at 1.31 but declining; histogram is negative at -0.385, marginally improved from -0.401. Mixed slope evidence is consistent with consolidation rather than a fresh strong directional impulse.
+
+ACTIVE LEVELS
+WMID 4123.18-4131.50 is the immediate frozen control/support test; price is only 0.79 above its upper edge, about 0.12 M15 ATR.
+Observed 4139.57-4142.01 is a dynamic intraday reaction ceiling, not a replacement frozen weekly zone.
+WCONTROL 4146.87-4162.20 is the nearest higher frozen zone. Its near edge is 14.58 away, about 2.21 M15 ATR at the cutoff.
+WSUPPORT 4099.94-4110.88 is the next lower frozen support beyond WMID. Do not skip intervening WMID when assessing an upper-zone rejection.
+WBASE 4066.50-4077.89, WRES 4186.38-4198.80 and WUPPER 4207.40-4217.27 remain unchanged extensions; none was touched today through the cutoff.
+
+COMPLETED INTERACTIONS
+bar_time 2026-10-21 04:00:00 -> close_time 2026-10-21 04:15:00: First WSUPPORT contact and day low 4106.14; close 4109.21 inside support. A touch is not an entry.
+bar_time 2026-10-21 09:45:00 -> close_time 2026-10-21 10:00:00: Latest WSUPPORT contact: low 4110.68 and close 4112.20 above the 4110.88 near edge.
+bar_time 2026-10-21 14:00:00 -> close_time 2026-10-21 15:00:00: H1 close 4139.87 above WMID high invalidated the local overnight rejection branch; original 15:00 evaluation is preserved.
+bar_time 2026-10-21 15:00:00 -> close_time 2026-10-21 15:15:00: Day high 4142.01 became observable; M15 closed 4137.16, short of WCONTROL low 4146.87.
+bar_time 2026-10-21 17:00:00 -> close_time 2026-10-21 17:15:00: M15 swept below WMID low to 4121.55 but closed back inside at 4128.13. This wick was not completed H1 acceptance below 4123.18.
+bar_time 2026-10-21 16:00:00 -> close_time 2026-10-21 20:00:00: H4 completed at 4131.55, above EMA10 but below EMA20; improving recovery context without a higher-control breakout.
+bar_time 2026-10-21 20:15:00 -> close_time 2026-10-21 20:30:00: Most recent WMID retest: low 4130.95 and close 4132.29, above the 4131.50 boundary. No WCONTROL touch today through this cutoff.
+
+WATCH CONDITIONS
+BUY / recovery watch
+A held WMID retest plus completed H1/M30 recovery structure, followed by acceptance through 4139.57-4142.01, supports a test of WCONTROL. Any actual countertrend BUY still needs an explicit H4 turn/allowance and the complete setup-specific gates in EVALUATE.
+SELL / failure watch
+An actual rejection at the observed upper ceiling or WCONTROL must be assessed as a new setup. A completed H1 loss below 4123.18 with M30 acceptance activates the lower-path watch; the old failed WMID rejection is not revived.
+No-trade / no-chase
+Two-sided WMID churn and fading momentum favor patience. Current upside room to WCONTROL is only 2.21 M15 ATR, a provisional location screen below the 2.5-ATR fresh-entry minimum. No exact-time full confirmation or consumed-leg percentage is asserted in this DAILY report. An EVALUATE request is required for a current entry verdict; both <65% consumed and >=2.5 confirmation-time M15 ATR must pass.
+
+LIMITATIONS
+Evidence is complete at the locked 20:30 cutoff; it is not a live quote stream. The refresh completed at 20:43:51, when 20:30 was the latest completed M15 boundary. Later bars are not used.
+The original package's age warnings for H4/H1 are preserved. Their expected endpoint is 20:00 at this cutoff, so neither is materially stale.
+Seven selected recent intervals were checked against retained bid ticks over [bar_time, close_time); all had both endpoint gaps within 60 seconds and matching eligible OHLC. This is targeted verification, not an audit of every historical tick.
+The weekly map was issued midweek on 20 October at 23:14:14 from preweek evidence; no claim of issuance before the week's earlier moves is made. No new V2 weekly map is issued by this update.
+This update is DAILY context only. The last formal entry evaluation remains the separately dated 15:00 report. Its WAIT verdict must not be presented as a new 20:30 entry verdict.
+News, spreads, execution costs and exact future high/low or closing price are not forecast. No calibrated probability, trade profitability or guaranteed sequence is claimed.
