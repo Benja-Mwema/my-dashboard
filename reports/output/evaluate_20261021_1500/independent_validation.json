@@ -1,0 +1,34 @@
+{
+  "cutoff": "2026-10-21 15:00:00",
+  "timeframes": {
+    "H4": {
+      "expected_latest_completed": "2026-10-21 12:00:00",
+      "actual_latest_completed": "2026-10-21 12:00:00",
+      "causal_only": true,
+      "source_sha256": "21586019494954a7a541bf2f5db20a547a32479190d3f6907f6f15137b3e9b18"
+    },
+    "H1": {
+      "expected_latest_completed": "2026-10-21 15:00:00",
+      "actual_latest_completed": "2026-10-21 15:00:00",
+      "causal_only": true,
+      "source_sha256": "b8942af5ba4612bcda9d477ae19820b396fe78b7943ff50310853a37b64325ba"
+    },
+    "M30": {
+      "expected_latest_completed": "2026-10-21 15:00:00",
+      "actual_latest_completed": "2026-10-21 15:00:00",
+      "causal_only": true,
+      "source_sha256": "60b3f259b85b0a26e691e431a9c2323dda8df04e1474a0561944d8115a4f4cd9"
+    },
+    "M15": {
+      "expected_latest_completed": "2026-10-21 15:00:00",
+      "actual_latest_completed": "2026-10-21 15:00:00",
+      "causal_only": true,
+      "source_sha256": "e10ee7b2d7636996b9feac8c0da1fb1fea79d8dab2da3a67dbad0355257723c8"
+    }
+  },
+  "all_boundaries_match": true,
+  "age_flag_note": "H4 12:00 is the correct completed endpoint at 15:00, not stale. Original manifests preserved.",
+  "causal_prefix_recomputation_at_0200": "PASS on H4/H1/M30/M15 indicator inputs",
+  "current_source_complete": true,
+  "active_map_unchanged": true
+}

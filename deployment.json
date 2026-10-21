@@ -1,0 +1,13 @@
+{
+  "release_id": "20261021_201545_153014_EAT",
+  "dashboard": "AURUM",
+  "public_url": "https://my-dashboard-olo8.onrender.com/",
+  "forecast_updates": "explicit_user_request_only",
+  "automatic_analysis": false,
+  "automatic_publication": false,
+  "new_forecasts_generated": false,
+  "weekly_forecast_id": "XAUUSD_WEEK_20261019_V1",
+  "daily_evidence_cutoff": "2026-10-20 23:45:00",
+  "evaluation_cutoff": "2026-10-21 15:00:00",
+  "snapshot_sha256": "a3c7ee226f84e6314ae4e86de943dd3ce26fd3cb3fd20820e4904fb6b0202334"
+}

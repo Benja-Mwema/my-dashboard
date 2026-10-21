@@ -1,0 +1,28 @@
+PROSPECTIVE V1 VERSUS V2 RUNBOOK
+
+Study: 20 consecutive weeks, 26 October 2026 through 12 March 2027. This folder currently contains plans/templates only, zero forecasts and zero results. No scheduled job is running.
+
+BEFORE EACH WEEK
+1. Read AGENTS.md, both procedure references and the fixed STUDY_PROTOCOL.json. Verify V1 and V2 receipts. Refresh saved MT5 evidence with the accepted extractor, choose the true preweek completed cutoff, generate WEEKLY evidence and validate all four endpoints/source finality. Do not use target-week candles.
+2. Codex authors the unchanged V1 control report and map first. Save in a new week/method directory, actual timestamps and source evidence hashes; do not update active live levels.
+3. Codex authors V2 separately with the same evidence/cutoff. Apply weekly_v2.md, including explicit turn evidence and UNRESOLVED when justified. Preserve both reports/maps.
+4. Use forecast_record.template.json as the record format; fill every analytical field through Codex, replace TEMPLATE status with the observed submission status, and append a separate journal record for each method to forecast_journal.jsonl before Monday 00:00 EAT. registered_at_eat is actual current host time, never backdated. Freeze SHA256 receipts for each record/report/map/evidence manifest. For already existing journal paths, retain earlier bytes/receipts and append, rather than replace.
+5. A missing or late method record remains visible. Mark as missing/late and exclude from prospective accuracy; do not create a backdated eligible record. Planned dates are not forecasts.
+
+AFTER OPENING
+At the first completed cutoff actually reviewed, Codex writes a separate opening assessment for each method using opening_review.template.json, retaining exact review cutoff and source evidence. Compare gap location, target consumption and current gates with the unchanged frozen map. An opening gap is not a completed H4 close. Append observations; preserve previous assessments and their hashes. Do not change forecast preference or origin/target retrospectively.
+
+DURING THE WEEK
+Use DAILY for context and EVALUATE for exact-cutoff entry assessment. Codex decides every permission, qualification/trigger, confirmation, invalidation, no-chase conclusion and final verdict. Save all reviewed cutoffs including WAIT and incomplete evidence. Any new branch needs its own timestamped assessment under predeclared rules. A price touch is not an entry. Do not make a Python signal engine.
+
+AT WEEK END
+Wait until the whole calendar target week has ended, validate actual broker-session completeness, then extract facts. Codex fills week_end_assessment.template.json and appends the final versioned record. Preserve interim records and mark supersession explicitly. Arithmetic may be computed by Python; analytical outcome classification remains Codex. A delayed data feed is incomplete, not a zero-return or failed forecast.
+
+SCORING
+Use all 20 planned weeks for coverage and hit-count denominators; show resolved forecasts and paired resolved weeks separately. Compare V1 and V2 on the identical eligible paired subset as well as method-specific coverage. Show weekly-body and dominant-excursion agreement separately. Count UNRESOLVED/missing/late/incomplete/unactivated records visibly. Record first-target-before-failure and subsequent failure separately. Use same-subset always-BUY, always-SELL and prior-week-body benchmarks. No entry win rate or profitability before complete EVALUATE records and an independently specified entry study.
+
+VERSION DISCIPLINE
+No procedure changes during this fixed block. Necessary changes create a new version and protocol-deviation record. Do not overwrite V1, V2, active live weekly levels, prior journal records or receipts. At the fixed end, Codex reviews results and coverage; no automatic live promotion. The journal is append-only by workflow convention with hashes, not immutable storage or an externally notarized service.
+
+INITIAL PLAN VERSUS LIVE RECORDS
+STUDY_PROTOCOL.json and planned_weeks.csv are fixed inception documents. Their zero/NOT_ISSUED values describe setup time. Do not edit them into a mutable dashboard. Derive current coverage/status from the append-only journals and identify the observation time.

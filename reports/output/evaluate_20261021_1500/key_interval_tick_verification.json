@@ -1,0 +1,215 @@
+{
+  "purpose": "Factual verification of Codex-selected historical timeline candles; no trading decision",
+  "intervals": [
+    {
+      "timeframe": "H4",
+      "bar_time": "2026-10-20 20:00:00",
+      "close_time": "2026-10-21 00:00:00",
+      "tick_count": 44600,
+      "start_gap_seconds": 0.091,
+      "end_gap_seconds": 120.054,
+      "coverage_within_60s_each_end": false,
+      "first_tick": "2026-10-20 20:00:00.091000",
+      "last_tick": "2026-10-20 23:57:59.946000",
+      "ohlc": {
+        "open": 4121.23,
+        "high": 4126.89,
+        "low": 4117.3,
+        "close": 4124.9
+      },
+      "native_ohlc_matches": true,
+      "interval_endpoint_excluded": true,
+      "raw_ticks_file": "output\\evaluate_20261021_1500\\key_interval_ticks\\H4_20261020_2000.csv.gz",
+      "raw_ticks_sha256": "564f0512cd2239111e55e043e7e9c06f87ac8ada01bdc37043a62f12b2b03457"
+    },
+    {
+      "timeframe": "H1",
+      "bar_time": "2026-10-21 01:00:00",
+      "close_time": "2026-10-21 02:00:00",
+      "tick_count": 7551,
+      "start_gap_seconds": 0.105,
+      "end_gap_seconds": 0.184,
+      "coverage_within_60s_each_end": true,
+      "first_tick": "2026-10-21 01:00:00.105000",
+      "last_tick": "2026-10-21 01:59:59.816000",
+      "ohlc": {
+        "open": 4127.02,
+        "high": 4131.75,
+        "low": 4119.96,
+        "close": 4120.09
+      },
+      "native_ohlc_matches": true,
+      "interval_endpoint_excluded": true,
+      "raw_ticks_file": "output\\evaluate_20261021_1500\\key_interval_ticks\\H1_20261021_0100.csv.gz",
+      "raw_ticks_sha256": "5ed8f9dde9cbbbf63f8bf569c38558dbf21147681b5152c50ef3c7304076c4fe"
+    },
+    {
+      "timeframe": "M30",
+      "bar_time": "2026-10-21 01:30:00",
+      "close_time": "2026-10-21 02:00:00",
+      "tick_count": 3686,
+      "start_gap_seconds": 0.001,
+      "end_gap_seconds": 0.184,
+      "coverage_within_60s_each_end": true,
+      "first_tick": "2026-10-21 01:30:00.001000",
+      "last_tick": "2026-10-21 01:59:59.816000",
+      "ohlc": {
+        "open": 4130.4,
+        "high": 4130.96,
+        "low": 4119.96,
+        "close": 4120.09
+      },
+      "native_ohlc_matches": true,
+      "interval_endpoint_excluded": true,
+      "raw_ticks_file": "output\\evaluate_20261021_1500\\key_interval_ticks\\M30_20261021_0130.csv.gz",
+      "raw_ticks_sha256": "826ea15f549a9a69288693f9259aef0d7123afbbd45013f29dd3da8a34008269"
+    },
+    {
+      "timeframe": "M15",
+      "bar_time": "2026-10-21 01:30:00",
+      "close_time": "2026-10-21 01:45:00",
+      "tick_count": 2185,
+      "start_gap_seconds": 0.001,
+      "end_gap_seconds": 1.113,
+      "coverage_within_60s_each_end": true,
+      "first_tick": "2026-10-21 01:30:00.001000",
+      "last_tick": "2026-10-21 01:44:58.887000",
+      "ohlc": {
+        "open": 4130.4,
+        "high": 4130.96,
+        "low": 4122.05,
+        "close": 4122.59
+      },
+      "native_ohlc_matches": true,
+      "interval_endpoint_excluded": true,
+      "raw_ticks_file": "output\\evaluate_20261021_1500\\key_interval_ticks\\M15_20261021_0130.csv.gz",
+      "raw_ticks_sha256": "80b38bbccb95760d599c93a71b5e9b9394d7ca6f8eb5c68a19ccec65e1de43cb"
+    },
+    {
+      "timeframe": "M15",
+      "bar_time": "2026-10-21 01:45:00",
+      "close_time": "2026-10-21 02:00:00",
+      "tick_count": 1501,
+      "start_gap_seconds": 0.049,
+      "end_gap_seconds": 0.184,
+      "coverage_within_60s_each_end": true,
+      "first_tick": "2026-10-21 01:45:00.049000",
+      "last_tick": "2026-10-21 01:59:59.816000",
+      "ohlc": {
+        "open": 4122.56,
+        "high": 4123.38,
+        "low": 4119.96,
+        "close": 4120.09
+      },
+      "native_ohlc_matches": true,
+      "interval_endpoint_excluded": true,
+      "raw_ticks_file": "output\\evaluate_20261021_1500\\key_interval_ticks\\M15_20261021_0145.csv.gz",
+      "raw_ticks_sha256": "1beb9981556b60d57f02fd9d02fae25b95832f0861478f6d30d22ffa7e9b7279"
+    },
+    {
+      "timeframe": "M15",
+      "bar_time": "2026-10-21 04:00:00",
+      "close_time": "2026-10-21 04:15:00",
+      "tick_count": 5821,
+      "start_gap_seconds": 0.047,
+      "end_gap_seconds": 0.049,
+      "coverage_within_60s_each_end": true,
+      "first_tick": "2026-10-21 04:00:00.047000",
+      "last_tick": "2026-10-21 04:14:59.951000",
+      "ohlc": {
+        "open": 4117.1,
+        "high": 4118.41,
+        "low": 4106.14,
+        "close": 4109.21
+      },
+      "native_ohlc_matches": true,
+      "interval_endpoint_excluded": true,
+      "raw_ticks_file": "output\\evaluate_20261021_1500\\key_interval_ticks\\M15_20261021_0400.csv.gz",
+      "raw_ticks_sha256": "5a90f2c25251e63fa4fcf433f6a23c4f697bfd47ce61f0fa6c38108b229d7043"
+    },
+    {
+      "timeframe": "M15",
+      "bar_time": "2026-10-21 04:15:00",
+      "close_time": "2026-10-21 04:30:00",
+      "tick_count": 4605,
+      "start_gap_seconds": 0.062,
+      "end_gap_seconds": 0.331,
+      "coverage_within_60s_each_end": true,
+      "first_tick": "2026-10-21 04:15:00.062000",
+      "last_tick": "2026-10-21 04:29:59.669000",
+      "ohlc": {
+        "open": 4109.23,
+        "high": 4119.02,
+        "low": 4107.21,
+        "close": 4117.32
+      },
+      "native_ohlc_matches": true,
+      "interval_endpoint_excluded": true,
+      "raw_ticks_file": "output\\evaluate_20261021_1500\\key_interval_ticks\\M15_20261021_0415.csv.gz",
+      "raw_ticks_sha256": "928b8f77cc2fa966f3c61a1307049c908772735482ab72c51590e0f35edb197a"
+    },
+    {
+      "timeframe": "M15",
+      "bar_time": "2026-10-21 05:00:00",
+      "close_time": "2026-10-21 05:15:00",
+      "tick_count": 4126,
+      "start_gap_seconds": 0.154,
+      "end_gap_seconds": 0.133,
+      "coverage_within_60s_each_end": true,
+      "first_tick": "2026-10-21 05:00:00.154000",
+      "last_tick": "2026-10-21 05:14:59.867000",
+      "ohlc": {
+        "open": 4118.87,
+        "high": 4120.57,
+        "low": 4116.42,
+        "close": 4119.16
+      },
+      "native_ohlc_matches": true,
+      "interval_endpoint_excluded": true,
+      "raw_ticks_file": "output\\evaluate_20261021_1500\\key_interval_ticks\\M15_20261021_0500.csv.gz",
+      "raw_ticks_sha256": "283bde81b07cc5f104c3f8ac493585fb9dadb540d96866f49fe7c8e222e430b0"
+    },
+    {
+      "timeframe": "M30",
+      "bar_time": "2026-10-21 08:00:00",
+      "close_time": "2026-10-21 08:30:00",
+      "tick_count": 6256,
+      "start_gap_seconds": 0.076,
+      "end_gap_seconds": 0.055,
+      "coverage_within_60s_each_end": true,
+      "first_tick": "2026-10-21 08:00:00.076000",
+      "last_tick": "2026-10-21 08:29:59.945000",
+      "ohlc": {
+        "open": 4114.72,
+        "high": 4128.8,
+        "low": 4114.29,
+        "close": 4127.86
+      },
+      "native_ohlc_matches": true,
+      "interval_endpoint_excluded": true,
+      "raw_ticks_file": "output\\evaluate_20261021_1500\\key_interval_ticks\\M30_20261021_0800.csv.gz",
+      "raw_ticks_sha256": "0eafdad92535eb247b484aa1c0d403346fa290191a76faa3b641125b362d0d32"
+    },
+    {
+      "timeframe": "H1",
+      "bar_time": "2026-10-21 10:00:00",
+      "close_time": "2026-10-21 11:00:00",
+      "tick_count": 13650,
+      "start_gap_seconds": 0.058,
+      "end_gap_seconds": 0.176,
+      "coverage_within_60s_each_end": true,
+      "first_tick": "2026-10-21 10:00:00.058000",
+      "last_tick": "2026-10-21 10:59:59.824000",
+      "ohlc": {
+        "open": 4112.21,
+        "high": 4125.08,
+        "low": 4111.62,
+        "close": 4123.97
+      },
+      "native_ohlc_matches": true,
+      "interval_endpoint_excluded": true,
+      "raw_ticks_file": "output\\evaluate_20261021_1500\\key_interval_ticks\\H1_20261021_1000.csv.gz",
+      "raw_ticks_sha256": "3ea1d9ccf7e1edcc712a7aee61fa1aa7838ed85af22cd4e11af7032fe39519b2"
+    }
+  ]
+}

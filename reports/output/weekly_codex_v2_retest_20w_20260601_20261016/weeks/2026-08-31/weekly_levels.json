@@ -1,0 +1,189 @@
+{
+  "schema_version": "1.0",
+  "forecast_id": "XAUUSD_CODEX_V2_RETEST_20260831_V1",
+  "symbol": "XAUUSD.pro",
+  "forecast_type": "weekly",
+  "frozen_at": "2026-10-21 10:52:56",
+  "created_at_eat": "2026-10-21 10:52:56",
+  "valid_from": "2026-10-21 10:52:56",
+  "valid_to": "2026-10-21 10:52:56",
+  "eligible_for_live_use": false,
+  "status": "FINAL_RESEARCH_MAP",
+  "purpose": "Historical scenario reconstruction only; not a live forecast",
+  "timezone": "Africa/Nairobi",
+  "source_clock": "Broker-wall labels aligned by saved OHLC overlaps; repository EAT convention; independent historic UTC offsets unverified",
+  "evidence_cutoff": "2026-08-29 00:00:00",
+  "hypothetical_replay_week_start": "2026-08-31 00:00:00",
+  "hypothetical_replay_week_end_exclusive": "2026-09-05 00:00:00",
+  "historical_issuance_verified": false,
+  "procedure_id": "XAUUSD_WEEKLY_PROCEDURE_V2_20261021",
+  "weekly_evidence_package": "output\\weekly_codex_replay_20w_20260601_20261016\\packages\\20260831\\weekly_20260828",
+  "primary_direction": "SELL",
+  "preweek_regime": "Sharp corrective breakdown, longer-term EMA200 below",
+  "h1_state": "Bearish displacement below all four H1 averages",
+  "lower_timeframe_context": "M30 below short averages with improving negative histogram; M15 rebound histogram does not reverse H1 structure.",
+  "analysis": "H4 accepted below 4565.21 in a large completed displacement and H1 is below all averages with negative momentum. This is explicit bearish turn evidence even though price remains above H4 EMA200; EMA200 must not become a blanket veto.",
+  "confidence": "Moderate",
+  "primary_path": {
+    "direction": "SELL",
+    "origin_zone": "CONTROL",
+    "first_target": "TARGET",
+    "extension": "LOWER",
+    "requirements": "Origin-zone hold/rejection, subsequent M15 trigger, M30 structural acceptance, H1 permission, H4 allowance; fresh entry also requires both no-chase tests",
+    "failure": {
+      "timeframe": "H4",
+      "completed_close_relation": "above",
+      "threshold": 4507.83
+    }
+  },
+  "alternate_path": {
+    "direction": "BUY",
+    "activation": "Primary completed-H4 failure event, directional H1 permission and failed recovery/retest of the declared origin, with all other required gates.",
+    "origin_zone": "CONTROL",
+    "first_target": "RESISTANCE",
+    "extension": "UPPER",
+    "failure": {
+      "timeframe": "H4",
+      "completed_close_relation": "below",
+      "threshold": 4476.53
+    }
+  },
+  "entry_gate_interpretation": {
+    "new_signal_eligibility": "Only fully post-freeze completed M15 bars may establish a new qualification or trigger. A bar opening before the actual freeze is contextual only. No confirmation timestamp may precede valid_from.",
+    "M15_qualification": "For SELL, a completed rejection in/through the active resistance zone closing below its lower edge; BUY mirrors above support. Directional indicator improvement must corroborate. A price/EMA state alone is not a new trigger.",
+    "M15_trigger": "A subsequent completed directional close beyond the qualification candle low for SELL or high for BUY. Must remain valid at the cutoff.",
+    "M30_confirmation": "Completed directional acceptance beyond the active-zone exit boundary and local structure, with close on directional side of EMA10/EMA20 and corroborating momentum. Mere touch is insufficient.",
+    "H1_permission": "Completed close on directional side of EMA10/EMA20 and active structural boundary, with regime-consistent MACD direction or explicitly demonstrated momentum turn. Positive but declining histogram alone is not equivalent to fully bearish permission.",
+    "H4_allowance": "Completed H4 regime permits direction and specified scenario invalidation has not occurred. Countertrend trades require an explicit H4 turn; support touch alone is insufficient.",
+    "first_full_confirmation": "Earliest eligible close_time when all specified gates coexist. No earlier historical confirmation under this newly frozen map.",
+    "opposing_level_selection": "Use the near edge of the nearest unconsumed opposing zone; do not skip an intervening zone to enlarge remaining room.",
+    "no_chase": "Consumption strictly below 65%; remaining room at least 2.5 M15 ATR at exact full confirmation; recheck fresh-entry location at requested cutoff."
+  },
+  "levels": [
+    {
+      "id": "BASE",
+      "role": "TURN_SUPPORT",
+      "low": 4324.64,
+      "high": 4329.05,
+      "label": "BASE",
+      "priority": 1,
+      "basis": {
+        "low": [
+          "2026-08-19 daily low"
+        ],
+        "high": [
+          "2026-08-18 daily low"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    },
+    {
+      "id": "LOWER",
+      "role": "TARGET_TURN",
+      "low": 4357.42,
+      "high": 4367.31,
+      "label": "LOWER",
+      "priority": 2,
+      "basis": {
+        "low": [
+          "preweek completed H4 ema200"
+        ],
+        "high": [
+          "2026-08-17 daily low"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    },
+    {
+      "id": "TARGET",
+      "role": "TARGET_TURN",
+      "low": 4445.31,
+      "high": 4450.65,
+      "label": "TARGET",
+      "priority": 3,
+      "basis": {
+        "low": [
+          "2026-08-28 daily low",
+          "preweek completed H4 low",
+          "2026-08-28 20:00:00 H4 low"
+        ],
+        "high": [
+          "2026-08-20 daily low"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    },
+    {
+      "id": "CONTROL",
+      "role": "CONTROL",
+      "low": 4476.53,
+      "high": 4507.83,
+      "label": "CONTROL",
+      "priority": 4,
+      "basis": {
+        "low": [
+          "preweek completed M30 ema10"
+        ],
+        "high": [
+          "preweek completed M30 ema20"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    },
+    {
+      "id": "RESISTANCE",
+      "role": "TURN_RESISTANCE",
+      "low": 4539.92,
+      "high": 4556.82,
+      "label": "RESISTANCE",
+      "priority": 5,
+      "basis": {
+        "low": [
+          "preweek completed H1 ema20"
+        ],
+        "high": [
+          "preweek completed H4 ema10"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    },
+    {
+      "id": "UPPER",
+      "role": "TARGET_TURN",
+      "low": 4605.48,
+      "high": 4632.23,
+      "label": "UPPER",
+      "priority": 6,
+      "basis": {
+        "low": [
+          "2026-08-25 daily low"
+        ],
+        "high": [
+          "2026-08-21 daily high"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    }
+  ],
+  "provenance": "Codex judgments reconstructed after the historical outcomes were available. Python only extracts evidence and serializes explicit judgments. Actual creation time is preserved; hypothetical interval is not historical live validity. No legacy WLW model output used.",
+  "weekly_closing_preference": "SELL",
+  "weekly_preference_reason": "H4 accepted below 4565.21 in a large completed displacement and H1 is below all averages with negative momentum. This is explicit bearish turn evidence even though price remains above H4 EMA200; EMA200 must not become a blanket veto.",
+  "structural_reference": {
+    "week_start": "2026-08-31",
+    "boundary_source_field": "low",
+    "boundary_price": 4565.21,
+    "originating_h4_bar_open": "2026-08-27 16:00:00",
+    "originating_h4_bar_close": "2026-08-27 20:00:00",
+    "requested_close_relation": "below",
+    "first_later_completed_h4_close_across": {
+      "bar_time": "2026-08-28 16:00:00",
+      "close_time": "2026-08-28 20:00:00",
+      "close": 4479.32
+    }
+  },
+  "structural_turn_interpretation": "Completed H4 close 4479.32 at 28 August 20:00 crossed below the 4565.21 prior reaction low. The subsequent H4 close stayed lower near the weekly bottom.",
+  "h1_structural_context": "H1 4456.24 is below EMA10/20/50/200 with negative main and histogram; a rebound may still occur before a qualifying rejection.",
+  "change_from_v1": "Retain rejection SELL. Because the prior low is close to the opening area, require the origin-to-target order and do not credit an already-consumed objective.",
+  "study_type": "DEVELOPMENT_SAMPLE_HISTORICAL_RETEST",
+  "opening_review_requirement": "At first reviewed completed cutoff, compare opening gap with origin, failure and target without changing this map; opening prices alone are not completed H4 invalidation."
+}

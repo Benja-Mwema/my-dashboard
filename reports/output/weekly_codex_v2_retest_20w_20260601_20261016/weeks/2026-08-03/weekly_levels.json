@@ -1,0 +1,174 @@
+{
+  "schema_version": "1.0",
+  "forecast_id": "XAUUSD_CODEX_V2_RETEST_20260803_V1",
+  "symbol": "XAUUSD.pro",
+  "forecast_type": "weekly",
+  "frozen_at": "2026-10-21 10:52:56",
+  "created_at_eat": "2026-10-21 10:52:56",
+  "valid_from": "2026-10-21 10:52:56",
+  "valid_to": "2026-10-21 10:52:56",
+  "eligible_for_live_use": false,
+  "status": "FINAL_RESEARCH_MAP",
+  "purpose": "Historical scenario reconstruction only; not a live forecast",
+  "timezone": "Africa/Nairobi",
+  "source_clock": "Broker-wall labels aligned by saved OHLC overlaps; repository EAT convention; independent historic UTC offsets unverified",
+  "evidence_cutoff": "2026-08-01 00:00:00",
+  "hypothetical_replay_week_start": "2026-08-03 00:00:00",
+  "hypothetical_replay_week_end_exclusive": "2026-08-08 00:00:00",
+  "historical_issuance_verified": false,
+  "procedure_id": "XAUUSD_WEEKLY_PROCEDURE_V2_20261021",
+  "weekly_evidence_package": "output\\weekly_codex_replay_20w_20260601_20261016\\packages\\20260803\\weekly_20260731",
+  "primary_direction": "SELL",
+  "preweek_regime": "Bearish range pressure below EMA10/20/50/200",
+  "h1_state": "Bearish alignment with decelerating negative histogram",
+  "lower_timeframe_context": "M30/M15 below short averages; mixed histograms require rejection evidence rather than automatic entry.",
+  "analysis": "Price is below its averages, but the H4 averages are clustered near 4060 and main MACD is near zero. The prior week traded both sides of a narrow range. A tactical rejection SELL remains possible, but the evidence is too balanced to force a weekly closing forecast.",
+  "confidence": "Low",
+  "primary_path": {
+    "direction": "SELL",
+    "origin_zone": "CONTROL",
+    "first_target": "LOWER",
+    "extension": "BASE",
+    "requirements": "Origin-zone hold/rejection, subsequent M15 trigger, M30 structural acceptance, H1 permission, H4 allowance; fresh entry also requires both no-chase tests",
+    "failure": {
+      "timeframe": "H4",
+      "completed_close_relation": "above",
+      "threshold": 4062.32
+    }
+  },
+  "alternate_path": {
+    "direction": "BUY",
+    "activation": "Primary completed-H4 failure event, directional H1 permission and failed recovery/retest of the declared origin, with all other required gates.",
+    "origin_zone": "CONTROL",
+    "first_target": "RESISTANCE",
+    "extension": "UPPER",
+    "failure": {
+      "timeframe": "H4",
+      "completed_close_relation": "below",
+      "threshold": 4049.97
+    }
+  },
+  "entry_gate_interpretation": {
+    "new_signal_eligibility": "Only fully post-freeze completed M15 bars may establish a new qualification or trigger. A bar opening before the actual freeze is contextual only. No confirmation timestamp may precede valid_from.",
+    "M15_qualification": "For SELL, a completed rejection in/through the active resistance zone closing below its lower edge; BUY mirrors above support. Directional indicator improvement must corroborate. A price/EMA state alone is not a new trigger.",
+    "M15_trigger": "A subsequent completed directional close beyond the qualification candle low for SELL or high for BUY. Must remain valid at the cutoff.",
+    "M30_confirmation": "Completed directional acceptance beyond the active-zone exit boundary and local structure, with close on directional side of EMA10/EMA20 and corroborating momentum. Mere touch is insufficient.",
+    "H1_permission": "Completed close on directional side of EMA10/EMA20 and active structural boundary, with regime-consistent MACD direction or explicitly demonstrated momentum turn. Positive but declining histogram alone is not equivalent to fully bearish permission.",
+    "H4_allowance": "Completed H4 regime permits direction and specified scenario invalidation has not occurred. Countertrend trades require an explicit H4 turn; support touch alone is insufficient.",
+    "first_full_confirmation": "Earliest eligible close_time when all specified gates coexist. No earlier historical confirmation under this newly frozen map.",
+    "opposing_level_selection": "Use the near edge of the nearest unconsumed opposing zone; do not skip an intervening zone to enlarge remaining room.",
+    "no_chase": "Consumption strictly below 65%; remaining room at least 2.5 M15 ATR at exact full confirmation; recheck fresh-entry location at requested cutoff."
+  },
+  "levels": [
+    {
+      "id": "BASE",
+      "role": "TURN_SUPPORT",
+      "low": 3995.95,
+      "high": 4011.58,
+      "label": "BASE",
+      "priority": 1,
+      "basis": {
+        "low": [
+          "2026-07-29 daily low"
+        ],
+        "high": [
+          "2026-07-28 daily low"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    },
+    {
+      "id": "LOWER",
+      "role": "TARGET_TURN",
+      "low": 4021.09,
+      "high": 4028.43,
+      "label": "LOWER",
+      "priority": 2,
+      "basis": {
+        "low": [
+          "2026-07-31 daily low",
+          "2026-07-31 16:00:00 H4 low"
+        ],
+        "high": [
+          "2026-07-30 daily low",
+          "2026-07-30 08:00:00 H4 low"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    },
+    {
+      "id": "CONTROL",
+      "role": "CONTROL",
+      "low": 4049.97,
+      "high": 4062.32,
+      "label": "CONTROL",
+      "priority": 3,
+      "basis": {
+        "low": [
+          "preweek completed H1 ema10"
+        ],
+        "high": [
+          "preweek completed H1 ema50"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    },
+    {
+      "id": "RESISTANCE",
+      "role": "TURN_RESISTANCE",
+      "low": 4111.86,
+      "high": 4120.18,
+      "label": "RESISTANCE",
+      "priority": 4,
+      "basis": {
+        "low": [
+          "2026-07-31 daily high",
+          "2026-07-31 00:00:00 H4 high"
+        ],
+        "high": [
+          "2026-07-30 daily high",
+          "2026-07-30 16:00:00 H4 high"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    },
+    {
+      "id": "UPPER",
+      "role": "TARGET_TURN",
+      "low": 4141.09,
+      "high": 4166.02,
+      "label": "UPPER",
+      "priority": 5,
+      "basis": {
+        "low": [
+          "2026-07-23 daily high"
+        ],
+        "high": [
+          "2026-07-22 daily high"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    }
+  ],
+  "provenance": "Codex judgments reconstructed after the historical outcomes were available. Python only extracts evidence and serializes explicit judgments. Actual creation time is preserved; hypothetical interval is not historical live validity. No legacy WLW model output used.",
+  "weekly_closing_preference": "UNRESOLVED",
+  "weekly_preference_reason": "Price is below its averages, but the H4 averages are clustered near 4060 and main MACD is near zero. The prior week traded both sides of a narrow range. A tactical rejection SELL remains possible, but the evidence is too balanced to force a weekly closing forecast.",
+  "structural_reference": {
+    "week_start": "2026-08-03",
+    "boundary_source_field": "low",
+    "boundary_price": 4065.39,
+    "originating_h4_bar_open": "2026-07-27 16:00:00",
+    "originating_h4_bar_close": "2026-07-27 20:00:00",
+    "requested_close_relation": "below",
+    "first_later_completed_h4_close_across": {
+      "bar_time": "2026-07-28 00:00:00",
+      "close_time": "2026-07-28 04:00:00",
+      "close": 4057.86
+    }
+  },
+  "structural_turn_interpretation": "The 4065.39 local low was lost at 28 July 04:00, yet the same week repeatedly recovered toward 4116-4120. A local break does not establish clean weekly trend persistence.",
+  "h1_structural_context": "H1 is below all averages, but its negative histogram is improving; M30/M15 momentum is mixed. This does not resolve the H4 range.",
+  "change_from_v1": "Retain conditional rejection SELL only; leave weekly closing preference unresolved.",
+  "study_type": "DEVELOPMENT_SAMPLE_HISTORICAL_RETEST",
+  "opening_review_requirement": "At first reviewed completed cutoff, compare opening gap with origin, failure and target without changing this map; opening prices alone are not completed H4 invalidation."
+}

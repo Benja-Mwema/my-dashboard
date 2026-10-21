@@ -1,0 +1,13 @@
+﻿actionable_close_time_eat,completed_evidence,codex_interpretation
+2026-10-20 23:30,Earlier fully post-freeze WMID rejection qualified,No full confirmation at that cutoff
+2026-10-21 01:45,"M15 01:30 rejection: high 4130.96, low 4122.05, close 4122.59 below WMID and EMA10/20; main MACD turned lower",New rejection qualification
+2026-10-21 02:00,Subsequent M15 close 4120.09 broke 4122.05; M30 broke the prior 4124.90 low and closed below WMID/short EMAs; H1 closed below WMID/EMA10/20,First full technical SELL confirmation; NO-CHASE BLOCK
+2026-10-21 04:15,M15 04:00 reached 4106.14 inside WSUPPORT and closed 4109.21 inside it,Support contact; not a qualified BUY by itself
+2026-10-21 04:30,"M15 04:15 retested support, closed 4117.32 above its upper edge; main/histogram improved despite EMA20 still above price",Early support BUY qualification; higher gates absent
+2026-10-21 04:45,Next candle reached WMID low 4123.18 before the support BUY had full confirmation,First objective contact cannot be credited as a confirmed trade
+2026-10-21 05:15,M15 05:00 closed 4119.16 above qualification high 4119.02,Support BUY trigger; not full confirmation
+2026-10-21 08:30,M30 08:00 closed 4127.86 above the 4124.24/4125.84 recovery cap and short averages with improving momentum,Support-recovery M30 structure confirmed
+2026-10-21 11:00,"H1 10:00 closed 4123.97 above EMA10/20 and support exit, with improving negative main and rising positive histogram",H1 supports the local support-recovery direction; H4 allowance still absent
+2026-10-21 12:00,"H4 08:00 closed 4119.61, still below short averages and local recovery highs","Higher low / improving histogram is early turn evidence, insufficient for bullish allowance"
+2026-10-21 14:45,"M15 14:30 reclaimed WMID high, close 4137.98, high 4141.11, low 4129.93",New reclaim qualification pattern
+2026-10-21 15:00,M30 and H1 closed 4139.87 above WMID high; next M15 also closed 4139.87 below reclaim high 4141.11,"Local WMID SELL invalidated; recovery supported, new M15 trigger and H4 allowance absent; WAIT"

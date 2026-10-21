@@ -1,0 +1,174 @@
+{
+  "schema_version": "1.0",
+  "forecast_id": "XAUUSD_CODEX_V2_RETEST_20260824_V1",
+  "symbol": "XAUUSD.pro",
+  "forecast_type": "weekly",
+  "frozen_at": "2026-10-21 10:52:56",
+  "created_at_eat": "2026-10-21 10:52:56",
+  "valid_from": "2026-10-21 10:52:56",
+  "valid_to": "2026-10-21 10:52:56",
+  "eligible_for_live_use": false,
+  "status": "FINAL_RESEARCH_MAP",
+  "purpose": "Historical scenario reconstruction only; not a live forecast",
+  "timezone": "Africa/Nairobi",
+  "source_clock": "Broker-wall labels aligned by saved OHLC overlaps; repository EAT convention; independent historic UTC offsets unverified",
+  "evidence_cutoff": "2026-08-22 00:00:00",
+  "hypothetical_replay_week_start": "2026-08-24 00:00:00",
+  "hypothetical_replay_week_end_exclusive": "2026-08-29 00:00:00",
+  "historical_issuance_verified": false,
+  "procedure_id": "XAUUSD_WEEKLY_PROCEDURE_V2_20261021",
+  "weekly_evidence_package": "output\\weekly_codex_replay_20w_20260601_20261016\\packages\\20260824\\weekly_20260821",
+  "primary_direction": "BUY",
+  "preweek_regime": "Bullish expansion with short-term exhaustion risk",
+  "h1_state": "Bullish structure but momentum cooling near the high",
+  "lower_timeframe_context": "M30/M15 below short averages with negative histograms; pullback and requalification are essential.",
+  "analysis": "H4 accepted above the earlier 4449.62 high, remains above all four averages and has positive momentum. The lower frames are cooling, so the continuation must be conditional, but there is no preweek completed structural reason to replace the bullish weekly preference with SELL.",
+  "confidence": "Low to moderate",
+  "primary_path": {
+    "direction": "BUY",
+    "origin_zone": "CONTROL",
+    "first_target": "RESISTANCE",
+    "extension": null,
+    "requirements": "Origin-zone hold/rejection, subsequent M15 trigger, M30 structural acceptance, H1 permission, H4 allowance; fresh entry also requires both no-chase tests",
+    "failure": {
+      "timeframe": "H4",
+      "completed_close_relation": "below",
+      "threshold": 4553.05
+    }
+  },
+  "alternate_path": {
+    "direction": "SELL",
+    "activation": "Primary completed-H4 failure event, directional H1 permission and failed recovery/retest of the declared origin, with all other required gates.",
+    "origin_zone": "CONTROL",
+    "first_target": "MID",
+    "extension": "LOWER",
+    "failure": {
+      "timeframe": "H4",
+      "completed_close_relation": "above",
+      "threshold": 4584.01
+    }
+  },
+  "entry_gate_interpretation": {
+    "new_signal_eligibility": "Only fully post-freeze completed M15 bars may establish a new qualification or trigger. A bar opening before the actual freeze is contextual only. No confirmation timestamp may precede valid_from.",
+    "M15_qualification": "For SELL, a completed rejection in/through the active resistance zone closing below its lower edge; BUY mirrors above support. Directional indicator improvement must corroborate. A price/EMA state alone is not a new trigger.",
+    "M15_trigger": "A subsequent completed directional close beyond the qualification candle low for SELL or high for BUY. Must remain valid at the cutoff.",
+    "M30_confirmation": "Completed directional acceptance beyond the active-zone exit boundary and local structure, with close on directional side of EMA10/EMA20 and corroborating momentum. Mere touch is insufficient.",
+    "H1_permission": "Completed close on directional side of EMA10/EMA20 and active structural boundary, with regime-consistent MACD direction or explicitly demonstrated momentum turn. Positive but declining histogram alone is not equivalent to fully bearish permission.",
+    "H4_allowance": "Completed H4 regime permits direction and specified scenario invalidation has not occurred. Countertrend trades require an explicit H4 turn; support touch alone is insufficient.",
+    "first_full_confirmation": "Earliest eligible close_time when all specified gates coexist. No earlier historical confirmation under this newly frozen map.",
+    "opposing_level_selection": "Use the near edge of the nearest unconsumed opposing zone; do not skip an intervening zone to enlarge remaining room.",
+    "no_chase": "Consumption strictly below 65%; remaining room at least 2.5 M15 ATR at exact full confirmation; recheck fresh-entry location at requested cutoff."
+  },
+  "levels": [
+    {
+      "id": "BASE",
+      "role": "TURN_SUPPORT",
+      "low": 4428.79,
+      "high": 4436.07,
+      "label": "BASE",
+      "priority": 1,
+      "basis": {
+        "low": [
+          "2026-08-17 daily high"
+        ],
+        "high": [
+          "2026-08-18 daily high"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    },
+    {
+      "id": "LOWER",
+      "role": "TARGET_TURN",
+      "low": 4450.65,
+      "high": 4450.65,
+      "label": "LOWER",
+      "priority": 2,
+      "basis": {
+        "low": [
+          "2026-08-20 daily low",
+          "2026-08-20 12:00:00 H4 low"
+        ],
+        "high": [
+          "2026-08-20 daily low",
+          "2026-08-20 12:00:00 H4 low"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    },
+    {
+      "id": "MID",
+      "role": "TARGET_TURN",
+      "low": 4506.84,
+      "high": 4524.17,
+      "label": "MID",
+      "priority": 3,
+      "basis": {
+        "low": [
+          "preweek completed H4 ema20"
+        ],
+        "high": [
+          "2026-08-19 daily high"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    },
+    {
+      "id": "CONTROL",
+      "role": "CONTROL",
+      "low": 4553.05,
+      "high": 4584.01,
+      "label": "CONTROL",
+      "priority": 4,
+      "basis": {
+        "low": [
+          "preweek completed H4 ema10"
+        ],
+        "high": [
+          "preweek completed H1 ema20"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    },
+    {
+      "id": "RESISTANCE",
+      "role": "TURN_RESISTANCE",
+      "low": 4628.98,
+      "high": 4632.23,
+      "label": "RESISTANCE",
+      "priority": 5,
+      "basis": {
+        "low": [
+          "2026-08-21 16:00:00 H4 high"
+        ],
+        "high": [
+          "2026-08-21 daily high",
+          "preweek completed H4 high",
+          "2026-08-21 20:00:00 H4 high"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    }
+  ],
+  "provenance": "Codex judgments reconstructed after the historical outcomes were available. Python only extracts evidence and serializes explicit judgments. Actual creation time is preserved; hypothetical interval is not historical live validity. No legacy WLW model output used.",
+  "weekly_closing_preference": "BUY",
+  "weekly_preference_reason": "H4 accepted above the earlier 4449.62 high, remains above all four averages and has positive momentum. The lower frames are cooling, so the continuation must be conditional, but there is no preweek completed structural reason to replace the bullish weekly preference with SELL.",
+  "structural_reference": {
+    "week_start": "2026-08-24",
+    "boundary_source_field": "high",
+    "boundary_price": 4449.62,
+    "originating_h4_bar_open": "2026-08-13 00:00:00",
+    "originating_h4_bar_close": "2026-08-13 04:00:00",
+    "requested_close_relation": "above",
+    "first_later_completed_h4_close_across": {
+      "bar_time": "2026-08-19 16:00:00",
+      "close_time": "2026-08-19 20:00:00",
+      "close": 4493.22
+    }
+  },
+  "structural_turn_interpretation": "Completed H4 close 4493.22 at 19 August 20:00 exceeded 4449.62. Subsequent reaction lows stayed above that former high before the new 4632.23 extreme.",
+  "h1_structural_context": "H1 remains above EMA20/50/200 but is marginally below EMA10; M30/M15 histograms are negative. This is an exhaustion warning and a reason to wait for support confirmation.",
+  "change_from_v1": "Retain BUY, including the possibility that a first target could be followed by later failure. Do not erase this forecast just because the historical outcome is known.",
+  "study_type": "DEVELOPMENT_SAMPLE_HISTORICAL_RETEST",
+  "opening_review_requirement": "At first reviewed completed cutoff, compare opening gap with origin, failure and target without changing this map; opening prices alone are not completed H4 invalidation."
+}

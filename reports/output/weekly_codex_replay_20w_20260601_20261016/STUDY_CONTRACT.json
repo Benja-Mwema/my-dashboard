@@ -1,0 +1,24 @@
+{
+  "recorded_at_eat": "2026-10-21T09:58:44+03:00",
+  "procedure": "XAUUSD_WEEKLY_PROCEDURE_V1_20261021",
+  "reference_forecast": "XAUUSD_WEEK_20261019_V1",
+  "extractor": "Unmodified xauusd_prompt_extract.py / xauusd_extract.exporter.build_standard_package",
+  "default_windows": {
+    "H4": 90,
+    "H1": 96,
+    "M30": 120,
+    "M15": 160
+  },
+  "analytical_author": "Codex; no legacy WLW direction records and no Python discretionary forecast engine",
+  "preweek_rule": "Only completed source rows with close_time <= final preweek completed cutoff. Validate endpoints and recompute indicators on the causal prefix.",
+  "reconstruction_disclosure": "All twenty forecasts are newly reconstructed now. Prior outcomes are already available to the analyst, so this is not blind, prospective or out-of-sample accuracy.",
+  "map_freeze_rule": "Freeze explicit Codex-authored levels, scenario direction, first target and H4 failure threshold for every week before the comparison script is run. Store actual reconstruction timestamp and hypothetical replay interval separately; no historical valid_from or live entry eligibility.",
+  "scoring_contract": {
+    "primary_direction_body_agreement": "Compare declared primary hypothesis direction with actual close minus open. Numeric agreement only; not conditional scenario or trade win rate.",
+    "primary_direction_dominant_excursion_agreement": "Compare declared primary direction with the larger of high-open and open-low, matching the earlier report metric.",
+    "scenario_evidence": "Report first M15 origin-zone intersection, target-zone intersection, and first completed H4 close across each declared failure threshold. Codex interprets the chronology; Python only extracts timestamps/values.",
+    "no_credit_for_alternate_as_primary_hit": "Activation of a plausible alternate must not change a missed primary-direction forecast into a hit.",
+    "entry_performance": "Not scored: M15 qualification/trigger, M30 confirmation, H1 permission and confirmation-time no-chase are not fully replayed in this weekly map comparison. Zone touches alone receive no entry or trade-success claim."
+  },
+  "history_is_not_deterministic_code_replay": "The reference forecast was discretionary Codex analysis. Same factual extractor, windows and written procedure can be reused; exact historical model judgment cannot be guaranteed by a code hash."
+}

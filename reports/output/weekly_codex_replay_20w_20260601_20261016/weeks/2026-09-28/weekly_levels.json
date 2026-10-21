@@ -1,0 +1,153 @@
+{
+  "schema_version": "1.0",
+  "forecast_id": "XAUUSD_CODEX_REPLAY_20260928_V1",
+  "symbol": "XAUUSD.pro",
+  "forecast_type": "weekly",
+  "frozen_at": "2026-10-21 10:05:44",
+  "created_at_eat": "2026-10-21 10:05:44",
+  "valid_from": "2026-10-21 10:05:44",
+  "valid_to": "2026-10-21 10:05:44",
+  "eligible_for_live_use": false,
+  "status": "FINAL_RESEARCH_MAP",
+  "purpose": "Historical scenario reconstruction only; not a live forecast",
+  "timezone": "Africa/Nairobi",
+  "source_clock": "Broker-wall labels aligned by saved OHLC overlaps; repository EAT convention; independent historic UTC offsets unverified",
+  "evidence_cutoff": "2026-09-26 00:00:00",
+  "hypothetical_replay_week_start": "2026-09-28 00:00:00",
+  "hypothetical_replay_week_end_exclusive": "2026-10-03 00:00:00",
+  "historical_issuance_verified": false,
+  "procedure_id": "XAUUSD_WEEKLY_PROCEDURE_V1_20261021",
+  "weekly_evidence_package": "output\\weekly_codex_replay_20w_20260601_20261016\\packages\\20260928\\weekly_20260925",
+  "primary_direction": "SELL",
+  "preweek_regime": "Bearish higher-timeframe structure with a weak rebound",
+  "h1_state": "Mixed short averages below H1 EMA200",
+  "lower_timeframe_context": "M30/M15 below short averages with cooling histograms; rebound acceptance is unproven.",
+  "analysis": "H4 price remains below EMA10/20/50/200 despite an improving positive histogram. H1 is mixed and still below its long average. Prefer rejection of the near control band toward repeated lower supports, with a reclaim opening the upper band.",
+  "confidence": "Low to moderate",
+  "primary_path": {
+    "direction": "SELL",
+    "origin_zone": "CONTROL",
+    "first_target": "LOWER",
+    "extension": "BASE",
+    "requirements": "Origin-zone hold/rejection, subsequent M15 trigger, M30 structural acceptance, H1 permission, H4 allowance; fresh entry also requires both no-chase tests",
+    "failure": {
+      "timeframe": "H4",
+      "completed_close_relation": "above",
+      "threshold": 4297.45
+    }
+  },
+  "alternate_path": {
+    "direction": "BUY",
+    "activation": "Primary H4 failure threshold crossed, directional H1 permission and failed recovery/retest of origin control; all other required gates still apply",
+    "origin_zone": "CONTROL",
+    "first_target": "RESISTANCE",
+    "extension": "UPPER",
+    "failure": {
+      "timeframe": "H4",
+      "completed_close_relation": "below",
+      "threshold": 4287.26
+    }
+  },
+  "entry_gate_interpretation": {
+    "new_signal_eligibility": "Only fully post-freeze completed M15 bars may establish a new qualification or trigger. A bar opening before the actual freeze is contextual only. No confirmation timestamp may precede valid_from.",
+    "M15_qualification": "For SELL, a completed rejection in/through the active resistance zone closing below its lower edge; BUY mirrors above support. Directional indicator improvement must corroborate. A price/EMA state alone is not a new trigger.",
+    "M15_trigger": "A subsequent completed directional close beyond the qualification candle low for SELL or high for BUY. Must remain valid at the cutoff.",
+    "M30_confirmation": "Completed directional acceptance beyond the active-zone exit boundary and local structure, with close on directional side of EMA10/EMA20 and corroborating momentum. Mere touch is insufficient.",
+    "H1_permission": "Completed close on directional side of EMA10/EMA20 and active structural boundary, with regime-consistent MACD direction or explicitly demonstrated momentum turn. Positive but declining histogram alone is not equivalent to fully bearish permission.",
+    "H4_allowance": "Completed H4 regime permits direction and specified scenario invalidation has not occurred. Countertrend trades require an explicit H4 turn; support touch alone is insufficient.",
+    "first_full_confirmation": "Earliest eligible close_time when all specified gates coexist. No earlier historical confirmation under this newly frozen map.",
+    "opposing_level_selection": "Use the near edge of the nearest unconsumed opposing zone; do not skip an intervening zone to enlarge remaining room.",
+    "no_chase": "Consumption strictly below 65%; remaining room at least 2.5 M15 ATR at exact full confirmation; recheck fresh-entry location at requested cutoff."
+  },
+  "levels": [
+    {
+      "id": "BASE",
+      "role": "TURN_SUPPORT",
+      "low": 4235.14,
+      "high": 4244.35,
+      "label": "BASE",
+      "priority": 1,
+      "basis": {
+        "low": [
+          "2026-09-16 daily low"
+        ],
+        "high": [
+          "2026-09-24 daily low",
+          "2026-09-24 12:00:00 H4 low"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    },
+    {
+      "id": "LOWER",
+      "role": "TARGET_TURN",
+      "low": 4254.34,
+      "high": 4261.28,
+      "label": "LOWER",
+      "priority": 2,
+      "basis": {
+        "low": [
+          "2026-09-25 daily low",
+          "2026-09-25 16:00:00 H4 low"
+        ],
+        "high": [
+          "2026-09-15 daily low"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    },
+    {
+      "id": "CONTROL",
+      "role": "CONTROL",
+      "low": 4287.26,
+      "high": 4297.45,
+      "label": "CONTROL",
+      "priority": 3,
+      "basis": {
+        "low": [
+          "preweek completed H4 ema10"
+        ],
+        "high": [
+          "preweek completed H4 ema20"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    },
+    {
+      "id": "RESISTANCE",
+      "role": "TURN_RESISTANCE",
+      "low": 4303.13,
+      "high": 4320.26,
+      "label": "RESISTANCE",
+      "priority": 4,
+      "basis": {
+        "low": [
+          "2026-09-24 daily high",
+          "2026-09-24 04:00:00 H4 high"
+        ],
+        "high": [
+          "preweek completed H1 ema200"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    },
+    {
+      "id": "UPPER",
+      "role": "TARGET_TURN",
+      "low": 4369.27,
+      "high": 4383.41,
+      "label": "UPPER",
+      "priority": 5,
+      "basis": {
+        "low": [
+          "2026-09-23 daily high"
+        ],
+        "high": [
+          "2026-09-21 daily high"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    }
+  ],
+  "provenance": "Codex judgments reconstructed after the historical outcomes were available. Python only extracts evidence and serializes explicit judgments. Actual creation time is preserved; hypothetical interval is not historical live validity. No legacy WLW model output used."
+}

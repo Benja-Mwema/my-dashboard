@@ -1,0 +1,2982 @@
+[
+  {
+    "week_start": "2026-06-01",
+    "week_end": "2026-06-05",
+    "information_cutoff": "2026-05-30 00:00:00",
+    "actual_cutoff": "2026-06-06 00:00:00",
+    "forecast_id": "XAUUSD_CODEX_V2_RETEST_20260601_V1",
+    "primary_direction": "BUY",
+    "map_sha256": "6e5cb44059f318dd525defe5bca7705f63a694d1413b15edd2224080182add59",
+    "actual_open": 4522.19,
+    "actual_high": 4545.97,
+    "actual_low": 4311.67,
+    "actual_close": 4328.49,
+    "actual_body_change": -193.7,
+    "actual_body_pct": -4.283322903283581,
+    "up_excursion": 23.78,
+    "down_excursion": 210.52,
+    "body_agreement": false,
+    "dominant_excursion_agreement": false,
+    "origin_zone": {
+      "id": "CONTROL",
+      "role": "CONTROL",
+      "low": 4488.85,
+      "high": 4520.63,
+      "label": "CONTROL",
+      "priority": 3,
+      "basis": {
+        "low": [
+          "2026-05-29 daily low",
+          "2026-05-29 00:00:00 H4 low"
+        ],
+        "high": [
+          "preweek completed H1 ema200"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    },
+    "first_target_zone": {
+      "id": "RESISTANCE",
+      "role": "TURN_RESISTANCE",
+      "low": 4570.66,
+      "high": 4595.21,
+      "label": "RESISTANCE",
+      "priority": 4,
+      "basis": {
+        "low": [
+          "2026-05-21 daily high"
+        ],
+        "high": [
+          "2026-05-29 daily high",
+          "2026-05-29 16:00:00 H4 high"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    },
+    "primary_threshold": {
+      "timeframe": "H4",
+      "completed_close_relation": "below",
+      "threshold": 4488.85
+    },
+    "first_origin_intersection": {
+      "bar_time": "2026-06-01 01:00:00",
+      "close_time": "2026-06-01 01:15:00",
+      "open": 4522.19,
+      "high": 4535.34,
+      "low": 4518.02,
+      "close": 4534.64
+    },
+    "first_target_intersection": null,
+    "first_target_in_a_later_bar_after_origin": null,
+    "first_h4_close_beyond_primary_threshold": {
+      "bar_time": "2026-06-01 16:00:00",
+      "close_time": "2026-06-01 20:00:00",
+      "open": 4502.35,
+      "high": 4503.98,
+      "low": 4447.75,
+      "close": 4480.17
+    },
+    "first_h4_close_beyond_alternate_threshold": {
+      "bar_time": "2026-06-01 00:00:00",
+      "close_time": "2026-06-01 04:00:00",
+      "open": 4522.19,
+      "high": 4545.97,
+      "low": 4518.02,
+      "close": 4540.6
+    },
+    "first_origin_retest_after_primary_threshold_cross": {
+      "bar_time": "2026-06-01 20:30:00",
+      "close_time": "2026-06-01 20:45:00",
+      "open": 4482.66,
+      "high": 4491.57,
+      "low": 4480.43,
+      "close": 4491.53
+    },
+    "first_alternate_target_after_primary_threshold_cross": {
+      "bar_time": "2026-06-02 04:45:00",
+      "close_time": "2026-06-02 05:00:00",
+      "open": 4479.89,
+      "high": 4482.39,
+      "low": 4462.95,
+      "close": 4474.26
+    },
+    "first_alternate_target_in_later_bar_after_post_cross_retest": {
+      "bar_time": "2026-06-02 04:45:00",
+      "close_time": "2026-06-02 05:00:00",
+      "open": 4479.89,
+      "high": 4482.39,
+      "low": 4462.95,
+      "close": 4474.26
+    },
+    "same_first_origin_and_target_bar": false,
+    "actual_daily": [
+      {
+        "date": "2026-06-01",
+        "open": 4522.19,
+        "high": 4545.97,
+        "low": 4447.75,
+        "close": 4484.0,
+        "last_close_time": "2026-06-02 00:00:00"
+      },
+      {
+        "date": "2026-06-02",
+        "open": 4486.5,
+        "high": 4541.46,
+        "low": 4462.95,
+        "close": 4488.24,
+        "last_close_time": "2026-06-03 00:00:00"
+      },
+      {
+        "date": "2026-06-03",
+        "open": 4490.93,
+        "high": 4496.73,
+        "low": 4426.31,
+        "close": 4433.83,
+        "last_close_time": "2026-06-04 00:00:00"
+      },
+      {
+        "date": "2026-06-04",
+        "open": 4438.16,
+        "high": 4515.43,
+        "low": 4423.75,
+        "close": 4475.66,
+        "last_close_time": "2026-06-05 00:00:00"
+      },
+      {
+        "date": "2026-06-05",
+        "open": 4474.03,
+        "high": 4481.56,
+        "low": 4311.67,
+        "close": 4328.49,
+        "last_close_time": "2026-06-06 00:00:00"
+      }
+    ]
+  },
+  {
+    "week_start": "2026-06-08",
+    "week_end": "2026-06-12",
+    "information_cutoff": "2026-06-06 00:00:00",
+    "actual_cutoff": "2026-06-13 00:00:00",
+    "forecast_id": "XAUUSD_CODEX_V2_RETEST_20260608_V1",
+    "primary_direction": "SELL",
+    "map_sha256": "9b148f1a9b1e30de3e6d1a32ccee97e1601d64ac6d908c091adf39e1fa5a8f1d",
+    "actual_open": 4328.25,
+    "actual_high": 4363.34,
+    "actual_low": 4023.82,
+    "actual_close": 4218.68,
+    "actual_body_change": -109.57,
+    "actual_body_pct": -2.531508115289083,
+    "up_excursion": 35.09,
+    "down_excursion": 304.43,
+    "body_agreement": true,
+    "dominant_excursion_agreement": true,
+    "origin_zone": {
+      "id": "CONTROL",
+      "role": "CONTROL",
+      "low": 4357.95,
+      "high": 4391.08,
+      "label": "CONTROL",
+      "priority": 2,
+      "basis": {
+        "low": [
+          "preweek completed H1 ema10"
+        ],
+        "high": [
+          "preweek completed H1 ema20"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    },
+    "first_target_zone": {
+      "id": "LOWER",
+      "role": "TARGET_TURN",
+      "low": 4311.67,
+      "high": 4311.67,
+      "label": "LOWER",
+      "priority": 1,
+      "basis": {
+        "low": [
+          "2026-06-05 daily low",
+          "preweek completed H4 low",
+          "preweek completed H1 low",
+          "2026-06-05 20:00:00 H4 low"
+        ],
+        "high": [
+          "2026-06-05 daily low",
+          "preweek completed H4 low",
+          "preweek completed H1 low",
+          "2026-06-05 20:00:00 H4 low"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    },
+    "primary_threshold": {
+      "timeframe": "H4",
+      "completed_close_relation": "above",
+      "threshold": 4391.08
+    },
+    "first_origin_intersection": {
+      "bar_time": "2026-06-09 16:45:00",
+      "close_time": "2026-06-09 17:00:00",
+      "open": 4330.14,
+      "high": 4363.34,
+      "low": 4326.64,
+      "close": 4328.98
+    },
+    "first_target_intersection": {
+      "bar_time": "2026-06-08 01:00:00",
+      "close_time": "2026-06-08 01:15:00",
+      "open": 4328.25,
+      "high": 4330.34,
+      "low": 4310.32,
+      "close": 4329.62
+    },
+    "first_target_in_a_later_bar_after_origin": {
+      "bar_time": "2026-06-09 17:15:00",
+      "close_time": "2026-06-09 17:30:00",
+      "open": 4321.05,
+      "high": 4323.74,
+      "low": 4306.03,
+      "close": 4318.32
+    },
+    "first_h4_close_beyond_primary_threshold": null,
+    "first_h4_close_beyond_alternate_threshold": {
+      "bar_time": "2026-06-08 00:00:00",
+      "close_time": "2026-06-08 04:00:00",
+      "open": 4328.25,
+      "high": 4353.48,
+      "low": 4310.32,
+      "close": 4342.22
+    },
+    "first_origin_retest_after_primary_threshold_cross": null,
+    "first_alternate_target_after_primary_threshold_cross": null,
+    "first_alternate_target_in_later_bar_after_post_cross_retest": null,
+    "same_first_origin_and_target_bar": false,
+    "actual_daily": [
+      {
+        "date": "2026-06-08",
+        "open": 4328.25,
+        "high": 4353.48,
+        "low": 4268.61,
+        "close": 4329.74,
+        "last_close_time": "2026-06-09 00:00:00"
+      },
+      {
+        "date": "2026-06-09",
+        "open": 4331.12,
+        "high": 4363.34,
+        "low": 4236.62,
+        "close": 4260.31,
+        "last_close_time": "2026-06-10 00:00:00"
+      },
+      {
+        "date": "2026-06-10",
+        "open": 4252.78,
+        "high": 4257.51,
+        "low": 4067.02,
+        "close": 4070.44,
+        "last_close_time": "2026-06-11 00:00:00"
+      },
+      {
+        "date": "2026-06-11",
+        "open": 4071.54,
+        "high": 4219.93,
+        "low": 4023.82,
+        "close": 4211.32,
+        "last_close_time": "2026-06-12 00:00:00"
+      },
+      {
+        "date": "2026-06-12",
+        "open": 4213.01,
+        "high": 4246.39,
+        "low": 4170.18,
+        "close": 4218.68,
+        "last_close_time": "2026-06-13 00:00:00"
+      }
+    ]
+  },
+  {
+    "week_start": "2026-06-15",
+    "week_end": "2026-06-19",
+    "information_cutoff": "2026-06-13 00:00:00",
+    "actual_cutoff": "2026-06-19 20:00:00",
+    "forecast_id": "XAUUSD_CODEX_V2_RETEST_20260615_V1",
+    "primary_direction": "BUY",
+    "map_sha256": "7c64e24e2a58c3c32264c210d0cf58765226101275b2e818b574fc4e46734ce8",
+    "actual_open": 4270.22,
+    "actual_high": 4382.13,
+    "actual_low": 4121.8,
+    "actual_close": 4155.61,
+    "actual_body_change": -114.61,
+    "actual_body_pct": -2.683936659001185,
+    "up_excursion": 111.91,
+    "down_excursion": 148.42,
+    "body_agreement": false,
+    "dominant_excursion_agreement": false,
+    "origin_zone": {
+      "id": "CONTROL",
+      "role": "CONTROL",
+      "low": 4170.18,
+      "high": 4197.99,
+      "label": "CONTROL",
+      "priority": 3,
+      "basis": {
+        "low": [
+          "2026-06-12 daily low",
+          "2026-06-12 08:00:00 H4 low"
+        ],
+        "high": [
+          "preweek completed H4 ema20"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    },
+    "first_target_zone": {
+      "id": "RESISTANCE",
+      "role": "TURN_RESISTANCE",
+      "low": 4236.62,
+      "high": 4257.51,
+      "label": "RESISTANCE",
+      "priority": 4,
+      "basis": {
+        "low": [
+          "2026-06-09 daily low"
+        ],
+        "high": [
+          "2026-06-10 daily high"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    },
+    "primary_threshold": {
+      "timeframe": "H4",
+      "completed_close_relation": "below",
+      "threshold": 4170.18
+    },
+    "first_origin_intersection": {
+      "bar_time": "2026-06-19 02:00:00",
+      "close_time": "2026-06-19 02:15:00",
+      "open": 4207.44,
+      "high": 4208.43,
+      "low": 4193.91,
+      "close": 4195.58
+    },
+    "first_target_intersection": {
+      "bar_time": "2026-06-17 22:15:00",
+      "close_time": "2026-06-17 22:30:00",
+      "open": 4264.81,
+      "high": 4265.59,
+      "low": 4226.71,
+      "close": 4227.11
+    },
+    "first_target_in_a_later_bar_after_origin": null,
+    "first_h4_close_beyond_primary_threshold": {
+      "bar_time": "2026-06-19 04:00:00",
+      "close_time": "2026-06-19 08:00:00",
+      "open": 4190.82,
+      "high": 4194.55,
+      "low": 4125.17,
+      "close": 4125.77
+    },
+    "first_h4_close_beyond_alternate_threshold": {
+      "bar_time": "2026-06-15 00:00:00",
+      "close_time": "2026-06-15 04:00:00",
+      "open": 4270.22,
+      "high": 4308.89,
+      "low": 4265.57,
+      "close": 4292.66
+    },
+    "first_origin_retest_after_primary_threshold_cross": {
+      "bar_time": "2026-06-19 11:15:00",
+      "close_time": "2026-06-19 11:30:00",
+      "open": 4165.65,
+      "high": 4177.65,
+      "low": 4165.23,
+      "close": 4175.82
+    },
+    "first_alternate_target_after_primary_threshold_cross": null,
+    "first_alternate_target_in_later_bar_after_post_cross_retest": null,
+    "same_first_origin_and_target_bar": false,
+    "actual_daily": [
+      {
+        "date": "2026-06-15",
+        "open": 4270.22,
+        "high": 4369.25,
+        "low": 4265.57,
+        "close": 4308.66,
+        "last_close_time": "2026-06-16 00:00:00"
+      },
+      {
+        "date": "2026-06-16",
+        "open": 4309.14,
+        "high": 4354.89,
+        "low": 4305.8,
+        "close": 4330.93,
+        "last_close_time": "2026-06-17 00:00:00"
+      },
+      {
+        "date": "2026-06-17",
+        "open": 4332.8,
+        "high": 4382.13,
+        "low": 4219.04,
+        "close": 4257.44,
+        "last_close_time": "2026-06-18 00:00:00"
+      },
+      {
+        "date": "2026-06-18",
+        "open": 4257.41,
+        "high": 4329.79,
+        "low": 4201.45,
+        "close": 4208.04,
+        "last_close_time": "2026-06-19 00:00:00"
+      },
+      {
+        "date": "2026-06-19",
+        "open": 4212.38,
+        "high": 4213.29,
+        "low": 4121.8,
+        "close": 4155.61,
+        "last_close_time": "2026-06-19 20:00:00"
+      }
+    ]
+  },
+  {
+    "week_start": "2026-06-22",
+    "week_end": "2026-06-26",
+    "information_cutoff": "2026-06-19 20:00:00",
+    "actual_cutoff": "2026-06-27 00:00:00",
+    "forecast_id": "XAUUSD_CODEX_V2_RETEST_20260622_V1",
+    "primary_direction": "SELL",
+    "map_sha256": "2202b93e1b10a0b02ef4d9449489edc7f5a31d38d106b6adf7d23b4a29e538d4",
+    "actual_open": 4147.55,
+    "actual_high": 4220.77,
+    "actual_low": 3959.32,
+    "actual_close": 4088.27,
+    "actual_body_change": -59.28,
+    "actual_body_pct": -1.4292775252860213,
+    "up_excursion": 73.22,
+    "down_excursion": 188.23,
+    "body_agreement": true,
+    "dominant_excursion_agreement": true,
+    "origin_zone": {
+      "id": "CONTROL",
+      "role": "CONTROL",
+      "low": 4157.89,
+      "high": 4172.54,
+      "label": "CONTROL",
+      "priority": 3,
+      "basis": {
+        "low": [
+          "preweek completed H1 ema10"
+        ],
+        "high": [
+          "preweek completed H1 ema20"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    },
+    "first_target_zone": {
+      "id": "LOWER",
+      "role": "TARGET_TURN",
+      "low": 4121.8,
+      "high": 4121.8,
+      "label": "LOWER",
+      "priority": 2,
+      "basis": {
+        "low": [
+          "2026-06-19 daily low",
+          "2026-06-19 08:00:00 H4 low"
+        ],
+        "high": [
+          "2026-06-19 daily low",
+          "2026-06-19 08:00:00 H4 low"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    },
+    "primary_threshold": {
+      "timeframe": "H4",
+      "completed_close_relation": "above",
+      "threshold": 4172.54
+    },
+    "first_origin_intersection": {
+      "bar_time": "2026-06-22 01:00:00",
+      "close_time": "2026-06-22 01:15:00",
+      "open": 4147.55,
+      "high": 4159.63,
+      "low": 4147.51,
+      "close": 4151.38
+    },
+    "first_target_intersection": {
+      "bar_time": "2026-06-23 07:45:00",
+      "close_time": "2026-06-23 08:00:00",
+      "open": 4138.82,
+      "high": 4140.4,
+      "low": 4114.46,
+      "close": 4118.24
+    },
+    "first_target_in_a_later_bar_after_origin": {
+      "bar_time": "2026-06-23 07:45:00",
+      "close_time": "2026-06-23 08:00:00",
+      "open": 4138.82,
+      "high": 4140.4,
+      "low": 4114.46,
+      "close": 4118.24
+    },
+    "first_h4_close_beyond_primary_threshold": {
+      "bar_time": "2026-06-22 00:00:00",
+      "close_time": "2026-06-22 04:00:00",
+      "open": 4147.55,
+      "high": 4200.9,
+      "low": 4136.49,
+      "close": 4200.8
+    },
+    "first_h4_close_beyond_alternate_threshold": {
+      "bar_time": "2026-06-23 04:00:00",
+      "close_time": "2026-06-23 08:00:00",
+      "open": 4193.24,
+      "high": 4198.3,
+      "low": 4114.46,
+      "close": 4118.24
+    },
+    "first_origin_retest_after_primary_threshold_cross": {
+      "bar_time": "2026-06-22 06:45:00",
+      "close_time": "2026-06-22 07:00:00",
+      "open": 4175.67,
+      "high": 4178.7,
+      "low": 4170.78,
+      "close": 4171.67
+    },
+    "first_alternate_target_after_primary_threshold_cross": {
+      "bar_time": "2026-06-22 04:00:00",
+      "close_time": "2026-06-22 04:15:00",
+      "open": 4200.96,
+      "high": 4220.77,
+      "low": 4200.96,
+      "close": 4211.53
+    },
+    "first_alternate_target_in_later_bar_after_post_cross_retest": {
+      "bar_time": "2026-06-22 09:30:00",
+      "close_time": "2026-06-22 09:45:00",
+      "open": 4196.44,
+      "high": 4202.52,
+      "low": 4194.75,
+      "close": 4202.17
+    },
+    "same_first_origin_and_target_bar": false,
+    "actual_daily": [
+      {
+        "date": "2026-06-22",
+        "open": 4147.55,
+        "high": 4220.77,
+        "low": 4136.49,
+        "close": 4192.2,
+        "last_close_time": "2026-06-23 00:00:00"
+      },
+      {
+        "date": "2026-06-23",
+        "open": 4193.24,
+        "high": 4198.3,
+        "low": 4090.77,
+        "close": 4109.71,
+        "last_close_time": "2026-06-24 00:00:00"
+      },
+      {
+        "date": "2026-06-24",
+        "open": 4111.96,
+        "high": 4114.98,
+        "low": 3959.32,
+        "close": 4001.23,
+        "last_close_time": "2026-06-25 00:00:00"
+      },
+      {
+        "date": "2026-06-25",
+        "open": 4003.7,
+        "high": 4044.28,
+        "low": 3963.51,
+        "close": 4026.68,
+        "last_close_time": "2026-06-26 00:00:00"
+      },
+      {
+        "date": "2026-06-26",
+        "open": 4026.43,
+        "high": 4095.98,
+        "low": 3982.99,
+        "close": 4088.27,
+        "last_close_time": "2026-06-27 00:00:00"
+      }
+    ]
+  },
+  {
+    "week_start": "2026-06-29",
+    "week_end": "2026-07-03",
+    "information_cutoff": "2026-06-27 00:00:00",
+    "actual_cutoff": "2026-07-03 20:00:00",
+    "forecast_id": "XAUUSD_CODEX_V2_RETEST_20260629_V1",
+    "primary_direction": "SELL",
+    "map_sha256": "1ebf046e45e5bd075e1cb1f8a49dfb00e70ce49f7263131efa84ad6ddd3fd1c6",
+    "actual_open": 4079.29,
+    "actual_high": 4195.42,
+    "actual_low": 3942.86,
+    "actual_close": 4174.97,
+    "actual_body_change": 95.68,
+    "actual_body_pct": 2.3455062032853746,
+    "up_excursion": 116.13,
+    "down_excursion": 136.43,
+    "body_agreement": false,
+    "dominant_excursion_agreement": true,
+    "origin_zone": {
+      "id": "RESISTANCE",
+      "role": "TURN_RESISTANCE",
+      "low": 4090.77,
+      "high": 4114.98,
+      "label": "RESISTANCE",
+      "priority": 4,
+      "basis": {
+        "low": [
+          "2026-06-23 daily low"
+        ],
+        "high": [
+          "2026-06-24 daily high"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    },
+    "first_target_zone": {
+      "id": "CONTROL",
+      "role": "CONTROL",
+      "low": 4044.28,
+      "high": 4060.27,
+      "label": "CONTROL",
+      "priority": 3,
+      "basis": {
+        "low": [
+          "2026-06-25 daily high",
+          "2026-06-25 20:00:00 H4 high"
+        ],
+        "high": [
+          "preweek completed H4 ema20"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    },
+    "primary_threshold": {
+      "timeframe": "H4",
+      "completed_close_relation": "above",
+      "threshold": 4136.49
+    },
+    "first_origin_intersection": {
+      "bar_time": "2026-07-01 16:30:00",
+      "close_time": "2026-07-01 16:45:00",
+      "open": 4046.65,
+      "high": 4099.68,
+      "low": 4041.81,
+      "close": 4097.81
+    },
+    "first_target_intersection": {
+      "bar_time": "2026-06-29 01:15:00",
+      "close_time": "2026-06-29 01:30:00",
+      "open": 4070.18,
+      "high": 4070.47,
+      "low": 4053.05,
+      "close": 4057.24
+    },
+    "first_target_in_a_later_bar_after_origin": {
+      "bar_time": "2026-07-01 21:45:00",
+      "close_time": "2026-07-01 22:00:00",
+      "open": 4063.03,
+      "high": 4063.19,
+      "low": 4058.01,
+      "close": 4062.19
+    },
+    "first_h4_close_beyond_primary_threshold": {
+      "bar_time": "2026-07-03 00:00:00",
+      "close_time": "2026-07-03 04:00:00",
+      "open": 4126.23,
+      "high": 4150.81,
+      "low": 4121.15,
+      "close": 4147.03
+    },
+    "first_h4_close_beyond_alternate_threshold": {
+      "bar_time": "2026-06-29 00:00:00",
+      "close_time": "2026-06-29 04:00:00",
+      "open": 4079.29,
+      "high": 4085.6,
+      "low": 4048.15,
+      "close": 4069.24
+    },
+    "first_origin_retest_after_primary_threshold_cross": null,
+    "first_alternate_target_after_primary_threshold_cross": null,
+    "first_alternate_target_in_later_bar_after_post_cross_retest": null,
+    "same_first_origin_and_target_bar": false,
+    "actual_daily": [
+      {
+        "date": "2026-06-29",
+        "open": 4079.29,
+        "high": 4085.6,
+        "low": 4000.77,
+        "close": 4016.29,
+        "last_close_time": "2026-06-30 00:00:00"
+      },
+      {
+        "date": "2026-06-30",
+        "open": 4018.24,
+        "high": 4063.32,
+        "low": 3942.86,
+        "close": 4007.15,
+        "last_close_time": "2026-07-01 00:00:00"
+      },
+      {
+        "date": "2026-07-01",
+        "open": 4012.34,
+        "high": 4115.16,
+        "low": 3959.98,
+        "close": 4031.49,
+        "last_close_time": "2026-07-02 00:00:00"
+      },
+      {
+        "date": "2026-07-02",
+        "open": 4035.6,
+        "high": 4143.91,
+        "low": 4030.83,
+        "close": 4123.87,
+        "last_close_time": "2026-07-03 00:00:00"
+      },
+      {
+        "date": "2026-07-03",
+        "open": 4126.23,
+        "high": 4195.42,
+        "low": 4121.15,
+        "close": 4174.97,
+        "last_close_time": "2026-07-03 20:00:00"
+      }
+    ]
+  },
+  {
+    "week_start": "2026-07-06",
+    "week_end": "2026-07-10",
+    "information_cutoff": "2026-07-03 20:00:00",
+    "actual_cutoff": "2026-07-11 00:00:00",
+    "forecast_id": "XAUUSD_CODEX_V2_RETEST_20260706_V1",
+    "primary_direction": "BUY",
+    "map_sha256": "d95187bc07fd338a202a1a454c50bcbd79807d8c83bd4b8f6f788efcb2a74088",
+    "actual_open": 4177.55,
+    "actual_high": 4202.67,
+    "actual_low": 4021.66,
+    "actual_close": 4119.63,
+    "actual_body_change": -57.92,
+    "actual_body_pct": -1.3864585702145993,
+    "up_excursion": 25.12,
+    "down_excursion": 155.89,
+    "body_agreement": false,
+    "dominant_excursion_agreement": false,
+    "origin_zone": {
+      "id": "CONTROL",
+      "role": "CONTROL",
+      "low": 4121.15,
+      "high": 4137.93,
+      "label": "CONTROL",
+      "priority": 3,
+      "basis": {
+        "low": [
+          "2026-07-03 daily low",
+          "2026-07-03 00:00:00 H4 low"
+        ],
+        "high": [
+          "preweek completed H4 ema10"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    },
+    "first_target_zone": {
+      "id": "RESISTANCE",
+      "role": "TURN_RESISTANCE",
+      "low": 4195.42,
+      "high": 4220.77,
+      "label": "RESISTANCE",
+      "priority": 4,
+      "basis": {
+        "low": [
+          "2026-07-03 daily high",
+          "2026-07-03 04:00:00 H4 high"
+        ],
+        "high": [
+          "2026-06-22 daily high"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    },
+    "primary_threshold": {
+      "timeframe": "H4",
+      "completed_close_relation": "below",
+      "threshold": 4121.15
+    },
+    "first_origin_intersection": {
+      "bar_time": "2026-07-06 12:30:00",
+      "close_time": "2026-07-06 12:45:00",
+      "open": 4143.23,
+      "high": 4143.44,
+      "low": 4136.54,
+      "close": 4139.45
+    },
+    "first_target_intersection": {
+      "bar_time": "2026-07-06 02:15:00",
+      "close_time": "2026-07-06 02:30:00",
+      "open": 4187.41,
+      "high": 4201.71,
+      "low": 4186.59,
+      "close": 4200.39
+    },
+    "first_target_in_a_later_bar_after_origin": null,
+    "first_h4_close_beyond_primary_threshold": {
+      "bar_time": "2026-07-07 20:00:00",
+      "close_time": "2026-07-08 00:00:00",
+      "open": 4145.18,
+      "high": 4148.22,
+      "low": 4092.3,
+      "close": 4106.46
+    },
+    "first_h4_close_beyond_alternate_threshold": {
+      "bar_time": "2026-07-06 00:00:00",
+      "close_time": "2026-07-06 04:00:00",
+      "open": 4177.55,
+      "high": 4201.71,
+      "low": 4170.41,
+      "close": 4179.88
+    },
+    "first_origin_retest_after_primary_threshold_cross": {
+      "bar_time": "2026-07-08 03:30:00",
+      "close_time": "2026-07-08 03:45:00",
+      "open": 4105.47,
+      "high": 4126.77,
+      "low": 4103.93,
+      "close": 4123.11
+    },
+    "first_alternate_target_after_primary_threshold_cross": {
+      "bar_time": "2026-07-08 01:00:00",
+      "close_time": "2026-07-08 01:15:00",
+      "open": 4097.73,
+      "high": 4106.07,
+      "low": 4094.08,
+      "close": 4104.08
+    },
+    "first_alternate_target_in_later_bar_after_post_cross_retest": {
+      "bar_time": "2026-07-08 04:00:00",
+      "close_time": "2026-07-08 04:15:00",
+      "open": 4111.52,
+      "high": 4117.99,
+      "low": 4098.37,
+      "close": 4108.4
+    },
+    "same_first_origin_and_target_bar": false,
+    "actual_daily": [
+      {
+        "date": "2026-07-06",
+        "open": 4177.55,
+        "high": 4202.67,
+        "low": 4128.46,
+        "close": 4164.22,
+        "last_close_time": "2026-07-07 00:00:00"
+      },
+      {
+        "date": "2026-07-07",
+        "open": 4164.73,
+        "high": 4180.43,
+        "low": 4092.3,
+        "close": 4106.46,
+        "last_close_time": "2026-07-08 00:00:00"
+      },
+      {
+        "date": "2026-07-08",
+        "open": 4097.73,
+        "high": 4134.0,
+        "low": 4021.66,
+        "close": 4077.44,
+        "last_close_time": "2026-07-09 00:00:00"
+      },
+      {
+        "date": "2026-07-09",
+        "open": 4075.3,
+        "high": 4138.14,
+        "low": 4054.3,
+        "close": 4123.88,
+        "last_close_time": "2026-07-10 00:00:00"
+      },
+      {
+        "date": "2026-07-10",
+        "open": 4125.66,
+        "high": 4134.74,
+        "low": 4073.03,
+        "close": 4119.63,
+        "last_close_time": "2026-07-11 00:00:00"
+      }
+    ]
+  },
+  {
+    "week_start": "2026-07-13",
+    "week_end": "2026-07-17",
+    "information_cutoff": "2026-07-11 00:00:00",
+    "actual_cutoff": "2026-07-18 00:00:00",
+    "forecast_id": "XAUUSD_CODEX_V2_RETEST_20260713_V1",
+    "primary_direction": "BUY",
+    "map_sha256": "8afb2ce8a48e36200629d7a441f24cd8c31d574dccf736c86dc82a383359ed79",
+    "actual_open": 4097.58,
+    "actual_high": 4103.79,
+    "actual_low": 3959.7,
+    "actual_close": 4017.47,
+    "actual_body_change": -80.11,
+    "actual_body_pct": -1.955056399142907,
+    "up_excursion": 6.21,
+    "down_excursion": 137.88,
+    "body_agreement": false,
+    "dominant_excursion_agreement": false,
+    "origin_zone": {
+      "id": "CONTROL",
+      "role": "CONTROL",
+      "low": 4094.37,
+      "high": 4108.58,
+      "label": "CONTROL",
+      "priority": 3,
+      "basis": {
+        "low": [
+          "2026-07-10 12:00:00 H4 low"
+        ],
+        "high": [
+          "preweek completed H4 ema10"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    },
+    "first_target_zone": {
+      "id": "RESISTANCE",
+      "role": "TURN_RESISTANCE",
+      "low": 4134.0,
+      "high": 4138.14,
+      "label": "RESISTANCE",
+      "priority": 4,
+      "basis": {
+        "low": [
+          "2026-07-08 daily high"
+        ],
+        "high": [
+          "2026-07-09 daily high",
+          "2026-07-09 20:00:00 H4 high"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    },
+    "primary_threshold": {
+      "timeframe": "H4",
+      "completed_close_relation": "below",
+      "threshold": 4094.37
+    },
+    "first_origin_intersection": {
+      "bar_time": "2026-07-13 01:00:00",
+      "close_time": "2026-07-13 01:15:00",
+      "open": 4097.58,
+      "high": 4103.79,
+      "low": 4080.62,
+      "close": 4081.17
+    },
+    "first_target_intersection": null,
+    "first_target_in_a_later_bar_after_origin": null,
+    "first_h4_close_beyond_primary_threshold": {
+      "bar_time": "2026-07-13 00:00:00",
+      "close_time": "2026-07-13 04:00:00",
+      "open": 4097.58,
+      "high": 4103.79,
+      "low": 4061.06,
+      "close": 4073.95
+    },
+    "first_h4_close_beyond_alternate_threshold": null,
+    "first_origin_retest_after_primary_threshold_cross": {
+      "bar_time": "2026-07-14 15:30:00",
+      "close_time": "2026-07-14 15:45:00",
+      "open": 4030.13,
+      "high": 4102.83,
+      "low": 4030.13,
+      "close": 4092.62
+    },
+    "first_alternate_target_after_primary_threshold_cross": {
+      "bar_time": "2026-07-13 04:00:00",
+      "close_time": "2026-07-13 04:15:00",
+      "open": 4073.99,
+      "high": 4081.14,
+      "low": 4065.72,
+      "close": 4079.54
+    },
+    "first_alternate_target_in_later_bar_after_post_cross_retest": {
+      "bar_time": "2026-07-14 15:45:00",
+      "close_time": "2026-07-14 16:00:00",
+      "open": 4092.76,
+      "high": 4095.16,
+      "low": 4069.03,
+      "close": 4076.29
+    },
+    "same_first_origin_and_target_bar": false,
+    "actual_daily": [
+      {
+        "date": "2026-07-13",
+        "open": 4097.58,
+        "high": 4103.79,
+        "low": 3986.58,
+        "close": 4002.07,
+        "last_close_time": "2026-07-14 00:00:00"
+      },
+      {
+        "date": "2026-07-14",
+        "open": 4006.36,
+        "high": 4102.83,
+        "low": 3983.82,
+        "close": 4052.64,
+        "last_close_time": "2026-07-15 00:00:00"
+      },
+      {
+        "date": "2026-07-15",
+        "open": 4053.2,
+        "high": 4081.31,
+        "low": 4017.31,
+        "close": 4059.97,
+        "last_close_time": "2026-07-16 00:00:00"
+      },
+      {
+        "date": "2026-07-16",
+        "open": 4064.72,
+        "high": 4066.16,
+        "low": 3969.33,
+        "close": 3976.42,
+        "last_close_time": "2026-07-17 00:00:00"
+      },
+      {
+        "date": "2026-07-17",
+        "open": 3977.52,
+        "high": 4023.84,
+        "low": 3959.7,
+        "close": 4017.47,
+        "last_close_time": "2026-07-18 00:00:00"
+      }
+    ]
+  },
+  {
+    "week_start": "2026-07-20",
+    "week_end": "2026-07-24",
+    "information_cutoff": "2026-07-18 00:00:00",
+    "actual_cutoff": "2026-07-25 00:00:00",
+    "forecast_id": "XAUUSD_CODEX_V2_RETEST_20260720_V1",
+    "primary_direction": "BUY",
+    "map_sha256": "2bf96a4e0df362083cb88c9419590b7bd163fab317aed3ebd9d0df71702abf22",
+    "actual_open": 4001.69,
+    "actual_high": 4166.02,
+    "actual_low": 3982.58,
+    "actual_close": 4052.82,
+    "actual_body_change": 51.13,
+    "actual_body_pct": 1.2777101674542601,
+    "up_excursion": 164.33,
+    "down_excursion": 19.11,
+    "body_agreement": true,
+    "dominant_excursion_agreement": true,
+    "origin_zone": {
+      "id": "CONTROL",
+      "role": "CONTROL",
+      "low": 3983.82,
+      "high": 4003.88,
+      "label": "CONTROL",
+      "priority": 2,
+      "basis": {
+        "low": [
+          "2026-07-14 daily low"
+        ],
+        "high": [
+          "preweek completed H4 ema10"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    },
+    "first_target_zone": {
+      "id": "RESISTANCE",
+      "role": "TURN_RESISTANCE",
+      "low": 4023.84,
+      "high": 4049.41,
+      "label": "RESISTANCE",
+      "priority": 3,
+      "basis": {
+        "low": [
+          "2026-07-17 daily high",
+          "2026-07-17 16:00:00 H4 high"
+        ],
+        "high": [
+          "preweek completed H1 ema200"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    },
+    "primary_threshold": {
+      "timeframe": "H4",
+      "completed_close_relation": "below",
+      "threshold": 3983.82
+    },
+    "first_origin_intersection": {
+      "bar_time": "2026-07-20 01:00:00",
+      "close_time": "2026-07-20 01:15:00",
+      "open": 4001.69,
+      "high": 4003.76,
+      "low": 3994.61,
+      "close": 3996.52
+    },
+    "first_target_intersection": {
+      "bar_time": "2026-07-20 05:45:00",
+      "close_time": "2026-07-20 06:00:00",
+      "open": 4014.73,
+      "high": 4028.61,
+      "low": 4013.74,
+      "close": 4021.91
+    },
+    "first_target_in_a_later_bar_after_origin": {
+      "bar_time": "2026-07-20 05:45:00",
+      "close_time": "2026-07-20 06:00:00",
+      "open": 4014.73,
+      "high": 4028.61,
+      "low": 4013.74,
+      "close": 4021.91
+    },
+    "first_h4_close_beyond_primary_threshold": null,
+    "first_h4_close_beyond_alternate_threshold": {
+      "bar_time": "2026-07-20 00:00:00",
+      "close_time": "2026-07-20 04:00:00",
+      "open": 4001.69,
+      "high": 4010.13,
+      "low": 3982.58,
+      "close": 4008.49
+    },
+    "first_origin_retest_after_primary_threshold_cross": null,
+    "first_alternate_target_after_primary_threshold_cross": null,
+    "first_alternate_target_in_later_bar_after_post_cross_retest": null,
+    "same_first_origin_and_target_bar": false,
+    "actual_daily": [
+      {
+        "date": "2026-07-20",
+        "open": 4001.69,
+        "high": 4040.64,
+        "low": 3982.58,
+        "close": 4008.58,
+        "last_close_time": "2026-07-21 00:00:00"
+      },
+      {
+        "date": "2026-07-21",
+        "open": 4009.12,
+        "high": 4087.03,
+        "low": 3999.62,
+        "close": 4077.81,
+        "last_close_time": "2026-07-22 00:00:00"
+      },
+      {
+        "date": "2026-07-22",
+        "open": 4079.0,
+        "high": 4166.02,
+        "low": 4076.79,
+        "close": 4129.97,
+        "last_close_time": "2026-07-23 00:00:00"
+      },
+      {
+        "date": "2026-07-23",
+        "open": 4118.42,
+        "high": 4141.09,
+        "low": 4040.16,
+        "close": 4049.07,
+        "last_close_time": "2026-07-24 00:00:00"
+      },
+      {
+        "date": "2026-07-24",
+        "open": 4050.03,
+        "high": 4082.0,
+        "low": 4022.03,
+        "close": 4052.82,
+        "last_close_time": "2026-07-25 00:00:00"
+      }
+    ]
+  },
+  {
+    "week_start": "2026-07-27",
+    "week_end": "2026-07-31",
+    "information_cutoff": "2026-07-25 00:00:00",
+    "actual_cutoff": "2026-08-01 00:00:00",
+    "forecast_id": "XAUUSD_CODEX_V2_RETEST_20260727_V1",
+    "primary_direction": "SELL",
+    "map_sha256": "c179cf13f553f46086e5fb242322df3ad81a0bf4daaf7050330f83b27efe69d8",
+    "actual_open": 4091.61,
+    "actual_high": 4120.18,
+    "actual_low": 3995.95,
+    "actual_close": 4043.99,
+    "actual_body_change": -47.62,
+    "actual_body_pct": -1.1638450389944377,
+    "up_excursion": 28.57,
+    "down_excursion": 95.66,
+    "body_agreement": true,
+    "dominant_excursion_agreement": true,
+    "origin_zone": {
+      "id": "CONTROL",
+      "role": "CONTROL",
+      "low": 4057.67,
+      "high": 4087.03,
+      "label": "CONTROL",
+      "priority": 4,
+      "basis": {
+        "low": [
+          "preweek completed H1 ema20"
+        ],
+        "high": [
+          "2026-07-21 daily high"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    },
+    "first_target_zone": {
+      "id": "TARGET",
+      "role": "TARGET_TURN",
+      "low": 4022.03,
+      "high": 4040.16,
+      "label": "TARGET",
+      "priority": 3,
+      "basis": {
+        "low": [
+          "2026-07-24 daily low",
+          "2026-07-24 08:00:00 H4 low"
+        ],
+        "high": [
+          "2026-07-23 daily low",
+          "2026-07-23 16:00:00 H4 low"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    },
+    "primary_threshold": {
+      "timeframe": "H4",
+      "completed_close_relation": "above",
+      "threshold": 4087.03
+    },
+    "first_origin_intersection": {
+      "bar_time": "2026-07-27 01:00:00",
+      "close_time": "2026-07-27 01:15:00",
+      "open": 4091.61,
+      "high": 4096.4,
+      "low": 4086.2,
+      "close": 4087.77
+    },
+    "first_target_intersection": {
+      "bar_time": "2026-07-28 08:00:00",
+      "close_time": "2026-07-28 08:15:00",
+      "open": 4042.22,
+      "high": 4044.01,
+      "low": 4039.92,
+      "close": 4042.32
+    },
+    "first_target_in_a_later_bar_after_origin": {
+      "bar_time": "2026-07-28 08:00:00",
+      "close_time": "2026-07-28 08:15:00",
+      "open": 4042.22,
+      "high": 4044.01,
+      "low": 4039.92,
+      "close": 4042.32
+    },
+    "first_h4_close_beyond_primary_threshold": {
+      "bar_time": "2026-07-27 00:00:00",
+      "close_time": "2026-07-27 04:00:00",
+      "open": 4091.61,
+      "high": 4116.04,
+      "low": 4083.56,
+      "close": 4100.95
+    },
+    "first_h4_close_beyond_alternate_threshold": {
+      "bar_time": "2026-07-28 04:00:00",
+      "close_time": "2026-07-28 08:00:00",
+      "open": 4057.85,
+      "high": 4060.14,
+      "low": 4040.35,
+      "close": 4042.24
+    },
+    "first_origin_retest_after_primary_threshold_cross": {
+      "bar_time": "2026-07-27 06:15:00",
+      "close_time": "2026-07-27 06:30:00",
+      "open": 4091.87,
+      "high": 4093.58,
+      "low": 4085.39,
+      "close": 4085.63
+    },
+    "first_alternate_target_after_primary_threshold_cross": null,
+    "first_alternate_target_in_later_bar_after_post_cross_retest": null,
+    "same_first_origin_and_target_bar": false,
+    "actual_daily": [
+      {
+        "date": "2026-07-27",
+        "open": 4091.61,
+        "high": 4116.04,
+        "low": 4065.39,
+        "close": 4076.63,
+        "last_close_time": "2026-07-28 00:00:00"
+      },
+      {
+        "date": "2026-07-28",
+        "open": 4079.46,
+        "high": 4081.62,
+        "low": 4011.58,
+        "close": 4028.68,
+        "last_close_time": "2026-07-29 00:00:00"
+      },
+      {
+        "date": "2026-07-29",
+        "open": 4029.94,
+        "high": 4116.38,
+        "low": 3995.95,
+        "close": 4066.24,
+        "last_close_time": "2026-07-30 00:00:00"
+      },
+      {
+        "date": "2026-07-30",
+        "open": 4066.3,
+        "high": 4120.18,
+        "low": 4028.43,
+        "close": 4102.88,
+        "last_close_time": "2026-07-31 00:00:00"
+      },
+      {
+        "date": "2026-07-31",
+        "open": 4103.22,
+        "high": 4111.86,
+        "low": 4021.09,
+        "close": 4043.99,
+        "last_close_time": "2026-08-01 00:00:00"
+      }
+    ]
+  },
+  {
+    "week_start": "2026-08-03",
+    "week_end": "2026-08-07",
+    "information_cutoff": "2026-08-01 00:00:00",
+    "actual_cutoff": "2026-08-08 00:00:00",
+    "forecast_id": "XAUUSD_CODEX_V2_RETEST_20260803_V1",
+    "primary_direction": "SELL",
+    "map_sha256": "61e6c6aa7d6e1865ef974203b4073a9a7fef17d675d0dcff2e01501c891f5951",
+    "actual_open": 4074.03,
+    "actual_high": 4371.73,
+    "actual_low": 4019.13,
+    "actual_close": 4342.22,
+    "actual_body_change": 268.19,
+    "actual_body_pct": 6.582916669734873,
+    "up_excursion": 297.7,
+    "down_excursion": 54.9,
+    "body_agreement": false,
+    "dominant_excursion_agreement": false,
+    "origin_zone": {
+      "id": "CONTROL",
+      "role": "CONTROL",
+      "low": 4049.97,
+      "high": 4062.32,
+      "label": "CONTROL",
+      "priority": 3,
+      "basis": {
+        "low": [
+          "preweek completed H1 ema10"
+        ],
+        "high": [
+          "preweek completed H1 ema50"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    },
+    "first_target_zone": {
+      "id": "LOWER",
+      "role": "TARGET_TURN",
+      "low": 4021.09,
+      "high": 4028.43,
+      "label": "LOWER",
+      "priority": 2,
+      "basis": {
+        "low": [
+          "2026-07-31 daily low",
+          "2026-07-31 16:00:00 H4 low"
+        ],
+        "high": [
+          "2026-07-30 daily low",
+          "2026-07-30 08:00:00 H4 low"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    },
+    "primary_threshold": {
+      "timeframe": "H4",
+      "completed_close_relation": "above",
+      "threshold": 4062.32
+    },
+    "first_origin_intersection": {
+      "bar_time": "2026-08-03 03:15:00",
+      "close_time": "2026-08-03 03:30:00",
+      "open": 4072.05,
+      "high": 4072.93,
+      "low": 4061.35,
+      "close": 4064.25
+    },
+    "first_target_intersection": {
+      "bar_time": "2026-08-03 16:30:00",
+      "close_time": "2026-08-03 16:45:00",
+      "open": 4034.24,
+      "high": 4035.57,
+      "low": 4019.13,
+      "close": 4032.04
+    },
+    "first_target_in_a_later_bar_after_origin": {
+      "bar_time": "2026-08-03 16:30:00",
+      "close_time": "2026-08-03 16:45:00",
+      "open": 4034.24,
+      "high": 4035.57,
+      "low": 4019.13,
+      "close": 4032.04
+    },
+    "first_h4_close_beyond_primary_threshold": {
+      "bar_time": "2026-08-03 04:00:00",
+      "close_time": "2026-08-03 08:00:00",
+      "open": 4057.16,
+      "high": 4071.84,
+      "low": 4047.46,
+      "close": 4063.99
+    },
+    "first_h4_close_beyond_alternate_threshold": {
+      "bar_time": "2026-08-03 12:00:00",
+      "close_time": "2026-08-03 16:00:00",
+      "open": 4059.48,
+      "high": 4064.61,
+      "low": 4042.29,
+      "close": 4047.63
+    },
+    "first_origin_retest_after_primary_threshold_cross": {
+      "bar_time": "2026-08-03 08:00:00",
+      "close_time": "2026-08-03 08:15:00",
+      "open": 4063.91,
+      "high": 4065.28,
+      "low": 4056.77,
+      "close": 4057.36
+    },
+    "first_alternate_target_after_primary_threshold_cross": {
+      "bar_time": "2026-08-05 05:30:00",
+      "close_time": "2026-08-05 05:45:00",
+      "open": 4103.57,
+      "high": 4128.94,
+      "low": 4101.5,
+      "close": 4128.2
+    },
+    "first_alternate_target_in_later_bar_after_post_cross_retest": {
+      "bar_time": "2026-08-05 05:30:00",
+      "close_time": "2026-08-05 05:45:00",
+      "open": 4103.57,
+      "high": 4128.94,
+      "low": 4101.5,
+      "close": 4128.2
+    },
+    "same_first_origin_and_target_bar": false,
+    "actual_daily": [
+      {
+        "date": "2026-08-03",
+        "open": 4074.03,
+        "high": 4079.39,
+        "low": 4019.13,
+        "close": 4054.87,
+        "last_close_time": "2026-08-04 00:00:00"
+      },
+      {
+        "date": "2026-08-04",
+        "open": 4053.93,
+        "high": 4106.14,
+        "low": 4042.62,
+        "close": 4077.81,
+        "last_close_time": "2026-08-05 00:00:00"
+      },
+      {
+        "date": "2026-08-05",
+        "open": 4077.81,
+        "high": 4267.61,
+        "low": 4065.37,
+        "close": 4246.22,
+        "last_close_time": "2026-08-06 00:00:00"
+      },
+      {
+        "date": "2026-08-06",
+        "open": 4247.79,
+        "high": 4304.06,
+        "low": 4223.45,
+        "close": 4240.24,
+        "last_close_time": "2026-08-07 00:00:00"
+      },
+      {
+        "date": "2026-08-07",
+        "open": 4240.22,
+        "high": 4371.73,
+        "low": 4229.65,
+        "close": 4342.22,
+        "last_close_time": "2026-08-08 00:00:00"
+      }
+    ]
+  },
+  {
+    "week_start": "2026-08-10",
+    "week_end": "2026-08-14",
+    "information_cutoff": "2026-08-08 00:00:00",
+    "actual_cutoff": "2026-08-15 00:00:00",
+    "forecast_id": "XAUUSD_CODEX_V2_RETEST_20260810_V1",
+    "primary_direction": "BUY",
+    "map_sha256": "3454534c33e646ac678d135b105aee9af833bf3b8c36d96ed84f82982d04a917",
+    "actual_open": 4348.26,
+    "actual_high": 4449.62,
+    "actual_low": 4311.04,
+    "actual_close": 4375.78,
+    "actual_body_change": 27.52,
+    "actual_body_pct": 0.6328968368956689,
+    "up_excursion": 101.36,
+    "down_excursion": 37.22,
+    "body_agreement": true,
+    "dominant_excursion_agreement": true,
+    "origin_zone": {
+      "id": "CONTROL",
+      "role": "CONTROL",
+      "low": 4316.27,
+      "high": 4333.6,
+      "label": "CONTROL",
+      "priority": 4,
+      "basis": {
+        "low": [
+          "preweek completed H1 ema20"
+        ],
+        "high": [
+          "preweek completed H1 ema10"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    },
+    "first_target_zone": {
+      "id": "RESISTANCE",
+      "role": "TURN_RESISTANCE",
+      "low": 4371.73,
+      "high": 4371.73,
+      "label": "RESISTANCE",
+      "priority": 5,
+      "basis": {
+        "low": [
+          "2026-08-07 daily high",
+          "2026-08-07 12:00:00 H4 high"
+        ],
+        "high": [
+          "2026-08-07 daily high",
+          "2026-08-07 12:00:00 H4 high"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    },
+    "primary_threshold": {
+      "timeframe": "H4",
+      "completed_close_relation": "below",
+      "threshold": 4316.27
+    },
+    "first_origin_intersection": {
+      "bar_time": "2026-08-10 01:00:00",
+      "close_time": "2026-08-10 01:15:00",
+      "open": 4348.26,
+      "high": 4349.54,
+      "low": 4332.58,
+      "close": 4343.43
+    },
+    "first_target_intersection": {
+      "bar_time": "2026-08-10 21:30:00",
+      "close_time": "2026-08-10 21:45:00",
+      "open": 4365.83,
+      "high": 4382.98,
+      "low": 4365.16,
+      "close": 4379.72
+    },
+    "first_target_in_a_later_bar_after_origin": {
+      "bar_time": "2026-08-10 21:30:00",
+      "close_time": "2026-08-10 21:45:00",
+      "open": 4365.83,
+      "high": 4382.98,
+      "low": 4365.16,
+      "close": 4379.72
+    },
+    "first_h4_close_beyond_primary_threshold": null,
+    "first_h4_close_beyond_alternate_threshold": {
+      "bar_time": "2026-08-10 04:00:00",
+      "close_time": "2026-08-10 08:00:00",
+      "open": 4331.8,
+      "high": 4340.75,
+      "low": 4313.29,
+      "close": 4339.38
+    },
+    "first_origin_retest_after_primary_threshold_cross": null,
+    "first_alternate_target_after_primary_threshold_cross": null,
+    "first_alternate_target_in_later_bar_after_post_cross_retest": null,
+    "same_first_origin_and_target_bar": false,
+    "actual_daily": [
+      {
+        "date": "2026-08-10",
+        "open": 4348.26,
+        "high": 4395.2,
+        "low": 4313.29,
+        "close": 4389.11,
+        "last_close_time": "2026-08-11 00:00:00"
+      },
+      {
+        "date": "2026-08-11",
+        "open": 4389.43,
+        "high": 4435.1,
+        "low": 4356.76,
+        "close": 4367.98,
+        "last_close_time": "2026-08-12 00:00:00"
+      },
+      {
+        "date": "2026-08-12",
+        "open": 4372.36,
+        "high": 4441.03,
+        "low": 4362.5,
+        "close": 4408.83,
+        "last_close_time": "2026-08-13 00:00:00"
+      },
+      {
+        "date": "2026-08-13",
+        "open": 4409.54,
+        "high": 4449.62,
+        "low": 4343.87,
+        "close": 4350.46,
+        "last_close_time": "2026-08-14 00:00:00"
+      },
+      {
+        "date": "2026-08-14",
+        "open": 4353.95,
+        "high": 4396.88,
+        "low": 4311.04,
+        "close": 4375.78,
+        "last_close_time": "2026-08-15 00:00:00"
+      }
+    ]
+  },
+  {
+    "week_start": "2026-08-17",
+    "week_end": "2026-08-21",
+    "information_cutoff": "2026-08-15 00:00:00",
+    "actual_cutoff": "2026-08-22 00:00:00",
+    "forecast_id": "XAUUSD_CODEX_V2_RETEST_20260817_V1",
+    "primary_direction": "BUY",
+    "map_sha256": "822c88998973e7a017df0515191eb164f71076bd5907a21e3438dcee93cabedf",
+    "actual_open": 4379.94,
+    "actual_high": 4632.23,
+    "actual_low": 4324.64,
+    "actual_close": 4604.07,
+    "actual_body_change": 224.13,
+    "actual_body_pct": 5.117193386210772,
+    "up_excursion": 252.29,
+    "down_excursion": 55.3,
+    "body_agreement": true,
+    "dominant_excursion_agreement": true,
+    "origin_zone": {
+      "id": "CONTROL",
+      "role": "CONTROL",
+      "low": 4343.87,
+      "high": 4368.51,
+      "label": "CONTROL",
+      "priority": 3,
+      "basis": {
+        "low": [
+          "2026-08-13 daily low",
+          "2026-08-13 20:00:00 H4 low"
+        ],
+        "high": [
+          "preweek completed H4 ema20"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    },
+    "first_target_zone": {
+      "id": "RESISTANCE",
+      "role": "TURN_RESISTANCE",
+      "low": 4395.2,
+      "high": 4396.88,
+      "label": "RESISTANCE",
+      "priority": 4,
+      "basis": {
+        "low": [
+          "2026-08-10 daily high"
+        ],
+        "high": [
+          "2026-08-14 daily high",
+          "2026-08-14 16:00:00 H4 high"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    },
+    "primary_threshold": {
+      "timeframe": "H4",
+      "completed_close_relation": "below",
+      "threshold": 4343.87
+    },
+    "first_origin_intersection": {
+      "bar_time": "2026-08-17 02:30:00",
+      "close_time": "2026-08-17 02:45:00",
+      "open": 4374.82,
+      "high": 4375.19,
+      "low": 4367.31,
+      "close": 4368.31
+    },
+    "first_target_intersection": {
+      "bar_time": "2026-08-17 03:30:00",
+      "close_time": "2026-08-17 03:45:00",
+      "open": 4389.82,
+      "high": 4397.48,
+      "low": 4387.51,
+      "close": 4395.81
+    },
+    "first_target_in_a_later_bar_after_origin": {
+      "bar_time": "2026-08-17 03:30:00",
+      "close_time": "2026-08-17 03:45:00",
+      "open": 4389.82,
+      "high": 4397.48,
+      "low": 4387.51,
+      "close": 4395.81
+    },
+    "first_h4_close_beyond_primary_threshold": {
+      "bar_time": "2026-08-18 20:00:00",
+      "close_time": "2026-08-19 00:00:00",
+      "open": 4363.79,
+      "high": 4368.32,
+      "low": 4329.05,
+      "close": 4334.85
+    },
+    "first_h4_close_beyond_alternate_threshold": {
+      "bar_time": "2026-08-17 00:00:00",
+      "close_time": "2026-08-17 04:00:00",
+      "open": 4379.94,
+      "high": 4401.99,
+      "low": 4367.31,
+      "close": 4400.97
+    },
+    "first_origin_retest_after_primary_threshold_cross": {
+      "bar_time": "2026-08-19 03:00:00",
+      "close_time": "2026-08-19 03:15:00",
+      "open": 4332.92,
+      "high": 4344.99,
+      "low": 4331.56,
+      "close": 4343.02
+    },
+    "first_alternate_target_after_primary_threshold_cross": null,
+    "first_alternate_target_in_later_bar_after_post_cross_retest": null,
+    "same_first_origin_and_target_bar": false,
+    "actual_daily": [
+      {
+        "date": "2026-08-17",
+        "open": 4379.94,
+        "high": 4428.79,
+        "low": 4367.31,
+        "close": 4416.33,
+        "last_close_time": "2026-08-18 00:00:00"
+      },
+      {
+        "date": "2026-08-18",
+        "open": 4417.65,
+        "high": 4436.07,
+        "low": 4329.05,
+        "close": 4334.85,
+        "last_close_time": "2026-08-19 00:00:00"
+      },
+      {
+        "date": "2026-08-19",
+        "open": 4335.34,
+        "high": 4524.17,
+        "low": 4324.64,
+        "close": 4523.02,
+        "last_close_time": "2026-08-20 00:00:00"
+      },
+      {
+        "date": "2026-08-20",
+        "open": 4522.63,
+        "high": 4540.96,
+        "low": 4450.65,
+        "close": 4518.91,
+        "last_close_time": "2026-08-21 00:00:00"
+      },
+      {
+        "date": "2026-08-21",
+        "open": 4518.42,
+        "high": 4632.23,
+        "low": 4508.82,
+        "close": 4604.07,
+        "last_close_time": "2026-08-22 00:00:00"
+      }
+    ]
+  },
+  {
+    "week_start": "2026-08-24",
+    "week_end": "2026-08-28",
+    "information_cutoff": "2026-08-22 00:00:00",
+    "actual_cutoff": "2026-08-29 00:00:00",
+    "forecast_id": "XAUUSD_CODEX_V2_RETEST_20260824_V1",
+    "primary_direction": "BUY",
+    "map_sha256": "be35b5889de63c4f0caf0668a00f01b84de420ba3e7bf52b2af9f28ed049749e",
+    "actual_open": 4623.56,
+    "actual_high": 4696.48,
+    "actual_low": 4445.31,
+    "actual_close": 4456.24,
+    "actual_body_change": -167.32,
+    "actual_body_pct": -3.6188564655806443,
+    "up_excursion": 72.92,
+    "down_excursion": 178.25,
+    "body_agreement": false,
+    "dominant_excursion_agreement": false,
+    "origin_zone": {
+      "id": "CONTROL",
+      "role": "CONTROL",
+      "low": 4553.05,
+      "high": 4584.01,
+      "label": "CONTROL",
+      "priority": 4,
+      "basis": {
+        "low": [
+          "preweek completed H4 ema10"
+        ],
+        "high": [
+          "preweek completed H1 ema20"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    },
+    "first_target_zone": {
+      "id": "RESISTANCE",
+      "role": "TURN_RESISTANCE",
+      "low": 4628.98,
+      "high": 4632.23,
+      "label": "RESISTANCE",
+      "priority": 5,
+      "basis": {
+        "low": [
+          "2026-08-21 16:00:00 H4 high"
+        ],
+        "high": [
+          "2026-08-21 daily high",
+          "preweek completed H4 high",
+          "2026-08-21 20:00:00 H4 high"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    },
+    "primary_threshold": {
+      "timeframe": "H4",
+      "completed_close_relation": "below",
+      "threshold": 4553.05
+    },
+    "first_origin_intersection": {
+      "bar_time": "2026-08-26 18:15:00",
+      "close_time": "2026-08-26 18:30:00",
+      "open": 4589.06,
+      "high": 4598.13,
+      "low": 4582.9,
+      "close": 4594.67
+    },
+    "first_target_intersection": {
+      "bar_time": "2026-08-24 03:00:00",
+      "close_time": "2026-08-24 03:15:00",
+      "open": 4624.25,
+      "high": 4640.8,
+      "low": 4620.06,
+      "close": 4637.1
+    },
+    "first_target_in_a_later_bar_after_origin": {
+      "bar_time": "2026-08-27 04:30:00",
+      "close_time": "2026-08-27 04:45:00",
+      "open": 4618.49,
+      "high": 4631.53,
+      "low": 4617.97,
+      "close": 4624.06
+    },
+    "first_h4_close_beyond_primary_threshold": {
+      "bar_time": "2026-08-28 16:00:00",
+      "close_time": "2026-08-28 20:00:00",
+      "open": 4601.57,
+      "high": 4631.45,
+      "low": 4464.38,
+      "close": 4479.32
+    },
+    "first_h4_close_beyond_alternate_threshold": {
+      "bar_time": "2026-08-24 00:00:00",
+      "close_time": "2026-08-24 04:00:00",
+      "open": 4623.56,
+      "high": 4640.8,
+      "low": 4594.52,
+      "close": 4621.77
+    },
+    "first_origin_retest_after_primary_threshold_cross": null,
+    "first_alternate_target_after_primary_threshold_cross": null,
+    "first_alternate_target_in_later_bar_after_post_cross_retest": null,
+    "same_first_origin_and_target_bar": false,
+    "actual_daily": [
+      {
+        "date": "2026-08-24",
+        "open": 4623.56,
+        "high": 4680.83,
+        "low": 4594.52,
+        "close": 4652.35,
+        "last_close_time": "2026-08-25 00:00:00"
+      },
+      {
+        "date": "2026-08-25",
+        "open": 4653.26,
+        "high": 4696.48,
+        "low": 4605.48,
+        "close": 4658.61,
+        "last_close_time": "2026-08-26 00:00:00"
+      },
+      {
+        "date": "2026-08-26",
+        "open": 4657.54,
+        "high": 4673.68,
+        "low": 4582.9,
+        "close": 4594.11,
+        "last_close_time": "2026-08-27 00:00:00"
+      },
+      {
+        "date": "2026-08-27",
+        "open": 4596.41,
+        "high": 4643.03,
+        "low": 4565.21,
+        "close": 4600.69,
+        "last_close_time": "2026-08-28 00:00:00"
+      },
+      {
+        "date": "2026-08-28",
+        "open": 4603.74,
+        "high": 4631.45,
+        "low": 4445.31,
+        "close": 4456.24,
+        "last_close_time": "2026-08-29 00:00:00"
+      }
+    ]
+  },
+  {
+    "week_start": "2026-08-31",
+    "week_end": "2026-09-04",
+    "information_cutoff": "2026-08-29 00:00:00",
+    "actual_cutoff": "2026-09-05 00:00:00",
+    "forecast_id": "XAUUSD_CODEX_V2_RETEST_20260831_V1",
+    "primary_direction": "SELL",
+    "map_sha256": "e2416972cc0d02a8806ed50209b5ca24d9e8168e0642cb4afab31eb7d4c4176d",
+    "actual_open": 4436.42,
+    "actual_high": 4510.91,
+    "actual_low": 4282.37,
+    "actual_close": 4430.09,
+    "actual_body_change": -6.33,
+    "actual_body_pct": -0.14268261345860012,
+    "up_excursion": 74.49,
+    "down_excursion": 154.05,
+    "body_agreement": true,
+    "dominant_excursion_agreement": true,
+    "origin_zone": {
+      "id": "CONTROL",
+      "role": "CONTROL",
+      "low": 4476.53,
+      "high": 4507.83,
+      "label": "CONTROL",
+      "priority": 4,
+      "basis": {
+        "low": [
+          "preweek completed M30 ema10"
+        ],
+        "high": [
+          "preweek completed M30 ema20"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    },
+    "first_target_zone": {
+      "id": "TARGET",
+      "role": "TARGET_TURN",
+      "low": 4445.31,
+      "high": 4450.65,
+      "label": "TARGET",
+      "priority": 3,
+      "basis": {
+        "low": [
+          "2026-08-28 daily low",
+          "preweek completed H4 low",
+          "2026-08-28 20:00:00 H4 low"
+        ],
+        "high": [
+          "2026-08-20 daily low"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    },
+    "primary_threshold": {
+      "timeframe": "H4",
+      "completed_close_relation": "above",
+      "threshold": 4507.83
+    },
+    "first_origin_intersection": {
+      "bar_time": "2026-09-03 15:30:00",
+      "close_time": "2026-09-03 15:45:00",
+      "open": 4446.57,
+      "high": 4478.77,
+      "low": 4446.57,
+      "close": 4468.11
+    },
+    "first_target_intersection": {
+      "bar_time": "2026-08-31 01:00:00",
+      "close_time": "2026-08-31 01:15:00",
+      "open": 4436.42,
+      "high": 4459.68,
+      "low": 4434.81,
+      "close": 4459.03
+    },
+    "first_target_in_a_later_bar_after_origin": {
+      "bar_time": "2026-09-04 15:30:00",
+      "close_time": "2026-09-04 15:45:00",
+      "open": 4473.34,
+      "high": 4473.34,
+      "low": 4379.24,
+      "close": 4393.91
+    },
+    "first_h4_close_beyond_primary_threshold": null,
+    "first_h4_close_beyond_alternate_threshold": {
+      "bar_time": "2026-08-31 00:00:00",
+      "close_time": "2026-08-31 04:00:00",
+      "open": 4436.42,
+      "high": 4472.19,
+      "low": 4434.81,
+      "close": 4456.37
+    },
+    "first_origin_retest_after_primary_threshold_cross": null,
+    "first_alternate_target_after_primary_threshold_cross": null,
+    "first_alternate_target_in_later_bar_after_post_cross_retest": null,
+    "same_first_origin_and_target_bar": false,
+    "actual_daily": [
+      {
+        "date": "2026-08-31",
+        "open": 4436.42,
+        "high": 4472.19,
+        "low": 4396.37,
+        "close": 4448.34,
+        "last_close_time": "2026-09-01 00:00:00"
+      },
+      {
+        "date": "2026-09-01",
+        "open": 4448.75,
+        "high": 4461.59,
+        "low": 4322.5,
+        "close": 4328.84,
+        "last_close_time": "2026-09-02 00:00:00"
+      },
+      {
+        "date": "2026-09-02",
+        "open": 4333.53,
+        "high": 4397.46,
+        "low": 4282.37,
+        "close": 4387.5,
+        "last_close_time": "2026-09-03 00:00:00"
+      },
+      {
+        "date": "2026-09-03",
+        "open": 4390.81,
+        "high": 4510.91,
+        "low": 4380.97,
+        "close": 4473.43,
+        "last_close_time": "2026-09-04 00:00:00"
+      },
+      {
+        "date": "2026-09-04",
+        "open": 4473.74,
+        "high": 4490.68,
+        "low": 4365.57,
+        "close": 4430.09,
+        "last_close_time": "2026-09-05 00:00:00"
+      }
+    ]
+  },
+  {
+    "week_start": "2026-09-07",
+    "week_end": "2026-09-11",
+    "information_cutoff": "2026-09-05 00:00:00",
+    "actual_cutoff": "2026-09-12 00:00:00",
+    "forecast_id": "XAUUSD_CODEX_V2_RETEST_20260907_V1",
+    "primary_direction": "SELL",
+    "map_sha256": "a6fea13e1f795adb7c237af9e1572fe0e6fcc484cf598803bae82ecf3fabd007",
+    "actual_open": 4422.7,
+    "actual_high": 4443.04,
+    "actual_low": 4290.52,
+    "actual_close": 4349.16,
+    "actual_body_change": -73.54,
+    "actual_body_pct": -1.6627851764759116,
+    "up_excursion": 20.34,
+    "down_excursion": 132.18,
+    "body_agreement": true,
+    "dominant_excursion_agreement": true,
+    "origin_zone": {
+      "id": "CONTROL",
+      "role": "CONTROL",
+      "low": 4434.33,
+      "high": 4459.62,
+      "label": "CONTROL",
+      "priority": 4,
+      "basis": {
+        "low": [
+          "preweek completed H1 ema10"
+        ],
+        "high": [
+          "preweek completed H1 ema200"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    },
+    "first_target_zone": {
+      "id": "TARGET",
+      "role": "TARGET_TURN",
+      "low": 4380.97,
+      "high": 4396.37,
+      "label": "TARGET",
+      "priority": 3,
+      "basis": {
+        "low": [
+          "2026-09-03 daily low",
+          "2026-09-03 00:00:00 H4 low"
+        ],
+        "high": [
+          "2026-08-31 daily low"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    },
+    "primary_threshold": {
+      "timeframe": "H4",
+      "completed_close_relation": "above",
+      "threshold": 4459.62
+    },
+    "first_origin_intersection": {
+      "bar_time": "2026-09-07 01:45:00",
+      "close_time": "2026-09-07 02:00:00",
+      "open": 4430.65,
+      "high": 4435.21,
+      "low": 4429.09,
+      "close": 4429.28
+    },
+    "first_target_intersection": {
+      "bar_time": "2026-09-07 04:00:00",
+      "close_time": "2026-09-07 04:15:00",
+      "open": 4412.8,
+      "high": 4415.77,
+      "low": 4395.48,
+      "close": 4399.66
+    },
+    "first_target_in_a_later_bar_after_origin": {
+      "bar_time": "2026-09-07 04:00:00",
+      "close_time": "2026-09-07 04:15:00",
+      "open": 4412.8,
+      "high": 4415.77,
+      "low": 4395.48,
+      "close": 4399.66
+    },
+    "first_h4_close_beyond_primary_threshold": null,
+    "first_h4_close_beyond_alternate_threshold": {
+      "bar_time": "2026-09-07 00:00:00",
+      "close_time": "2026-09-07 04:00:00",
+      "open": 4422.7,
+      "high": 4435.21,
+      "low": 4410.0,
+      "close": 4412.74
+    },
+    "first_origin_retest_after_primary_threshold_cross": null,
+    "first_alternate_target_after_primary_threshold_cross": null,
+    "first_alternate_target_in_later_bar_after_post_cross_retest": null,
+    "same_first_origin_and_target_bar": false,
+    "actual_daily": [
+      {
+        "date": "2026-09-07",
+        "open": 4422.7,
+        "high": 4435.21,
+        "low": 4381.04,
+        "close": 4406.34,
+        "last_close_time": "2026-09-07 22:00:00"
+      },
+      {
+        "date": "2026-09-08",
+        "open": 4413.35,
+        "high": 4443.04,
+        "low": 4345.64,
+        "close": 4355.49,
+        "last_close_time": "2026-09-09 00:00:00"
+      },
+      {
+        "date": "2026-09-09",
+        "open": 4355.48,
+        "high": 4434.11,
+        "low": 4341.2,
+        "close": 4400.81,
+        "last_close_time": "2026-09-10 00:00:00"
+      },
+      {
+        "date": "2026-09-10",
+        "open": 4404.04,
+        "high": 4434.86,
+        "low": 4313.79,
+        "close": 4316.64,
+        "last_close_time": "2026-09-11 00:00:00"
+      },
+      {
+        "date": "2026-09-11",
+        "open": 4318.62,
+        "high": 4402.38,
+        "low": 4290.52,
+        "close": 4349.16,
+        "last_close_time": "2026-09-12 00:00:00"
+      }
+    ]
+  },
+  {
+    "week_start": "2026-09-14",
+    "week_end": "2026-09-18",
+    "information_cutoff": "2026-09-12 00:00:00",
+    "actual_cutoff": "2026-09-19 00:00:00",
+    "forecast_id": "XAUUSD_CODEX_V2_RETEST_20260914_V1",
+    "primary_direction": "SELL",
+    "map_sha256": "33eb00a9c014bc7706a561ebb26d9367419bff76d983cc20211146ce771cec3d",
+    "actual_open": 4336.69,
+    "actual_high": 4399.66,
+    "actual_low": 4235.14,
+    "actual_close": 4377.93,
+    "actual_body_change": 41.24,
+    "actual_body_pct": 0.9509556827903554,
+    "up_excursion": 62.97,
+    "down_excursion": 101.55,
+    "body_agreement": false,
+    "dominant_excursion_agreement": true,
+    "origin_zone": {
+      "id": "CONTROL",
+      "role": "CONTROL",
+      "low": 4354.48,
+      "high": 4371.77,
+      "label": "CONTROL",
+      "priority": 3,
+      "basis": {
+        "low": [
+          "preweek completed H1 ema20"
+        ],
+        "high": [
+          "preweek completed H4 ema20"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    },
+    "first_target_zone": {
+      "id": "LOWER",
+      "role": "TARGET_TURN",
+      "low": 4313.79,
+      "high": 4322.5,
+      "label": "LOWER",
+      "priority": 2,
+      "basis": {
+        "low": [
+          "2026-09-10 daily low",
+          "2026-09-10 20:00:00 H4 low"
+        ],
+        "high": [
+          "2026-09-01 daily low"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    },
+    "primary_threshold": {
+      "timeframe": "H4",
+      "completed_close_relation": "above",
+      "threshold": 4371.77
+    },
+    "first_origin_intersection": {
+      "bar_time": "2026-09-14 04:45:00",
+      "close_time": "2026-09-14 05:00:00",
+      "open": 4342.36,
+      "high": 4355.4,
+      "low": 4342.36,
+      "close": 4353.41
+    },
+    "first_target_intersection": {
+      "bar_time": "2026-09-14 07:45:00",
+      "close_time": "2026-09-14 08:00:00",
+      "open": 4323.33,
+      "high": 4331.76,
+      "low": 4321.88,
+      "close": 4329.41
+    },
+    "first_target_in_a_later_bar_after_origin": {
+      "bar_time": "2026-09-14 07:45:00",
+      "close_time": "2026-09-14 08:00:00",
+      "open": 4323.33,
+      "high": 4331.76,
+      "low": 4321.88,
+      "close": 4329.41
+    },
+    "first_h4_close_beyond_primary_threshold": {
+      "bar_time": "2026-09-17 12:00:00",
+      "close_time": "2026-09-17 16:00:00",
+      "open": 4311.72,
+      "high": 4381.61,
+      "low": 4305.02,
+      "close": 4373.18
+    },
+    "first_h4_close_beyond_alternate_threshold": {
+      "bar_time": "2026-09-14 00:00:00",
+      "close_time": "2026-09-14 04:00:00",
+      "open": 4336.69,
+      "high": 4347.51,
+      "low": 4328.25,
+      "close": 4338.72
+    },
+    "first_origin_retest_after_primary_threshold_cross": {
+      "bar_time": "2026-09-17 16:00:00",
+      "close_time": "2026-09-17 16:15:00",
+      "open": 4373.22,
+      "high": 4374.2,
+      "low": 4360.14,
+      "close": 4366.38
+    },
+    "first_alternate_target_after_primary_threshold_cross": null,
+    "first_alternate_target_in_later_bar_after_post_cross_retest": null,
+    "same_first_origin_and_target_bar": false,
+    "actual_daily": [
+      {
+        "date": "2026-09-14",
+        "open": 4336.69,
+        "high": 4355.5,
+        "low": 4253.6,
+        "close": 4298.73,
+        "last_close_time": "2026-09-15 00:00:00"
+      },
+      {
+        "date": "2026-09-15",
+        "open": 4296.11,
+        "high": 4317.36,
+        "low": 4261.28,
+        "close": 4293.52,
+        "last_close_time": "2026-09-16 00:00:00"
+      },
+      {
+        "date": "2026-09-16",
+        "open": 4293.14,
+        "high": 4367.93,
+        "low": 4235.14,
+        "close": 4264.26,
+        "last_close_time": "2026-09-17 00:00:00"
+      },
+      {
+        "date": "2026-09-17",
+        "open": 4263.24,
+        "high": 4381.61,
+        "low": 4257.44,
+        "close": 4341.79,
+        "last_close_time": "2026-09-18 00:00:00"
+      },
+      {
+        "date": "2026-09-18",
+        "open": 4342.44,
+        "high": 4399.66,
+        "low": 4334.2,
+        "close": 4377.93,
+        "last_close_time": "2026-09-19 00:00:00"
+      }
+    ]
+  },
+  {
+    "week_start": "2026-09-21",
+    "week_end": "2026-09-25",
+    "information_cutoff": "2026-09-19 00:00:00",
+    "actual_cutoff": "2026-09-26 00:00:00",
+    "forecast_id": "XAUUSD_CODEX_V2_RETEST_20260921_V1",
+    "primary_direction": "BUY",
+    "map_sha256": "5df369e26199d4d5fcdbe48b98572aec5838c6dd8d3d9282b345ff3d07d10fdc",
+    "actual_open": 4376.44,
+    "actual_high": 4383.41,
+    "actual_low": 4244.35,
+    "actual_close": 4286.07,
+    "actual_body_change": -90.37,
+    "actual_body_pct": -2.0649203462174692,
+    "up_excursion": 6.97,
+    "down_excursion": 132.09,
+    "body_agreement": false,
+    "dominant_excursion_agreement": false,
+    "origin_zone": {
+      "id": "CONTROL",
+      "role": "CONTROL",
+      "low": 4347.1,
+      "high": 4362.04,
+      "label": "CONTROL",
+      "priority": 4,
+      "basis": {
+        "low": [
+          "preweek completed H4 ema20"
+        ],
+        "high": [
+          "preweek completed H4 ema200"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    },
+    "first_target_zone": {
+      "id": "RESISTANCE",
+      "role": "TURN_RESISTANCE",
+      "low": 4381.61,
+      "high": 4399.66,
+      "label": "RESISTANCE",
+      "priority": 5,
+      "basis": {
+        "low": [
+          "2026-09-17 daily high",
+          "2026-09-17 12:00:00 H4 high"
+        ],
+        "high": [
+          "2026-09-18 daily high",
+          "2026-09-18 08:00:00 H4 high"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    },
+    "primary_threshold": {
+      "timeframe": "H4",
+      "completed_close_relation": "below",
+      "threshold": 4347.1
+    },
+    "first_origin_intersection": {
+      "bar_time": "2026-09-21 03:15:00",
+      "close_time": "2026-09-21 03:30:00",
+      "open": 4364.18,
+      "high": 4369.62,
+      "low": 4358.8,
+      "close": 4368.0
+    },
+    "first_target_intersection": {
+      "bar_time": "2026-09-21 01:00:00",
+      "close_time": "2026-09-21 01:15:00",
+      "open": 4376.44,
+      "high": 4382.18,
+      "low": 4373.26,
+      "close": 4379.63
+    },
+    "first_target_in_a_later_bar_after_origin": {
+      "bar_time": "2026-09-21 04:15:00",
+      "close_time": "2026-09-21 04:30:00",
+      "open": 4380.73,
+      "high": 4383.41,
+      "low": 4374.54,
+      "close": 4375.17
+    },
+    "first_h4_close_beyond_primary_threshold": {
+      "bar_time": "2026-09-21 16:00:00",
+      "close_time": "2026-09-21 20:00:00",
+      "open": 4359.71,
+      "high": 4369.35,
+      "low": 4322.7,
+      "close": 4343.24
+    },
+    "first_h4_close_beyond_alternate_threshold": {
+      "bar_time": "2026-09-21 00:00:00",
+      "close_time": "2026-09-21 04:00:00",
+      "open": 4376.44,
+      "high": 4382.18,
+      "low": 4358.8,
+      "close": 4366.78
+    },
+    "first_origin_retest_after_primary_threshold_cross": {
+      "bar_time": "2026-09-21 21:00:00",
+      "close_time": "2026-09-21 21:15:00",
+      "open": 4344.58,
+      "high": 4351.04,
+      "low": 4344.0,
+      "close": 4349.91
+    },
+    "first_alternate_target_after_primary_threshold_cross": {
+      "bar_time": "2026-09-21 20:30:00",
+      "close_time": "2026-09-21 20:45:00",
+      "open": 4345.72,
+      "high": 4346.51,
+      "low": 4337.62,
+      "close": 4340.64
+    },
+    "first_alternate_target_in_later_bar_after_post_cross_retest": {
+      "bar_time": "2026-09-21 23:15:00",
+      "close_time": "2026-09-21 23:30:00",
+      "open": 4341.59,
+      "high": 4341.78,
+      "low": 4339.88,
+      "close": 4340.64
+    },
+    "same_first_origin_and_target_bar": false,
+    "actual_daily": [
+      {
+        "date": "2026-09-21",
+        "open": 4376.44,
+        "high": 4383.41,
+        "low": 4322.7,
+        "close": 4343.65,
+        "last_close_time": "2026-09-22 00:00:00"
+      },
+      {
+        "date": "2026-09-22",
+        "open": 4343.77,
+        "high": 4376.12,
+        "low": 4291.68,
+        "close": 4358.49,
+        "last_close_time": "2026-09-23 00:00:00"
+      },
+      {
+        "date": "2026-09-23",
+        "open": 4359.11,
+        "high": 4369.27,
+        "low": 4274.87,
+        "close": 4286.75,
+        "last_close_time": "2026-09-24 00:00:00"
+      },
+      {
+        "date": "2026-09-24",
+        "open": 4287.74,
+        "high": 4303.13,
+        "low": 4244.35,
+        "close": 4274.51,
+        "last_close_time": "2026-09-25 00:00:00"
+      },
+      {
+        "date": "2026-09-25",
+        "open": 4268.27,
+        "high": 4315.84,
+        "low": 4254.34,
+        "close": 4286.07,
+        "last_close_time": "2026-09-26 00:00:00"
+      }
+    ]
+  },
+  {
+    "week_start": "2026-09-28",
+    "week_end": "2026-10-02",
+    "information_cutoff": "2026-09-26 00:00:00",
+    "actual_cutoff": "2026-10-03 00:00:00",
+    "forecast_id": "XAUUSD_CODEX_V2_RETEST_20260928_V1",
+    "primary_direction": "SELL",
+    "map_sha256": "890b8f59d252e503cd01135860c0bd027006250d4dea42d1f4fe49d04b83255e",
+    "actual_open": 4269.7,
+    "actual_high": 4275.0,
+    "actual_low": 4110.88,
+    "actual_close": 4140.57,
+    "actual_body_change": -129.13,
+    "actual_body_pct": -3.024334262360351,
+    "up_excursion": 5.3,
+    "down_excursion": 158.82,
+    "body_agreement": true,
+    "dominant_excursion_agreement": true,
+    "origin_zone": {
+      "id": "CONTROL",
+      "role": "CONTROL",
+      "low": 4287.26,
+      "high": 4297.45,
+      "label": "CONTROL",
+      "priority": 3,
+      "basis": {
+        "low": [
+          "preweek completed H4 ema10"
+        ],
+        "high": [
+          "preweek completed H4 ema20"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    },
+    "first_target_zone": {
+      "id": "LOWER",
+      "role": "TARGET_TURN",
+      "low": 4254.34,
+      "high": 4261.28,
+      "label": "LOWER",
+      "priority": 2,
+      "basis": {
+        "low": [
+          "2026-09-25 daily low",
+          "2026-09-25 16:00:00 H4 low"
+        ],
+        "high": [
+          "2026-09-15 daily low"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    },
+    "primary_threshold": {
+      "timeframe": "H4",
+      "completed_close_relation": "above",
+      "threshold": 4297.45
+    },
+    "first_origin_intersection": null,
+    "first_target_intersection": {
+      "bar_time": "2026-09-28 01:45:00",
+      "close_time": "2026-09-28 02:00:00",
+      "open": 4261.52,
+      "high": 4263.11,
+      "low": 4257.78,
+      "close": 4260.14
+    },
+    "first_target_in_a_later_bar_after_origin": null,
+    "first_h4_close_beyond_primary_threshold": null,
+    "first_h4_close_beyond_alternate_threshold": {
+      "bar_time": "2026-09-28 00:00:00",
+      "close_time": "2026-09-28 04:00:00",
+      "open": 4269.7,
+      "high": 4275.0,
+      "low": 4219.83,
+      "close": 4230.72
+    },
+    "first_origin_retest_after_primary_threshold_cross": null,
+    "first_alternate_target_after_primary_threshold_cross": null,
+    "first_alternate_target_in_later_bar_after_post_cross_retest": null,
+    "same_first_origin_and_target_bar": false,
+    "actual_daily": [
+      {
+        "date": "2026-09-28",
+        "open": 4269.7,
+        "high": 4275.0,
+        "low": 4110.88,
+        "close": 4114.27,
+        "last_close_time": "2026-09-29 00:00:00"
+      },
+      {
+        "date": "2026-09-29",
+        "open": 4118.14,
+        "high": 4185.1,
+        "low": 4113.3,
+        "close": 4181.39,
+        "last_close_time": "2026-09-30 00:00:00"
+      },
+      {
+        "date": "2026-09-30",
+        "open": 4183.76,
+        "high": 4219.34,
+        "low": 4147.49,
+        "close": 4157.0,
+        "last_close_time": "2026-10-01 00:00:00"
+      },
+      {
+        "date": "2026-10-01",
+        "open": 4161.27,
+        "high": 4192.83,
+        "low": 4139.2,
+        "close": 4176.92,
+        "last_close_time": "2026-10-02 00:00:00"
+      },
+      {
+        "date": "2026-10-02",
+        "open": 4173.24,
+        "high": 4227.33,
+        "low": 4125.25,
+        "close": 4140.57,
+        "last_close_time": "2026-10-03 00:00:00"
+      }
+    ]
+  },
+  {
+    "week_start": "2026-10-05",
+    "week_end": "2026-10-09",
+    "information_cutoff": "2026-10-03 00:00:00",
+    "actual_cutoff": "2026-10-10 00:00:00",
+    "forecast_id": "XAUUSD_CODEX_V2_RETEST_20261005_V1",
+    "primary_direction": "SELL",
+    "map_sha256": "651a91e5c94b5915e0a80c7ad0db902984bd6d75039421ccdf385c74617334dc",
+    "actual_open": 4135.21,
+    "actual_high": 4207.4,
+    "actual_low": 4066.5,
+    "actual_close": 4194.85,
+    "actual_body_change": 59.64,
+    "actual_body_pct": 1.4422483985093937,
+    "up_excursion": 72.19,
+    "down_excursion": 68.71,
+    "body_agreement": false,
+    "dominant_excursion_agreement": false,
+    "origin_zone": {
+      "id": "CONTROL",
+      "role": "CONTROL",
+      "low": 4153.66,
+      "high": 4173.5,
+      "label": "CONTROL",
+      "priority": 3,
+      "basis": {
+        "low": [
+          "preweek completed H1 ema10",
+          "preweek completed M30 ema20"
+        ],
+        "high": [
+          "preweek completed H4 ema20"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    },
+    "first_target_zone": {
+      "id": "LOWER",
+      "role": "TARGET_TURN",
+      "low": 4125.25,
+      "high": 4139.2,
+      "label": "LOWER",
+      "priority": 2,
+      "basis": {
+        "low": [
+          "2026-10-02 daily low",
+          "2026-10-02 16:00:00 H4 low"
+        ],
+        "high": [
+          "2026-10-01 daily low",
+          "2026-10-01 00:00:00 H4 low"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    },
+    "primary_threshold": {
+      "timeframe": "H4",
+      "completed_close_relation": "above",
+      "threshold": 4173.5
+    },
+    "first_origin_intersection": {
+      "bar_time": "2026-10-05 03:15:00",
+      "close_time": "2026-10-05 03:30:00",
+      "open": 4148.92,
+      "high": 4158.03,
+      "low": 4147.53,
+      "close": 4155.31
+    },
+    "first_target_intersection": {
+      "bar_time": "2026-10-05 01:00:00",
+      "close_time": "2026-10-05 01:15:00",
+      "open": 4135.21,
+      "high": 4146.31,
+      "low": 4132.56,
+      "close": 4141.07
+    },
+    "first_target_in_a_later_bar_after_origin": {
+      "bar_time": "2026-10-05 06:00:00",
+      "close_time": "2026-10-05 06:15:00",
+      "open": 4142.91,
+      "high": 4145.22,
+      "low": 4136.38,
+      "close": 4137.86
+    },
+    "first_h4_close_beyond_primary_threshold": {
+      "bar_time": "2026-10-09 04:00:00",
+      "close_time": "2026-10-09 08:00:00",
+      "open": 4143.39,
+      "high": 4185.89,
+      "low": 4143.15,
+      "close": 4181.77
+    },
+    "first_h4_close_beyond_alternate_threshold": {
+      "bar_time": "2026-10-05 04:00:00",
+      "close_time": "2026-10-05 08:00:00",
+      "open": 4156.37,
+      "high": 4163.35,
+      "low": 4124.8,
+      "close": 4131.47
+    },
+    "first_origin_retest_after_primary_threshold_cross": {
+      "bar_time": "2026-10-09 15:45:00",
+      "close_time": "2026-10-09 16:00:00",
+      "open": 4181.49,
+      "high": 4182.2,
+      "low": 4168.58,
+      "close": 4175.55
+    },
+    "first_alternate_target_after_primary_threshold_cross": {
+      "bar_time": "2026-10-09 08:00:00",
+      "close_time": "2026-10-09 08:15:00",
+      "open": 4181.84,
+      "high": 4188.13,
+      "low": 4181.84,
+      "close": 4187.02
+    },
+    "first_alternate_target_in_later_bar_after_post_cross_retest": {
+      "bar_time": "2026-10-09 16:15:00",
+      "close_time": "2026-10-09 16:30:00",
+      "open": 4181.24,
+      "high": 4189.99,
+      "low": 4180.28,
+      "close": 4189.13
+    },
+    "same_first_origin_and_target_bar": false,
+    "actual_daily": [
+      {
+        "date": "2026-10-05",
+        "open": 4135.21,
+        "high": 4170.41,
+        "low": 4123.18,
+        "close": 4140.69,
+        "last_close_time": "2026-10-06 00:00:00"
+      },
+      {
+        "date": "2026-10-06",
+        "open": 4141.89,
+        "high": 4184.47,
+        "low": 4104.37,
+        "close": 4163.78,
+        "last_close_time": "2026-10-07 00:00:00"
+      },
+      {
+        "date": "2026-10-07",
+        "open": 4167.9,
+        "high": 4170.1,
+        "low": 4066.5,
+        "close": 4109.79,
+        "last_close_time": "2026-10-08 00:00:00"
+      },
+      {
+        "date": "2026-10-08",
+        "open": 4114.9,
+        "high": 4146.12,
+        "low": 4103.26,
+        "close": 4133.75,
+        "last_close_time": "2026-10-09 00:00:00"
+      },
+      {
+        "date": "2026-10-09",
+        "open": 4123.88,
+        "high": 4207.4,
+        "low": 4123.84,
+        "close": 4194.85,
+        "last_close_time": "2026-10-10 00:00:00"
+      }
+    ]
+  },
+  {
+    "week_start": "2026-10-12",
+    "week_end": "2026-10-16",
+    "information_cutoff": "2026-10-10 00:00:00",
+    "actual_cutoff": "2026-10-17 00:00:00",
+    "forecast_id": "XAUUSD_CODEX_V2_RETEST_20261012_V1",
+    "primary_direction": "SELL",
+    "map_sha256": "12b895de244f1f1eb44780259b10466fb9705d21bb474c971d24b65edda21ce0",
+    "actual_open": 4190.95,
+    "actual_high": 4217.27,
+    "actual_low": 4073.37,
+    "actual_close": 4165.19,
+    "actual_body_change": -25.76,
+    "actual_body_pct": -0.6146577744902793,
+    "up_excursion": 26.32,
+    "down_excursion": 117.58,
+    "body_agreement": true,
+    "dominant_excursion_agreement": true,
+    "origin_zone": {
+      "id": "RESISTANCE",
+      "role": "TURN_RESISTANCE",
+      "low": 4207.4,
+      "high": 4227.33,
+      "label": "RESISTANCE",
+      "priority": 5,
+      "basis": {
+        "low": [
+          "2026-10-09 daily high",
+          "2026-10-09 08:00:00 H4 high"
+        ],
+        "high": [
+          "2026-10-02 daily high"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    },
+    "first_target_zone": {
+      "id": "CONTROL",
+      "role": "CONTROL",
+      "low": 4155.11,
+      "high": 4170.41,
+      "label": "CONTROL",
+      "priority": 4,
+      "basis": {
+        "low": [
+          "preweek completed H4 ema20"
+        ],
+        "high": [
+          "2026-10-05 daily high"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    },
+    "primary_threshold": {
+      "timeframe": "H4",
+      "completed_close_relation": "above",
+      "threshold": 4227.33
+    },
+    "first_origin_intersection": {
+      "bar_time": "2026-10-12 03:00:00",
+      "close_time": "2026-10-12 03:15:00",
+      "open": 4190.62,
+      "high": 4208.79,
+      "low": 4187.42,
+      "close": 4206.08
+    },
+    "first_target_intersection": {
+      "bar_time": "2026-10-12 12:30:00",
+      "close_time": "2026-10-12 12:45:00",
+      "open": 4177.25,
+      "high": 4177.34,
+      "low": 4170.11,
+      "close": 4170.8
+    },
+    "first_target_in_a_later_bar_after_origin": {
+      "bar_time": "2026-10-12 12:30:00",
+      "close_time": "2026-10-12 12:45:00",
+      "open": 4177.25,
+      "high": 4177.34,
+      "low": 4170.11,
+      "close": 4170.8
+    },
+    "first_h4_close_beyond_primary_threshold": null,
+    "first_h4_close_beyond_alternate_threshold": {
+      "bar_time": "2026-10-12 04:00:00",
+      "close_time": "2026-10-12 08:00:00",
+      "open": 4209.06,
+      "high": 4217.27,
+      "low": 4193.47,
+      "close": 4194.97
+    },
+    "first_origin_retest_after_primary_threshold_cross": null,
+    "first_alternate_target_after_primary_threshold_cross": null,
+    "first_alternate_target_in_later_bar_after_post_cross_retest": null,
+    "same_first_origin_and_target_bar": false,
+    "actual_daily": [
+      {
+        "date": "2026-10-12",
+        "open": 4190.95,
+        "high": 4217.27,
+        "low": 4154.78,
+        "close": 4171.59,
+        "last_close_time": "2026-10-13 00:00:00"
+      },
+      {
+        "date": "2026-10-13",
+        "open": 4173.85,
+        "high": 4200.53,
+        "low": 4146.87,
+        "close": 4160.63,
+        "last_close_time": "2026-10-14 00:00:00"
+      },
+      {
+        "date": "2026-10-14",
+        "open": 4162.52,
+        "high": 4170.41,
+        "low": 4073.37,
+        "close": 4104.56,
+        "last_close_time": "2026-10-15 00:00:00"
+      },
+      {
+        "date": "2026-10-15",
+        "open": 4108.42,
+        "high": 4177.38,
+        "low": 4099.94,
+        "close": 4170.22,
+        "last_close_time": "2026-10-16 00:00:00"
+      },
+      {
+        "date": "2026-10-16",
+        "open": 4171.64,
+        "high": 4198.8,
+        "low": 4147.32,
+        "close": 4165.19,
+        "last_close_time": "2026-10-17 00:00:00"
+      }
+    ]
+  }
+]

@@ -1,0 +1,67 @@
+{
+  "analytical_author": "Codex",
+  "created_at_eat": "2026-10-21T15:26:26+03:00",
+  "cutoff": "2026-10-21 15:00:00",
+  "forecast_id": "XAUUSD_WEEK_20261019_V1",
+  "forecast_actual_frozen_at": "2026-10-20 23:14:14",
+  "day_status": "Intraday recovery from frozen support, with a bullish lower-timeframe reclaim inside a still-bearish completed H4 regime.",
+  "final_verdict": "WAIT",
+  "fresh_buy_allowed": false,
+  "fresh_sell_allowed": false,
+  "local_wmid_sell_branch": {
+    "state": "INVALIDATED",
+    "time": "2026-10-21 15:00:00",
+    "reason": "Completed H1 close 4139.87 accepted above frozen WMID high 4131.50."
+  },
+  "broader_control_breakdown_sell_branch": {
+    "state": "Still valid as higher-timeframe context",
+    "failure_condition": "Completed H4 close above 4162.20",
+    "reason": "Latest completed H4 close 4119.61 remains below the frozen threshold. This does not authorize a fresh local SELL."
+  },
+  "historical_wmid_sell": {
+    "m15_qualification_time": "2026-10-21 01:45:00",
+    "m15_trigger_time": "2026-10-21 02:00:00",
+    "m30_confirmation_time": "2026-10-21 02:00:00",
+    "h1_permission_time": "2026-10-21 02:00:00",
+    "h4_evidence_close_time": "2026-10-21 00:00:00",
+    "first_full_technical_confirmation_time": "2026-10-21 02:00:00",
+    "selected_turn_reference": 4130.96,
+    "confirmation_price": 4120.09,
+    "m15_atr_at_confirmation": 3.895714285714218,
+    "no_chase_consumption_pct": 54.13346613545782,
+    "no_chase_remaining_atr": 2.3641364136414147,
+    "verdict_at_that_time": "TECHNICALLY CONFIRMED \u2014 NO-CHASE BLOCK",
+    "codex_reason": "Price broke the qualified rejection low; M30 closed below its preceding range and WMID with bearish price/momentum alignment; H1 permitted and H4 allowed. Consumption was below 65%, but remaining room was only 2.364 M15 ATR, below 2.5. Later target contact does not turn a blocked entry into an allowed trade."
+  },
+  "support_buy_sequence": {
+    "first_support_contact_known_at": "2026-10-21 04:15:00",
+    "m15_qualification_time": "2026-10-21 04:30:00",
+    "m15_trigger_time": "2026-10-21 05:15:00",
+    "m30_confirmation_time": "2026-10-21 08:30:00",
+    "h1_permission_time": "2026-10-21 11:00:00",
+    "h4_bullish_allowance_time": null,
+    "first_full_confirmation_time": null,
+    "reason": "The early M15 recovery and subsequent lower-frame confirmations did not supply an explicit completed H4 turn. Its first opposing WMID target was already visited before higher gates aligned. No support BUY entry is backdated."
+  },
+  "latest_wmid_reclaim_candidate": {
+    "m15_reclaim_qualification_time": "2026-10-21 14:45:00",
+    "qualification_high": 4141.11,
+    "subsequent_m15_trigger_time": null,
+    "m30_reclaim_confirmation_time": "2026-10-21 15:00:00",
+    "h1_reclaim_permission_time": "2026-10-21 15:00:00",
+    "h4_bullish_allowance_time": null,
+    "first_full_confirmation_time": null,
+    "current_location_room_atr": 1.2020115294983478,
+    "reason": "The 15:00 M15 close 4139.87 did not exceed the reclaim qualification high 4141.11. Completed H4 has not accepted above local reaction highs and remains below short averages. Room to WCONTROL low 4146.87 is only 7.00, about 1.20 current M15 ATR; this is provisional location evidence, not a confirmation-time test."
+  },
+  "next_watch": [
+    "Reassess an accepted hold/retest of WMID 4123.18-4131.50 as recovery context; require a new valid trigger, continued H1/M30 support and explicit completed H4 allowance before any BUY conclusion.",
+    "WCONTROL 4146.87-4162.20 is the next frozen recovery objective/resistance. A SELL from there needs an actual rejection, fresh bearish H1 permission, M30 structure, M15 sequence and both no-chase tests; it has not been touched today through this cutoff. Its nearest downside objective is WMID high 4131.50, not the farther support.",
+    "A completed H1 loss back below WMID low 4123.18 would weaken the recovery and call for a new bearish assessment. It does not retroactively revive the invalidated overnight rejection.",
+    "Use the next completed H4 at 16:00 to reassess the developing turn; its current 12:00-open candle is forming at this cutoff and excluded."
+  ],
+  "existing_positions": "Not queried or assessed; no position-management instruction and no trade execution.",
+  "frozen_levels_unchanged": true,
+  "formal_current_buy_no_chase": "Unavailable because first full confirmation does not exist; current-location room is insufficient at the snapshot.",
+  "methodology": "AGENTS.md, prompts/evaluate.md and the issued V1 setup criteria control. Lessons clarify scenario lifecycle and interpretation; no extractor, threshold, issued map or procedure was changed."
+}
