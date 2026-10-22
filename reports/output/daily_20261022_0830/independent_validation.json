@@ -1,0 +1,98 @@
+{
+  "cutoff": "2026-10-22 08:30:00",
+  "timeframes": {
+    "H4": {
+      "expected_latest_completed": "2026-10-22 08:00:00",
+      "actual_latest_completed": "2026-10-22 08:00:00",
+      "causal_only": true,
+      "source_sha256": "b26bdf947a96e229da066b954ae8761bcee27ccb0e7d7b096564d37dcad63b95",
+      "export_rows": 90,
+      "tick_verified_intervals": 1,
+      "current_session_gaps": 0,
+      "official_vs_tick_recent_mismatches": []
+    },
+    "H1": {
+      "expected_latest_completed": "2026-10-22 08:00:00",
+      "actual_latest_completed": "2026-10-22 08:00:00",
+      "causal_only": true,
+      "source_sha256": "dcceeb52d4f86d8c119ec58129faa1516f61dc2f5bf756ca5490f837b87c3dbb",
+      "export_rows": 96,
+      "tick_verified_intervals": 1,
+      "current_session_gaps": 0,
+      "official_vs_tick_recent_mismatches": []
+    },
+    "M30": {
+      "expected_latest_completed": "2026-10-22 08:30:00",
+      "actual_latest_completed": "2026-10-22 08:30:00",
+      "causal_only": true,
+      "source_sha256": "94ef5e94a928570433574e0761863ec319ab38766020d7cf363696947ddca79b",
+      "export_rows": 120,
+      "tick_verified_intervals": 2,
+      "current_session_gaps": 0,
+      "official_vs_tick_recent_mismatches": [
+        {
+          "bar_time": "2026-10-22 08:00:00",
+          "official_ohlc": {
+            "open": 4091.71,
+            "high": 4092.86,
+            "low": 4085.87,
+            "close": 4086.39
+          },
+          "tick_ohlc": {
+            "open": 4091.71,
+            "high": 4092.86,
+            "low": 4085.68,
+            "close": 4088.71
+          },
+          "tick_minus_official": {
+            "open": 0.0,
+            "high": 0.0,
+            "low": -0.19,
+            "close": 2.32
+          }
+        }
+      ]
+    },
+    "M15": {
+      "expected_latest_completed": "2026-10-22 08:30:00",
+      "actual_latest_completed": "2026-10-22 08:30:00",
+      "causal_only": true,
+      "source_sha256": "cda9b2c7fffdc5815ab3184684685520e045f77a4cdd0a57cb27a43b37324723",
+      "export_rows": 160,
+      "tick_verified_intervals": 3,
+      "current_session_gaps": 0,
+      "official_vs_tick_recent_mismatches": [
+        {
+          "bar_time": "2026-10-22 08:15:00",
+          "official_ohlc": {
+            "open": 4087.5,
+            "high": 4089.36,
+            "low": 4085.87,
+            "close": 4086.32
+          },
+          "tick_ohlc": {
+            "open": 4087.5,
+            "high": 4089.36,
+            "low": 4085.68,
+            "close": 4088.71
+          },
+          "tick_minus_official": {
+            "open": 0.0,
+            "high": 0.0,
+            "low": -0.19,
+            "close": 2.39
+          }
+        }
+      ]
+    }
+  },
+  "current_source_complete": true,
+  "all_boundaries_match": true,
+  "all_export_rows_causal": true,
+  "active_map_unchanged": true,
+  "raw_source_metadata": "Preserved in live_memory/manifests/xauusd_extraction_manifest.json and tick_verification_receipt.json.",
+  "age_flag_note": "Original package age flags H4/H1 because their closes are 30 minutes before cutoff. Expected latest boundaries at 08:30 EAT are H4/H1 08:00 and M30/M15 08:30; all match.",
+  "official_bar_note": "The latest official lower-timeframe bars lagged or differed from tick-built completed OHLC. Tick-derived supplemental bars use the existing accepted fallback/merge/enrichment functions; differences are preserved above.",
+  "tick_interval_checks": 7,
+  "scope": "Factual evidence validation only. Codex authors all analysis."
+}

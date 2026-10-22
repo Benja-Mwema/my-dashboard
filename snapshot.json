@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "snapshot_built_at": "2026-10-21T20:51:14.809323+03:00",
+  "snapshot_built_at": "2026-10-22T08:45:15.872321+03:00",
   "snapshot_scope": "Saved records packaged on explicit request. Build time is not forecast issuance or market freshness.",
   "timezone": "Africa/Nairobi",
   "symbol": "XAUUSD.pro",
@@ -157,220 +157,270 @@
   "daily": {
     "analytical_author": "Codex",
     "mode": "DAILY",
-    "date": "2026-10-21",
-    "cutoff": "2026-10-21 20:30:00",
-    "source_refreshed_at_eat": "2026-10-21 20:43:51",
-    "cutoff_selection": "Latest completed M15 boundary at the 20:43 EAT MT5 refresh; fixed before analysis. Later completions are excluded.",
+    "date": "2026-10-22",
+    "cutoff": "2026-10-22 08:30:00",
+    "source_refreshed_at_eat": "2026-10-22 08:34:39",
+    "cutoff_selection": "Latest completed M15/M30 boundary at the 08:34 EAT MT5 refresh. H4/H1 expected completed boundaries were 08:00; M30/M15 expected completed boundaries were 08:30. Bars after 08:30 are excluded. A later quote is recorded separately as situational context only.",
     "forecast_id": "XAUUSD_WEEK_20261019_V1",
     "status": "FINAL DAILY CONTEXT",
-    "headline": "Recovery cooling at WMID",
-    "summary": "Gold has recovered from frozen support, but repeated failures around 4140-4142 and fading lower-timeframe momentum leave the remaining-day outlook balanced to conditionally upward while WMID holds. The broader H4 backdrop has improved but has not established a broad bullish reversal.",
-    "prediction": "Base case for the remaining 21 October session: consolidation or a retest of WMID 4123.18-4131.50, followed by another attempt toward the observed 4139.57-4142.01 reaction ceiling if completed H1/M30 evidence holds the recovery. At 4132.29, price is only 0.79 above the zone's upper edge, so a clean one-way advance is a weaker expectation than a two-sided retest.\n\nUpside continuation requires completed acceptance through 4139.57-4142.01 and a held retest. Only then does frozen WCONTROL 4146.87-4162.20 become the next recovery objective. No WCONTROL contact has occurred today through the cutoff. WRES and WUPPER are not the base case for the remaining hours.\n\nDownside alternate: if a subsequent completed H1 loses WMID low 4123.18 and M30 accepts below it, watch the observed 4121.55 reaction low, then 4111.65 and the near edge of frozen WSUPPORT at 4110.88. A deeper move toward 4106.14 and 4099.94 requires renewed structural acceptance into support; it is not inferred from a brief wick. A new assessment is required rather than reviving the failed overnight WMID SELL setup.\n\nConfidence is moderate in the mapped boundaries and lower in the exact remaining-day order. This is a conditional daily watch forecast, not a fresh BUY or SELL permission. It applies prospectively after actual issuance, using the locked 20:30 evidence; no move between the cutoff and publication is claimed as a forecast success.",
-    "weekly_status": "Original WCONTROL support-hold primary failed earlier in the week. The broader control-breakdown branch remains valid below its completed-H4 failure threshold of 4162.20. The old local WMID rejection SELL was invalidated by H1 acceptance above 4131.50 at 15:00 and is not reinstated. Frozen WSUPPORT BUY failure remains a completed H4 close below 4099.94; that has not occurred.",
+    "headline": "Bearish breakdown reaches WBASE",
+    "summary": "H4 and H1 closed below the frozen WSUPPORT band, activating the weekly downside path toward WBASE. By the 08:30 cutoff, price remained below WSUPPORT and the verified M15/M30 closes were 4088.71. A later 08:42:35 EAT quote at 4078.93 bid was only 1.04 above WBASE's upper edge, so the downside objective was already close and reaction risk was elevated. This is a conditional daily outlook, not a fresh SELL or BUY permission.",
+    "prediction": "For the remainder of 22 October, the primary mapped scenario is a test of frozen WBASE 4066.50-4077.89, followed by a pause, rejection or volatile two-sided reaction. The 08:30 completed M15/M30 close was 4088.71, 10.82 points above the WBASE upper edge. The post-cutoff quote at 08:42:35 EAT was 4078.93 bid, 1.04 above that edge; it is not a completed candle and is shown only to locate price at report time. The move is close to its frozen target, so a fresh SELL should not be inferred from this daily report or chased into WBASE.\n\nThe bearish context is supported by H4/H1 closes below WSUPPORT 4099.94-4110.88, below WMID 4123.18-4131.50, and below their short and long EMAs. The existing weekly alternate remains the controlling sequence. The next downside decision point is WBASE itself: a reaction there needs completed reversal structure before a countertrend BUY watch can strengthen. A completed H4 close below WBASE's 4066.50 lower edge would invalidate the frozen WBASE buy idea; this map defines no further downside target below that zone.\n\nA recovery path requires price to reclaim and hold WSUPPORT, first 4099.94 then 4110.88, with completed M30/H1 structure; that would improve the local recovery context but would not by itself invalidate the broader weekly alternate. Its stated failure condition remains a completed H4 close above 4162.20.\n\nConfidence is high that the completed structure is below WSUPPORT and that WBASE is the next frozen downside zone; confidence is lower in the order and size of the remaining-day reaction because M15 momentum is easing and current price is already near the target. This is a prospective conditional watch after issuance, not a calibrated probability or a trade verdict.",
+    "weekly_status": "The original WCONTROL support-hold primary failed earlier in the week. The frozen bearish alternate remains active. On 22 October, the H4 bar from 04:00 to 08:00 closed at 4091.73 below WCONTROL low 4146.87, WMID low 4123.18 and WSUPPORT low 4099.94. This invalidates the frozen WSUPPORT buy condition and leaves WBASE 4066.50-4077.89 as the next downside target-turn zone. WBASE has not been touched by completed candles through 08:30. The weekly alternate's stated invalidation is a completed H4 close above 4162.20; weekly levels remain unchanged.",
     "contexts": [
       {
         "frame": "H4",
-        "headline": "Improving correction within the bearish backdrop",
-        "text": "The 16:00-open bar completed at 20:00 with O 4129.55, H 4141.33, L 4121.55, C 4131.55. Higher recent lows and closes show recovery; close is above EMA10 4128.31 but below EMA20 4135.83, EMA50 4147.79 and EMA200 4219.28. MACD main -9.03 remains negative while histogram improves to -1.08 from -2.23. This is easing downside pressure, not bearish acceleration or proof of a broad bullish regime turn. The 20:00-open H4 is forming at the cutoff and excluded."
+        "headline": "Bearish pressure below all major averages",
+        "text": "The 04:00-open bar completed at 08:00 with O 4113.31, H 4124.04, L 4087.95, C 4091.73. The close is below EMA10 4120.95, EMA20 4130.08, EMA50 4144.04 and EMA200 4216.20. MACD main is -10.74 and histogram -2.21; its three-bar slope is negative while the five-bar slope is positive, so the short and broader histogram windows are mixed. The completed close below WSUPPORT 4099.94 is decisive for the frozen support-buy invalidation and downside path, but WBASE is close enough to raise reaction risk.",
+        "bar_time": "2026-10-22 04:00:00",
+        "close_time": "2026-10-22 08:00:00"
       },
       {
         "frame": "H1",
-        "headline": "Recovery context, fragile acceptance above WMID",
-        "text": "The 19:00-open bar completed at 20:00 at 4131.55, above EMA10 4128.19 and EMA20 4126.35, but just below EMA50 4131.84 and far below EMA200 4149.79. MACD main is positive at 0.73; positive histogram 2.10 is fading from 2.75 at 15:00. The 19:00 and 20:00 closes sit only 0.06 and 0.05 above WMID high, so acceptance is narrow and vulnerable to retesting. Existing recovery context is not a new entry confirmation."
+        "headline": "Downside permission context remains strong",
+        "text": "The 07:00-open bar completed at 08:00 with O 4092.17, H 4093.46, L 4087.95, C 4091.73. It is below EMA10 4112.75, EMA20 4118.77, EMA50 4126.73 and EMA200 4146.55. MACD main is -5.96, signal -2.02 and histogram -3.93, with three- and five-bar slopes both negative. This supports the bearish daily context; it does not authorize a fresh entry.",
+        "bar_time": "2026-10-22 07:00:00",
+        "close_time": "2026-10-22 08:00:00"
       },
       {
         "frame": "M30",
-        "headline": "Recovery structure is holding, momentum nearly flat",
-        "text": "The 20:00-open bar completed at 20:30 at 4132.29, above EMA10 4131.91, EMA20 4129.60 and EMA50 4127.75, but below EMA200 4140.79. MACD main 2.90 is easing; histogram has faded to 0.055 from 0.216 at 20:00. Price has not accepted through the repeated 4140-4142 ceiling. Sustained acceptance below WMID would weaken the recovery."
+        "headline": "Bearish structure, but target is nearby",
+        "text": "The 08:00-open bar completed at 08:30 at tick-reconstructed O 4091.71, H 4092.86, L 4085.68, C 4088.71. It is below EMA10 4102.39, EMA20 4111.59, EMA50 4120.18 and EMA200 4136.21. MACD main is -9.71 and histogram -3.85; recent histogram slopes remain negative. The supplemental tick OHLC is used because the latest official M30 rate differed from the completed-tick reconstruction; the discrepancy and source values are preserved in the receipt.",
+        "bar_time": "2026-10-22 08:00:00",
+        "close_time": "2026-10-22 08:30:00"
       },
       {
         "frame": "M15",
-        "headline": "A small reclaim, without directional acceleration",
-        "text": "The 20:15-open bar completed at 20:30 with O 4131.80, H 4134.33, L 4130.95, C 4132.29. It retested WMID high and closed above it, just above EMA10 4132.12 and EMA20 4131.42 but slightly below EMA200 4132.40. MACD main is positive at 1.31 but declining; histogram is negative at -0.385, marginally improved from -0.401. Mixed slope evidence is consistent with consolidation rather than a fresh strong directional impulse."
+        "headline": "Still below trend averages, with downside momentum easing",
+        "text": "The 08:15-open bar completed at 08:30 at tick-reconstructed O 4087.50, H 4089.36, L 4085.68, C 4088.71. It is below EMA10 4094.71, EMA20 4102.66, EMA50 4114.40 and EMA200 4126.98. MACD main is -9.73, signal -8.40 and histogram -1.33. The three- and five-bar histogram slopes are positive, indicating easing downside momentum despite the still-bearish price/EMA structure. The latest official M15 rate differed from the completed-tick reconstruction, so the tick-derived close is used and the discrepancy is disclosed.",
+        "bar_time": "2026-10-22 08:15:00",
+        "close_time": "2026-10-22 08:30:00"
       }
     ],
     "active_levels": [
-      "WMID 4123.18-4131.50 is the immediate frozen control/support test; price is only 0.79 above its upper edge, about 0.12 M15 ATR.",
-      "Observed 4139.57-4142.01 is a dynamic intraday reaction ceiling, not a replacement frozen weekly zone.",
-      "WCONTROL 4146.87-4162.20 is the nearest higher frozen zone. Its near edge is 14.58 away, about 2.21 M15 ATR at the cutoff.",
-      "WSUPPORT 4099.94-4110.88 is the next lower frozen support beyond WMID. Do not skip intervening WMID when assessing an upper-zone rejection.",
-      "WBASE 4066.50-4077.89, WRES 4186.38-4198.80 and WUPPER 4207.40-4217.27 remain unchanged extensions; none was touched today through the cutoff."
+      "At the 08:30 cutoff, tick-derived close 4088.71 was 11.23 points (1.72 M15 ATR) below the nearest frozen zone above, WSUPPORT 4099.94-4110.88, and 10.82 points (1.66 M15 ATR) above the nearest frozen zone below, WBASE 4066.50-4077.89.",
+      "The separate post-cutoff 08:42:35 EAT bid was 4078.93, just 1.04 points above WBASE's 4077.89 upper edge. WBASE was not touched by a completed candle through the 08:30 evidence cutoff.",
+      "WMID 4123.18-4131.50 and WCONTROL 4146.87-4162.20 are overhead recovery barriers; WRES 4186.38-4198.80 and WUPPER 4207.40-4217.27 are outside the base-case remaining-day path."
     ],
     "interactions": [
       {
-        "bar_time": "2026-10-21 04:00:00",
-        "close_time": "2026-10-21 04:15:00",
-        "description": "First WSUPPORT contact and day low 4106.14; close 4109.21 inside support. A touch is not an entry."
+        "bar_time": "2026-10-22 01:45:00",
+        "close_time": "2026-10-22 02:00:00",
+        "description": "First M15 contact with WMID: low 4130.27 and close 4130.94, below the zone's 4131.50 upper edge."
       },
       {
-        "bar_time": "2026-10-21 09:45:00",
-        "close_time": "2026-10-21 10:00:00",
-        "description": "Latest WSUPPORT contact: low 4110.68 and close 4112.20 above the 4110.88 near edge."
+        "bar_time": "2026-10-22 03:00:00",
+        "close_time": "2026-10-22 03:15:00",
+        "description": "First completed M15 close below WMID low 4123.18: 4120.80."
       },
       {
-        "bar_time": "2026-10-21 14:00:00",
-        "close_time": "2026-10-21 15:00:00",
-        "description": "H1 close 4139.87 above WMID high invalidated the local overnight rejection branch; original 15:00 evaluation is preserved."
+        "bar_time": "2026-10-22 04:00:00",
+        "close_time": "2026-10-22 04:15:00",
+        "description": "First M15 touch of WSUPPORT: low 4110.71 and close 4115.25, so the close remained above the zone."
       },
       {
-        "bar_time": "2026-10-21 15:00:00",
-        "close_time": "2026-10-21 15:15:00",
-        "description": "Day high 4142.01 became observable; M15 closed 4137.16, short of WCONTROL low 4146.87."
+        "bar_time": "2026-10-22 06:30:00",
+        "close_time": "2026-10-22 06:45:00",
+        "description": "First M15 close below WSUPPORT low 4099.94: 4094.31. The H1 bar from 06:00 then completed at 07:00 at 4092.19 below the zone."
       },
       {
-        "bar_time": "2026-10-21 17:00:00",
-        "close_time": "2026-10-21 17:15:00",
-        "description": "M15 swept below WMID low to 4121.55 but closed back inside at 4128.13. This wick was not completed H1 acceptance below 4123.18."
+        "bar_time": "2026-10-22 04:00:00",
+        "close_time": "2026-10-22 08:00:00",
+        "description": "H4 closed at 4091.73 below WSUPPORT low 4099.94, confirming the frozen support-buy invalidation and downside continuation context."
       },
       {
-        "bar_time": "2026-10-21 16:00:00",
-        "close_time": "2026-10-21 20:00:00",
-        "description": "H4 completed at 4131.55, above EMA10 but below EMA20; improving recovery context without a higher-control breakout."
-      },
-      {
-        "bar_time": "2026-10-21 20:15:00",
-        "close_time": "2026-10-21 20:30:00",
-        "description": "Most recent WMID retest: low 4130.95 and close 4132.29, above the 4131.50 boundary. No WCONTROL touch today through this cutoff."
+        "bar_time": "2026-10-22 08:15:00",
+        "close_time": "2026-10-22 08:30:00",
+        "description": "Latest completed M15 close, reconstructed from fully covered bid ticks, was 4088.71. WBASE remained untouched by completed candles at the cutoff."
       }
     ],
     "watch_conditions": {
-      "BUY / recovery watch": "A held WMID retest plus completed H1/M30 recovery structure, followed by acceptance through 4139.57-4142.01, supports a test of WCONTROL. Any actual countertrend BUY still needs an explicit H4 turn/allowance and the complete setup-specific gates in EVALUATE.",
-      "SELL / failure watch": "An actual rejection at the observed upper ceiling or WCONTROL must be assessed as a new setup. A completed H1 loss below 4123.18 with M30 acceptance activates the lower-path watch; the old failed WMID rejection is not revived.",
-      "No-trade / no-chase": "Two-sided WMID churn and fading momentum favor patience. Current upside room to WCONTROL is only 2.21 M15 ATR, a provisional location screen below the 2.5-ATR fresh-entry minimum. No exact-time full confirmation or consumed-leg percentage is asserted in this DAILY report. An EVALUATE request is required for a current entry verdict; both <65% consumed and >=2.5 confirmation-time M15 ATR must pass."
+      "BUY / WBASE reaction watch": "WBASE is a target-turn zone, not an automatic BUY. A recovery watch needs a completed M15 reversal/qualification, a subsequent trigger under the frozen setup, M30 confirmation, H1 permission and compatible H4 allowance. A completed H4 close below 4066.50 invalidates the WBASE buy idea.",
+      "SELL / continuation watch": "The frozen bearish alternate remains active, but price is near WBASE. Do not infer a fresh SELL from this daily report or chase into the target. A pullback toward WSUPPORT 4099.94-4110.88 followed by completed rejection may warrant a new EVALUATE; no fresh entry is established here.",
+      "Recovery / invalidation watch": "A completed reclaim of WSUPPORT, first above 4099.94 and then 4110.88, with M30/H1 structure would improve the local recovery context. The weekly alternate remains invalidated only by its frozen completed-H4 condition above 4162.20.",
+      "No-trade / no-chase": "The post-cutoff quote is close to the WBASE target and the M15 histogram is easing, so late downside chasing carries elevated target/reaction risk. DAILY does not calculate confirmation-time consumption or ATR no-chase gates. Request EVALUATE at an exact cutoff for a fresh BUY/SELL decision."
     },
     "limitations": [
-      "Evidence is complete at the locked 20:30 cutoff; it is not a live quote stream. The refresh completed at 20:43:51, when 20:30 was the latest completed M15 boundary. Later bars are not used.",
-      "The original package's age warnings for H4/H1 are preserved. Their expected endpoint is 20:00 at this cutoff, so neither is materially stale.",
-      "Seven selected recent intervals were checked against retained bid ticks over [bar_time, close_time); all had both endpoint gaps within 60 seconds and matching eligible OHLC. This is targeted verification, not an audit of every historical tick.",
-      "The weekly map was issued midweek on 20 October at 23:14:14 from preweek evidence; no claim of issuance before the week's earlier moves is made. No new V2 weekly map is issued by this update.",
-      "This update is DAILY context only. The last formal entry evaluation remains the separately dated 15:00 report. Its WAIT verdict must not be presented as a new 20:30 entry verdict.",
-      "News, spreads, execution costs and exact future high/low or closing price are not forecast. No calibrated probability, trade profitability or guaranteed sequence is claimed."
+      "Causal evidence cutoff is 08:30 EAT. H4/H1 close at their expected 08:00 boundaries; M30/M15 close at their expected 08:30 boundaries. Original age-based H4/H1 warnings are preserved and are not material staleness.",
+      "The live quote at 08:42:35 EAT (bid 4078.93, ask 4079.07) is after the bar cutoff and is shown separately; the 08:30-08:45 M15/M30 bars were still forming and are excluded from analysis.",
+      "The latest official MT5 M15 and M30 bars differed from completed bid-tick reconstruction in their recent OHLC, including the close. Supplemental tick-derived bars use the repository's accepted fallback, merge and enrichment functions; endpoint coverage, tick counts and raw-tick hashes are recorded. Both supplemental closes remain below WSUPPORT, so the structural conclusion is unchanged. Original official values remain in the receipt.",
+      "The weekly map XAUUSD_WEEK_20261019_V1 was issued midweek on 20 October at 23:14:14 EAT from preweek evidence. This daily update does not redraw it or issue a new weekly V2.",
+      "This is DAILY context, not a fresh entry verdict. The last formal EVALUATE was 21 October 15:00 with WAIT and remains a separate historical assessment. No BUY/SELL allowed or denied verdict is issued for 22 October.",
+      "No calibrated probability, guarantee, lower target beyond frozen WBASE, news assessment, execution-cost estimate or profitability claim is made."
     ],
-    "created_at_eat": "2026-10-21T20:48:29+03:00"
+    "created_at_eat": "2026-10-22T08:45:04+03:00"
   },
   "daily_facts": {
-    "cutoff": "2026-10-21 20:30:00",
+    "cutoff": "2026-10-22 08:30:00",
     "forecast_id": "XAUUSD_WEEK_20261019_V1",
     "levels_sha256": "b9080f189c29071fce0e1c94abe87c3c3061e03da2b15223da0ea6d717358007",
     "validation": {
       "H4": {
-        "expected_latest_completed": "2026-10-21 20:00:00",
-        "actual_latest_completed": "2026-10-21 20:00:00",
+        "expected_latest_completed": "2026-10-22 08:00:00",
+        "actual_latest_completed": "2026-10-22 08:00:00",
         "causal_only": true,
-        "source_sha256": "fcd1bb99c7eddf8da8968739559c8243723218bc4288c1a8688d22d291e6c788",
+        "source_sha256": "b26bdf947a96e229da066b954ae8761bcee27ccb0e7d7b096564d37dcad63b95",
         "export_rows": 90,
         "tick_verified_intervals": 1,
-        "current_session_gaps": 0
+        "current_session_gaps": 0,
+        "official_vs_tick_recent_mismatches": []
       },
       "H1": {
-        "expected_latest_completed": "2026-10-21 20:00:00",
-        "actual_latest_completed": "2026-10-21 20:00:00",
+        "expected_latest_completed": "2026-10-22 08:00:00",
+        "actual_latest_completed": "2026-10-22 08:00:00",
         "causal_only": true,
-        "source_sha256": "8910f3ee52ea96685202ecd7ce360bbaf484b0072d7f582a611afd91af63a4a3",
+        "source_sha256": "dcceeb52d4f86d8c119ec58129faa1516f61dc2f5bf756ca5490f837b87c3dbb",
         "export_rows": 96,
         "tick_verified_intervals": 1,
-        "current_session_gaps": 0
+        "current_session_gaps": 0,
+        "official_vs_tick_recent_mismatches": []
       },
       "M30": {
-        "expected_latest_completed": "2026-10-21 20:30:00",
-        "actual_latest_completed": "2026-10-21 20:30:00",
+        "expected_latest_completed": "2026-10-22 08:30:00",
+        "actual_latest_completed": "2026-10-22 08:30:00",
         "causal_only": true,
-        "source_sha256": "22c1b7110c8492f221f69a92f3a42558ac0a305165b7b6cf9a0d5e93718369c9",
+        "source_sha256": "94ef5e94a928570433574e0761863ec319ab38766020d7cf363696947ddca79b",
         "export_rows": 120,
         "tick_verified_intervals": 2,
-        "current_session_gaps": 0
+        "current_session_gaps": 0,
+        "official_vs_tick_recent_mismatches": [
+          {
+            "bar_time": "2026-10-22 08:00:00",
+            "official_ohlc": {
+              "open": 4091.71,
+              "high": 4092.86,
+              "low": 4085.87,
+              "close": 4086.39
+            },
+            "tick_ohlc": {
+              "open": 4091.71,
+              "high": 4092.86,
+              "low": 4085.68,
+              "close": 4088.71
+            },
+            "tick_minus_official": {
+              "open": 0.0,
+              "high": 0.0,
+              "low": -0.19,
+              "close": 2.32
+            }
+          }
+        ]
       },
       "M15": {
-        "expected_latest_completed": "2026-10-21 20:30:00",
-        "actual_latest_completed": "2026-10-21 20:30:00",
+        "expected_latest_completed": "2026-10-22 08:30:00",
+        "actual_latest_completed": "2026-10-22 08:30:00",
         "causal_only": true,
-        "source_sha256": "716384adf74530d1eec3bda001c7298a950bfd1eb87090d01112e384aa84479f",
+        "source_sha256": "cda9b2c7fffdc5815ab3184684685520e045f77a4cdd0a57cb27a43b37324723",
         "export_rows": 160,
         "tick_verified_intervals": 3,
-        "current_session_gaps": 0
+        "current_session_gaps": 0,
+        "official_vs_tick_recent_mismatches": [
+          {
+            "bar_time": "2026-10-22 08:15:00",
+            "official_ohlc": {
+              "open": 4087.5,
+              "high": 4089.36,
+              "low": 4085.87,
+              "close": 4086.32
+            },
+            "tick_ohlc": {
+              "open": 4087.5,
+              "high": 4089.36,
+              "low": 4085.68,
+              "close": 4088.71
+            },
+            "tick_minus_official": {
+              "open": 0.0,
+              "high": 0.0,
+              "low": -0.19,
+              "close": 2.39
+            }
+          }
+        ]
       }
     },
-    "common_effective_cutoff": "2026-10-21 20:00:00",
+    "common_effective_cutoff": "2026-10-22 08:00:00",
     "today_ohlc": {
-      "open": 4127.02,
-      "high": 4142.01,
-      "low": 4106.14,
-      "close_at_cutoff": 4132.29,
-      "body_change": 5.269999999999527,
-      "body_pct": 0.12769504388152608
+      "open": 4144.27,
+      "high": 4145.07,
+      "low": 4085.68,
+      "close_at_cutoff": 4088.71,
+      "body_change": -55.5600000000004,
+      "body_pct": -1.3406462416782783
     },
     "latest": {
       "H4": {
-        "time": "2026-10-21T16:00:00.000",
-        "close_time": "2026-10-21T20:00:00.000",
-        "open": 4129.55,
-        "high": 4141.33,
-        "low": 4121.55,
-        "close": 4131.55,
-        "ema10": 4128.3098887237,
-        "ema20": 4135.8297337019,
-        "ema50": 4147.7927771764,
-        "ema200": 4219.2823472454,
-        "macd_main": -9.0341921391,
-        "macd_signal": -7.9584727646,
-        "macd_hist": -1.0757193744,
-        "macd_hist_slope_3": 3.2183980959,
-        "macd_hist_slope_5": 3.5417136003,
-        "atr14": 22.2078571429
+        "time": "2026-10-22T04:00:00.000",
+        "close_time": "2026-10-22T08:00:00.000",
+        "open": 4113.31,
+        "high": 4124.04,
+        "low": 4087.95,
+        "close": 4091.73,
+        "ema10": 4120.9524183919,
+        "ema20": 4130.0798081699,
+        "ema50": 4144.0432940726,
+        "ema200": 4216.2041932024,
+        "macd_main": -10.7399189803,
+        "macd_signal": -8.5269074993,
+        "macd_hist": -2.213011481,
+        "macd_hist_slope_3": -1.1372921065,
+        "macd_hist_slope_5": 1.3582351511,
+        "atr14": 25.3685714286
       },
       "H1": {
-        "time": "2026-10-21T19:00:00.000",
-        "close_time": "2026-10-21T20:00:00.000",
-        "open": 4131.54,
-        "high": 4139.57,
-        "low": 4127.41,
-        "close": 4131.55,
-        "ema10": 4128.1928912205,
-        "ema20": 4126.3475220336,
-        "ema50": 4131.836206739,
-        "ema200": 4149.7862398311,
-        "macd_main": 0.7322450667,
-        "macd_signal": -1.3645447724,
-        "macd_hist": 2.0967898391,
-        "macd_hist_slope_3": -0.434597442,
-        "macd_hist_slope_5": -0.653076569,
-        "atr14": 12.9464285714
+        "time": "2026-10-22T07:00:00.000",
+        "close_time": "2026-10-22T08:00:00.000",
+        "open": 4092.17,
+        "high": 4093.46,
+        "low": 4087.95,
+        "close": 4091.73,
+        "ema10": 4112.7502555345,
+        "ema20": 4118.765048148,
+        "ema50": 4126.73030147,
+        "ema200": 4146.549123334,
+        "macd_main": -5.9592524648,
+        "macd_signal": -2.0249502134,
+        "macd_hist": -3.9343022514,
+        "macd_hist_slope_3": -2.7427110723,
+        "macd_hist_slope_5": -4.5759515109,
+        "atr14": 15.2592857143
       },
       "M30": {
-        "time": "2026-10-21T20:00:00.000",
-        "close_time": "2026-10-21T20:30:00.000",
-        "open": 4131.51,
-        "high": 4134.33,
-        "low": 4128.87,
-        "close": 4132.29,
-        "ema10": 4131.9071579951,
-        "ema20": 4129.5951703056,
-        "ema50": 4127.7471949329,
-        "ema200": 4140.7936419986,
-        "macd_main": 2.8968117074,
-        "macd_signal": 2.8414295873,
-        "macd_hist": 0.0553821201,
-        "macd_hist_slope_3": -0.6465564167,
-        "macd_hist_slope_5": -0.7659611513,
-        "atr14": 9.81
+        "time": "2026-10-22T08:00:00.000",
+        "close_time": "2026-10-22T08:30:00.000",
+        "open": 4091.71,
+        "high": 4092.86,
+        "low": 4085.68,
+        "close": 4088.71,
+        "ema10": 4102.3899615152,
+        "ema20": 4111.594232915,
+        "ema50": 4120.1840318995,
+        "ema200": 4136.2143580359,
+        "macd_main": -9.7127775824,
+        "macd_signal": -5.8647859084,
+        "macd_hist": -3.847991674,
+        "macd_hist_slope_3": -0.2711637863,
+        "macd_hist_slope_5": -1.9207534065,
+        "atr14": 8.8735714286
       },
       "M15": {
-        "time": "2026-10-21T20:15:00.000",
-        "close_time": "2026-10-21T20:30:00.000",
-        "open": 4131.8,
-        "high": 4134.33,
-        "low": 4130.95,
-        "close": 4132.29,
-        "ema10": 4132.1241766688,
-        "ema20": 4131.4154821834,
-        "ema50": 4128.3030190177,
-        "ema200": 4132.3964043391,
-        "macd_main": 1.3121512418,
-        "macd_signal": 1.6970751842,
-        "macd_hist": -0.3849239424,
-        "macd_hist_slope_3": -0.0935222866,
-        "macd_hist_slope_5": 0.1911127318,
-        "atr14": 6.5971428571
+        "time": "2026-10-22T08:15:00.000",
+        "close_time": "2026-10-22T08:30:00.000",
+        "open": 4087.5,
+        "high": 4089.36,
+        "low": 4085.68,
+        "close": 4088.71,
+        "ema10": 4094.7088717577,
+        "ema20": 4102.6587282934,
+        "ema50": 4114.39706111,
+        "ema200": 4126.9786343225,
+        "macd_main": -9.732263878,
+        "macd_signal": -8.4044489271,
+        "macd_hist": -1.3278149509,
+        "macd_hist_slope_3": 0.8320212817,
+        "macd_hist_slope_5": 1.0772031561,
+        "atr14": 6.5371428571
       }
     },
     "interactions": {
@@ -384,50 +434,50 @@
       "WMID": {
         "low": 4123.18,
         "high": 4131.5,
-        "touched_bar_count": 44,
+        "touched_bar_count": 7,
         "first_touch": [
           {
-            "time": "2026-10-21T01:00:00.000",
-            "close_time": "2026-10-21T01:15:00.000",
-            "open": 4127.02,
-            "high": 4128.45,
-            "low": 4124.9,
-            "close": 4127.07
+            "time": "2026-10-22T01:45:00.000",
+            "close_time": "2026-10-22T02:00:00.000",
+            "open": 4133.89,
+            "high": 4134.24,
+            "low": 4130.27,
+            "close": 4130.94
           }
         ],
         "last_touch": [
           {
-            "time": "2026-10-21T20:15:00.000",
-            "close_time": "2026-10-21T20:30:00.000",
-            "open": 4131.8,
-            "high": 4134.33,
-            "low": 4130.95,
-            "close": 4132.29
+            "time": "2026-10-22T05:30:00.000",
+            "close_time": "2026-10-22T05:45:00.000",
+            "open": 4118.08,
+            "high": 4124.04,
+            "low": 4114.6,
+            "close": 4116.74
           }
         ]
       },
       "WSUPPORT": {
         "low": 4099.94,
         "high": 4110.88,
-        "touched_bar_count": 3,
+        "touched_bar_count": 7,
         "first_touch": [
           {
-            "time": "2026-10-21T04:00:00.000",
-            "close_time": "2026-10-21T04:15:00.000",
-            "open": 4117.1,
-            "high": 4118.41,
-            "low": 4106.14,
-            "close": 4109.21
+            "time": "2026-10-22T04:00:00.000",
+            "close_time": "2026-10-22T04:15:00.000",
+            "open": 4113.31,
+            "high": 4118.45,
+            "low": 4110.71,
+            "close": 4115.25
           }
         ],
         "last_touch": [
           {
-            "time": "2026-10-21T09:45:00.000",
-            "close_time": "2026-10-21T10:00:00.000",
-            "open": 4114.27,
-            "high": 4114.93,
-            "low": 4110.68,
-            "close": 4112.2
+            "time": "2026-10-22T06:30:00.000",
+            "close_time": "2026-10-22T06:45:00.000",
+            "open": 4100.05,
+            "high": 4100.45,
+            "low": 4091.32,
+            "close": 4094.31
           }
         ]
       },
@@ -453,69 +503,559 @@
         "last_touch": []
       }
     },
-    "provisional_distances": {
-      "WCONTROL_low_points": 14.579999999999927,
-      "WCONTROL_low_m15_atr": 2.21004763967085,
-      "WMID_high_points": 0.7899999999999636,
-      "WMID_high_m15_atr": 0.11974880900822357,
-      "scope": "Distances only; no entry, turn reference or confirmation-time no-chase verdict."
+    "completed_close_interactions": {
+      "WCONTROL": {
+        "H4": {
+          "first_close_below_low": [
+            {
+              "time": "2026-10-22T00:00:00.000",
+              "close_time": "2026-10-22T04:00:00.000",
+              "close": 4113.3
+            }
+          ],
+          "last_close_below_low": [
+            {
+              "time": "2026-10-22T04:00:00.000",
+              "close_time": "2026-10-22T08:00:00.000",
+              "close": 4091.73
+            }
+          ],
+          "first_close_above_high": [],
+          "last_close_above_high": []
+        },
+        "H1": {
+          "first_close_below_low": [
+            {
+              "time": "2026-10-22T01:00:00.000",
+              "close_time": "2026-10-22T02:00:00.000",
+              "close": 4130.94
+            }
+          ],
+          "last_close_below_low": [
+            {
+              "time": "2026-10-22T07:00:00.000",
+              "close_time": "2026-10-22T08:00:00.000",
+              "close": 4091.73
+            }
+          ],
+          "first_close_above_high": [],
+          "last_close_above_high": []
+        },
+        "M30": {
+          "first_close_below_low": [
+            {
+              "time": "2026-10-22T01:00:00.000",
+              "close_time": "2026-10-22T01:30:00.000",
+              "close": 4136.83
+            }
+          ],
+          "last_close_below_low": [
+            {
+              "time": "2026-10-22T08:00:00.000",
+              "close_time": "2026-10-22T08:30:00.000",
+              "close": 4088.71
+            }
+          ],
+          "first_close_above_high": [],
+          "last_close_above_high": []
+        },
+        "M15": {
+          "first_close_below_low": [
+            {
+              "time": "2026-10-22T01:00:00.000",
+              "close_time": "2026-10-22T01:15:00.000",
+              "close": 4138.7
+            }
+          ],
+          "last_close_below_low": [
+            {
+              "time": "2026-10-22T08:15:00.000",
+              "close_time": "2026-10-22T08:30:00.000",
+              "close": 4088.71
+            }
+          ],
+          "first_close_above_high": [],
+          "last_close_above_high": []
+        }
+      },
+      "WMID": {
+        "H4": {
+          "first_close_below_low": [
+            {
+              "time": "2026-10-22T00:00:00.000",
+              "close_time": "2026-10-22T04:00:00.000",
+              "close": 4113.3
+            }
+          ],
+          "last_close_below_low": [
+            {
+              "time": "2026-10-22T04:00:00.000",
+              "close_time": "2026-10-22T08:00:00.000",
+              "close": 4091.73
+            }
+          ],
+          "first_close_above_high": [],
+          "last_close_above_high": []
+        },
+        "H1": {
+          "first_close_below_low": [
+            {
+              "time": "2026-10-22T03:00:00.000",
+              "close_time": "2026-10-22T04:00:00.000",
+              "close": 4113.3
+            }
+          ],
+          "last_close_below_low": [
+            {
+              "time": "2026-10-22T07:00:00.000",
+              "close_time": "2026-10-22T08:00:00.000",
+              "close": 4091.73
+            }
+          ],
+          "first_close_above_high": [],
+          "last_close_above_high": []
+        },
+        "M30": {
+          "first_close_below_low": [
+            {
+              "time": "2026-10-22T03:00:00.000",
+              "close_time": "2026-10-22T03:30:00.000",
+              "close": 4119.05
+            }
+          ],
+          "last_close_below_low": [
+            {
+              "time": "2026-10-22T08:00:00.000",
+              "close_time": "2026-10-22T08:30:00.000",
+              "close": 4088.71
+            }
+          ],
+          "first_close_above_high": [
+            {
+              "time": "2026-10-22T01:00:00.000",
+              "close_time": "2026-10-22T01:30:00.000",
+              "close": 4136.83
+            }
+          ],
+          "last_close_above_high": [
+            {
+              "time": "2026-10-22T01:00:00.000",
+              "close_time": "2026-10-22T01:30:00.000",
+              "close": 4136.83
+            }
+          ]
+        },
+        "M15": {
+          "first_close_below_low": [
+            {
+              "time": "2026-10-22T03:00:00.000",
+              "close_time": "2026-10-22T03:15:00.000",
+              "close": 4120.8
+            }
+          ],
+          "last_close_below_low": [
+            {
+              "time": "2026-10-22T08:15:00.000",
+              "close_time": "2026-10-22T08:30:00.000",
+              "close": 4088.71
+            }
+          ],
+          "first_close_above_high": [
+            {
+              "time": "2026-10-22T01:00:00.000",
+              "close_time": "2026-10-22T01:15:00.000",
+              "close": 4138.7
+            }
+          ],
+          "last_close_above_high": [
+            {
+              "time": "2026-10-22T01:30:00.000",
+              "close_time": "2026-10-22T01:45:00.000",
+              "close": 4133.88
+            }
+          ]
+        }
+      },
+      "WSUPPORT": {
+        "H4": {
+          "first_close_below_low": [
+            {
+              "time": "2026-10-22T04:00:00.000",
+              "close_time": "2026-10-22T08:00:00.000",
+              "close": 4091.73
+            }
+          ],
+          "last_close_below_low": [
+            {
+              "time": "2026-10-22T04:00:00.000",
+              "close_time": "2026-10-22T08:00:00.000",
+              "close": 4091.73
+            }
+          ],
+          "first_close_above_high": [
+            {
+              "time": "2026-10-22T00:00:00.000",
+              "close_time": "2026-10-22T04:00:00.000",
+              "close": 4113.3
+            }
+          ],
+          "last_close_above_high": [
+            {
+              "time": "2026-10-22T00:00:00.000",
+              "close_time": "2026-10-22T04:00:00.000",
+              "close": 4113.3
+            }
+          ]
+        },
+        "H1": {
+          "first_close_below_low": [
+            {
+              "time": "2026-10-22T06:00:00.000",
+              "close_time": "2026-10-22T07:00:00.000",
+              "close": 4092.19
+            }
+          ],
+          "last_close_below_low": [
+            {
+              "time": "2026-10-22T07:00:00.000",
+              "close_time": "2026-10-22T08:00:00.000",
+              "close": 4091.73
+            }
+          ],
+          "first_close_above_high": [
+            {
+              "time": "2026-10-22T01:00:00.000",
+              "close_time": "2026-10-22T02:00:00.000",
+              "close": 4130.94
+            }
+          ],
+          "last_close_above_high": [
+            {
+              "time": "2026-10-22T05:00:00.000",
+              "close_time": "2026-10-22T06:00:00.000",
+              "close": 4116.21
+            }
+          ]
+        },
+        "M30": {
+          "first_close_below_low": [
+            {
+              "time": "2026-10-22T06:30:00.000",
+              "close_time": "2026-10-22T07:00:00.000",
+              "close": 4092.19
+            }
+          ],
+          "last_close_below_low": [
+            {
+              "time": "2026-10-22T08:00:00.000",
+              "close_time": "2026-10-22T08:30:00.000",
+              "close": 4088.71
+            }
+          ],
+          "first_close_above_high": [
+            {
+              "time": "2026-10-22T01:00:00.000",
+              "close_time": "2026-10-22T01:30:00.000",
+              "close": 4136.83
+            }
+          ],
+          "last_close_above_high": [
+            {
+              "time": "2026-10-22T05:30:00.000",
+              "close_time": "2026-10-22T06:00:00.000",
+              "close": 4116.21
+            }
+          ]
+        },
+        "M15": {
+          "first_close_below_low": [
+            {
+              "time": "2026-10-22T06:30:00.000",
+              "close_time": "2026-10-22T06:45:00.000",
+              "close": 4094.31
+            }
+          ],
+          "last_close_below_low": [
+            {
+              "time": "2026-10-22T08:15:00.000",
+              "close_time": "2026-10-22T08:30:00.000",
+              "close": 4088.71
+            }
+          ],
+          "first_close_above_high": [
+            {
+              "time": "2026-10-22T01:00:00.000",
+              "close_time": "2026-10-22T01:15:00.000",
+              "close": 4138.7
+            }
+          ],
+          "last_close_above_high": [
+            {
+              "time": "2026-10-22T05:45:00.000",
+              "close_time": "2026-10-22T06:00:00.000",
+              "close": 4116.21
+            }
+          ]
+        }
+      },
+      "WBASE": {
+        "H4": {
+          "first_close_below_low": [],
+          "last_close_below_low": [],
+          "first_close_above_high": [
+            {
+              "time": "2026-10-22T00:00:00.000",
+              "close_time": "2026-10-22T04:00:00.000",
+              "close": 4113.3
+            }
+          ],
+          "last_close_above_high": [
+            {
+              "time": "2026-10-22T04:00:00.000",
+              "close_time": "2026-10-22T08:00:00.000",
+              "close": 4091.73
+            }
+          ]
+        },
+        "H1": {
+          "first_close_below_low": [],
+          "last_close_below_low": [],
+          "first_close_above_high": [
+            {
+              "time": "2026-10-22T01:00:00.000",
+              "close_time": "2026-10-22T02:00:00.000",
+              "close": 4130.94
+            }
+          ],
+          "last_close_above_high": [
+            {
+              "time": "2026-10-22T07:00:00.000",
+              "close_time": "2026-10-22T08:00:00.000",
+              "close": 4091.73
+            }
+          ]
+        },
+        "M30": {
+          "first_close_below_low": [],
+          "last_close_below_low": [],
+          "first_close_above_high": [
+            {
+              "time": "2026-10-22T01:00:00.000",
+              "close_time": "2026-10-22T01:30:00.000",
+              "close": 4136.83
+            }
+          ],
+          "last_close_above_high": [
+            {
+              "time": "2026-10-22T08:00:00.000",
+              "close_time": "2026-10-22T08:30:00.000",
+              "close": 4088.71
+            }
+          ]
+        },
+        "M15": {
+          "first_close_below_low": [],
+          "last_close_below_low": [],
+          "first_close_above_high": [
+            {
+              "time": "2026-10-22T01:00:00.000",
+              "close_time": "2026-10-22T01:15:00.000",
+              "close": 4138.7
+            }
+          ],
+          "last_close_above_high": [
+            {
+              "time": "2026-10-22T08:15:00.000",
+              "close_time": "2026-10-22T08:30:00.000",
+              "close": 4088.71
+            }
+          ]
+        }
+      },
+      "WRES": {
+        "H4": {
+          "first_close_below_low": [
+            {
+              "time": "2026-10-22T00:00:00.000",
+              "close_time": "2026-10-22T04:00:00.000",
+              "close": 4113.3
+            }
+          ],
+          "last_close_below_low": [
+            {
+              "time": "2026-10-22T04:00:00.000",
+              "close_time": "2026-10-22T08:00:00.000",
+              "close": 4091.73
+            }
+          ],
+          "first_close_above_high": [],
+          "last_close_above_high": []
+        },
+        "H1": {
+          "first_close_below_low": [
+            {
+              "time": "2026-10-22T01:00:00.000",
+              "close_time": "2026-10-22T02:00:00.000",
+              "close": 4130.94
+            }
+          ],
+          "last_close_below_low": [
+            {
+              "time": "2026-10-22T07:00:00.000",
+              "close_time": "2026-10-22T08:00:00.000",
+              "close": 4091.73
+            }
+          ],
+          "first_close_above_high": [],
+          "last_close_above_high": []
+        },
+        "M30": {
+          "first_close_below_low": [
+            {
+              "time": "2026-10-22T01:00:00.000",
+              "close_time": "2026-10-22T01:30:00.000",
+              "close": 4136.83
+            }
+          ],
+          "last_close_below_low": [
+            {
+              "time": "2026-10-22T08:00:00.000",
+              "close_time": "2026-10-22T08:30:00.000",
+              "close": 4088.71
+            }
+          ],
+          "first_close_above_high": [],
+          "last_close_above_high": []
+        },
+        "M15": {
+          "first_close_below_low": [
+            {
+              "time": "2026-10-22T01:00:00.000",
+              "close_time": "2026-10-22T01:15:00.000",
+              "close": 4138.7
+            }
+          ],
+          "last_close_below_low": [
+            {
+              "time": "2026-10-22T08:15:00.000",
+              "close_time": "2026-10-22T08:30:00.000",
+              "close": 4088.71
+            }
+          ],
+          "first_close_above_high": [],
+          "last_close_above_high": []
+        }
+      },
+      "WUPPER": {
+        "H4": {
+          "first_close_below_low": [
+            {
+              "time": "2026-10-22T00:00:00.000",
+              "close_time": "2026-10-22T04:00:00.000",
+              "close": 4113.3
+            }
+          ],
+          "last_close_below_low": [
+            {
+              "time": "2026-10-22T04:00:00.000",
+              "close_time": "2026-10-22T08:00:00.000",
+              "close": 4091.73
+            }
+          ],
+          "first_close_above_high": [],
+          "last_close_above_high": []
+        },
+        "H1": {
+          "first_close_below_low": [
+            {
+              "time": "2026-10-22T01:00:00.000",
+              "close_time": "2026-10-22T02:00:00.000",
+              "close": 4130.94
+            }
+          ],
+          "last_close_below_low": [
+            {
+              "time": "2026-10-22T07:00:00.000",
+              "close_time": "2026-10-22T08:00:00.000",
+              "close": 4091.73
+            }
+          ],
+          "first_close_above_high": [],
+          "last_close_above_high": []
+        },
+        "M30": {
+          "first_close_below_low": [
+            {
+              "time": "2026-10-22T01:00:00.000",
+              "close_time": "2026-10-22T01:30:00.000",
+              "close": 4136.83
+            }
+          ],
+          "last_close_below_low": [
+            {
+              "time": "2026-10-22T08:00:00.000",
+              "close_time": "2026-10-22T08:30:00.000",
+              "close": 4088.71
+            }
+          ],
+          "first_close_above_high": [],
+          "last_close_above_high": []
+        },
+        "M15": {
+          "first_close_below_low": [
+            {
+              "time": "2026-10-22T01:00:00.000",
+              "close_time": "2026-10-22T01:15:00.000",
+              "close": 4138.7
+            }
+          ],
+          "last_close_below_low": [
+            {
+              "time": "2026-10-22T08:15:00.000",
+              "close_time": "2026-10-22T08:30:00.000",
+              "close": 4088.71
+            }
+          ],
+          "first_close_above_high": [],
+          "last_close_above_high": []
+        }
+      }
     },
+    "active_level_distances_at_cutoff": {
+      "price": 4088.71,
+      "m15_atr14": 6.537142857142856,
+      "nearest_frozen_level_above": {
+        "id": "WSUPPORT",
+        "low": 4099.94,
+        "high": 4110.88,
+        "distance_points": 11.229999999999563,
+        "distance_m15_atr": 1.7178758741258078
+      },
+      "nearest_frozen_level_below": {
+        "id": "WBASE",
+        "low": 4066.5,
+        "high": 4077.89,
+        "distance_points": 10.820000000000164,
+        "distance_m15_atr": 1.655157342657368
+      },
+      "scope": "Location only; not a trade verdict or confirmation-time no-chase calculation."
+    },
+    "post_cutoff_live_tick": {
+      "symbol": "XAUUSD.pro",
+      "source": "MT5 symbol_info_tick",
+      "terminal_connected": true,
+      "requested_bar_cutoff_eat": "2026-10-22T08:30:00+03:00",
+      "captured_at_utc": "2026-10-22T05:42:33.413597+00:00",
+      "tick_time_raw_epoch": 1792658555,
+      "tick_time_raw_utc_interpretation": "2026-10-22T08:42:35+00:00",
+      "tick_time_eat": "2026-10-22T08:42:35+03:00",
+      "bid": 4078.93,
+      "ask": 4079.07,
+      "use": "Post-cutoff situational quote only; excluded from candle OHLC, indicators and completed-bar analysis."
+    },
+    "post_cutoff_tick_note": "Quote is after the bar cutoff; shown separately and excluded from candle analysis.",
     "recent_candles": {
       "H4": [
-        {
-          "time": "2026-10-20T04:00:00.000",
-          "close_time": "2026-10-20T08:00:00.000",
-          "open": 4131.16,
-          "high": 4147.12,
-          "low": 4115.52,
-          "close": 4143.8,
-          "ema10": 4151.7065625133,
-          "ema20": 4154.8377964922,
-          "ema50": 4158.8206130793,
-          "ema200": 4228.4316515167,
-          "macd_main": -2.444239603,
-          "macd_signal": 0.8331534434,
-          "macd_hist": -3.2773930464,
-          "macd_hist_slope_3": -2.7036972612,
-          "macd_hist_slope_5": -6.1065380576,
-          "atr14": 24.455
-        },
-        {
-          "time": "2026-10-20T08:00:00.000",
-          "close_time": "2026-10-20T12:00:00.000",
-          "open": 4143.92,
-          "high": 4144.32,
-          "low": 4116.6,
-          "close": 4120.51,
-          "ema10": 4146.0344602381,
-          "ema20": 4151.5684825406,
-          "ema50": 4157.3182360958,
-          "ema200": 4227.357804238,
-          "macd_main": -4.8468584807,
-          "macd_signal": -0.3028489414,
-          "macd_hist": -4.5440095393,
-          "macd_hist_slope_3": -2.565019605,
-          "macd_hist_slope_5": -6.1680333738,
-          "atr14": 24.9221428571
-        },
-        {
-          "time": "2026-10-20T12:00:00.000",
-          "close_time": "2026-10-20T16:00:00.000",
-          "open": 4120.5,
-          "high": 4127.32,
-          "low": 4111.62,
-          "close": 4119.3,
-          "ema10": 4141.1736492857,
-          "ema20": 4148.4952937272,
-          "ema50": 4155.8273248763,
-          "ema200": 4226.2826022057,
-          "macd_main": -6.7705415503,
-          "macd_signal": -1.5963874632,
-          "macd_hist": -5.1741540871,
-          "macd_hist_slope_3": -1.8082352681,
-          "macd_hist_slope_5": -4.6004583019,
-          "atr14": 23.2535714286
-        },
         {
           "time": "2026-10-20T16:00:00.000",
           "close_time": "2026-10-20T20:00:00.000",
@@ -526,7 +1066,7 @@
           "ema10": 4137.5620766883,
           "ema20": 4145.9062181341,
           "ema50": 4154.4737042929,
-          "ema200": 4225.2380987012,
+          "ema200": 4225.2381524012,
           "macd_main": -8.0402016014,
           "macd_signal": -2.8851502908,
           "macd_hist": -5.1550513106,
@@ -544,7 +1084,7 @@
           "ema10": 4135.2598809268,
           "ema20": 4143.9056259309,
           "ema50": 4153.3139511834,
-          "ema200": 4224.2397096594,
+          "ema200": 4224.2397628251,
           "macd_main": -8.6569415093,
           "macd_signal": -4.0395085345,
           "macd_hist": -4.6174329748,
@@ -562,7 +1102,7 @@
           "ema10": 4131.9399025765,
           "ema20": 4141.343185366,
           "ema50": 4151.8898746664,
-          "ema200": 4223.1726478718,
+          "ema200": 4223.1727005084,
           "macd_main": -9.6716871179,
           "macd_signal": -5.1659442512,
           "macd_hist": -4.5057428667,
@@ -580,7 +1120,7 @@
           "ema10": 4128.8199202899,
           "ema20": 4138.8133581883,
           "ema50": 4150.4345854638,
-          "ema200": 4222.0941140621,
+          "ema200": 4222.094166175,
           "macd_main": -10.5335910891,
           "macd_signal": -6.2394736188,
           "macd_hist": -4.2941174703,
@@ -598,7 +1138,7 @@
           "ema10": 4127.1453893281,
           "ema20": 4136.9844669323,
           "ema50": 4149.2257781907,
-          "ema200": 4221.0743716336,
+          "ema200": 4221.074423228,
           "macd_main": -10.7035319088,
           "macd_signal": -7.1322852768,
           "macd_hist": -3.5712466321,
@@ -616,7 +1156,7 @@
           "ema10": 4127.5898639957,
           "ema20": 4136.2802319864,
           "ema50": 4148.4557476734,
-          "ema200": 4220.1640793785,
+          "ema200": 4220.1641304596,
           "macd_main": -9.918573498,
           "macd_signal": -7.689542921,
           "macd_hist": -2.229030577,
@@ -634,564 +1174,625 @@
           "ema10": 4128.3098887237,
           "ema20": 4135.8297337019,
           "ema50": 4147.7927771764,
-          "ema200": 4219.2823472454,
+          "ema200": 4219.2823978182,
           "macd_main": -9.0341921391,
           "macd_signal": -7.9584727646,
           "macd_hist": -1.0757193744,
           "macd_hist_slope_3": 3.2183980959,
           "macd_hist_slope_5": 3.5417136003,
           "atr14": 22.2078571429
+        },
+        {
+          "time": "2026-10-21T20:00:00.000",
+          "close_time": "2026-10-22T00:00:00.000",
+          "open": 4131.51,
+          "high": 4142.26,
+          "low": 4105.03,
+          "close": 4140.85,
+          "ema10": 4130.5899089558,
+          "ema20": 4136.3078543018,
+          "ema50": 4147.5205114048,
+          "ema200": 4218.5019759493,
+          "macd_main": -7.4964666626,
+          "macd_signal": -7.8660715442,
+          "macd_hist": 0.3696048817,
+          "macd_hist_slope_3": 3.9408515137,
+          "macd_hist_slope_5": 4.8753477484,
+          "atr14": 23.5592857143
+        },
+        {
+          "time": "2026-10-22T00:00:00.000",
+          "close_time": "2026-10-22T04:00:00.000",
+          "open": 4144.27,
+          "high": 4145.07,
+          "low": 4113.22,
+          "close": 4113.3,
+          "ema10": 4127.4462891456,
+          "ema20": 4134.1166300825,
+          "ema50": 4146.1785305654,
+          "ema200": 4217.455190119,
+          "macd_main": -8.4039869683,
+          "macd_signal": -7.973654629,
+          "macd_hist": -0.4303323393,
+          "macd_hist_slope_3": 1.7986982377,
+          "macd_hist_slope_5": 3.8637851311,
+          "atr14": 23.7064285714
+        },
+        {
+          "time": "2026-10-22T04:00:00.000",
+          "close_time": "2026-10-22T08:00:00.000",
+          "open": 4113.31,
+          "high": 4124.04,
+          "low": 4087.95,
+          "close": 4091.73,
+          "ema10": 4120.9524183919,
+          "ema20": 4130.0798081699,
+          "ema50": 4144.0432940726,
+          "ema200": 4216.2041932024,
+          "macd_main": -10.7399189803,
+          "macd_signal": -8.5269074993,
+          "macd_hist": -2.213011481,
+          "macd_hist_slope_3": -1.1372921065,
+          "macd_hist_slope_5": 1.3582351511,
+          "atr14": 25.3685714286
         }
       ],
       "H1": [
         {
-          "time": "2026-10-21T10:00:00.000",
-          "close_time": "2026-10-21T11:00:00.000",
-          "open": 4112.21,
-          "high": 4125.08,
-          "low": 4111.62,
-          "close": 4123.97,
-          "ema10": 4118.7966315194,
-          "ema20": 4121.8804298038,
-          "ema50": 4133.0961793949,
-          "ema200": 4151.7751931476,
-          "macd_main": -5.0401886882,
-          "macd_signal": -5.9928760216,
-          "macd_hist": 0.9526873334,
-          "macd_hist_slope_3": 0.5928609671,
-          "macd_hist_slope_5": 0.5644851843,
-          "atr14": 10.2
+          "time": "2026-10-21T21:00:00.000",
+          "close_time": "2026-10-21T22:00:00.000",
+          "open": 4136.65,
+          "high": 4141.16,
+          "low": 4113.19,
+          "close": 4113.45,
+          "ema10": 4126.761522222,
+          "ema20": 4126.0017583994,
+          "ema50": 4131.2942915726,
+          "ema200": 4149.294685863,
+          "macd_main": 0.0676168069,
+          "macd_signal": -0.6352140022,
+          "macd_hist": 0.7028308091,
+          "macd_hist_slope_3": -1.5638138322,
+          "macd_hist_slope_5": -1.8285564719,
+          "atr14": 13.7935714286
         },
         {
-          "time": "2026-10-21T11:00:00.000",
-          "close_time": "2026-10-21T12:00:00.000",
-          "open": 4123.91,
-          "high": 4124.98,
-          "low": 4117.76,
-          "close": 4119.61,
-          "ema10": 4118.9445166977,
-          "ema20": 4121.6641983939,
-          "ema50": 4132.5673096147,
-          "ema200": 4151.4551414745,
-          "macd_main": -4.6387024438,
-          "macd_signal": -5.722041306,
-          "macd_hist": 1.0833388623,
-          "macd_hist_slope_3": 0.5411339076,
-          "macd_hist_slope_5": 0.6107867303,
-          "atr14": 10.1278571429
+          "time": "2026-10-21T22:00:00.000",
+          "close_time": "2026-10-21T23:00:00.000",
+          "open": 4113.41,
+          "high": 4136.1,
+          "low": 4105.03,
+          "close": 4134.48,
+          "ema10": 4128.164881818,
+          "ema20": 4126.8092099804,
+          "ema50": 4131.4192213149,
+          "ema200": 4149.1472760534,
+          "macd_main": 0.6977656639,
+          "macd_signal": -0.368618069,
+          "macd_hist": 1.0663837329,
+          "macd_hist_slope_3": -1.0304061062,
+          "macd_hist_slope_5": -1.3081370418,
+          "atr14": 14.9342857143
         },
         {
-          "time": "2026-10-21T12:00:00.000",
-          "close_time": "2026-10-21T13:00:00.000",
-          "open": 4119.65,
-          "high": 4125.89,
-          "low": 4117.31,
-          "close": 4118.49,
-          "ema10": 4118.8618772981,
-          "ema20": 4121.3618937849,
-          "ema50": 4132.0152582573,
-          "ema200": 4151.1271301165,
-          "macd_main": -4.3606297172,
-          "macd_signal": -5.4497589883,
-          "macd_hist": 1.089129271,
-          "macd_hist_slope_3": 0.7813279846,
-          "macd_hist_slope_5": 0.7293029048,
-          "atr14": 10.3285714286
+          "time": "2026-10-21T23:00:00.000",
+          "close_time": "2026-10-22T00:00:00.000",
+          "open": 4134.6,
+          "high": 4142.26,
+          "low": 4132.39,
+          "close": 4140.85,
+          "ema10": 4130.471266942,
+          "ema20": 4128.1464280775,
+          "ema50": 4131.7890557731,
+          "ema200": 4149.0647160927,
+          "macd_main": 1.691668436,
+          "macd_signal": 0.043439232,
+          "macd_hist": 1.648229204,
+          "macd_hist_slope_3": -0.5662630674,
+          "macd_hist_slope_5": -0.6184154373,
+          "atr14": 15.0164285714
         },
         {
-          "time": "2026-10-21T13:00:00.000",
-          "close_time": "2026-10-21T14:00:00.000",
-          "open": 4118.43,
-          "high": 4129.2,
-          "low": 4111.65,
-          "close": 4127.04,
-          "ema10": 4120.3488086984,
-          "ema20": 4121.9026658054,
-          "ema50": 4131.8201500903,
-          "ema200": 4150.8874571801,
-          "macd_main": -3.411021402,
-          "macd_signal": -5.042011471,
-          "macd_hist": 1.630990069,
-          "macd_hist_slope_3": 0.6783027357,
-          "macd_hist_slope_5": 1.0887851143,
-          "atr14": 11.0721428571
+          "time": "2026-10-22T01:00:00.000",
+          "close_time": "2026-10-22T02:00:00.000",
+          "open": 4144.27,
+          "high": 4145.07,
+          "low": 4130.27,
+          "close": 4130.94,
+          "ema10": 4130.5564911344,
+          "ema20": 4128.4124825463,
+          "ema50": 4131.7557594683,
+          "ema200": 4148.8843706589,
+          "macd_main": 1.6605476057,
+          "macd_signal": 0.3668609067,
+          "macd_hist": 1.293686699,
+          "macd_hist_slope_3": 0.5908558899,
+          "macd_hist_slope_5": -0.8031031401,
+          "atr14": 15.1121428571
         },
         {
-          "time": "2026-10-21T14:00:00.000",
-          "close_time": "2026-10-21T15:00:00.000",
-          "open": 4127.03,
-          "high": 4141.11,
-          "low": 4125.31,
-          "close": 4139.87,
-          "ema10": 4123.8981162078,
-          "ema20": 4123.6138404906,
-          "ema50": 4132.1358304789,
-          "ema200": 4150.7778307405,
-          "macd_main": -1.6046784609,
-          "macd_signal": -4.354544869,
-          "macd_hist": 2.7498664081,
-          "macd_hist_slope_3": 1.6665275458,
-          "macd_hist_slope_5": 2.4420651216,
-          "atr14": 11.8221428571
+          "time": "2026-10-22T02:00:00.000",
+          "close_time": "2026-10-22T03:00:00.000",
+          "open": 4131.23,
+          "high": 4131.28,
+          "low": 4122.16,
+          "close": 4125.32,
+          "ema10": 4129.6044018372,
+          "ema20": 4128.1179603991,
+          "ema50": 4131.503376744,
+          "ema200": 4148.6498993091,
+          "macd_main": 1.1689224811,
+          "macd_signal": 0.5272732216,
+          "macd_hist": 0.6416492595,
+          "macd_hist_slope_3": -0.4247344734,
+          "macd_hist_slope_5": -1.5728430118,
+          "atr14": 15.2478571429
         },
         {
-          "time": "2026-10-21T15:00:00.000",
-          "close_time": "2026-10-21T16:00:00.000",
-          "open": 4139.92,
-          "high": 4142.01,
-          "low": 4124.5,
-          "close": 4129.59,
-          "ema10": 4124.93300417,
-          "ema20": 4124.1829985391,
-          "ema50": 4132.0359939896,
-          "ema200": 4150.567006554,
-          "macd_main": -0.991222556,
-          "macd_signal": -3.6818804064,
-          "macd_hist": 2.6906578504,
-          "macd_hist_slope_3": 1.6015285794,
-          "macd_hist_slope_5": 1.7379705171,
-          "atr14": 12.2307142857
+          "time": "2026-10-22T03:00:00.000",
+          "close_time": "2026-10-22T04:00:00.000",
+          "open": 4125.39,
+          "high": 4126.38,
+          "low": 4113.22,
+          "close": 4113.3,
+          "ema10": 4126.6399651395,
+          "ema20": 4126.7067260753,
+          "ema50": 4130.7895188325,
+          "ema200": 4148.2981590175,
+          "macd_main": -0.1884353513,
+          "macd_signal": 0.384131507,
+          "macd_hist": -0.5725668584,
+          "macd_hist_slope_3": -2.2207960624,
+          "macd_hist_slope_5": -1.2753976675,
+          "atr14": 15.575
         },
         {
-          "time": "2026-10-21T16:00:00.000",
-          "close_time": "2026-10-21T17:00:00.000",
-          "open": 4129.55,
-          "high": 4140.75,
-          "low": 4128.91,
-          "close": 4129.36,
-          "ema10": 4125.7379125028,
-          "ema20": 4124.6760462973,
-          "ema50": 4131.9310530488,
-          "ema200": 4150.3559915634,
-          "macd_main": -0.517646305,
-          "macd_signal": -3.0490335861,
-          "macd_hist": 2.5313872811,
-          "macd_hist_slope_3": 0.900397212,
-          "macd_hist_slope_5": 1.4480484188,
-          "atr14": 12.5242857143
+          "time": "2026-10-22T04:00:00.000",
+          "close_time": "2026-10-22T05:00:00.000",
+          "open": 4113.31,
+          "high": 4118.45,
+          "low": 4107.64,
+          "close": 4115.11,
+          "ema10": 4124.5436078414,
+          "ema20": 4125.6022759729,
+          "ema50": 4130.174635741,
+          "ema200": 4147.9679285795,
+          "macd_main": -1.1053574668,
+          "macd_signal": 0.0862337123,
+          "macd_hist": -1.191591179,
+          "macd_hist_slope_3": -2.485277878,
+          "macd_hist_slope_5": -2.2579749119,
+          "atr14": 15.0935714286
         },
         {
-          "time": "2026-10-21T17:00:00.000",
-          "close_time": "2026-10-21T18:00:00.000",
-          "open": 4129.21,
-          "high": 4135.28,
-          "low": 4121.55,
-          "close": 4130.11,
-          "ema10": 4126.5328375023,
-          "ema20": 4125.1935656976,
-          "ema50": 4131.8596392037,
-          "ema200": 4150.154538911,
-          "macd_main": -0.0808826178,
-          "macd_signal": -2.4554033924,
-          "macd_hist": 2.3745207747,
-          "macd_hist_slope_3": -0.3753456334,
-          "macd_hist_slope_5": 1.2853915036,
-          "atr14": 12.7885714286
+          "time": "2026-10-22T05:00:00.000",
+          "close_time": "2026-10-22T06:00:00.000",
+          "open": 4115.16,
+          "high": 4124.04,
+          "low": 4108.41,
+          "close": 4116.21,
+          "ema10": 4123.0284064157,
+          "ema20": 4124.7077734993,
+          "ema50": 4129.6270029669,
+          "ema200": 4147.6519292901,
+          "macd_main": -1.7233977855,
+          "macd_signal": -0.2756925873,
+          "macd_hist": -1.4477051982,
+          "macd_hist_slope_3": -2.0893544577,
+          "macd_hist_slope_5": -3.0959344022,
+          "atr14": 15.0814285714
         },
         {
-          "time": "2026-10-21T18:00:00.000",
-          "close_time": "2026-10-21T19:00:00.000",
-          "open": 4130.13,
-          "high": 4141.33,
-          "low": 4126.33,
-          "close": 4131.56,
-          "ema10": 4127.4468670473,
-          "ema20": 4125.799892774,
-          "ema50": 4131.8478886467,
-          "ema200": 4149.9695186234,
-          "macd_main": 0.3779024092,
-          "macd_signal": -1.8887422321,
-          "macd_hist": 2.2666446413,
-          "macd_hist_slope_3": -0.4240132091,
-          "macd_hist_slope_5": 0.6356545723,
-          "atr14": 12.5671428571
+          "time": "2026-10-22T06:00:00.000",
+          "close_time": "2026-10-22T07:00:00.000",
+          "open": 4116.35,
+          "high": 4116.41,
+          "low": 4090.08,
+          "close": 4092.19,
+          "ema10": 4117.421423431,
+          "ema20": 4121.6108426898,
+          "ema50": 4128.1588852035,
+          "ema200": 4147.1000692972,
+          "macd_main": -4.1041029038,
+          "macd_signal": -1.0413746506,
+          "macd_hist": -3.0627282532,
+          "macd_hist_slope_3": -2.4901613948,
+          "macd_hist_slope_5": -4.3564149522,
+          "atr14": 15.7114285714
         },
         {
-          "time": "2026-10-21T19:00:00.000",
-          "close_time": "2026-10-21T20:00:00.000",
-          "open": 4131.54,
-          "high": 4139.57,
-          "low": 4127.41,
-          "close": 4131.55,
-          "ema10": 4128.1928912205,
-          "ema20": 4126.3475220336,
-          "ema50": 4131.836206739,
-          "ema200": 4149.7862398311,
-          "macd_main": 0.7322450667,
-          "macd_signal": -1.3645447724,
-          "macd_hist": 2.0967898391,
-          "macd_hist_slope_3": -0.434597442,
-          "macd_hist_slope_5": -0.653076569,
-          "atr14": 12.9464285714
+          "time": "2026-10-22T07:00:00.000",
+          "close_time": "2026-10-22T08:00:00.000",
+          "open": 4092.17,
+          "high": 4093.46,
+          "low": 4087.95,
+          "close": 4091.73,
+          "ema10": 4112.7502555345,
+          "ema20": 4118.765048148,
+          "ema50": 4126.73030147,
+          "ema200": 4146.549123334,
+          "macd_main": -5.9592524648,
+          "macd_signal": -2.0249502134,
+          "macd_hist": -3.9343022514,
+          "macd_hist_slope_3": -2.7427110723,
+          "macd_hist_slope_5": -4.5759515109,
+          "atr14": 15.2592857143
         }
       ],
       "M30": [
         {
-          "time": "2026-10-21T15:30:00.000",
-          "close_time": "2026-10-21T16:00:00.000",
-          "open": 4131.37,
-          "high": 4131.43,
-          "low": 4124.5,
-          "close": 4129.59,
-          "ema10": 4127.5326562082,
-          "ema20": 4124.7639879182,
-          "ema50": 4125.4772062932,
-          "ema200": 4141.5249938003,
-          "macd_main": 2.5296554915,
-          "macd_signal": 0.9117269814,
-          "macd_hist": 1.6179285101,
-          "macd_hist_slope_3": 0.3327454041,
-          "macd_hist_slope_5": 1.0970088652,
-          "atr14": 8.3914285714
+          "time": "2026-10-22T03:30:00.000",
+          "close_time": "2026-10-22T04:00:00.000",
+          "open": 4119.03,
+          "high": 4119.28,
+          "low": 4113.22,
+          "close": 4113.3,
+          "ema10": 4125.8519146767,
+          "ema20": 4127.9482599392,
+          "ema50": 4128.0165163044,
+          "ema200": 4139.3439111713,
+          "macd_main": -1.4025827513,
+          "macd_signal": 0.8529938715,
+          "macd_hist": -2.2555766228,
+          "macd_hist_slope_3": -1.6967315291,
+          "macd_hist_slope_5": -2.5106959476,
+          "atr14": 9.46
         },
         {
-          "time": "2026-10-21T16:00:00.000",
-          "close_time": "2026-10-21T16:30:00.000",
-          "open": 4129.55,
-          "high": 4140.75,
-          "low": 4129.55,
-          "close": 4137.35,
-          "ema10": 4129.3176278067,
-          "ema20": 4125.9626557356,
-          "ema50": 4125.9428060464,
-          "ema200": 4141.4834515735,
-          "macd_main": 3.1901760977,
-          "macd_signal": 1.3674168046,
-          "macd_hist": 1.8227592931,
-          "macd_hist_slope_3": -0.2607678311,
-          "macd_hist_slope_5": 0.9351232466,
-          "atr14": 8.6842857143
+          "time": "2026-10-22T04:00:00.000",
+          "close_time": "2026-10-22T04:30:00.000",
+          "open": 4113.31,
+          "high": 4118.45,
+          "low": 4107.64,
+          "close": 4116.92,
+          "ema10": 4124.22793019,
+          "ema20": 4126.8979494688,
+          "ema50": 4127.5813588022,
+          "ema200": 4139.1207876771,
+          "macd_main": -2.0750299952,
+          "macd_signal": 0.2673890981,
+          "macd_hist": -2.3424190934,
+          "macd_hist_slope_3": -1.3859433234,
+          "macd_hist_slope_5": -2.2597837014,
+          "atr14": 9.8421428571
         },
         {
-          "time": "2026-10-21T16:30:00.000",
-          "close_time": "2026-10-21T17:00:00.000",
-          "open": 4137.3,
-          "high": 4138.96,
-          "low": 4128.91,
-          "close": 4129.36,
-          "ema10": 4129.3253318418,
-          "ema20": 4126.2862123322,
-          "ema50": 4126.0768136524,
-          "ema200": 4141.3628202145,
-          "macd_main": 3.0339437966,
-          "macd_signal": 1.700722203,
-          "macd_hist": 1.3332215936,
-          "macd_hist_slope_3": -0.5994386632,
-          "macd_hist_slope_5": 0.0480384875,
-          "atr14": 8.7792857143
+          "time": "2026-10-22T04:30:00.000",
+          "close_time": "2026-10-22T05:00:00.000",
+          "open": 4116.87,
+          "high": 4117.97,
+          "low": 4110.34,
+          "close": 4115.11,
+          "ema10": 4122.5701247009,
+          "ema20": 4125.7752876146,
+          "ema50": 4127.092285908,
+          "ema200": 4138.8818743668,
+          "macd_main": -2.7226165255,
+          "macd_signal": -0.3306120266,
+          "macd_hist": -2.3920044989,
+          "macd_hist_slope_3": -0.8198039518,
+          "macd_hist_slope_5": -1.8331594052,
+          "atr14": 10.0007142857
         },
         {
-          "time": "2026-10-21T17:00:00.000",
-          "close_time": "2026-10-21T17:30:00.000",
-          "open": 4129.21,
-          "high": 4135.28,
-          "low": 4121.55,
-          "close": 4133.34,
-          "ema10": 4130.0552715069,
-          "ema20": 4126.9580016339,
-          "ema50": 4126.3616444896,
-          "ema200": 4141.2829911577,
-          "macd_main": 3.1944575915,
-          "macd_signal": 1.9994692807,
-          "macd_hist": 1.1949883108,
-          "macd_hist_slope_3": -0.4229401993,
-          "macd_hist_slope_5": -0.8885388133,
-          "atr14": 8.8235714286
+          "time": "2026-10-22T05:00:00.000",
+          "close_time": "2026-10-22T05:30:00.000",
+          "open": 4115.16,
+          "high": 4118.38,
+          "low": 4108.41,
+          "close": 4118.06,
+          "ema10": 4121.750102028,
+          "ema20": 4125.040498318,
+          "ema50": 4126.7380786175,
+          "ema200": 4138.6746915373,
+          "macd_main": -2.9636302853,
+          "macd_signal": -0.8572156783,
+          "macd_hist": -2.106414607,
+          "macd_hist_slope_3": 0.1491620158,
+          "macd_hist_slope_5": -1.149938837,
+          "atr14": 10.4171428571
         },
         {
-          "time": "2026-10-21T17:30:00.000",
-          "close_time": "2026-10-21T18:00:00.000",
-          "open": 4133.29,
-          "high": 4135.28,
-          "low": 4127.73,
-          "close": 4130.11,
-          "ema10": 4130.065222142,
-          "ema20": 4127.2581919545,
-          "ema50": 4126.5086388233,
-          "ema200": 4141.1718171163,
-          "macd_main": 3.02614837,
-          "macd_signal": 2.2048050986,
-          "macd_hist": 0.8213432714,
-          "macd_hist_slope_3": -1.0014160217,
-          "macd_hist_slope_5": -1.1113169854,
-          "atr14": 8.9814285714
+          "time": "2026-10-22T05:30:00.000",
+          "close_time": "2026-10-22T06:00:00.000",
+          "open": 4118.08,
+          "high": 4124.04,
+          "low": 4111.74,
+          "close": 4116.21,
+          "ema10": 4120.7428107502,
+          "ema20": 4124.1994984782,
+          "ema50": 4126.3252127894,
+          "ema200": 4138.4511622683,
+          "macd_main": -3.2662635127,
+          "macd_signal": -1.3390252452,
+          "macd_hist": -1.9272382675,
+          "macd_hist_slope_3": 0.4151808259,
+          "macd_hist_slope_5": -0.3550377205,
+          "atr14": 9.2978571429
         },
         {
-          "time": "2026-10-21T18:00:00.000",
-          "close_time": "2026-10-21T18:30:00.000",
-          "open": 4130.13,
-          "high": 4141.33,
-          "low": 4126.33,
-          "close": 4138.89,
-          "ema10": 4131.6697272071,
-          "ema20": 4128.3659831969,
-          "ema50": 4126.9941823989,
-          "ema200": 4141.1491124684,
-          "macd_main": 3.5601950098,
-          "macd_signal": 2.4758830808,
-          "macd_hist": 1.084311929,
-          "macd_hist_slope_3": -0.2489096646,
-          "macd_hist_slope_5": -0.5336165811,
-          "atr14": 9.5371428571
+          "time": "2026-10-22T06:00:00.000",
+          "close_time": "2026-10-22T06:30:00.000",
+          "open": 4116.35,
+          "high": 4116.41,
+          "low": 4095.83,
+          "close": 4100.08,
+          "ema10": 4116.9859360684,
+          "ema20": 4121.902403385,
+          "ema50": 4125.2959887584,
+          "ema200": 4138.0693596587,
+          "macd_main": -4.7528705882,
+          "macd_signal": -2.0217943138,
+          "macd_hist": -2.7310762744,
+          "macd_hist_slope_3": -0.3390717755,
+          "macd_hist_slope_5": -0.4754996516,
+          "atr14": 9.2278571429
         },
         {
-          "time": "2026-10-21T18:30:00.000",
-          "close_time": "2026-10-21T19:00:00.000",
-          "open": 4138.8,
-          "high": 4141.13,
-          "low": 4131.09,
-          "close": 4131.56,
-          "ema10": 4131.6497768058,
-          "ema20": 4128.6701752734,
-          "ema50": 4127.1732340695,
-          "ema200": 4141.053698414,
-          "macd_main": 3.3533062518,
-          "macd_signal": 2.651367715,
-          "macd_hist": 0.7019385368,
-          "macd_hist_slope_3": -0.493049774,
-          "macd_hist_slope_5": -1.1208207563,
-          "atr14": 9.9307142857
+          "time": "2026-10-22T06:30:00.000",
+          "close_time": "2026-10-22T07:00:00.000",
+          "open": 4100.05,
+          "high": 4100.45,
+          "low": 4090.08,
+          "close": 4092.19,
+          "ema10": 4112.4775840559,
+          "ema20": 4119.0726506817,
+          "ema50": 4123.9977146895,
+          "ema200": 4137.6128486173,
+          "macd_main": -6.4928291734,
+          "macd_signal": -2.9160012857,
+          "macd_hist": -3.5768278877,
+          "macd_hist_slope_3": -1.4704132807,
+          "macd_hist_slope_5": -1.2344087943,
+          "atr14": 9.2235714286
         },
         {
-          "time": "2026-10-21T19:00:00.000",
-          "close_time": "2026-10-21T19:30:00.000",
-          "open": 4131.54,
-          "high": 4134.08,
-          "low": 4128.93,
-          "close": 4132.93,
-          "ema10": 4131.8825446593,
-          "ema20": 4129.0758728664,
-          "ema50": 4127.3989895962,
-          "ema200": 4140.9728655939,
-          "macd_main": 3.262287353,
-          "macd_signal": 2.7735516426,
-          "macd_hist": 0.4887357104,
-          "macd_hist_slope_3": -0.332607561,
-          "macd_hist_slope_5": -0.8444858832,
-          "atr14": 9.8371428571
+          "time": "2026-10-22T07:00:00.000",
+          "close_time": "2026-10-22T07:30:00.000",
+          "open": 4092.17,
+          "high": 4093.46,
+          "low": 4087.95,
+          "close": 4090.46,
+          "ema10": 4108.4743869548,
+          "ema20": 4116.3476363311,
+          "ema50": 4122.6825101918,
+          "ema200": 4137.143666044,
+          "macd_main": -7.9200579319,
+          "macd_signal": -3.9168126149,
+          "macd_hist": -4.0032453169,
+          "macd_hist_slope_3": -2.0760070494,
+          "macd_hist_slope_5": -1.611240818,
+          "atr14": 9.3764285714
         },
         {
-          "time": "2026-10-21T19:30:00.000",
-          "close_time": "2026-10-21T20:00:00.000",
-          "open": 4133.02,
-          "high": 4139.57,
-          "low": 4127.41,
-          "close": 4131.55,
-          "ema10": 4131.822081994,
-          "ema20": 4129.311504022,
-          "ema50": 4127.5617743179,
-          "ema200": 4140.8791057373,
-          "macd_main": 3.043713716,
-          "macd_signal": 2.8275840573,
-          "macd_hist": 0.2161296587,
-          "macd_hist_slope_3": -0.8681822703,
-          "macd_hist_slope_5": -0.9788586521,
-          "atr14": 10.0928571429
+          "time": "2026-10-22T07:30:00.000",
+          "close_time": "2026-10-22T08:00:00.000",
+          "open": 4090.56,
+          "high": 4093.11,
+          "low": 4088.52,
+          "close": 4091.73,
+          "ema10": 4105.4299529631,
+          "ema20": 4114.0030995376,
+          "ema50": 4121.4686862627,
+          "ema200": 4136.6917887699,
+          "macd_main": -8.8466894899,
+          "macd_signal": -4.9027879899,
+          "macd_hist": -3.9439014999,
+          "macd_hist_slope_3": -1.2128252255,
+          "macd_hist_slope_5": -1.8374868929,
+          "atr14": 8.9992857143
         },
         {
-          "time": "2026-10-21T20:00:00.000",
-          "close_time": "2026-10-21T20:30:00.000",
-          "open": 4131.51,
-          "high": 4134.33,
-          "low": 4128.87,
-          "close": 4132.29,
-          "ema10": 4131.9071579951,
-          "ema20": 4129.5951703056,
-          "ema50": 4127.7471949329,
-          "ema200": 4140.7936419986,
-          "macd_main": 2.8968117074,
-          "macd_signal": 2.8414295873,
-          "macd_hist": 0.0553821201,
-          "macd_hist_slope_3": -0.6465564167,
-          "macd_hist_slope_5": -0.7659611513,
-          "atr14": 9.81
+          "time": "2026-10-22T08:00:00.000",
+          "close_time": "2026-10-22T08:30:00.000",
+          "open": 4091.71,
+          "high": 4092.86,
+          "low": 4085.68,
+          "close": 4088.71,
+          "ema10": 4102.3899615152,
+          "ema20": 4111.594232915,
+          "ema50": 4120.1840318995,
+          "ema200": 4136.2143580359,
+          "macd_main": -9.7127775824,
+          "macd_signal": -5.8647859084,
+          "macd_hist": -3.847991674,
+          "macd_hist_slope_3": -0.2711637863,
+          "macd_hist_slope_5": -1.9207534065,
+          "atr14": 8.8735714286
         }
       ],
       "M15": [
         {
-          "time": "2026-10-21T18:00:00.000",
-          "close_time": "2026-10-21T18:15:00.000",
-          "open": 4130.13,
-          "high": 4130.87,
-          "low": 4126.33,
-          "close": 4127.22,
-          "ema10": 4130.478168663,
-          "ema20": 4129.6999602811,
-          "ema50": 4126.3969115833,
-          "ema200": 4132.3616760275,
-          "macd_main": 1.6569506986,
-          "macd_signal": 2.6373328652,
-          "macd_hist": -0.9803821666,
-          "macd_hist_slope_3": -0.5870310203,
-          "macd_hist_slope_5": -1.0189708056,
-          "atr14": 6.79
+          "time": "2026-10-22T06:00:00.000",
+          "close_time": "2026-10-22T06:15:00.000",
+          "open": 4116.35,
+          "high": 4116.41,
+          "low": 4107.43,
+          "close": 4108.07,
+          "ema10": 4115.4962920473,
+          "ema20": 4119.3531969413,
+          "ema50": 4124.2541023377,
+          "ema200": 4130.2846222072,
+          "macd_main": -4.6974298688,
+          "macd_signal": -4.1352103531,
+          "macd_hist": -0.5622195157,
+          "macd_hist_slope_3": 0.2325487886,
+          "macd_hist_slope_5": 0.8064867914,
+          "atr14": 6.775
         },
         {
-          "time": "2026-10-21T18:15:00.000",
-          "close_time": "2026-10-21T18:30:00.000",
-          "open": 4127.24,
-          "high": 4141.33,
-          "low": 4127.24,
-          "close": 4138.89,
-          "ema10": 4132.0075925424,
-          "ema20": 4130.5752021591,
-          "ema50": 4126.8868366192,
-          "ema200": 4132.426634475,
-          "macd_main": 2.2036932506,
-          "macd_signal": 2.5506049423,
-          "macd_hist": -0.3469116917,
-          "macd_hist_slope_3": 0.3320936479,
-          "macd_hist_slope_5": 0.079421521,
-          "atr14": 7.5271428571
+          "time": "2026-10-22T06:15:00.000",
+          "close_time": "2026-10-22T06:30:00.000",
+          "open": 4107.91,
+          "high": 4109.87,
+          "low": 4095.83,
+          "close": 4100.08,
+          "ema10": 4112.6933298569,
+          "ema20": 4117.5176543755,
+          "ema50": 4123.3060983244,
+          "ema200": 4129.9840787027,
+          "macd_main": -5.646511342,
+          "macd_signal": -4.4374705509,
+          "macd_hist": -1.2090407912,
+          "macd_hist_slope_3": -0.7410385075,
+          "macd_hist_slope_5": 0.1194544343,
+          "atr14": 7.4578571429
         },
         {
-          "time": "2026-10-21T18:30:00.000",
-          "close_time": "2026-10-21T18:45:00.000",
-          "open": 4138.8,
-          "high": 4141.13,
-          "low": 4131.13,
-          "close": 4131.22,
-          "ema10": 4131.8643938984,
-          "ema20": 4130.6366114773,
-          "ema50": 4127.056764595,
-          "ema200": 4132.4146281618,
-          "macd_main": 1.9950876347,
-          "macd_signal": 2.4395014808,
-          "macd_hist": -0.4444138461,
-          "macd_hist_slope_3": 0.3147890932,
-          "macd_hist_slope_5": -0.0510626998,
-          "atr14": 7.8742857143
+          "time": "2026-10-22T06:30:00.000",
+          "close_time": "2026-10-22T06:45:00.000",
+          "open": 4100.05,
+          "high": 4100.45,
+          "low": 4091.32,
+          "close": 4094.31,
+          "ema10": 4109.3509062466,
+          "ema20": 4115.3074015778,
+          "ema50": 4122.1689964294,
+          "ema200": 4129.6291127454,
+          "macd_main": -6.7860308856,
+          "macd_signal": -4.9071826178,
+          "macd_hist": -1.8788482678,
+          "macd_hist_slope_3": -1.6422459335,
+          "macd_hist_slope_5": -1.0840799634,
+          "atr14": 7.7057142857
         },
         {
-          "time": "2026-10-21T18:45:00.000",
-          "close_time": "2026-10-21T19:00:00.000",
-          "open": 4131.19,
-          "high": 4133.68,
-          "low": 4131.09,
-          "close": 4131.56,
-          "ema10": 4131.8090495532,
-          "ema20": 4130.7245532414,
-          "ema50": 4127.2333620618,
-          "ema200": 4132.406124399,
-          "macd_main": 1.836036652,
-          "macd_signal": 2.318808515,
-          "macd_hist": -0.482771863,
-          "macd_hist_slope_3": 0.4976103036,
-          "macd_hist_slope_5": 0.1962334765,
-          "atr14": 7.425
+          "time": "2026-10-22T06:45:00.000",
+          "close_time": "2026-10-22T07:00:00.000",
+          "open": 4094.29,
+          "high": 4095.06,
+          "low": 4090.08,
+          "close": 4092.19,
+          "ema10": 4106.2307414745,
+          "ema20": 4113.1057442847,
+          "ema50": 4120.9933495106,
+          "ema200": 4129.2565842604,
+          "macd_main": -7.7705999765,
+          "macd_signal": -5.4798660896,
+          "macd_hist": -2.290733887,
+          "macd_hist_slope_3": -1.7285143713,
+          "macd_hist_slope_5": -1.8227316034,
+          "atr14": 7.6992857143
         },
         {
-          "time": "2026-10-21T19:00:00.000",
-          "close_time": "2026-10-21T19:15:00.000",
-          "open": 4131.54,
-          "high": 4133.21,
-          "low": 4128.93,
-          "close": 4130.41,
-          "ema10": 4131.5546769072,
-          "ema20": 4130.6945957898,
-          "ema50": 4127.3579360986,
-          "ema200": 4132.3862624647,
-          "macd_main": 1.5987626724,
-          "macd_signal": 2.1747993465,
-          "macd_hist": -0.5760366741,
-          "macd_hist_slope_3": -0.2291249825,
-          "macd_hist_slope_5": 0.1831662652,
-          "atr14": 7.2357142857
+          "time": "2026-10-22T07:00:00.000",
+          "close_time": "2026-10-22T07:15:00.000",
+          "open": 4092.17,
+          "high": 4093.46,
+          "low": 4089.32,
+          "close": 4091.78,
+          "ema10": 4103.6033339336,
+          "ema20": 4111.0747210195,
+          "ema50": 4119.8477279611,
+          "ema200": 4128.8836829245,
+          "macd_main": -8.4861387233,
+          "macd_signal": -6.0811206163,
+          "macd_hist": -2.405018107,
+          "macd_hist_slope_3": -1.1959773158,
+          "macd_hist_slope_5": -2.1684157727,
+          "atr14": 7.6428571429
         },
         {
-          "time": "2026-10-21T19:15:00.000",
-          "close_time": "2026-10-21T19:30:00.000",
-          "open": 4130.44,
-          "high": 4134.08,
-          "low": 4130.44,
-          "close": 4132.93,
-          "ema10": 4131.8047356513,
-          "ema20": 4130.9074914289,
-          "ema50": 4127.5764484085,
-          "ema200": 4132.3916727885,
-          "macd_main": 1.5956703787,
-          "macd_signal": 2.0589735529,
-          "macd_hist": -0.4633031743,
-          "macd_hist_slope_3": -0.0188893282,
-          "macd_hist_slope_5": 0.5170789923,
-          "atr14": 7.0607142857
+          "time": "2026-10-22T07:15:00.000",
+          "close_time": "2026-10-22T07:30:00.000",
+          "open": 4091.69,
+          "high": 4091.95,
+          "low": 4087.95,
+          "close": 4090.46,
+          "ema10": 4101.2136368548,
+          "ema20": 4109.1114142557,
+          "ema50": 4118.6952680411,
+          "ema200": 4128.5013577213,
+          "macd_main": -9.0553370152,
+          "macd_signal": -6.6759638961,
+          "macd_hist": -2.3793731191,
+          "macd_hist_slope_3": -0.5005248514,
+          "macd_hist_slope_5": -1.8171536034,
+          "atr14": 7.5921428571
         },
         {
-          "time": "2026-10-21T19:30:00.000",
-          "close_time": "2026-10-21T19:45:00.000",
-          "open": 4133.02,
-          "high": 4139.57,
-          "low": 4127.41,
-          "close": 4134.43,
-          "ema10": 4132.282056442,
-          "ema20": 4131.2429684356,
-          "ema50": 4127.8452151376,
-          "ema200": 4132.4119546513,
-          "macd_main": 1.6947214833,
-          "macd_signal": 1.986123139,
-          "macd_hist": -0.2914016557,
-          "macd_hist_slope_3": 0.1913702073,
-          "macd_hist_slope_5": 0.055510036,
-          "atr14": 7.1992857143
+          "time": "2026-10-22T07:30:00.000",
+          "close_time": "2026-10-22T07:45:00.000",
+          "open": 4090.56,
+          "high": 4091.98,
+          "low": 4088.52,
+          "close": 4090.74,
+          "ema10": 4099.3093392448,
+          "ema20": 4107.3617557552,
+          "ema50": 4117.5989830199,
+          "ema200": 4128.1256228186,
+          "macd_main": -9.3757591868,
+          "macd_signal": -7.2159229542,
+          "macd_hist": -2.1598362325,
+          "macd_hist_slope_3": 0.1308976544,
+          "macd_hist_slope_5": -0.9507954414,
+          "atr14": 7.2864285714
         },
         {
-          "time": "2026-10-21T19:45:00.000",
-          "close_time": "2026-10-21T20:00:00.000",
-          "open": 4134.43,
-          "high": 4135.75,
-          "low": 4131.17,
-          "close": 4131.55,
-          "ema10": 4132.1489552707,
-          "ema20": 4131.272209537,
-          "ema50": 4127.9905008184,
-          "ema200": 4132.4033779881,
-          "macd_main": 1.52326897,
-          "macd_signal": 1.8935523052,
-          "macd_hist": -0.3702833352,
-          "macd_hist_slope_3": 0.2057533389,
-          "macd_hist_slope_5": 0.0741305109,
-          "atr14": 7.2028571429
+          "time": "2026-10-22T07:45:00.000",
+          "close_time": "2026-10-22T08:00:00.000",
+          "open": 4090.73,
+          "high": 4093.11,
+          "low": 4090.14,
+          "close": 4091.73,
+          "ema10": 4097.931277564,
+          "ema20": 4105.8730171118,
+          "ema50": 4116.5845130975,
+          "ema200": 4127.7634773179,
+          "macd_main": -9.4409815812,
+          "macd_signal": -7.6609346796,
+          "macd_hist": -1.7800469016,
+          "macd_hist_slope_3": 0.6249712054,
+          "macd_hist_slope_5": 0.0988013662,
+          "atr14": 6.8307142857
         },
         {
-          "time": "2026-10-21T20:00:00.000",
-          "close_time": "2026-10-21T20:15:00.000",
-          "open": 4131.51,
-          "high": 4132.7,
-          "low": 4128.87,
-          "close": 4131.81,
-          "ema10": 4132.0873270397,
-          "ema20": 4131.3234276763,
-          "ema50": 4128.1402851001,
-          "ema200": 4132.3974737295,
-          "macd_main": 1.392321628,
-          "macd_signal": 1.7933061698,
-          "macd_hist": -0.4009845418,
-          "macd_hist_slope_3": 0.0623186325,
-          "macd_hist_slope_5": 0.0817873213,
-          "atr14": 7.0042857143
+          "time": "2026-10-22T08:00:00.000",
+          "close_time": "2026-10-22T08:15:00.000",
+          "open": 4091.71,
+          "high": 4092.86,
+          "low": 4087.36,
+          "close": 4087.54,
+          "ema10": 4096.0419543705,
+          "ema20": 4104.1270154821,
+          "ema50": 4115.4455125839,
+          "ema200": 4127.3632437127,
+          "macd_main": -9.7187372283,
+          "macd_signal": -8.0724951893,
+          "macd_hist": -1.6462420389,
+          "macd_hist_slope_3": 0.7331310802,
+          "macd_hist_slope_5": 0.6444918481,
+          "atr14": 6.7357142857
         },
         {
-          "time": "2026-10-21T20:15:00.000",
-          "close_time": "2026-10-21T20:30:00.000",
-          "open": 4131.8,
-          "high": 4134.33,
-          "low": 4130.95,
-          "close": 4132.29,
-          "ema10": 4132.1241766688,
-          "ema20": 4131.4154821834,
-          "ema50": 4128.3030190177,
-          "ema200": 4132.3964043391,
-          "macd_main": 1.3121512418,
-          "macd_signal": 1.6970751842,
-          "macd_hist": -0.3849239424,
-          "macd_hist_slope_3": -0.0935222866,
-          "macd_hist_slope_5": 0.1911127318,
-          "atr14": 6.5971428571
+          "time": "2026-10-22T08:15:00.000",
+          "close_time": "2026-10-22T08:30:00.000",
+          "open": 4087.5,
+          "high": 4089.36,
+          "low": 4085.68,
+          "close": 4088.71,
+          "ema10": 4094.7088717577,
+          "ema20": 4102.6587282934,
+          "ema50": 4114.39706111,
+          "ema200": 4126.9786343225,
+          "macd_main": -9.732263878,
+          "macd_signal": -8.4044489271,
+          "macd_hist": -1.3278149509,
+          "macd_hist_slope_3": 0.8320212817,
+          "macd_hist_slope_5": 1.0772031561,
+          "atr14": 6.5371428571
         }
       ]
     }
   },
   "daily_history": [
+    {
+      "date": "2026-10-21",
+      "cutoff": "2026-10-21 20:30:00",
+      "path": "output/daily_20261021_2030/daily_forecast_20261021.txt",
+      "label": "21 October updated outlook · tick-verified cutoff",
+      "link": "reports/output/daily_20261021_2030/daily_forecast_20261021.txt"
+    },
     {
       "date": "2026-10-21",
       "cutoff": "2026-10-20 23:45:00",
@@ -5785,12 +6386,12 @@
     "v2_report": "reports/output/weekly_codex_v2_retest_20w_20260601_20261016/REPORT.html",
     "v1_csv": "reports/output/weekly_codex_replay_20w_20260601_20261016/forecast_vs_actual_20_weeks.csv",
     "v2_csv": "reports/output/weekly_codex_v2_retest_20w_20260601_20261016/forecast_vs_actual_20_weeks.csv",
-    "daily": "reports/output/daily_20261021_2030/REPORT.html",
-    "daily_text": "reports/output/daily_20261021_2030/daily_forecast_20261021.txt",
-    "daily_judgments": "reports/output/daily_20261021_2030/codex_daily.json",
-    "daily_validation": "reports/output/daily_20261021_2030/independent_validation.json",
-    "daily_ticks": "reports/output/daily_20261021_2030/tick_verification_receipt.json",
-    "daily_manifest": "reports/output/daily_20261021_2030/REPORT_MANIFEST.json",
+    "daily": "reports/output/daily_20261022_0830/REPORT.html",
+    "daily_text": "reports/output/daily_20261022_0830/daily_forecast_20261022.txt",
+    "daily_judgments": "reports/output/daily_20261022_0830/codex_daily.json",
+    "daily_validation": "reports/output/daily_20261022_0830/independent_validation.json",
+    "daily_ticks": "reports/output/daily_20261022_0830/tick_verification_receipt.json",
+    "daily_manifest": "reports/output/daily_20261022_0830/REPORT_MANIFEST.json",
     "evaluation": "reports/output/evaluate_20261021_1500/REPORT.html",
     "evaluation_json": "reports/output/evaluate_20261021_1500/codex_evaluation.json",
     "validation": "reports/output/evaluate_20261021_1500/independent_validation.json",
@@ -5806,10 +6407,11 @@
     "output/weekly_codex_v2_retest_20w_20260601_20261016/forecast_vs_actual_20_weeks.csv": "164be07e633001c69780ae4b1ee9ab4d9583794782a398cada14d6dacab61683",
     "output/weekly_codex_replay_20w_20260601_20261016/codex_authored_forecasts.json": "1d28794f3a2b6725392cb09a53716989a926e0950df1994849c1a1548bac0f47",
     "output/weekly_codex_v2_retest_20w_20260601_20261016/codex_authored_v2_forecasts.json": "16db8290ab9e413c5621c8d0166c4f1c7668a3656eae6f4f56573aa8e4371739",
-    "weekly_dashboard/DAILY_SOURCE.json": "aa931cbf9f6bcb03f6a123de83b63b205e5eb78fd91aaf709371ec2da0c5c3f3",
-    "output/daily_20261021_2030/codex_daily.json": "9aa54f9e6c3ee61a4a8270339595c94bcca9c7f7df06506c6bad89e84db8bfe1",
-    "output/daily_20261021_2030/factual_summary.json": "91c9264ea0bbabf5fce795f1dccfc740502eeed5990d106910e4d846d7ccd89d",
+    "weekly_dashboard/DAILY_SOURCE.json": "963cd4c3774f47d45f9c8a6664e069d11ecd9db141eba281f5ccf043d3b27a7f",
+    "output/daily_20261022_0830/codex_daily.json": "6496e492b6185668ce8b223e7c09580eea6caf47032532ec00da4a865e1fd7f5",
+    "output/daily_20261022_0830/factual_summary.json": "6b04ed836d92ce6264653bbca99594b5edfdbed2ded5a909b5fb01832b932b6a",
     "output/levels/XAUUSD_WEEK_20261019_V1/weekly_levels.json": "b9080f189c29071fce0e1c94abe87c3c3061e03da2b15223da0ea6d717358007",
+    "output/daily_20261021_2030/daily_forecast_20261021.txt": "382b160b3f5e242240eae712489fc185d69e160fb04c0804728a0b34413f40cb",
     "output/daily_20261021_asof_20261020_2345/daily_forecast_20261021.txt": "1165742e1e0c0a639502bbc1180478d3d87e527ea61849f1d6542c2018e7109f",
     "output/weekly_prospective_v1_vs_v2_20261026_20270312/forecast_journal.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "output/weekly_prospective_v1_vs_v2_20261026_20270312/observation_journal.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
@@ -5906,17 +6508,17 @@
     "output/weekly_codex_v2_retest_20w_20260601_20261016/weeks/2026-10-05/forecast_vs_actual.txt": "f29e7060f57de7afcc7418bf216bd20416b3c9243d27f2459cbf77cf3dbd7548",
     "output/weekly_codex_v2_retest_20w_20260601_20261016/weeks/2026-10-12/weekly_levels.json": "12b895de244f1f1eb44780259b10466fb9705d21bb474c971d24b65edda21ce0",
     "output/weekly_codex_v2_retest_20w_20260601_20261016/weeks/2026-10-12/forecast_vs_actual.txt": "196f8bc250ac45ebc60ddf66c93dd8b47fd73d1aa780fae4338b7c18e96b13c0",
-    "output/daily_20261021_2030/REPORT.html": "9c9e018fb55916b8cb772c4d3223a5b9fdbc6f4311f6a74b119732be912340af",
-    "output/daily_20261021_2030/daily_forecast_20261021.txt": "382b160b3f5e242240eae712489fc185d69e160fb04c0804728a0b34413f40cb",
-    "output/daily_20261021_2030/independent_validation.json": "5d3a3b9cecc19ce36bb8e97e68e44cbdbe5e2f2be2f28d0cd74ec0721b1b4f67",
-    "output/daily_20261021_2030/tick_verification_receipt.json": "15e851f2670105a4b5ae63838875b11e115b6b2b35e2759cd9add7e1b7576776",
-    "output/daily_20261021_2030/day_candles.csv": "52561e80874ddd017e23e11d75dde6f7c035fb7912769803667320f525860cce",
-    "output/daily_20261021_2030/verified_context/daily_20261021_2030/xauusd.pro_daily_h1_20261021_2030.csv": "b4a2935e9919e656f965dd821d233d259a3193c33f35ca4a1a47de33826aa9dc",
-    "output/daily_20261021_2030/verified_context/daily_20261021_2030/xauusd.pro_daily_h4_20261021_2030.csv": "a4122132797bd23b3e1de5fb7cd025bbe7436f403b025eee3b764f5052c7c4ef",
-    "output/daily_20261021_2030/verified_context/daily_20261021_2030/xauusd.pro_daily_m15_20261021_2030.csv": "5eb6e3f6cc2163c45fa9cd1eee5832373a8f123493966aa02347f0c83831eb5d",
-    "output/daily_20261021_2030/verified_context/daily_20261021_2030/xauusd.pro_daily_m30_20261021_2030.csv": "cea853b1f2e2da60b2ff7821973bb8403ebf89a91fe09c6be67db5ffd0bb4b41",
-    "output/daily_20261021_2030/verified_context/daily_20261021_2030/xauusd.pro_daily_manifest_20261021_2030.json": "f011af69309d2902ba93696ea235fbe9ffcdb88d20ace3ff02a4641318b13bbb",
-    "output/daily_20261021_2030/REPORT_MANIFEST.json": "39dc49fbb6ad179609ded76b0688f8f2e654d0b1ac08ba2b01878e8024641c4f",
+    "output/daily_20261022_0830/REPORT.html": "c5168e2818fc75d632fa9fb2a463e4dc7a3cd9b4583ac27e2bc12f81f0ac546e",
+    "output/daily_20261022_0830/daily_forecast_20261022.txt": "1bdf764ad3e4081d8be70d51d3474d48e99a099a4992b4e6b1feca751bde2ce3",
+    "output/daily_20261022_0830/independent_validation.json": "3bf0aa2e6d48c7d4f14650ade7ad2fad94465b864ba17034030ffb60cc009ffc",
+    "output/daily_20261022_0830/tick_verification_receipt.json": "677f603322cc74761f45e8c50ec4619f77bde1492437a6dc7ca4cb2c1ad2e645",
+    "output/daily_20261022_0830/day_candles.csv": "7f3bd60e6605315c9ce8b8b99321826dbd15547796832c2d5e23a41857c4a8cf",
+    "output/daily_20261022_0830/verified_context/daily_20261022_0830/xauusd.pro_daily_h1_20261022_0830.csv": "2c94e338cde2ed7136bcded460175fca4adebb7d1056b54bdd508293fcd94244",
+    "output/daily_20261022_0830/verified_context/daily_20261022_0830/xauusd.pro_daily_h4_20261022_0830.csv": "d6959d08be8c840cc567e5c80f79bb5a7e29930d307bfb8dbc82fcb86f72e8e2",
+    "output/daily_20261022_0830/verified_context/daily_20261022_0830/xauusd.pro_daily_m15_20261022_0830.csv": "5bdedc506bc8cd8f1eb6bb6a8e60bbb799239850f83a4eba7b8192b51df3d734",
+    "output/daily_20261022_0830/verified_context/daily_20261022_0830/xauusd.pro_daily_m30_20261022_0830.csv": "f3c98f8f12f9c6906f48290c7e336b044be8a4a112f45964a9400b7bd42e083e",
+    "output/daily_20261022_0830/verified_context/daily_20261022_0830/xauusd.pro_daily_manifest_20261022_0830.json": "cf06cae064161717929d4ac6f2272c68f0a482e1bbe7ddb4923735b1d8eb59d0",
+    "output/daily_20261022_0830/REPORT_MANIFEST.json": "5242752cae6e1818571d3510d58c9aee85ff1f877c22224b8bd8af0b5510a72f",
     "output/evaluate_20261021_1500/REPORT.html": "a4ee1a6241b5c93f4a6cc434886edc0a005d2c7209a67caed643b719194b1af7",
     "output/evaluate_20261021_1500/evaluation_report.txt": "e634b1d00c10ea2986babd7c52b96937cd7d4b51d58ab0a7dc0691ec2b783f31",
     "output/evaluate_20261021_1500/codex_evaluation.json": "438ac96b0dd5bf1ee097fccb376719ccec65c8f8de2e7bf6d712c20b6adb3765",
