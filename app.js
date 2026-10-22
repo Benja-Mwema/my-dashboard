@@ -1,7 +1,7 @@
 'use strict';
 let DATA;
 const $ = (s) => document.querySelector(s);
-const esc = (v) => String(v ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const esc = (v) => String(v ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])).replace(/&amp;(middot|ndash|hellip|le);/g, '&$1;').replace(/&amp;#(x25c7|x2197|x2192);/g, '&#$1;');
 const fmt = (v) => Number(v).toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
 const badge = (text, tone='') => `<span class="badge ${tone}">${esc(text)}</span>`;
 const link = (key, text, secondary=true) => `<a class="button ${secondary?'secondary':''}" href="${esc(DATA.links[key])}" target="_blank" rel="noopener">${esc(text)} &#x2197;</a>`;
