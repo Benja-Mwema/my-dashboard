@@ -1,0 +1,48 @@
+{
+  "method_id": "XAUUSD_EARLY_WATCH_V3_20261023",
+  "status": "FROZEN_PROSPECTIVE_RESEARCH_CANDIDATE",
+  "frozen_at_eat": "2026-10-23T08:04:45+03:00",
+  "analytical_author": "Codex",
+  "python_scope": "Causal factual extraction and arithmetic only; Codex owns all classifications and final analysis",
+  "parent_method": "XAUUSD_WEEKLY_PROCEDURE_V2_20261021",
+  "live_promotion": false,
+  "deployment": false,
+  "files": [
+    {
+      "path": "procedure_freezes/XAUUSD_EARLY_WATCH_V3_20261023/PROCEDURE.md",
+      "sha256": "d6f5f58b7c22b2a30072618937ece594e28b3b06d3d2e7749215587ce866d474"
+    },
+    {
+      "path": "procedure_freezes/XAUUSD_EARLY_WATCH_V3_20261023/early_watch_record.template.json",
+      "sha256": "58345016aa9357fcf7bb10cccc6f88420dac5bd0d3a6737d80a296389f2eec1a"
+    },
+    {
+      "path": "procedure_freezes/XAUUSD_EARLY_WATCH_V3_20261023/VALIDATION.md",
+      "sha256": "80ae4651049461998380321841d3b146b8fa17d1149991c91c6efe6c40ce445e"
+    },
+    {
+      "path": "procedure_freezes/XAUUSD_EARLY_WATCH_V3_20261023/test_candidate_contract.py",
+      "sha256": "5d88ec57a7f755f7ba8ca4a293d7ed2d09605fc4841abd2e43e63dd96b3fb916"
+    },
+    {
+      "path": "procedure_freezes/XAUUSD_EARLY_WATCH_V3_20261023/verify_freeze.py",
+      "sha256": "b4ba477692656aa69a3350324ed7c28d4e0fa95bdf64fc1f6b953b6bc113e01f"
+    },
+    {
+      "path": "output/weekly_prospective_v3_early_watch_20261026_20270312/STUDY_PROTOCOL.json",
+      "sha256": "f99b8f399d92668111494801bf96624d60d58beecb764b6c1f215f8aca0e89b0"
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "0c1a09b02bf4c0823d6bc24acf48827ea7ad5ccaadf41a2d6c73d64922a77b6f"
+    },
+    {
+      "path": "prompts/evaluate.md",
+      "sha256": "c19f41a46c9e01f911354c9d38f4f1e9ab0e02ec31bca74fe3bc5cd292159e0a"
+    },
+    {
+      "path": "procedure_freezes/XAUUSD_WEEKLY_PROCEDURE_V2_20261021/manifest.json",
+      "sha256": "8f08e863a6e084b84a126fb2b1cfc9e37bbcacb66ed912fe0735ff7bde7ca1ae"
+    }
+  ]
+}

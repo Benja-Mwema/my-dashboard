@@ -1,5 +1,5 @@
 {
-  "release_id": "20261022_090102_943943_EAT",
+  "release_id": "20261023_080531_873384_EAT",
   "dashboard": "AURUM",
   "public_url": "https://my-dashboard-olo8.onrender.com/",
   "forecast_updates": "explicit_user_request_only",
@@ -10,5 +10,5 @@
   "daily_evidence_cutoff": "2026-10-22 08:30:00",
   "daily_created_at_eat": "2026-10-22T08:45:04+03:00",
   "evaluation_cutoff": "2026-10-21 15:00:00",
-  "snapshot_sha256": "7cf549abb266d991563c6aeea91fd560404a4cb81394c928876a69a535f29d13"
+  "snapshot_sha256": "dae2a45fabf777fd469a9a4028cd6d657548bad1cbb3c153b29935cc3b08117b"
 }

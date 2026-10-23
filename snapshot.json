@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "snapshot_built_at": "2026-10-22T08:45:15.872321+03:00",
+  "snapshot_built_at": "2026-10-23T08:05:05.921828+03:00",
   "snapshot_scope": "Saved records packaged on explicit request. Build time is not forecast issuance or market freshness.",
   "timezone": "Africa/Nairobi",
   "symbol": "XAUUSD.pro",
@@ -6381,6 +6381,18 @@
     "opening_observations": 0,
     "closure_records": 0
   },
+  "early_watch": {
+    "method_id": "XAUUSD_EARLY_WATCH_V3_20261023",
+    "status": "No V2 map is registered for forecast week 2026-10-19; V3 needs a matching frozen V2 map.",
+    "current_v2_map_available": false,
+    "current_v2_map_id": null,
+    "next_target_week": "2026-10-26",
+    "review_mode": "User-requested DAILY or EVALUATE cutoffs only; no automation or background monitoring",
+    "records_created": 0,
+    "records": [],
+    "live_promotion": false,
+    "deployment": false
+  },
   "links": {
     "v1_report": "reports/output/weekly_codex_replay_20w_20260601_20261016/REPORT.html",
     "v2_report": "reports/output/weekly_codex_v2_retest_20w_20260601_20261016/REPORT.html",
@@ -6399,6 +6411,11 @@
     "levels": "reports/output/levels/XAUUSD_WEEK_20261019_V1/weekly_levels.json",
     "v1_procedure": "reports/procedure_freezes/XAUUSD_WEEKLY_PROCEDURE_V1_20261021/PROCEDURE.md",
     "v2_procedure": "reports/procedure_freezes/XAUUSD_WEEKLY_PROCEDURE_V2_20261021/PROCEDURE.md",
+    "v3_procedure": "reports/procedure_freezes/XAUUSD_EARLY_WATCH_V3_20261023/PROCEDURE.md",
+    "v3_validation": "reports/procedure_freezes/XAUUSD_EARLY_WATCH_V3_20261023/VALIDATION.md",
+    "v3_template": "reports/procedure_freezes/XAUUSD_EARLY_WATCH_V3_20261023/early_watch_record.template.json",
+    "v3_manifest": "reports/procedure_freezes/XAUUSD_EARLY_WATCH_V3_20261023/manifest.json",
+    "v3_study": "reports/output/weekly_prospective_v3_early_watch_20261026_20270312/STUDY_PROTOCOL.json",
     "runbook": "reports/output/weekly_prospective_v1_vs_v2_20261026_20270312/RUNBOOK.txt",
     "lessons": "reports/output/turning_zone_sequence_lessons_20261021/LESSONS.html"
   },
@@ -6416,6 +6433,12 @@
     "output/weekly_prospective_v1_vs_v2_20261026_20270312/forecast_journal.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "output/weekly_prospective_v1_vs_v2_20261026_20270312/observation_journal.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "output/weekly_prospective_v1_vs_v2_20261026_20270312/week_end_journal.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "output/weekly_prospective_v3_early_watch_20261026_20270312/STUDY_PROTOCOL.json": "f99b8f399d92668111494801bf96624d60d58beecb764b6c1f215f8aca0e89b0",
+    "output/weekly_prospective_v3_early_watch_20261026_20270312/early_watch_journal.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "procedure_freezes/XAUUSD_EARLY_WATCH_V3_20261023/PROCEDURE.md": "d6f5f58b7c22b2a30072618937ece594e28b3b06d3d2e7749215587ce866d474",
+    "procedure_freezes/XAUUSD_EARLY_WATCH_V3_20261023/VALIDATION.md": "80ae4651049461998380321841d3b146b8fa17d1149991c91c6efe6c40ce445e",
+    "procedure_freezes/XAUUSD_EARLY_WATCH_V3_20261023/early_watch_record.template.json": "58345016aa9357fcf7bb10cccc6f88420dac5bd0d3a6737d80a296389f2eec1a",
+    "procedure_freezes/XAUUSD_EARLY_WATCH_V3_20261023/manifest.json": "5d48cc64dd0976020d364805a47fc256897cbe1a801bf7b224f92f8a5a86ddac",
     "output/weekly_codex_replay_20w_20260601_20261016/REPORT.html": "2b5b511a428f2eb11ce2f1f363f92b2dc37f2936d730e2fa47e432387afd5f4f",
     "output/weekly_codex_replay_20w_20260601_20261016/TWENTY_WEEK_CODEX_FORECAST_VS_ACTUAL.txt": "694f19b5f12c21496af2ae56bc6ab035298bcba515f969a936e42cef9ddedba7",
     "output/weekly_codex_replay_20w_20260601_20261016/RESULTS.json": "718d07740b5de69319e311b381c3544e738a7ee5087439befe1cc4c0a693d946",
