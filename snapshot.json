@@ -1,10 +1,24 @@
 {
   "schema_version": 1,
-  "snapshot_built_at": "2026-10-23T08:05:05.921828+03:00",
+  "snapshot_built_at": "2026-10-23T23:53:29+03:00",
   "snapshot_scope": "Saved records packaged on explicit request. Build time is not forecast issuance or market freshness.",
   "timezone": "Africa/Nairobi",
   "symbol": "XAUUSD.pro",
   "update_policy": "Weekly and daily forecasts are updated only on explicit user request. No polling, scheduler or automatic analysis.",
+  "candidate_methods": {
+    "v1_1_id": "XAUUSD_WEEKLY_V1_1_20261023",
+    "v2_1_id": "XAUUSD_WEEKLY_V2_1_20261023",
+    "readiness": "STAGED — REVIEW REQUIRED",
+    "readiness_note": "Session and tick-finality checks, broader route and gate fixtures, source-backed August replays, and independent review remain outstanding. No V1.1/V2.1 forecast has been registered; this dashboard change does not validate forecast accuracy.",
+    "forecast_status": "No V1.1/V2.1 weekly forecast registered",
+    "registered_forecasts": 0,
+    "first_test_week": "2026-10-26",
+    "acceptance": {
+      "existing_extractor": "17 tests passed",
+      "candidate_adapters": "16 tests passed",
+      "open_items": "Session calendar and tick finality; route/gate replay coverage; source-backed August cases; independent review"
+    }
+  },
   "weekly": {
     "schema_version": "1.0",
     "forecast_id": "XAUUSD_WEEK_20261019_V1",
@@ -299,8 +313,8 @@
               "close": 4088.71
             },
             "tick_minus_official": {
-              "open": 0.0,
-              "high": 0.0,
+              "open": 0,
+              "high": 0,
               "low": -0.19,
               "close": 2.32
             }
@@ -331,8 +345,8 @@
               "close": 4088.71
             },
             "tick_minus_official": {
-              "open": 0.0,
-              "high": 0.0,
+              "open": 0,
+              "high": 0,
               "low": -0.19,
               "close": 2.39
             }
@@ -1098,7 +1112,7 @@
           "open": 4127.02,
           "high": 4131.75,
           "low": 4111.95,
-          "close": 4117.0,
+          "close": 4117,
           "ema10": 4131.9399025765,
           "ema20": 4141.343185366,
           "ema50": 4151.8898746664,
@@ -2163,7 +2177,7 @@
       "cutoff_atr": 5.823571428571411,
       "leg": 16.9399999999996,
       "consumed_pct": 58.67768595041225,
-      "remaining": 7.0,
+      "remaining": 7,
       "remaining_atr": 1.2020115294983478,
       "full_confirmation_time": null,
       "scope": "Provisional current-location screen only; no completed entry or formal no-chase decision generated."
@@ -3483,7 +3497,7 @@
           {
             "id": "RESISTANCE",
             "role": "TURN_RESISTANCE",
-            "low": 4134.0,
+            "low": 4134,
             "high": 4138.14
           },
           {
@@ -3536,7 +3550,7 @@
           {
             "id": "RESISTANCE",
             "role": "TURN_RESISTANCE",
-            "low": 4134.0,
+            "low": 4134,
             "high": 4138.14
           },
           {
@@ -3690,7 +3704,7 @@
           {
             "id": "EXTREME",
             "role": "TARGET_TURN",
-            "low": 4134.0,
+            "low": 4134,
             "high": 4138.14
           }
         ],
@@ -3743,7 +3757,7 @@
           {
             "id": "EXTREME",
             "role": "TARGET_TURN",
-            "low": 4134.0,
+            "low": 4134,
             "high": 4138.14
           }
         ],
@@ -3976,7 +3990,7 @@
           "first_later_completed_h4_close_across": {
             "bar_time": "2026-07-24 04:00:00",
             "close_time": "2026-07-24 08:00:00",
-            "close": 4027.0
+            "close": 4027
           }
         },
         "weekly_preference_not_entry_permission": true,
@@ -6165,8 +6179,8 @@
           {
             "id": "UPPER",
             "role": "TARGET_TURN",
-            "low": 4261.0,
-            "high": 4261.0
+            "low": 4261,
+            "high": 4261
           }
         ],
         "origin_zone": "CONTROL",
@@ -6224,8 +6238,8 @@
           {
             "id": "UPPER",
             "role": "TARGET_TURN",
-            "low": 4261.0,
-            "high": 4261.0
+            "low": 4261,
+            "high": 4261
           }
         ],
         "origin_zone": "RESISTANCE",
@@ -6269,16 +6283,16 @@
     "v1_first_leg_all_20": {
       "weeks": 20,
       "body_hits": 10,
-      "body_pct": 50.0,
+      "body_pct": 50,
       "dominant_hits": 10,
-      "dominant_pct": 50.0
+      "dominant_pct": 50
     },
     "v2_first_leg_all_20": {
       "weeks": 20,
       "body_hits": 10,
-      "body_pct": 50.0,
+      "body_pct": 50,
       "dominant_hits": 12,
-      "dominant_pct": 60.0
+      "dominant_pct": 60
     },
     "v2_explicit_weekly_preference": {
       "weeks": 13,
@@ -6290,7 +6304,7 @@
     "v2_weekly_preference_coverage": {
       "resolved": 13,
       "unresolved": 7,
-      "coverage_pct": 65.0,
+      "coverage_pct": 65,
       "unresolved_weeks": [
         "2026-06-01",
         "2026-07-06",
@@ -6315,16 +6329,16 @@
       "BUY": {
         "weeks": 20,
         "body_hits": 7,
-        "body_pct": 35.0,
+        "body_pct": 35,
         "dominant_hits": 5,
-        "dominant_pct": 25.0
+        "dominant_pct": 25
       },
       "SELL": {
         "weeks": 20,
         "body_hits": 13,
-        "body_pct": 65.0,
+        "body_pct": 65,
         "dominant_hits": 15,
-        "dominant_pct": 75.0
+        "dominant_pct": 75
       }
     },
     "benchmarks_same_resolved_subset": {
@@ -6348,9 +6362,9 @@
     "previous_week_body_benchmark_all_20": {
       "weeks": 20,
       "body_hits": 10,
-      "body_pct": 50.0,
+      "body_pct": 50,
       "dominant_hits": 12,
-      "dominant_pct": 60.0,
+      "dominant_pct": 60,
       "flat_prior_weeks": 0,
       "definition": "Direction of the immediately preceding completed week body, evaluated as a descriptive benchmark only."
     },
@@ -6381,19 +6395,15 @@
     "opening_observations": 0,
     "closure_records": 0
   },
-  "early_watch": {
-    "method_id": "XAUUSD_EARLY_WATCH_V3_20261023",
-    "status": "No V2 map is registered for forecast week 2026-10-19; V3 needs a matching frozen V2 map.",
-    "current_v2_map_available": false,
-    "current_v2_map_id": null,
-    "next_target_week": "2026-10-26",
-    "review_mode": "User-requested DAILY or EVALUATE cutoffs only; no automation or background monitoring",
-    "records_created": 0,
-    "records": [],
-    "live_promotion": false,
-    "deployment": false
-  },
   "links": {
+    "candidate_v1_1": "reports/methods/XAUUSD_V1_V2_UPGRADE_20261023/WEEKLY_V1_1.md",
+    "candidate_v2_1": "reports/methods/XAUUSD_V1_V2_UPGRADE_20261023/WEEKLY_V2_1.md",
+    "candidate_status": "reports/methods/XAUUSD_V1_V2_UPGRADE_20261023/IMPLEMENTATION_STATUS.md",
+    "candidate_acceptance": "reports/methods/XAUUSD_V1_V2_UPGRADE_20261023/ACCEPTANCE_STATUS.md",
+    "candidate_diff": "reports/methods/XAUUSD_V1_V2_UPGRADE_20261023/DIFF_MATRIX.md",
+    "legacy_daily": "reports/output/daily_20261022_0830/REPORT.html",
+    "legacy_v1_procedure": "reports/procedure_freezes/XAUUSD_WEEKLY_PROCEDURE_V1_20261021/PROCEDURE.md",
+    "legacy_v2_procedure": "reports/procedure_freezes/XAUUSD_WEEKLY_PROCEDURE_V2_20261021/PROCEDURE.md",
     "v1_report": "reports/output/weekly_codex_replay_20w_20260601_20261016/REPORT.html",
     "v2_report": "reports/output/weekly_codex_v2_retest_20w_20260601_20261016/REPORT.html",
     "v1_csv": "reports/output/weekly_codex_replay_20w_20260601_20261016/forecast_vs_actual_20_weeks.csv",
@@ -6411,11 +6421,6 @@
     "levels": "reports/output/levels/XAUUSD_WEEK_20261019_V1/weekly_levels.json",
     "v1_procedure": "reports/procedure_freezes/XAUUSD_WEEKLY_PROCEDURE_V1_20261021/PROCEDURE.md",
     "v2_procedure": "reports/procedure_freezes/XAUUSD_WEEKLY_PROCEDURE_V2_20261021/PROCEDURE.md",
-    "v3_procedure": "reports/procedure_freezes/XAUUSD_EARLY_WATCH_V3_20261023/PROCEDURE.md",
-    "v3_validation": "reports/procedure_freezes/XAUUSD_EARLY_WATCH_V3_20261023/VALIDATION.md",
-    "v3_template": "reports/procedure_freezes/XAUUSD_EARLY_WATCH_V3_20261023/early_watch_record.template.json",
-    "v3_manifest": "reports/procedure_freezes/XAUUSD_EARLY_WATCH_V3_20261023/manifest.json",
-    "v3_study": "reports/output/weekly_prospective_v3_early_watch_20261026_20270312/STUDY_PROTOCOL.json",
     "runbook": "reports/output/weekly_prospective_v1_vs_v2_20261026_20270312/RUNBOOK.txt",
     "lessons": "reports/output/turning_zone_sequence_lessons_20261021/LESSONS.html"
   },
