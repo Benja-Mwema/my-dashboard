@@ -1,22 +1,14 @@
 {
-  "release_id": "20261023_235329_EAT_V11_V21",
+  "release_id": "20261026_073638_136305_EAT",
   "dashboard": "AURUM",
   "public_url": "https://my-dashboard-olo8.onrender.com/",
   "forecast_updates": "explicit_user_request_only",
   "automatic_analysis": false,
   "automatic_publication": false,
   "new_forecasts_generated_by_publisher": false,
-  "weekly_forecast_id": null,
-  "daily_evidence_cutoff": null,
-  "daily_created_at_eat": null,
-  "evaluation_cutoff": null,
-  "snapshot_sha256": "d665302c778033eb263773f902ddd71fe7a1b62b42cf031fbf559f1306191975",
-  "method_pair": "XAUUSD V1.1 + V2.1",
-  "readiness": "STAGED — REVIEW REQUIRED",
-  "active_weekly_forecast_id": null,
-  "active_daily_forecast_id": null,
-  "legacy_weekly_forecast_id": "XAUUSD_WEEK_20261019_V1",
-  "legacy_daily_evidence_cutoff": "2026-10-22 08:30:00 EAT",
-  "legacy_daily_created_at_eat": "2026-10-22T08:45:04+03:00",
-  "legacy_evaluation_cutoff": "2026-10-21 15:00:00 EAT"
+  "weekly_forecast_id": "XAUUSD_WEEK_20261026_V1",
+  "daily_evidence_cutoff": "2026-10-26 07:15:00",
+  "daily_created_at_eat": "2026-10-26T07:35:04+03:00",
+  "evaluation_cutoff": "2026-10-21 15:00:00",
+  "snapshot_sha256": "398e46bdfc38b893fdf282550d9f7c1c700997693dafb36e9cca536d6dfb908e"
 }

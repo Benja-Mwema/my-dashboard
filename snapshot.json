@@ -1,268 +1,141 @@
 {
   "schema_version": 1,
-  "snapshot_built_at": "2026-10-23T23:53:29+03:00",
-  "snapshot_scope": "Saved records packaged on explicit request. Build time is not forecast issuance or market freshness.",
+  "snapshot_built_at": "2026-10-26T07:35:04+03:00",
+  "snapshot_scope": "On-request static snapshot. Late reconstructed weekly forecast; build time is not forecast issuance.",
   "timezone": "Africa/Nairobi",
   "symbol": "XAUUSD.pro",
   "update_policy": "Weekly and daily forecasts are updated only on explicit user request. No polling, scheduler or automatic analysis.",
   "candidate_methods": {
-    "v1_1_id": "XAUUSD_WEEKLY_V1_1_20261023",
-    "v2_1_id": "XAUUSD_WEEKLY_V2_1_20261023",
-    "readiness": "STAGED — REVIEW REQUIRED",
-    "readiness_note": "Session and tick-finality checks, broader route and gate fixtures, source-backed August replays, and independent review remain outstanding. No V1.1/V2.1 forecast has been registered; this dashboard change does not validate forecast accuracy.",
-    "forecast_status": "No V1.1/V2.1 weekly forecast registered",
+    "v1_id": "XAUUSD_WEEKLY_PROCEDURE_V1_20261021",
+    "v2_id": "XAUUSD_WEEKLY_PROCEDURE_V2_20261021",
+    "readiness": "V1 baseline + V2 frozen research candidate",
+    "readiness_note": "V2 is prospective research only. This pair was issued after the target week began; exclude from prospective accuracy.",
+    "forecast_status": "LATE RECONSTRUCTED · MAPS FROZEN",
     "registered_forecasts": 0,
     "first_test_week": "2026-10-26",
     "acceptance": {
-      "existing_extractor": "17 tests passed",
-      "candidate_adapters": "16 tests passed",
-      "open_items": "Session calendar and tick finality; route/gate replay coverage; source-backed August cases; independent review"
+      "extractor": "Frozen and unchanged",
+      "analysis_owner": "Codex",
+      "open_items": "Forecast issued after target week began; no prospective scoring."
     }
   },
   "weekly": {
     "schema_version": "1.0",
-    "forecast_id": "XAUUSD_WEEK_20261019_V1",
     "symbol": "XAUUSD.pro",
     "forecast_type": "weekly",
-    "evidence_cutoff": "2026-10-17 00:00:00",
-    "forecast_week_start": "2026-10-19 00:00:00",
-    "frozen_at": "2026-10-20 23:14:14",
-    "created_at_eat": "2026-10-20T23:14:14+03:00",
-    "valid_from": "2026-10-20 23:14:14",
-    "valid_to": "2026-10-24 00:00:00",
+    "forecast_week_start": "2026-10-26 00:00:00",
+    "evidence_cutoff": "2026-10-24 00:00:00",
     "timezone": "Africa/Nairobi",
-    "status": "FINAL",
-    "provenance": "Reconstructed midweek from preweek evidence only; actually frozen now. No claim of issuance before current-week moves. Historical current-week touches are context only.",
-    "weekly_evidence_package": "output/weekly_20261016",
-    "preweek_regime": "H4 corrective recovery within broader range; H1 cooling",
-    "primary_path": {
-      "sequence": [
-        "WCONTROL support holds with M15 turn, M30 confirmation and H1 bullish permission",
-        "WRES",
-        "WUPPER after accepted breakout"
-      ],
-      "failure": "Completed H4 close below 4146.87 invalidates primary support-hold scenario."
-    },
-    "alternate_path": {
-      "sequence": [
-        "H4 breakdown below WCONTROL and H1 bearish permission",
-        "Failed recovery/retest of WCONTROL",
-        "WMID",
-        "WSUPPORT after acceptance below 4123.18",
-        "WBASE after acceptance below 4099.94"
-      ],
-      "failure": "Completed H4 close above 4162.20 invalidates the control-breakdown SELL branch. Each retest SELL is invalidated by completed H1 acceptance above its zone high."
-    },
-    "invalidation_rules": {
-      "WCONTROL_buy": "Completed H4 close below 4146.87",
-      "WCONTROL_sell": "Completed H4 close above 4162.20",
-      "WMID_sell": "Completed H1 close above 4131.50",
-      "WSUPPORT_buy": "Completed H4 close below 4099.94",
-      "WRES_sell": "Completed H4 close above 4198.80",
-      "WUPPER_sell": "Completed H4 close above 4217.27",
-      "WBASE_buy": "Completed H4 close below 4066.50"
-    },
-    "entry_gate_interpretation": {
-      "new_signal_eligibility": "Only fully post-freeze completed M15 bars may establish a new qualification or trigger. A bar opening before the actual freeze is contextual only. No confirmation timestamp may precede valid_from.",
-      "M15_qualification": "For SELL, a completed rejection in/through the active resistance zone closing below its lower edge; BUY mirrors above support. Directional indicator improvement must corroborate. A price/EMA state alone is not a new trigger.",
-      "M15_trigger": "A subsequent completed directional close beyond the qualification candle low for SELL or high for BUY. Must remain valid at the cutoff.",
-      "M30_confirmation": "Completed directional acceptance beyond the active-zone exit boundary and local structure, with close on directional side of EMA10/EMA20 and corroborating momentum. Mere touch is insufficient.",
-      "H1_permission": "Completed close on directional side of EMA10/EMA20 and active structural boundary, with regime-consistent MACD direction or explicitly demonstrated momentum turn. Positive but declining histogram alone is not equivalent to fully bearish permission.",
-      "H4_allowance": "Completed H4 regime permits direction and specified scenario invalidation has not occurred. Countertrend trades require an explicit H4 turn; support touch alone is insufficient.",
-      "first_full_confirmation": "Earliest eligible close_time when all specified gates coexist. No earlier historical confirmation under this newly frozen map.",
-      "opposing_level_selection": "Use the near edge of the nearest unconsumed opposing zone; do not skip an intervening zone to enlarge remaining room.",
-      "no_chase": "Consumption strictly below 65%; remaining room at least 2.5 M15 ATR at exact full confirmation; recheck fresh-entry location at requested cutoff."
-    },
+    "forecast_status": "LATE RECONSTRUCTED — NOT A PRE-WEEK FORECAST",
+    "actually_frozen_at_eat": "2026-10-26T07:35:04+03:00",
+    "valid_from_eat": "2026-10-26T07:35:04+03:00",
+    "valid_to": "2026-10-31 00:00:00",
+    "source_timezone": "Africa/Kampala broker-local treated as EAT for joins",
+    "evidence_package": "output/weekly_20261024_actual_close/weekly_20261023",
     "levels": [
       {
-        "id": "WCONTROL",
-        "label": "Preweek support/control; bearish retest after completed breakdown",
-        "role": "CONTROL",
-        "direction_context": "BUY rejection while held; SELL rejection after H4 breakdown",
-        "low": 4146.87,
-        "high": 4162.2,
-        "priority": 1,
+        "id": "SUPPORT",
+        "label": "Prior-week extreme / first downside objective",
+        "role": "SUPPORT / TARGET_TURN",
+        "low": 3975.61,
+        "high": 3986.56,
         "basis": [
-          "2026-10-13 low 4146.87",
-          "2026-10-16 low 4147.32",
-          "preweek H1 EMA200 4162.1977"
-        ],
-        "buy_opposing_level": "WRES",
-        "sell_opposing_level": "WMID"
-      },
-      {
-        "id": "WMID",
-        "label": "Intermediate downside target and conditional retest control",
-        "role": "TARGET_TURN",
-        "direction_context": "SELL target from WCONTROL; SELL retest only after acceptance below 4123.18",
-        "low": 4123.18,
-        "high": 4131.5,
-        "priority": 2,
-        "basis": [
-          "2026-10-05 low 4123.18",
-          "2026-10-09 low 4123.84",
-          "2026-10-15 08:00 H4 low 4131.50"
-        ],
-        "sell_opposing_level": "WSUPPORT"
-      },
-      {
-        "id": "WSUPPORT",
-        "label": "Lower support and downside target",
-        "role": "TURN_SUPPORT",
-        "direction_context": "BUY watch only with H4 allowance and H1 permission; SELL target",
-        "low": 4099.94,
-        "high": 4110.88,
-        "priority": 3,
-        "basis": [
-          "2026-10-15 low 4099.94",
-          "2026-10-08 low 4103.26",
-          "2026-10-06 low 4104.37",
-          "2026-09-28 low 4110.88"
-        ],
-        "buy_opposing_level": "WMID",
-        "sell_opposing_level": "WBASE"
-      },
-      {
-        "id": "WBASE",
-        "label": "Structural lower extreme and terminal downside target-turn",
-        "role": "TARGET_TURN",
-        "direction_context": "Downside target; countertrend BUY watch only after reversal gates",
-        "low": 4066.5,
-        "high": 4077.89,
-        "priority": 4,
-        "basis": [
-          "2026-10-07 low 4066.50",
-          "2026-10-14 low 4073.37",
-          "2026-10-14 20:00 H4 low 4077.89"
+          "H4 low 3975.61 on 23 Oct 16:00–20:00",
+          "H4 low 3986.56 on 23 Oct 04:00–08:00"
         ]
       },
       {
-        "id": "WRES",
-        "label": "Upper rejection resistance",
-        "role": "TURN_RESISTANCE",
-        "direction_context": "SELL watch with H4 allowance and H1 permission; BUY target",
-        "low": 4186.38,
-        "high": 4198.8,
-        "priority": 5,
+        "id": "CONTROL",
+        "label": "Late-Friday closing control band",
+        "role": "CONTROL",
+        "low": 3990.89,
+        "high": 4002.3,
         "basis": [
-          "2026-10-16 04:00 H4 high 4186.38",
-          "2026-10-16 high 4198.80"
-        ],
-        "sell_opposing_level": "WCONTROL",
-        "buy_opposing_level": "WUPPER"
+          "H4 23 Oct 20:00–24:00 range",
+          "weekly close 3996.07"
+        ]
       },
       {
-        "id": "WUPPER",
-        "label": "Upper range target-turn",
-        "role": "TARGET_TURN",
-        "direction_context": "BUY continuation target; SELL only after rejection gates",
-        "low": 4207.4,
-        "high": 4217.27,
-        "priority": 6,
+        "id": "RESISTANCE_1",
+        "label": "Friday recovery ceiling / H4 EMA10 area",
+        "role": "TURN_RESISTANCE / ORIGIN",
+        "low": 4020.24,
+        "high": 4034.17,
         "basis": [
-          "2026-10-09 high 4207.40",
-          "2026-10-12 high 4217.27"
-        ],
-        "sell_opposing_level": "WRES"
+          "H4 23 Oct 12:00 low 4020.24",
+          "H4 23 Oct 16:00 high 4034.17",
+          "preweek H4 EMA10 4032.30"
+        ]
+      },
+      {
+        "id": "RESISTANCE_2",
+        "label": "Broken-support reclaim / H4 EMA20 area",
+        "role": "EXTENSION / TARGET_TURN",
+        "low": 4057.36,
+        "high": 4077.89,
+        "basis": [
+          "H4 22 Oct 12:00 low 4057.36",
+          "preweek H4 EMA20 4063.31",
+          "H4 22 Oct 08:00 low 4066.91",
+          "H4 14 Oct low 4077.89"
+        ]
       }
-    ]
+    ],
+    "forecast_id": "XAUUSD_WEEK_20261026_V1",
+    "method_id": "XAUUSD_WEEKLY_PROCEDURE_V1_20261021",
+    "method_provenance": "Accepted frozen baseline. Evidence cutoff is Friday close; actually issued Monday after target week began. Exclude from prospective accuracy. Monday review is separate and levels remain unchanged.",
+    "preweek_regime": "H4 remains in a strong bearish structure after a 4190.42 weekly high and lower highs/lows to 3975.61. Friday close 3996.07 remained below EMA10 4032.30, EMA20 4063.31, EMA50 4105.99 and EMA200 4198.56. MACD main −36.27 and histogram −7.85 remained negative, though the histogram improved from −11.13 over the final four H4 bars. H1 histogram improved to +0.63, but Friday close stayed below EMA10/20/50/200. Recovery/deceleration, not a confirmed H4 turn.",
+    "weekly_closing_preference": "SELL while below RESISTANCE_1 4034.17; directional context only, not entry permission.",
+    "first_leg_direction": "Conditional SELL after a fresh rejection from RESISTANCE_1; origin must precede SUPPORT.",
+    "primary_path": {
+      "sequence": [
+        "Price retraces into RESISTANCE_1 4020.24–4034.17",
+        "Completed M15 rejection and later trigger; M30 confirms and H1 permits SELL",
+        "First objective SUPPORT 3975.61–3986.56; no lower extension is frozen"
+      ],
+      "failure": "A completed H4 close above 4034.17 invalidates the rejection SELL branch."
+    },
+    "alternate_path": {
+      "trigger": "Completed H4 acceptance above 4034.17 followed by a held retest with H1 permission.",
+      "sequence": [
+        "Reclaim RESISTANCE_1",
+        "Hold/retest above 4034.17",
+        "Conditional extension to RESISTANCE_2 4057.36–4077.89"
+      ],
+      "failure": "A completed H4 close below CONTROL low 3990.89 invalidates the recovery branch."
+    },
+    "invalidation_rules": {
+      "primary_sell": "H4 close above 4034.17",
+      "alternate_buy": "H4 close below 3990.89"
+    },
+    "opening_review": {
+      "reviewed_at_eat": "2026-10-26T07:35:04+03:00",
+      "cutoff": "2026-10-26 07:15:00",
+      "note": "Separate post-freeze observation. Monday H4 low 3983.08 entered SUPPORT before RESISTANCE_1 was visited. The frozen SELL origin-to-target sequence has no valid event order and receives no target credit; it cannot be revived by shifting its origin. Price later recovered into CONTROL."
+    },
+    "entry_gates": "WEEKLY/DAILY is not an entry verdict. Exact-cutoff EVALUATE requires H4 allowance, H1 permission, M30 confirmation, M15 qualification/trigger, no backdating, <65% consumed and at least 2.5 M15 ATR remaining."
   },
   "current_v2": null,
   "daily": {
     "analytical_author": "Codex",
     "mode": "DAILY",
-    "date": "2026-10-22",
-    "cutoff": "2026-10-22 08:30:00",
-    "source_refreshed_at_eat": "2026-10-22 08:34:39",
-    "cutoff_selection": "Latest completed M15/M30 boundary at the 08:34 EAT MT5 refresh. H4/H1 expected completed boundaries were 08:00; M30/M15 expected completed boundaries were 08:30. Bars after 08:30 are excluded. A later quote is recorded separately as situational context only.",
-    "forecast_id": "XAUUSD_WEEK_20261019_V1",
-    "status": "FINAL DAILY CONTEXT",
-    "headline": "Bearish breakdown reaches WBASE",
-    "summary": "H4 and H1 closed below the frozen WSUPPORT band, activating the weekly downside path toward WBASE. By the 08:30 cutoff, price remained below WSUPPORT and the verified M15/M30 closes were 4088.71. A later 08:42:35 EAT quote at 4078.93 bid was only 1.04 above WBASE's upper edge, so the downside objective was already close and reaction risk was elevated. This is a conditional daily outlook, not a fresh SELL or BUY permission.",
-    "prediction": "For the remainder of 22 October, the primary mapped scenario is a test of frozen WBASE 4066.50-4077.89, followed by a pause, rejection or volatile two-sided reaction. The 08:30 completed M15/M30 close was 4088.71, 10.82 points above the WBASE upper edge. The post-cutoff quote at 08:42:35 EAT was 4078.93 bid, 1.04 above that edge; it is not a completed candle and is shown only to locate price at report time. The move is close to its frozen target, so a fresh SELL should not be inferred from this daily report or chased into WBASE.\n\nThe bearish context is supported by H4/H1 closes below WSUPPORT 4099.94-4110.88, below WMID 4123.18-4131.50, and below their short and long EMAs. The existing weekly alternate remains the controlling sequence. The next downside decision point is WBASE itself: a reaction there needs completed reversal structure before a countertrend BUY watch can strengthen. A completed H4 close below WBASE's 4066.50 lower edge would invalidate the frozen WBASE buy idea; this map defines no further downside target below that zone.\n\nA recovery path requires price to reclaim and hold WSUPPORT, first 4099.94 then 4110.88, with completed M30/H1 structure; that would improve the local recovery context but would not by itself invalidate the broader weekly alternate. Its stated failure condition remains a completed H4 close above 4162.20.\n\nConfidence is high that the completed structure is below WSUPPORT and that WBASE is the next frozen downside zone; confidence is lower in the order and size of the remaining-day reaction because M15 momentum is easing and current price is already near the target. This is a prospective conditional watch after issuance, not a calibrated probability or a trade verdict.",
-    "weekly_status": "The original WCONTROL support-hold primary failed earlier in the week. The frozen bearish alternate remains active. On 22 October, the H4 bar from 04:00 to 08:00 closed at 4091.73 below WCONTROL low 4146.87, WMID low 4123.18 and WSUPPORT low 4099.94. This invalidates the frozen WSUPPORT buy condition and leaves WBASE 4066.50-4077.89 as the next downside target-turn zone. WBASE has not been touched by completed candles through 08:30. The weekly alternate's stated invalidation is a completed H4 close above 4162.20; weekly levels remain unchanged.",
-    "contexts": [
-      {
-        "frame": "H4",
-        "headline": "Bearish pressure below all major averages",
-        "text": "The 04:00-open bar completed at 08:00 with O 4113.31, H 4124.04, L 4087.95, C 4091.73. The close is below EMA10 4120.95, EMA20 4130.08, EMA50 4144.04 and EMA200 4216.20. MACD main is -10.74 and histogram -2.21; its three-bar slope is negative while the five-bar slope is positive, so the short and broader histogram windows are mixed. The completed close below WSUPPORT 4099.94 is decisive for the frozen support-buy invalidation and downside path, but WBASE is close enough to raise reaction risk.",
-        "bar_time": "2026-10-22 04:00:00",
-        "close_time": "2026-10-22 08:00:00"
-      },
-      {
-        "frame": "H1",
-        "headline": "Downside permission context remains strong",
-        "text": "The 07:00-open bar completed at 08:00 with O 4092.17, H 4093.46, L 4087.95, C 4091.73. It is below EMA10 4112.75, EMA20 4118.77, EMA50 4126.73 and EMA200 4146.55. MACD main is -5.96, signal -2.02 and histogram -3.93, with three- and five-bar slopes both negative. This supports the bearish daily context; it does not authorize a fresh entry.",
-        "bar_time": "2026-10-22 07:00:00",
-        "close_time": "2026-10-22 08:00:00"
-      },
-      {
-        "frame": "M30",
-        "headline": "Bearish structure, but target is nearby",
-        "text": "The 08:00-open bar completed at 08:30 at tick-reconstructed O 4091.71, H 4092.86, L 4085.68, C 4088.71. It is below EMA10 4102.39, EMA20 4111.59, EMA50 4120.18 and EMA200 4136.21. MACD main is -9.71 and histogram -3.85; recent histogram slopes remain negative. The supplemental tick OHLC is used because the latest official M30 rate differed from the completed-tick reconstruction; the discrepancy and source values are preserved in the receipt.",
-        "bar_time": "2026-10-22 08:00:00",
-        "close_time": "2026-10-22 08:30:00"
-      },
-      {
-        "frame": "M15",
-        "headline": "Still below trend averages, with downside momentum easing",
-        "text": "The 08:15-open bar completed at 08:30 at tick-reconstructed O 4087.50, H 4089.36, L 4085.68, C 4088.71. It is below EMA10 4094.71, EMA20 4102.66, EMA50 4114.40 and EMA200 4126.98. MACD main is -9.73, signal -8.40 and histogram -1.33. The three- and five-bar histogram slopes are positive, indicating easing downside momentum despite the still-bearish price/EMA structure. The latest official M15 rate differed from the completed-tick reconstruction, so the tick-derived close is used and the discrepancy is disclosed.",
-        "bar_time": "2026-10-22 08:15:00",
-        "close_time": "2026-10-22 08:30:00"
-      }
-    ],
+    "date": "2026-10-26",
+    "cutoff": "2026-10-26 07:15:00",
+    "source_refreshed_at_eat": "2026-10-26 07:31:14 EAT",
+    "created_at_eat": "2026-10-26T07:35:04+03:00",
+    "forecast_id": "XAUUSD_WEEK_20261026_V1",
+    "status": "DAILY CONTEXT · TICK RECONCILED",
+    "headline": "Recovery from support into overhead resistance; H4 remains bearish",
+    "summary": "H4 closed at 3985.36 in SUPPORT 3975.61–3986.56; tick-verified H1/M30 recovered to 4007.62 and M15 closed 4009.33. This is a recovery within bearish H4 structure. RESISTANCE_1 4020.24–4034.17 is the next mapped decision. SUPPORT was touched before the declared sell origin, disrupting that sequence. No entry verdict.",
+    "prediction": "# XAUUSD Daily Forecast · Monday 26 October 2026\n\n**Evidence cutoff:** 07:15 EAT. **Report authored:** 2026-10-26T07:35:04+03:00 EAT. Weekly levels were frozen on Monday after this cutoff, using Friday-only evidence. This is a retrospective analysis at 07:15, not a forecast issued before that cutoff.\n\n## Evidence and tick reconciliation\n\nLatest completed bars: H4 00:00–04:00 close 3985.36; H1/M30 close 07:00; M15 07:00–07:15 close 4009.33. These are expected boundaries at 07:15.\n\nOfficial memory closes for M30 06:30–07:00 and H1 06:00–07:00 are 4012.39 and 4012.36. Fully covered historical bid ticks instead give 4007.62 for both, matching the completed 06:45–07:00 M15 close. The M30 tick low 4007.62 is corroborated by that M15 bar. I use 4007.62 for H1/M30 price context and retain the official discrepancy as a source-quality note. No indicator-gated entry claim is based on those mismatched official closes. Latest M15 OHLC matches ticks exactly: 4007.63 / 4010.57 / 4007.19 / 4009.33. H4 OHLC also matches ticks exactly.\n\n## Context and outlook\n\nH4 remains bearish: it closed 3985.36 near its 3983.08 low, below EMA10 4023.76, EMA20 4055.89, EMA50 4101.26 and EMA200 4196.44; MACD histogram remained negative. Tick-verified H1/M30 recovered to 4007.62 and M15 closed 4009.33. The 07:31:12 quote at 4012.23 bid is post-cutoff context only. This is a short-term recovery inside bearish H4 structure, not an H4 turn.\n\n**Rest of day:** recovery can test RESISTANCE_1 4020.24–4034.17. A completed rejection keeps bearish context relevant, but SUPPORT 3975.61–3986.56 has already been touched before the declared origin, so the original first-leg sequence is disrupted and is not an active sell route. A completed H4 acceptance above 4034.17 shifts attention to RESISTANCE_2 4057.36–4077.89. A fresh completed H4 close below 3975.61 reopens downside continuation, but no lower target is frozen; reassess rather than invent one.\n\nNearest zone below the M15 close is CONTROL 3990.89–4002.30; nearest above is RESISTANCE_1 4020.24–4034.17. H4 close remains inside SUPPORT. No BUY/SELL/WAIT verdict is implied; request exact-cutoff EVALUATE for all gates and no-chase.\n\n**Limitations:** late weekly issuance; daily cutoff predates its map's actual issuance although map evidence is Friday-only; official M30/H1 close conflict; no lower structural target; live quote post-cutoff.\n",
+    "weekly_status": "The frozen first downside objective was touched before the declared RESISTANCE_1 origin. No origin-to-target credit; do not revive by shifting levels.",
     "active_levels": [
-      "At the 08:30 cutoff, tick-derived close 4088.71 was 11.23 points (1.72 M15 ATR) below the nearest frozen zone above, WSUPPORT 4099.94-4110.88, and 10.82 points (1.66 M15 ATR) above the nearest frozen zone below, WBASE 4066.50-4077.89.",
-      "The separate post-cutoff 08:42:35 EAT bid was 4078.93, just 1.04 points above WBASE's 4077.89 upper edge. WBASE was not touched by a completed candle through the 08:30 evidence cutoff.",
-      "WMID 4123.18-4131.50 and WCONTROL 4146.87-4162.20 are overhead recovery barriers; WRES 4186.38-4198.80 and WUPPER 4207.40-4217.27 are outside the base-case remaining-day path."
+      "SUPPORT 3975.61–3986.56",
+      "CONTROL 3990.89–4002.30",
+      "RESISTANCE_1 4020.24–4034.17",
+      "RESISTANCE_2 4057.36–4077.89 after H4 acceptance"
     ],
-    "interactions": [
-      {
-        "bar_time": "2026-10-22 01:45:00",
-        "close_time": "2026-10-22 02:00:00",
-        "description": "First M15 contact with WMID: low 4130.27 and close 4130.94, below the zone's 4131.50 upper edge."
-      },
-      {
-        "bar_time": "2026-10-22 03:00:00",
-        "close_time": "2026-10-22 03:15:00",
-        "description": "First completed M15 close below WMID low 4123.18: 4120.80."
-      },
-      {
-        "bar_time": "2026-10-22 04:00:00",
-        "close_time": "2026-10-22 04:15:00",
-        "description": "First M15 touch of WSUPPORT: low 4110.71 and close 4115.25, so the close remained above the zone."
-      },
-      {
-        "bar_time": "2026-10-22 06:30:00",
-        "close_time": "2026-10-22 06:45:00",
-        "description": "First M15 close below WSUPPORT low 4099.94: 4094.31. The H1 bar from 06:00 then completed at 07:00 at 4092.19 below the zone."
-      },
-      {
-        "bar_time": "2026-10-22 04:00:00",
-        "close_time": "2026-10-22 08:00:00",
-        "description": "H4 closed at 4091.73 below WSUPPORT low 4099.94, confirming the frozen support-buy invalidation and downside continuation context."
-      },
-      {
-        "bar_time": "2026-10-22 08:15:00",
-        "close_time": "2026-10-22 08:30:00",
-        "description": "Latest completed M15 close, reconstructed from fully covered bid ticks, was 4088.71. WBASE remained untouched by completed candles at the cutoff."
-      }
-    ],
-    "watch_conditions": {
-      "BUY / WBASE reaction watch": "WBASE is a target-turn zone, not an automatic BUY. A recovery watch needs a completed M15 reversal/qualification, a subsequent trigger under the frozen setup, M30 confirmation, H1 permission and compatible H4 allowance. A completed H4 close below 4066.50 invalidates the WBASE buy idea.",
-      "SELL / continuation watch": "The frozen bearish alternate remains active, but price is near WBASE. Do not infer a fresh SELL from this daily report or chase into the target. A pullback toward WSUPPORT 4099.94-4110.88 followed by completed rejection may warrant a new EVALUATE; no fresh entry is established here.",
-      "Recovery / invalidation watch": "A completed reclaim of WSUPPORT, first above 4099.94 and then 4110.88, with M30/H1 structure would improve the local recovery context. The weekly alternate remains invalidated only by its frozen completed-H4 condition above 4162.20.",
-      "No-trade / no-chase": "The post-cutoff quote is close to the WBASE target and the M15 histogram is easing, so late downside chasing carries elevated target/reaction risk. DAILY does not calculate confirmation-time consumption or ATR no-chase gates. Request EVALUATE at an exact cutoff for a fresh BUY/SELL decision."
-    },
-    "limitations": [
-      "Causal evidence cutoff is 08:30 EAT. H4/H1 close at their expected 08:00 boundaries; M30/M15 close at their expected 08:30 boundaries. Original age-based H4/H1 warnings are preserved and are not material staleness.",
-      "The live quote at 08:42:35 EAT (bid 4078.93, ask 4079.07) is after the bar cutoff and is shown separately; the 08:30-08:45 M15/M30 bars were still forming and are excluded from analysis.",
-      "The latest official MT5 M15 and M30 bars differed from completed bid-tick reconstruction in their recent OHLC, including the close. Supplemental tick-derived bars use the repository's accepted fallback, merge and enrichment functions; endpoint coverage, tick counts and raw-tick hashes are recorded. Both supplemental closes remain below WSUPPORT, so the structural conclusion is unchanged. Original official values remain in the receipt.",
-      "The weekly map XAUUSD_WEEK_20261019_V1 was issued midweek on 20 October at 23:14:14 EAT from preweek evidence. This daily update does not redraw it or issue a new weekly V2.",
-      "This is DAILY context, not a fresh entry verdict. The last formal EVALUATE was 21 October 15:00 with WAIT and remains a separate historical assessment. No BUY/SELL allowed or denied verdict is issued for 22 October.",
-      "No calibrated probability, guarantee, lower target beyond frozen WBASE, news assessment, execution-cost estimate or profitability claim is made."
-    ],
-    "created_at_eat": "2026-10-22T08:45:04+03:00"
+    "contexts": []
   },
   "daily_facts": {
     "cutoff": "2026-10-22 08:30:00",
@@ -6396,14 +6269,6 @@
     "closure_records": 0
   },
   "links": {
-    "candidate_v1_1": "reports/methods/XAUUSD_V1_V2_UPGRADE_20261023/WEEKLY_V1_1.md",
-    "candidate_v2_1": "reports/methods/XAUUSD_V1_V2_UPGRADE_20261023/WEEKLY_V2_1.md",
-    "candidate_status": "reports/methods/XAUUSD_V1_V2_UPGRADE_20261023/IMPLEMENTATION_STATUS.md",
-    "candidate_acceptance": "reports/methods/XAUUSD_V1_V2_UPGRADE_20261023/ACCEPTANCE_STATUS.md",
-    "candidate_diff": "reports/methods/XAUUSD_V1_V2_UPGRADE_20261023/DIFF_MATRIX.md",
-    "legacy_daily": "reports/output/daily_20261022_0830/REPORT.html",
-    "legacy_v1_procedure": "reports/procedure_freezes/XAUUSD_WEEKLY_PROCEDURE_V1_20261021/PROCEDURE.md",
-    "legacy_v2_procedure": "reports/procedure_freezes/XAUUSD_WEEKLY_PROCEDURE_V2_20261021/PROCEDURE.md",
     "v1_report": "reports/output/weekly_codex_replay_20w_20260601_20261016/REPORT.html",
     "v2_report": "reports/output/weekly_codex_v2_retest_20w_20260601_20261016/REPORT.html",
     "v1_csv": "reports/output/weekly_codex_replay_20w_20260601_20261016/forecast_vs_actual_20_weeks.csv",
@@ -6411,18 +6276,24 @@
     "daily": "reports/output/daily_20261022_0830/REPORT.html",
     "daily_text": "reports/output/daily_20261022_0830/daily_forecast_20261022.txt",
     "daily_judgments": "reports/output/daily_20261022_0830/codex_daily.json",
-    "daily_validation": "reports/output/daily_20261022_0830/independent_validation.json",
+    "daily_validation": "reports/output/weekly_20261026_v1_v2/independent_validation.json",
     "daily_ticks": "reports/output/daily_20261022_0830/tick_verification_receipt.json",
     "daily_manifest": "reports/output/daily_20261022_0830/REPORT_MANIFEST.json",
     "evaluation": "reports/output/evaluate_20261021_1500/REPORT.html",
     "evaluation_json": "reports/output/evaluate_20261021_1500/codex_evaluation.json",
-    "validation": "reports/output/evaluate_20261021_1500/independent_validation.json",
-    "tick_receipt": "reports/output/evaluate_20261021_1500/key_interval_tick_verification.json",
+    "tick_receipt": "reports/output/daily_20261026_0715_eat/day_tick_verification_receipt.json",
     "levels": "reports/output/levels/XAUUSD_WEEK_20261019_V1/weekly_levels.json",
     "v1_procedure": "reports/procedure_freezes/XAUUSD_WEEKLY_PROCEDURE_V1_20261021/PROCEDURE.md",
     "v2_procedure": "reports/procedure_freezes/XAUUSD_WEEKLY_PROCEDURE_V2_20261021/PROCEDURE.md",
     "runbook": "reports/output/weekly_prospective_v1_vs_v2_20261026_20270312/RUNBOOK.txt",
-    "lessons": "reports/output/turning_zone_sequence_lessons_20261021/LESSONS.html"
+    "current_weekly_report": "reports/output/weekly_20261026_v1_v2/REPORT.html",
+    "current_daily_report": "reports/output/daily_20261026_0715_eat/REPORT.html",
+    "week_close_report": "reports/output/week_close_20261019_20261023/REPORT.html",
+    "v1_levels": "reports/output/levels/XAUUSD_WEEK_20261026_V1/weekly_levels.json",
+    "v2_levels": "reports/output/levels/XAUUSD_WEEK_20261026_V2/weekly_levels.json",
+    "weekly_validation": "reports/output/weekly_20261026_v1_v2/independent_validation.json",
+    "weekly_evidence": "reports/output/weekly_20261024_actual_close/xauusd.pro_weekly_20261023.zip",
+    "close_actuals": "reports/output/week_close_20261019_20261023/REPORT.html"
   },
   "source_sha256": {
     "output/weekly_codex_replay_20w_20260601_20261016/forecast_vs_actual_20_weeks.csv": "c961030cd405b00fbd68d8c7dad7036c957246518cba6880e25d4e9795d82e5f",
@@ -6562,6 +6433,361 @@
     "output/weekly_codex_v2_retest_20w_20260601_20261016/codex_v2_outcome_analysis.json": "5708b282ec1aa038542bcaf6e20dbae48f0175f83abc22cd1cbab6656a59ed9b",
     "output/turning_zone_sequence_lessons_20261021/zone_sequence_record.template.json": "b93581d67386a390dd40c953836abd011cf81187f834de7f7f653ebb4b17fd93",
     "output/turning_zone_sequence_lessons_20261021/LESSONS.txt": "d8c016b35fc5f1fc9c3330a56dfe92d6e7fccb76a4e3bfc87fb983cd356e89c1",
-    "output/evaluate_20261021_1500/factual_summary.json": "0257c26e056a65223fe516bf9ab1cd8468d732892b978ac360f0f3ee079ca641"
-  }
+    "output/evaluate_20261021_1500/factual_summary.json": "0257c26e056a65223fe516bf9ab1cd8468d732892b978ac360f0f3ee079ca641",
+    "output\\weekly_20261024_actual_close\\weekly_20261023\\xauusd.pro_weekly_manifest_20261023.json": "a3156ce07f8f5fe5768f4b683e95f1f8e37e54d068b94bf7e2636facb96e5598",
+    "output\\daily_20261026_0715_eat\\daily_20261026_0715\\xauusd.pro_daily_manifest_20261026_0715.json": "235c26ff878ce56cd4d1bac737cdfe065710b48227766337c313f4d2fc29c0f0",
+    "output\\weekly_20261026_v1_v2\\REPORT.md": "698c19ff241bdf60ca3f1a2902a1c1ef6e7d3151014c2e06c61ec96478b909aa",
+    "output\\daily_20261026_0715_eat\\REPORT.md": "fd60e85e1ec3ec693425ce78ce9b94b4bb44061b400ea6bcbdde9f1252ea5d4b",
+    "output\\week_close_20261019_20261023\\REPORT.md": "07aceb5b8a7056ac8f3226472f43290524967333b1d87a96256761423748817a",
+    "output\\levels\\XAUUSD_WEEK_20261026_V1\\weekly_levels.json": "9cde7a7f4665f57604079c951183f2dac83fd4c1efa96e6346bc8a6a1f20bdd4",
+    "output\\levels\\XAUUSD_WEEK_20261026_V2\\weekly_levels.json": "d838659b63ed714f5f1d3ce58adb7f71a95de59327113c96688598673d1d9f66"
+  },
+  "weekly_v2": {
+    "schema_version": "1.0",
+    "symbol": "XAUUSD.pro",
+    "forecast_type": "weekly",
+    "forecast_week_start": "2026-10-26 00:00:00",
+    "evidence_cutoff": "2026-10-24 00:00:00",
+    "timezone": "Africa/Nairobi",
+    "forecast_status": "LATE RECONSTRUCTED — NOT A PRE-WEEK FORECAST",
+    "actually_frozen_at_eat": "2026-10-26T07:35:04+03:00",
+    "valid_from_eat": "2026-10-26T07:35:04+03:00",
+    "valid_to": "2026-10-31 00:00:00",
+    "source_timezone": "Africa/Kampala broker-local treated as EAT for joins",
+    "evidence_package": "output/weekly_20261024_actual_close/weekly_20261023",
+    "levels": [
+      {
+        "id": "SUPPORT",
+        "label": "Prior-week extreme / first downside objective",
+        "role": "SUPPORT / TARGET_TURN",
+        "low": 3975.61,
+        "high": 3986.56,
+        "basis": [
+          "H4 low 3975.61 on 23 Oct 16:00–20:00",
+          "H4 low 3986.56 on 23 Oct 04:00–08:00"
+        ]
+      },
+      {
+        "id": "CONTROL",
+        "label": "Late-Friday closing control band",
+        "role": "CONTROL",
+        "low": 3990.89,
+        "high": 4002.3,
+        "basis": [
+          "H4 23 Oct 20:00–24:00 range",
+          "weekly close 3996.07"
+        ]
+      },
+      {
+        "id": "RESISTANCE_1",
+        "label": "Friday recovery ceiling / H4 EMA10 area",
+        "role": "TURN_RESISTANCE / ORIGIN",
+        "low": 4020.24,
+        "high": 4034.17,
+        "basis": [
+          "H4 23 Oct 12:00 low 4020.24",
+          "H4 23 Oct 16:00 high 4034.17",
+          "preweek H4 EMA10 4032.30"
+        ]
+      },
+      {
+        "id": "RESISTANCE_2",
+        "label": "Broken-support reclaim / H4 EMA20 area",
+        "role": "EXTENSION / TARGET_TURN",
+        "low": 4057.36,
+        "high": 4077.89,
+        "basis": [
+          "H4 22 Oct 12:00 low 4057.36",
+          "preweek H4 EMA20 4063.31",
+          "H4 22 Oct 08:00 low 4066.91",
+          "H4 14 Oct low 4077.89"
+        ]
+      }
+    ],
+    "forecast_id": "XAUUSD_WEEK_20261026_V2",
+    "method_id": "XAUUSD_WEEKLY_PROCEDURE_V2_20261021",
+    "method_status": "FROZEN RESEARCH CANDIDATE; prospective comparison only. This late record is ineligible for that study.",
+    "preweek_regime": "H4 remains in a strong bearish structure after a 4190.42 weekly high and lower highs/lows to 3975.61. Friday close 3996.07 remained below EMA10 4032.30, EMA20 4063.31, EMA50 4105.99 and EMA200 4198.56. MACD main −36.27 and histogram −7.85 remained negative, though the histogram improved from −11.13 over the final four H4 bars. H1 histogram improved to +0.63, but Friday close stayed below EMA10/20/50/200. Recovery/deceleration, not a confirmed H4 turn.",
+    "turn_evidence": {
+      "swing_reference": "H4 23 Oct low 3975.61; rebound ceiling 4034.17 on 23 Oct 16:00–20:00.",
+      "completed_h4_acceptance": "No H4 close above 4034.17 before cutoff; final close 3996.07.",
+      "h1_structure": "H1 histogram +0.63 but close below EMA10 4004.87, EMA20 4014.28, EMA50 4044.50 and EMA200 4109.09.",
+      "interpretation": "Corrective recovery, not a confirmed regime turn."
+    },
+    "weekly_closing_preference": "SELL while H4 stays below 4034.17; moderate confidence because H4/H1 histogram deceleration raises rebound risk.",
+    "first_leg_direction": "At preweek freeze: conditional SELL from RESISTANCE_1 to SUPPORT. At Monday opening review: UNRESOLVED because SUPPORT traded before origin; reassess any subsequent leg separately.",
+    "primary_path": {
+      "sequence": [
+        "Price retraces into RESISTANCE_1 4020.24–4034.17",
+        "Completed M15 rejection and later trigger; M30 confirms and H1 permits SELL",
+        "First objective SUPPORT 3975.61–3986.56; no lower extension is frozen"
+      ],
+      "failure": "A completed H4 close above 4034.17 invalidates the rejection SELL branch."
+    },
+    "alternate_path": {
+      "trigger": "Completed H4 acceptance above 4034.17 followed by a held retest with H1 permission.",
+      "sequence": [
+        "Reclaim RESISTANCE_1",
+        "Hold/retest above 4034.17",
+        "Conditional extension to RESISTANCE_2 4057.36–4077.89"
+      ],
+      "failure": "A completed H4 close below CONTROL low 3990.89 invalidates the recovery branch."
+    },
+    "invalidation_rules": {
+      "primary_sell": "H4 close above 4034.17",
+      "alternate_buy": "H4 close below 3990.89"
+    },
+    "opening_review": {
+      "reviewed_at_eat": "2026-10-26T07:35:04+03:00",
+      "cutoff": "2026-10-26 07:15:00",
+      "note": "Separate post-freeze observation. Monday H4 low 3983.08 entered SUPPORT before RESISTANCE_1 was visited. The frozen SELL origin-to-target sequence has no valid event order and receives no target credit; it cannot be revived by shifting its origin. Price later recovered into CONTROL."
+    },
+    "lifecycle": "By the 07:15 review SUPPORT was observed before RESISTANCE_1 origin. The frozen sequence is disrupted and cannot be revived by moving its origin. Any new setup needs a separately timestamped DAILY/EVALUATE assessment.",
+    "opening_checklist": [
+      "Compare opening to origin, failure and objective.",
+      "Use completed closes; opening wick alone is not H4 acceptance.",
+      "Target before origin means no origin-to-target credit.",
+      "Keep frozen prices unchanged; record any new setup separately."
+    ],
+    "entry_gates": "WEEKLY/DAILY is not an entry verdict. Exact-cutoff EVALUATE requires H4 allowance, H1 permission, M30 confirmation, M15 qualification/trigger, no backdating, <65% consumed and at least 2.5 M15 ATR remaining."
+  },
+  "week_close": {
+    "open": 4163.37,
+    "high": 4190.42,
+    "low": 3975.61,
+    "close": 3996.07,
+    "body": -167.29999999999973,
+    "range": 214.80999999999995,
+    "range_position": 0.09524696243191677,
+    "bars": 30,
+    "high_bar": "2026-10-19 08:00:00",
+    "low_bar": "2026-10-23 16:00:00"
+  },
+  "current_daily_analysis": {
+    "cutoff": "2026-10-26 07:15:00",
+    "authored_at_eat": "2026-10-26T07:35:04+03:00",
+    "completed_m15_close": 4009.33,
+    "tick_reconstructed_h1_m30_close": 4007.62,
+    "post_cutoff_quote": {
+      "time_eat": "2026-10-26 07:31:12",
+      "bid": 4012.23,
+      "ask": 4012.35
+    },
+    "report": "reports/output/daily_20261026_0715_eat/REPORT.html",
+    "tick_receipt": "reports/output/daily_20261026_0715_eat/day_tick_verification_receipt.json",
+    "validation": "reports/output/weekly_20261026_v1_v2/independent_validation.json"
+  },
+  "weekly_pair": {
+    "week": "2026-10-26–2026-10-30",
+    "v1": {
+      "schema_version": "1.0",
+      "symbol": "XAUUSD.pro",
+      "forecast_type": "weekly",
+      "forecast_week_start": "2026-10-26 00:00:00",
+      "evidence_cutoff": "2026-10-24 00:00:00",
+      "timezone": "Africa/Nairobi",
+      "forecast_status": "LATE RECONSTRUCTED — NOT A PRE-WEEK FORECAST",
+      "actually_frozen_at_eat": "2026-10-26T07:35:04+03:00",
+      "valid_from_eat": "2026-10-26T07:35:04+03:00",
+      "valid_to": "2026-10-31 00:00:00",
+      "source_timezone": "Africa/Kampala broker-local treated as EAT for joins",
+      "evidence_package": "output/weekly_20261024_actual_close/weekly_20261023",
+      "levels": [
+        {
+          "id": "SUPPORT",
+          "label": "Prior-week extreme / first downside objective",
+          "role": "SUPPORT / TARGET_TURN",
+          "low": 3975.61,
+          "high": 3986.56,
+          "basis": [
+            "H4 low 3975.61 on 23 Oct 16:00–20:00",
+            "H4 low 3986.56 on 23 Oct 04:00–08:00"
+          ]
+        },
+        {
+          "id": "CONTROL",
+          "label": "Late-Friday closing control band",
+          "role": "CONTROL",
+          "low": 3990.89,
+          "high": 4002.3,
+          "basis": [
+            "H4 23 Oct 20:00–24:00 range",
+            "weekly close 3996.07"
+          ]
+        },
+        {
+          "id": "RESISTANCE_1",
+          "label": "Friday recovery ceiling / H4 EMA10 area",
+          "role": "TURN_RESISTANCE / ORIGIN",
+          "low": 4020.24,
+          "high": 4034.17,
+          "basis": [
+            "H4 23 Oct 12:00 low 4020.24",
+            "H4 23 Oct 16:00 high 4034.17",
+            "preweek H4 EMA10 4032.30"
+          ]
+        },
+        {
+          "id": "RESISTANCE_2",
+          "label": "Broken-support reclaim / H4 EMA20 area",
+          "role": "EXTENSION / TARGET_TURN",
+          "low": 4057.36,
+          "high": 4077.89,
+          "basis": [
+            "H4 22 Oct 12:00 low 4057.36",
+            "preweek H4 EMA20 4063.31",
+            "H4 22 Oct 08:00 low 4066.91",
+            "H4 14 Oct low 4077.89"
+          ]
+        }
+      ],
+      "forecast_id": "XAUUSD_WEEK_20261026_V1",
+      "method_id": "XAUUSD_WEEKLY_PROCEDURE_V1_20261021",
+      "method_provenance": "Accepted frozen baseline. Evidence cutoff is Friday close; actually issued Monday after target week began. Exclude from prospective accuracy. Monday review is separate and levels remain unchanged.",
+      "preweek_regime": "H4 remains in a strong bearish structure after a 4190.42 weekly high and lower highs/lows to 3975.61. Friday close 3996.07 remained below EMA10 4032.30, EMA20 4063.31, EMA50 4105.99 and EMA200 4198.56. MACD main −36.27 and histogram −7.85 remained negative, though the histogram improved from −11.13 over the final four H4 bars. H1 histogram improved to +0.63, but Friday close stayed below EMA10/20/50/200. Recovery/deceleration, not a confirmed H4 turn.",
+      "weekly_closing_preference": "SELL while below RESISTANCE_1 4034.17; directional context only, not entry permission.",
+      "first_leg_direction": "Conditional SELL after a fresh rejection from RESISTANCE_1; origin must precede SUPPORT.",
+      "primary_path": {
+        "sequence": [
+          "Price retraces into RESISTANCE_1 4020.24–4034.17",
+          "Completed M15 rejection and later trigger; M30 confirms and H1 permits SELL",
+          "First objective SUPPORT 3975.61–3986.56; no lower extension is frozen"
+        ],
+        "failure": "A completed H4 close above 4034.17 invalidates the rejection SELL branch."
+      },
+      "alternate_path": {
+        "trigger": "Completed H4 acceptance above 4034.17 followed by a held retest with H1 permission.",
+        "sequence": [
+          "Reclaim RESISTANCE_1",
+          "Hold/retest above 4034.17",
+          "Conditional extension to RESISTANCE_2 4057.36–4077.89"
+        ],
+        "failure": "A completed H4 close below CONTROL low 3990.89 invalidates the recovery branch."
+      },
+      "invalidation_rules": {
+        "primary_sell": "H4 close above 4034.17",
+        "alternate_buy": "H4 close below 3990.89"
+      },
+      "opening_review": {
+        "reviewed_at_eat": "2026-10-26T07:35:04+03:00",
+        "cutoff": "2026-10-26 07:15:00",
+        "note": "Separate post-freeze observation. Monday H4 low 3983.08 entered SUPPORT before RESISTANCE_1 was visited. The frozen SELL origin-to-target sequence has no valid event order and receives no target credit; it cannot be revived by shifting its origin. Price later recovered into CONTROL."
+      },
+      "entry_gates": "WEEKLY/DAILY is not an entry verdict. Exact-cutoff EVALUATE requires H4 allowance, H1 permission, M30 confirmation, M15 qualification/trigger, no backdating, <65% consumed and at least 2.5 M15 ATR remaining."
+    },
+    "v2": {
+      "schema_version": "1.0",
+      "symbol": "XAUUSD.pro",
+      "forecast_type": "weekly",
+      "forecast_week_start": "2026-10-26 00:00:00",
+      "evidence_cutoff": "2026-10-24 00:00:00",
+      "timezone": "Africa/Nairobi",
+      "forecast_status": "LATE RECONSTRUCTED — NOT A PRE-WEEK FORECAST",
+      "actually_frozen_at_eat": "2026-10-26T07:35:04+03:00",
+      "valid_from_eat": "2026-10-26T07:35:04+03:00",
+      "valid_to": "2026-10-31 00:00:00",
+      "source_timezone": "Africa/Kampala broker-local treated as EAT for joins",
+      "evidence_package": "output/weekly_20261024_actual_close/weekly_20261023",
+      "levels": [
+        {
+          "id": "SUPPORT",
+          "label": "Prior-week extreme / first downside objective",
+          "role": "SUPPORT / TARGET_TURN",
+          "low": 3975.61,
+          "high": 3986.56,
+          "basis": [
+            "H4 low 3975.61 on 23 Oct 16:00–20:00",
+            "H4 low 3986.56 on 23 Oct 04:00–08:00"
+          ]
+        },
+        {
+          "id": "CONTROL",
+          "label": "Late-Friday closing control band",
+          "role": "CONTROL",
+          "low": 3990.89,
+          "high": 4002.3,
+          "basis": [
+            "H4 23 Oct 20:00–24:00 range",
+            "weekly close 3996.07"
+          ]
+        },
+        {
+          "id": "RESISTANCE_1",
+          "label": "Friday recovery ceiling / H4 EMA10 area",
+          "role": "TURN_RESISTANCE / ORIGIN",
+          "low": 4020.24,
+          "high": 4034.17,
+          "basis": [
+            "H4 23 Oct 12:00 low 4020.24",
+            "H4 23 Oct 16:00 high 4034.17",
+            "preweek H4 EMA10 4032.30"
+          ]
+        },
+        {
+          "id": "RESISTANCE_2",
+          "label": "Broken-support reclaim / H4 EMA20 area",
+          "role": "EXTENSION / TARGET_TURN",
+          "low": 4057.36,
+          "high": 4077.89,
+          "basis": [
+            "H4 22 Oct 12:00 low 4057.36",
+            "preweek H4 EMA20 4063.31",
+            "H4 22 Oct 08:00 low 4066.91",
+            "H4 14 Oct low 4077.89"
+          ]
+        }
+      ],
+      "forecast_id": "XAUUSD_WEEK_20261026_V2",
+      "method_id": "XAUUSD_WEEKLY_PROCEDURE_V2_20261021",
+      "method_status": "FROZEN RESEARCH CANDIDATE; prospective comparison only. This late record is ineligible for that study.",
+      "preweek_regime": "H4 remains in a strong bearish structure after a 4190.42 weekly high and lower highs/lows to 3975.61. Friday close 3996.07 remained below EMA10 4032.30, EMA20 4063.31, EMA50 4105.99 and EMA200 4198.56. MACD main −36.27 and histogram −7.85 remained negative, though the histogram improved from −11.13 over the final four H4 bars. H1 histogram improved to +0.63, but Friday close stayed below EMA10/20/50/200. Recovery/deceleration, not a confirmed H4 turn.",
+      "turn_evidence": {
+        "swing_reference": "H4 23 Oct low 3975.61; rebound ceiling 4034.17 on 23 Oct 16:00–20:00.",
+        "completed_h4_acceptance": "No H4 close above 4034.17 before cutoff; final close 3996.07.",
+        "h1_structure": "H1 histogram +0.63 but close below EMA10 4004.87, EMA20 4014.28, EMA50 4044.50 and EMA200 4109.09.",
+        "interpretation": "Corrective recovery, not a confirmed regime turn."
+      },
+      "weekly_closing_preference": "SELL while H4 stays below 4034.17; moderate confidence because H4/H1 histogram deceleration raises rebound risk.",
+      "first_leg_direction": "At preweek freeze: conditional SELL from RESISTANCE_1 to SUPPORT. At Monday opening review: UNRESOLVED because SUPPORT traded before origin; reassess any subsequent leg separately.",
+      "primary_path": {
+        "sequence": [
+          "Price retraces into RESISTANCE_1 4020.24–4034.17",
+          "Completed M15 rejection and later trigger; M30 confirms and H1 permits SELL",
+          "First objective SUPPORT 3975.61–3986.56; no lower extension is frozen"
+        ],
+        "failure": "A completed H4 close above 4034.17 invalidates the rejection SELL branch."
+      },
+      "alternate_path": {
+        "trigger": "Completed H4 acceptance above 4034.17 followed by a held retest with H1 permission.",
+        "sequence": [
+          "Reclaim RESISTANCE_1",
+          "Hold/retest above 4034.17",
+          "Conditional extension to RESISTANCE_2 4057.36–4077.89"
+        ],
+        "failure": "A completed H4 close below CONTROL low 3990.89 invalidates the recovery branch."
+      },
+      "invalidation_rules": {
+        "primary_sell": "H4 close above 4034.17",
+        "alternate_buy": "H4 close below 3990.89"
+      },
+      "opening_review": {
+        "reviewed_at_eat": "2026-10-26T07:35:04+03:00",
+        "cutoff": "2026-10-26 07:15:00",
+        "note": "Separate post-freeze observation. Monday H4 low 3983.08 entered SUPPORT before RESISTANCE_1 was visited. The frozen SELL origin-to-target sequence has no valid event order and receives no target credit; it cannot be revived by shifting its origin. Price later recovered into CONTROL."
+      },
+      "lifecycle": "By the 07:15 review SUPPORT was observed before RESISTANCE_1 origin. The frozen sequence is disrupted and cannot be revived by moving its origin. Any new setup needs a separately timestamped DAILY/EVALUATE assessment.",
+      "opening_checklist": [
+        "Compare opening to origin, failure and objective.",
+        "Use completed closes; opening wick alone is not H4 acceptance.",
+        "Target before origin means no origin-to-target credit.",
+        "Keep frozen prices unchanged; record any new setup separately."
+      ],
+      "entry_gates": "WEEKLY/DAILY is not an entry verdict. Exact-cutoff EVALUATE requires H4 allowance, H1 permission, M30 confirmation, M15 qualification/trigger, no backdating, <65% consumed and at least 2.5 M15 ATR remaining."
+    },
+    "late": true,
+    "report": "reports/output/weekly_20261026_v1_v2/REPORT.html",
+    "evidence": "reports/output/weekly_20261024_actual_close/xauusd.pro_weekly_20261023.zip",
+    "validation": "reports/output/weekly_20261026_v1_v2/independent_validation.json"
+  },
+  "week_close_report": "reports/output/week_close_20261019_20261023/REPORT.html"
 }

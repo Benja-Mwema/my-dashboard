@@ -1,0 +1,144 @@
+{
+  "created_at_eat": "2026-10-26T07:22:10.982389+03:00",
+  "method": "MT5 historical bid ticks; intervals are [bar_time, close_time), broker-local EAT wall clock retained; no endpoint ticks included.",
+  "symbol": "XAUUSD.pro",
+  "checks": [
+    {
+      "interval_id": "day_m15",
+      "symbol": "XAUUSD.pro",
+      "timeframe": "M15",
+      "bar_time_eat": "2026-10-26 07:00:00",
+      "close_time_eat": "2026-10-26 07:15:00",
+      "tick_count": 3124,
+      "first_tick_eat": "2026-10-26 07:00:00.365000",
+      "last_tick_eat": "2026-10-26 07:14:58.935000",
+      "ticks_in_half_open_interval": true,
+      "coverage_start_within_60s": true,
+      "coverage_end_within_60s": true,
+      "official_bid_ohlc": {
+        "open": 4007.63,
+        "high": 4010.57,
+        "low": 4007.19,
+        "close": 4009.33
+      },
+      "tick_bid_ohlc": {
+        "open": 4007.63,
+        "high": 4010.57,
+        "low": 4007.19,
+        "close": 4009.33
+      },
+      "tick_minus_official": {
+        "open": 0.0,
+        "high": 0.0,
+        "low": 0.0,
+        "close": 0.0
+      },
+      "ohlc_match_exact": true,
+      "raw_ticks_file": "output/daily_20261026_0715_eat/verified_ticks/day_m15_20261026_0700_0715.csv.gz",
+      "raw_ticks_sha256": "cf78b08926dee0ada937d693e187633fa0cabdaf60193f3a48c79f0cdebedfc9"
+    },
+    {
+      "interval_id": "day_m30",
+      "symbol": "XAUUSD.pro",
+      "timeframe": "M30",
+      "bar_time_eat": "2026-10-26 06:30:00",
+      "close_time_eat": "2026-10-26 07:00:00",
+      "tick_count": 6019,
+      "first_tick_eat": "2026-10-26 06:30:00.069000",
+      "last_tick_eat": "2026-10-26 06:59:59.640000",
+      "ticks_in_half_open_interval": true,
+      "coverage_start_within_60s": true,
+      "coverage_end_within_60s": true,
+      "official_bid_ohlc": {
+        "open": 4012.46,
+        "high": 4015.59,
+        "low": 4011.14,
+        "close": 4012.39
+      },
+      "tick_bid_ohlc": {
+        "open": 4012.46,
+        "high": 4015.59,
+        "low": 4007.62,
+        "close": 4007.62
+      },
+      "tick_minus_official": {
+        "open": 0.0,
+        "high": 0.0,
+        "low": -3.52,
+        "close": -4.77
+      },
+      "ohlc_match_exact": false,
+      "raw_ticks_file": "output/daily_20261026_0715_eat/verified_ticks/day_m30_20261026_0630_0700.csv.gz",
+      "raw_ticks_sha256": "8b26524e336e859edb6f8b77be3fa4c67b99701b429afe69aad8ba24fe53e407"
+    },
+    {
+      "interval_id": "day_h1",
+      "symbol": "XAUUSD.pro",
+      "timeframe": "H1",
+      "bar_time_eat": "2026-10-26 06:00:00",
+      "close_time_eat": "2026-10-26 07:00:00",
+      "tick_count": 14837,
+      "first_tick_eat": "2026-10-26 06:00:00.069000",
+      "last_tick_eat": "2026-10-26 06:59:59.640000",
+      "ticks_in_half_open_interval": true,
+      "coverage_start_within_60s": true,
+      "coverage_end_within_60s": true,
+      "official_bid_ohlc": {
+        "open": 3999.98,
+        "high": 4016.74,
+        "low": 3998.77,
+        "close": 4012.36
+      },
+      "tick_bid_ohlc": {
+        "open": 3999.98,
+        "high": 4016.74,
+        "low": 3998.77,
+        "close": 4007.62
+      },
+      "tick_minus_official": {
+        "open": 0.0,
+        "high": 0.0,
+        "low": 0.0,
+        "close": -4.74
+      },
+      "ohlc_match_exact": false,
+      "raw_ticks_file": "output/daily_20261026_0715_eat/verified_ticks/day_h1_20261026_0600_0700.csv.gz",
+      "raw_ticks_sha256": "3cb3cd42d3ad294d24c6d91d55c32c178bab2cd495d4b104bb6c85524975512c"
+    },
+    {
+      "interval_id": "day_h4",
+      "symbol": "XAUUSD.pro",
+      "timeframe": "H4",
+      "bar_time_eat": "2026-10-26 00:00:00",
+      "close_time_eat": "2026-10-26 04:00:00",
+      "tick_count": 38868,
+      "first_tick_eat": "2026-10-26 01:01:00.016000",
+      "last_tick_eat": "2026-10-26 03:59:59.930000",
+      "ticks_in_half_open_interval": true,
+      "coverage_start_within_60s": false,
+      "coverage_end_within_60s": true,
+      "official_bid_ohlc": {
+        "open": 4000.18,
+        "high": 4004.07,
+        "low": 3983.08,
+        "close": 3985.36
+      },
+      "tick_bid_ohlc": {
+        "open": 4000.18,
+        "high": 4004.07,
+        "low": 3983.08,
+        "close": 3985.36
+      },
+      "tick_minus_official": {
+        "open": 0.0,
+        "high": 0.0,
+        "low": 0.0,
+        "close": 0.0
+      },
+      "ohlc_match_exact": true,
+      "raw_ticks_file": "output/daily_20261026_0715_eat/verified_ticks/day_h4_20261026_0000_0400.csv.gz",
+      "raw_ticks_sha256": "ff84eb2a47e4eb2bcc3ee5a91670d5b3337832304904b9ee04bcaa1a1952e24b"
+    }
+  ],
+  "all_checks_pass": false
+}

@@ -1,0 +1,109 @@
+{
+  "schema_version": "1.0",
+  "symbol": "XAUUSD.pro",
+  "forecast_type": "weekly",
+  "forecast_week_start": "2026-10-26 00:00:00",
+  "evidence_cutoff": "2026-10-24 00:00:00",
+  "timezone": "Africa/Nairobi",
+  "forecast_status": "LATE RECONSTRUCTED \u2014 NOT A PRE-WEEK FORECAST",
+  "actually_frozen_at_eat": "2026-10-26T07:35:04+03:00",
+  "valid_from_eat": "2026-10-26T07:35:04+03:00",
+  "valid_to": "2026-10-31 00:00:00",
+  "source_timezone": "Africa/Kampala broker-local treated as EAT for joins",
+  "evidence_package": "output/weekly_20261024_actual_close/weekly_20261023",
+  "levels": [
+    {
+      "id": "SUPPORT",
+      "label": "Prior-week extreme / first downside objective",
+      "role": "SUPPORT / TARGET_TURN",
+      "low": 3975.61,
+      "high": 3986.56,
+      "basis": [
+        "H4 low 3975.61 on 23 Oct 16:00\u201320:00",
+        "H4 low 3986.56 on 23 Oct 04:00\u201308:00"
+      ]
+    },
+    {
+      "id": "CONTROL",
+      "label": "Late-Friday closing control band",
+      "role": "CONTROL",
+      "low": 3990.89,
+      "high": 4002.3,
+      "basis": [
+        "H4 23 Oct 20:00\u201324:00 range",
+        "weekly close 3996.07"
+      ]
+    },
+    {
+      "id": "RESISTANCE_1",
+      "label": "Friday recovery ceiling / H4 EMA10 area",
+      "role": "TURN_RESISTANCE / ORIGIN",
+      "low": 4020.24,
+      "high": 4034.17,
+      "basis": [
+        "H4 23 Oct 12:00 low 4020.24",
+        "H4 23 Oct 16:00 high 4034.17",
+        "preweek H4 EMA10 4032.30"
+      ]
+    },
+    {
+      "id": "RESISTANCE_2",
+      "label": "Broken-support reclaim / H4 EMA20 area",
+      "role": "EXTENSION / TARGET_TURN",
+      "low": 4057.36,
+      "high": 4077.89,
+      "basis": [
+        "H4 22 Oct 12:00 low 4057.36",
+        "preweek H4 EMA20 4063.31",
+        "H4 22 Oct 08:00 low 4066.91",
+        "H4 14 Oct low 4077.89"
+      ]
+    }
+  ],
+  "forecast_id": "XAUUSD_WEEK_20261026_V2",
+  "method_id": "XAUUSD_WEEKLY_PROCEDURE_V2_20261021",
+  "method_status": "FROZEN RESEARCH CANDIDATE; prospective comparison only. This late record is ineligible for that study.",
+  "preweek_regime": "H4 remains in a strong bearish structure after a 4190.42 weekly high and lower highs/lows to 3975.61. Friday close 3996.07 remained below EMA10 4032.30, EMA20 4063.31, EMA50 4105.99 and EMA200 4198.56. MACD main \u221236.27 and histogram \u22127.85 remained negative, though the histogram improved from \u221211.13 over the final four H4 bars. H1 histogram improved to +0.63, but Friday close stayed below EMA10/20/50/200. Recovery/deceleration, not a confirmed H4 turn.",
+  "turn_evidence": {
+    "swing_reference": "H4 23 Oct low 3975.61; rebound ceiling 4034.17 on 23 Oct 16:00\u201320:00.",
+    "completed_h4_acceptance": "No H4 close above 4034.17 before cutoff; final close 3996.07.",
+    "h1_structure": "H1 histogram +0.63 but close below EMA10 4004.87, EMA20 4014.28, EMA50 4044.50 and EMA200 4109.09.",
+    "interpretation": "Corrective recovery, not a confirmed regime turn."
+  },
+  "weekly_closing_preference": "SELL while H4 stays below 4034.17; moderate confidence because H4/H1 histogram deceleration raises rebound risk.",
+  "first_leg_direction": "At preweek freeze: conditional SELL from RESISTANCE_1 to SUPPORT. At Monday opening review: UNRESOLVED because SUPPORT traded before origin; reassess any subsequent leg separately.",
+  "primary_path": {
+    "sequence": [
+      "Price retraces into RESISTANCE_1 4020.24\u20134034.17",
+      "Completed M15 rejection and later trigger; M30 confirms and H1 permits SELL",
+      "First objective SUPPORT 3975.61\u20133986.56; no lower extension is frozen"
+    ],
+    "failure": "A completed H4 close above 4034.17 invalidates the rejection SELL branch."
+  },
+  "alternate_path": {
+    "trigger": "Completed H4 acceptance above 4034.17 followed by a held retest with H1 permission.",
+    "sequence": [
+      "Reclaim RESISTANCE_1",
+      "Hold/retest above 4034.17",
+      "Conditional extension to RESISTANCE_2 4057.36\u20134077.89"
+    ],
+    "failure": "A completed H4 close below CONTROL low 3990.89 invalidates the recovery branch."
+  },
+  "invalidation_rules": {
+    "primary_sell": "H4 close above 4034.17",
+    "alternate_buy": "H4 close below 3990.89"
+  },
+  "opening_review": {
+    "reviewed_at_eat": "2026-10-26T07:35:04+03:00",
+    "cutoff": "2026-10-26 07:15:00",
+    "note": "Separate post-freeze observation. Monday H4 low 3983.08 entered SUPPORT before RESISTANCE_1 was visited. The frozen SELL origin-to-target sequence has no valid event order and receives no target credit; it cannot be revived by shifting its origin. Price later recovered into CONTROL."
+  },
+  "lifecycle": "By the 07:15 review SUPPORT was observed before RESISTANCE_1 origin. The frozen sequence is disrupted and cannot be revived by moving its origin. Any new setup needs a separately timestamped DAILY/EVALUATE assessment.",
+  "opening_checklist": [
+    "Compare opening to origin, failure and objective.",
+    "Use completed closes; opening wick alone is not H4 acceptance.",
+    "Target before origin means no origin-to-target credit.",
+    "Keep frozen prices unchanged; record any new setup separately."
+  ],
+  "entry_gates": "WEEKLY/DAILY is not an entry verdict. Exact-cutoff EVALUATE requires H4 allowance, H1 permission, M30 confirmation, M15 qualification/trigger, no backdating, <65% consumed and at least 2.5 M15 ATR remaining."
+}

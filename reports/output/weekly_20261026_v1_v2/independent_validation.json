@@ -1,0 +1,117 @@
+{
+  "created_at_eat": "2026-10-26T07:35:04+03:00",
+  "weekly": {
+    "manifest": "output\\weekly_20261024_actual_close\\weekly_20261023\\xauusd.pro_weekly_manifest_20261023.json",
+    "cutoff": "2026-10-24 00:00:00",
+    "symbol": "XAUUSD.pro",
+    "frames": {
+      "H4": {
+        "rows": 90,
+        "expected_open": "2026-10-23 20:00:00",
+        "actual_open": "2026-10-23 20:00:00",
+        "expected_close": "2026-10-24 00:00:00",
+        "actual_close": "2026-10-24 00:00:00",
+        "boundary_match": true,
+        "all_rows_causal": true,
+        "duplicates": 0,
+        "ohlc_valid": true
+      },
+      "H1": {
+        "rows": 96,
+        "expected_open": "2026-10-23 23:00:00",
+        "actual_open": "2026-10-23 23:00:00",
+        "expected_close": "2026-10-24 00:00:00",
+        "actual_close": "2026-10-24 00:00:00",
+        "boundary_match": true,
+        "all_rows_causal": true,
+        "duplicates": 0,
+        "ohlc_valid": true
+      },
+      "M30": {
+        "rows": 120,
+        "expected_open": "2026-10-23 23:30:00",
+        "actual_open": "2026-10-23 23:30:00",
+        "expected_close": "2026-10-24 00:00:00",
+        "actual_close": "2026-10-24 00:00:00",
+        "boundary_match": true,
+        "all_rows_causal": true,
+        "duplicates": 0,
+        "ohlc_valid": true
+      },
+      "M15": {
+        "rows": 160,
+        "expected_open": "2026-10-23 23:45:00",
+        "actual_open": "2026-10-23 23:45:00",
+        "expected_close": "2026-10-24 00:00:00",
+        "actual_close": "2026-10-24 00:00:00",
+        "boundary_match": true,
+        "all_rows_causal": true,
+        "duplicates": 0,
+        "ohlc_valid": true
+      }
+    },
+    "all_boundaries_match": true,
+    "all_causal": true,
+    "structural_checks_pass": true,
+    "expected_boundary_correction": "Corrected validation checker calendar date to use final in-session bars on 23 Oct for the 24 Oct 00:00 cutoff; source package unchanged."
+  },
+  "daily": {
+    "manifest": "output\\daily_20261026_0715_eat\\daily_20261026_0715\\xauusd.pro_daily_manifest_20261026_0715.json",
+    "cutoff": "2026-10-26 07:15:00",
+    "symbol": "XAUUSD.pro",
+    "frames": {
+      "H4": {
+        "rows": 90,
+        "expected_open": "2026-10-26 00:00:00",
+        "actual_open": "2026-10-26 00:00:00",
+        "expected_close": "2026-10-26 04:00:00",
+        "actual_close": "2026-10-26 04:00:00",
+        "boundary_match": true,
+        "all_rows_causal": true,
+        "duplicates": 0,
+        "ohlc_valid": true
+      },
+      "H1": {
+        "rows": 96,
+        "expected_open": "2026-10-26 06:00:00",
+        "actual_open": "2026-10-26 06:00:00",
+        "expected_close": "2026-10-26 07:00:00",
+        "actual_close": "2026-10-26 07:00:00",
+        "boundary_match": true,
+        "all_rows_causal": true,
+        "duplicates": 0,
+        "ohlc_valid": true
+      },
+      "M30": {
+        "rows": 120,
+        "expected_open": "2026-10-26 06:30:00",
+        "actual_open": "2026-10-26 06:30:00",
+        "expected_close": "2026-10-26 07:00:00",
+        "actual_close": "2026-10-26 07:00:00",
+        "boundary_match": true,
+        "all_rows_causal": true,
+        "duplicates": 0,
+        "ohlc_valid": true
+      },
+      "M15": {
+        "rows": 160,
+        "expected_open": "2026-10-26 07:00:00",
+        "actual_open": "2026-10-26 07:00:00",
+        "expected_close": "2026-10-26 07:15:00",
+        "actual_close": "2026-10-26 07:15:00",
+        "boundary_match": true,
+        "all_rows_causal": true,
+        "duplicates": 0,
+        "ohlc_valid": true
+      }
+    },
+    "all_boundaries_match": true,
+    "all_causal": true,
+    "structural_checks_pass": true
+  },
+  "tick_reconciliation": {
+    "Friday": "All four final Friday bars match tick bid OHLC exactly; last tick 23:57:59.572 EAT near session close.",
+    "Monday H4/M15": "Exact OHLC match.",
+    "Monday H1/M30": "Official closes differ from ticks by \u22124.74/\u22124.77; tick closes both 4007.62 match nested M15 close; official conflict disclosed."
+  }
+}
