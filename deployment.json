@@ -1,5 +1,5 @@
 {
-  "release_id": "20261026_073638_136305_EAT",
+  "release_id": "20261026_074012_277972_EAT",
   "dashboard": "AURUM",
   "public_url": "https://my-dashboard-olo8.onrender.com/",
   "forecast_updates": "explicit_user_request_only",
@@ -8,7 +8,7 @@
   "new_forecasts_generated_by_publisher": false,
   "weekly_forecast_id": "XAUUSD_WEEK_20261026_V1",
   "daily_evidence_cutoff": "2026-10-26 07:15:00",
-  "daily_created_at_eat": "2026-10-26T07:35:04+03:00",
+  "daily_created_at_eat": "2026-10-26T07:39:17+03:00",
   "evaluation_cutoff": "2026-10-21 15:00:00",
-  "snapshot_sha256": "398e46bdfc38b893fdf282550d9f7c1c700997693dafb36e9cca536d6dfb908e"
+  "snapshot_sha256": "142c0a0c1183d9c1e5d4033b6f6c2ad8c281d2b248b423d8b5512f1157a74666"
 }

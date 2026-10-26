@@ -15,13 +15,14 @@
     {
       "id": "SUPPORT",
       "label": "Prior-week extreme / first downside objective",
-      "role": "SUPPORT / TARGET_TURN",
+      "role": "SUPPORT",
       "low": 3975.61,
       "high": 3986.56,
       "basis": [
         "H4 low 3975.61 on 23 Oct 16:00\u201320:00",
         "H4 low 3986.56 on 23 Oct 04:00\u201308:00"
-      ]
+      ],
+      "priority": 1
     },
     {
       "id": "CONTROL",
@@ -32,24 +33,26 @@
       "basis": [
         "H4 23 Oct 20:00\u201324:00 range",
         "weekly close 3996.07"
-      ]
+      ],
+      "priority": 2
     },
     {
       "id": "RESISTANCE_1",
       "label": "Friday recovery ceiling / H4 EMA10 area",
-      "role": "TURN_RESISTANCE / ORIGIN",
+      "role": "TURN_RESISTANCE",
       "low": 4020.24,
       "high": 4034.17,
       "basis": [
         "H4 23 Oct 12:00 low 4020.24",
         "H4 23 Oct 16:00 high 4034.17",
         "preweek H4 EMA10 4032.30"
-      ]
+      ],
+      "priority": 3
     },
     {
       "id": "RESISTANCE_2",
       "label": "Broken-support reclaim / H4 EMA20 area",
-      "role": "EXTENSION / TARGET_TURN",
+      "role": "TARGET_TURN",
       "low": 4057.36,
       "high": 4077.89,
       "basis": [
@@ -57,7 +60,8 @@
         "preweek H4 EMA20 4063.31",
         "H4 22 Oct 08:00 low 4066.91",
         "H4 14 Oct low 4077.89"
-      ]
+      ],
+      "priority": 4
     }
   ],
   "forecast_id": "XAUUSD_WEEK_20261026_V2",
@@ -105,5 +109,8 @@
     "Target before origin means no origin-to-target credit.",
     "Keep frozen prices unchanged; record any new setup separately."
   ],
-  "entry_gates": "WEEKLY/DAILY is not an entry verdict. Exact-cutoff EVALUATE requires H4 allowance, H1 permission, M30 confirmation, M15 qualification/trigger, no backdating, <65% consumed and at least 2.5 M15 ATR remaining."
+  "entry_gates": "WEEKLY/DAILY is not an entry verdict. Exact-cutoff EVALUATE requires H4 allowance, H1 permission, M30 confirmation, M15 qualification/trigger, no backdating, <65% consumed and at least 2.5 M15 ATR remaining.",
+  "frozen_at": "2026-10-26T07:39:17+03:00",
+  "valid_from": "2026-10-26T07:39:17+03:00",
+  "status": "LATE RECONSTRUCTED \u2014 route order disrupted"
 }

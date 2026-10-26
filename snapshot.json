@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "snapshot_built_at": "2026-10-26T07:35:04+03:00",
+  "snapshot_built_at": "2026-10-26T07:40:03+03:00",
   "snapshot_scope": "On-request static snapshot. Late reconstructed weekly forecast; build time is not forecast issuance.",
   "timezone": "Africa/Nairobi",
   "symbol": "XAUUSD.pro",
@@ -36,13 +36,14 @@
       {
         "id": "SUPPORT",
         "label": "Prior-week extreme / first downside objective",
-        "role": "SUPPORT / TARGET_TURN",
+        "role": "SUPPORT",
         "low": 3975.61,
         "high": 3986.56,
         "basis": [
           "H4 low 3975.61 on 23 Oct 16:00–20:00",
           "H4 low 3986.56 on 23 Oct 04:00–08:00"
-        ]
+        ],
+        "priority": 1
       },
       {
         "id": "CONTROL",
@@ -53,24 +54,26 @@
         "basis": [
           "H4 23 Oct 20:00–24:00 range",
           "weekly close 3996.07"
-        ]
+        ],
+        "priority": 2
       },
       {
         "id": "RESISTANCE_1",
         "label": "Friday recovery ceiling / H4 EMA10 area",
-        "role": "TURN_RESISTANCE / ORIGIN",
+        "role": "TURN_RESISTANCE",
         "low": 4020.24,
         "high": 4034.17,
         "basis": [
           "H4 23 Oct 12:00 low 4020.24",
           "H4 23 Oct 16:00 high 4034.17",
           "preweek H4 EMA10 4032.30"
-        ]
+        ],
+        "priority": 3
       },
       {
         "id": "RESISTANCE_2",
         "label": "Broken-support reclaim / H4 EMA20 area",
-        "role": "EXTENSION / TARGET_TURN",
+        "role": "TARGET_TURN",
         "low": 4057.36,
         "high": 4077.89,
         "basis": [
@@ -78,7 +81,8 @@
           "preweek H4 EMA20 4063.31",
           "H4 22 Oct 08:00 low 4066.91",
           "H4 14 Oct low 4077.89"
-        ]
+        ],
+        "priority": 4
       }
     ],
     "forecast_id": "XAUUSD_WEEK_20261026_V1",
@@ -109,11 +113,14 @@
       "alternate_buy": "H4 close below 3990.89"
     },
     "opening_review": {
-      "reviewed_at_eat": "2026-10-26T07:35:04+03:00",
+      "reviewed_at_eat": "2026-10-26T07:39:17+03:00",
       "cutoff": "2026-10-26 07:15:00",
       "note": "Separate post-freeze observation. Monday H4 low 3983.08 entered SUPPORT before RESISTANCE_1 was visited. The frozen SELL origin-to-target sequence has no valid event order and receives no target credit; it cannot be revived by shifting its origin. Price later recovered into CONTROL."
     },
-    "entry_gates": "WEEKLY/DAILY is not an entry verdict. Exact-cutoff EVALUATE requires H4 allowance, H1 permission, M30 confirmation, M15 qualification/trigger, no backdating, <65% consumed and at least 2.5 M15 ATR remaining."
+    "entry_gates": "WEEKLY/DAILY is not an entry verdict. Exact-cutoff EVALUATE requires H4 allowance, H1 permission, M30 confirmation, M15 qualification/trigger, no backdating, <65% consumed and at least 2.5 M15 ATR remaining.",
+    "frozen_at": "2026-10-26T07:39:17+03:00",
+    "valid_from": "2026-10-26T07:39:17+03:00",
+    "status": "LATE RECONSTRUCTED — route order disrupted"
   },
   "current_v2": null,
   "daily": {
@@ -122,7 +129,7 @@
     "date": "2026-10-26",
     "cutoff": "2026-10-26 07:15:00",
     "source_refreshed_at_eat": "2026-10-26 07:31:14 EAT",
-    "created_at_eat": "2026-10-26T07:35:04+03:00",
+    "created_at_eat": "2026-10-26T07:39:17+03:00",
     "forecast_id": "XAUUSD_WEEK_20261026_V1",
     "status": "DAILY CONTEXT · TICK RECONCILED",
     "headline": "Recovery from support into overhead resistance; H4 remains bearish",
@@ -6436,11 +6443,11 @@
     "output/evaluate_20261021_1500/factual_summary.json": "0257c26e056a65223fe516bf9ab1cd8468d732892b978ac360f0f3ee079ca641",
     "output\\weekly_20261024_actual_close\\weekly_20261023\\xauusd.pro_weekly_manifest_20261023.json": "a3156ce07f8f5fe5768f4b683e95f1f8e37e54d068b94bf7e2636facb96e5598",
     "output\\daily_20261026_0715_eat\\daily_20261026_0715\\xauusd.pro_daily_manifest_20261026_0715.json": "235c26ff878ce56cd4d1bac737cdfe065710b48227766337c313f4d2fc29c0f0",
-    "output\\weekly_20261026_v1_v2\\REPORT.md": "698c19ff241bdf60ca3f1a2902a1c1ef6e7d3151014c2e06c61ec96478b909aa",
-    "output\\daily_20261026_0715_eat\\REPORT.md": "fd60e85e1ec3ec693425ce78ce9b94b4bb44061b400ea6bcbdde9f1252ea5d4b",
     "output\\week_close_20261019_20261023\\REPORT.md": "07aceb5b8a7056ac8f3226472f43290524967333b1d87a96256761423748817a",
-    "output\\levels\\XAUUSD_WEEK_20261026_V1\\weekly_levels.json": "9cde7a7f4665f57604079c951183f2dac83fd4c1efa96e6346bc8a6a1f20bdd4",
-    "output\\levels\\XAUUSD_WEEK_20261026_V2\\weekly_levels.json": "d838659b63ed714f5f1d3ce58adb7f71a95de59327113c96688598673d1d9f66"
+    "output\\levels\\XAUUSD_WEEK_20261026_V1\\weekly_levels.json": "d8df7a33a3d7208cba630b2b25c87509e5fb61a224e037eab97f4fab7bf8ada0",
+    "output\\levels\\XAUUSD_WEEK_20261026_V2\\weekly_levels.json": "0e12fd782ef3988779b89c1f4ac1387e27ecdd551982e705bf8a049d71c2c9e4",
+    "output/weekly_20261026_v1_v2/REPORT.md": "f517bfbabd9f1687eb243eff62a2f4c3d74ff0b83ce93f4d65845664c6108a7d",
+    "output/daily_20261026_0715_eat/REPORT.md": "e251e7bf8c712be4cebdc93d45000fe660a51f50946a246a087e0f2910fd6feb"
   },
   "weekly_v2": {
     "schema_version": "1.0",
@@ -6459,13 +6466,14 @@
       {
         "id": "SUPPORT",
         "label": "Prior-week extreme / first downside objective",
-        "role": "SUPPORT / TARGET_TURN",
+        "role": "SUPPORT",
         "low": 3975.61,
         "high": 3986.56,
         "basis": [
           "H4 low 3975.61 on 23 Oct 16:00–20:00",
           "H4 low 3986.56 on 23 Oct 04:00–08:00"
-        ]
+        ],
+        "priority": 1
       },
       {
         "id": "CONTROL",
@@ -6476,24 +6484,26 @@
         "basis": [
           "H4 23 Oct 20:00–24:00 range",
           "weekly close 3996.07"
-        ]
+        ],
+        "priority": 2
       },
       {
         "id": "RESISTANCE_1",
         "label": "Friday recovery ceiling / H4 EMA10 area",
-        "role": "TURN_RESISTANCE / ORIGIN",
+        "role": "TURN_RESISTANCE",
         "low": 4020.24,
         "high": 4034.17,
         "basis": [
           "H4 23 Oct 12:00 low 4020.24",
           "H4 23 Oct 16:00 high 4034.17",
           "preweek H4 EMA10 4032.30"
-        ]
+        ],
+        "priority": 3
       },
       {
         "id": "RESISTANCE_2",
         "label": "Broken-support reclaim / H4 EMA20 area",
-        "role": "EXTENSION / TARGET_TURN",
+        "role": "TARGET_TURN",
         "low": 4057.36,
         "high": 4077.89,
         "basis": [
@@ -6501,7 +6511,8 @@
           "preweek H4 EMA20 4063.31",
           "H4 22 Oct 08:00 low 4066.91",
           "H4 14 Oct low 4077.89"
-        ]
+        ],
+        "priority": 4
       }
     ],
     "forecast_id": "XAUUSD_WEEK_20261026_V2",
@@ -6538,7 +6549,7 @@
       "alternate_buy": "H4 close below 3990.89"
     },
     "opening_review": {
-      "reviewed_at_eat": "2026-10-26T07:35:04+03:00",
+      "reviewed_at_eat": "2026-10-26T07:39:17+03:00",
       "cutoff": "2026-10-26 07:15:00",
       "note": "Separate post-freeze observation. Monday H4 low 3983.08 entered SUPPORT before RESISTANCE_1 was visited. The frozen SELL origin-to-target sequence has no valid event order and receives no target credit; it cannot be revived by shifting its origin. Price later recovered into CONTROL."
     },
@@ -6549,7 +6560,10 @@
       "Target before origin means no origin-to-target credit.",
       "Keep frozen prices unchanged; record any new setup separately."
     ],
-    "entry_gates": "WEEKLY/DAILY is not an entry verdict. Exact-cutoff EVALUATE requires H4 allowance, H1 permission, M30 confirmation, M15 qualification/trigger, no backdating, <65% consumed and at least 2.5 M15 ATR remaining."
+    "entry_gates": "WEEKLY/DAILY is not an entry verdict. Exact-cutoff EVALUATE requires H4 allowance, H1 permission, M30 confirmation, M15 qualification/trigger, no backdating, <65% consumed and at least 2.5 M15 ATR remaining.",
+    "frozen_at": "2026-10-26T07:39:17+03:00",
+    "valid_from": "2026-10-26T07:39:17+03:00",
+    "status": "LATE RECONSTRUCTED — route order disrupted"
   },
   "week_close": {
     "open": 4163.37,
@@ -6565,7 +6579,7 @@
   },
   "current_daily_analysis": {
     "cutoff": "2026-10-26 07:15:00",
-    "authored_at_eat": "2026-10-26T07:35:04+03:00",
+    "authored_at_eat": "2026-10-26T07:39:17+03:00",
     "completed_m15_close": 4009.33,
     "tick_reconstructed_h1_m30_close": 4007.62,
     "post_cutoff_quote": {
@@ -6596,13 +6610,14 @@
         {
           "id": "SUPPORT",
           "label": "Prior-week extreme / first downside objective",
-          "role": "SUPPORT / TARGET_TURN",
+          "role": "SUPPORT",
           "low": 3975.61,
           "high": 3986.56,
           "basis": [
             "H4 low 3975.61 on 23 Oct 16:00–20:00",
             "H4 low 3986.56 on 23 Oct 04:00–08:00"
-          ]
+          ],
+          "priority": 1
         },
         {
           "id": "CONTROL",
@@ -6613,24 +6628,26 @@
           "basis": [
             "H4 23 Oct 20:00–24:00 range",
             "weekly close 3996.07"
-          ]
+          ],
+          "priority": 2
         },
         {
           "id": "RESISTANCE_1",
           "label": "Friday recovery ceiling / H4 EMA10 area",
-          "role": "TURN_RESISTANCE / ORIGIN",
+          "role": "TURN_RESISTANCE",
           "low": 4020.24,
           "high": 4034.17,
           "basis": [
             "H4 23 Oct 12:00 low 4020.24",
             "H4 23 Oct 16:00 high 4034.17",
             "preweek H4 EMA10 4032.30"
-          ]
+          ],
+          "priority": 3
         },
         {
           "id": "RESISTANCE_2",
           "label": "Broken-support reclaim / H4 EMA20 area",
-          "role": "EXTENSION / TARGET_TURN",
+          "role": "TARGET_TURN",
           "low": 4057.36,
           "high": 4077.89,
           "basis": [
@@ -6638,7 +6655,8 @@
             "preweek H4 EMA20 4063.31",
             "H4 22 Oct 08:00 low 4066.91",
             "H4 14 Oct low 4077.89"
-          ]
+          ],
+          "priority": 4
         }
       ],
       "forecast_id": "XAUUSD_WEEK_20261026_V1",
@@ -6669,11 +6687,14 @@
         "alternate_buy": "H4 close below 3990.89"
       },
       "opening_review": {
-        "reviewed_at_eat": "2026-10-26T07:35:04+03:00",
+        "reviewed_at_eat": "2026-10-26T07:39:17+03:00",
         "cutoff": "2026-10-26 07:15:00",
         "note": "Separate post-freeze observation. Monday H4 low 3983.08 entered SUPPORT before RESISTANCE_1 was visited. The frozen SELL origin-to-target sequence has no valid event order and receives no target credit; it cannot be revived by shifting its origin. Price later recovered into CONTROL."
       },
-      "entry_gates": "WEEKLY/DAILY is not an entry verdict. Exact-cutoff EVALUATE requires H4 allowance, H1 permission, M30 confirmation, M15 qualification/trigger, no backdating, <65% consumed and at least 2.5 M15 ATR remaining."
+      "entry_gates": "WEEKLY/DAILY is not an entry verdict. Exact-cutoff EVALUATE requires H4 allowance, H1 permission, M30 confirmation, M15 qualification/trigger, no backdating, <65% consumed and at least 2.5 M15 ATR remaining.",
+      "frozen_at": "2026-10-26T07:39:17+03:00",
+      "valid_from": "2026-10-26T07:39:17+03:00",
+      "status": "LATE RECONSTRUCTED — route order disrupted"
     },
     "v2": {
       "schema_version": "1.0",
@@ -6692,13 +6713,14 @@
         {
           "id": "SUPPORT",
           "label": "Prior-week extreme / first downside objective",
-          "role": "SUPPORT / TARGET_TURN",
+          "role": "SUPPORT",
           "low": 3975.61,
           "high": 3986.56,
           "basis": [
             "H4 low 3975.61 on 23 Oct 16:00–20:00",
             "H4 low 3986.56 on 23 Oct 04:00–08:00"
-          ]
+          ],
+          "priority": 1
         },
         {
           "id": "CONTROL",
@@ -6709,24 +6731,26 @@
           "basis": [
             "H4 23 Oct 20:00–24:00 range",
             "weekly close 3996.07"
-          ]
+          ],
+          "priority": 2
         },
         {
           "id": "RESISTANCE_1",
           "label": "Friday recovery ceiling / H4 EMA10 area",
-          "role": "TURN_RESISTANCE / ORIGIN",
+          "role": "TURN_RESISTANCE",
           "low": 4020.24,
           "high": 4034.17,
           "basis": [
             "H4 23 Oct 12:00 low 4020.24",
             "H4 23 Oct 16:00 high 4034.17",
             "preweek H4 EMA10 4032.30"
-          ]
+          ],
+          "priority": 3
         },
         {
           "id": "RESISTANCE_2",
           "label": "Broken-support reclaim / H4 EMA20 area",
-          "role": "EXTENSION / TARGET_TURN",
+          "role": "TARGET_TURN",
           "low": 4057.36,
           "high": 4077.89,
           "basis": [
@@ -6734,7 +6758,8 @@
             "preweek H4 EMA20 4063.31",
             "H4 22 Oct 08:00 low 4066.91",
             "H4 14 Oct low 4077.89"
-          ]
+          ],
+          "priority": 4
         }
       ],
       "forecast_id": "XAUUSD_WEEK_20261026_V2",
@@ -6771,7 +6796,7 @@
         "alternate_buy": "H4 close below 3990.89"
       },
       "opening_review": {
-        "reviewed_at_eat": "2026-10-26T07:35:04+03:00",
+        "reviewed_at_eat": "2026-10-26T07:39:17+03:00",
         "cutoff": "2026-10-26 07:15:00",
         "note": "Separate post-freeze observation. Monday H4 low 3983.08 entered SUPPORT before RESISTANCE_1 was visited. The frozen SELL origin-to-target sequence has no valid event order and receives no target credit; it cannot be revived by shifting its origin. Price later recovered into CONTROL."
       },
@@ -6782,7 +6807,10 @@
         "Target before origin means no origin-to-target credit.",
         "Keep frozen prices unchanged; record any new setup separately."
       ],
-      "entry_gates": "WEEKLY/DAILY is not an entry verdict. Exact-cutoff EVALUATE requires H4 allowance, H1 permission, M30 confirmation, M15 qualification/trigger, no backdating, <65% consumed and at least 2.5 M15 ATR remaining."
+      "entry_gates": "WEEKLY/DAILY is not an entry verdict. Exact-cutoff EVALUATE requires H4 allowance, H1 permission, M30 confirmation, M15 qualification/trigger, no backdating, <65% consumed and at least 2.5 M15 ATR remaining.",
+      "frozen_at": "2026-10-26T07:39:17+03:00",
+      "valid_from": "2026-10-26T07:39:17+03:00",
+      "status": "LATE RECONSTRUCTED — route order disrupted"
     },
     "late": true,
     "report": "reports/output/weekly_20261026_v1_v2/REPORT.html",

@@ -113,5 +113,6 @@
     "Friday": "All four final Friday bars match tick bid OHLC exactly; last tick 23:57:59.572 EAT near session close.",
     "Monday H4/M15": "Exact OHLC match.",
     "Monday H1/M30": "Official closes differ from ticks by \u22124.74/\u22124.77; tick closes both 4007.62 match nested M15 close; official conflict disclosed."
-  }
+  },
+  "weekly_map_loader_validation": "PASS: V1 and V2 accepted by existing xauusd_extract level loader; 4 unique supported-role zones each."
 }
