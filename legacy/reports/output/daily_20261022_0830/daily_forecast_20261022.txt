@@ -1,0 +1,73 @@
+XAUUSD.pro DAILY FORECAST — 22 OCTOBER 2026
+Evidence cutoff: 2026-10-22 08:30:00 EAT.
+Actually issued: 2026-10-22T08:45:04+03:00.
+Applies to the remaining day after issuance; later-than-cutoff candles excluded.
+Frozen map: XAUUSD_WEEK_20261019_V1; unchanged.
+Codex authors analysis. Python supplies evidence, numerical inputs and serialization.
+
+DAILY PREDICTION
+For the remainder of 22 October, the primary mapped scenario is a test of frozen WBASE 4066.50-4077.89, followed by a pause, rejection or volatile two-sided reaction. The 08:30 completed M15/M30 close was 4088.71, 10.82 points above the WBASE upper edge. The post-cutoff quote at 08:42:35 EAT was 4078.93 bid, 1.04 above that edge; it is not a completed candle and is shown only to locate price at report time. The move is close to its frozen target, so a fresh SELL should not be inferred from this daily report or chased into WBASE.
+
+The bearish context is supported by H4/H1 closes below WSUPPORT 4099.94-4110.88, below WMID 4123.18-4131.50, and below their short and long EMAs. The existing weekly alternate remains the controlling sequence. The next downside decision point is WBASE itself: a reaction there needs completed reversal structure before a countertrend BUY watch can strengthen. A completed H4 close below WBASE's 4066.50 lower edge would invalidate the frozen WBASE buy idea; this map defines no further downside target below that zone.
+
+A recovery path requires price to reclaim and hold WSUPPORT, first 4099.94 then 4110.88, with completed M30/H1 structure; that would improve the local recovery context but would not by itself invalidate the broader weekly alternate. Its stated failure condition remains a completed H4 close above 4162.20.
+
+Confidence is high that the completed structure is below WSUPPORT and that WBASE is the next frozen downside zone; confidence is lower in the order and size of the remaining-day reaction because M15 momentum is easing and current price is already near the target. This is a prospective conditional watch after issuance, not a calibrated probability or a trade verdict.
+
+EVIDENCE COMPLETENESS
+H4: expected 2026-10-22 08:00:00; actual 2026-10-22 08:00:00; causal rows; matching endpoint.
+H1: expected 2026-10-22 08:00:00; actual 2026-10-22 08:00:00; causal rows; matching endpoint.
+M30: expected 2026-10-22 08:30:00; actual 2026-10-22 08:30:00; causal rows; matching endpoint.
+M15: expected 2026-10-22 08:30:00; actual 2026-10-22 08:30:00; causal rows; matching endpoint.
+Missing/stale evidence: none materially missing at cutoff. Intraday evidence is suitable for a separately requested EVALUATE.
+Original package age flags H4/H1 because their closes are 30 minutes before cutoff. Expected latest boundaries at 08:30 EAT are H4/H1 08:00 and M30/M15 08:30; all match.
+
+WEEKLY BIAS STATUS
+The original WCONTROL support-hold primary failed earlier in the week. The frozen bearish alternate remains active. On 22 October, the H4 bar from 04:00 to 08:00 closed at 4091.73 below WCONTROL low 4146.87, WMID low 4123.18 and WSUPPORT low 4099.94. This invalidates the frozen WSUPPORT buy condition and leaves WBASE 4066.50-4077.89 as the next downside target-turn zone. WBASE has not been touched by completed candles through 08:30. The weekly alternate's stated invalidation is a completed H4 close above 4162.20; weekly levels remain unchanged.
+
+H4 CONTEXT
+Bearish pressure below all major averages
+The 04:00-open bar completed at 08:00 with O 4113.31, H 4124.04, L 4087.95, C 4091.73. The close is below EMA10 4120.95, EMA20 4130.08, EMA50 4144.04 and EMA200 4216.20. MACD main is -10.74 and histogram -2.21; its three-bar slope is negative while the five-bar slope is positive, so the short and broader histogram windows are mixed. The completed close below WSUPPORT 4099.94 is decisive for the frozen support-buy invalidation and downside path, but WBASE is close enough to raise reaction risk.
+
+H1 CONTEXT
+Downside permission context remains strong
+The 07:00-open bar completed at 08:00 with O 4092.17, H 4093.46, L 4087.95, C 4091.73. It is below EMA10 4112.75, EMA20 4118.77, EMA50 4126.73 and EMA200 4146.55. MACD main is -5.96, signal -2.02 and histogram -3.93, with three- and five-bar slopes both negative. This supports the bearish daily context; it does not authorize a fresh entry.
+
+M30 CONTEXT
+Bearish structure, but target is nearby
+The 08:00-open bar completed at 08:30 at tick-reconstructed O 4091.71, H 4092.86, L 4085.68, C 4088.71. It is below EMA10 4102.39, EMA20 4111.59, EMA50 4120.18 and EMA200 4136.21. MACD main is -9.71 and histogram -3.85; recent histogram slopes remain negative. The supplemental tick OHLC is used because the latest official M30 rate differed from the completed-tick reconstruction; the discrepancy and source values are preserved in the receipt.
+
+M15 CONTEXT
+Still below trend averages, with downside momentum easing
+The 08:15-open bar completed at 08:30 at tick-reconstructed O 4087.50, H 4089.36, L 4085.68, C 4088.71. It is below EMA10 4094.71, EMA20 4102.66, EMA50 4114.40 and EMA200 4126.98. MACD main is -9.73, signal -8.40 and histogram -1.33. The three- and five-bar histogram slopes are positive, indicating easing downside momentum despite the still-bearish price/EMA structure. The latest official M15 rate differed from the completed-tick reconstruction, so the tick-derived close is used and the discrepancy is disclosed.
+
+ACTIVE LEVELS
+At the 08:30 cutoff, tick-derived close 4088.71 was 11.23 points (1.72 M15 ATR) below the nearest frozen zone above, WSUPPORT 4099.94-4110.88, and 10.82 points (1.66 M15 ATR) above the nearest frozen zone below, WBASE 4066.50-4077.89.
+The separate post-cutoff 08:42:35 EAT bid was 4078.93, just 1.04 points above WBASE's 4077.89 upper edge. WBASE was not touched by a completed candle through the 08:30 evidence cutoff.
+WMID 4123.18-4131.50 and WCONTROL 4146.87-4162.20 are overhead recovery barriers; WRES 4186.38-4198.80 and WUPPER 4207.40-4217.27 are outside the base-case remaining-day path.
+
+COMPLETED INTERACTIONS
+bar_time 2026-10-22 01:45:00 -> close_time 2026-10-22 02:00:00: First M15 contact with WMID: low 4130.27 and close 4130.94, below the zone's 4131.50 upper edge.
+bar_time 2026-10-22 03:00:00 -> close_time 2026-10-22 03:15:00: First completed M15 close below WMID low 4123.18: 4120.80.
+bar_time 2026-10-22 04:00:00 -> close_time 2026-10-22 04:15:00: First M15 touch of WSUPPORT: low 4110.71 and close 4115.25, so the close remained above the zone.
+bar_time 2026-10-22 06:30:00 -> close_time 2026-10-22 06:45:00: First M15 close below WSUPPORT low 4099.94: 4094.31. The H1 bar from 06:00 then completed at 07:00 at 4092.19 below the zone.
+bar_time 2026-10-22 04:00:00 -> close_time 2026-10-22 08:00:00: H4 closed at 4091.73 below WSUPPORT low 4099.94, confirming the frozen support-buy invalidation and downside continuation context.
+bar_time 2026-10-22 08:15:00 -> close_time 2026-10-22 08:30:00: Latest completed M15 close, reconstructed from fully covered bid ticks, was 4088.71. WBASE remained untouched by completed candles at the cutoff.
+
+WATCH CONDITIONS
+BUY / WBASE reaction watch
+WBASE is a target-turn zone, not an automatic BUY. A recovery watch needs a completed M15 reversal/qualification, a subsequent trigger under the frozen setup, M30 confirmation, H1 permission and compatible H4 allowance. A completed H4 close below 4066.50 invalidates the WBASE buy idea.
+SELL / continuation watch
+The frozen bearish alternate remains active, but price is near WBASE. Do not infer a fresh SELL from this daily report or chase into the target. A pullback toward WSUPPORT 4099.94-4110.88 followed by completed rejection may warrant a new EVALUATE; no fresh entry is established here.
+Recovery / invalidation watch
+A completed reclaim of WSUPPORT, first above 4099.94 and then 4110.88, with M30/H1 structure would improve the local recovery context. The weekly alternate remains invalidated only by its frozen completed-H4 condition above 4162.20.
+No-trade / no-chase
+The post-cutoff quote is close to the WBASE target and the M15 histogram is easing, so late downside chasing carries elevated target/reaction risk. DAILY does not calculate confirmation-time consumption or ATR no-chase gates. Request EVALUATE at an exact cutoff for a fresh BUY/SELL decision.
+
+LIMITATIONS
+Causal evidence cutoff is 08:30 EAT. H4/H1 close at their expected 08:00 boundaries; M30/M15 close at their expected 08:30 boundaries. Original age-based H4/H1 warnings are preserved and are not material staleness.
+The live quote at 08:42:35 EAT (bid 4078.93, ask 4079.07) is after the bar cutoff and is shown separately; the 08:30-08:45 M15/M30 bars were still forming and are excluded from analysis.
+The latest official MT5 M15 and M30 bars differed from completed bid-tick reconstruction in their recent OHLC, including the close. Supplemental tick-derived bars use the repository's accepted fallback, merge and enrichment functions; endpoint coverage, tick counts and raw-tick hashes are recorded. Both supplemental closes remain below WSUPPORT, so the structural conclusion is unchanged. Original official values remain in the receipt.
+The weekly map XAUUSD_WEEK_20261019_V1 was issued midweek on 20 October at 23:14:14 EAT from preweek evidence. This daily update does not redraw it or issue a new weekly V2.
+This is DAILY context, not a fresh entry verdict. The last formal EVALUATE was 21 October 15:00 with WAIT and remains a separate historical assessment. No BUY/SELL allowed or denied verdict is issued for 22 October.
+No calibrated probability, guarantee, lower target beyond frozen WBASE, news assessment, execution-cost estimate or profitability claim is made.

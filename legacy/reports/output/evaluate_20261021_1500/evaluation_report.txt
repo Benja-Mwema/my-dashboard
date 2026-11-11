@@ -1,0 +1,115 @@
+XAUUSD.PRO CURRENT DAY EVALUATION — 21 OCTOBER 2026
+Cutoff: 15:00 EAT | Final verdict: WAIT
+Created: 2026-10-21T15:26:26+03:00
+
+CURRENT DAY STATUS AT 15:00 EAT
+Final verdict: WAIT.
+
+Today has moved from overnight weakness into an intraday recovery. Completed M15/M30/H1 evidence has reclaimed WMID, while the last completed H4 remains bearish. The old local WMID rejection SELL is invalidated by the 15:00 H1 close above 4131.50. The broader control-breakdown context is a separate branch and has not failed its H4-above-4162.20 rule.
+
+Neither a fresh BUY nor a fresh SELL is allowed at this cutoff. This report supersedes the earlier stale-data limitation for this new 15:00 cutoff, not the historical assessments at their own cutoffs.
+
+DAY FACTS AND FROZEN MAP
+Today through completed 15:00 evidence: open 4127.02, high 4141.11, low 4106.14, last completed close 4139.87; body +12.85 (+0.311%). These are partial-day facts, not a final daily close or a live quote after 15:00.
+
+WCONTROL: 4146.87-4162.20
+WMID: 4123.18-4131.50
+WSUPPORT: 4099.94-4110.88
+WBASE: 4066.50-4077.89
+WRES: 4186.38-4198.80
+WUPPER: 4207.40-4217.27
+
+Forecast: XAUUSD_WEEK_20261019_V1; actually issued 2026-10-20 23:14:14 EAT and valid through 24 October 00:00. No current event has been backdated to before issuance. Original frozen levels and branch failure conditions remain unchanged.
+
+EVIDENCE COMPLETENESS
+Timeframe | expected completed boundary | actual completed boundary
+H4 | 2026-10-21 12:00:00 | 2026-10-21 12:00:00
+H1 | 2026-10-21 15:00:00 | 2026-10-21 15:00:00
+M30 | 2026-10-21 15:00:00 | 2026-10-21 15:00:00
+M15 | 2026-10-21 15:00:00 | 2026-10-21 15:00:00
+
+All source and EVALUATE-export rows satisfy close_time <= 15:00 with correct durations and unique timestamps. Both WMID and WSUPPORT event packages are present. H4 12:00 is current at a 15:00 cutoff, not stale. The original age-based manifest warning is retained and independently explained. common_effective_cutoff is 12:00, the minimum causal endpoint, while lower frames validly extend to 15:00.
+
+Forming H4 12:00-open, H1 15:00-open, M30 15:00-open and M15 15:00-open candles are excluded. No material current M15/M30 evidence is missing. Exact-02:00 EMA/MACD/ATR inputs were recomputed on causal raw prefixes and match the saved rows on all four frames.
+
+H4 REGIME AND H1 PERMISSION
+H4 latest completed 12:00 close: 4119.61, below EMA10 4127.15, EMA20 4136.98, EMA50 4149.23 and EMA200 4221.07. MACD main -10.70, histogram -3.57, improving from -4.29. This is bearish structure with easing downside momentum, not accelerating selling. The higher low after 4106.14 is early turn evidence, but H4 has not closed above the 4126.06/4129.39 reaction highs or the 4131.75 cap. Codex therefore does not grant the required explicit H4 countertrend BUY allowance. The forming candle cannot supply it early.
+
+H1 latest completed 15:00 close: 4139.87, above EMA10 4123.90, EMA20 4123.61 and WMID high 4131.50. MACD main -1.60 is improving, histogram +2.75 is rising. This permits the local recovery direction under H1, while retaining the longer-average resistance context near EMA200 4150.78. It also ends the local WMID rejection-short branch. H1 support does not replace missing H4 allowance.
+
+M30 AND M15 CURRENT STATE
+M30 latest close 4139.87 is above the preceding range high 4132.17, WMID and EMA10/20, with positive main MACD 2.11 and histogram 2.08. This confirms the lower-frame reclaim structure at 15:00.
+
+M15 14:30-open candle completed 14:45 above WMID at 4137.98; its high is 4141.11 and its low is 4129.93. The subsequent 14:45-open candle completed 15:00 at 4139.87, below that 4141.11 high. Thus the required subsequent reclaim trigger has not occurred. Positive indicators alone cannot substitute for it. No current BUY full-confirmation timestamp exists.
+
+No current SELL rejection exists at WCONTROL: today high 4141.11 is below its lower edge 4146.87, H1 is recovering and the old WMID SELL is invalidated.
+
+CAUSAL TIMELINE
+2026-10-20 23:30 | Earlier fully post-freeze WMID rejection qualified
+Codex: No full confirmation at that cutoff
+
+2026-10-21 01:45 | M15 01:30 rejection: high 4130.96, low 4122.05, close 4122.59 below WMID and EMA10/20; main MACD turned lower
+Codex: New rejection qualification
+
+2026-10-21 02:00 | Subsequent M15 close 4120.09 broke 4122.05; M30 broke the prior 4124.90 low and closed below WMID/short EMAs; H1 closed below WMID/EMA10/20
+Codex: First full technical SELL confirmation; NO-CHASE BLOCK
+
+2026-10-21 04:15 | M15 04:00 reached 4106.14 inside WSUPPORT and closed 4109.21 inside it
+Codex: Support contact; not a qualified BUY by itself
+
+2026-10-21 04:30 | M15 04:15 retested support, closed 4117.32 above its upper edge; main/histogram improved despite EMA20 still above price
+Codex: Early support BUY qualification; higher gates absent
+
+2026-10-21 04:45 | Next candle reached WMID low 4123.18 before the support BUY had full confirmation
+Codex: First objective contact cannot be credited as a confirmed trade
+
+2026-10-21 05:15 | M15 05:00 closed 4119.16 above qualification high 4119.02
+Codex: Support BUY trigger; not full confirmation
+
+2026-10-21 08:30 | M30 08:00 closed 4127.86 above the 4124.24/4125.84 recovery cap and short averages with improving momentum
+Codex: Support-recovery M30 structure confirmed
+
+2026-10-21 11:00 | H1 10:00 closed 4123.97 above EMA10/20 and support exit, with improving negative main and rising positive histogram
+Codex: H1 supports the local support-recovery direction; H4 allowance still absent
+
+2026-10-21 12:00 | H4 08:00 closed 4119.61, still below short averages and local recovery highs
+Codex: Higher low / improving histogram is early turn evidence, insufficient for bullish allowance
+
+2026-10-21 14:45 | M15 14:30 reclaimed WMID high, close 4137.98, high 4141.11, low 4129.93
+Codex: New reclaim qualification pattern
+
+2026-10-21 15:00 | M30 and H1 closed 4139.87 above WMID high; next M15 also closed 4139.87 below reclaim high 4141.11
+Codex: Local WMID SELL invalidated; recovery supported, new M15 trigger and H4 allowance absent; WAIT
+
+FIRST TECHNICAL SELL AND EXACT-TIME NO CHASE
+Codex identifies the new WMID rejection qualification at 01:45 and subsequent trigger at 02:00. The 02:00 M30 completed a local structural break below the preceding 4124.90 low, WMID and its short averages; negative main MACD resumed lower and its positive histogram weakened. H1 simultaneously closed 4120.09 below WMID and EMA10/20 with negative main and fading recovery. H4 completed at 00:00 remained bearish. Therefore first simultaneous technical confirmation is 02:00, not 01:45.
+
+Selected reference: qualifying rejection-bar high 4130.96. The earlier approach extreme 4131.75 is visible but is not used to enlarge room; using it would not change the room test. Nearest unconsumed opposing edge at confirmation: WSUPPORT 4110.88.
+Leg 20.08; confirmation price 4120.09; consumed 10.87 = 54.13% (below 65%). Remaining 9.21; exact-time M15 ATR 3.895714; remaining 2.364 ATR (below 2.5).
+
+Historical verdict at 02:00: TECHNICALLY CONFIRMED — NO-CHASE BLOCK. The later fall into support does not turn this blocked entry into an allowed trade. No farther opposing target may replace 4110.88 to manufacture room.
+
+SUPPORT RECOVERY AND CURRENT BUY ROOM
+The support touch at 04:15 was followed by an early M15 rejection/qualification at 04:30 and subsequent trigger at 05:15. M30 structure arrived at 08:30; H1 local recovery permission at 11:00. These cannot be backdated to the first M15 event. H4 bullish allowance is still absent, so the WSUPPORT BUY has no first full-confirmation time. Its first opposing WMID target was already visited before those higher gates aligned.
+
+For the separate current WMID reclaim pattern, selected qualification low 4129.93 to nearest opposing WCONTROL low 4146.87 gives projected leg 16.94. At 4139.87, consumed 9.94 = 58.68%; remaining 7.00 = 1.20 cutoff M15 ATR. The location has inadequate room for a fresh chase.
+
+This is provisional location evidence, not a formal confirmation-time no-chase verdict, because H4 allowance and the subsequent M15 trigger are missing. The current candidate is not TECHNICALLY CONFIRMED — NO-CHASE BLOCK. The overall current verdict is WAIT.
+
+NEXT WATCH AND EXISTING POSITIONS
+1. Reassess an accepted hold/retest of WMID 4123.18-4131.50 as recovery context; require a new valid trigger, continued H1/M30 support and explicit completed H4 allowance before any BUY conclusion.
+
+2. WCONTROL 4146.87-4162.20 is the next frozen recovery objective/resistance. A SELL from there needs an actual rejection, fresh bearish H1 permission, M30 structure, M15 sequence and both no-chase tests; it has not been touched today through this cutoff. Its nearest downside objective is WMID high 4131.50, not the farther support.
+
+3. A completed H1 loss back below WMID low 4123.18 would weaken the recovery and call for a new bearish assessment. It does not retroactively revive the invalidated overnight rejection.
+
+4. Use the next completed H4 at 16:00 to reassess the developing turn; its current 12:00-open candle is forming at this cutoff and excluded.
+
+Existing positions were not queried or assessed. This fresh-entry evaluation is not an instruction to close or manage an unknown position. No orders were placed.
+
+MT5 TICK VERIFICATION AND LIMITATIONS
+The successful refresh required access outside the sandbox to the local MT5 terminal. Recent completed M15/M30/H1 bars were rebuilt with the existing accepted tick-fallback/merge/enrichment functions in separate copies; latest completed H4 was checked against its full tick interval. The original extractor is unchanged. Each verification excludes ticks at or after the candle completion.
+
+Ten additional Codex-selected historical intervals matched available bid-tick OHLC, with raw ticks and hashes retained. Nine met the strict within-60-seconds coverage check at both ends. The historical H4 interval 20 October 20:00 to midnight has a 120.054-second end gap: its native OHLC matches the available ticks, but that does not certify continuous tick coverage through its entire nominal interval. This exception is preserved explicitly rather than silently weakening the criterion or claiming complete tick coverage there. Current completed H4 and the key lower-frame confirmation intervals passed their tick checks.
+
+The existing broker-wall/EAT convention is preserved, with source live-tick metadata separate from the 15:00 causal evidence. MetaQuotes API UTC handling is documented at https://www.mql5.com/en/docs/python_metatrader5/mt5copyticksrange_py . Later quotes and forming candles did not influence the verdict. Codex made every analytical state and final decision; Python produced facts and arithmetic only.

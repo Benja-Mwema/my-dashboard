@@ -1,0 +1,148 @@
+{
+  "schema_version": "1.0",
+  "forecast_id": "XAUUSD_WEEK_20261019_V1",
+  "symbol": "XAUUSD.pro",
+  "forecast_type": "weekly",
+  "evidence_cutoff": "2026-10-17 00:00:00",
+  "forecast_week_start": "2026-10-19 00:00:00",
+  "frozen_at": "2026-10-20 23:14:14",
+  "created_at_eat": "2026-10-20T23:14:14+03:00",
+  "valid_from": "2026-10-20 23:14:14",
+  "valid_to": "2026-10-24 00:00:00",
+  "timezone": "Africa/Nairobi",
+  "status": "FINAL",
+  "provenance": "Reconstructed midweek from preweek evidence only; actually frozen now. No claim of issuance before current-week moves. Historical current-week touches are context only.",
+  "weekly_evidence_package": "output/weekly_20261016",
+  "preweek_regime": "H4 corrective recovery within broader range; H1 cooling",
+  "primary_path": {
+    "sequence": [
+      "WCONTROL support holds with M15 turn, M30 confirmation and H1 bullish permission",
+      "WRES",
+      "WUPPER after accepted breakout"
+    ],
+    "failure": "Completed H4 close below 4146.87 invalidates primary support-hold scenario."
+  },
+  "alternate_path": {
+    "sequence": [
+      "H4 breakdown below WCONTROL and H1 bearish permission",
+      "Failed recovery/retest of WCONTROL",
+      "WMID",
+      "WSUPPORT after acceptance below 4123.18",
+      "WBASE after acceptance below 4099.94"
+    ],
+    "failure": "Completed H4 close above 4162.20 invalidates the control-breakdown SELL branch. Each retest SELL is invalidated by completed H1 acceptance above its zone high."
+  },
+  "invalidation_rules": {
+    "WCONTROL_buy": "Completed H4 close below 4146.87",
+    "WCONTROL_sell": "Completed H4 close above 4162.20",
+    "WMID_sell": "Completed H1 close above 4131.50",
+    "WSUPPORT_buy": "Completed H4 close below 4099.94",
+    "WRES_sell": "Completed H4 close above 4198.80",
+    "WUPPER_sell": "Completed H4 close above 4217.27",
+    "WBASE_buy": "Completed H4 close below 4066.50"
+  },
+  "entry_gate_interpretation": {
+    "new_signal_eligibility": "Only fully post-freeze completed M15 bars may establish a new qualification or trigger. A bar opening before the actual freeze is contextual only. No confirmation timestamp may precede valid_from.",
+    "M15_qualification": "For SELL, a completed rejection in/through the active resistance zone closing below its lower edge; BUY mirrors above support. Directional indicator improvement must corroborate. A price/EMA state alone is not a new trigger.",
+    "M15_trigger": "A subsequent completed directional close beyond the qualification candle low for SELL or high for BUY. Must remain valid at the cutoff.",
+    "M30_confirmation": "Completed directional acceptance beyond the active-zone exit boundary and local structure, with close on directional side of EMA10/EMA20 and corroborating momentum. Mere touch is insufficient.",
+    "H1_permission": "Completed close on directional side of EMA10/EMA20 and active structural boundary, with regime-consistent MACD direction or explicitly demonstrated momentum turn. Positive but declining histogram alone is not equivalent to fully bearish permission.",
+    "H4_allowance": "Completed H4 regime permits direction and specified scenario invalidation has not occurred. Countertrend trades require an explicit H4 turn; support touch alone is insufficient.",
+    "first_full_confirmation": "Earliest eligible close_time when all specified gates coexist. No earlier historical confirmation under this newly frozen map.",
+    "opposing_level_selection": "Use the near edge of the nearest unconsumed opposing zone; do not skip an intervening zone to enlarge remaining room.",
+    "no_chase": "Consumption strictly below 65%; remaining room at least 2.5 M15 ATR at exact full confirmation; recheck fresh-entry location at requested cutoff."
+  },
+  "levels": [
+    {
+      "id": "WCONTROL",
+      "label": "Preweek support/control; bearish retest after completed breakdown",
+      "role": "CONTROL",
+      "direction_context": "BUY rejection while held; SELL rejection after H4 breakdown",
+      "low": 4146.87,
+      "high": 4162.2,
+      "priority": 1,
+      "basis": [
+        "2026-10-13 low 4146.87",
+        "2026-10-16 low 4147.32",
+        "preweek H1 EMA200 4162.1977"
+      ],
+      "buy_opposing_level": "WRES",
+      "sell_opposing_level": "WMID"
+    },
+    {
+      "id": "WMID",
+      "label": "Intermediate downside target and conditional retest control",
+      "role": "TARGET_TURN",
+      "direction_context": "SELL target from WCONTROL; SELL retest only after acceptance below 4123.18",
+      "low": 4123.18,
+      "high": 4131.5,
+      "priority": 2,
+      "basis": [
+        "2026-10-05 low 4123.18",
+        "2026-10-09 low 4123.84",
+        "2026-10-15 08:00 H4 low 4131.50"
+      ],
+      "sell_opposing_level": "WSUPPORT"
+    },
+    {
+      "id": "WSUPPORT",
+      "label": "Lower support and downside target",
+      "role": "TURN_SUPPORT",
+      "direction_context": "BUY watch only with H4 allowance and H1 permission; SELL target",
+      "low": 4099.94,
+      "high": 4110.88,
+      "priority": 3,
+      "basis": [
+        "2026-10-15 low 4099.94",
+        "2026-10-08 low 4103.26",
+        "2026-10-06 low 4104.37",
+        "2026-09-28 low 4110.88"
+      ],
+      "buy_opposing_level": "WMID",
+      "sell_opposing_level": "WBASE"
+    },
+    {
+      "id": "WBASE",
+      "label": "Structural lower extreme and terminal downside target-turn",
+      "role": "TARGET_TURN",
+      "direction_context": "Downside target; countertrend BUY watch only after reversal gates",
+      "low": 4066.5,
+      "high": 4077.89,
+      "priority": 4,
+      "basis": [
+        "2026-10-07 low 4066.50",
+        "2026-10-14 low 4073.37",
+        "2026-10-14 20:00 H4 low 4077.89"
+      ]
+    },
+    {
+      "id": "WRES",
+      "label": "Upper rejection resistance",
+      "role": "TURN_RESISTANCE",
+      "direction_context": "SELL watch with H4 allowance and H1 permission; BUY target",
+      "low": 4186.38,
+      "high": 4198.8,
+      "priority": 5,
+      "basis": [
+        "2026-10-16 04:00 H4 high 4186.38",
+        "2026-10-16 high 4198.80"
+      ],
+      "sell_opposing_level": "WCONTROL",
+      "buy_opposing_level": "WUPPER"
+    },
+    {
+      "id": "WUPPER",
+      "label": "Upper range target-turn",
+      "role": "TARGET_TURN",
+      "direction_context": "BUY continuation target; SELL only after rejection gates",
+      "low": 4207.4,
+      "high": 4217.27,
+      "priority": 6,
+      "basis": [
+        "2026-10-09 high 4207.40",
+        "2026-10-12 high 4217.27"
+      ],
+      "sell_opposing_level": "WRES"
+    }
+  ]
+}

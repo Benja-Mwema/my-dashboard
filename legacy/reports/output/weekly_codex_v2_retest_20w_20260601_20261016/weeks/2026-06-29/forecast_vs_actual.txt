@@ -1,0 +1,146 @@
+WEEK 5: 2026-06-29 to 2026-07-03
+
+FORECAST USING PREWEEK INFORMATION
+Forecast ID: XAUUSD_CODEX_V2_RETEST_20260629_V1
+Information cutoff: 2026-06-27 00:00:00
+Actual reconstruction/freeze: 2026-10-21 10:52:56 EAT; original historical issuance: NO
+Status: FINAL RESEARCH MAP; not a live forecast
+Primary directional hypothesis: SELL
+
+V2 HORIZONS AND CHANGE FROM V1
+Weekly closing preference: SELL
+The prior week made a lower high and lower low; the recovery has not accepted above 4220.77 and remains below H4 EMA50/200. Prefer rejection into overhead recovery resistance rather than promoting short-EMA recovery into a dominant BUY view.
+First-leg direction: SELL; conditional on its declared gates.
+Change the first-leg plan to conditional SELL from 4090.77-4114.98 toward 4044.28-4060.27. Failure is an H4 close above structural 4136.49; this is a distinct scenario, not a widened stop on the old BUY.
+
+STRUCTURAL TURN EVIDENCE
+{
+  "week_start": "2026-06-29",
+  "boundary_source_field": "high",
+  "boundary_price": 4220.77,
+  "originating_h4_bar_open": "2026-06-22 04:00:00",
+  "originating_h4_bar_close": "2026-06-22 08:00:00",
+  "requested_close_relation": "above",
+  "first_later_completed_h4_close_across": null
+}
+No completed H4 acceptance above 4220.77 exists. Friday reclaimed smaller intraday levels, but the controlling lower-high structure remains intact.
+H1: H1 is above its short averages with positive histogram but below EMA200 4132.22. This is contrary recovery evidence: a SELL needs an actual resistance turn and bearish H1 permission later.
+
+COMPLETENESS
+H4: expected 2026-06-27 00:00:00; actual 2026-06-27 00:00:00; 90 exported; causal prefix PASS
+H1: expected 2026-06-27 00:00:00; actual 2026-06-27 00:00:00; 96 exported; causal prefix PASS
+M30: expected 2026-06-27 00:00:00; actual 2026-06-27 00:00:00; 120 exported; causal prefix PASS
+M15: expected 2026-06-27 00:00:00; actual 2026-06-27 00:00:00; 160 exported; causal prefix PASS
+
+H4 REGIME
+Corrective rebound beneath EMA50/200
+The prior week made a lower high and lower low; the recovery has not accepted above 4220.77 and remains below H4 EMA50/200. Prefer rejection into overhead recovery resistance rather than promoting short-EMA recovery into a dominant BUY view.
+H1 SETUP
+Bullish recovery below the long average
+M30/M15 CONTEXT
+M30/M15 above short averages while histograms cool; renewed support reaction is required.
+Confidence: Low; no calibrated probability.
+
+PREWEEK NUMERICAL EVIDENCE
+H4 | completed 2026-06-27 00:00:00 | close 4,088.27 | ema10 4,049.45 | ema20 4,060.27 | ema50 4,127.98 | ema200 4,340.57 | macd_main -25.12 | macd_signal -40.56 | macd_hist 15.43 | macd_hist_slope_3 8.89 | atr14 40.77 | pivot 4,011.49
+H1 | completed 2026-06-27 00:00:00 | close 4,088.27 | ema10 4,070.63 | ema20 4,056.37 | ema50 4,046.08 | ema200 4,132.22 | macd_main 16.78 | macd_signal 14.15 | macd_hist 2.64 | macd_hist_slope_3 -2.68 | atr14 18.16 | pivot 4,011.49
+M30 | completed 2026-06-27 00:00:00 | close 4,088.27 | ema10 4,075.40 | ema20 4,069.05 | ema50 4,050.92 | ema200 4,073.26 | macd_main 9.85 | macd_signal 11.53 | macd_hist -1.69 | macd_hist_slope_3 0.83 | atr14 11.74 | pivot 4,011.49
+M15 | completed 2026-06-27 00:00:00 | close 4,088.27 | ema10 4,074.44 | ema20 4,073.85 | ema50 4,064.29 | ema200 4,045.50 | macd_main 1.78 | macd_signal 2.23 | macd_hist -0.45 | macd_hist_slope_3 2.17 | atr14 6.97 | pivot 4,011.49
+Prior week O/H/L/C: 4,147.55 / 4,220.77 / 3,959.32 / 4,088.27; close range position 49.32%
+
+FROZEN WEEKLY MAP
+BASE | TURN_SUPPORT | 3,959.32â€“3,963.51
+  low basis: 2026-06-24 daily low
+  high basis: 2026-06-25 daily low; 2026-06-25 04:00:00 H4 low
+LOWER | TARGET_TURN | 3,982.99â€“4,001.23
+  low basis: 2026-06-26 daily low; 2026-06-26 04:00:00 H4 low
+  high basis: 2026-06-24 daily close
+CONTROL | CONTROL | 4,044.28â€“4,060.27
+  low basis: 2026-06-25 daily high; 2026-06-25 20:00:00 H4 high
+  high basis: preweek completed H4 ema20
+RESISTANCE | TURN_RESISTANCE | 4,090.77â€“4,114.98
+  low basis: 2026-06-23 daily low
+  high basis: 2026-06-24 daily high
+UPPER | TARGET_TURN | 4,121.80â€“4,136.49
+  low basis: 2026-06-19 daily low
+  high basis: 2026-06-22 daily low
+HIGH | TARGET_TURN | 4,201.45â€“4,220.77
+  low basis: 2026-06-18 daily low
+  high basis: 2026-06-22 daily high
+
+PRIMARY PATH
+SELL: hold/reject RESISTANCE (4,090.77â€“4,114.98) with the required gates, then CONTROL (4,044.28â€“4,060.27).
+Extension only after acceptance through the intervening target: LOWER 3,982.99â€“4,001.23.
+Failure: completed H4 close above 4,136.49.
+
+ALTERNATE PATH
+BUY: Completed H4 acceptance above 4136.49 with bullish H1 permission, followed by a held retest of 4121.80-4136.49 and all other gates.. First objective HIGH (4,201.45â€“4,220.77).
+Failure of alternate: completed H4 close below 4,121.80.
+
+GATES AND NO-CHASE
+Origin-zone hold/rejection, subsequent M15 trigger, M30 structural acceptance, H1 permission, H4 allowance; fresh entry also requires both no-chase tests. M15 trigger must follow qualification; no backdating when M30/H1 gates arrive later. Fresh entry needs leg consumption strictly below 65% and room at least 2.5 M15 ATR at exact full confirmation. These gates are retained from the reference procedure, but are not evaluated as trade performance in this report.
+
+SEPARATE OPENING REVIEW
+{
+  "week_start": "2026-06-29",
+  "review_cutoff": "2026-06-29 01:15:00",
+  "opening_bar_time": "2026-06-29 01:00:00",
+  "opening_price": 4079.29,
+  "opening_completed_close": 4070.19,
+  "origin_low": 4090.77,
+  "origin_high": 4114.98,
+  "first_target_low": 4044.28,
+  "first_target_high": 4060.27,
+  "opening_minus_primary_failure_threshold": -57.2,
+  "first_origin_intersection": {
+    "bar_time": "2026-07-01 16:30:00",
+    "close_time": "2026-07-01 16:45:00",
+    "open": 4046.65,
+    "high": 4099.68,
+    "low": 4041.81,
+    "close": 4097.81
+  },
+  "latest_available_completed_boundaries": {
+    "H4": "2026-06-27 00:00:00",
+    "H1": "2026-06-27 00:00:00",
+    "M30": "2026-06-27 00:00:00",
+    "M15": "2026-06-29 01:15:00"
+  },
+  "is_full_entry_evaluation": false
+}
+Codex opening assessment: The revised SELL plan opens below its 4090.77-4114.98 rejection origin. A return and actual bearish turn are required. The original preweek map is retained; no chase entry is inferred from a move already away from origin.
+No preweek preference or map is changed by this later observation.
+
+ACTUAL FACTS AT WEEK END
+Actual completion cutoff: 2026-07-03 20:00:00
+O/H/L/C: 4,079.29 / 4,195.42 / 3,942.86 / 4,174.97
+Body: UP +2.3455%
+Upward excursion: 116.13; downward excursion: 136.43; dominant DOWN
+
+COMPLETED-CANDLE TIMELINE
+First origin contact: 2026-07-01 16:45:00 (completed candle; close 4,097.81); bar opened 2026-07-01 16:30:00
+First target contact, regardless of origin: 2026-06-29 01:30:00 (completed candle; close 4,057.24); bar opened 2026-06-29 01:15:00
+First target in a later bar after origin: 2026-07-01 22:00:00 (completed candle; close 4,062.19); bar opened 2026-07-01 21:45:00
+First H4 close across primary failure threshold: 2026-07-03 04:00:00 (completed candle; close 4,147.03); bar opened 2026-07-03 00:00:00
+First origin retest after that H4 threshold cross: Not observed
+First alternate target after that H4 cross: Not observed
+First alternate target in later bar after post-cross retest: Not observed
+All intersection times denote when completed OHLC made contact known; candle close is not asserted to be the contact price. Alternate interactions alone do not certify its H1/M30/M15 gates.
+
+DAILY ACTUALS
+2026-06-29 | 4,079.29 / 4,085.60 / 4,000.77 / 4,016.29 | completed 2026-06-30 00:00:00
+2026-06-30 | 4,018.24 / 4,063.32 / 3,942.86 / 4,007.15 | completed 2026-07-01 00:00:00
+2026-07-01 | 4,012.34 / 4,115.16 / 3,959.98 / 4,031.49 | completed 2026-07-02 00:00:00
+2026-07-02 | 4,035.60 / 4,143.91 / 4,030.83 / 4,123.87 | completed 2026-07-03 00:00:00
+2026-07-03 | 4,126.23 / 4,195.42 / 4,121.15 / 4,174.97 | completed 2026-07-03 20:00:00
+
+CODEX COMPARISON
+Origin â†’ target; later H4 failure
+The revised SELL origin was first visited on 1 July at 16:45. A later M15 candle intersected the 4044.28-4060.27 target at 22:00 that day. H4 subsequently closed above 4136.49 on 3 July at 04:00, ending this branch. The first price sequence is supported but later failure remains recorded. The weekly body rose, so the bearish closing preference missed; the larger downside excursion agrees. No full SELL-entry or profit is certified.
+Weekly-body agreement: MISS; dominant-excursion agreement: MATCH.
+
+SEPARATE WEEKLY PREFERENCE GRADE
+Body: MISS; dominant excursion: MATCH
+
+LIMITS
+Retrospective reconstruction after historical outcomes were available. Preweek causal inputs do not establish blind forecasting. Full entry/no-chase performance is unscored. Saved OHLC, not historical tick execution. Hypothetical interval is not historical live validity.

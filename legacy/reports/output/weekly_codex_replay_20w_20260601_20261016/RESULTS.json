@@ -1,0 +1,21 @@
+{
+  "weeks": 20,
+  "body_agreements": 10,
+  "dominant_excursion_agreements": 10,
+  "denominator": 20,
+  "body_agreement_pct": 50.0,
+  "dominant_excursion_agreement_pct": 50.0,
+  "live_or_blind_forecasts_verified": 0,
+  "scope": "Descriptive agreement of newly reconstructed primary directional hypotheses. Conditional scenario outcomes and entry profitability are separate.",
+  "reconstruction_type": "Codex discretionary procedure replay; not original historical forecasts, not blind or out-of-sample",
+  "actuals_m15_ohlc_reconciliations": 20,
+  "codex_price_path_assessments": {
+    "FAILED_WITHOUT_POST_ORIGIN_TARGET": 5,
+    "TARGET_AFTER_ORIGIN_NO_H4_FAILURE": 5,
+    "H4_FAILURE_BEFORE_POST_ORIGIN_TARGET": 4,
+    "TARGET_AFTER_ORIGIN_THEN_H4_FAILURE": 5,
+    "ORIGIN_NOT_VISITED": 1
+  },
+  "origin_then_first_target_before_h4_failure_count": 10,
+  "first_target_before_failure_but_later_h4_failure_count": 5
+}

@@ -1,0 +1,23 @@
+{
+  "study_type": "DEVELOPMENT_SAMPLE_HISTORICAL_RETEST",
+  "created_at_eat": "2026-10-21T10:51:11+03:00",
+  "period": "2026-06-01 through 2026-10-16",
+  "analytical_author": "Codex",
+  "python_role": "Factual extraction, serialization, numerical grading, integrity checks and report rendering only",
+  "method_id": "XAUUSD_WEEKLY_PROCEDURE_V2_20261021",
+  "baseline_method_id": "XAUUSD_WEEKLY_PROCEDURE_V1_20261021",
+  "known_outcomes": "Already reviewed and used to develop V2. This retest is NOT blind, prospective or independent validation.",
+  "evidence_policy": "Reuse the exact validated V1 preweek packages and causal-prefix checks, preserving the accepted extractor and 90/96/120/160 windows. No target-week rows enter forecast evidence.",
+  "levels_policy": "Retain V1 preweek zone boundaries for comparability; two explicit Codex scenario changes (29 June, 12 October). The 29 June alternative adds a preweek-only HIGH zone. No active live map is changed.",
+  "horizon_policy": "Weekly closing preference is distinct from the conditional first-leg direction. UNRESOLVED is a weekly research preference, not an EVALUATE verdict.",
+  "comparisons": [
+    "V1 versus V2 first-leg directional agreement on all 20 weeks, same field and same denominator",
+    "V2 explicit closing preference on resolved weeks with coverage and all-20 hit counts",
+    "V1 primary direction as the historical closing-direction proxy on the same V2-resolved subset, labelled as a proxy rather than a true separate V1 closing forecast",
+    "Always BUY and always SELL baselines on all 20 and the identical resolved subset",
+    "Origin-to-target and completed-H4 failure chronology, interpreted by Codex, no entry success inferred"
+  ],
+  "opening_policy": "After maps are frozen, extract the first observed completed M15 interval of each target week as the opening review cutoff. Codex assesses current premise separately; no opening evidence changes the preweek forecast or scoring denominator.",
+  "entry_performance": "UNSCORED; no full EVALUATE/no-chase replay or profitability claim",
+  "prospective_journal": "Unchanged; historical retest does not populate any future forecast/result record."
+}

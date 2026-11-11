@@ -1,0 +1,91 @@
+WEEK 11: 2026-08-10 to 2026-08-14
+
+FORECAST USING PREWEEK INFORMATION
+Forecast ID: XAUUSD_CODEX_REPLAY_20260810_V1
+Information cutoff: 2026-08-08 00:00:00
+Actual reconstruction/freeze: 2026-10-21 10:05:44 EAT; original historical issuance: NO
+Status: FINAL RESEARCH MAP; not a live forecast
+Primary directional hypothesis: BUY
+
+COMPLETENESS
+H4: expected 2026-08-08 00:00:00; actual 2026-08-08 00:00:00; 90 exported; causal prefix PASS
+H1: expected 2026-08-08 00:00:00; actual 2026-08-08 00:00:00; 96 exported; causal prefix PASS
+M30: expected 2026-08-08 00:00:00; actual 2026-08-08 00:00:00; 120 exported; causal prefix PASS
+M15: expected 2026-08-08 00:00:00; actual 2026-08-08 00:00:00; 160 exported; causal prefix PASS
+
+H4 REGIME
+Bullish expansion above all four H4 averages
+The H4 breakout has positive MACD main and histogram and stands above EMA200. A support-hold continuation toward 4371.73 is preferred. Above that high this evidence offers price discovery, not a precise invented target.
+H1 SETUP
+Bullish price alignment, momentum cooling
+M30/M15 CONTEXT
+M30/M15 above short averages but negative histograms; require renewed turn and avoid chasing the expansion.
+Confidence: Moderate; no calibrated probability.
+
+PREWEEK NUMERICAL EVIDENCE
+H4 | completed 2026-08-08 00:00:00 | close 4,342.22 | ema10 4,290.41 | ema20 4,240.49 | ema50 4,162.86 | ema200 4,140.35 | macd_main 61.60 | macd_signal 53.74 | macd_hist 7.86 | macd_hist_slope_3 2.58 | atr14 43.13 | pivot 4,255.92
+H1 | completed 2026-08-08 00:00:00 | close 4,342.22 | ema10 4,333.60 | ema20 4,316.27 | ema50 4,272.30 | ema200 4,159.50 | macd_main 23.27 | macd_signal 23.00 | macd_hist 0.27 | macd_hist_slope_3 -2.44 | atr14 21.28 | pivot 4,255.92
+M30 | completed 2026-08-08 00:00:00 | close 4,342.22 | ema10 4,339.97 | ema20 4,333.18 | ema50 4,307.22 | ema200 4,215.58 | macd_main 11.44 | macd_signal 14.17 | macd_hist -2.73 | macd_hist_slope_3 -0.11 | atr14 12.77 | pivot 4,255.92
+M15 | completed 2026-08-08 00:00:00 | close 4,342.22 | ema10 4,341.43 | ema20 4,340.38 | ema50 4,328.96 | ema200 4,271.11 | macd_main 2.32 | macd_signal 2.92 | macd_hist -0.60 | macd_hist_slope_3 -0.30 | atr14 6.89 | pivot 4,255.92
+Prior week O/H/L/C: 4,074.03 / 4,371.73 / 4,019.13 / 4,342.22; close range position 91.63%
+
+FROZEN WEEKLY MAP
+BASE | TURN_SUPPORT | 4,140.35–4,162.86
+  low basis: preweek completed H4 ema200
+  high basis: preweek completed H4 ema50
+LOWER | TARGET_TURN | 4,223.45–4,240.49
+  low basis: 2026-08-06 daily low; 2026-08-06 16:00:00 H4 low
+  high basis: preweek completed H4 ema20
+MID | TARGET_TURN | 4,290.41–4,304.06
+  low basis: preweek completed H4 ema10
+  high basis: 2026-08-06 daily high; 2026-08-06 04:00:00 H4 high
+CONTROL | CONTROL | 4,316.27–4,333.60
+  low basis: preweek completed H1 ema20
+  high basis: preweek completed H1 ema10
+RESISTANCE | TURN_RESISTANCE | 4,371.73–4,371.73
+  low basis: 2026-08-07 daily high; 2026-08-07 12:00:00 H4 high
+  high basis: 2026-08-07 daily high; 2026-08-07 12:00:00 H4 high
+
+PRIMARY PATH
+BUY: hold/reject CONTROL (4,316.27–4,333.60) with the required gates, then RESISTANCE (4,371.73–4,371.73).
+No further numerical target declared beyond this mapped objective.
+Failure: completed H4 close below 4,316.27.
+
+ALTERNATE PATH
+SELL: Primary H4 failure threshold crossed, directional H1 permission and failed recovery/retest of origin control; all other required gates still apply. First objective MID (4,290.41–4,304.06).
+Further objective, subject to acceptance: LOWER 4,223.45–4,240.49.
+Failure of alternate: completed H4 close above 4,333.60.
+
+GATES AND NO-CHASE
+Origin-zone hold/rejection, subsequent M15 trigger, M30 structural acceptance, H1 permission, H4 allowance; fresh entry also requires both no-chase tests. M15 trigger must follow qualification; no backdating when M30/H1 gates arrive later. Fresh entry needs leg consumption strictly below 65% and room at least 2.5 M15 ATR at exact full confirmation. These gates are retained from the reference procedure, but are not evaluated as trade performance in this report.
+
+ACTUAL FACTS AT WEEK END
+Actual completion cutoff: 2026-08-15 00:00:00
+O/H/L/C: 4,348.26 / 4,449.62 / 4,311.04 / 4,375.78
+Body: UP +0.6329%
+Upward excursion: 101.36; downward excursion: 37.22; dominant UP
+
+COMPLETED-CANDLE TIMELINE
+First origin contact: 2026-08-10 01:15:00 (completed candle; close 4,343.43); bar opened 2026-08-10 01:00:00
+First target contact, regardless of origin: 2026-08-10 21:45:00 (completed candle; close 4,379.72); bar opened 2026-08-10 21:30:00
+First target in a later bar after origin: 2026-08-10 21:45:00 (completed candle; close 4,379.72); bar opened 2026-08-10 21:30:00
+First H4 close across primary failure threshold: Not observed
+First origin retest after that H4 threshold cross: Not observed
+First alternate target after that H4 cross: Not observed
+First alternate target in later bar after post-cross retest: Not observed
+All intersection times denote when completed OHLC made contact known; candle close is not asserted to be the contact price. Alternate interactions alone do not certify its H1/M30/M15 gates.
+
+DAILY ACTUALS
+2026-08-10 | 4,348.26 / 4,395.20 / 4,313.29 / 4,389.11 | completed 2026-08-11 00:00:00
+2026-08-11 | 4,389.43 / 4,435.10 / 4,356.76 / 4,367.98 | completed 2026-08-12 00:00:00
+2026-08-12 | 4,372.36 / 4,441.03 / 4,362.50 / 4,408.83 | completed 2026-08-13 00:00:00
+2026-08-13 | 4,409.54 / 4,449.62 / 4,343.87 / 4,350.46 | completed 2026-08-14 00:00:00
+2026-08-14 | 4,353.95 / 4,396.88 / 4,311.04 / 4,375.78 | completed 2026-08-15 00:00:00
+
+CODEX COMPARISON
+Origin → target; no H4 failure
+The origin band was visited before the Monday 21:45 target contact, with no H4 close below 4316.27 all week. Lower wicks crossed that threshold, but the specified H4-close failure did not occur. Both primary directional measures agree. The later 4449.62 high was not an invented precise preweek target.
+Weekly-body agreement: MATCH; dominant-excursion agreement: MATCH.
+
+LIMITS
+Retrospective reconstruction after historical outcomes were available. Preweek causal inputs do not establish blind forecasting. Full entry/no-chase performance is unscored. Saved OHLC, not historical tick execution. Hypothetical interval is not historical live validity.

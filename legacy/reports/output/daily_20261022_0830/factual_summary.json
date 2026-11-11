@@ -1,0 +1,1535 @@
+{
+  "cutoff": "2026-10-22 08:30:00",
+  "forecast_id": "XAUUSD_WEEK_20261019_V1",
+  "levels_sha256": "b9080f189c29071fce0e1c94abe87c3c3061e03da2b15223da0ea6d717358007",
+  "validation": {
+    "H4": {
+      "expected_latest_completed": "2026-10-22 08:00:00",
+      "actual_latest_completed": "2026-10-22 08:00:00",
+      "causal_only": true,
+      "source_sha256": "b26bdf947a96e229da066b954ae8761bcee27ccb0e7d7b096564d37dcad63b95",
+      "export_rows": 90,
+      "tick_verified_intervals": 1,
+      "current_session_gaps": 0,
+      "official_vs_tick_recent_mismatches": []
+    },
+    "H1": {
+      "expected_latest_completed": "2026-10-22 08:00:00",
+      "actual_latest_completed": "2026-10-22 08:00:00",
+      "causal_only": true,
+      "source_sha256": "dcceeb52d4f86d8c119ec58129faa1516f61dc2f5bf756ca5490f837b87c3dbb",
+      "export_rows": 96,
+      "tick_verified_intervals": 1,
+      "current_session_gaps": 0,
+      "official_vs_tick_recent_mismatches": []
+    },
+    "M30": {
+      "expected_latest_completed": "2026-10-22 08:30:00",
+      "actual_latest_completed": "2026-10-22 08:30:00",
+      "causal_only": true,
+      "source_sha256": "94ef5e94a928570433574e0761863ec319ab38766020d7cf363696947ddca79b",
+      "export_rows": 120,
+      "tick_verified_intervals": 2,
+      "current_session_gaps": 0,
+      "official_vs_tick_recent_mismatches": [
+        {
+          "bar_time": "2026-10-22 08:00:00",
+          "official_ohlc": {
+            "open": 4091.71,
+            "high": 4092.86,
+            "low": 4085.87,
+            "close": 4086.39
+          },
+          "tick_ohlc": {
+            "open": 4091.71,
+            "high": 4092.86,
+            "low": 4085.68,
+            "close": 4088.71
+          },
+          "tick_minus_official": {
+            "open": 0.0,
+            "high": 0.0,
+            "low": -0.19,
+            "close": 2.32
+          }
+        }
+      ]
+    },
+    "M15": {
+      "expected_latest_completed": "2026-10-22 08:30:00",
+      "actual_latest_completed": "2026-10-22 08:30:00",
+      "causal_only": true,
+      "source_sha256": "cda9b2c7fffdc5815ab3184684685520e045f77a4cdd0a57cb27a43b37324723",
+      "export_rows": 160,
+      "tick_verified_intervals": 3,
+      "current_session_gaps": 0,
+      "official_vs_tick_recent_mismatches": [
+        {
+          "bar_time": "2026-10-22 08:15:00",
+          "official_ohlc": {
+            "open": 4087.5,
+            "high": 4089.36,
+            "low": 4085.87,
+            "close": 4086.32
+          },
+          "tick_ohlc": {
+            "open": 4087.5,
+            "high": 4089.36,
+            "low": 4085.68,
+            "close": 4088.71
+          },
+          "tick_minus_official": {
+            "open": 0.0,
+            "high": 0.0,
+            "low": -0.19,
+            "close": 2.39
+          }
+        }
+      ]
+    }
+  },
+  "common_effective_cutoff": "2026-10-22 08:00:00",
+  "today_ohlc": {
+    "open": 4144.27,
+    "high": 4145.07,
+    "low": 4085.68,
+    "close_at_cutoff": 4088.71,
+    "body_change": -55.5600000000004,
+    "body_pct": -1.3406462416782783
+  },
+  "latest": {
+    "H4": {
+      "time": "2026-10-22T04:00:00.000",
+      "close_time": "2026-10-22T08:00:00.000",
+      "open": 4113.31,
+      "high": 4124.04,
+      "low": 4087.95,
+      "close": 4091.73,
+      "ema10": 4120.9524183919,
+      "ema20": 4130.0798081699,
+      "ema50": 4144.0432940726,
+      "ema200": 4216.2041932024,
+      "macd_main": -10.7399189803,
+      "macd_signal": -8.5269074993,
+      "macd_hist": -2.213011481,
+      "macd_hist_slope_3": -1.1372921065,
+      "macd_hist_slope_5": 1.3582351511,
+      "atr14": 25.3685714286
+    },
+    "H1": {
+      "time": "2026-10-22T07:00:00.000",
+      "close_time": "2026-10-22T08:00:00.000",
+      "open": 4092.17,
+      "high": 4093.46,
+      "low": 4087.95,
+      "close": 4091.73,
+      "ema10": 4112.7502555345,
+      "ema20": 4118.765048148,
+      "ema50": 4126.73030147,
+      "ema200": 4146.549123334,
+      "macd_main": -5.9592524648,
+      "macd_signal": -2.0249502134,
+      "macd_hist": -3.9343022514,
+      "macd_hist_slope_3": -2.7427110723,
+      "macd_hist_slope_5": -4.5759515109,
+      "atr14": 15.2592857143
+    },
+    "M30": {
+      "time": "2026-10-22T08:00:00.000",
+      "close_time": "2026-10-22T08:30:00.000",
+      "open": 4091.71,
+      "high": 4092.86,
+      "low": 4085.68,
+      "close": 4088.71,
+      "ema10": 4102.3899615152,
+      "ema20": 4111.594232915,
+      "ema50": 4120.1840318995,
+      "ema200": 4136.2143580359,
+      "macd_main": -9.7127775824,
+      "macd_signal": -5.8647859084,
+      "macd_hist": -3.847991674,
+      "macd_hist_slope_3": -0.2711637863,
+      "macd_hist_slope_5": -1.9207534065,
+      "atr14": 8.8735714286
+    },
+    "M15": {
+      "time": "2026-10-22T08:15:00.000",
+      "close_time": "2026-10-22T08:30:00.000",
+      "open": 4087.5,
+      "high": 4089.36,
+      "low": 4085.68,
+      "close": 4088.71,
+      "ema10": 4094.7088717577,
+      "ema20": 4102.6587282934,
+      "ema50": 4114.39706111,
+      "ema200": 4126.9786343225,
+      "macd_main": -9.732263878,
+      "macd_signal": -8.4044489271,
+      "macd_hist": -1.3278149509,
+      "macd_hist_slope_3": 0.8320212817,
+      "macd_hist_slope_5": 1.0772031561,
+      "atr14": 6.5371428571
+    }
+  },
+  "interactions": {
+    "WCONTROL": {
+      "low": 4146.87,
+      "high": 4162.2,
+      "touched_bar_count": 0,
+      "first_touch": [],
+      "last_touch": []
+    },
+    "WMID": {
+      "low": 4123.18,
+      "high": 4131.5,
+      "touched_bar_count": 7,
+      "first_touch": [
+        {
+          "time": "2026-10-22T01:45:00.000",
+          "close_time": "2026-10-22T02:00:00.000",
+          "open": 4133.89,
+          "high": 4134.24,
+          "low": 4130.27,
+          "close": 4130.94
+        }
+      ],
+      "last_touch": [
+        {
+          "time": "2026-10-22T05:30:00.000",
+          "close_time": "2026-10-22T05:45:00.000",
+          "open": 4118.08,
+          "high": 4124.04,
+          "low": 4114.6,
+          "close": 4116.74
+        }
+      ]
+    },
+    "WSUPPORT": {
+      "low": 4099.94,
+      "high": 4110.88,
+      "touched_bar_count": 7,
+      "first_touch": [
+        {
+          "time": "2026-10-22T04:00:00.000",
+          "close_time": "2026-10-22T04:15:00.000",
+          "open": 4113.31,
+          "high": 4118.45,
+          "low": 4110.71,
+          "close": 4115.25
+        }
+      ],
+      "last_touch": [
+        {
+          "time": "2026-10-22T06:30:00.000",
+          "close_time": "2026-10-22T06:45:00.000",
+          "open": 4100.05,
+          "high": 4100.45,
+          "low": 4091.32,
+          "close": 4094.31
+        }
+      ]
+    },
+    "WBASE": {
+      "low": 4066.5,
+      "high": 4077.89,
+      "touched_bar_count": 0,
+      "first_touch": [],
+      "last_touch": []
+    },
+    "WRES": {
+      "low": 4186.38,
+      "high": 4198.8,
+      "touched_bar_count": 0,
+      "first_touch": [],
+      "last_touch": []
+    },
+    "WUPPER": {
+      "low": 4207.4,
+      "high": 4217.27,
+      "touched_bar_count": 0,
+      "first_touch": [],
+      "last_touch": []
+    }
+  },
+  "completed_close_interactions": {
+    "WCONTROL": {
+      "H4": {
+        "first_close_below_low": [
+          {
+            "time": "2026-10-22T00:00:00.000",
+            "close_time": "2026-10-22T04:00:00.000",
+            "close": 4113.3
+          }
+        ],
+        "last_close_below_low": [
+          {
+            "time": "2026-10-22T04:00:00.000",
+            "close_time": "2026-10-22T08:00:00.000",
+            "close": 4091.73
+          }
+        ],
+        "first_close_above_high": [],
+        "last_close_above_high": []
+      },
+      "H1": {
+        "first_close_below_low": [
+          {
+            "time": "2026-10-22T01:00:00.000",
+            "close_time": "2026-10-22T02:00:00.000",
+            "close": 4130.94
+          }
+        ],
+        "last_close_below_low": [
+          {
+            "time": "2026-10-22T07:00:00.000",
+            "close_time": "2026-10-22T08:00:00.000",
+            "close": 4091.73
+          }
+        ],
+        "first_close_above_high": [],
+        "last_close_above_high": []
+      },
+      "M30": {
+        "first_close_below_low": [
+          {
+            "time": "2026-10-22T01:00:00.000",
+            "close_time": "2026-10-22T01:30:00.000",
+            "close": 4136.83
+          }
+        ],
+        "last_close_below_low": [
+          {
+            "time": "2026-10-22T08:00:00.000",
+            "close_time": "2026-10-22T08:30:00.000",
+            "close": 4088.71
+          }
+        ],
+        "first_close_above_high": [],
+        "last_close_above_high": []
+      },
+      "M15": {
+        "first_close_below_low": [
+          {
+            "time": "2026-10-22T01:00:00.000",
+            "close_time": "2026-10-22T01:15:00.000",
+            "close": 4138.7
+          }
+        ],
+        "last_close_below_low": [
+          {
+            "time": "2026-10-22T08:15:00.000",
+            "close_time": "2026-10-22T08:30:00.000",
+            "close": 4088.71
+          }
+        ],
+        "first_close_above_high": [],
+        "last_close_above_high": []
+      }
+    },
+    "WMID": {
+      "H4": {
+        "first_close_below_low": [
+          {
+            "time": "2026-10-22T00:00:00.000",
+            "close_time": "2026-10-22T04:00:00.000",
+            "close": 4113.3
+          }
+        ],
+        "last_close_below_low": [
+          {
+            "time": "2026-10-22T04:00:00.000",
+            "close_time": "2026-10-22T08:00:00.000",
+            "close": 4091.73
+          }
+        ],
+        "first_close_above_high": [],
+        "last_close_above_high": []
+      },
+      "H1": {
+        "first_close_below_low": [
+          {
+            "time": "2026-10-22T03:00:00.000",
+            "close_time": "2026-10-22T04:00:00.000",
+            "close": 4113.3
+          }
+        ],
+        "last_close_below_low": [
+          {
+            "time": "2026-10-22T07:00:00.000",
+            "close_time": "2026-10-22T08:00:00.000",
+            "close": 4091.73
+          }
+        ],
+        "first_close_above_high": [],
+        "last_close_above_high": []
+      },
+      "M30": {
+        "first_close_below_low": [
+          {
+            "time": "2026-10-22T03:00:00.000",
+            "close_time": "2026-10-22T03:30:00.000",
+            "close": 4119.05
+          }
+        ],
+        "last_close_below_low": [
+          {
+            "time": "2026-10-22T08:00:00.000",
+            "close_time": "2026-10-22T08:30:00.000",
+            "close": 4088.71
+          }
+        ],
+        "first_close_above_high": [
+          {
+            "time": "2026-10-22T01:00:00.000",
+            "close_time": "2026-10-22T01:30:00.000",
+            "close": 4136.83
+          }
+        ],
+        "last_close_above_high": [
+          {
+            "time": "2026-10-22T01:00:00.000",
+            "close_time": "2026-10-22T01:30:00.000",
+            "close": 4136.83
+          }
+        ]
+      },
+      "M15": {
+        "first_close_below_low": [
+          {
+            "time": "2026-10-22T03:00:00.000",
+            "close_time": "2026-10-22T03:15:00.000",
+            "close": 4120.8
+          }
+        ],
+        "last_close_below_low": [
+          {
+            "time": "2026-10-22T08:15:00.000",
+            "close_time": "2026-10-22T08:30:00.000",
+            "close": 4088.71
+          }
+        ],
+        "first_close_above_high": [
+          {
+            "time": "2026-10-22T01:00:00.000",
+            "close_time": "2026-10-22T01:15:00.000",
+            "close": 4138.7
+          }
+        ],
+        "last_close_above_high": [
+          {
+            "time": "2026-10-22T01:30:00.000",
+            "close_time": "2026-10-22T01:45:00.000",
+            "close": 4133.88
+          }
+        ]
+      }
+    },
+    "WSUPPORT": {
+      "H4": {
+        "first_close_below_low": [
+          {
+            "time": "2026-10-22T04:00:00.000",
+            "close_time": "2026-10-22T08:00:00.000",
+            "close": 4091.73
+          }
+        ],
+        "last_close_below_low": [
+          {
+            "time": "2026-10-22T04:00:00.000",
+            "close_time": "2026-10-22T08:00:00.000",
+            "close": 4091.73
+          }
+        ],
+        "first_close_above_high": [
+          {
+            "time": "2026-10-22T00:00:00.000",
+            "close_time": "2026-10-22T04:00:00.000",
+            "close": 4113.3
+          }
+        ],
+        "last_close_above_high": [
+          {
+            "time": "2026-10-22T00:00:00.000",
+            "close_time": "2026-10-22T04:00:00.000",
+            "close": 4113.3
+          }
+        ]
+      },
+      "H1": {
+        "first_close_below_low": [
+          {
+            "time": "2026-10-22T06:00:00.000",
+            "close_time": "2026-10-22T07:00:00.000",
+            "close": 4092.19
+          }
+        ],
+        "last_close_below_low": [
+          {
+            "time": "2026-10-22T07:00:00.000",
+            "close_time": "2026-10-22T08:00:00.000",
+            "close": 4091.73
+          }
+        ],
+        "first_close_above_high": [
+          {
+            "time": "2026-10-22T01:00:00.000",
+            "close_time": "2026-10-22T02:00:00.000",
+            "close": 4130.94
+          }
+        ],
+        "last_close_above_high": [
+          {
+            "time": "2026-10-22T05:00:00.000",
+            "close_time": "2026-10-22T06:00:00.000",
+            "close": 4116.21
+          }
+        ]
+      },
+      "M30": {
+        "first_close_below_low": [
+          {
+            "time": "2026-10-22T06:30:00.000",
+            "close_time": "2026-10-22T07:00:00.000",
+            "close": 4092.19
+          }
+        ],
+        "last_close_below_low": [
+          {
+            "time": "2026-10-22T08:00:00.000",
+            "close_time": "2026-10-22T08:30:00.000",
+            "close": 4088.71
+          }
+        ],
+        "first_close_above_high": [
+          {
+            "time": "2026-10-22T01:00:00.000",
+            "close_time": "2026-10-22T01:30:00.000",
+            "close": 4136.83
+          }
+        ],
+        "last_close_above_high": [
+          {
+            "time": "2026-10-22T05:30:00.000",
+            "close_time": "2026-10-22T06:00:00.000",
+            "close": 4116.21
+          }
+        ]
+      },
+      "M15": {
+        "first_close_below_low": [
+          {
+            "time": "2026-10-22T06:30:00.000",
+            "close_time": "2026-10-22T06:45:00.000",
+            "close": 4094.31
+          }
+        ],
+        "last_close_below_low": [
+          {
+            "time": "2026-10-22T08:15:00.000",
+            "close_time": "2026-10-22T08:30:00.000",
+            "close": 4088.71
+          }
+        ],
+        "first_close_above_high": [
+          {
+            "time": "2026-10-22T01:00:00.000",
+            "close_time": "2026-10-22T01:15:00.000",
+            "close": 4138.7
+          }
+        ],
+        "last_close_above_high": [
+          {
+            "time": "2026-10-22T05:45:00.000",
+            "close_time": "2026-10-22T06:00:00.000",
+            "close": 4116.21
+          }
+        ]
+      }
+    },
+    "WBASE": {
+      "H4": {
+        "first_close_below_low": [],
+        "last_close_below_low": [],
+        "first_close_above_high": [
+          {
+            "time": "2026-10-22T00:00:00.000",
+            "close_time": "2026-10-22T04:00:00.000",
+            "close": 4113.3
+          }
+        ],
+        "last_close_above_high": [
+          {
+            "time": "2026-10-22T04:00:00.000",
+            "close_time": "2026-10-22T08:00:00.000",
+            "close": 4091.73
+          }
+        ]
+      },
+      "H1": {
+        "first_close_below_low": [],
+        "last_close_below_low": [],
+        "first_close_above_high": [
+          {
+            "time": "2026-10-22T01:00:00.000",
+            "close_time": "2026-10-22T02:00:00.000",
+            "close": 4130.94
+          }
+        ],
+        "last_close_above_high": [
+          {
+            "time": "2026-10-22T07:00:00.000",
+            "close_time": "2026-10-22T08:00:00.000",
+            "close": 4091.73
+          }
+        ]
+      },
+      "M30": {
+        "first_close_below_low": [],
+        "last_close_below_low": [],
+        "first_close_above_high": [
+          {
+            "time": "2026-10-22T01:00:00.000",
+            "close_time": "2026-10-22T01:30:00.000",
+            "close": 4136.83
+          }
+        ],
+        "last_close_above_high": [
+          {
+            "time": "2026-10-22T08:00:00.000",
+            "close_time": "2026-10-22T08:30:00.000",
+            "close": 4088.71
+          }
+        ]
+      },
+      "M15": {
+        "first_close_below_low": [],
+        "last_close_below_low": [],
+        "first_close_above_high": [
+          {
+            "time": "2026-10-22T01:00:00.000",
+            "close_time": "2026-10-22T01:15:00.000",
+            "close": 4138.7
+          }
+        ],
+        "last_close_above_high": [
+          {
+            "time": "2026-10-22T08:15:00.000",
+            "close_time": "2026-10-22T08:30:00.000",
+            "close": 4088.71
+          }
+        ]
+      }
+    },
+    "WRES": {
+      "H4": {
+        "first_close_below_low": [
+          {
+            "time": "2026-10-22T00:00:00.000",
+            "close_time": "2026-10-22T04:00:00.000",
+            "close": 4113.3
+          }
+        ],
+        "last_close_below_low": [
+          {
+            "time": "2026-10-22T04:00:00.000",
+            "close_time": "2026-10-22T08:00:00.000",
+            "close": 4091.73
+          }
+        ],
+        "first_close_above_high": [],
+        "last_close_above_high": []
+      },
+      "H1": {
+        "first_close_below_low": [
+          {
+            "time": "2026-10-22T01:00:00.000",
+            "close_time": "2026-10-22T02:00:00.000",
+            "close": 4130.94
+          }
+        ],
+        "last_close_below_low": [
+          {
+            "time": "2026-10-22T07:00:00.000",
+            "close_time": "2026-10-22T08:00:00.000",
+            "close": 4091.73
+          }
+        ],
+        "first_close_above_high": [],
+        "last_close_above_high": []
+      },
+      "M30": {
+        "first_close_below_low": [
+          {
+            "time": "2026-10-22T01:00:00.000",
+            "close_time": "2026-10-22T01:30:00.000",
+            "close": 4136.83
+          }
+        ],
+        "last_close_below_low": [
+          {
+            "time": "2026-10-22T08:00:00.000",
+            "close_time": "2026-10-22T08:30:00.000",
+            "close": 4088.71
+          }
+        ],
+        "first_close_above_high": [],
+        "last_close_above_high": []
+      },
+      "M15": {
+        "first_close_below_low": [
+          {
+            "time": "2026-10-22T01:00:00.000",
+            "close_time": "2026-10-22T01:15:00.000",
+            "close": 4138.7
+          }
+        ],
+        "last_close_below_low": [
+          {
+            "time": "2026-10-22T08:15:00.000",
+            "close_time": "2026-10-22T08:30:00.000",
+            "close": 4088.71
+          }
+        ],
+        "first_close_above_high": [],
+        "last_close_above_high": []
+      }
+    },
+    "WUPPER": {
+      "H4": {
+        "first_close_below_low": [
+          {
+            "time": "2026-10-22T00:00:00.000",
+            "close_time": "2026-10-22T04:00:00.000",
+            "close": 4113.3
+          }
+        ],
+        "last_close_below_low": [
+          {
+            "time": "2026-10-22T04:00:00.000",
+            "close_time": "2026-10-22T08:00:00.000",
+            "close": 4091.73
+          }
+        ],
+        "first_close_above_high": [],
+        "last_close_above_high": []
+      },
+      "H1": {
+        "first_close_below_low": [
+          {
+            "time": "2026-10-22T01:00:00.000",
+            "close_time": "2026-10-22T02:00:00.000",
+            "close": 4130.94
+          }
+        ],
+        "last_close_below_low": [
+          {
+            "time": "2026-10-22T07:00:00.000",
+            "close_time": "2026-10-22T08:00:00.000",
+            "close": 4091.73
+          }
+        ],
+        "first_close_above_high": [],
+        "last_close_above_high": []
+      },
+      "M30": {
+        "first_close_below_low": [
+          {
+            "time": "2026-10-22T01:00:00.000",
+            "close_time": "2026-10-22T01:30:00.000",
+            "close": 4136.83
+          }
+        ],
+        "last_close_below_low": [
+          {
+            "time": "2026-10-22T08:00:00.000",
+            "close_time": "2026-10-22T08:30:00.000",
+            "close": 4088.71
+          }
+        ],
+        "first_close_above_high": [],
+        "last_close_above_high": []
+      },
+      "M15": {
+        "first_close_below_low": [
+          {
+            "time": "2026-10-22T01:00:00.000",
+            "close_time": "2026-10-22T01:15:00.000",
+            "close": 4138.7
+          }
+        ],
+        "last_close_below_low": [
+          {
+            "time": "2026-10-22T08:15:00.000",
+            "close_time": "2026-10-22T08:30:00.000",
+            "close": 4088.71
+          }
+        ],
+        "first_close_above_high": [],
+        "last_close_above_high": []
+      }
+    }
+  },
+  "active_level_distances_at_cutoff": {
+    "price": 4088.71,
+    "m15_atr14": 6.537142857142856,
+    "nearest_frozen_level_above": {
+      "id": "WSUPPORT",
+      "low": 4099.94,
+      "high": 4110.88,
+      "distance_points": 11.229999999999563,
+      "distance_m15_atr": 1.7178758741258078
+    },
+    "nearest_frozen_level_below": {
+      "id": "WBASE",
+      "low": 4066.5,
+      "high": 4077.89,
+      "distance_points": 10.820000000000164,
+      "distance_m15_atr": 1.655157342657368
+    },
+    "scope": "Location only; not a trade verdict or confirmation-time no-chase calculation."
+  },
+  "post_cutoff_live_tick": {
+    "symbol": "XAUUSD.pro",
+    "source": "MT5 symbol_info_tick",
+    "terminal_connected": true,
+    "requested_bar_cutoff_eat": "2026-10-22T08:30:00+03:00",
+    "captured_at_utc": "2026-10-22T05:42:33.413597+00:00",
+    "tick_time_raw_epoch": 1792658555,
+    "tick_time_raw_utc_interpretation": "2026-10-22T08:42:35+00:00",
+    "tick_time_eat": "2026-10-22T08:42:35+03:00",
+    "bid": 4078.93,
+    "ask": 4079.07,
+    "use": "Post-cutoff situational quote only; excluded from candle OHLC, indicators and completed-bar analysis."
+  },
+  "post_cutoff_tick_note": "Quote is after the bar cutoff; shown separately and excluded from candle analysis.",
+  "recent_candles": {
+    "H4": [
+      {
+        "time": "2026-10-20T16:00:00.000",
+        "close_time": "2026-10-20T20:00:00.000",
+        "open": 4119.29,
+        "high": 4155.41,
+        "low": 4113.47,
+        "close": 4121.31,
+        "ema10": 4137.5620766883,
+        "ema20": 4145.9062181341,
+        "ema50": 4154.4737042929,
+        "ema200": 4225.2381524012,
+        "macd_main": -8.0402016014,
+        "macd_signal": -2.8851502908,
+        "macd_hist": -5.1550513106,
+        "macd_hist_slope_3": -1.8776582642,
+        "macd_hist_slope_5": -3.1760613763,
+        "atr14": 24.7535714286
+      },
+      {
+        "time": "2026-10-20T20:00:00.000",
+        "close_time": "2026-10-21T00:00:00.000",
+        "open": 4121.23,
+        "high": 4126.89,
+        "low": 4117.3,
+        "close": 4124.9,
+        "ema10": 4135.2598809268,
+        "ema20": 4143.9056259309,
+        "ema50": 4153.3139511834,
+        "ema200": 4224.2397628251,
+        "macd_main": -8.6569415093,
+        "macd_signal": -4.0395085345,
+        "macd_hist": -4.6174329748,
+        "macd_hist_slope_3": -0.0734234355,
+        "macd_hist_slope_5": -1.2515141557,
+        "atr14": 23.3614285714
+      },
+      {
+        "time": "2026-10-21T00:00:00.000",
+        "close_time": "2026-10-21T04:00:00.000",
+        "open": 4127.02,
+        "high": 4131.75,
+        "low": 4111.95,
+        "close": 4117.0,
+        "ema10": 4131.9399025765,
+        "ema20": 4141.343185366,
+        "ema50": 4151.8898746664,
+        "ema200": 4223.1727005084,
+        "macd_main": -9.6716871179,
+        "macd_signal": -5.1659442512,
+        "macd_hist": -4.5057428667,
+        "macd_hist_slope_3": 0.6684112204,
+        "macd_hist_slope_5": -1.2283498203,
+        "atr14": 21.6335714286
+      },
+      {
+        "time": "2026-10-21T04:00:00.000",
+        "close_time": "2026-10-21T08:00:00.000",
+        "open": 4117.1,
+        "high": 4126.06,
+        "low": 4106.14,
+        "close": 4114.78,
+        "ema10": 4128.8199202899,
+        "ema20": 4138.8133581883,
+        "ema50": 4150.4345854638,
+        "ema200": 4222.094166175,
+        "macd_main": -10.5335910891,
+        "macd_signal": -6.2394736188,
+        "macd_hist": -4.2941174703,
+        "macd_hist_slope_3": 0.8609338403,
+        "macd_hist_slope_5": 0.249892069,
+        "atr14": 21.8542857143
+      },
+      {
+        "time": "2026-10-21T08:00:00.000",
+        "close_time": "2026-10-21T12:00:00.000",
+        "open": 4114.72,
+        "high": 4129.39,
+        "low": 4110.68,
+        "close": 4119.61,
+        "ema10": 4127.1453893281,
+        "ema20": 4136.9844669323,
+        "ema50": 4149.2257781907,
+        "ema200": 4221.074423228,
+        "macd_main": -10.7035319088,
+        "macd_signal": -7.1322852768,
+        "macd_hist": -3.5712466321,
+        "macd_hist_slope_3": 1.0461863427,
+        "macd_hist_slope_5": 1.6029074551,
+        "atr14": 21.4628571429
+      },
+      {
+        "time": "2026-10-21T12:00:00.000",
+        "close_time": "2026-10-21T16:00:00.000",
+        "open": 4119.65,
+        "high": 4142.01,
+        "low": 4111.65,
+        "close": 4129.59,
+        "ema10": 4127.5898639957,
+        "ema20": 4136.2802319864,
+        "ema50": 4148.4557476734,
+        "ema200": 4220.1641304596,
+        "macd_main": -9.918573498,
+        "macd_signal": -7.689542921,
+        "macd_hist": -2.229030577,
+        "macd_hist_slope_3": 2.2767122897,
+        "macd_hist_slope_5": 2.9260207337,
+        "atr14": 22.2692857143
+      },
+      {
+        "time": "2026-10-21T16:00:00.000",
+        "close_time": "2026-10-21T20:00:00.000",
+        "open": 4129.55,
+        "high": 4141.33,
+        "low": 4121.55,
+        "close": 4131.55,
+        "ema10": 4128.3098887237,
+        "ema20": 4135.8297337019,
+        "ema50": 4147.7927771764,
+        "ema200": 4219.2823978182,
+        "macd_main": -9.0341921391,
+        "macd_signal": -7.9584727646,
+        "macd_hist": -1.0757193744,
+        "macd_hist_slope_3": 3.2183980959,
+        "macd_hist_slope_5": 3.5417136003,
+        "atr14": 22.2078571429
+      },
+      {
+        "time": "2026-10-21T20:00:00.000",
+        "close_time": "2026-10-22T00:00:00.000",
+        "open": 4131.51,
+        "high": 4142.26,
+        "low": 4105.03,
+        "close": 4140.85,
+        "ema10": 4130.5899089558,
+        "ema20": 4136.3078543018,
+        "ema50": 4147.5205114048,
+        "ema200": 4218.5019759493,
+        "macd_main": -7.4964666626,
+        "macd_signal": -7.8660715442,
+        "macd_hist": 0.3696048817,
+        "macd_hist_slope_3": 3.9408515137,
+        "macd_hist_slope_5": 4.8753477484,
+        "atr14": 23.5592857143
+      },
+      {
+        "time": "2026-10-22T00:00:00.000",
+        "close_time": "2026-10-22T04:00:00.000",
+        "open": 4144.27,
+        "high": 4145.07,
+        "low": 4113.22,
+        "close": 4113.3,
+        "ema10": 4127.4462891456,
+        "ema20": 4134.1166300825,
+        "ema50": 4146.1785305654,
+        "ema200": 4217.455190119,
+        "macd_main": -8.4039869683,
+        "macd_signal": -7.973654629,
+        "macd_hist": -0.4303323393,
+        "macd_hist_slope_3": 1.7986982377,
+        "macd_hist_slope_5": 3.8637851311,
+        "atr14": 23.7064285714
+      },
+      {
+        "time": "2026-10-22T04:00:00.000",
+        "close_time": "2026-10-22T08:00:00.000",
+        "open": 4113.31,
+        "high": 4124.04,
+        "low": 4087.95,
+        "close": 4091.73,
+        "ema10": 4120.9524183919,
+        "ema20": 4130.0798081699,
+        "ema50": 4144.0432940726,
+        "ema200": 4216.2041932024,
+        "macd_main": -10.7399189803,
+        "macd_signal": -8.5269074993,
+        "macd_hist": -2.213011481,
+        "macd_hist_slope_3": -1.1372921065,
+        "macd_hist_slope_5": 1.3582351511,
+        "atr14": 25.3685714286
+      }
+    ],
+    "H1": [
+      {
+        "time": "2026-10-21T21:00:00.000",
+        "close_time": "2026-10-21T22:00:00.000",
+        "open": 4136.65,
+        "high": 4141.16,
+        "low": 4113.19,
+        "close": 4113.45,
+        "ema10": 4126.761522222,
+        "ema20": 4126.0017583994,
+        "ema50": 4131.2942915726,
+        "ema200": 4149.294685863,
+        "macd_main": 0.0676168069,
+        "macd_signal": -0.6352140022,
+        "macd_hist": 0.7028308091,
+        "macd_hist_slope_3": -1.5638138322,
+        "macd_hist_slope_5": -1.8285564719,
+        "atr14": 13.7935714286
+      },
+      {
+        "time": "2026-10-21T22:00:00.000",
+        "close_time": "2026-10-21T23:00:00.000",
+        "open": 4113.41,
+        "high": 4136.1,
+        "low": 4105.03,
+        "close": 4134.48,
+        "ema10": 4128.164881818,
+        "ema20": 4126.8092099804,
+        "ema50": 4131.4192213149,
+        "ema200": 4149.1472760534,
+        "macd_main": 0.6977656639,
+        "macd_signal": -0.368618069,
+        "macd_hist": 1.0663837329,
+        "macd_hist_slope_3": -1.0304061062,
+        "macd_hist_slope_5": -1.3081370418,
+        "atr14": 14.9342857143
+      },
+      {
+        "time": "2026-10-21T23:00:00.000",
+        "close_time": "2026-10-22T00:00:00.000",
+        "open": 4134.6,
+        "high": 4142.26,
+        "low": 4132.39,
+        "close": 4140.85,
+        "ema10": 4130.471266942,
+        "ema20": 4128.1464280775,
+        "ema50": 4131.7890557731,
+        "ema200": 4149.0647160927,
+        "macd_main": 1.691668436,
+        "macd_signal": 0.043439232,
+        "macd_hist": 1.648229204,
+        "macd_hist_slope_3": -0.5662630674,
+        "macd_hist_slope_5": -0.6184154373,
+        "atr14": 15.0164285714
+      },
+      {
+        "time": "2026-10-22T01:00:00.000",
+        "close_time": "2026-10-22T02:00:00.000",
+        "open": 4144.27,
+        "high": 4145.07,
+        "low": 4130.27,
+        "close": 4130.94,
+        "ema10": 4130.5564911344,
+        "ema20": 4128.4124825463,
+        "ema50": 4131.7557594683,
+        "ema200": 4148.8843706589,
+        "macd_main": 1.6605476057,
+        "macd_signal": 0.3668609067,
+        "macd_hist": 1.293686699,
+        "macd_hist_slope_3": 0.5908558899,
+        "macd_hist_slope_5": -0.8031031401,
+        "atr14": 15.1121428571
+      },
+      {
+        "time": "2026-10-22T02:00:00.000",
+        "close_time": "2026-10-22T03:00:00.000",
+        "open": 4131.23,
+        "high": 4131.28,
+        "low": 4122.16,
+        "close": 4125.32,
+        "ema10": 4129.6044018372,
+        "ema20": 4128.1179603991,
+        "ema50": 4131.503376744,
+        "ema200": 4148.6498993091,
+        "macd_main": 1.1689224811,
+        "macd_signal": 0.5272732216,
+        "macd_hist": 0.6416492595,
+        "macd_hist_slope_3": -0.4247344734,
+        "macd_hist_slope_5": -1.5728430118,
+        "atr14": 15.2478571429
+      },
+      {
+        "time": "2026-10-22T03:00:00.000",
+        "close_time": "2026-10-22T04:00:00.000",
+        "open": 4125.39,
+        "high": 4126.38,
+        "low": 4113.22,
+        "close": 4113.3,
+        "ema10": 4126.6399651395,
+        "ema20": 4126.7067260753,
+        "ema50": 4130.7895188325,
+        "ema200": 4148.2981590175,
+        "macd_main": -0.1884353513,
+        "macd_signal": 0.384131507,
+        "macd_hist": -0.5725668584,
+        "macd_hist_slope_3": -2.2207960624,
+        "macd_hist_slope_5": -1.2753976675,
+        "atr14": 15.575
+      },
+      {
+        "time": "2026-10-22T04:00:00.000",
+        "close_time": "2026-10-22T05:00:00.000",
+        "open": 4113.31,
+        "high": 4118.45,
+        "low": 4107.64,
+        "close": 4115.11,
+        "ema10": 4124.5436078414,
+        "ema20": 4125.6022759729,
+        "ema50": 4130.174635741,
+        "ema200": 4147.9679285795,
+        "macd_main": -1.1053574668,
+        "macd_signal": 0.0862337123,
+        "macd_hist": -1.191591179,
+        "macd_hist_slope_3": -2.485277878,
+        "macd_hist_slope_5": -2.2579749119,
+        "atr14": 15.0935714286
+      },
+      {
+        "time": "2026-10-22T05:00:00.000",
+        "close_time": "2026-10-22T06:00:00.000",
+        "open": 4115.16,
+        "high": 4124.04,
+        "low": 4108.41,
+        "close": 4116.21,
+        "ema10": 4123.0284064157,
+        "ema20": 4124.7077734993,
+        "ema50": 4129.6270029669,
+        "ema200": 4147.6519292901,
+        "macd_main": -1.7233977855,
+        "macd_signal": -0.2756925873,
+        "macd_hist": -1.4477051982,
+        "macd_hist_slope_3": -2.0893544577,
+        "macd_hist_slope_5": -3.0959344022,
+        "atr14": 15.0814285714
+      },
+      {
+        "time": "2026-10-22T06:00:00.000",
+        "close_time": "2026-10-22T07:00:00.000",
+        "open": 4116.35,
+        "high": 4116.41,
+        "low": 4090.08,
+        "close": 4092.19,
+        "ema10": 4117.421423431,
+        "ema20": 4121.6108426898,
+        "ema50": 4128.1588852035,
+        "ema200": 4147.1000692972,
+        "macd_main": -4.1041029038,
+        "macd_signal": -1.0413746506,
+        "macd_hist": -3.0627282532,
+        "macd_hist_slope_3": -2.4901613948,
+        "macd_hist_slope_5": -4.3564149522,
+        "atr14": 15.7114285714
+      },
+      {
+        "time": "2026-10-22T07:00:00.000",
+        "close_time": "2026-10-22T08:00:00.000",
+        "open": 4092.17,
+        "high": 4093.46,
+        "low": 4087.95,
+        "close": 4091.73,
+        "ema10": 4112.7502555345,
+        "ema20": 4118.765048148,
+        "ema50": 4126.73030147,
+        "ema200": 4146.549123334,
+        "macd_main": -5.9592524648,
+        "macd_signal": -2.0249502134,
+        "macd_hist": -3.9343022514,
+        "macd_hist_slope_3": -2.7427110723,
+        "macd_hist_slope_5": -4.5759515109,
+        "atr14": 15.2592857143
+      }
+    ],
+    "M30": [
+      {
+        "time": "2026-10-22T03:30:00.000",
+        "close_time": "2026-10-22T04:00:00.000",
+        "open": 4119.03,
+        "high": 4119.28,
+        "low": 4113.22,
+        "close": 4113.3,
+        "ema10": 4125.8519146767,
+        "ema20": 4127.9482599392,
+        "ema50": 4128.0165163044,
+        "ema200": 4139.3439111713,
+        "macd_main": -1.4025827513,
+        "macd_signal": 0.8529938715,
+        "macd_hist": -2.2555766228,
+        "macd_hist_slope_3": -1.6967315291,
+        "macd_hist_slope_5": -2.5106959476,
+        "atr14": 9.46
+      },
+      {
+        "time": "2026-10-22T04:00:00.000",
+        "close_time": "2026-10-22T04:30:00.000",
+        "open": 4113.31,
+        "high": 4118.45,
+        "low": 4107.64,
+        "close": 4116.92,
+        "ema10": 4124.22793019,
+        "ema20": 4126.8979494688,
+        "ema50": 4127.5813588022,
+        "ema200": 4139.1207876771,
+        "macd_main": -2.0750299952,
+        "macd_signal": 0.2673890981,
+        "macd_hist": -2.3424190934,
+        "macd_hist_slope_3": -1.3859433234,
+        "macd_hist_slope_5": -2.2597837014,
+        "atr14": 9.8421428571
+      },
+      {
+        "time": "2026-10-22T04:30:00.000",
+        "close_time": "2026-10-22T05:00:00.000",
+        "open": 4116.87,
+        "high": 4117.97,
+        "low": 4110.34,
+        "close": 4115.11,
+        "ema10": 4122.5701247009,
+        "ema20": 4125.7752876146,
+        "ema50": 4127.092285908,
+        "ema200": 4138.8818743668,
+        "macd_main": -2.7226165255,
+        "macd_signal": -0.3306120266,
+        "macd_hist": -2.3920044989,
+        "macd_hist_slope_3": -0.8198039518,
+        "macd_hist_slope_5": -1.8331594052,
+        "atr14": 10.0007142857
+      },
+      {
+        "time": "2026-10-22T05:00:00.000",
+        "close_time": "2026-10-22T05:30:00.000",
+        "open": 4115.16,
+        "high": 4118.38,
+        "low": 4108.41,
+        "close": 4118.06,
+        "ema10": 4121.750102028,
+        "ema20": 4125.040498318,
+        "ema50": 4126.7380786175,
+        "ema200": 4138.6746915373,
+        "macd_main": -2.9636302853,
+        "macd_signal": -0.8572156783,
+        "macd_hist": -2.106414607,
+        "macd_hist_slope_3": 0.1491620158,
+        "macd_hist_slope_5": -1.149938837,
+        "atr14": 10.4171428571
+      },
+      {
+        "time": "2026-10-22T05:30:00.000",
+        "close_time": "2026-10-22T06:00:00.000",
+        "open": 4118.08,
+        "high": 4124.04,
+        "low": 4111.74,
+        "close": 4116.21,
+        "ema10": 4120.7428107502,
+        "ema20": 4124.1994984782,
+        "ema50": 4126.3252127894,
+        "ema200": 4138.4511622683,
+        "macd_main": -3.2662635127,
+        "macd_signal": -1.3390252452,
+        "macd_hist": -1.9272382675,
+        "macd_hist_slope_3": 0.4151808259,
+        "macd_hist_slope_5": -0.3550377205,
+        "atr14": 9.2978571429
+      },
+      {
+        "time": "2026-10-22T06:00:00.000",
+        "close_time": "2026-10-22T06:30:00.000",
+        "open": 4116.35,
+        "high": 4116.41,
+        "low": 4095.83,
+        "close": 4100.08,
+        "ema10": 4116.9859360684,
+        "ema20": 4121.902403385,
+        "ema50": 4125.2959887584,
+        "ema200": 4138.0693596587,
+        "macd_main": -4.7528705882,
+        "macd_signal": -2.0217943138,
+        "macd_hist": -2.7310762744,
+        "macd_hist_slope_3": -0.3390717755,
+        "macd_hist_slope_5": -0.4754996516,
+        "atr14": 9.2278571429
+      },
+      {
+        "time": "2026-10-22T06:30:00.000",
+        "close_time": "2026-10-22T07:00:00.000",
+        "open": 4100.05,
+        "high": 4100.45,
+        "low": 4090.08,
+        "close": 4092.19,
+        "ema10": 4112.4775840559,
+        "ema20": 4119.0726506817,
+        "ema50": 4123.9977146895,
+        "ema200": 4137.6128486173,
+        "macd_main": -6.4928291734,
+        "macd_signal": -2.9160012857,
+        "macd_hist": -3.5768278877,
+        "macd_hist_slope_3": -1.4704132807,
+        "macd_hist_slope_5": -1.2344087943,
+        "atr14": 9.2235714286
+      },
+      {
+        "time": "2026-10-22T07:00:00.000",
+        "close_time": "2026-10-22T07:30:00.000",
+        "open": 4092.17,
+        "high": 4093.46,
+        "low": 4087.95,
+        "close": 4090.46,
+        "ema10": 4108.4743869548,
+        "ema20": 4116.3476363311,
+        "ema50": 4122.6825101918,
+        "ema200": 4137.143666044,
+        "macd_main": -7.9200579319,
+        "macd_signal": -3.9168126149,
+        "macd_hist": -4.0032453169,
+        "macd_hist_slope_3": -2.0760070494,
+        "macd_hist_slope_5": -1.611240818,
+        "atr14": 9.3764285714
+      },
+      {
+        "time": "2026-10-22T07:30:00.000",
+        "close_time": "2026-10-22T08:00:00.000",
+        "open": 4090.56,
+        "high": 4093.11,
+        "low": 4088.52,
+        "close": 4091.73,
+        "ema10": 4105.4299529631,
+        "ema20": 4114.0030995376,
+        "ema50": 4121.4686862627,
+        "ema200": 4136.6917887699,
+        "macd_main": -8.8466894899,
+        "macd_signal": -4.9027879899,
+        "macd_hist": -3.9439014999,
+        "macd_hist_slope_3": -1.2128252255,
+        "macd_hist_slope_5": -1.8374868929,
+        "atr14": 8.9992857143
+      },
+      {
+        "time": "2026-10-22T08:00:00.000",
+        "close_time": "2026-10-22T08:30:00.000",
+        "open": 4091.71,
+        "high": 4092.86,
+        "low": 4085.68,
+        "close": 4088.71,
+        "ema10": 4102.3899615152,
+        "ema20": 4111.594232915,
+        "ema50": 4120.1840318995,
+        "ema200": 4136.2143580359,
+        "macd_main": -9.7127775824,
+        "macd_signal": -5.8647859084,
+        "macd_hist": -3.847991674,
+        "macd_hist_slope_3": -0.2711637863,
+        "macd_hist_slope_5": -1.9207534065,
+        "atr14": 8.8735714286
+      }
+    ],
+    "M15": [
+      {
+        "time": "2026-10-22T06:00:00.000",
+        "close_time": "2026-10-22T06:15:00.000",
+        "open": 4116.35,
+        "high": 4116.41,
+        "low": 4107.43,
+        "close": 4108.07,
+        "ema10": 4115.4962920473,
+        "ema20": 4119.3531969413,
+        "ema50": 4124.2541023377,
+        "ema200": 4130.2846222072,
+        "macd_main": -4.6974298688,
+        "macd_signal": -4.1352103531,
+        "macd_hist": -0.5622195157,
+        "macd_hist_slope_3": 0.2325487886,
+        "macd_hist_slope_5": 0.8064867914,
+        "atr14": 6.775
+      },
+      {
+        "time": "2026-10-22T06:15:00.000",
+        "close_time": "2026-10-22T06:30:00.000",
+        "open": 4107.91,
+        "high": 4109.87,
+        "low": 4095.83,
+        "close": 4100.08,
+        "ema10": 4112.6933298569,
+        "ema20": 4117.5176543755,
+        "ema50": 4123.3060983244,
+        "ema200": 4129.9840787027,
+        "macd_main": -5.646511342,
+        "macd_signal": -4.4374705509,
+        "macd_hist": -1.2090407912,
+        "macd_hist_slope_3": -0.7410385075,
+        "macd_hist_slope_5": 0.1194544343,
+        "atr14": 7.4578571429
+      },
+      {
+        "time": "2026-10-22T06:30:00.000",
+        "close_time": "2026-10-22T06:45:00.000",
+        "open": 4100.05,
+        "high": 4100.45,
+        "low": 4091.32,
+        "close": 4094.31,
+        "ema10": 4109.3509062466,
+        "ema20": 4115.3074015778,
+        "ema50": 4122.1689964294,
+        "ema200": 4129.6291127454,
+        "macd_main": -6.7860308856,
+        "macd_signal": -4.9071826178,
+        "macd_hist": -1.8788482678,
+        "macd_hist_slope_3": -1.6422459335,
+        "macd_hist_slope_5": -1.0840799634,
+        "atr14": 7.7057142857
+      },
+      {
+        "time": "2026-10-22T06:45:00.000",
+        "close_time": "2026-10-22T07:00:00.000",
+        "open": 4094.29,
+        "high": 4095.06,
+        "low": 4090.08,
+        "close": 4092.19,
+        "ema10": 4106.2307414745,
+        "ema20": 4113.1057442847,
+        "ema50": 4120.9933495106,
+        "ema200": 4129.2565842604,
+        "macd_main": -7.7705999765,
+        "macd_signal": -5.4798660896,
+        "macd_hist": -2.290733887,
+        "macd_hist_slope_3": -1.7285143713,
+        "macd_hist_slope_5": -1.8227316034,
+        "atr14": 7.6992857143
+      },
+      {
+        "time": "2026-10-22T07:00:00.000",
+        "close_time": "2026-10-22T07:15:00.000",
+        "open": 4092.17,
+        "high": 4093.46,
+        "low": 4089.32,
+        "close": 4091.78,
+        "ema10": 4103.6033339336,
+        "ema20": 4111.0747210195,
+        "ema50": 4119.8477279611,
+        "ema200": 4128.8836829245,
+        "macd_main": -8.4861387233,
+        "macd_signal": -6.0811206163,
+        "macd_hist": -2.405018107,
+        "macd_hist_slope_3": -1.1959773158,
+        "macd_hist_slope_5": -2.1684157727,
+        "atr14": 7.6428571429
+      },
+      {
+        "time": "2026-10-22T07:15:00.000",
+        "close_time": "2026-10-22T07:30:00.000",
+        "open": 4091.69,
+        "high": 4091.95,
+        "low": 4087.95,
+        "close": 4090.46,
+        "ema10": 4101.2136368548,
+        "ema20": 4109.1114142557,
+        "ema50": 4118.6952680411,
+        "ema200": 4128.5013577213,
+        "macd_main": -9.0553370152,
+        "macd_signal": -6.6759638961,
+        "macd_hist": -2.3793731191,
+        "macd_hist_slope_3": -0.5005248514,
+        "macd_hist_slope_5": -1.8171536034,
+        "atr14": 7.5921428571
+      },
+      {
+        "time": "2026-10-22T07:30:00.000",
+        "close_time": "2026-10-22T07:45:00.000",
+        "open": 4090.56,
+        "high": 4091.98,
+        "low": 4088.52,
+        "close": 4090.74,
+        "ema10": 4099.3093392448,
+        "ema20": 4107.3617557552,
+        "ema50": 4117.5989830199,
+        "ema200": 4128.1256228186,
+        "macd_main": -9.3757591868,
+        "macd_signal": -7.2159229542,
+        "macd_hist": -2.1598362325,
+        "macd_hist_slope_3": 0.1308976544,
+        "macd_hist_slope_5": -0.9507954414,
+        "atr14": 7.2864285714
+      },
+      {
+        "time": "2026-10-22T07:45:00.000",
+        "close_time": "2026-10-22T08:00:00.000",
+        "open": 4090.73,
+        "high": 4093.11,
+        "low": 4090.14,
+        "close": 4091.73,
+        "ema10": 4097.931277564,
+        "ema20": 4105.8730171118,
+        "ema50": 4116.5845130975,
+        "ema200": 4127.7634773179,
+        "macd_main": -9.4409815812,
+        "macd_signal": -7.6609346796,
+        "macd_hist": -1.7800469016,
+        "macd_hist_slope_3": 0.6249712054,
+        "macd_hist_slope_5": 0.0988013662,
+        "atr14": 6.8307142857
+      },
+      {
+        "time": "2026-10-22T08:00:00.000",
+        "close_time": "2026-10-22T08:15:00.000",
+        "open": 4091.71,
+        "high": 4092.86,
+        "low": 4087.36,
+        "close": 4087.54,
+        "ema10": 4096.0419543705,
+        "ema20": 4104.1270154821,
+        "ema50": 4115.4455125839,
+        "ema200": 4127.3632437127,
+        "macd_main": -9.7187372283,
+        "macd_signal": -8.0724951893,
+        "macd_hist": -1.6462420389,
+        "macd_hist_slope_3": 0.7331310802,
+        "macd_hist_slope_5": 0.6444918481,
+        "atr14": 6.7357142857
+      },
+      {
+        "time": "2026-10-22T08:15:00.000",
+        "close_time": "2026-10-22T08:30:00.000",
+        "open": 4087.5,
+        "high": 4089.36,
+        "low": 4085.68,
+        "close": 4088.71,
+        "ema10": 4094.7088717577,
+        "ema20": 4102.6587282934,
+        "ema50": 4114.39706111,
+        "ema200": 4126.9786343225,
+        "macd_main": -9.732263878,
+        "macd_signal": -8.4044489271,
+        "macd_hist": -1.3278149509,
+        "macd_hist_slope_3": 0.8320212817,
+        "macd_hist_slope_5": 1.0772031561,
+        "atr14": 6.5371428571
+      }
+    ]
+  }
+}

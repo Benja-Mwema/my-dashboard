@@ -1,0 +1,78 @@
+XAUUSD.pro DAILY FORECAST - WEDNESDAY, 21 OCTOBER 2026
+Forecast window: 21 October 00:00-23:59:59 EAT (UTC+3).
+Evidence cutoff: 20 October 2026, 23:45 EAT. No forecast-day candles were used.
+Codex final analysis; Python supplied factual evidence and numerical inputs only.
+
+DAILY PREDICTION
+Base case: a weak rebound or resistance retest near 4123.18-4131.50, then another test of observed support 4111.62 and the frozen lower-support zone 4099.94-4110.88. The downside forecast is conditional on resistance holding and completed H1/H4 evidence remaining compatible. A straight-line decline is not assumed.
+If 4111.62 and the 4110.88 upper support edge fail with completed structural acceptance, movement deeper into the support zone toward 4103.26 and 4099.94 becomes the continuation scenario. The 4066.50-4077.89 lower frozen zone is an extension only after acceptance below 4099.94, not the base-case target.
+An H1 recovery holding above 4131.50 weakens the near-term bearish scenario and invalidates the WMID retest-short branch. It opens a recovery scenario toward the observed H4 EMA10 area around 4137.56 and frozen principal control at 4146.87-4162.20. Sustained completed H4 acceptance above 4162.20 invalidates the broader control-breakdown SELL branch.
+Confidence: moderate in the bearish backdrop, lower in the exact sequence and depth. No calibrated probability, exact daily high/low or closing-price prediction is asserted. The zone map is fixed; the report updates context rather than rewriting it.
+
+EVIDENCE COMPLETENESS
+Frozen forecast: XAUUSD_WEEK_20261019_V1; actually frozen 20 October 23:14:14 EAT, valid through 24 October 00:00. SHA256 b9080f189c29071fce0e1c94abe87c3c3061e03da2b15223da0ea6d717358007, unchanged from the freeze receipt. Actual midweek issuance is preserved; no earlier entry is backdated.
+Timeframe | Expected latest completed | Actual latest completed
+H4        | 20 October 20:00          | 20 October 20:00
+H1        | 20 October 23:00          | 20 October 23:00
+M30       | 20 October 23:30          | 20 October 23:30
+M15       | 20 October 23:45          | 20 October 23:45
+All exported rows satisfy close_time <= cutoff, have correct close-time durations and unique timestamps. No within-session gaps were found in the exported evidence. There are no materially stale or missing timeframes. Intraday evidence is sufficient for context; an actual entry decision still requires a complete EVALUATE analysis at its exact cutoff.
+The original manifest uses age-based warnings for H4/H1/M30 even though these are the expected latest completed boundaries. Independent validation records the correct boundary assessment without modifying accepted manifest fields. common_effective_cutoff remains 20:00, the minimum causal endpoint; the lower timeframes extend farther.
+Recent completed M15/M30/H1 input bars were independently checked against bid ticks using the existing accepted tick-fallback functions in supplemental input copies. Completed H4 OHLC was also checked against its full tick interval. No interval includes ticks at or after its completion time; forming candles are excluded. Original extraction logic remains unchanged.
+The automatic range_summary ends its current-day close at the latest H1, 4120.46 at 23:00. The latest available completed price is instead the M15 close 4122.63 at 23:45. These endpoints are distinct and are not silently conflated. The day high/low through the cutoff remain 4155.41/4111.62.
+
+WEEKLY BIAS STATUS
+The preweek support-hold primary path has failed: current-week completed H4 closed below WCONTROL low 4146.87. The downside alternate is active, with price now below WMID control. The frozen map itself remains usable and its alternate-path invalidation has not occurred.
+Frozen levels used:
+WUPPER 4207.40-4217.27, upper target-turn.
+WRES 4186.38-4198.80, rejection resistance.
+WCONTROL 4146.87-4162.20, principal support/control and recovery obstacle.
+WMID 4123.18-4131.50, intermediate control/retest resistance.
+WSUPPORT 4099.94-4110.88, lower support/target.
+WBASE 4066.50-4077.89, structural lower target-turn.
+Local WMID short invalidation: completed H1 acceptance above 4131.50. Broader control-breakdown short invalidation: completed H4 close above 4162.20. The first is a local scenario failure, not a claim that every weekly bearish branch has failed.
+
+H4 CONTEXT
+Bearish regime. Last completed close 4121.31 is below EMA10 4137.56, EMA20 4145.91, EMA50 4154.47 and EMA200 4225.24. MACD main -8.04, signal -2.89, histogram -5.16. H4 ATR14 24.75.
+The 16:00-open candle peaked at 4155.41, then closed at 4121.31 at 20:00, leaving an 81.3% upper wick. It rejected the recovery but did not break session low 4111.62. Earlier downside sweeps also recovered, so the evidence supports a bearish backdrop with two-sided reaction risk, not an automatic breakdown.
+Risk: an unconfirmed rebound can travel toward short averages while remaining inside the broad bearish regime. The 20:00-open H4 was forming at the cutoff and was excluded; its midnight completion may materially update this context.
+
+H1 CONTEXT
+Bearish directional permission context. Last completed close 4120.46 is below EMA10 4125.44 and EMA20 4129.73, as well as EMA50 4141.41 and EMA200 4155.69. MACD main -6.55, signal -7.42, histogram +0.87; three-/five-bar histogram changes -0.56/-0.91. Positive but declining histogram reflects residual recovery; price structure and negative main support the bearish backdrop, rather than histogram sign alone.
+Pending bearish condition: failed completed recovery of WMID and loss of the local 4119.73-4118.59 base, followed by acceptance toward the session low. Pending recovery condition: H1 closes reclaim and hold 4131.50 with improving structure, rather than a wick through it.
+
+M30 AND M15 CONTEXT
+M30 at 23:30: close 4121.10 below EMA10 4123.88 and EMA20 4125.69; MACD histogram -0.398. The bar rejected WMID, but its high and low were both higher than those of the prior M30 candle. It had not established a fresh completed structural break of the local base.
+M15 at 23:45: O 4121.11, H 4122.84, L 4121.11, C 4122.63. Close is slightly above EMA10 4122.52, below EMA20 4123.82 and EMA50 4126.32. MACD histogram improved from -0.292 to -0.147; main improved from -1.680 to -1.572. ATR14 3.451429. This short-term improvement makes an early resistance retest plausible.
+The preceding M15 rejected WMID at 23:30, but the next completed candle at 23:45 did NOT close below that rejection candle's low 4120.95. Therefore no subsequent SELL trigger has appeared by this cutoff. A bearish daily forecast is not an entry verdict.
+
+ACTIVE LEVELS AND DISTANCES
+Latest completed price 4122.63; M15 ATR 3.451429. Distances below are quote units, not broker point counts.
+Nearest frozen zone above: WMID 4123.18-4131.50. Distance to lower edge 0.55, about 0.16 M15 ATR. Price is immediately below control resistance.
+Nearest frozen zone below: WSUPPORT 4099.94-4110.88. Distance to upper edge 11.75, about 3.40 M15 ATR.
+Observed daily references, not new frozen weekly boundaries: 4119.73-4118.59 local base; 4117.30 reaction low; 4113.47 H4 low; 4111.62 day low; 4155.41 rejection high. Historical 4103.26 lies inside the existing frozen WSUPPORT zone.
+
+COMPLETED INTERACTIONS
+All actionable times below are close_time; bar_time is stated separately.
+- M15 bar 13:00 on 20 October, completed 13:15: low 4111.62, close 4114.20, a low touch and recovery rather than a completed breakdown.
+- H4 bar 16:00, completed 20:00: high 4155.41, close 4121.31, failed upward recovery near the higher-timeframe averages.
+- M15 bar 23:00, completed 23:15: high 4124.29, close 4123.46 inside WMID. It spans the actual forecast freeze and is touch context only.
+- M15 bar 23:15, completed 23:30: high 4123.76, low 4120.95, close 4121.10 below WMID low. First fully post-freeze rejection qualification; no full entry confirmation.
+- M15 bar 23:30, completed 23:45: high 4122.84 below WMID, close 4122.63. It did not retouch the zone or break the qualification low on a completed close. The last completed zone-touch bar remains the one completed at 23:30.
+No 21 October interaction is asserted before that date's candles occur.
+
+WATCH CONDITIONS FOR 21 OCTOBER
+SELL watch: rebounds fail at 4123.18-4131.50, then a valid M15 trigger and M30 structural confirmation align with H1/H4 context. Watch the local base before treating a test of 4111.62/4110.88 as underway. Accepted loss of the upper edge of WSUPPORT would open its interior; do not skip the first support merely to enlarge reward calculations.
+BUY/recovery watch: a sustained H1 recovery above 4131.50 weakens the WMID rejection branch and opens higher recovery references. A fresh countertrend BUY from WSUPPORT requires an actual support turn plus explicit H4 allowance, H1 bullish permission, M30 structure and M15 qualification/trigger. Neither a single green M15 nor a support touch suffices.
+No-trade conditions: repeated two-sided moves around WMID without full gate alignment, a late entry after the leg is substantially consumed, or inadequate room to the nearest opposing frozen zone. Fresh entry requires less than 65% consumed AND at least 2.5 M15 ATR remaining, calculated using the ATR and price at exact full confirmation. A separate exact-cutoff EVALUATE is required before a fresh-entry verdict; this DAILY report does not award BUY ALLOWED or SELL ALLOWED.
+
+CALENDAR AND LIMITATIONS
+BLS lists its usual weekly earnings release for 21 October at 10:00 U.S. Eastern, which is 17:00 EAT on that date: https://www.bls.gov/schedule/2026/10_sched_list.htm . This is one checked scheduled release, not a complete global event calendar or a forecast of its market effect. Surprise news, geopolitical developments, USD/yield changes and execution costs are not modeled.
+The overnight 00:00 H4/H1 completions are still future evidence at this cutoff. No opening gap, exact daily range or close is known. The weekly map was reconstructed midweek, not issued blindly before the week; actual freeze time and map hash are preserved. The prediction is conditional technical interpretation, not a guaranteed outcome.
+
+ARTIFACTS
+Frozen map: output/levels/XAUUSD_WEEK_20261019_V1/weekly_levels.json
+DAILY evidence: output/daily_20261021_asof_20261020_2345/verified_context/daily_20261020_2345
+Tick verification: output/daily_20261021_asof_20261020_2345/tick_verification_receipt.json
+Independent validation: output/daily_20261021_asof_20261020_2345/independent_daily_validation.json
+Reproducible factual build: output/daily_20261021_asof_20261020_2345/build_verified_evidence.py

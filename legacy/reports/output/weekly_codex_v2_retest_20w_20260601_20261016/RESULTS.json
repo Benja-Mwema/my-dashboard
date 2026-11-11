@@ -1,0 +1,111 @@
+{
+  "study_type": "DEVELOPMENT_SAMPLE_HISTORICAL_RETEST_NOT_INDEPENDENT_VALIDATION",
+  "scheduled_weeks": 20,
+  "analytical_author": "Codex",
+  "v1_first_leg_all_20": {
+    "weeks": 20,
+    "body_hits": 10,
+    "body_pct": 50.0,
+    "dominant_hits": 10,
+    "dominant_pct": 50.0
+  },
+  "v2_first_leg_all_20": {
+    "weeks": 20,
+    "body_hits": 10,
+    "body_pct": 50.0,
+    "dominant_hits": 12,
+    "dominant_pct": 60.0
+  },
+  "v2_explicit_weekly_preference": {
+    "weeks": 13,
+    "body_hits": 9,
+    "body_pct": 69.2308,
+    "dominant_hits": 11,
+    "dominant_pct": 84.6154
+  },
+  "v2_weekly_preference_coverage": {
+    "resolved": 13,
+    "unresolved": 7,
+    "coverage_pct": 65.0,
+    "unresolved_weeks": [
+      "2026-06-01",
+      "2026-07-06",
+      "2026-07-13",
+      "2026-07-20",
+      "2026-08-03",
+      "2026-09-21",
+      "2026-10-12"
+    ],
+    "body_hits_per_all_20": 9,
+    "dominant_hits_per_all_20": 11
+  },
+  "v1_primary_as_closing_proxy_on_same_resolved_subset": {
+    "weeks": 13,
+    "body_hits": 9,
+    "body_pct": 69.2308,
+    "dominant_hits": 9,
+    "dominant_pct": 69.2308
+  },
+  "v1_proxy_caveat": "V1 did not separately declare a weekly-close preference. Its primary direction is only the proxy used by the prior comparison; first-leg-to-first-leg is the like-for-like comparison.",
+  "benchmarks_all_20": {
+    "BUY": {
+      "weeks": 20,
+      "body_hits": 7,
+      "body_pct": 35.0,
+      "dominant_hits": 5,
+      "dominant_pct": 25.0
+    },
+    "SELL": {
+      "weeks": 20,
+      "body_hits": 13,
+      "body_pct": 65.0,
+      "dominant_hits": 15,
+      "dominant_pct": 75.0
+    }
+  },
+  "benchmarks_same_resolved_subset": {
+    "BUY": {
+      "weeks": 13,
+      "body_hits": 5,
+      "body_pct": 38.4615,
+      "dominant_hits": 3,
+      "dominant_pct": 23.0769
+    },
+    "SELL": {
+      "weeks": 13,
+      "body_hits": 8,
+      "body_pct": 61.5385,
+      "dominant_hits": 10,
+      "dominant_pct": 76.9231
+    }
+  },
+  "entry_and_no_chase_performance": "UNSCORED",
+  "blind_or_live_historical_forecasts_verified": 0,
+  "previous_week_body_benchmark_all_20": {
+    "weeks": 20,
+    "body_hits": 10,
+    "body_pct": 50.0,
+    "dominant_hits": 12,
+    "dominant_pct": 60.0,
+    "flat_prior_weeks": 0,
+    "definition": "Direction of the immediately preceding completed week body, evaluated as a descriptive benchmark only."
+  },
+  "previous_week_body_benchmark_same_resolved_subset": {
+    "weeks": 13,
+    "body_hits": 8,
+    "body_pct": 61.5385,
+    "dominant_hits": 10,
+    "dominant_pct": 76.9231,
+    "flat_prior_weeks": 0,
+    "definition": "Direction of the immediately preceding completed week body, evaluated as a descriptive benchmark only."
+  },
+  "codex_price_path_assessments": {
+    "FAILED_WITHOUT_POST_ORIGIN_TARGET": 4,
+    "TARGET_AFTER_ORIGIN_NO_H4_FAILURE": 6,
+    "H4_FAILURE_BEFORE_POST_ORIGIN_TARGET": 3,
+    "TARGET_AFTER_ORIGIN_THEN_H4_FAILURE": 6,
+    "ORIGIN_NOT_VISITED": 1
+  },
+  "origin_then_first_target_before_h4_failure_count": 12,
+  "first_target_before_failure_but_later_h4_failure_count": 6
+}

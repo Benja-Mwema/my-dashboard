@@ -1,14 +1,33 @@
 {
-  "release_id": "20261026_074012_277972_EAT",
-  "dashboard": "AURUM",
-  "public_url": "https://my-dashboard-olo8.onrender.com/",
-  "forecast_updates": "explicit_user_request_only",
-  "automatic_analysis": false,
-  "automatic_publication": false,
-  "new_forecasts_generated_by_publisher": false,
-  "weekly_forecast_id": "XAUUSD_WEEK_20261026_V1",
-  "daily_evidence_cutoff": "2026-10-26 07:15:00",
-  "daily_created_at_eat": "2026-10-26T07:39:17+03:00",
-  "evaluation_cutoff": "2026-10-21 15:00:00",
-  "snapshot_sha256": "142c0a0c1183d9c1e5d4033b6f6c2ad8c281d2b248b423d8b5512f1157a74666"
+  "release": "AURUM_CLUSTER_H1_P1_V2_FINAL",
+  "previous_commit": "d1f63bc0116c2313fb5047820975212789e0aa92",
+  "publication_mode": "explicit_user_request",
+  "automatic_trading": false,
+  "snapshot_refresh": "manual MT5 read-only refresh; no scheduler installed",
+  "user_authorization": "locate AURUM dashboard and replace it with cluster entry prediction",
+  "validation": {
+    "archived_entries_reproduced": 70,
+    "archived_outcomes_exact": true,
+    "overlap_bars": 115,
+    "max_ohlc_errors": {
+      "open": 0.0,
+      "high": 0.0,
+      "low": 0.0,
+      "close": 0.0
+    },
+    "new_completed_bars": 40,
+    "forming_candle_excluded": true,
+    "engine_sha256": "d150b44886886b431329f4a175ad51803d3ed55287e62fdccf6b42add92ac4c9"
+  },
+  "ui_validation": {
+    "title": "AURUM | Cluster entries",
+    "rows": 71,
+    "projection": 1,
+    "history_projection": 0,
+    "sep_rows": 3,
+    "sep_buys": 1,
+    "mobile_overflow": false,
+    "stale_projection_withheld": true,
+    "errors": []
+  }
 }

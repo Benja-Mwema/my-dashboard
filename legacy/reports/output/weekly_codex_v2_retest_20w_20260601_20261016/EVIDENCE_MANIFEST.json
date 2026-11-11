@@ -1,0 +1,17 @@
+{
+  "method": "Frozen XAUUSD_WEEKLY_PROCEDURE_V1_20261021; exact accepted exporter; default 90/96/120/160 windows",
+  "source_hashes": {
+    "output\\weekly_review_20w_20260601_20261016\\sources\\xauusd_h4_enriched.csv": "7671bae5902eefaad011a1f0a5dc24cd1fb285acf69289693b2932a708a149ca",
+    "output\\weekly_review_20w_20260601_20261016\\sources\\xauusd_h1_enriched.csv": "a42152f091157486803bb0c0cb3ae60dadb56031e6393fe43946e75a9d289b3b",
+    "output\\weekly_review_20w_20260601_20261016\\sources\\xauusd_m30_enriched.csv": "c4c1c7726d533a6d66c6530776b609ee251cea33b6d609549792ae0064b9b318",
+    "output\\weekly_review_20w_20260601_20261016\\sources\\xauusd_m15_enriched.csv": "0353f023b443ab096c8a611c63858785edd044fa808e54d134a1c050c505a846"
+  },
+  "extractor_sources": {
+    "xauusd_prompt_extract.py": "193785ccfd3180bcf8670f7e4ff0e07c1e4443649db8430f82ac845cefe65ebc",
+    "xauusd_extract\\exporter.py": "3fc72f462c1c2163be9aa841766d37e9045969353968f72508e5ac6b13c1acbb",
+    "prompts\\weekly.md": "dbdd74d70a419e32598abfa4f9677434cc9a039c68925bfdc9669c7bbfd01fb5"
+  },
+  "preweek_packages": 20,
+  "timeframe_endpoints_passed": 80,
+  "causal_prefix_checks_passed": 80
+}

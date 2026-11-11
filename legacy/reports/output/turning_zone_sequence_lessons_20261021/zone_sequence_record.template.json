@@ -1,0 +1,75 @@
+{
+  "record_status": "TEMPLATE_NOT_A_FORECAST_OR_VERDICT",
+  "analytical_author": "Codex",
+  "procedure_id": null,
+  "forecast_id": null,
+  "created_at_eat": null,
+  "evidence_cutoff": null,
+  "source_clock_and_reporting_clock": null,
+  "zone": {
+    "id": null,
+    "role": null,
+    "low": null,
+    "high": null,
+    "historical_basis": []
+  },
+  "context": {
+    "h4_regime": null,
+    "h1_structure": null,
+    "approach_and_momentum": null,
+    "contrary_evidence": null
+  },
+  "sequence": {
+    "direction": null,
+    "origin_zone_id": null,
+    "expected_reaction": null,
+    "nearest_first_objective_zone_id": null,
+    "extension_conditions": null
+  },
+  "required_gates": {
+    "h4_allowance": null,
+    "h1_permission": null,
+    "m30_confirmation": null,
+    "m15_qualification": null,
+    "subsequent_trigger_if_required": null
+  },
+  "primary_failure": {
+    "timeframe": null,
+    "event_type": null,
+    "boundary": null,
+    "structural_reason": null
+  },
+  "alternate": {
+    "activation": null,
+    "sequence": null,
+    "failure": null
+  },
+  "opening_review": {
+    "cutoff": null,
+    "facts": null,
+    "codex_assessment": null
+  },
+  "observations": {
+    "origin_contact_known_at": null,
+    "qualification_at": null,
+    "trigger_at": null,
+    "m30_confirmation_at": null,
+    "h1_permission_at": null,
+    "first_full_confirmation_at": null,
+    "first_objective_known_at": null,
+    "failure_known_at": null,
+    "same_bar_order_unknown": null
+  },
+  "no_chase": {
+    "consumption_must_be_strictly_below_pct": 65,
+    "minimum_remaining_m15_atr": 2.5,
+    "confirmation_price": null,
+    "confirmation_time_atr": null,
+    "turn_reference": null,
+    "nearest_opposing_boundary": null,
+    "codex_conclusion": null
+  },
+  "weekly_closing_preference_separate_from_first_leg": null,
+  "first_objective_reassessment": null,
+  "codex_final_evaluate_verdict_if_requested": null
+}

@@ -1,0 +1,169 @@
+{
+  "schema_version": "1.0",
+  "forecast_id": "XAUUSD_CODEX_V2_RETEST_20260601_V1",
+  "symbol": "XAUUSD.pro",
+  "forecast_type": "weekly",
+  "frozen_at": "2026-10-21 10:52:56",
+  "created_at_eat": "2026-10-21 10:52:56",
+  "valid_from": "2026-10-21 10:52:56",
+  "valid_to": "2026-10-21 10:52:56",
+  "eligible_for_live_use": false,
+  "status": "FINAL_RESEARCH_MAP",
+  "purpose": "Historical scenario reconstruction only; not a live forecast",
+  "timezone": "Africa/Nairobi",
+  "source_clock": "Broker-wall labels aligned by saved OHLC overlaps; repository EAT convention; independent historic UTC offsets unverified",
+  "evidence_cutoff": "2026-05-30 00:00:00",
+  "hypothetical_replay_week_start": "2026-06-01 00:00:00",
+  "hypothetical_replay_week_end_exclusive": "2026-06-06 00:00:00",
+  "historical_issuance_verified": false,
+  "procedure_id": "XAUUSD_WEEKLY_PROCEDURE_V2_20261021",
+  "weekly_evidence_package": "output\\weekly_codex_replay_20w_20260601_20261016\\packages\\20260601\\weekly_20260529",
+  "primary_direction": "BUY",
+  "preweek_regime": "Corrective recovery beneath H4 EMA200",
+  "h1_state": "Recovery cooling below H1 EMA10",
+  "lower_timeframe_context": "M30/M15 below short EMAs; negative histograms require a fresh turn.",
+  "analysis": "The sharp rebound is real, but H4 has not accepted above 4595.21 and remains below EMA200. H1 is cooling below EMA10 and M30/M15 are below their short averages. There is insufficient evidence to promote the recovery to a weekly bullish preference.",
+  "confidence": "Low",
+  "primary_path": {
+    "direction": "BUY",
+    "origin_zone": "CONTROL",
+    "first_target": "RESISTANCE",
+    "extension": "UPPER",
+    "requirements": "Origin-zone hold/rejection, subsequent M15 trigger, M30 structural acceptance, H1 permission, H4 allowance; fresh entry also requires both no-chase tests",
+    "failure": {
+      "timeframe": "H4",
+      "completed_close_relation": "below",
+      "threshold": 4488.85
+    }
+  },
+  "alternate_path": {
+    "direction": "SELL",
+    "activation": "Primary completed-H4 failure event, directional H1 permission and failed recovery/retest of the declared origin, with all other required gates.",
+    "origin_zone": "CONTROL",
+    "first_target": "LOWER",
+    "extension": "BASE",
+    "failure": {
+      "timeframe": "H4",
+      "completed_close_relation": "above",
+      "threshold": 4520.63
+    }
+  },
+  "entry_gate_interpretation": {
+    "new_signal_eligibility": "Only fully post-freeze completed M15 bars may establish a new qualification or trigger. A bar opening before the actual freeze is contextual only. No confirmation timestamp may precede valid_from.",
+    "M15_qualification": "For SELL, a completed rejection in/through the active resistance zone closing below its lower edge; BUY mirrors above support. Directional indicator improvement must corroborate. A price/EMA state alone is not a new trigger.",
+    "M15_trigger": "A subsequent completed directional close beyond the qualification candle low for SELL or high for BUY. Must remain valid at the cutoff.",
+    "M30_confirmation": "Completed directional acceptance beyond the active-zone exit boundary and local structure, with close on directional side of EMA10/EMA20 and corroborating momentum. Mere touch is insufficient.",
+    "H1_permission": "Completed close on directional side of EMA10/EMA20 and active structural boundary, with regime-consistent MACD direction or explicitly demonstrated momentum turn. Positive but declining histogram alone is not equivalent to fully bearish permission.",
+    "H4_allowance": "Completed H4 regime permits direction and specified scenario invalidation has not occurred. Countertrend trades require an explicit H4 turn; support touch alone is insufficient.",
+    "first_full_confirmation": "Earliest eligible close_time when all specified gates coexist. No earlier historical confirmation under this newly frozen map.",
+    "opposing_level_selection": "Use the near edge of the nearest unconsumed opposing zone; do not skip an intervening zone to enlarge remaining room.",
+    "no_chase": "Consumption strictly below 65%; remaining room at least 2.5 M15 ATR at exact full confirmation; recheck fresh-entry location at requested cutoff."
+  },
+  "levels": [
+    {
+      "id": "BASE",
+      "role": "TURN_SUPPORT",
+      "low": 4366.28,
+      "high": 4401.49,
+      "label": "BASE",
+      "priority": 1,
+      "basis": {
+        "low": [
+          "2026-05-28 daily low",
+          "2026-05-28 04:00:00 H4 low"
+        ],
+        "high": [
+          "2026-05-27 daily low"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    },
+    {
+      "id": "LOWER",
+      "role": "TARGET_TURN",
+      "low": 4453.55,
+      "high": 4464.93,
+      "label": "LOWER",
+      "priority": 2,
+      "basis": {
+        "low": [
+          "2026-05-20 daily low"
+        ],
+        "high": [
+          "2026-05-19 daily low"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    },
+    {
+      "id": "CONTROL",
+      "role": "CONTROL",
+      "low": 4488.85,
+      "high": 4520.63,
+      "label": "CONTROL",
+      "priority": 3,
+      "basis": {
+        "low": [
+          "2026-05-29 daily low",
+          "2026-05-29 00:00:00 H4 low"
+        ],
+        "high": [
+          "preweek completed H1 ema200"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    },
+    {
+      "id": "RESISTANCE",
+      "role": "TURN_RESISTANCE",
+      "low": 4570.66,
+      "high": 4595.21,
+      "label": "RESISTANCE",
+      "priority": 4,
+      "basis": {
+        "low": [
+          "2026-05-21 daily high"
+        ],
+        "high": [
+          "2026-05-29 daily high",
+          "2026-05-29 16:00:00 H4 high"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    },
+    {
+      "id": "UPPER",
+      "role": "TARGET_TURN",
+      "low": 4616.41,
+      "high": 4616.41,
+      "label": "UPPER",
+      "priority": 5,
+      "basis": {
+        "low": [
+          "preweek completed H4 ema200"
+        ],
+        "high": [
+          "preweek completed H4 ema200"
+        ]
+      },
+      "direction_context": "Conditional context only; apply the frozen scenario and all required gates."
+    }
+  ],
+  "provenance": "Codex judgments reconstructed after the historical outcomes were available. Python only extracts evidence and serializes explicit judgments. Actual creation time is preserved; hypothetical interval is not historical live validity. No legacy WLW model output used.",
+  "weekly_closing_preference": "UNRESOLVED",
+  "weekly_preference_reason": "The sharp rebound is real, but H4 has not accepted above 4595.21 and remains below EMA200. H1 is cooling below EMA10 and M30/M15 are below their short averages. There is insufficient evidence to promote the recovery to a weekly bullish preference.",
+  "structural_reference": {
+    "week_start": "2026-06-01",
+    "boundary_source_field": "high",
+    "boundary_price": 4595.21,
+    "originating_h4_bar_open": "2026-05-29 16:00:00",
+    "originating_h4_bar_close": "2026-05-29 20:00:00",
+    "requested_close_relation": "above",
+    "first_later_completed_h4_close_across": null
+  },
+  "structural_turn_interpretation": "The 29 May H4 16:00 bar reached 4595.21; no subsequent completed H4 close exceeded it before the cutoff. The closing pullback is not a confirmed broad bullish turn.",
+  "h1_structural_context": "H1 4540.44 is below EMA10 4545.70 but above EMA20 4531.80; negative histogram and mixed alignment leave directional permission unestablished.",
+  "change_from_v1": "Retain only the conditional support-hold BUY leg. Do not equate it with a forecast that Friday must close higher.",
+  "study_type": "DEVELOPMENT_SAMPLE_HISTORICAL_RETEST",
+  "opening_review_requirement": "At first reviewed completed cutoff, compare opening gap with origin, failure and target without changing this map; opening prices alone are not completed H4 invalidation."
+}

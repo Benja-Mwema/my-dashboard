@@ -1,0 +1,23 @@
+{
+  "study_id": "XAUUSD_V3_EARLY_WATCH_PROSPECTIVE_20W_20261026",
+  "method_id": "XAUUSD_EARLY_WATCH_V3_20261023",
+  "created_at_eat": "2026-10-23T08:05:00+03:00",
+  "status": "PLANNED_NO_V3_REVIEWS_OR_FORECASTS_ISSUED",
+  "candidate_procedure": "procedure_freezes/XAUUSD_EARLY_WATCH_V3_20261023/PROCEDURE.md",
+  "parent_weekly_map_method": "XAUUSD_WEEKLY_PROCEDURE_V2_20261021",
+  "first_target_week": "2026-10-26",
+  "last_target_week": "2027-03-08",
+  "last_target_friday": "2027-03-12",
+  "scheduled_weeks": 20,
+  "preweek_registration_deadline": "Strictly before Monday 00:00 EAT of each target week",
+  "review_mode": "User-requested DAILY or EVALUATE cutoffs only; no automation or background monitoring",
+  "historical_development_sample": "2026-06-01 through 2026-10-16; not independent validation",
+  "weekly_map_issued_by_v3": false,
+  "v1_v2_study_protocol_modified": false,
+  "live_promotion": false,
+  "deployment": false,
+  "records_created": 0,
+  "alert_recall": "UNSCORED unless requested review coverage is sufficient",
+  "entry_performance": "UNSCORED until separate full EVALUATE records exist",
+  "recurring_automation_created": false
+}

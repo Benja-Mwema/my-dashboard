@@ -1,0 +1,152 @@
+{
+  "actual_frozen_at_eat": "2026-10-21 10:05:44",
+  "scope": "Research maps and pre-comparison numerical evidence; no historical issuance or trade eligibility",
+  "files": {
+    "weeks\\2026-06-01\\weekly_levels.json": "1966247d1e92c2bbf4529918c1cdba30d1371b1b03f90ccf3846ce95cf9fc19d",
+    "weeks\\2026-06-08\\weekly_levels.json": "a256a5f85b6881ce76d6ad6909332a4605b007c02b8b9407ecfe974797ffe3e2",
+    "weeks\\2026-06-15\\weekly_levels.json": "ddfbdb4d28d1ca7e66f11db2aa2af735af54b37aadc0e8831c3e1bd390f19bd7",
+    "weeks\\2026-06-22\\weekly_levels.json": "5c97e8d3f818391ca79c431f2e84552ab680866e5ca0ee8d1d3dce5e0c98e361",
+    "weeks\\2026-06-29\\weekly_levels.json": "ec8fc25326e0e4cb5fda86101e8ca6622fec15efd164ad99f9bd6b7ced8e5912",
+    "weeks\\2026-07-06\\weekly_levels.json": "338cd1fbc204d75d6f1d0fdc8b6e6a3a245795dc1469c50495e7e7f5518e89bb",
+    "weeks\\2026-07-13\\weekly_levels.json": "83b0e281852b731d3ae2ef3ed66d02e09e7580c0fae34b1498489e78d45c8aa4",
+    "weeks\\2026-07-20\\weekly_levels.json": "fd36ff7b4b1f6962964ccf5f64ebc8f639546900f3df2d592fe6aa2092786fca",
+    "weeks\\2026-07-27\\weekly_levels.json": "69f947c9224aec94eeb90324524a3af23d9fd016151cc84f12d3f806bad059ce",
+    "weeks\\2026-08-03\\weekly_levels.json": "643044c1ec6822fda48bafd28661816f01648bddb03eba72eb385b02633e8a90",
+    "weeks\\2026-08-10\\weekly_levels.json": "bd509c25aba5f1739ad759f1f66b4ca806f360fdc16be79d97b9e7d0c1419191",
+    "weeks\\2026-08-17\\weekly_levels.json": "68e3e95a9771a298b0203ba65308eaf1911d1f8b4db02da410225901f74fde57",
+    "weeks\\2026-08-24\\weekly_levels.json": "e697ad412c06cb6eadb55a7223285b60159bcbbf68be286f639f5de9980e4d69",
+    "weeks\\2026-08-31\\weekly_levels.json": "a83b3cde411b3a63d17bf670d0ee9c8de6a06555d02161cab403fcd7f29f5f95",
+    "weeks\\2026-09-07\\weekly_levels.json": "2758c50a7c72441b55ec2d767a2cb1e7c75ed48f722ef3cc3a8207ac61efc3b6",
+    "weeks\\2026-09-14\\weekly_levels.json": "6c34e7394636d28d03739bdb2b43d8f333fd885b4210eba6796821437fe37219",
+    "weeks\\2026-09-21\\weekly_levels.json": "8161f03085ebaa6ebc565c426a4f5f2445dbaa92829004714dd6482095d731fd",
+    "weeks\\2026-09-28\\weekly_levels.json": "1633e559b1626f4b1dbbf1b889cb5ce2cb7c8186f1ba0957d7cf0ba66e929b82",
+    "weeks\\2026-10-05\\weekly_levels.json": "a2127726e6c5d2ebecca300c28122ee82112e640f6dc825f21f7c497f4c4a1a1",
+    "weeks\\2026-10-12\\weekly_levels.json": "18328559615307d1579765a7c528093b78af7eccf2796014348325103470614c",
+    "codex_authored_forecasts_v2.json": "407844bf5c71289e0af68ac1bfe880710c21acb047be063d618d060dda4cdaf2",
+    "STUDY_CONTRACT.json": "0e28ed57de6b495d99faf2916a57fb3477d390ac0f17f3ced418dd7d096932a2",
+    "EVIDENCE_MANIFEST.json": "a719a221920cd25d15ec8218e747234aaebfb77d3a73ef911a520151e54e671e",
+    "preweek_evidence.json": "a7e748cea76d72ad17d8a770e4849ec652104cd3bbf15ca02822295d21f8d27c"
+  },
+  "maps": [
+    {
+      "week_start": "2026-06-01",
+      "forecast_id": "XAUUSD_CODEX_REPLAY_20260601_V1",
+      "map": "output\\weekly_codex_replay_20w_20260601_20261016\\weeks\\2026-06-01\\weekly_levels.json",
+      "sha256": "1966247d1e92c2bbf4529918c1cdba30d1371b1b03f90ccf3846ce95cf9fc19d"
+    },
+    {
+      "week_start": "2026-06-08",
+      "forecast_id": "XAUUSD_CODEX_REPLAY_20260608_V1",
+      "map": "output\\weekly_codex_replay_20w_20260601_20261016\\weeks\\2026-06-08\\weekly_levels.json",
+      "sha256": "a256a5f85b6881ce76d6ad6909332a4605b007c02b8b9407ecfe974797ffe3e2"
+    },
+    {
+      "week_start": "2026-06-15",
+      "forecast_id": "XAUUSD_CODEX_REPLAY_20260615_V1",
+      "map": "output\\weekly_codex_replay_20w_20260601_20261016\\weeks\\2026-06-15\\weekly_levels.json",
+      "sha256": "ddfbdb4d28d1ca7e66f11db2aa2af735af54b37aadc0e8831c3e1bd390f19bd7"
+    },
+    {
+      "week_start": "2026-06-22",
+      "forecast_id": "XAUUSD_CODEX_REPLAY_20260622_V1",
+      "map": "output\\weekly_codex_replay_20w_20260601_20261016\\weeks\\2026-06-22\\weekly_levels.json",
+      "sha256": "5c97e8d3f818391ca79c431f2e84552ab680866e5ca0ee8d1d3dce5e0c98e361"
+    },
+    {
+      "week_start": "2026-06-29",
+      "forecast_id": "XAUUSD_CODEX_REPLAY_20260629_V1",
+      "map": "output\\weekly_codex_replay_20w_20260601_20261016\\weeks\\2026-06-29\\weekly_levels.json",
+      "sha256": "ec8fc25326e0e4cb5fda86101e8ca6622fec15efd164ad99f9bd6b7ced8e5912"
+    },
+    {
+      "week_start": "2026-07-06",
+      "forecast_id": "XAUUSD_CODEX_REPLAY_20260706_V1",
+      "map": "output\\weekly_codex_replay_20w_20260601_20261016\\weeks\\2026-07-06\\weekly_levels.json",
+      "sha256": "338cd1fbc204d75d6f1d0fdc8b6e6a3a245795dc1469c50495e7e7f5518e89bb"
+    },
+    {
+      "week_start": "2026-07-13",
+      "forecast_id": "XAUUSD_CODEX_REPLAY_20260713_V1",
+      "map": "output\\weekly_codex_replay_20w_20260601_20261016\\weeks\\2026-07-13\\weekly_levels.json",
+      "sha256": "83b0e281852b731d3ae2ef3ed66d02e09e7580c0fae34b1498489e78d45c8aa4"
+    },
+    {
+      "week_start": "2026-07-20",
+      "forecast_id": "XAUUSD_CODEX_REPLAY_20260720_V1",
+      "map": "output\\weekly_codex_replay_20w_20260601_20261016\\weeks\\2026-07-20\\weekly_levels.json",
+      "sha256": "fd36ff7b4b1f6962964ccf5f64ebc8f639546900f3df2d592fe6aa2092786fca"
+    },
+    {
+      "week_start": "2026-07-27",
+      "forecast_id": "XAUUSD_CODEX_REPLAY_20260727_V1",
+      "map": "output\\weekly_codex_replay_20w_20260601_20261016\\weeks\\2026-07-27\\weekly_levels.json",
+      "sha256": "69f947c9224aec94eeb90324524a3af23d9fd016151cc84f12d3f806bad059ce"
+    },
+    {
+      "week_start": "2026-08-03",
+      "forecast_id": "XAUUSD_CODEX_REPLAY_20260803_V1",
+      "map": "output\\weekly_codex_replay_20w_20260601_20261016\\weeks\\2026-08-03\\weekly_levels.json",
+      "sha256": "643044c1ec6822fda48bafd28661816f01648bddb03eba72eb385b02633e8a90"
+    },
+    {
+      "week_start": "2026-08-10",
+      "forecast_id": "XAUUSD_CODEX_REPLAY_20260810_V1",
+      "map": "output\\weekly_codex_replay_20w_20260601_20261016\\weeks\\2026-08-10\\weekly_levels.json",
+      "sha256": "bd509c25aba5f1739ad759f1f66b4ca806f360fdc16be79d97b9e7d0c1419191"
+    },
+    {
+      "week_start": "2026-08-17",
+      "forecast_id": "XAUUSD_CODEX_REPLAY_20260817_V1",
+      "map": "output\\weekly_codex_replay_20w_20260601_20261016\\weeks\\2026-08-17\\weekly_levels.json",
+      "sha256": "68e3e95a9771a298b0203ba65308eaf1911d1f8b4db02da410225901f74fde57"
+    },
+    {
+      "week_start": "2026-08-24",
+      "forecast_id": "XAUUSD_CODEX_REPLAY_20260824_V1",
+      "map": "output\\weekly_codex_replay_20w_20260601_20261016\\weeks\\2026-08-24\\weekly_levels.json",
+      "sha256": "e697ad412c06cb6eadb55a7223285b60159bcbbf68be286f639f5de9980e4d69"
+    },
+    {
+      "week_start": "2026-08-31",
+      "forecast_id": "XAUUSD_CODEX_REPLAY_20260831_V1",
+      "map": "output\\weekly_codex_replay_20w_20260601_20261016\\weeks\\2026-08-31\\weekly_levels.json",
+      "sha256": "a83b3cde411b3a63d17bf670d0ee9c8de6a06555d02161cab403fcd7f29f5f95"
+    },
+    {
+      "week_start": "2026-09-07",
+      "forecast_id": "XAUUSD_CODEX_REPLAY_20260907_V1",
+      "map": "output\\weekly_codex_replay_20w_20260601_20261016\\weeks\\2026-09-07\\weekly_levels.json",
+      "sha256": "2758c50a7c72441b55ec2d767a2cb1e7c75ed48f722ef3cc3a8207ac61efc3b6"
+    },
+    {
+      "week_start": "2026-09-14",
+      "forecast_id": "XAUUSD_CODEX_REPLAY_20260914_V1",
+      "map": "output\\weekly_codex_replay_20w_20260601_20261016\\weeks\\2026-09-14\\weekly_levels.json",
+      "sha256": "6c34e7394636d28d03739bdb2b43d8f333fd885b4210eba6796821437fe37219"
+    },
+    {
+      "week_start": "2026-09-21",
+      "forecast_id": "XAUUSD_CODEX_REPLAY_20260921_V1",
+      "map": "output\\weekly_codex_replay_20w_20260601_20261016\\weeks\\2026-09-21\\weekly_levels.json",
+      "sha256": "8161f03085ebaa6ebc565c426a4f5f2445dbaa92829004714dd6482095d731fd"
+    },
+    {
+      "week_start": "2026-09-28",
+      "forecast_id": "XAUUSD_CODEX_REPLAY_20260928_V1",
+      "map": "output\\weekly_codex_replay_20w_20260601_20261016\\weeks\\2026-09-28\\weekly_levels.json",
+      "sha256": "1633e559b1626f4b1dbbf1b889cb5ce2cb7c8186f1ba0957d7cf0ba66e929b82"
+    },
+    {
+      "week_start": "2026-10-05",
+      "forecast_id": "XAUUSD_CODEX_REPLAY_20261005_V1",
+      "map": "output\\weekly_codex_replay_20w_20260601_20261016\\weeks\\2026-10-05\\weekly_levels.json",
+      "sha256": "a2127726e6c5d2ebecca300c28122ee82112e640f6dc825f21f7c497f4c4a1a1"
+    },
+    {
+      "week_start": "2026-10-12",
+      "forecast_id": "XAUUSD_CODEX_REPLAY_20261012_V1",
+      "map": "output\\weekly_codex_replay_20w_20260601_20261016\\weeks\\2026-10-12\\weekly_levels.json",
+      "sha256": "18328559615307d1579765a7c528093b78af7eccf2796014348325103470614c"
+    }
+  ]
+}

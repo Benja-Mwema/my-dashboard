@@ -1,0 +1,147 @@
+WEEK 9: 2026-07-27 to 2026-07-31
+
+FORECAST USING PREWEEK INFORMATION
+Forecast ID: XAUUSD_CODEX_V2_RETEST_20260727_V1
+Information cutoff: 2026-07-25 00:00:00
+Actual reconstruction/freeze: 2026-10-21 10:52:56 EAT; original historical issuance: NO
+Status: FINAL RESEARCH MAP; not a live forecast
+Primary directional hypothesis: SELL
+
+V2 HORIZONS AND CHANGE FROM V1
+Weekly closing preference: SELL
+H4 lost the 4040.16 reaction low, remains below EMA200 and finished below the short-average cluster. Prefer lower-range pressure while recognizing that mixed momentum leaves rejection confirmation essential.
+First-leg direction: SELL; conditional on its declared gates.
+Retain the SELL retest plan. An opening beyond its H4 threshold must be assessed separately and cannot be ignored because the week might later fall.
+
+STRUCTURAL TURN EVIDENCE
+{
+  "week_start": "2026-07-27",
+  "boundary_source_field": "low",
+  "boundary_price": 4040.16,
+  "originating_h4_bar_open": "2026-07-23 16:00:00",
+  "originating_h4_bar_close": "2026-07-23 20:00:00",
+  "requested_close_relation": "below",
+  "first_later_completed_h4_close_across": {
+    "bar_time": "2026-07-24 04:00:00",
+    "close_time": "2026-07-24 08:00:00",
+    "close": 4027.0
+  }
+}
+Completed H4 close 4027.00 at 24 July 08:00 was below 4040.16. The later recovery did not regain the prior 4141-4166 upper range.
+H1: H1 is below all four averages; its positive histogram is cooling. This is bearish price context with rebound risk, not unconditional execution permission.
+
+COMPLETENESS
+H4: expected 2026-07-25 00:00:00; actual 2026-07-25 00:00:00; 90 exported; causal prefix PASS
+H1: expected 2026-07-25 00:00:00; actual 2026-07-25 00:00:00; 96 exported; causal prefix PASS
+M30: expected 2026-07-25 00:00:00; actual 2026-07-25 00:00:00; 120 exported; causal prefix PASS
+M15: expected 2026-07-25 00:00:00; actual 2026-07-25 00:00:00; 160 exported; causal prefix PASS
+
+H4 REGIME
+Range rejection beneath the long average
+H4 lost the 4040.16 reaction low, remains below EMA200 and finished below the short-average cluster. Prefer lower-range pressure while recognizing that mixed momentum leaves rejection confirmation essential.
+H1 SETUP
+Cooling below all four H1 averages
+M30/M15 CONTEXT
+M30/M15 below short averages; improving M15 histogram alone cannot authorize a bullish reversal.
+Confidence: Low to moderate; no calibrated probability.
+
+PREWEEK NUMERICAL EVIDENCE
+H4 | completed 2026-07-25 00:00:00 | close 4,052.82 | ema10 4,062.43 | ema20 4,066.10 | ema50 4,062.35 | ema200 4,149.11 | macd_main -0.69 | macd_signal 5.53 | macd_hist -6.22 | macd_hist_slope_3 3.19 | atr14 27.78 | pivot 4,076.77
+H1 | completed 2026-07-25 00:00:00 | close 4,052.82 | ema10 4,057.88 | ema20 4,057.67 | ema50 4,065.85 | ema200 4,063.32 | macd_main -1.63 | macd_signal -3.24 | macd_hist 1.61 | macd_hist_slope_3 -2.99 | atr14 12.44 | pivot 4,076.77
+M30 | completed 2026-07-25 00:00:00 | close 4,052.82 | ema10 4,057.23 | ema20 4,057.97 | ema50 4,059.16 | ema200 4,066.34 | macd_main 0.21 | macd_signal 2.35 | macd_hist -2.14 | macd_hist_slope_3 -0.20 | atr14 8.38 | pivot 4,076.77
+M15 | completed 2026-07-25 00:00:00 | close 4,052.82 | ema10 4,055.09 | ema20 4,057.51 | ema50 4,057.37 | ema200 4,065.97 | macd_main -2.33 | macd_signal -1.39 | macd_hist -0.94 | macd_hist_slope_3 0.74 | atr14 4.42 | pivot 4,076.77
+Prior week O/H/L/C: 4,001.69 / 4,166.02 / 3,982.58 / 4,052.82; close range position 38.29%
+
+FROZEN WEEKLY MAP
+BASE | TURN_SUPPORT | 3,959.70â€“3,969.33
+  low basis: 2026-07-17 daily low
+  high basis: 2026-07-16 daily low
+LOWER | TARGET_TURN | 3,982.58â€“3,999.62
+  low basis: 2026-07-20 daily low
+  high basis: 2026-07-21 daily low
+TARGET | TARGET_TURN | 4,022.03â€“4,040.16
+  low basis: 2026-07-24 daily low; 2026-07-24 08:00:00 H4 low
+  high basis: 2026-07-23 daily low; 2026-07-23 16:00:00 H4 low
+CONTROL | CONTROL | 4,057.67â€“4,087.03
+  low basis: preweek completed H1 ema20
+  high basis: 2026-07-21 daily high
+RESISTANCE | TURN_RESISTANCE | 4,141.09â€“4,166.02
+  low basis: 2026-07-23 daily high; 2026-07-23 04:00:00 H4 high
+  high basis: 2026-07-22 daily high
+
+PRIMARY PATH
+SELL: hold/reject CONTROL (4,057.67â€“4,087.03) with the required gates, then TARGET (4,022.03â€“4,040.16).
+Extension only after acceptance through the intervening target: LOWER 3,982.58â€“3,999.62.
+Failure: completed H4 close above 4,087.03.
+
+ALTERNATE PATH
+BUY: Primary completed-H4 failure event, directional H1 permission and failed recovery/retest of the declared origin, with all other required gates.. First objective RESISTANCE (4,141.09â€“4,166.02).
+Failure of alternate: completed H4 close below 4,057.67.
+
+GATES AND NO-CHASE
+Origin-zone hold/rejection, subsequent M15 trigger, M30 structural acceptance, H1 permission, H4 allowance; fresh entry also requires both no-chase tests. M15 trigger must follow qualification; no backdating when M30/H1 gates arrive later. Fresh entry needs leg consumption strictly below 65% and room at least 2.5 M15 ATR at exact full confirmation. These gates are retained from the reference procedure, but are not evaluated as trade performance in this report.
+
+SEPARATE OPENING REVIEW
+{
+  "week_start": "2026-07-27",
+  "review_cutoff": "2026-07-27 01:15:00",
+  "opening_bar_time": "2026-07-27 01:00:00",
+  "opening_price": 4091.61,
+  "opening_completed_close": 4087.77,
+  "origin_low": 4057.67,
+  "origin_high": 4087.03,
+  "first_target_low": 4022.03,
+  "first_target_high": 4040.16,
+  "opening_minus_primary_failure_threshold": 4.58,
+  "first_origin_intersection": {
+    "bar_time": "2026-07-27 01:00:00",
+    "close_time": "2026-07-27 01:15:00",
+    "open": 4091.61,
+    "high": 4096.4,
+    "low": 4086.2,
+    "close": 4087.77
+  },
+  "latest_available_completed_boundaries": {
+    "H4": "2026-07-25 00:00:00",
+    "H1": "2026-07-25 00:00:00",
+    "M30": "2026-07-25 00:00:00",
+    "M15": "2026-07-27 01:15:00"
+  },
+  "is_full_entry_evaluation": false
+}
+Codex opening assessment: The opening gap is above 4087.03, the local primary H4 failure threshold. Flag the disrupted rejection premise immediately. The gap is not itself a completed-H4 failure, and no historical SELL entry is inferred at this cutoff.
+No preweek preference or map is changed by this later observation.
+
+ACTUAL FACTS AT WEEK END
+Actual completion cutoff: 2026-08-01 00:00:00
+O/H/L/C: 4,091.61 / 4,120.18 / 3,995.95 / 4,043.99
+Body: DOWN -1.1638%
+Upward excursion: 28.57; downward excursion: 95.66; dominant DOWN
+
+COMPLETED-CANDLE TIMELINE
+First origin contact: 2026-07-27 01:15:00 (completed candle; close 4,087.77); bar opened 2026-07-27 01:00:00
+First target contact, regardless of origin: 2026-07-28 08:15:00 (completed candle; close 4,042.32); bar opened 2026-07-28 08:00:00
+First target in a later bar after origin: 2026-07-28 08:15:00 (completed candle; close 4,042.32); bar opened 2026-07-28 08:00:00
+First H4 close across primary failure threshold: 2026-07-27 04:00:00 (completed candle; close 4,100.95); bar opened 2026-07-27 00:00:00
+First origin retest after that H4 threshold cross: 2026-07-27 06:30:00 (completed candle; close 4,085.63); bar opened 2026-07-27 06:15:00
+First alternate target after that H4 cross: Not observed
+First alternate target in later bar after post-cross retest: Not observed
+All intersection times denote when completed OHLC made contact known; candle close is not asserted to be the contact price. Alternate interactions alone do not certify its H1/M30/M15 gates.
+
+DAILY ACTUALS
+2026-07-27 | 4,091.61 / 4,116.04 / 4,065.39 / 4,076.63 | completed 2026-07-28 00:00:00
+2026-07-28 | 4,079.46 / 4,081.62 / 4,011.58 / 4,028.68 | completed 2026-07-29 00:00:00
+2026-07-29 | 4,029.94 / 4,116.38 / 3,995.95 / 4,066.24 | completed 2026-07-30 00:00:00
+2026-07-30 | 4,066.30 / 4,120.18 / 4,028.43 / 4,102.88 | completed 2026-07-31 00:00:00
+2026-07-31 | 4,103.22 / 4,111.86 / 4,021.09 / 4,043.99 | completed 2026-08-01 00:00:00
+
+CODEX COMPARISON
+H4 failure before later target
+The opening gap was already above the primary H4 failure threshold. The Monday 04:00 completed H4 confirmed acceptance above 4087.03. The downside target came later on Tuesday, so the bearish weekly body and excursion do not establish success of the original rejection scenario.
+Weekly-body agreement: MATCH; dominant-excursion agreement: MATCH.
+
+SEPARATE WEEKLY PREFERENCE GRADE
+Body: MATCH; dominant excursion: MATCH
+
+LIMITS
+Retrospective reconstruction after historical outcomes were available. Preweek causal inputs do not establish blind forecasting. Full entry/no-chase performance is unscored. Saved OHLC, not historical tick execution. Hypothetical interval is not historical live validity.

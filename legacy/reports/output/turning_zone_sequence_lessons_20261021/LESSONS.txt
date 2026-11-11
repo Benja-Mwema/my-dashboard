@@ -1,0 +1,45 @@
+TURNING ZONES AND EXPECTED SEQUENCES
+Codex lessons addendum | 21 October 2026 | Version 1
+
+PURPOSE AND STATUS
+Codex should forecast a conditional route through justified zones, not merely list prices where a reversal might occur. This addendum records lessons from the twenty completed weeks of 1 June to 16 October 2026 and their V2 historical retest. It is a reference note, not a new procedure version or a change to issued levels. These same known outcomes informed the lessons, so the retest is development evidence rather than independent validation.
+
+WHO MAKES EACH DECISION
+Codex chooses turning zones, their structural basis, expected sequences, required confirmations, scenario failure conditions and the interpretation of observed events. Python supplies MT5 candle facts, completed close times, indicators, numerical room and contact/crossing timestamps. Python may serialize an explicitly Codex-authored judgment; it must not independently generate BUY, SELL, permission, confirmation, invalidation or no-chase verdicts.
+
+A ZONE NEEDS A REASON AND A CONDITIONAL REACTION
+A touch identifies location, not a turn. Codex should explain the prior reaction highs/lows, controlling swing structure, direction and momentum of the approach, and higher-timeframe context. EMA confluence can support a reference area but cannot by itself establish a reversal. State what reaction is expected, what completed evidence would support it, and what contrary evidence is already present.
+
+FREEZE THE ROLE CHANGE BEFORE THE WEEK
+Support may remain support, break, or become resistance on a failed recovery. Those are different branches. Freeze each branch and its activation/failure conditions before evaluating the target week. Do not switch a zone from support to resistance afterward merely because that interpretation better fits the chart. An alternate observation never converts a primary miss into a primary hit.
+
+FORECAST THE ORDER OF EVENTS
+Write origin reaction -> required confirmations -> nearest first objective -> extension only after acceptance through intervening objectives. The objective must follow the origin for origin-to-target price-path credit. A target visited earlier, a target after the declared failure, or a correct directional move without the origin does not validate the stated sequence. OHLC inside one bar does not establish intrabar order. Finer evidence is needed before asserting that order.
+
+SEPARATE ZONE BOUNDARIES FROM FAILURE CONDITIONS
+Record the low/high zone bounds separately from the exact failure threshold, timeframe and event type. A touch, wick, completed close and sustained acceptance are not interchangeable. Explain why the chosen threshold disproves the particular scenario. A moving average inside a control area is context; it should not automatically become a structural failure boundary. Do not widen a zone, move a target or change the required close after observing a failure.
+
+REVIEW THE OPENING WITHOUT REWRITING THE FORECAST
+Compare opening location and current completed evidence with the frozen origin, first objective and failure threshold. A gap can compromise the intended sequence or leave little room. Opening beyond a threshold is not itself a completed H4 invalidation when the rule requires an H4 close. Save a separate timestamped opening assessment, preserve the original map, and apply current gates before any fresh-entry conclusion.
+
+GIVE THE FIRST LEG ITS OWN EXPIRY AND HORIZON
+The first projected leg and the weekly closing direction are separate hypotheses. After a first objective, reassess continuation versus reversal with the same frozen map. A completed failure ends that branch. Any new setup needs a separately identified assessment and its required gates; later favorable movement cannot revive the failed branch retrospectively. An unvisited origin is recorded as unactivated, not an executed opportunity.
+
+PRICE-PATH SUPPORT IS NOT ENTRY CONFIRMATION
+In the V2 retest, 12 of 20 scenarios had an origin contact followed by a later first-target contact before the H4 failure condition. Six of those later failed; six had no later H4 failure. These are contact/order descriptions. They do not certify M15 qualification/trigger, M30 structural confirmation, H1 permission, H4 allowance, confirmation-time no-chase or profitability. Those require the complete EVALUATE workflow.
+
+EXAMPLES FROM THE SAVED EVIDENCE
+12 October: the original support-hold BUY expected lower control before the upper target. The upper zone was observed first. The V2 conditional SELL retest instead recorded origin 4207.40-4227.33 at the completed M15 close 03:15, then control target 4155.11-4170.41 at 12:45. The two records illustrate why order and zone role matter; the revision used known outcomes and does not prove advance predictive ability or an allowed SELL.
+
+20 July: the weekly low 3982.58 was below the declared 3983.82 threshold, but no completed H4 close crossed below it. The H4-close failure did not occur. Calling the wick an invalidation would change the frozen rule.
+
+Times follow the report clock convention. Contact times denote when completed OHLC made the observation known; candle close is not asserted to be the contact or execution price.
+
+REUSABLE CODEX ZONE AND SEQUENCE RECORD
+For each important zone, record: historical basis and evidence cutoff; low/high bounds; current role and H4/H1 context; expected approach/reaction; origin and nearest objective; setup-specific M15 qualification and subsequent trigger where required; M30 confirmation; H1 permission; H4 allowance; exact failure condition; alternate activation and failure; first-objective reassessment; actual issuance and observation times. Keep missing facts explicit. A weekly preference may remain unresolved without inventing a binary answer.
+
+NO-CHASE AND EVIDENCE CONTROLS REMAIN UNCHANGED
+Fresh entry requires both less than 65% of the projected leg consumed and at least 2.5 M15 ATR remaining at exact first full confirmation, plus a current-cutoff location recheck. Use the nearest unconsumed opposing frozen boundary. Before full confirmation, room calculations are provisional. Never use forming/future candles, backdate confirmation, or infer material missing M15/M30 evidence. EVALUATE must use the existing verdict taxonomy.
+
+HOW TO TEST WHETHER THESE LESSONS HELP
+Preserve the frozen V1/V2 procedures and compare future forecasts on identical preweek evidence. Show coverage, unresolved preferences, missed origins, sequence failures and first-target-then-failure separately. Compare the same fields and denominators against simple benchmarks. The V2 first-leg retest remained 10/20 for weekly-body agreement and rose to 12/20 for dominant excursion; it did not establish a predictive advantage. The prospective twenty-week study remains separate and contains no results from this known-outcome retest.
