@@ -19,5 +19,6 @@
     "Stable identifiers deduplicate refresh",
     "Observed tick touch is separately labelled"
   ],
-  "frozen_bars_sha256": "af2cea192a70ae8965a5fb2feff39436501677288c251582d69a02f865f71117"
+  "frozen_bars_sha256": "14804eb1aa5cff51759980e8f01d0a38acf5e4048d0f680ae68b208836b08f55",
+  "hash_scope": "Exact bytes of tools/gbpjpy_r1/frozen_bars.json in this publication"
 }

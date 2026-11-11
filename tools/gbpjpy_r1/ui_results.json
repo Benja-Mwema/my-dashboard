@@ -1,5 +1,5 @@
 {
-  "base": "http://127.0.0.1:8124",
+  "base": "https://my-dashboard-olo8.onrender.com",
   "replay_rows": 15,
   "replay_rate": "42.9%",
   "gross_pips": 181.93,
