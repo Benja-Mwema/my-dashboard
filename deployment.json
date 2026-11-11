@@ -29,5 +29,26 @@
     "mobile_overflow": false,
     "stale_projection_withheld": true,
     "errors": []
+  },
+  "dashboard_scope": "multi_asset",
+  "asset_classes": [
+    "currencies",
+    "metals",
+    "indices"
+  ],
+  "listed_instruments": 14,
+  "published_signal_instruments": [
+    "XAUUSD.pro"
+  ],
+  "multiasset_validation": {
+    "url": "http://127.0.0.1:8124/",
+    "asset_classes": 3,
+    "instruments": 14,
+    "gold_entries_preserved": 71,
+    "instrument_isolation": true,
+    "precision_checks": true,
+    "deep_link": true,
+    "mobile_overflow": false,
+    "javascript_errors": []
   }
 }

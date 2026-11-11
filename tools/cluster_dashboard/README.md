@@ -13,3 +13,6 @@ Solid chart paths are observed H1 closes. Historical peak markers use retrospect
 Validation:70/70 archived entries and their MFE/MAE/turns match. Native overlap exact; forming candle excluded. Browser smoke checks on desktop/mobile:71current entry records; historical view has no projected segment; period filter; no horizontal page overflow; stale projection suppressed; no JavaScript exceptions. Legacy page link is retained.
 
 Rollback: revert the dashboard replacement commit using an ordinary Git revert, then push main; retain historical research data. No force push or reset is required.
+
+
+Multi-asset shell: assets.json is the instrument registry. Every published asset must supply its own snapshot path, exact symbol, point/digits and model version. Snapshot identity is verified before rendering. Assets without a published model show an empty state, never another instrument's prices, signals or statistics. Registry includes14 broker instruments across currencies, metals and indices. Only XAUUSD.pro currently has a published signal snapshot. Benchmarks and price precision are instrument-specific. Add approved per-asset snapshots without modifying frozen XAUUSD rules.
