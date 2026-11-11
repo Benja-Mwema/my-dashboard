@@ -69,10 +69,12 @@
       "digits": 3,
       "point": 0.001,
       "timeframe": "H1",
-      "snapshot": null,
-      "model_version": null,
-      "model_label": "No model published",
-      "status": "not_published"
+      "snapshot": "gbpjpy-data.json",
+      "model_version": "GBPJPY_H1_R1_v1.0",
+      "model_label": "H1 R1 v1.0 \u00b7 Frozen research",
+      "status": "published",
+      "module_page": "gbpjpy.html",
+      "pip": 0.01
     },
     {
       "symbol": "AUDUSD.pro",

@@ -1,0 +1,23 @@
+{
+  "strategy": "GBPJPY_H1_R1_v1.0",
+  "window": "2026-10-01 through 2026-11-09 inclusive; broker timestamps",
+  "signals": 15,
+  "completed_modeled_touches": 14,
+  "open": 1,
+  "nonnegative": 6,
+  "losses": 8,
+  "nonnegative_rate_percent": 42.857142857142854,
+  "gross_pips": 181.93030319800982,
+  "checks": [
+    "Frozen EMA source matches to 1e-10",
+    "All entry times and reference prices match source",
+    "All modeled touch references match source",
+    "Incomplete C2 cannot confirm",
+    "Prefix replay preserves prior decisions",
+    "Missing-hour candidate rejects",
+    "Failure cannot roll window",
+    "Stable identifiers deduplicate refresh",
+    "Observed tick touch is separately labelled"
+  ],
+  "frozen_bars_sha256": "af2cea192a70ae8965a5fb2feff39436501677288c251582d69a02f865f71117"
+}

@@ -1,0 +1,163 @@
+[
+  {
+    "id": "G02",
+    "side": "SELL",
+    "entry": 208.087,
+    "entry_time": "01-Oct 20:00",
+    "exit": 208.884,
+    "touch_level": 208.81179613215104,
+    "exit_bar": "02-Oct 18:00",
+    "opening_cross": true,
+    "pips": -79.6999999999997
+  },
+  {
+    "id": "G03",
+    "side": "BUY",
+    "entry": 208.911,
+    "entry_time": "02-Oct 22:00",
+    "exit": 208.492,
+    "touch_level": 208.6313345474065,
+    "exit_bar": "05-Oct 09:00",
+    "opening_cross": true,
+    "pips": -41.900000000001114
+  },
+  {
+    "id": "G05",
+    "side": "BUY",
+    "entry": 209.27,
+    "entry_time": "05-Oct 15:00",
+    "exit": 208.55917272330635,
+    "touch_level": 208.55917272330635,
+    "exit_bar": "06-Oct 00:00",
+    "opening_cross": false,
+    "pips": -71.08272766936636
+  },
+  {
+    "id": "G07",
+    "side": "BUY",
+    "entry": 208.884,
+    "entry_time": "06-Oct 09:00",
+    "exit": 209.299,
+    "touch_level": 209.39578527238535,
+    "exit_bar": "07-Oct 11:00",
+    "opening_cross": true,
+    "pips": 41.500000000002046
+  },
+  {
+    "id": "G08",
+    "side": "SELL",
+    "entry": 208.996,
+    "entry_time": "07-Oct 15:00",
+    "exit": 209.22904204223784,
+    "touch_level": 209.22904204223784,
+    "exit_bar": "08-Oct 17:00",
+    "opening_cross": false,
+    "pips": -23.304204223782676
+  },
+  {
+    "id": "G11",
+    "side": "BUY",
+    "entry": 209.323,
+    "entry_time": "09-Oct 06:00",
+    "exit": 209.51781220420978,
+    "touch_level": 209.51781220420978,
+    "exit_bar": "12-Oct 22:00",
+    "opening_cross": false,
+    "pips": 19.481220420976797
+  },
+  {
+    "id": "G12",
+    "side": "SELL",
+    "entry": 209.491,
+    "entry_time": "13-Oct 02:00",
+    "exit": 209.6199890416508,
+    "touch_level": 209.6199890416508,
+    "exit_bar": "13-Oct 16:00",
+    "opening_cross": false,
+    "pips": -12.898904165078307
+  },
+  {
+    "id": "G13",
+    "side": "BUY",
+    "entry": 209.845,
+    "entry_time": "13-Oct 19:00",
+    "exit": 209.295,
+    "touch_level": 209.85778572926625,
+    "exit_bar": "14-Oct 17:00",
+    "opening_cross": true,
+    "pips": -55.00000000000114
+  },
+  {
+    "id": "G14",
+    "side": "SELL",
+    "entry": 208.83,
+    "entry_time": "14-Oct 20:00",
+    "exit": 209.35334194788777,
+    "touch_level": 209.35334194788777,
+    "exit_bar": "15-Oct 15:00",
+    "opening_cross": false,
+    "pips": -52.33419478877579
+  },
+  {
+    "id": "G15",
+    "side": "BUY",
+    "entry": 209.699,
+    "entry_time": "15-Oct 20:00",
+    "exit": 211.52846584197832,
+    "touch_level": 211.52846584197832,
+    "exit_bar": "22-Oct 06:00",
+    "opening_cross": false,
+    "pips": 182.94658419783048
+  },
+  {
+    "id": "G16",
+    "side": "SELL",
+    "entry": 210.912,
+    "entry_time": "22-Oct 09:00",
+    "exit": 210.264,
+    "touch_level": 210.0395396315949,
+    "exit_bar": "26-Oct 04:00",
+    "opening_cross": true,
+    "pips": 64.79999999999961
+  },
+  {
+    "id": "G21",
+    "side": "BUY",
+    "entry": 210.46,
+    "entry_time": "28-Oct 21:00",
+    "exit": 210.0652252942621,
+    "touch_level": 210.0652252942621,
+    "exit_bar": "29-Oct 09:00",
+    "opening_cross": false,
+    "pips": -39.47747057379161
+  },
+  {
+    "id": "G27",
+    "side": "BUY",
+    "entry": 211.264,
+    "entry_time": "02-Nov 04:00",
+    "exit": 213.021,
+    "touch_level": 213.05150299102888,
+    "exit_bar": "05-Nov 06:00",
+    "opening_cross": true,
+    "pips": 175.69999999999766
+  },
+  {
+    "id": "G32",
+    "side": "SELL",
+    "entry": 212.717,
+    "entry_time": "05-Nov 19:00",
+    "exit": 211.985,
+    "touch_level": 211.87350640298067,
+    "exit_bar": "09-Nov 11:00",
+    "opening_cross": true,
+    "pips": 73.19999999999993
+  },
+  {
+    "id": "G33",
+    "side": "BUY",
+    "entry": 211.864,
+    "entry_time": "09-Nov 14:00",
+    "exit": null
+  }
+]

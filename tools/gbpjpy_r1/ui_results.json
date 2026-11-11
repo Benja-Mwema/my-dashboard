@@ -1,0 +1,18 @@
+{
+  "base": "http://127.0.0.1:8124",
+  "replay_rows": 15,
+  "replay_rate": "42.9%",
+  "gross_pips": 181.93,
+  "checks": [
+    "entry details",
+    "C0 C1 C2 EMA table",
+    "modeled exits",
+    "month filter",
+    "latest candidate",
+    "snapshot disclosure",
+    "390px no overflow",
+    "XAU 71 entries preserved",
+    "unpublished index isolation"
+  ],
+  "js_errors": []
+}
