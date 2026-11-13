@@ -1,6 +1,6 @@
 {
   "status": "PASS",
-  "base": "http://127.0.0.1:8124",
+  "base": "https://my-dashboard-olo8.onrender.com",
   "checks": [
     "BUY fixtures",
     "SELL fixtures and unscored",

@@ -1,0 +1,21 @@
+{
+  "at": "2026-11-13T16:04:19.932018+03:00",
+  "reason": "Initial collection included the last returned MT5 M30 bar based only on tick clock. Exclude position-zero bar explicitly; remove that last cached bar and re-fetch its completed OHLC.",
+  "affected_bar": "2026-11-13 14:00:00",
+  "frozen_source_changed": false,
+  "prior": {
+    "time": 1794578400,
+    "open": 0.96903,
+    "high": 0.96913,
+    "low": 0.96854,
+    "close": 0.96862
+  },
+  "next_observation": {
+    "time": 1794578400,
+    "open": 0.96903,
+    "high": 0.96913,
+    "low": 0.96798,
+    "close": 0.96809
+  },
+  "prior_cache_sha256": "cccba2e08605ff530f27614866428d6749cb25d5e620337c77dd71377d02cbdc"
+}

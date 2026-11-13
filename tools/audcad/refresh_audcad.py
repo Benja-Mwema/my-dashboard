@@ -21,6 +21,10 @@ def persist(d,dbpath,observed,broker_now):
  con.execute('INSERT INTO revisions VALUES (?,?,?,?)',(observed,d['source_revision'],'OK','Native overlap matched; immutable seed retained'))
  con.execute('INSERT OR REPLACE INTO state VALUES (?,?)',('indicator_checkpoint',json.dumps(d['indicator_checkpoint'])))
  con.commit();con.close()
+def safe_cutoff(native,tick_time):
+ # MT5 position zero may still be forming or stale while history synchronizes.
+ return min(int(tick_time),native[-1]['time'])
+
 def refresh():
  import MetaTrader5 as mt5
  cfg=json.loads((ROOT/'config.json').read_text())
@@ -28,7 +32,7 @@ def refresh():
  frozen=read_csv(ROOT/'source/audcad/AUDCAD_M30_raw_warmup.csv')
  if not mt5.initialize():raise RuntimeError('MT5 unavailable')
  try:
-  symbol=cfg['symbol'];info=mt5.symbol_info(symbol);tick=mt5.symbol_info_tick(symbol);terminal=mt5.terminal_info()
+  symbol=cfg['symbol'];mt5.symbol_select(symbol,True);info=mt5.symbol_info(symbol);tick=mt5.symbol_info_tick(symbol);terminal=mt5.terminal_info()
   if info is None or tick is None or terminal is None or not terminal.connected:raise RuntimeError('AUDCAD feed unavailable/disconnected')
   if info.digits!=5 or abs(info.point-POINT)>1e-12:raise RuntimeError('AUDCAD symbol-scale mismatch')
   account=mt5.account_info()
@@ -49,10 +53,10 @@ def refresh():
   if overlap<24:raise RuntimeError('Insufficient native overlap for safe continuation')
   fresh=[b for b in native if b['time']>history[-1]['time']]
   if fresh and fresh[0]['time']>history[-1]['time']+1800 and history[-1]['time']<native[0]['time']:raise RuntimeError('Native backfill window cannot cover history')
-  raw=history+fresh;now=int(tick.time);d=build(raw,now,FEED,symbol)
-  observed=datetime.now(timezone.utc).isoformat();d.update(generated_at=observed,quote_broker_time=stamp(now),quote_bid=tick.bid,source_revision=hashlib.sha256(json.dumps([b for b in raw if b['time']+1800<=now],separators=(',',':')).encode()).hexdigest(),rule_config_hash=hashlib.sha256((ROOT/'source/AUDCAD_H1_BUY_Frozen_Rule_v1_0.md').read_bytes()+(ROOT/'source/AUDCAD_H1_SELL_Frozen_Rule_v1_0.md').read_bytes()).hexdigest(),native_overlap_verified=overlap,data_quality_state='OK',publication_mode='Shared 15-minute snapshot publication; not streaming')
+  raw=history+fresh;now=int(tick.time);completed_cutoff=safe_cutoff(native,now);d=build(raw,completed_cutoff,FEED,symbol)
+  observed=datetime.now(timezone.utc).isoformat();d.update(generated_at=observed,quote_broker_time=stamp(now),quote_bid=tick.bid,source_revision=hashlib.sha256(json.dumps([b for b in raw if b['time']+1800<=completed_cutoff],separators=(',',':')).encode()).hexdigest(),rule_config_hash=hashlib.sha256((ROOT/'source/AUDCAD_H1_BUY_Frozen_Rule_v1_0.md').read_bytes()+(ROOT/'source/AUDCAD_H1_SELL_Frozen_Rule_v1_0.md').read_bytes()).hexdigest(),native_overlap_verified=overlap,completed_source_cutoff=stamp(completed_cutoff),forming_bar_open=stamp(native[-1]['time']),data_quality_state='OK',publication_mode='Shared 15-minute snapshot publication; not streaming')
   persist(d,ROOT/'signals.sqlite',observed,now)
-  atomic(cache,[b for b in raw if b['time']>frozen[-1]['time'] and b['time']+1800<=now])
+  atomic(cache,[b for b in raw if b['time']>frozen[-1]['time'] and b['time']+1800<=completed_cutoff])
   atomic(ROOT/'audcad-data.json',d);atomic(ROOT/'data_quality.json',{'status':'OK','broker_time':stamp(now)});print(json.dumps({'asof':d['latest_completed_h1'],'summary':d['summaries']}));return d
  finally:mt5.shutdown()
 if __name__=='__main__':refresh()
