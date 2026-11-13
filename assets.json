@@ -171,6 +171,20 @@
       "model_version": null,
       "model_label": "No model published",
       "status": "not_published"
+    },
+    {
+      "symbol": "AUDCAD.pro",
+      "name": "Australian Dollar / Canadian Dollar",
+      "category": "currencies",
+      "digits": 5,
+      "point": 1e-05,
+      "pip": 0.0001,
+      "timeframe": "H1",
+      "snapshot": "audcad-data.json",
+      "module_page": "audcad.html",
+      "model_version": "AUDCAD_H1_BUY_SELL_V1_0",
+      "model_label": "H1 BUY / SELL v1.0 \u00b7 Frozen research",
+      "status": "published"
     }
   ]
 }

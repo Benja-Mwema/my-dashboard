@@ -1,0 +1,9 @@
+{
+  "AUDCAD_H1_BUY_Frozen_Rule_v1_0.md": "1218648dfa36a3327b70061f7d6f2a849c7aca558137e4eff90aedf6d3690215",
+  "AUDCAD_H1_SELL_Frozen_Rule_v1_0.md": "3d7621676f72b413ebe6d1d715930ebe104bbd5fb918d6eff905322aebbe7b32",
+  "audcad/AUDCAD_M30_raw_warmup.csv": "95baf91ad495a6eaa69fbb8320a9b69ac4936f3203ccabb3e4d46810b6e20e2f",
+  "audcad/source_metadata.json": "9c44ff47e068d2b5f2acf7aa4aba39592d5c7f49b6148cbb5c6fcb2e1cd92fcb",
+  "audcad/buy_jannov_v0_1/all_cases.csv": "270ac9ee358207047517423b6b9711afe1e88a70989000691f52962b7b614442",
+  "audcad/jannov_research/classified_cases.csv": "658a2f6a8502e28a7d0e02334276c952ea10530d6a40d851330303b9edf3dffb",
+  "audcad/jannov_research/unscored_signals.csv": "20d46fd08d2eeed303fdf5bd03e8c0ca08c83275d77abb8123fa6b669ab792a2"
+}

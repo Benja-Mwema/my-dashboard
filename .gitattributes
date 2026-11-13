@@ -1,1 +1,4 @@
 * -text
+
+# Frozen AUDCAD fixtures retain exact source bytes and hashes
+tools/audcad/source/** -text

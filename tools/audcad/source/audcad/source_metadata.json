@@ -1,0 +1,17 @@
+{
+  "symbol": "AUDCAD.pro",
+  "digits": 5,
+  "point": 1e-05,
+  "pip": 0.0001,
+  "broker": "SCFM Limited",
+  "server": "SCFMLimited-Live2",
+  "rows": 12812,
+  "first": "2025-11-03 00:00:00",
+  "last": "2026-11-12 21:30:00",
+  "tick_time_raw": 1794521506,
+  "capture_epoch": 1794514307.881398,
+  "tick_minus_system_seconds": 7198.118601560593,
+  "raw_sha256": "95baf91ad495a6eaa69fbb8320a9b69ac4936f3203ccabb3e4d46810b6e20e2f",
+  "mt5_version": "5.0.6180",
+  "forming_bars_excluded": true
+}

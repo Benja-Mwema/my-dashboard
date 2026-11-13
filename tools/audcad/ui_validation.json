@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "base": "http://127.0.0.1:8124",
+  "checks": [
+    "BUY fixtures",
+    "SELL fixtures and unscored",
+    "MACD SMA9 and EMA table",
+    "monthly CSV export",
+    "latest detection labels",
+    "mobile no overflow",
+    "GBPJPY and XAU navigation"
+  ],
+  "errors": []
+}

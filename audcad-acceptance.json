@@ -1,0 +1,41 @@
+{
+  "status": "PASS",
+  "cutoff": "2026-11-12 22:00:00",
+  "summaries": {
+    "BUY": {
+      "entries": 58,
+      "TP60": 30,
+      "SL60": 27,
+      "OPEN": 1,
+      "AMBIGUOUS": 0,
+      "UNSCORED": 0,
+      "DATA_PENDING": 0,
+      "win_rate": 52.63157894736842,
+      "movement_successes": 47,
+      "closed_gross_pips": 180,
+      "open_mark_pips": -24.0
+    },
+    "SELL": {
+      "entries": 61,
+      "TP60": 29,
+      "SL60": 29,
+      "OPEN": 3,
+      "AMBIGUOUS": 0,
+      "UNSCORED": 1,
+      "DATA_PENDING": 0,
+      "win_rate": 50.0,
+      "movement_successes": 47,
+      "closed_gross_pips": 0,
+      "open_mark_pips": 113.8
+    }
+  },
+  "checks": [
+    "7 source SHA256 hashes",
+    "Every fixture entry time, price, TP, SL, status, exit-bar, highest pips",
+    "Prefix-only confirmation and incomplete H1 exclusion",
+    "Complete M30 pairs",
+    "Independent exits and strict >20 flag",
+    "No duplicate signal identifiers across replay",
+    "Unscored weekend never carried to Monday"
+  ]
+}
