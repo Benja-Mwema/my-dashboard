@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "symbol": "WS30.pro",
+  "point": 0.1,
+  "digits": 1,
+  "market_clock": "NATIVE_BROKER_LABELS_NO_CONVERSION",
+  "module_version": "WS30_4_FROZEN_RULES_V1_0",
+  "paper_only": true,
+  "broker_orders_enabled": false,
+  "primary_profile": "TP2_SL3_BE_H1_2C",
+  "diagnostic_TP3_available": false,
+  "rule_manifest_hashes": {
+    "H01": "f210526c934a0c3867af8e8cecdea00dbc3ae5030211caca7005e393012f0dbd",
+    "C1": "ede4f968f7c32c5b87fe3eaf9bb238560feedbdccc31a47ba35a29ba1f4c42c0",
+    "Combined": "d5bebe2378b14807caf85feb0c29281e228a9ce71d4ad4f199fe2dfcae502c5c",
+    "D04": "437b3afc766db9302f12000b4905c05aeb112dc14c24981a171c12cde6f14260"
+  },
+  "legal_banner": "Frozen research baseline \u2014 not validated for live trading.",
+  "publication_frequency_minutes": 15,
+  "outcome_exposure": "2026 development and 2024\u20132025 earlier history, no validated prospective performance"
+}

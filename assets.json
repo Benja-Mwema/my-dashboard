@@ -11,7 +11,7 @@
       "timeframe": "H1",
       "snapshot": "cluster-data.json",
       "model_version": "AURUM_CLUSTER_H1_P1_V2_FINAL",
-      "model_label": "H1-P1 v2.0 \u00b7 FINAL",
+      "model_label": "H1-P1 v2.0 · FINAL",
       "status": "published"
     },
     {
@@ -71,7 +71,7 @@
       "timeframe": "H1",
       "snapshot": "gbpjpy-data.json",
       "model_version": "GBPJPY_H1_R1_v1.0",
-      "model_label": "H1 R1 v1.0 \u00b7 Frozen research",
+      "model_label": "H1 R1 v1.0 · Frozen research",
       "status": "published",
       "module_page": "gbpjpy.html",
       "pip": 0.01
@@ -143,10 +143,11 @@
       "digits": 1,
       "point": 0.1,
       "timeframe": "H1",
-      "snapshot": null,
-      "model_version": null,
-      "model_label": "No model published",
-      "status": "not_published"
+      "snapshot": "ws30-data.json",
+      "model_version": "WS30_4_FROZEN_RULES_V1_0",
+      "model_label": "H01+C1+Combined+D04 v1.0 · Frozen research",
+      "status": "published",
+      "module_page": "ws30.html"
     },
     {
       "symbol": "UK100.pro",
@@ -183,7 +184,7 @@
       "snapshot": "audcad-data.json",
       "module_page": "audcad.html",
       "model_version": "AUDCAD_H1_BUY_SELL_V1_0",
-      "model_label": "H1 BUY / SELL v1.0 \u00b7 Frozen research",
+      "model_label": "H1 BUY / SELL v1.0 · Frozen research",
       "status": "published"
     }
   ]

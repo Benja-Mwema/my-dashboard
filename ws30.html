@@ -1,0 +1,61 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AURUM | WS30.pro Frozen Rules</title>
+<meta name="description" content="AURUM WS30.pro native broker-time paper research: H01 C1 Combined D04. Not validated for live trading.">
+<link rel="stylesheet" href="ws30.css?v=1">
+<script defer src="ws30.js?v=1"></script>
+</head><body>
+<header class="top"><a class="brand" href="index.html?asset=WS30.pro" style="text-decoration:none;color:inherit"><span class="mark">A</span><div><strong>AURUM</strong><small>WS30.PRO · FROZEN H1 RESEARCH</small></div></a><span class="pill amber">RESEARCH / PAPER ONLY</span></header>
+<main>
+<section class="hero"><div class="eyebrow">CURRENCIES · METALS · INDICES / WS30.pro</div>
+<h1>Four formations. One evidence record.</h1>
+<p>H01 · C1 · Combined · D04. Confirmed native H1 evidence, modeled ATR barriers and exact source provenance.</p>
+<div class="warning"><strong>Frozen research baseline — not validated for live trading.</strong> <span>All entry prices, targets and stops are research references, not orders, fills or guaranteed returns. Historical development evidence is not prospective validation.</span></div>
+</section>
+<section class="stats" aria-label="WS30 research status">
+<article><span>Research observations</span><strong id="numEntries">—</strong><small id="scopeStatus">Historical, not independent trades</small></article>
+<article><span>Distinct economic entries</span><strong id="numDistinct">—</strong><small>Exact reference grouping, not a portfolio</small></article>
+<article><span>Latest completed H1</span><strong id="latestH1">—</strong><small>Native broker label</small></article>
+<article><span>Publication state</span><strong id="pubState">—</strong><small id="pubTime">Loading verified data</small></article>
+</section>
+<section class="panel"><div class="panelTitle"><div><div class="eyebrow">FROZEN RULE REGISTRY</div><h2>Formation-level outcomes</h2></div><p>2026 is development evidence; 2024–2025 is earlier historical evaluation.</p></div>
+<div class="filters"><label>Evidence cohort<select id="cohort"><option value="EARLIER_HISTORICAL_2024_2025">2024–2025 earlier history</option><option value="DEVELOPMENT_2026">2026 development</option></select></label></div>
+<div id="ruleCards" class="cards" aria-label="Four formation outcome cards"></div>
+<div class="panelTitle" style="margin-top:20px"><div class="eyebrow">PERFORMANCE & PROVENANCE</div><p class="muted">Wins / all final-scored outcomes, including BE and TIMEOUT</p></div>
+<div class="tablewrap"><table><thead><tr><th>Rule</th><th>Admitted</th><th>WIN</th><th>LOSS</th><th>BE</th><th>TIMEOUT</th><th>Target-hit rate</th><th>Gross R</th><th>Spread-proxy R</th></tr></thead><tbody id="summaryRows"></tbody></table></div>
+<p class="muted">C1 signals can also occur under Combined. Rule admission totals share economic records; do not add performance or apply a new cross-model veto.</p>
+</section>
+<section class="panel"><div class="panelTitle"><div><div class="eyebrow">ENTRY REGISTER</div><h2>Every frozen admission. Every result.</h2></div><p>Historical outcomes remain separate from future journaled paper observations.</p></div>
+<div class="filters">
+<label>Model<select id="ruleFilter"><option value="all">All four models</option><option>H01</option><option>C1</option><option>Combined</option><option>D04</option></select></label>
+<label>Direction<select id="sideFilter"><option value="all">Both directions</option><option>BUY</option><option>SELL</option></select></label>
+<label>Outcome<select id="outcomeFilter"><option value="all">All results</option><option>WIN</option><option>LOSS</option><option>BE</option><option>TIMEOUT</option><option>CENSORED</option><option>AMBIGUOUS</option></select></label>
+<label>Month<select id="monthFilter"><option value="all">All months</option></select></label>
+</div>
+<div class="tablewrap"><table><thead><tr><th>Signal H1 close</th><th>Rule / branch</th><th>Direction</th><th>Entry M15 label</th><th>Reference</th><th>ATR anchor</th><th>Status</th><th>Research R</th><th></th></tr></thead><tbody id="signalRows"></tbody></table></div>
+<p class="muted" id="filterCount">All historical rule admissions are retained, including losses, negative timeouts and overlapping entries.</p>
+</section>
+<section class="panel" id="detail"><div class="eyebrow">SOURCE-TRACEABLE PRICE PATH</div><h2 id="caseTitle">Select a historical admission.</h2>
+<p class="muted" id="caseSubtitle">Native broker clock and completed H1 candles. Original M1 order determines archived barrier results.</p>
+<div class="controls filters"><label>Timeframe<select id="chartTf"><option value="H1">H1 completed candles</option><option value="M15">M15 completed candles</option><option value="M1">M1 entry/exit windows</option></select></label><label>Context<select id="chartRange"><option value="48">48 H1 candles / proportional intrabar</option><option value="96">96 H1 candles / proportional intrabar</option><option value="192">192 H1 candles / proportional intrabar</option></select></label></div>
+<div id="riskGraphic" role="img" aria-label="Historical observed completed H1 path and reference price barriers"></div>
+<div id="caseFacts" class="facts"></div>
+<p class="muted" id="chartCaution">The solid path is observed completed H1 close only. A dashed barrier is a research level, not an executed order. An armed BE stop starts at its actual recorded activation, never earlier. Intrabar M1 order comes from sealed archived outcomes.</p>
+</section>
+<section class="panel" id="paperJournal">
+<div class="panelTitle"><div><div class="eyebrow">PRE-OUTCOME EVIDENCE</div><h2>Prospective paper observation journal</h2></div><p>Separate from historical results; no orders.</p></div>
+<div class="stats" style="margin:10px 0 16px">
+<article><span>Journaled intentions</span><strong id="paperIntents">0</strong><small>Only as-of source receipt</small></article>
+<article><span>Final scored</span><strong id="paperFinal">0</strong><small>24 native H1 bars verified</small></article>
+<article><span>Missed candidates</span><strong id="paperMissed">0</strong><small>Never backdated</small></article>
+<article><span>Censored</span><strong id="paperCensored">0</strong><small>Not counted as failed trades</small></article>
+</div>
+<div class="tablewrap"><table><thead><tr><th>Observed at</th><th>Rule</th><th>Side</th><th>H1 decision · broker</th><th>M15 reference</th><th>Source state</th><th>Final result</th></tr></thead><tbody id="paperRows"><tr><td colspan="7">No prospective observations yet</td></tr></tbody></table></div>
+<p class="muted">A future signal must be sealed before its quote is collected. Historical reconstructions and late discoveries are never promoted into this journal. No prospective hit-rate is published without enough completed paper observations.</p>
+</section>
+<section class="panel small"><div class="eyebrow">PAPER OBSERVER / DATA HEALTH</div><h2>Source freshness and rule governance</h2>
+<dl id="provenance"></dl>
+<p class="muted">Source bar time, observer receipt and public snapshot publication are distinct clocks. Market closure does not mean a new confirmation. Prospective claims require an accepted pre-outcome journal.</p>
+</section>
+<footer>AURUM · WS30.pro native broker labels · no broker orders · no live trading <a href="index.html?asset=WS30.pro">Instrument selector</a></footer>
+</main></body></html>
