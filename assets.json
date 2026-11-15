@@ -186,6 +186,19 @@
       "model_version": "AUDCAD_H1_BUY_SELL_V1_0",
       "model_label": "H1 BUY / SELL v1.0 · Frozen research",
       "status": "published"
+    },
+    {
+      "symbol": "DAX40.pro",
+      "name": "DAX 40",
+      "category": "indices",
+      "digits": 1,
+      "point": 0.1,
+      "timeframe": "H1",
+      "snapshot": "dax40-data.json",
+      "module_page": "dax40.html",
+      "model_version": "DAX40-DASHBOARD-1.0",
+      "model_label": "Six frozen rules · Market formations v1.0",
+      "status": "published"
     }
   ]
 }

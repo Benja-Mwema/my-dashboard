@@ -1,0 +1,61 @@
+{
+  "freeze_date": "2026-11-15",
+  "authorization": "User: Freeze all 6 rules",
+  "rules": [
+    {
+      "id": "RCV-E50",
+      "version": "1.0",
+      "status": "FROZEN",
+      "formula": "E12>=0.50; bullish body/range>=2/3"
+    },
+    {
+      "id": "BRT-H4-C2",
+      "version": "1.0",
+      "status": "FROZEN",
+      "formula": "P01+P07+P10"
+    },
+    {
+      "id": "DBR",
+      "version": "1.0",
+      "status": "FROZEN",
+      "formula": "P08+P10+P27"
+    },
+    {
+      "id": "VCBS",
+      "version": "1.0",
+      "status": "FROZEN",
+      "formula": "P03+P12+P29"
+    },
+    {
+      "id": "ETP3",
+      "version": "1.0",
+      "status": "FROZEN",
+      "formula": "P15+P16+P29"
+    },
+    {
+      "id": "BFC075",
+      "version": "1.0",
+      "status": "FROZEN",
+      "formula": "P07+P19+P28"
+    }
+  ],
+  "prior_rule01": "Separate, unchanged, unfrozen",
+  "promotion": "Not approved for live trading",
+  "ETP3": "One incomplete 2026 entry remains unresolved",
+  "dashboard_version": "DAX40-DASHBOARD-1.0",
+  "market_entry_filter": false,
+  "forecast_model": null,
+  "market_definitions": {
+    "trend": "Daily close>EMA20>EMA50 and EMA20 rising over 5 observations; DOWN inverse; otherwise TRANSITION; 3 observations to confirm",
+    "volatility": "ATR14/close / preceding 60-observation median: expanded>=1.25, compressed<=0.8; 3 observations to confirm",
+    "formations": [
+      "F01 T-UP-T",
+      "F02 UP-T-UP",
+      "F03 T-DOWN-T",
+      "F04 DOWN-T-UP",
+      "F05 UP-T-DOWN",
+      "F06 DOWN-T-DOWN"
+    ],
+    "native_d1_availability": "time+86400; display EAT"
+  }
+}

@@ -7,12 +7,14 @@
   const selected=here.endsWith('/gbpjpy.html')?'gbpjpy'
     :here.endsWith('/audcad.html')?'audcad'
     :here.endsWith('/ws30.html')?'ws30'
+    :here.endsWith('/dax40.html')?'dax40'
     :(new URLSearchParams(location.search).get('asset')||'XAUUSD.pro')==='XAUUSD.pro'?'gold':'';
   const routes=[
     {id:'gold',label:'Gold',symbol:'XAUUSD.pro',href:'index.html?asset=XAUUSD.pro'},
     {id:'gbpjpy',label:'GBPJPY',symbol:'GBPJPY.pro',href:'gbpjpy.html'},
     {id:'audcad',label:'AUDCAD',symbol:'AUDCAD.pro',href:'audcad.html'},
-    {id:'ws30',label:'WS30',symbol:'WS30.pro',href:'ws30.html'}
+    {id:'ws30',label:'WS30',symbol:'WS30.pro',href:'ws30.html'},
+    {id:'dax40',label:'DAX40',symbol:'DAX40.pro',href:'dax40.html'}
   ];
   const mount=()=>{
     const header=document.querySelector('body.aurum-ui-v1 > header');
