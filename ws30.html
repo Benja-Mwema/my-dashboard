@@ -3,7 +3,7 @@
 <title>AURUM | WS30 Both Directions</title>
 <meta name="description" content="AURUM WS30.pro native broker-time paper research: H01 C1 Combined D04. Not validated for live trading.">
 <link rel="stylesheet" href="ws30.css?v=features-2">
-<script defer src="ws30.js?v=features-2"></script>
+<script defer src="ws30.js?v=frozen-inspect-3"></script>
 </head><body>
 <header class="top"><a class="brand" href="index.html?asset=WS30.pro" style="text-decoration:none;color:inherit"><span class="mark">A</span><div><strong>AURUM</strong><small>WS30.PRO · FROZEN H1 RESEARCH</small></div></a><span class="pill amber">RESEARCH / PAPER ONLY</span></header>
 <main>
@@ -17,6 +17,7 @@
 <label>Evidence<select id="dataset"><option value="ws30-data.json">Latest published snapshot</option><option value="ws30-replay.json">Frozen deployment replay</option></select></label>
 <label>Chart view<select id="chartMode"><option value="journey">Entry journey · AUDCAD style</option><option value="technical">Candles + EMA + MACD</option><option value="frozen">Original ATR evidence chart</option></select></label>
 <label>Exit rules<select id="exitRules"><option>WS30 frozen · TP2 / SL3 / BE H1 2C</option></select></label>
+<button id="inspectFrozen" type="button" aria-controls="detail">Inspect frozen entries</button>
 <button id="reload" type="button">Reload published data</button></div>
 <p id="notice" class="muted" role="status" aria-live="polite">Loading verified WS30 evidence…</p>
 <p class="muted">15-minute publication and page refresh. WS30 uses ATR distances, not currency pips. Chart views preserve the same frozen outcomes.</p></section>

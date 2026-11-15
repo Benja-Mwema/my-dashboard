@@ -251,4 +251,19 @@ $('chartTf').onchange=async()=>{
  catch(e){$('riskGraphic').replaceChildren(el('p','Intrabar source unavailable: '+e.message,'muted'));}
 };
 setInterval(()=>{if(!document.hidden&&$('dataset').value==='ws30-data.json')refreshFeatures();},15*60*1000);
+
+$('inspectFrozen').onclick=async()=>{
+ const button=$('inspectFrozen');button.disabled=true;
+ try{
+  $('dataset').value='ws30-replay.json';
+  // Preserve cohort/model/direction, but reveal entries hidden by outcome/month.
+  $('outcomeFilter').value='all';$('monthFilter').value='all';
+  $('chartTf').value='H1';chosen=null;
+  await refreshFeatures();
+  if(!data||$('dataset').value!=='ws30-replay.json')return;
+  if(!filtered().length){$('ruleFilter').value='all';$('sideFilter').value='all';register();detail();}
+  if(chosen){$('detail').scrollIntoView({behavior:'smooth',block:'start'});$('selected').focus({preventScroll:true});}
+ }finally{button.disabled=false;}
+};
+
 instrumentPicker();refreshFeatures();

@@ -70,7 +70,7 @@ try:
   page.select_option('#outcomeFilter','all')
   page.select_option('#cohort','EARLIER_HISTORICAL_2024_2025')
   check('Earlier cohort has 138 original admissions',page.locator('#signalRows tr').count()==138)
-  page.select_option('#dataset','ws30-replay.json')
+  page.click('#inspectFrozen')
   page.wait_for_function("document.querySelector('#pubState').textContent==='FROZEN REPLAY'")
   check('Frozen replay remains separate',page.evaluate("data.prospective_paper.signal_intents===0"))
   page.select_option('#ruleFilter','C1');old=page.locator('#selected').input_value()
