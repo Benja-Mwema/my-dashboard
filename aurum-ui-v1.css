@@ -1,0 +1,178 @@
+/* AURUM Unified Dashboard Shell v1.0
+   UI-only: XAUUSD H1-P1 v2.0 is the design reference.
+   No signal, risk, entry, exit, profile, scoring or source-time behavior here. */
+:root{
+  --aurum-bg:#101517;--aurum-panel:#181f22;--aurum-border:#2d363a;
+  --aurum-text:#edf1ec;--aurum-muted:#9ca9aa;--aurum-gold:#d6ba78;
+  --aurum-green:#65c6ab;--aurum-red:#ed928c;
+}
+body.aurum-ui-v1{
+  background:var(--aurum-bg);color:var(--aurum-text);
+  font:15px/1.5 system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+}
+body.aurum-ui-v1 main{max-width:1550px;margin:0 auto;padding:38px 4vw 20px}
+body.aurum-ui-v1 h1{
+  font:clamp(32px,3.6vw,51px)/1.15 Georgia,serif;letter-spacing:-1px;
+  margin:10px 0 14px;color:var(--aurum-text)
+}
+body.aurum-ui-v1 h2{font-size:19px;font-weight:500;letter-spacing:-.3px;line-height:1.35}
+body.aurum-ui-v1 .eyebrow{
+  color:var(--aurum-gold);font-size:10px;font-weight:600;letter-spacing:2px;
+  line-height:1.5
+}
+body.aurum-ui-v1 .muted{color:var(--aurum-muted);font-size:12px}
+body.aurum-ui-v1 a{color:var(--aurum-gold)}
+body.aurum-ui-v1 a:focus-visible,
+body.aurum-ui-v1 button:focus-visible,
+body.aurum-ui-v1 select:focus-visible,
+body.aurum-ui-v1 summary:focus-visible{
+  outline:2px solid var(--aurum-gold);outline-offset:3px
+}
+/* Header: preserve Gold's existing header; bring WS30 header to same form. */
+body.aurum-ui-v1 header.top{
+  min-height:94px;height:auto;display:flex;align-items:center;justify-content:space-between;
+  gap:14px;padding:14px 4vw;border-bottom:1px solid var(--aurum-border);
+  background:var(--aurum-bg)
+}
+body.aurum-ui-v1 header.top .brand{display:flex;align-items:center;gap:14px;
+  color:var(--aurum-text);font-weight:600;letter-spacing:3px;font-size:23px;text-decoration:none}
+body.aurum-ui-v1 header.top .brand strong{font-size:23px;letter-spacing:3px;font-weight:600}
+body.aurum-ui-v1 header.top .brand small{display:block;font-size:9px;color:var(--aurum-muted);letter-spacing:2px}
+body.aurum-ui-v1 header.top .mark{
+  font:30px Georgia,serif;color:var(--aurum-gold);background:transparent;
+  border:1px solid #716340;padding:5px 14px;border-radius:10px
+}
+body.aurum-ui-v1 header.top .pill.amber{
+  padding:7px 11px;border:1px solid var(--aurum-border);
+  border-radius:5px;color:var(--aurum-gold);font-size:12px;background:transparent
+}
+/* Shared, reliable cross-instrument navigation. */
+.aurum-topnav{border-bottom:1px solid var(--aurum-border);background:#151d20;
+  color:var(--aurum-muted);padding:10px 4vw;overflow:hidden}
+.aurum-topnav-inner{display:flex;align-items:center;gap:16px;max-width:1550px;margin:0 auto}
+.aurum-topnav-title{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;
+  font-weight:650;color:var(--aurum-muted);white-space:nowrap}
+.aurum-topnav-links{display:flex;gap:7px;align-items:center;overflow-x:auto;
+  scroll-behavior:smooth;scrollbar-width:thin;flex:1;min-width:0}
+.aurum-topnav-link{display:flex;align-items:center;gap:7px;white-space:nowrap;
+  color:#b9c7c5!important;border:1px solid transparent;border-radius:6px;
+  padding:9px 12px;text-decoration:none!important;font-size:12px;font-weight:600;
+  transition:background .15s ease,border-color .15s ease}
+.aurum-topnav-link:hover{background:#243035;border-color:#465458}
+.aurum-topnav-link[aria-current="page"]{
+  color:var(--aurum-gold)!important;border-color:#6b5a38;background:#29271d
+}
+.aurum-topnav-suffix{font-size:10px;color:var(--aurum-muted);
+  white-space:nowrap;letter-spacing:.15px}
+body.aurum-ui-v1 button,body.aurum-ui-v1 select{
+  background:#202a2e;border:1px solid #415056;color:var(--aurum-text);
+  padding:8px 12px;border-radius:6px;font:inherit;font-size:12px;cursor:pointer;
+}
+body.aurum-ui-v1 button:hover,body.aurum-ui-v1 select:hover{border-color:var(--aurum-gold)}
+body.aurum-ui-v1 button:disabled,body.aurum-ui-v1 select:disabled{opacity:.6;cursor:default}
+body.aurum-ui-v1 .panel{
+  background:var(--aurum-panel);border:1px solid var(--aurum-border);
+  border-radius:10px;padding:22px;margin-bottom:22px;min-width:0;color:var(--aurum-text)
+}
+body.aurum-ui-v1 .panel-head,body.aurum-ui-v1 .panelTitle{display:flex;
+  align-items:center;justify-content:space-between;gap:20px}
+body.aurum-ui-v1 .panelTitle p{font-size:12px;color:var(--aurum-muted)}
+body.aurum-ui-v1 .controls,body.aurum-ui-v1 .filters{display:flex;gap:12px;align-items:end;flex-wrap:wrap}
+body.aurum-ui-v1 .filters label,body.aurum-ui-v1 .controls label{
+  display:flex;flex-direction:column;gap:4px;color:var(--aurum-muted);font-size:10px;
+  letter-spacing:.4px
+}
+body.aurum-ui-v1 .filters label select,body.aurum-ui-v1 .controls label select{letter-spacing:0;min-width:120px}
+body.aurum-ui-v1 .stats{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:14px;margin:0 0 24px
+}
+body.aurum-ui-v1 .stats article{
+  border:1px solid var(--aurum-border);background:var(--aurum-panel);
+  border-radius:9px;padding:22px 20px;min-width:0
+}
+body.aurum-ui-v1 .stats article span{
+  color:var(--aurum-muted);font-size:10px;letter-spacing:1px;text-transform:uppercase;
+  display:block
+}
+body.aurum-ui-v1 .stats article strong{
+  color:var(--aurum-text);display:block;font-size:29px;font-weight:500;line-height:1.2;
+  margin:8px 0;overflow-wrap:anywhere
+}
+body.aurum-ui-v1 .stats article small{color:var(--aurum-muted);font-size:11px;display:block}
+body.aurum-ui-v1 .cards{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px
+}
+body.aurum-ui-v1 .cards article{background:#1a2326;border:1px solid var(--aurum-border);
+  border-radius:9px;padding:17px;min-width:0}
+body.aurum-ui-v1 .cards strong{color:var(--aurum-gold);font-size:19px;font-weight:500}
+body.aurum-ui-v1 .cards .chip{color:var(--aurum-gold)}
+body.aurum-ui-v1 .tablewrap,
+body.aurum-ui-v1 .table-wrap{
+  max-height:420px;overflow:auto;border-radius:5px;border:0;background:transparent
+}
+body.aurum-ui-v1 table{width:100%;border-collapse:collapse;white-space:nowrap;font-size:12px}
+body.aurum-ui-v1 th{color:var(--aurum-muted);font-size:10px;font-weight:500;
+  position:sticky;top:0;z-index:1;text-align:left;background:var(--aurum-panel)}
+body.aurum-ui-v1 th,body.aurum-ui-v1 td{
+  padding:13px 12px;border-bottom:1px solid var(--aurum-border);
+  font-variant-numeric:tabular-nums
+}
+body.aurum-ui-v1 tr:hover{background:#283334}
+body.aurum-ui-v1 .status,
+body.aurum-ui-v1 .pill{
+  font-size:10px;border:1px solid #3a4849;padding:4px 7px;border-radius:4px
+}
+body.aurum-ui-v1 .pill.amber{color:var(--aurum-gold);background:#332b1c;border-color:#756035}
+body.aurum-ui-v1 .buy{color:var(--aurum-green)}
+body.aurum-ui-v1 .sell{color:var(--aurum-red)}
+body.aurum-ui-v1 .hero{margin-bottom:30px}
+body.aurum-ui-v1 .hero>p{color:var(--aurum-muted)}
+body.aurum-ui-v1 .warning{margin:18px 0;background:#362e1d;
+  border:1px solid #8a7038;border-left:3px solid #d6ba78;border-radius:7px;
+  padding:12px 16px;color:#edcf90;font-size:13px;line-height:1.6}
+body.aurum-ui-v1 .warning strong{color:#edcf90}
+body.aurum-ui-v1 .warning span{color:#e4d5b4}
+body.aurum-ui-v1 .notice{border-radius:7px}
+body.aurum-ui-v1 footer{border-top:1px solid var(--aurum-border);color:var(--aurum-muted);
+  font-size:10px;padding:15px 0 25px;display:flex;gap:20px;
+  justify-content:space-between;flex-wrap:wrap;text-align:left}
+body.aurum-ui-v1 #riskGraphic{max-width:100%;min-width:0}
+body.aurum-ui-v1 #riskGraphic svg{max-width:100%;border-radius:9px;display:block}
+body.aurum-ui-v1 .facts div{
+  background:#1a2529;border:1px solid var(--aurum-border);border-radius:9px
+}
+/* Gold and module-specific controls keep their original chart behavior. */
+body.aurum-ui-v1 .asset-picker{border-radius:9px}
+body.aurum-ui-v1 details summary{color:var(--aurum-gold)}
+body.aurum-ui-v1 header:not(.top) .brand{color:var(--aurum-text)}
+@media(max-width:1000px){
+  .aurum-topnav-suffix{display:none}
+  .aurum-topnav-inner{gap:8px}
+}
+@media(max-width:800px){
+  body.aurum-ui-v1 main{padding:26px 4vw 18px}
+  body.aurum-ui-v1 header.top{min-height:78px;padding:12px 4vw}
+  body.aurum-ui-v1 header.top .brand strong{font-size:19px}
+  body.aurum-ui-v1 .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  body.aurum-ui-v1 .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  body.aurum-ui-v1 .stats article{padding:15px}
+  body.aurum-ui-v1 .stats article strong{font-size:24px}
+  body.aurum-ui-v1 .panel{padding:16px}
+  body.aurum-ui-v1 .panelTitle{align-items:start;flex-direction:column;gap:7px}
+  .aurum-topnav{padding:7px 4vw}
+  .aurum-topnav-title{display:none}
+}
+@media(max-width:430px){
+  body.aurum-ui-v1 main{padding:23px 4vw 18px}
+  body.aurum-ui-v1 h1{font-size:32px}
+  body.aurum-ui-v1 .stats{gap:10px}
+  body.aurum-ui-v1 .stats article strong{font-size:22px}
+  body.aurum-ui-v1 .cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+  body.aurum-ui-v1 .cards article{padding:12px}
+  body.aurum-ui-v1 header.top .brand strong{font-size:18px}
+  body.aurum-ui-v1 header.top .mark{font:25px Georgia;padding:4px 10px}
+  body.aurum-ui-v1 header.top .brand{gap:8px}
+  body.aurum-ui-v1 .aurum-topnav-link{padding:8px 10px;font-size:11px}
+  body.aurum-ui-v1 .filters{gap:9px}
+}
