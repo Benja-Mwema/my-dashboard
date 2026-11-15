@@ -1,0 +1,106 @@
+"""Browser acceptance for WS30 presentation parity. No engine execution or orders."""
+from pathlib import Path
+import sys,json,threading,functools,hashlib,csv,io,argparse
+from http.server import ThreadingHTTPServer,SimpleHTTPRequestHandler
+ROOT=Path(__file__).resolve().parents[1]
+sys.path.insert(0,r'C:\Ben\mt5\aurum_cluster_v2\vendor')
+from playwright.sync_api import sync_playwright
+ap=argparse.ArgumentParser();ap.add_argument('--url');a=ap.parse_args()
+class Quiet(SimpleHTTPRequestHandler):
+ def log_message(self,*args):pass
+server=None
+if not a.url:
+ server=ThreadingHTTPServer(('127.0.0.1',0),functools.partial(Quiet,directory=str(ROOT)))
+ threading.Thread(target=server.serve_forever,daemon=True).start()
+ base='http://127.0.0.1:'+str(server.server_port)
+else:base=a.url.rstrip('/')
+results={'url':base,'checks':[]}
+def check(label,ok=True):
+ assert ok,label
+ results['checks'].append(label)
+snapshot=json.loads((ROOT/'ws30-data.json').read_text(encoding='utf-8'))
+try:
+ with sync_playwright() as p:
+  b=p.chromium.launch(headless=True,executable_path=r'C:\Program Files\Google\Chrome\Application\chrome.exe',args=['--no-sandbox'])
+  errors=[];page=b.new_page(viewport={'width':1440,'height':1050},accept_downloads=True)
+  page.on('pageerror',lambda e:errors.append(str(e)))
+  page.goto(base+'/ws30.html',wait_until='networkidle',timeout=60000)
+  page.wait_for_function("document.querySelector('#selectedCount').textContent==='51'",timeout=30000)
+  check('2026 default, four model cards, 51 admissions',page.locator('#ruleCards article').count()==4 and page.locator('#signalRows tr').count()==51)
+  check('All 189 frozen observations retained',page.evaluate('data.signals.length')==189)
+  check('Data identity and original scores unchanged',page.evaluate('data.signals')==snapshot['signals'])
+  check('Instrument navigation',page.locator('#instrument option').count()==15)
+  check('Entry journey target guide',page.locator('[data-role="target-guide"]').count()==1)
+  check('Confirmation indicator inspection',page.locator('#features td').count()==10)
+  page.select_option('#ruleFilter','D04')
+  check('Model filter',page.locator('#signalRows tr').count()==16)
+  page.select_option('#sideFilter','BUY')
+  check('Empty selection clears chart and disables export',page.locator('#riskGraphic svg').count()==0 and page.locator('#export').is_disabled() and page.locator('#selectedCount').inner_text()=='0')
+  page.select_option('#sideFilter','SELL')
+  page.select_option('#ruleFilter','all')
+  page.select_option('#sideFilter','all')
+  page.select_option('#monthFilter','2026-10')
+  count=int(page.locator('#selectedCount').inner_text())
+  with page.expect_download() as d:page.click('#export')
+  rows=list(csv.DictReader(io.StringIO(Path(d.value.path()).read_text(encoding='utf-8-sig'))))
+  check('CSV respects cohort/month/direction/model and quotes values',len(rows)==count and all(r['entry_time'].startswith('2026-10') for r in rows))
+  page.select_option('#monthFilter','all')
+  page.select_option('#outcomeFilter','WIN')
+  page.click('#latest')
+  check('Latest entry selection',page.evaluate("chosen===filtered().slice().sort((a,b)=>b.entry_time.localeCompare(a.entry_time))[0].id"))
+  check('TP chart includes post-exit context',page.locator('[data-role="post-tp"]').count()>0)
+  before=page.evaluate('data.signals.find(r=>r.id===chosen).score_R_min')
+  page.select_option('#postContext','all')
+  check('Post-TP context preserves P/L',page.evaluate('data.signals.find(r=>r.id===chosen).score_R_min')==before)
+  page.select_option('#postContext','48')
+  page.select_option('#chartMode','technical')
+  check('EMA and SMA9 MACD chart',page.locator('[data-role="e10"]').count()==1 and page.locator('[data-role="macdSignal"]').count()==1)
+  page.select_option('#chartMode','frozen')
+  check('Original ATR chart selectable',page.locator('#riskGraphic svg').count()==1)
+  page.select_option('#chartTf','M15')
+  page.wait_for_function("intrabar!==null && document.querySelector('#riskGraphic svg')!==null",timeout=60000)
+  check('M15 source preserved',page.evaluate('intrabar.cases[chosen].M15.length>0'))
+  page.select_option('#chartTf','M1')
+  check('M1 evidence preserved',page.locator('#riskGraphic svg').count()==1)
+  page.select_option('#chartTf','H1')
+  page.select_option('#chartMode','journey')
+  page.select_option('#outcomeFilter','BE')
+  check('BE activation and exit annotated',page.locator('[data-role="be-armed"]').count()==1 and page.locator('[data-role="exit"]').count()==1)
+  check('BE does not show post-TP profit',page.locator('[data-role="post-tp"]').count()==0)
+  page.select_option('#outcomeFilter','all')
+  page.select_option('#cohort','EARLIER_HISTORICAL_2024_2025')
+  check('Earlier cohort has 138 original admissions',page.locator('#signalRows tr').count()==138)
+  page.select_option('#dataset','ws30-replay.json')
+  page.wait_for_function("document.querySelector('#pubState').textContent==='FROZEN REPLAY'")
+  check('Frozen replay remains separate',page.evaluate("data.prospective_paper.signal_intents===0"))
+  page.select_option('#ruleFilter','C1');old=page.locator('#selected').input_value()
+  page.click('#reload')
+  page.wait_for_function("!document.querySelector('#reload').disabled")
+  check('Reload preserves filters and selected entry',page.locator('#ruleFilter').input_value()=='C1' and page.locator('#selected').input_value()==old)
+  page.screenshot(path=str(ROOT/'tools/ws30_features_desktop.png'),full_page=True)
+  for width in [390,768]:
+   page.set_viewport_size({'width':width,'height':844})
+   check('No page overflow '+str(width),page.evaluate('document.documentElement.scrollWidth<=innerWidth'))
+  page.screenshot(path=str(ROOT/'tools/ws30_features_mobile.png'),full_page=True)
+  # A subsequent fetch failure must not leave old results on screen.
+  page.route('**/ws30-data.json*',lambda r:r.fulfill(status=503,body='unavailable'))
+  page.select_option('#dataset','ws30-data.json')
+  page.wait_for_function("document.querySelector('#pubState').textContent==='INCOMPLETE EVIDENCE'")
+  check('Failure clears stale charts and disables export',page.locator('#riskGraphic svg').count()==0 and page.locator('#export').is_disabled() and page.locator('#signalRows tr').count()==0)
+  page.unroute('**/ws30-data.json*')
+  page.click('#reload')
+  page.wait_for_function("document.querySelector('#selectedCount').textContent!=='—'")
+  check('Recovery reload restores evidence',page.locator('#signalRows tr').count()>0)
+  # Wrong instrument cannot be rendered.
+  page.route('**/ws30-data.json*',lambda r:r.fulfill(status=200,content_type='application/json',body='{"meta":{"symbol":"AUDCAD.pro"},"signals":[]}'))
+  page.click('#reload')
+  page.wait_for_function("document.querySelector('#pubState').textContent==='INCOMPLETE EVIDENCE'")
+  check('Wrong instrument rejected',page.locator('#signalRows tr').count()==0)
+  check('No JavaScript exceptions',not errors)
+  b.close()
+finally:
+ if server:server.shutdown();server.server_close()
+results['status']='PASS'
+out=ROOT/'tools'/('ws30_features_public_acceptance.json' if a.url else 'ws30_features_acceptance.json')
+out.write_text(json.dumps(results,indent=2),encoding='utf-8')
+print(json.dumps(results),flush=True)

@@ -1,17 +1,30 @@
 <!doctype html><html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>AURUM | WS30.pro Frozen Rules</title>
+<title>AURUM | WS30 Both Directions</title>
 <meta name="description" content="AURUM WS30.pro native broker-time paper research: H01 C1 Combined D04. Not validated for live trading.">
-<link rel="stylesheet" href="ws30.css?v=1">
-<script defer src="ws30.js?v=1"></script>
+<link rel="stylesheet" href="ws30.css?v=features-2">
+<script defer src="ws30.js?v=features-2"></script>
 </head><body>
 <header class="top"><a class="brand" href="index.html?asset=WS30.pro" style="text-decoration:none;color:inherit"><span class="mark">A</span><div><strong>AURUM</strong><small>WS30.PRO · FROZEN H1 RESEARCH</small></div></a><span class="pill amber">RESEARCH / PAPER ONLY</span></header>
 <main>
 <section class="hero"><div class="eyebrow">CURRENCIES · METALS · INDICES / WS30.pro</div>
-<h1>Four formations. One evidence record.</h1>
+<h1>WS30. Four rules. Both directions.</h1>
 <p>H01 · C1 · Combined · D04. Confirmed native H1 evidence, modeled ATR barriers and exact source provenance.</p>
 <div class="warning"><strong>Frozen research baseline — not validated for live trading.</strong> <span>All entry prices, targets and stops are research references, not orders, fills or guaranteed returns. Historical development evidence is not prospective validation.</span></div>
 </section>
+<section class="panel" aria-label="Dashboard controls"><div class="filters">
+<label>Instrument<select id="instrument"><option value="WS30.pro">WS30.pro · Dow Jones</option></select></label>
+<label>Evidence<select id="dataset"><option value="ws30-data.json">Latest published snapshot</option><option value="ws30-replay.json">Frozen deployment replay</option></select></label>
+<label>Chart view<select id="chartMode"><option value="journey">Entry journey · AUDCAD style</option><option value="technical">Candles + EMA + MACD</option><option value="frozen">Original ATR evidence chart</option></select></label>
+<label>Exit rules<select id="exitRules"><option>WS30 frozen · TP2 / SL3 / BE H1 2C</option></select></label>
+<button id="reload" type="button">Reload published data</button></div>
+<p id="notice" class="muted" role="status" aria-live="polite">Loading verified WS30 evidence…</p>
+<p class="muted">15-minute publication and page refresh. WS30 uses ATR distances, not currency pips. Chart views preserve the same frozen outcomes.</p></section>
+<section class="stats" id="selectionMetrics" aria-label="Filtered performance">
+<article><span>Selected admissions</span><strong id="selectedCount">—</strong><small id="selectedSides"></small></article>
+<article><span>Nonnegative closed rate</span><strong id="nonnegativeRate">—</strong><small id="selectedOutcomes"></small></article>
+<article><span>Closed gross R</span><strong id="selectedGross">—</strong><small id="selectedExcluded"></small></article>
+<article><span>Target-hit rate</span><strong id="selectedTarget">—</strong><small>WIN / final scored; BE and timeouts included</small></article></section>
 <section class="stats" aria-label="WS30 research status">
 <article><span>Research observations</span><strong id="numEntries">—</strong><small id="scopeStatus">Historical, not independent trades</small></article>
 <article><span>Distinct economic entries</span><strong id="numDistinct">—</strong><small>Exact reference grouping, not a portfolio</small></article>
@@ -19,11 +32,22 @@
 <article><span>Publication state</span><strong id="pubState">—</strong><small id="pubTime">Loading verified data</small></article>
 </section>
 <section class="panel"><div class="panelTitle"><div><div class="eyebrow">FROZEN RULE REGISTRY</div><h2>Formation-level outcomes</h2></div><p>2026 is development evidence; 2024–2025 is earlier historical evaluation.</p></div>
-<div class="filters"><label>Evidence cohort<select id="cohort"><option value="EARLIER_HISTORICAL_2024_2025">2024–2025 earlier history</option><option value="DEVELOPMENT_2026">2026 development</option></select></label></div>
+<div class="filters"><label>Evidence cohort<select id="cohort"><option value="EARLIER_HISTORICAL_2024_2025">2024–2025 earlier history</option><option value="DEVELOPMENT_2026" selected>2026 development</option></select></label></div>
 <div id="ruleCards" class="cards" aria-label="Four formation outcome cards"></div>
 <div class="panelTitle" style="margin-top:20px"><div class="eyebrow">PERFORMANCE & PROVENANCE</div><p class="muted">Wins / all final-scored outcomes, including BE and TIMEOUT</p></div>
 <div class="tablewrap"><table><thead><tr><th>Rule</th><th>Admitted</th><th>WIN</th><th>LOSS</th><th>BE</th><th>TIMEOUT</th><th>Target-hit rate</th><th>Gross R</th><th>Spread-proxy R</th></tr></thead><tbody id="summaryRows"></tbody></table></div>
 <p class="muted">C1 signals can also occur under Combined. Rule admission totals share economic records; do not add performance or apply a new cross-model veto.</p>
+</section>
+<section class="panel" id="detail"><div class="eyebrow">SOURCE-TRACEABLE PRICE PATH</div><h2 id="caseTitle">Select a historical admission.</h2>
+<p class="muted" id="caseSubtitle">Native broker clock and completed H1 candles. Original M1 order determines archived barrier results.</p>
+<div class="filters"><label>Research entry<select id="selected"></select></label><button id="latest" type="button">Latest entry</button><label>Post-TP chart context<select id="postContext"><option value="48">48 H1 bars after TP</option><option value="all">Continue to latest observation</option></select></label></div><div class="controls filters"><label>Timeframe<select id="chartTf"><option value="H1">H1 completed candles</option><option value="M15">M15 completed candles</option><option value="M1">M1 entry/exit windows</option></select></label><label>Context<select id="chartRange"><option value="48">48 H1 candles / proportional intrabar</option><option value="96">96 H1 candles / proportional intrabar</option><option value="192">192 H1 candles / proportional intrabar</option></select></label></div>
+<div id="riskGraphic" role="img" aria-label="Historical observed completed H1 path and reference price barriers"></div>
+<p id="journeyLegend" class="muted"></p><div id="caseFacts" class="facts"></div>
+<details id="indicatorPanel"><summary>Confirmation-time indicator inspection</summary>
+<p class="muted">Display-only indicators from completed native H1 candles: EMA10/20/50/200 and MACD12/26 with SMA9 signal. Seeded at the first published candle; these do not replace the frozen four-rule calculations or imply additional entry conditions.</p>
+<div class="tablewrap"><table><thead><tr><th>Completed H1</th><th>EMA10</th><th>EMA20</th><th>EMA50</th><th>EMA200</th><th>Δ EMA10</th><th>Δ EMA20</th><th>Δ EMA50</th><th>MACD main</th><th>SMA9 signal</th></tr></thead><tbody id="features"></tbody></table></div></details>
+<details><summary>Entry identity and overlapping research observations</summary><p id="overlapDetails" class="muted"></p></details>
+<p class="muted" id="chartCaution">The solid path is observed completed H1 close only. A dashed barrier is a research level, not an executed order. An armed BE stop starts at its actual recorded activation, never earlier. Intrabar M1 order comes from sealed archived outcomes.</p>
 </section>
 <section class="panel"><div class="panelTitle"><div><div class="eyebrow">ENTRY REGISTER</div><h2>Every frozen admission. Every result.</h2></div><p>Historical outcomes remain separate from future journaled paper observations.</p></div>
 <div class="filters">
@@ -32,15 +56,8 @@
 <label>Outcome<select id="outcomeFilter"><option value="all">All results</option><option>WIN</option><option>LOSS</option><option>BE</option><option>TIMEOUT</option><option>CENSORED</option><option>AMBIGUOUS</option></select></label>
 <label>Month<select id="monthFilter"><option value="all">All months</option></select></label>
 </div>
-<div class="tablewrap"><table><thead><tr><th>Signal H1 close</th><th>Rule / branch</th><th>Direction</th><th>Entry M15 label</th><th>Reference</th><th>ATR anchor</th><th>Status</th><th>Research R</th><th></th></tr></thead><tbody id="signalRows"></tbody></table></div>
+<div class="filters"><button id="export" type="button">Export selected entries CSV</button><a id="download" href="ws30-data.json" download>Snapshot JSON</a><a href="ws30-acceptance.json">Replay acceptance</a></div><div class="tablewrap"><table><thead><tr><th>Signal H1 close</th><th>Rule / branch</th><th>Direction</th><th>Entry M15 label</th><th>Reference</th><th>ATR anchor</th><th>Status</th><th>Research R</th><th>TP / SL</th><th>Exit time</th><th>Gross index units</th><th>Sampled favourable close move</th><th>Overlaps</th><th>Detection / origin</th><th></th></tr></thead><tbody id="signalRows"></tbody></table></div>
 <p class="muted" id="filterCount">All historical rule admissions are retained, including losses, negative timeouts and overlapping entries.</p>
-</section>
-<section class="panel" id="detail"><div class="eyebrow">SOURCE-TRACEABLE PRICE PATH</div><h2 id="caseTitle">Select a historical admission.</h2>
-<p class="muted" id="caseSubtitle">Native broker clock and completed H1 candles. Original M1 order determines archived barrier results.</p>
-<div class="controls filters"><label>Timeframe<select id="chartTf"><option value="H1">H1 completed candles</option><option value="M15">M15 completed candles</option><option value="M1">M1 entry/exit windows</option></select></label><label>Context<select id="chartRange"><option value="48">48 H1 candles / proportional intrabar</option><option value="96">96 H1 candles / proportional intrabar</option><option value="192">192 H1 candles / proportional intrabar</option></select></label></div>
-<div id="riskGraphic" role="img" aria-label="Historical observed completed H1 path and reference price barriers"></div>
-<div id="caseFacts" class="facts"></div>
-<p class="muted" id="chartCaution">The solid path is observed completed H1 close only. A dashed barrier is a research level, not an executed order. An armed BE stop starts at its actual recorded activation, never earlier. Intrabar M1 order comes from sealed archived outcomes.</p>
 </section>
 <section class="panel" id="paperJournal">
 <div class="panelTitle"><div><div class="eyebrow">PRE-OUTCOME EVIDENCE</div><h2>Prospective paper observation journal</h2></div><p>Separate from historical results; no orders.</p></div>
@@ -57,5 +74,5 @@
 <dl id="provenance"></dl>
 <p class="muted">Source bar time, observer receipt and public snapshot publication are distinct clocks. Market closure does not mean a new confirmation. Prospective claims require an accepted pre-outcome journal.</p>
 </section>
-<footer>AURUM · WS30.pro native broker labels · no broker orders · no live trading <a href="index.html?asset=WS30.pro">Instrument selector</a></footer>
+<section class="panel"><h2>Journey display and WS30 exit rules</h2><p>Small dots project the entry-to-target guide without forecasting a target time. Solid green follows sampled observed prices before exit; spaced pink dots mark adverse sampled movement. At TP, the position ends and purple context may continue. BE, SL and timeout paths end at the archived exit.</p><p>A retracement marker is descriptive only: completed H1 closes retracing more than half of prior favourable completed-close movement. It does not change WS30’s frozen +2ATR target, −3ATR stop, +1ATR BE threshold, H1 two-candle protection rule or 24-H1 horizon. Actual archived BE activation is marked separately. The AUDCAD M30 retracement exit is not applied to WS30.</p><p>R uses the initial 3ATR risk. Index price units and broker points (0.1) are shown separately. C1 and Combined may share the same economic entry; totals are admission-level research sums, not a funded portfolio.</p></section><footer>AURUM · WS30.pro native broker labels · no broker orders · no live trading <a href="index.html?asset=WS30.pro">Instrument selector</a></footer>
 </main></body></html>

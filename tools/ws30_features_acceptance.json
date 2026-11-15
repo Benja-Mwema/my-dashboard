@@ -1,0 +1,33 @@
+{
+  "url": "http://127.0.0.1:61675",
+  "checks": [
+    "2026 default, four model cards, 51 admissions",
+    "All 189 frozen observations retained",
+    "Data identity and original scores unchanged",
+    "Instrument navigation",
+    "Entry journey target guide",
+    "Confirmation indicator inspection",
+    "Model filter",
+    "Empty selection clears chart and disables export",
+    "CSV respects cohort/month/direction/model and quotes values",
+    "Latest entry selection",
+    "TP chart includes post-exit context",
+    "Post-TP context preserves P/L",
+    "EMA and SMA9 MACD chart",
+    "Original ATR chart selectable",
+    "M15 source preserved",
+    "M1 evidence preserved",
+    "BE activation and exit annotated",
+    "BE does not show post-TP profit",
+    "Earlier cohort has 138 original admissions",
+    "Frozen replay remains separate",
+    "Reload preserves filters and selected entry",
+    "No page overflow 390",
+    "No page overflow 768",
+    "Failure clears stale charts and disables export",
+    "Recovery reload restores evidence",
+    "Wrong instrument rejected",
+    "No JavaScript exceptions"
+  ],
+  "status": "PASS"
+}
