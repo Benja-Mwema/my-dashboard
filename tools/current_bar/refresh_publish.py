@@ -27,10 +27,37 @@ def recover():
  if names:git('restore','--staged','--',*names)
  for name in names:shutil.copyfile(Path(j['backup'])/name,REPO/name)
  JOURNAL.unlink();log('Recovered interrupted snapshot transaction; next refresh will regenerate all instruments')
+
+def publish_current_context():
+ # Fast chart publication precedes expensive research replay. Same task,
+ # same all-instrument context snapshot, same recoverable Git transaction.
+ from build_market_context import build
+ context=build();name='market-context.json'
+ raw=(json.dumps(context,separators=(',',':'),ensure_ascii=False,allow_nan=False)+'\n').encode()
+ old=(REPO/name).read_bytes();backup=ROOT/'publication_backup';backup.mkdir(exist_ok=True)
+ (backup/name).write_bytes(old)
+ JOURNAL.write_text(json.dumps({'head':git('rev-parse','HEAD'),'backup':str(backup),
+   'files':{name:{'old':digest(old),'new':digest(raw)}}}))
+ try:
+  tmp=REPO/(name+'.tmp');tmp.write_bytes(raw);tmp.replace(REPO/name)
+  git('add','--',name);git('diff','--cached','--check')
+  if git('diff','--cached','--name-only'):git('commit','-m','Refresh current chart bars before research replay')
+ except Exception:
+  recover();raise
+ JOURNAL.unlink(missing_ok=True);git('push','origin','main')
+ receipt={'status':'published','completed_at':datetime.datetime.now().astimezone().isoformat(),
+  'source_observed_at_utc':context['observed_at_utc'],'commit':git('rev-parse','HEAD'),
+  'states':{k:v['state'] for k,v in context['assets'].items()}}
+ (ROOT/'chart_context_publish_status.json').write_text(json.dumps(receipt,indent=2))
+ log('CURRENT_BAR_FAST_PUBLICATION '+json.dumps(receipt));print(json.dumps(receipt),flush=True)
+ return receipt
+
 def main():
  recover()
  if git('status','--porcelain'):raise RuntimeError('Repository has local changes; leaving them untouched')
  git('fetch','origin','main');git('merge','--ff-only','origin/main')
+ try:publish_current_context()
+ except Exception as error:log('CURRENT_BAR_FAST_PUBLICATION_FAILED '+repr(error))
  run([sys.executable,str(ROOT/'refresh_snapshot.py')])
  gp=ROOT/'gbpjpy/gbpjpy-data.json'
  if not gp.exists() or datetime.datetime.now().timestamp()-gp.stat().st_mtime>120:run([sys.executable,str(ROOT/'gbpjpy/refresh_gbpjpy.py')])
