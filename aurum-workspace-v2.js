@@ -10,7 +10,7 @@ function norm(r){if(kind==='gold')return {id:r.case,time:r.entry_time,side:r.sgn
 function all(){if(typeof data==='undefined'||!data)return [];if(kind==='gold')return data.entries||[];if(kind==='audcad')return records();return data.signals||[];}
 function visible(){if(typeof data==='undefined'||!data)return [];return kind==='gold'||kind==='ws30'?filtered():kind==='gbpjpy'||kind==='audcad'?rows():filtered;}
 function accept(r){const n=norm(r),y=q('auYear')?.value||'all',side=q('auSide')?.value||'all',out=q('auOutcome')?.value||'all',search=(q('auSearch')?.value||'').trim().toLowerCase();return (y==='all'||n.time?.startsWith(y))&&(side==='all'||n.side===side)&&(out==='all'||(out==='positive'?n.done&&n.value>0:out==='negative'?n.done&&n.value<0:out==='flat'?n.done&&n.value===0:out==='unresolved'?!n.done:out===n.status))&&(!search||[n.id,n.time,n.side,n.rule,n.status,r.formation,r.cohort].join(' ').toLowerCase().includes(search));}
-window.AurumUI={accept,version:'2.0',kind,normalize:norm,visible:()=>visible().map(norm)};
+window.AurumUI={accept,version:'2.0',kind,normalize:norm,visible:()=>visible().map(norm),selected,pick,getData:()=>typeof data==='undefined'?null:data};
 let mounted=false,lastData=null,timer=null,updating=false;
 const el=(tag,txt,cls)=>{const e=document.createElement(tag);if(txt!==undefined)e.textContent=txt;if(cls)e.className=cls;return e;};
 function control(id,label,options){const l=el('label',label),s=el('select');s.id=id;for(const [v,t]of options){const o=el('option',t);o.value=v;s.append(o);}l.append(s);return l;}
