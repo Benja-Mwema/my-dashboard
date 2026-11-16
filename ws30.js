@@ -10,7 +10,7 @@ function set(id,v){$(id).textContent=text(v);}
 function pct(a,n){return n?(100*a/n).toFixed(1)+'%':'—';}
 function color(d){return d==='BUY'?'#79d9b7':'#e78c86';}
 function cohort(){return $('cohort').value;}
-function filtered(){return data.signals.filter(x=>x.cohort===cohort()&&
+function filtered(){return data.signals.filter(x=>window.AurumUI?.accept(x)!==false).filter(x=>x.cohort===cohort()&&
  ($('ruleFilter').value==='all'||x.rule===$('ruleFilter').value)&&
  ($('sideFilter').value==='all'||x.direction===$('sideFilter').value)&&
  ($('outcomeFilter').value==='all'||x.status===$('outcomeFilter').value)&&
