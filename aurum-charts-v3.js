@@ -14,7 +14,7 @@ const date=t=>!F(t)?'Not available':currentContext()?new Date(t*1000).toISOStrin
 let clock=originalClock;
 const colors={ema10:'#d6ba78',ema20:'#79b0d5',ema50:'#af90d6',entry:'#d5dedb',sl:'#ed928c',tp:'#65c6ab',be:'#8ccfdb'};
 let cached=null,bars=[],clusters=[],view=null,lastID=null,first=true,frame=null,active=null,hoverIndex=0,drag=null,ruleDocs=null,geometry={W:1100,L:34,R:114};
-const TF=K==='eurjpy'?'M30':'H1',BAR=K==='eurjpy'?1800:3600;
+const TF=['eurjpy','gbpusd'].includes(K)?'M30':'H1',BAR=['eurjpy','gbpusd'].includes(K)?1800:3600;
 const C={native:K==='ws30'?'riskGraphic':'chart'};
 function derive(source){
  let state={},atr=null,prev=null,trSeed=[];const out=[];let current=null;const boxes=[];
@@ -34,7 +34,7 @@ function derive(source){
 }
 function meta(r){
  if(!r)return null;let m={id:A.normalize(r).id,side:A.normalize(r).side,status:A.normalize(r).status,raw:r,sl:null,tp:null,be:null,exit:null,exitPrice:null,exitStart:null,exitLabel:'Exit'};
- if(['cadjpy','eurjpy'].includes(K))Object.assign(m,{entry:T(r.entry_time),confirm:T(r.signal_available_at),price:r.entry_price,exit:T(r.exit_bar_available_at),exitPrice:r.exit_price,exitLabel:r.selected_horizon+'-bar endpoint (not a stop/target)'});
+ if(['cadjpy','eurjpy','gbpusd'].includes(K))Object.assign(m,{entry:T(r.entry_time),confirm:T(r.signal_available_at),price:r.entry_price,exit:T(r.exit_bar_available_at),exitPrice:r.exit_price,exitLabel:r.selected_horizon+'-bar endpoint (not a stop/target)'});
  if(K==='gold')Object.assign(m,{entry:T(r.entry_time),confirm:T(r.signal_time),price:r.entry_price,exit:r.cycle_complete?T(r.end_time):null,exitPrice:r.cycle_complete?r.end_close:null,exitLabel:'Cycle ended (not a trade exit)',benchmark:r.entry_price+r.sgn*A.getData().benchmark_points*A.getData().point});
  if(K==='gbpjpy')Object.assign(m,{entry:T(r.decision_time),confirm:T(r.decision_time),price:r.entry_reference,exit:T(r.exit?.bar_close??r.exit?.broker_time),exitStart:T(r.exit?.bar_open),exitPrice:r.exit?.reference_price,exitLabel:r.exit?.status||'EMA-touch exit'});
  if(K==='audcad'){
@@ -53,7 +53,7 @@ function zoom(factor){if(!view)return;const size=Math.max(12,Math.min(bars.lengt
 function row(label,value,condition,pass,at){return {label,value,condition,pass,at};}
 function explain(m){
  if(!m)return [];const r=m.raw,ci=bars.findLastIndex(b=>b.end<=m.confirm),b=bars[ci],p=bars[ci-1],sgn=m.side==='BUY'?1:-1,rows=[];const add=(...a)=>rows.push(row(...a));
- if(['cadjpy','eurjpy'].includes(K)){for(const p of r.predicates||[])add(p.label,p.value,p.condition,p.passed,m.confirm);}
+ if(['cadjpy','eurjpy','gbpusd'].includes(K)){for(const p of r.predicates||[])add(p.label,p.value,p.condition,p.passed,m.confirm);}
  if(K==='gold'){
  const c=r.cluster;add('Frozen cluster EMA'+c?.trio?.join('/'),c?.width_ATR,'Width ≤ 0.25 preceding ATR',F(c?.width_ATR)?c.width_ATR<=.25:null,T(c?.detected_at));
  add('Frozen cluster lower / upper',n(c?.low)+' / '+n(c?.high),'Fixed boundaries from archived cluster',null,T(c?.detected_at));
@@ -96,7 +96,7 @@ function draw(){
  const x=i=>L+(i-view.start+.5)/(view.end-view.start)*pw,y=v=>Tp+(high-v)/(high-low)*ph;
  const xt=t=>{let j=lower(t);if(j>=bars.length)return x(bars.length-.5);if(bars[j]?.t===t)return x(j-.5);const b=bars[Math.max(0,j-1)];return x(j-1-.5+Math.min(1,(t-b.t)/BAR));};
  let svg=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" role="img" aria-label="${K} ${TF} formation and entry chart; ${clock}"><defs><clipPath id="acClip"><rect x="${L}" y="${Tp}" width="${pw}" height="${ph}"/></clipPath></defs><rect width="${W}" height="${H}" fill="#10191c"/>`;
- for(let j=0;j<6;j++){const v=low+(high-low)*j/5;svg+=`<line x1="${L}" x2="${W-R}" y1="${y(v)}" y2="${y(v)}" stroke="#2c3a3d"/><text x="${W-R+7}" y="${y(v)+4}" fill="#a5b5b4" font-size="11">${n(v,K==='audcad'?5:['gbpjpy','cadjpy','eurjpy'].includes(K)?3:2)}</text>`;}
+ for(let j=0;j<6;j++){const v=low+(high-low)*j/5;svg+=`<line x1="${L}" x2="${W-R}" y1="${y(v)}" y2="${y(v)}" stroke="#2c3a3d"/><text x="${W-R+7}" y="${y(v)+4}" fill="#a5b5b4" font-size="11">${n(v,['audcad','gbpusd'].includes(K)?5:['gbpjpy','cadjpy','eurjpy'].includes(K)?3:2)}</text>`;}
  svg+='<g clip-path="url(#acClip)">';
  const detected=clusters.filter(c=>c.start<=slice.at(-1).end&&(c.end??Infinity)>=slice[0].t);
  const clusterLabels=[];
@@ -106,7 +106,7 @@ function draw(){
   const price=(c.low+c.high)/2,yy=y(price),start=Math.max(L,xt(t)),end=Math.min(W-R,Math.max(start+Math.min(160,pw*.55),xt(stop??slice.at(-1).end)));
   const confirmed=!frozen&&c.breakout&&c.breakout<=slice.at(-1).end;
   const direction=frozen?'FROZEN':confirmed?c.direction:'PENDING',color=frozen?'#79b0d5':direction==='UP'?'#65c6ab':direction==='DOWN'?'#ed928c':'#d6ba78';
-  const label=(frozen?'Frozen cluster':'Cluster')+' '+n(price,K==='audcad'?5:['gbpjpy','cadjpy','eurjpy'].includes(K)?3:2)+' · '+(direction==='UP'?'↑ UP':direction==='DOWN'?'↓ DOWN':frozen?'FROZEN '+m.side:direction);
+  const label=(frozen?'Frozen cluster':'Cluster')+' '+n(price,['audcad','gbpusd'].includes(K)?5:['gbpjpy','cadjpy','eurjpy'].includes(K)?3:2)+' · '+(direction==='UP'?'↑ UP':direction==='DOWN'?'↓ DOWN':frozen?'FROZEN '+m.side:direction);
   const detail='Midpoint of detection candle high/low; '+(confirmed?'breakout '+direction+' confirmed '+date(c.breakout):frozen?'archived Gold cluster; trade direction '+m.side:'breakout direction pending')+'. Line length is visual only, not cluster duration.';
   svg+=`<rect data-layer="cluster-zone" x="${start}" y="${y(c.high)}" width="${Math.max(1,Math.min(W-R,xt(stop??slice.at(-1).end))-start)}" height="${Math.max(2,y(c.low)-y(c.high))}" fill="${color}" fill-opacity=".06"/><line data-layer="${frozen?'frozen-cluster':'cluster'}" data-price="${price}" data-direction="${direction}" x1="${start}" x2="${end}" y1="${yy}" y2="${yy}" stroke="${color}" stroke-width="8" stroke-opacity=".5" stroke-linecap="butt"><title>${esc(label+' · '+detail)}</title></line>`;
   if(yy>=Tp&&yy<=H-B)clusterLabels.push({start,end,yy,label,color,detail});

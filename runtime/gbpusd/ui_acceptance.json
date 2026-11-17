@@ -1,0 +1,66 @@
+[
+  {
+    "page": "gbpusd",
+    "timeframe": "M30",
+    "charts": true,
+    "eight_routes": true,
+    "mobile_overflow": false,
+    "javascript_errors": []
+  },
+  {
+    "page": "eurjpy",
+    "timeframe": "M30",
+    "charts": true,
+    "eight_routes": true,
+    "mobile_overflow": false,
+    "javascript_errors": []
+  },
+  {
+    "page": "index",
+    "timeframe": "H1",
+    "charts": true,
+    "eight_routes": true,
+    "mobile_overflow": false,
+    "javascript_errors": []
+  },
+  {
+    "page": "gbpjpy",
+    "timeframe": "H1",
+    "charts": true,
+    "eight_routes": true,
+    "mobile_overflow": false,
+    "javascript_errors": []
+  },
+  {
+    "page": "audcad",
+    "timeframe": "H1",
+    "charts": true,
+    "eight_routes": true,
+    "mobile_overflow": false,
+    "javascript_errors": []
+  },
+  {
+    "page": "ws30",
+    "timeframe": "H1",
+    "charts": true,
+    "eight_routes": true,
+    "mobile_overflow": false,
+    "javascript_errors": []
+  },
+  {
+    "page": "dax40",
+    "timeframe": "H1",
+    "charts": true,
+    "eight_routes": true,
+    "mobile_overflow": false,
+    "javascript_errors": []
+  },
+  {
+    "page": "cadjpy",
+    "timeframe": "H1",
+    "charts": true,
+    "eight_routes": true,
+    "mobile_overflow": false,
+    "javascript_errors": []
+  }
+]

@@ -44,11 +44,13 @@
       "category": "currencies",
       "digits": 5,
       "point": 1e-05,
-      "timeframe": "H1",
-      "snapshot": null,
-      "model_version": null,
-      "model_label": "No model published",
-      "status": "not_published"
+      "timeframe": "M30",
+      "snapshot": "gbpusd-data.json",
+      "model_version": "GBPUSD_M30_E1_V0_1",
+      "model_label": "M30 E1 v0.1 \u00b7 Research baseline",
+      "status": "published",
+      "module_page": "gbpusd.html",
+      "pip": 0.0001
     },
     {
       "symbol": "USDJPY.pro",

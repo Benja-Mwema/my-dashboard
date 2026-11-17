@@ -1,0 +1,11 @@
+{
+  "prefix_checks": 3,
+  "pending_entry": true,
+  "next_open_hint": true,
+  "gap_cancel": true,
+  "pending_not_scored": true,
+  "signals": 109,
+  "horizon_outcomes_exact": 218,
+  "first_hit_diagnostics_exact": 218,
+  "bar_duration_seconds": 1800
+}

@@ -4,12 +4,13 @@
    outcomes, reference prices, market timestamps or change model decisions. */
 (function(){
   const here=location.pathname.toLowerCase();
-  const selected=here.endsWith('/eurjpy.html')?'eurjpy':here.endsWith('/cadjpy.html')?'cadjpy':here.endsWith('/gbpjpy.html')?'gbpjpy'
+  const selected=here.endsWith('/gbpusd.html')?'gbpusd':here.endsWith('/eurjpy.html')?'eurjpy':here.endsWith('/cadjpy.html')?'cadjpy':here.endsWith('/gbpjpy.html')?'gbpjpy'
     :here.endsWith('/audcad.html')?'audcad'
     :here.endsWith('/ws30.html')?'ws30'
     :here.endsWith('/dax40.html')?'dax40'
     :(new URLSearchParams(location.search).get('asset')||'XAUUSD.pro')==='XAUUSD.pro'?'gold':'';
   const routes=[
+    {id:'gbpusd',label:'GBPUSD',symbol:'GBPUSD.pro',href:'gbpusd.html'},
     {id:'eurjpy',label:'EURJPY',symbol:'EURJPY.pro',href:'eurjpy.html'},
     {id:'cadjpy',label:'CADJPY',symbol:'CADJPY.pro',href:'cadjpy.html'},
     {id:'gold',label:'Gold',symbol:'XAUUSD.pro',href:'index.html?asset=XAUUSD.pro'},

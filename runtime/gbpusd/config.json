@@ -1,0 +1,16 @@
+{
+  "enabled": true,
+  "paper_only": true,
+  "broker_orders_enabled": false,
+  "timeframe": "M30",
+  "symbol": "GBPUSD.pro",
+  "pip": 0.0001,
+  "point": 1e-05,
+  "trade_tick_size": 1e-05,
+  "frozen_hashes": {
+    "engine.py": "be94fa82daa176ff15033b9e53d034142e6b79494d2b471520824a144e1987ec",
+    "reference/source.csv": "9228104426e1f04fd33c6ff73ac09f0b90767b4d226bb072eacbb114f4cfb910",
+    "reference/signals.csv": "1cf94b23cbee9fba3fdebedb7d6ab4bc13316e830a7f67ba835dd11aa34e304d",
+    "reference/research_protocol.json": "168a0c0a8e1575840b8c1944f891d89de658593b7c6ccde63e809136373c1cde"
+  }
+}
