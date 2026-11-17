@@ -1,0 +1,31 @@
+{
+  "name": "EURUSD M30 SELL pullback candidate E2-S v0.2",
+  "config_id": "F162",
+  "status": "research candidate; development-qualified; later consistency gate failed due Jul-Aug win rate and sample size",
+  "configuration": {
+    "family": "pullback",
+    "side": "SELL",
+    "trend": "ema200",
+    "wait_bars": 3,
+    "trigger": "ema10_reclaim",
+    "extension_cap": 1.0,
+    "body_min": 0.4,
+    "close_finish": 0.65,
+    "band_min": 0.25,
+    "band_max": 2.0,
+    "cooldown_bars": 12,
+    "id": "F162"
+  },
+  "state_contract": {
+    "trend": "EMA20 < EMA50 < EMA200; S20 < 0; S50 < 0; S200 <= 0; 0.25 <= abs(EMA20-EMA50)/ATR14 <= 2",
+    "touch": "High >= EMA20 and Close <= EMA50 within trend. Start only on a new touch run after a non-touch bar whose Close < its EMA20. Consecutive touches update last_touch; keep used flag.",
+    "confirmation": "While active and unused, at most 3 bars after latest touch: Close < Open; body >= 0.4 ATR; CL <= 0.35; Close < EMA10 and preceding Close >= preceding EMA10; 0 < (EMA20-Close)/ATR <= 1.0. Require 6 contiguous source bars.",
+    "deduplication": "First passing candle only per pullback episode; skip at least 12 subsequent bar positions after a signal (index distance >12). A native timestamp gap resets episode and cooldown. New touch run requires preceding non-touch and preceding close below EMA20.",
+    "expiry": "Invalidate when trend gate fails, when more than 3 bars after last touch, or on gap. Consumed episode cannot confirm again.",
+    "entry": "next contiguous M30 open; cancel observed gap; pending if absent. Cancellation consumes signal and cooldown.",
+    "outcome": "primary Close[i+12] from entry Open[i+1]; no stop loss, take profit, position size or live execution specified",
+    "indicator_init": "same EMA/ATR seeds as baseline, new EMA200 seeded at first source close; all normalized slopes use 3 transitions/ATR"
+  },
+  "frozen_selection_sha256": "3f698193c14a7b566f62e5026246d9128ab40b1976e7bc703bade4ec927649e2",
+  "source_sha256": "8786b91b3bcc7f2ed9d0ad2cab142271b03ec661f63bfad71834bef3e537c780"
+}

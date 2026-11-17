@@ -1,0 +1,16 @@
+{
+  "site/aurum-ui-v1.js": "0444d37b4617662f996112291d54a6d71b43620e2861d46dc82e1789c0021fcd",
+  "site/aurum-workspace-v2.js": "bd08e46edabc5b8d9c685cfcb6b95866e829a948186fcc3d7dce0aa442b53291",
+  "site/aurum-charts-v3.js": "618a6dbdf10d8d7958c5a06a393f368dc664180745b1642924ea94851b832100",
+  "site/assets.json": "01783bd48152851d4557f010dedd967229337639d8c9ec87acd7b92e61b89b79",
+  "backend/refresh_publish.py": "4c6b57a7d0992974e35aab35a351f918e8d1b4ed390662f39c30106cf760e7dc",
+  "backend/build_market_context.py": "541c32344e839157b03ea03dcc967b7afce5b8c1f9a18fd1f1b041173b1bc90f",
+  "site/audcad.html": "88714e4dd840029100a69f27512c7d7a909798e63d11099091f7d8326e84564f",
+  "site/cadjpy.html": "5008216b1d28a7098a85f97176af242a8b2e72499dece1798f4dd919451f5c62",
+  "site/dax40.html": "c933f9f2c4a963bcea535d21ec9db7604155116a73b47a6e502cccbb4045ce5c",
+  "site/eurjpy.html": "58279d6015bc3b20fe2ef954b3a3cdc51357280b3bfddc4a4abfbd095f3d2923",
+  "site/gbpjpy.html": "e341d66bffc7c37ca22608eff409779fb8da9f85375b21545e0d3923712cd7d5",
+  "site/gbpusd.html": "46b989983af4218550c7b766dde9adbeed05bed6d5b738b3dc7e2e14d5931295",
+  "site/index.html": "3eddaba3e62efbdad114f07a2b10baef4ef9a6e9dea74fef39ede5647caa634c",
+  "site/ws30.html": "f7427466c185cc2be0471199be4c2e262f708f551fb8e06edbbb8ead357c57fa"
+}

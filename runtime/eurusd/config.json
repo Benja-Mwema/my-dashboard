@@ -1,0 +1,12 @@
+{
+  "enabled": true,
+  "paper_only": true,
+  "broker_orders_enabled": false,
+  "timeframe": "M30",
+  "frozen_hashes": {
+    "engine.py": "a0bc9929593e28733d8257c6236199f10b9e7e706e4d9707cd7a4c36f1f47352",
+    "reference/source.csv": "a78d2f3aaf8e3d65dbdf4a69b5b1c3744f150b038b6c9b5a6bb9533d17c2e32e",
+    "reference/signals.csv": "f9bb3d3b5238a4916b69a6bfa82fb18263ffb299756a676da8a15af9aa6ff08b",
+    "reference/rule.json": "9ffbeb8c4f0c2eaff5cdc5f24e7664e271c31cd21587ff59c8a31fdcfd290db1"
+  }
+}

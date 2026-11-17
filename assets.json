@@ -32,11 +32,13 @@
       "category": "currencies",
       "digits": 5,
       "point": 1e-05,
-      "timeframe": "H1",
-      "snapshot": null,
-      "model_version": null,
-      "model_label": "No model published",
-      "status": "not_published"
+      "timeframe": "M30",
+      "snapshot": "eurusd-data.json",
+      "model_version": "EURUSD_M30_E2S_V0_2",
+      "model_label": "M30 SELL E2-S v0.2 \u00b7 Research candidate; later consistency gate failed",
+      "status": "published",
+      "module_page": "eurusd.html",
+      "pip": 0.0001
     },
     {
       "symbol": "GBPUSD.pro",
