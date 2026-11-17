@@ -1,0 +1,10 @@
+{
+  "repo/index.html": "505ffa52aab41353240b27268d844e64ff3b23c16df479b4e8943eb5d683d10a",
+  "repo/assets.json": "a9afecf2bd05528df6ae5f19a88ad6f04d6e1744c002310b5e98ae7c3b0e4ac4",
+  "repo/aurum-ui-v1.js": "75117f0f34450fb86ab1b51a58c73da5c04fd5c2dd5e62acdc06bff73d0af752",
+  "repo/aurum-ui-v1.css": "24679e72420104fd27a7e6edc89fa268ed9240ef7e313cc79d9dc610cc1e12fa",
+  "repo/aurum-workspace-v2.js": "942a0607b213931adc4898e7482d12d5d2fcab2954fa2908b94d36aa54ef442a",
+  "repo/aurum-charts-v3.js": "52a71130e57aa18f6aa559a91be2f8a68b229b3ade3514647ea82a41aa4a95f1",
+  "builders/refresh_publish.py": "f0912bb3947b1690aba368f06d36d71d99990ffc802d81a7dcdde951e698c819",
+  "builders/build_market_context.py": "ae5c7fcaea7b264c4e6c7b9acab80c00dd8e1ab98c30874beb3e0b42b140573b"
+}

@@ -1,0 +1,119 @@
+[
+  {
+    "page": "nas100",
+    "timeframe": "H1",
+    "grouped_routes": 13,
+    "charts": true,
+    "mobile_overflow": false,
+    "javascript_errors": [],
+    "candidate_checks": true
+  },
+  {
+    "page": "cac40",
+    "timeframe": "H1",
+    "grouped_routes": 13,
+    "charts": true,
+    "mobile_overflow": false,
+    "javascript_errors": [],
+    "candidate_checks": true
+  },
+  {
+    "page": "jpn225",
+    "timeframe": "H1",
+    "grouped_routes": 13,
+    "charts": true,
+    "mobile_overflow": false,
+    "javascript_errors": [],
+    "candidate_checks": true
+  },
+  {
+    "page": "aus200",
+    "timeframe": "H1",
+    "grouped_routes": 13,
+    "charts": true,
+    "mobile_overflow": false,
+    "javascript_errors": [],
+    "candidate_checks": true
+  },
+  {
+    "page": "index",
+    "timeframe": "H1",
+    "grouped_routes": 13,
+    "charts": true,
+    "mobile_overflow": false,
+    "javascript_errors": [],
+    "candidate_checks": false
+  },
+  {
+    "page": "ws30",
+    "timeframe": "H1",
+    "grouped_routes": 13,
+    "charts": true,
+    "mobile_overflow": false,
+    "javascript_errors": [],
+    "candidate_checks": false
+  },
+  {
+    "page": "dax40",
+    "timeframe": "H1",
+    "grouped_routes": 13,
+    "charts": true,
+    "mobile_overflow": false,
+    "javascript_errors": [],
+    "candidate_checks": false
+  },
+  {
+    "page": "eurusd",
+    "timeframe": "M30",
+    "grouped_routes": 13,
+    "charts": true,
+    "mobile_overflow": false,
+    "javascript_errors": [],
+    "candidate_checks": false
+  },
+  {
+    "page": "gbpusd",
+    "timeframe": "M30",
+    "grouped_routes": 13,
+    "charts": true,
+    "mobile_overflow": false,
+    "javascript_errors": [],
+    "candidate_checks": false
+  },
+  {
+    "page": "eurjpy",
+    "timeframe": "M30",
+    "grouped_routes": 13,
+    "charts": true,
+    "mobile_overflow": false,
+    "javascript_errors": [],
+    "candidate_checks": false
+  },
+  {
+    "page": "gbpjpy",
+    "timeframe": "H1",
+    "grouped_routes": 13,
+    "charts": true,
+    "mobile_overflow": false,
+    "javascript_errors": [],
+    "candidate_checks": false
+  },
+  {
+    "page": "cadjpy",
+    "timeframe": "H1",
+    "grouped_routes": 13,
+    "charts": true,
+    "mobile_overflow": false,
+    "javascript_errors": [],
+    "candidate_checks": false
+  },
+  {
+    "page": "audcad",
+    "timeframe": "H1",
+    "grouped_routes": 13,
+    "charts": true,
+    "mobile_overflow": false,
+    "javascript_errors": [],
+    "candidate_checks": false
+  }
+]

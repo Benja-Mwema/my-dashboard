@@ -1,0 +1,14 @@
+{
+  "release": "AURUM_FOUR_INDICES_20261117_1",
+  "model_hash": "ce30e1be275d649f34b5b13f6e5d41d89354523c12b4243c3d6f46d24e42f11a",
+  "archived_entries": 35,
+  "archived_outcome_profiles": 70,
+  "category_order": [
+    "metals",
+    "indices",
+    "currencies"
+  ],
+  "instrument_count": 13,
+  "validation_status": "RESEARCH_CANDIDATES_INDEPENDENT_VALIDATION_PENDING",
+  "created_at": "2026-11-17T18:36:36.197981+00:00"
+}

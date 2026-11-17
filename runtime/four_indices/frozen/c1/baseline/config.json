@@ -1,0 +1,12 @@
+{
+  "name": "WS30-N01", "version": "0.1", "direction": "BUY",
+  "source_sha256": "a2b10adb5a02e135e8ab0ebd213542c9000a8fbd64acfad169de946def297947",
+  "failure_window_H1": 24, "second_break_window_H1": 24,
+  "ATR_period": 14, "ATR_anchor": "completed signal H1",
+  "stop_ATR": 3, "targets_ATR": [2,3], "horizon_H1": 24,
+  "BE_threshold_ATR": 1, "BE_consecutive_H1_closes": 2,
+  "management_profiles": ["BE_H1_2C", "NO_BE"],
+  "point_size": 0.1, "one_seed_per_daily_reference": true,
+  "overlapping_reference_episodes_allowed": true,
+  "discovery_start": "2026-11-06 00:00:00", "discovery_end": "2026-11-10 00:00:00"
+}

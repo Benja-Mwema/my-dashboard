@@ -1,0 +1,16 @@
+{
+  "depth_atr": 1.0,
+  "buffer_atr": 0.1,
+  "retest_band_atr": 0.5,
+  "reclaim_window_h1": 24,
+  "defense_window_h1": 8,
+  "resume_window_h1": 4,
+  "breakout_window_h1": 24,
+  "outcome_window_h1": 24,
+  "favorable_atr": 2.0,
+  "adverse_atr": 1.0,
+  "bootstrap_iterations": 10000,
+  "bootstrap_seed": 20261114,
+  "spec_sha256": "af1749db7ef618113b7359978fa26ebacdecaedc2de1b3963490725266ed5a66",
+  "source_sha256": "a2b10adb5a02e135e8ab0ebd213542c9000a8fbd64acfad169de946def297947"
+}

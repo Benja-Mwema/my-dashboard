@@ -176,3 +176,10 @@ body.aurum-ui-v1 header:not(.top) .brand{color:var(--aurum-text)}
   body.aurum-ui-v1 .aurum-topnav-link{padding:8px 10px;font-size:11px}
   body.aurum-ui-v1 .filters{gap:9px}
 }
+
+/* Category order: Metals, Indices, Currencies. */
+.aurum-grouped-nav{display:grid;grid-template-columns:max-content minmax(0,1fr) minmax(0,1fr);align-items:start;gap:18px}
+.aurum-nav-group{min-width:0}.aurum-nav-category{display:block;font-size:10px;color:#9eadae;text-transform:uppercase;letter-spacing:1.6px;margin:2px 0 7px}
+.aurum-grouped-nav .aurum-topnav-links{flex-wrap:wrap;overflow:visible;gap:6px}
+@media(max-width:1100px){.aurum-grouped-nav{grid-template-columns:1fr;gap:9px}.aurum-nav-group{display:grid;grid-template-columns:88px minmax(0,1fr);align-items:start}.aurum-nav-category{padding-top:10px}}
+@media(max-width:540px){.aurum-nav-group{grid-template-columns:1fr}.aurum-nav-category{padding-top:2px;margin-bottom:5px}.aurum-grouped-nav .aurum-topnav-link{padding:7px 9px;font-size:11px}}

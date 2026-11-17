@@ -1,57 +1,21 @@
 'use strict';
-/* AURUM Unified Dashboard Shell v1.0 — presentation only.
-   Shared navigation. Deliberately does not read price JSON, indicators,
-   outcomes, reference prices, market timestamps or change model decisions. */
-(function(){
-  const here=location.pathname.toLowerCase();
-  const selected=here.endsWith('/eurusd.html')?'eurusd':here.endsWith('/gbpusd.html')?'gbpusd':here.endsWith('/eurjpy.html')?'eurjpy':here.endsWith('/cadjpy.html')?'cadjpy':here.endsWith('/gbpjpy.html')?'gbpjpy'
-    :here.endsWith('/audcad.html')?'audcad'
-    :here.endsWith('/ws30.html')?'ws30'
-    :here.endsWith('/dax40.html')?'dax40'
-    :(new URLSearchParams(location.search).get('asset')||'XAUUSD.pro')==='XAUUSD.pro'?'gold':'';
-  const routes=[
-    {id:'eurusd',label:'EURUSD',symbol:'EURUSD.pro',href:'eurusd.html'},
-    {id:'gbpusd',label:'GBPUSD',symbol:'GBPUSD.pro',href:'gbpusd.html'},
-    {id:'eurjpy',label:'EURJPY',symbol:'EURJPY.pro',href:'eurjpy.html'},
-    {id:'cadjpy',label:'CADJPY',symbol:'CADJPY.pro',href:'cadjpy.html'},
-    {id:'gold',label:'Gold',symbol:'XAUUSD.pro',href:'index.html?asset=XAUUSD.pro'},
-    {id:'gbpjpy',label:'GBPJPY',symbol:'GBPJPY.pro',href:'gbpjpy.html'},
-    {id:'audcad',label:'AUDCAD',symbol:'AUDCAD.pro',href:'audcad.html'},
-    {id:'ws30',label:'WS30',symbol:'WS30.pro',href:'ws30.html'},
-    {id:'dax40',label:'DAX40',symbol:'DAX40.pro',href:'dax40.html'}
-  ];
-  const mount=()=>{
-    const header=document.querySelector('body.aurum-ui-v1 > header');
-    if(!header || document.querySelector('.aurum-topnav'))return;
-    const nav=document.createElement('nav');
-    nav.className='aurum-topnav';
-    nav.setAttribute('aria-label','AURUM published instrument dashboards');
-    const inner=document.createElement('div');
-    inner.className='aurum-topnav-inner';
-    const title=document.createElement('span');
-    title.className='aurum-topnav-title';
-    title.textContent='Published research';
-    inner.append(title);
-    const links=document.createElement('div');
-    links.className='aurum-topnav-links';
-    for(const route of routes){
-      const a=document.createElement('a');
-      a.className='aurum-topnav-link';
-      a.href=route.href;
-      a.textContent=route.label;
-      a.dataset.asset=route.symbol;
-      a.title=route.symbol+' — research module';
-      if(route.id===selected){a.setAttribute('aria-current','page');a.title+=' — current page';}
-      links.append(a);
-    }
-    inner.append(links);
-    const suffix=document.createElement('span');
-    suffix.className='aurum-topnav-suffix';
-    suffix.textContent='Research signals · not executed trades';
-    inner.append(suffix);
-    nav.append(inner);
-    header.insertAdjacentElement('afterend',nav);
-  };
-  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount,{once:true});
-  else mount();
+/* Grouped presentation navigation. No changes to trading rules or datasets. */
+(()=>{
+const groups=[['metals','Metals'],['indices','Indices'],['currencies','Currencies']];
+const routes=[{"id": "gold", "label": "Gold", "symbol": "XAUUSD.pro", "href": "index.html?asset=XAUUSD.pro", "category": "metals"}, {"id": "ws30", "label": "WS30", "symbol": "WS30.pro", "href": "ws30.html", "category": "indices"}, {"id": "dax40", "label": "DAX40", "symbol": "DAX40.pro", "href": "dax40.html", "category": "indices"}, {"id": "nas100", "label": "NAS100", "symbol": "NAS100.pro", "href": "nas100.html", "category": "indices"}, {"id": "cac40", "label": "CAC40", "symbol": "CAC40.pro", "href": "cac40.html", "category": "indices"}, {"id": "jpn225", "label": "JPN225", "symbol": "JPN225.pro", "href": "jpn225.html", "category": "indices"}, {"id": "aus200", "label": "AUS200", "symbol": "AUS200.pro", "href": "aus200.html", "category": "indices"}, {"id": "eurusd", "label": "EURUSD", "symbol": "EURUSD.pro", "href": "eurusd.html", "category": "currencies"}, {"id": "gbpusd", "label": "GBPUSD", "symbol": "GBPUSD.pro", "href": "gbpusd.html", "category": "currencies"}, {"id": "eurjpy", "label": "EURJPY", "symbol": "EURJPY.pro", "href": "eurjpy.html", "category": "currencies"}, {"id": "gbpjpy", "label": "GBPJPY", "symbol": "GBPJPY.pro", "href": "gbpjpy.html", "category": "currencies"}, {"id": "cadjpy", "label": "CADJPY", "symbol": "CADJPY.pro", "href": "cadjpy.html", "category": "currencies"}, {"id": "audcad", "label": "AUDCAD", "symbol": "AUDCAD.pro", "href": "audcad.html", "category": "currencies"}];
+const selected=routes.find(r=>location.pathname.endsWith('/'+r.href.split('?')[0]))?.id||((new URLSearchParams(location.search).get('asset')||'XAUUSD.pro')==='XAUUSD.pro'?'gold':'');
+function mount(){
+ const header=document.querySelector('body.aurum-ui-v1 > header');if(!header||document.querySelector('.aurum-topnav'))return;
+ const nav=document.createElement('nav');nav.className='aurum-topnav';nav.setAttribute('aria-label','AURUM published instrument dashboards');
+ const inner=document.createElement('div');inner.className='aurum-topnav-inner aurum-grouped-nav';
+ for(const [id,label] of groups){const group=document.createElement('section');group.className='aurum-nav-group';group.dataset.category=id;group.setAttribute('aria-label',label);const title=document.createElement('span');title.className='aurum-nav-category';title.textContent=label;const links=document.createElement('div');links.className='aurum-topnav-links';
+  for(const r of routes.filter(r=>r.category===id)){const a=document.createElement('a');a.className='aurum-topnav-link';a.href=r.href;a.textContent=r.label;a.dataset.asset=r.symbol;a.title=r.symbol+' — research module';if(r.id===selected)a.setAttribute('aria-current','page');links.append(a);}
+  group.append(title,links);inner.append(group);
+ }
+ nav.append(inner);header.after(nav);
+ // Group published instrument selectors consistently across native pages.
+ const sortPicker=()=>{const picker=document.getElementById('instrument');if(!picker||picker.querySelector('optgroup'))return;const options=[...picker.options];if(!options.length||options.every(o=>o.value.endsWith('.pro')))return;const selectedValue=picker.value;const fragments=[];for(const [id,label] of groups){const group=document.createElement('optgroup');group.label=label;for(const r of routes.filter(r=>r.category===id)){const option=options.find(o=>o.value===r.href||o.value===r.href.split('?')[0]);if(option)group.append(option);}if(group.children.length)fragments.push(group);}if(fragments.length){picker.replaceChildren(...fragments);picker.value=selectedValue;}};
+ const picker=document.getElementById('instrument');if(picker)new MutationObserver(sortPicker).observe(picker,{childList:true});sortPicker();
+}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount,{once:true});else mount();
 })();
