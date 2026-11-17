@@ -58,7 +58,7 @@
     const chartTime = source?.forming_open_label;
     const chartAge = (Date.now() - Date.parse(source?.observed_at_utc)) / 60000;
     const chartLabel = source?.state === 'VERIFIED_NATIVE_CONTEXT' && state.currentContext ?
-      [chartTime, 'broker', 'forming', source.forming_origin?.startsWith('TICK') ? 'from ticks' : '', chartAge > 25 ? 'stale' : '', state.refreshFailed ? 'refresh failed' : ''].filter(Boolean).join(' · ') :
+      [chartTime, 'broker', source.timeframe+' forming', source.forming_origin?.includes('TICK') ? 'from ticks' : '', chartAge > 25 ? 'stale' : '', state.refreshFailed ? 'refresh failed' : ''].filter(Boolean).join(' · ') :
       (source?.reason ? 'Unavailable · ' + source.reason : 'Awaiting verified chart data');
     setText('avChartTime', chartLabel);
     const end = d?.latest_completed_h1 || d?.latest_completed_m30 || d?.data_asof ||
@@ -66,7 +66,8 @@
     const pub = d?.health?.refreshed_at || d?.health?.snapshot_generated_utc || d?.generated_at || d?.meta?.generated_at_utc;
     const stale = pub && Date.now() - Date.parse(pub) > 35*60000;
     const sourceState = d?.health?.state || d?.data_quality_state;
-    const lag = chartTime && end && String(end).slice(0,19).replace('T',' ') < chartTime;
+    const signalReference = source?.source_forming_open_label || chartTime;
+    const lag = signalReference && end && String(end).slice(0,19).replace('T',' ') < signalReference;
     setText('avSignalTime', d ? [end || 'Time unavailable', 'broker', tf + ' close', stale ? 'stale publication' : '', sourceState && sourceState !== 'OK' ? sourceState.replaceAll('_',' ').toLowerCase() : lag ? 'behind chart' : ''].filter(Boolean).join(' · ') : 'Signal data unavailable');
     const staleGold = kind() === 'gold' && d && Date.now()-Date.parse(d.quote_observed_at || d.generated_at)>90*60000;
     let stageText = d ? modelText(d) : 'Awaiting model data';
