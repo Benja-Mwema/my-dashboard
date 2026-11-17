@@ -11,7 +11,7 @@
       "timeframe": "H1",
       "snapshot": "cluster-data.json",
       "model_version": "AURUM_CLUSTER_H1_P1_V2_FINAL",
-      "model_label": "H1-P1 v2.0 · FINAL",
+      "model_label": "H1-P1 v2.0 \u00b7 FINAL",
       "status": "published"
     },
     {
@@ -71,7 +71,7 @@
       "timeframe": "H1",
       "snapshot": "gbpjpy-data.json",
       "model_version": "GBPJPY_H1_R1_v1.0",
-      "model_label": "H1 R1 v1.0 · Frozen research",
+      "model_label": "H1 R1 v1.0 \u00b7 Frozen research",
       "status": "published",
       "module_page": "gbpjpy.html",
       "pip": 0.01
@@ -145,7 +145,7 @@
       "timeframe": "H1",
       "snapshot": "ws30-data.json",
       "model_version": "WS30_4_FROZEN_RULES_V1_0",
-      "model_label": "H01+C1+Combined+D04 v1.0 · Frozen research",
+      "model_label": "H01+C1+Combined+D04 v1.0 \u00b7 Frozen research",
       "status": "published",
       "module_page": "ws30.html"
     },
@@ -184,7 +184,7 @@
       "snapshot": "audcad-data.json",
       "module_page": "audcad.html",
       "model_version": "AUDCAD_H1_BUY_SELL_V1_0",
-      "model_label": "H1 BUY / SELL v1.0 · Frozen research",
+      "model_label": "H1 BUY / SELL v1.0 \u00b7 Frozen research",
       "status": "published"
     },
     {
@@ -197,7 +197,21 @@
       "snapshot": "dax40-data.json",
       "module_page": "dax40.html",
       "model_version": "DAX40-DASHBOARD-1.0",
-      "model_label": "Six frozen rules · Market formations v1.0",
+      "model_label": "Six frozen rules \u00b7 Market formations v1.0",
+      "status": "published"
+    },
+    {
+      "symbol": "CADJPY.pro",
+      "name": "Canadian Dollar / Yen",
+      "category": "currencies",
+      "digits": 3,
+      "point": 0.001,
+      "pip": 0.01,
+      "timeframe": "H1",
+      "snapshot": "cadjpy-data.json",
+      "module_page": "cadjpy.html",
+      "model_version": "CADJPY_H1_E1_V0_1",
+      "model_label": "E1 H1 BUY / SELL v0.1 \u00b7 Research",
       "status": "published"
     }
   ]

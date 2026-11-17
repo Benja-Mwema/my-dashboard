@@ -1,0 +1,28 @@
+{
+  "version": "CADJPY_H1_E1_V0_1",
+  "convergence_max_atr": 0.5,
+  "buy_persistence": [
+    2,
+    8
+  ],
+  "sell_persistence": [
+    4,
+    16
+  ],
+  "source": "FX EMA Convergence Formula Transfer Guide v1.0",
+  "timeframe_adaptation": "M30 to H1",
+  "horizons": [
+    12,
+    24
+  ],
+  "one_signal_per_episode": true,
+  "entry": "Next contiguous H1 open",
+  "adverse_assessment_pips": 35,
+  "protective_stop": null,
+  "cost_stress_pips": 2,
+  "frozen_hashes": {
+    "engine.py": "1a971ecbd035095d900e18a46088cc1bc5a9826a25814700ba09d92156038ef5",
+    "reference/source.csv": "32d578798b5704b8f850e6dbd0e1fc678ecb3fc58b2b87eabfc122de26995ce5",
+    "reference/signals.csv": "fea398b70049197aaa4bfe6e2d65cb8c9e8f6a140d20e4dba603415e5be11402"
+  }
+}
