@@ -1,0 +1,30 @@
+[
+  {
+    "symbol": "nas100",
+    "direct_return_is_valid_JSON": true,
+    "file_and_return_match": true,
+    "unavailable_warmup_is_null": true,
+    "archived_profiles_exact": 14
+  },
+  {
+    "symbol": "cac40",
+    "direct_return_is_valid_JSON": true,
+    "file_and_return_match": true,
+    "unavailable_warmup_is_null": true,
+    "archived_profiles_exact": 16
+  },
+  {
+    "symbol": "jpn225",
+    "direct_return_is_valid_JSON": true,
+    "file_and_return_match": true,
+    "unavailable_warmup_is_null": true,
+    "archived_profiles_exact": 16
+  },
+  {
+    "symbol": "aus200",
+    "direct_return_is_valid_JSON": true,
+    "file_and_return_match": true,
+    "unavailable_warmup_is_null": true,
+    "archived_profiles_exact": 24
+  }
+]

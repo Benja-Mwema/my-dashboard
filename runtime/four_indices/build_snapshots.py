@@ -151,6 +151,9 @@ def build(stem,offline=False,prefix_checks=False):
    checks.append(cut)
   validation['causal_prefix_checks']=checks
  out=dict(version=c['version'],symbol=c['symbol'],point=.1,digits=1,generated_at=now,latest_completed_h1=str(h.end.iloc[-1]),quote_broker_time=label(quote) if quote else None,candles=candles,entries=entries,validation=validation,health=dict(state='REPLAY' if offline else 'SOURCE_LAG' if quote-epoch(h.end.iloc[-1])>3600 else 'OK',refreshed_at=now,last_confirmed_broker_H1=str(h.end.iloc[-1])),meta=dict(timeframe='H1',paper_only=True,broker_orders_enabled=False,validation_status='RESEARCH_CANDIDATE_INDEPENDENT_VALIDATION_PENDING',research_cutoff=str(cutoff),model_hash=CONTRACT['model_hash'],candidate=c,management=CONTRACT['management'],clock='Native broker labels; historical EAT conversion unverified'),current=dict(ema_order='BULLISH' if h.ema10.iloc[-1]>h.ema20.iloc[-1]>h.ema50.iloc[-1] else 'BEARISH' if h.ema10.iloc[-1]<h.ema20.iloc[-1]<h.ema50.iloc[-1] else 'MIXED'))
+ # The scheduler consumes this return value directly; normalize unavailable
+ # warm-up indicators here as well as in the on-disk JSON writer.
+ out=clean(out)
  atomic(ROOT/'site'/(stem+'-data.json'),out)
  if offline:atomic(ROOT/'site'/(stem+'-replay.json'),out)
  else:atomic(seen_path,seen)

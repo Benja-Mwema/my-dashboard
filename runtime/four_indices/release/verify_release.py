@@ -7,6 +7,9 @@ def fetch(name):
   return response.read()
 def main():
  receipt=json.loads((ROOT/'deployment_receipt.json').read_text())
+ correction=ROOT/'runtime_correction_receipt.json'
+ if correction.exists():
+  fixed=json.loads(correction.read_text());receipt['files'].update(fixed['files']);receipt['commit']=fixed['commit']
  for attempt in range(25):
   try:
    marker=json.loads(fetch('four-indices-release.json'))

@@ -37,7 +37,7 @@ def main():
   for p in REPO.glob('*.html'):
    current=target.get(p,p.read_bytes()).decode('utf-8-sig');changed=bust(current).encode()
    if changed!=p.read_bytes() or p in target:target[p]=changed
-  for p in (ROOT/'site').glob('*.html'):target[REPO/p.name]=bust(p.read_text()).encode()
+  for p in (ROOT/'site').glob('*.html'):target[REPO/p.name]=bust(p.read_text(encoding='utf-8-sig')).encode('utf-8')
   # Runtime source is versioned; private native-bar caches remain on the workstation.
   runtime=ROOT/'runtime'
   for p in runtime.rglob('*'):

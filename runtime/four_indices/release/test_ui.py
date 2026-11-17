@@ -26,6 +26,8 @@ def main(base=None):
    assert timeframe in page.locator('.ac-tag').inner_text()
    assert page.evaluate('(s)=>AurumCharts.getBars().every(b=>b.end-b.t===s)',1800 if timeframe=='M30' else 3600)
    if name in CANDIDATES:
+    contract=json.loads((ROOT/'runtime/candidates.json').read_text(encoding='utf-8'))['candidates'][name]
+    assert page.locator('.heading .eyebrow').inner_text()==contract['formation'].upper(),(name,'formation text encoding')
     expected=json.loads((ROOT/'site'/(name+'-replay.json')).read_text(encoding='utf-8'))
     page.wait_for_function('AurumCharts.getState().currentContext && AurumCharts.getState().forming',timeout=30000)
     assert page.locator('#instrument option').count()==13
