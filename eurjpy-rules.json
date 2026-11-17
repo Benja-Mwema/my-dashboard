@@ -1,0 +1,30 @@
+{
+  "version": "EURJPY_M30_E1_V0_1",
+  "source_guide": "FX EMA Convergence Formula Transfer Guide v1.0",
+  "timeframe": "M30",
+  "entry": "next contiguous native open",
+  "primary_horizon": 12,
+  "secondary_horizon": 24,
+  "convergence_max_atr": 0.5,
+  "BUY_persistence": [
+    2,
+    8
+  ],
+  "SELL_persistence": [
+    4,
+    16
+  ],
+  "rules_unchanged": true,
+  "protective_orders": null,
+  "paper_only": true,
+  "broker_orders_enabled": false,
+  "baseline_entries": 119,
+  "baseline_BUY": 62,
+  "baseline_SELL": 57,
+  "baseline_primary_gross_positive": 66,
+  "baseline_primary_positive_after_2pip": 59,
+  "last_completed_native": "2026-11-17 13:30:00",
+  "baseline_status": "Research baseline; monthly >80% objective unmet",
+  "adverse_35_filter": "Optional retrospective display filter only; not part of E1",
+  "documentation": "runtime/eurjpy/DEPLOYMENT.md"
+}

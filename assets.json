@@ -213,6 +213,20 @@
       "model_version": "CADJPY_H1_E1_V0_1",
       "model_label": "E1 H1 BUY / SELL v0.1 \u00b7 Research",
       "status": "published"
+    },
+    {
+      "symbol": "EURJPY.pro",
+      "name": "Euro / Japanese yen",
+      "category": "currencies",
+      "digits": 3,
+      "point": 0.001,
+      "pip": 0.01,
+      "timeframe": "M30",
+      "snapshot": "eurjpy-data.json",
+      "model_version": "EURJPY_M30_E1_V0_1",
+      "model_label": "M30 E1 v0.1 \u00b7 Research baseline",
+      "status": "published",
+      "module_page": "eurjpy.html"
     }
   ]
 }
