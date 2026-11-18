@@ -262,7 +262,7 @@
       "status": "published",
       "pip": 0.0001,
       "module_page": "usdchf.html",
-      "email_enabled": false
+      "email_enabled": true
     },
     {
       "symbol": "USDJPY.pro",
@@ -277,7 +277,7 @@
       "status": "published",
       "module_page": "usdjpy.html",
       "pip": 0.01,
-      "email_enabled": false
+      "email_enabled": true
     },
     {
       "symbol": "EURAUD.pro",
@@ -292,7 +292,7 @@
       "snapshot": "euraud-data.json",
       "model_version": "FX_H1_EMA_CROSS_V0_2",
       "model_label": "Original rule \u00b7 research comparison",
-      "email_enabled": false
+      "email_enabled": true
     },
     {
       "symbol": "EURNZD.pro",
@@ -307,7 +307,7 @@
       "snapshot": "eurnzd-data.json",
       "model_version": "FX_H1_EMA_CROSS_V0_2",
       "model_label": "Paper candidate \u00b7 shorter cluster",
-      "email_enabled": false
+      "email_enabled": true
     },
     {
       "symbol": "AUDCHF.pro",
@@ -322,7 +322,7 @@
       "snapshot": "audchf-data.json",
       "model_version": "FX_H1_EMA_CROSS_V0_2",
       "model_label": "Experimental paper comparison \u00b7 tighter cluster",
-      "email_enabled": false
+      "email_enabled": true
     }
   ],
   "category_order": [
