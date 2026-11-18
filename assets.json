@@ -268,10 +268,13 @@
       "digits": 3,
       "point": 0.001,
       "timeframe": "H1",
-      "snapshot": null,
-      "model_version": null,
-      "model_label": "No model published",
-      "status": "not_published"
+      "snapshot": "usdjpy-data.json",
+      "model_version": "USDJPY_H1_E1_v0.2",
+      "model_label": "H1 E1 v0.2 \u00b7 Frozen research; validation pending",
+      "status": "published",
+      "module_page": "usdjpy.html",
+      "pip": 0.01,
+      "email_enabled": false
     }
   ],
   "category_order": [

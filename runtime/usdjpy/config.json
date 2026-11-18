@@ -1,0 +1,7 @@
+{
+  "enabled": true,
+  "paper_only": true,
+  "broker_orders_enabled": false,
+  "formula_id": "USDJPY_H1_E1_v0.2",
+  "publication": "AURUM dashboard research only"
+}

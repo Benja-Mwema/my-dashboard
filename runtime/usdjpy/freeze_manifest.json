@@ -1,0 +1,14 @@
+{
+  "formula_id": "USDJPY_H1_E1_v0.2",
+  "status": "FROZEN_RESEARCH_BASELINE",
+  "frozen_on": "2026-11-18",
+  "authorization": "freeze and deploy",
+  "files": {
+    "formula.py": "ce0cc5b1d13ab318164e191ab5457ff57f93c878833edf45d4f5737600d71dd9",
+    "formula_config.json": "eaae190c79ae307605f37450a770dc847f1d61f47e80e2a13bfdbd13371b0acb",
+    "build_snapshot.py": "8ca9029e3c555d4fc0740df737cb96885d482a566ee4d2ea308f58d4a2313689",
+    "FROZEN_RULES.md": "f0cf73c47769663ae0f45245a9bbd919754989fa9c4f97ba9ff25f0863e7e072",
+    "reference/native_source.json": "1113f6c2c672877cfdaddc45f114e1a4cf0fe36e98eba309815fb9c31b5969ac",
+    "reference/formations.csv": "ef00bb0da296723371ccae09cb000e87bb702c197aa6db9f42788b946ed72b1f"
+  }
+}

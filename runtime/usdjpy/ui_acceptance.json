@@ -1,0 +1,24 @@
+[
+  {
+    "width": 1440,
+    "formations": 55,
+    "buy_filter": 34,
+    "inspect": true,
+    "pan": true,
+    "audit": true,
+    "replay_excludes_forming": true,
+    "mobile_overflow": false,
+    "javascript_errors": []
+  },
+  {
+    "width": 390,
+    "formations": 55,
+    "buy_filter": 34,
+    "inspect": true,
+    "pan": true,
+    "audit": true,
+    "replay_excludes_forming": true,
+    "mobile_overflow": false,
+    "javascript_errors": []
+  }
+]

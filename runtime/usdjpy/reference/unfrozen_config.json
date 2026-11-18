@@ -1,0 +1,21 @@
+{
+  "formula_id": "USDJPY_H1_E1_v0.2",
+  "status": "UNFROZEN_DEVELOPMENT",
+  "frozen": false,
+  "editable": true,
+  "approved_for_live_execution": false,
+  "parent_formula": "USDJPY_M30_E1_v0.1",
+  "authorization": "User requested H1 EMA10/20/50, extraction and unfreezing on 18 November 2026.",
+  "symbol": "USDJPY.pro",
+  "timeframe": "H1",
+  "bar_seconds": 3600,
+  "ema_periods": [10, 20, 50],
+  "atr_period": 14,
+  "cluster_max_width_atr": 0.5,
+  "buy_cluster_bars": [2, 8],
+  "sell_cluster_bars": [4, 16],
+  "slope_lag_bars": 3,
+  "progression_min_count": 2,
+  "analysis_start_native_label": "2026-01-01",
+  "parameters_status": "Inherited bar counts, provisional on H1; not recalibrated or performance validated."
+}
