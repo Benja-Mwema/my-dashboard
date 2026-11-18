@@ -15,6 +15,19 @@
       "status": "published"
     },
     {
+      "symbol": "XAUEUR.pro",
+      "name": "Gold in euro",
+      "category": "metals",
+      "digits": 2,
+      "point": 0.01,
+      "timeframe": "H1",
+      "snapshot": "xaueur-data.json",
+      "module_page": "xaueur.html",
+      "model_version": "XAUEUR_H1_P1_V2_BASELINE",
+      "model_label": "H1-P1 v2.0 \u00b7 Research baseline",
+      "status": "published"
+    },
+    {
       "symbol": "XAGUSD.pro",
       "name": "Silver",
       "category": "metals",

@@ -69,7 +69,7 @@
     const signalReference = source?.source_forming_open_label || chartTime;
     const lag = signalReference && end && String(end).slice(0,19).replace('T',' ') < signalReference;
     setText('avSignalTime', d ? [end || 'Time unavailable', 'broker', tf + ' close', stale ? 'stale publication' : '', sourceState && sourceState !== 'OK' ? sourceState.replaceAll('_',' ').toLowerCase() : lag ? 'behind chart' : ''].filter(Boolean).join(' · ') : 'Signal data unavailable');
-    const staleGold = kind() === 'gold' && d && Date.now()-Date.parse(d.quote_observed_at || d.generated_at)>90*60000;
+    const staleGold = ['gold','xaueur'].includes(kind()) && d && Date.now()-Date.parse(d.quote_observed_at || d.generated_at)>90*60000;
     let stageText = d ? modelText(d) : 'Awaiting model data';
     if(staleGold) stageText='Current projection withheld · source stale';
     const r = lastRecord;

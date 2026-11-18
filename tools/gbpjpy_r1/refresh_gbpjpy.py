@@ -19,7 +19,7 @@ def run(watch=False):
         if len(matches)!=1:raise RuntimeError('Ambiguous broker mapping: '+repr(matches))
         symbol=matches[0]
     if not mt5.symbol_select(symbol,True):raise RuntimeError('Cannot select GBPJPY')
-    frozen=json.loads((ROOT/'frozen_bars.json').read_text());saved=ROOT/'observed_touches.json';events=json.loads(saved.read_text()) if saved.exists() else {}
+    frozen=json.loads((ROOT/'frozen_bars.json').read_text(encoding='utf-8-sig'));saved=ROOT/'observed_touches.json';events=json.loads(saved.read_text(encoding='utf-8-sig')) if saved.exists() else {}
     cursor=None;lock=ROOT/'observer.lock';lastsave=0;d=None
     if watch:
         fd=os.open(lock,os.O_CREAT|os.O_EXCL|os.O_WRONLY);os.write(fd,str(os.getpid()).encode());os.close(fd)
