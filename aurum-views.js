@@ -39,6 +39,7 @@
   }
   function modelText(d) {
     const stage = kind() === 'gbpjpy' ? d.candidate : d.current;
+    if(kind()==='usdjpy')return (stage?.converged?'EMA10/20/50 converged':'Outside EMA convergence')+' · '+(stage?.ema_order||'ordering unavailable')+' · confirmation requires all E1 gates';
     if (stage?.state) return [stage.direction, stage.state, stage.reason].filter(Boolean).join(' · ');
     if (d.market?.formation?.formation) return 'Daily market context · ' + d.market.formation.formation + ' · ' + d.market.formation.sequence + ' · ' + d.market.candle_date;
     if (kind() === 'ws30' && d.health?.no_accepted_prospective_observations) return 'Paper observer · no accepted forward entries in this snapshot';

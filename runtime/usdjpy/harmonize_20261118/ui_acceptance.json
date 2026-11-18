@@ -1,0 +1,98 @@
+[
+  {
+    "width": 1440,
+    "shared_chart": true,
+    "indicator_parity": true,
+    "pan_zoom_layers": true,
+    "candle_inspection": true,
+    "entry_evidence": true,
+    "svg_export": true,
+    "snapshot_unchanged": true,
+    "frozen_replay": 55,
+    "no_overflow": true,
+    "errors": []
+  },
+  {
+    "width": 390,
+    "shared_chart": true,
+    "indicator_parity": true,
+    "pan_zoom_layers": true,
+    "candle_inspection": true,
+    "entry_evidence": true,
+    "svg_export": true,
+    "snapshot_unchanged": true,
+    "frozen_replay": 55,
+    "no_overflow": true,
+    "errors": []
+  },
+  {
+    "route": "index",
+    "shared_chart_loaded": true,
+    "errors": []
+  },
+  {
+    "route": "xaueur",
+    "shared_chart_loaded": true,
+    "errors": []
+  },
+  {
+    "route": "gbpjpy",
+    "shared_chart_loaded": true,
+    "errors": []
+  },
+  {
+    "route": "audcad",
+    "shared_chart_loaded": true,
+    "errors": []
+  },
+  {
+    "route": "ws30",
+    "shared_chart_loaded": true,
+    "errors": []
+  },
+  {
+    "route": "dax40",
+    "shared_chart_loaded": true,
+    "errors": []
+  },
+  {
+    "route": "cadjpy",
+    "shared_chart_loaded": true,
+    "errors": []
+  },
+  {
+    "route": "eurjpy",
+    "shared_chart_loaded": true,
+    "errors": []
+  },
+  {
+    "route": "gbpusd",
+    "shared_chart_loaded": true,
+    "errors": []
+  },
+  {
+    "route": "eurusd",
+    "shared_chart_loaded": true,
+    "errors": []
+  },
+  {
+    "route": "nas100",
+    "shared_chart_loaded": true,
+    "errors": []
+  },
+  {
+    "route": "cac40",
+    "shared_chart_loaded": true,
+    "errors": []
+  },
+  {
+    "route": "jpn225",
+    "shared_chart_loaded": true,
+    "errors": []
+  },
+  {
+    "route": "aus200",
+    "shared_chart_loaded": true,
+    "errors": []
+  }
+]
