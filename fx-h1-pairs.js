@@ -75,7 +75,7 @@ function applyRule() {
 async function load(){
   const seq=++sequence, name=$('dataset').value; $('reload').disabled=true;
   try {
-    const response=await fetch(name+'?t='+Date.now(),{cache:'no-store'});
+    const response=await fetch(name,{cache:'no-cache'});
     if(!response.ok)throw Error('Snapshot unavailable');
     const payload=await response.json(); if(seq!==sequence)return;
     if(payload.symbol!==symbol||payload.version!=='FX_H1_EMA_CROSS_V0_2'||payload.meta.timeframe!=='H1'||payload.meta.broker_orders_enabled!==false)throw Error('Snapshot identity mismatch');
