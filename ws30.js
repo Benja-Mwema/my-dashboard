@@ -210,7 +210,7 @@ function months(){
 }
 async function loadIntrabar(){
  if(intrabar)return;
- const r=await fetch('ws30-intrabar.json?t='+Date.now(),{cache:'no-store'});
+ const r=await fetch('ws30-intrabar.json',{cache:'no-cache'});
  if(!r.ok)throw Error('Intrabar evidence unavailable HTTP '+r.status);
  const v=await r.json();
  if(v.symbol!=='WS30.pro'||v.total_cases!==189||
@@ -220,7 +220,7 @@ async function loadIntrabar(){
  intrabar=v;
 }
 async function load(){
- const q=await fetch('ws30-data.json?t='+Date.now(),{cache:'no-store'});
+ const q=await fetch('ws30-data.json',{cache:'no-cache'});
  if(!q.ok)throw Error('WS30 data missing HTTP '+q.status);
  data=await q.json();
  if(data.meta?.symbol!=='WS30.pro'||data.meta?.market_clock!=='NATIVE_BROKER_LABELS_NO_CONVERSION'
@@ -443,7 +443,7 @@ async function refreshFeatures(){
  const seq=++requestSequence,prevMonth=$('monthFilter').value,prevChosen=chosen;
  $('reload').disabled=true;set('notice','Loading verified published evidence…');
  try{
-  const [response,cfgResponse]=await Promise.all([fetch($('dataset').value+'?t='+Date.now(),{cache:'no-store'}),fetch('ws30-config.json?t='+Date.now(),{cache:'no-store'})]);
+  const [response,cfgResponse]=await Promise.all([fetch($('dataset').value,{cache:'no-cache'}),fetch('ws30-config.json',{cache:'no-cache'})]);
   if(!response.ok||!cfgResponse.ok)throw Error('Snapshot/configuration unavailable');
   const [v,cfg]=await Promise.all([response.json(),cfgResponse.json()]);
   if(seq!==requestSequence)return;
@@ -472,7 +472,7 @@ async function refreshFeatures(){
 }
 async function instrumentPicker(){
  try{
-  const q=await fetch('assets.json',{cache:'no-store'});if(!q.ok)return;
+  const q=await fetch('assets.json',{cache:'no-cache'});if(!q.ok)return;
   const registry=await q.json();$('instrument').replaceChildren();
   for(const a of registry.assets||[]){const o=el('option',a.symbol+' · '+a.name+(a.status==='published'?'':' · not published'));o.value=a.symbol;$('instrument').append(o);}
   $('instrument').value='WS30.pro';

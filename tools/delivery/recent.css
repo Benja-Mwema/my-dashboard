@@ -1,0 +1,4 @@
+#chart {display:block;width:100%;height:auto}
+#chart[hidden] {display:none}
+.full-link {display:inline-block;margin:0.75rem;color:inherit;text-decoration:underline}
+#warning {color:#e0b97a}
